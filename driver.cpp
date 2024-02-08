@@ -5,11 +5,11 @@ using namespace std;
 
 int main()
 {
-    string pickup="helmet";
+    string pickup="Helmet";
     item test(pickup);
 
-    cout<<test.getEquipType();
-    
+    cout<<test.getEquipType()<<endl;
+    test.getStats(); 
     return 0;
 }
 
