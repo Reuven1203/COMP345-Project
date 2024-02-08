@@ -3,13 +3,15 @@
 #include <iostream>
 using namespace std;
 class item{
+
+
 public:
 item();
 ~item();
 item(string itemtype);
 
 //Setters
-
+void setEquipType(string type);
 
 //Getters
 int getStats();

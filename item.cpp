@@ -16,3 +16,8 @@ string item::getEquipType()
 {
     return equipType;
 }
+
+void item::setEquipType(string type)
+{
+    this->equipType=type;
+}
