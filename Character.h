@@ -4,33 +4,37 @@
 
 #ifndef CHARACTER_H
 #define CHARACTER_H
+#endif //CHARACTER_H
 #include <iostream>
 #include "random"
+#include <string>
 
 
-
-int randomNumberGenerator(int start, int end) {
-    std::random_device rd;
-    std::mt19937 gen(rd());
-    std::uniform_int_distribution<> dis(start, end);
-    return dis(gen);
-}
 
 class Character {
-    struct AbilityScoreTypes {
-        int strength;
-        int dexterity;
-        int constitution;
-        int intelligence;
-        int wisdom;
-        int charisma;
-    };
-public:
-    explicit Character(int level);
+private:
+    std::string name;
     int level;
-    AbilityScoreTypes abilityScore;
+    std::array<int,6> abilityScore{};
+    std::array<int,6> abilityModifiers{};
+    int maxHP;
+    int currentHP;
+    void generateAbilityScores();
+    void calculateAbilityModifiers();
+    void calculateHitPoints();
 
+public:
+    enum Ability {
+        Strength,
+        Dexterity,
+        Constitution,
+        Intelligence,
+        Wisdom,
+        Charisma
+    };
+    explicit Character(std::string name, int level);
+    std::string getName() const;
+    int getLevel() const;
+    int getAbilityScore(Ability ability) const;
+    int getAbilityModifier(Ability ability) const;
 };
-
-
-#endif //CHARACTER_H
