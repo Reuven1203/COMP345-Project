@@ -4,33 +4,41 @@
 
 #ifndef CHARACTER_H
 #define CHARACTER_H
+#endif //CHARACTER_H
 #include <iostream>
 #include "random"
+#include <string>
+#include "Dice.h"
 
 
-
-//int randomNumberGenerator(int start, int end) {
-//    std::random_device rd;
-//    std::mt19937 gen(rd());
-//    std::uniform_int_distribution<> dis(start, end);
-//    return dis(gen);
-//}
 
 class Character {
-    struct AbilityScoreTypes {
-        int strength;
-        int dexterity;
-        int constitution;
-        int intelligence;
-        int wisdom;
-        int charisma;
-    };
-public:
-    explicit Character(int level);
+protected:
+    int currentHP;
+    explicit Character(std::string name, int level);
     int level;
-    AbilityScoreTypes abilityScore;
-
+    virtual DieType getDieType() const { return d6; } // Default DieType for Character
+public:
+    enum Ability {
+        Strength,
+        Dexterity,
+        Constitution,
+        Intelligence,
+        Wisdom,
+        Charisma
+    };
+    std::string getName() const;
+    int getLevel() const;
+    int getAbilityScore(Ability ability) const;
+    int getAbilityModifier(Ability ability) const;
+    void showCharacterStats() const;
+    int getCurrentHP() const;
+    virtual std::string getClassName() const ;
+private:
+    std::string name;
+    std::array<int,6> abilityScore{};
+    std::array<int,6> abilityModifiers{};
+    void generateAbilityScores();
+    void calculateAbilityModifiers();
+    int initializeHitPoints();
 };
-
-
-#endif //CHARACTER_H

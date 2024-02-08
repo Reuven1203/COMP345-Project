@@ -4,15 +4,13 @@
 
 
 #include <iostream>
-#include "Character.h"
+#include "Fighter.h"
 
-//print hello
+
 int main() {
-    std::cout << "Hello, World!" << std::endl;
-    Character player(6);
-    std::cout << player.level << std::endl;
-    std::cout << player.abilityScore.charisma << std::endl;
-    std::cout << player.abilityScore.constitution << std::endl;
+     Fighter fighter = Fighter("Reuven", 6);
+     fighter.showCharacterStats();
+
     return 0;
 
 }
