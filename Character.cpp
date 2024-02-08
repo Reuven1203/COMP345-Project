@@ -3,9 +3,7 @@
 //
 
 #include "Character.h"
-
-
-
+#include "Dice.h"
 
 
 Character::Character(int level) {
@@ -16,12 +14,14 @@ Character::Character(int level) {
     }else {
         this->level = level;
     }
-    this->abilityScore.strength = randomNumberGenerator(3, 18);
-    this->abilityScore.dexterity = randomNumberGenerator(3, 18);
-    this->abilityScore.constitution = randomNumberGenerator(3, 18);
-    this->abilityScore.intelligence = randomNumberGenerator(3, 18);
-    this->abilityScore.wisdom = randomNumberGenerator(3, 18);
-    this->abilityScore.charisma = randomNumberGenerator(3, 18);
+    Dice dice {Dice()};
+    std::string abilityScoreRoll {"3d6"};
+    this->abilityScore.strength = dice.roll(abilityScoreRoll);
+    this->abilityScore.dexterity = dice.roll(abilityScoreRoll);
+    this->abilityScore.constitution = dice.roll(abilityScoreRoll);
+    this->abilityScore.intelligence = dice.roll(abilityScoreRoll);
+    this->abilityScore.wisdom = dice.roll(abilityScoreRoll);
+    this->abilityScore.charisma = dice.roll(abilityScoreRoll);
 
 
 

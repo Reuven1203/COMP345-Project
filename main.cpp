@@ -10,8 +10,9 @@
 int main() {
     std::cout << "Hello, World!" << std::endl;
     Character player(6);
-//    std::cout << player.level << std::endl;
-//    std::cout << player.abilityScore.charisma << std::endl;
+    std::cout << player.level << std::endl;
+    std::cout << player.abilityScore.charisma << std::endl;
+    std::cout << player.abilityScore.constitution << std::endl;
     return 0;
 
 }
