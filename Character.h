@@ -8,21 +8,16 @@
 #include <iostream>
 #include "random"
 #include <string>
+#include "Dice.h"
 
 
 
 class Character {
-private:
-    std::string name;
-    int level;
-    std::array<int,6> abilityScore{};
-    std::array<int,6> abilityModifiers{};
-    int maxHP;
+protected:
     int currentHP;
-    void generateAbilityScores();
-    void calculateAbilityModifiers();
-    void calculateHitPoints();
-
+    explicit Character(std::string name, int level);
+    int level;
+    virtual DieType getDieType() const { return d6; } // Default DieType for Character
 public:
     enum Ability {
         Strength,
@@ -32,9 +27,18 @@ public:
         Wisdom,
         Charisma
     };
-    explicit Character(std::string name, int level);
     std::string getName() const;
     int getLevel() const;
     int getAbilityScore(Ability ability) const;
     int getAbilityModifier(Ability ability) const;
+    void showCharacterStats() const;
+    int getCurrentHP() const;
+    virtual std::string getClassName() const ;
+private:
+    std::string name;
+    std::array<int,6> abilityScore{};
+    std::array<int,6> abilityModifiers{};
+    void generateAbilityScores();
+    void calculateAbilityModifiers();
+    int initializeHitPoints();
 };
