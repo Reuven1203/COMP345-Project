@@ -4,98 +4,161 @@
 
 #include <iostream>
 #include <cstring>
+#include <random>
+#include <iomanip>
+#include <map>
+#include <chrono>
 #include "item.h"
-#include "Random.h"
 
-using namespace Random;
 using namespace std;
 
-item::item(){}
-item::~item(){}
+item::item() {}
+item::~item() {}
 
+item::item(string equip):random(random_device{}())
+{   
+    //initializing seed for random rolls on stats
+    
+    dist=uniform_int_distribution<int>(1,5);
 
-item::item(string equip)
-{
-    string hold=equip;
+    string hold = equip;
 
-    //Converting string to all lowercase in case uppercase is used
-    for (int i=0;i<hold.length();i++)
+    // Converting string to all lowercase in case uppercase is used
+    for (int i = 0; i < hold.length(); i++)
     {
-        hold[i]=tolower(hold[i]);
-        
+        hold[i] = tolower(hold[i]);
     }
-    this->equipType=hold;
+    this->equipType = hold;
+    setEquipStats();
 }
 
+//Roll a random number from 1-5 and return modifier
+int item::rollStatMod()
+{
+   enchantmentModifier=dist(random);
+   return enchantmentModifier;
+}
 
-//Getters
+// Getters
 string item::getEquipType()
 {
     return equipType;
 }
-void item::getStats()
+int item::getSTR()
 {
-    cout<<"Armor Class:"<<armorClass<<endl;
-    cout<<"Attack Bonus:"<<atkBonus<<endl;
-    cout<<"Damage Bonus"<<dmgBonus<<endl;
-    cout<<"Constitution:"<<constitution<<endl;
-    cout<<"Strength:"<<strength<<endl;
-    cout<<"Intelligence:"<<intelligence<<endl;
-    cout<<"Wisdom:"<<wisdom<<endl;
-    cout<<"Charisma:"<<charisma<<endl;
-    cout<<"Dexterity:"<<dexterity<<endl;
-    
-
-
-
+    return strength;
+}
+int item::getCON()
+{
+    return constitution;
+}
+int item::getINT()
+{
+    return intelligence;
+}
+int item::getWIS()
+{
+    return wisdom;
+}
+int item::getCHA()
+{
+    return charisma;
+}
+int item::getDEX()
+{
+    return dexterity;
+}
+int item::getAC()
+{
+    return armorClass;
+}
+int item::getATKBONUS()
+{
+    return atkBonus;
+}
+int item::getDMGBonus()
+{
+    return dmgBonus;
 }
 
 
-//Setters
+//Prints stats of item
+void item::printStats()
+{
+
+    cout << "Item type:  " << getEquipType() << endl;
+    for (auto const &stat:itemOverall)
+    {
+        cout<<left<<setw(14)<<stat.first<<":"<<right<<setw(5)<<stat.second<<setw(5)<<endl;
+    }
+    cout<<endl;
+}
+
+// Setters
 void item::setEquipType(string type)
 {
-    this->equipType=type;
+    this->equipType = type;
 }
 
+
+//Called when item is initialized
 void item::setEquipStats()
 {
+         
 
-    if(equipType=="helmet")
+    if (equipType == "helmet")
     {
-        intelligence=random(1,5);
-        wisdom=random(1,5);
-        armorClass=random(1,5);
+        intelligence=rollStatMod();
+        wisdom=rollStatMod();
+        armorClass=rollStatMod();
+        itemOverall["Intelligence"]=this->intelligence;
+        itemOverall["Wisdom"]=this->wisdom;
+        itemOverall["Armorclass"]=this->armorClass;
+        
     }
-    if(equipType=="armor")
+    if (equipType == "armor")
     {
-        armorClass=random(1,5);
+     armorClass=rollStatMod();
+     itemOverall["Armorclass"]=this->armorClass;
     }
-    if(equipType=="shield")
+    if (equipType == "shield")
     {
-        armorClass=random(1,5);
+         armorClass=rollStatMod();
+     itemOverall["Armorclass"]=this->armorClass;
     }
-    if(equipType=="ring")
+    if (equipType == "ring")
     {
-        armorClass=random(1,5);
-        strength=random(1,5);
-        constitution=random(1,5);
-        wisdom=random(1,5);
-        charisma=random(1,5);
+     armorClass=rollStatMod();
+     strength=rollStatMod();
+     constitution=rollStatMod();
+     wisdom=rollStatMod();
+     charisma=rollStatMod();
+     itemOverall["Armorclass"]=this->armorClass;
+     itemOverall["Charisma"]=this->charisma;
+     itemOverall["Constitution"]=this->constitution;
+     itemOverall["Wisdom"]=this->wisdom;
+     itemOverall["Strength"]=this->strength;
     }
-    if(equipType=="belt")
+    if (equipType == "belt")
     {
-        constitution=random(1,5);
-        strength=random(1,5);
+        constitution=rollStatMod();
+        strength=rollStatMod();
+        itemOverall["Strength"]=this->strength;
+        itemOverall["Constitution"]=this->constitution;
+     
     }
-    if(equipType=="boots")
+    if (equipType == "boots")
     {
-        armorClass=random(1,5);
-        dexterity=random(1,5);
+        armorClass=rollStatMod();
+        dexterity=rollStatMod();
+        itemOverall["Armorclass"]=this->armorClass;
+        itemOverall["Dexterity"]=this->dexterity;
     }
-    if(equipType=="weapon")
+    if (equipType == "weapon")
     {
-        atkBonus=random(1,5);
-        dmgBonus=random(1,5);
+      atkBonus=rollStatMod();
+      dmgBonus=rollStatMod();
+      itemOverall["DamageBonus"]=this->dmgBonus;
+      itemOverall["AttackBonus"]=this->atkBonus;
     }
-    
 }
