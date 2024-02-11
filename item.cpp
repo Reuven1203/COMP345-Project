@@ -13,20 +13,10 @@ using namespace std;
 item::item() {}
 item::~item() {}
 
-item::item(string equip):random(random_device{}())
-{   
-    //initializing seed for random rolls on stats
-    
-    dist=uniform_int_distribution<int>(1,5);
+item::item(ItemType equip)
+{
 
-    string hold = equip;
-
-    // Converting string to all lowercase in case uppercase is used
-    for (int i = 0; i < hold.length(); i++)
-    {
-        hold[i] = tolower(hold[i]);
-    }
-    this->equipType = hold;
+    this->equipType = equip;
     setEquipStats();
 }
 
@@ -34,14 +24,42 @@ item::item(string equip):random(random_device{}())
 int item::rollStatMod()
 {
     Dice dice;
-   enchantmentModifier=dice.roll("1d5");
+    int em = dice.roll("1d6");
+    while (em > 5)
+    {
+        em = dice.roll("1d6");
+    }
+   enchantmentModifier= em;
    return enchantmentModifier;
 }
 
 // Getters
 string item::getEquipType()
 {
-    return equipType;
+   switch(equipType)
+   {
+       case HELMET:
+         return "Helmet";
+            break;
+         case ARMOR:
+            return "Armor";
+                break;
+            case SHIELD:
+                return "Shield";
+                    break;
+                case RING:
+                    return "Ring";
+                        break;
+                    case BELT:
+                        return "Belt";
+                            break;
+                        case BOOTS:
+                            return "Boots";
+                                break;
+                            case WEAPON:
+                                return "Weapon";
+                                    break;
+   }
 }
 int item::getSTR()
 {
@@ -94,7 +112,7 @@ void item::printStats()
 }
 
 // Setters
-void item::setEquipType(string type)
+void item::setEquipType(ItemType type)
 {
     this->equipType = type;
 }
@@ -105,7 +123,7 @@ void item::setEquipStats()
 {
          
 
-    if (equipType == "helmet")
+    if (equipType == HELMET)
     {
         intelligence=rollStatMod();
         wisdom=rollStatMod();
@@ -115,17 +133,17 @@ void item::setEquipStats()
         itemOverall["Armorclass"]=this->armorClass;
         
     }
-    if (equipType == "armor")
+    if (equipType == ARMOR)
     {
      armorClass=rollStatMod();
      itemOverall["Armorclass"]=this->armorClass;
     }
-    if (equipType == "shield")
+    if (equipType == SHIELD)
     {
-         armorClass=rollStatMod();
+     armorClass=rollStatMod();
      itemOverall["Armorclass"]=this->armorClass;
     }
-    if (equipType == "ring")
+    if (equipType == RING)
     {
      armorClass=rollStatMod();
      strength=rollStatMod();
@@ -138,7 +156,13 @@ void item::setEquipStats()
      itemOverall["Wisdom"]=this->wisdom;
      itemOverall["Strength"]=this->strength;
     }
-    if (equipType == "belt")
+    if (equipType == BELT)
+    {
+        strength=rollStatMod();
+        constitution=rollStatMod();
+        itemOverall["Strength"]=this->strength;
+        itemOverall["Constitution"]=this->constitution;
+    }
     {
         constitution=rollStatMod();
         strength=rollStatMod();
@@ -146,14 +170,14 @@ void item::setEquipStats()
         itemOverall["Constitution"]=this->constitution;
      
     }
-    if (equipType == "boots")
+    if (equipType == BOOTS)
     {
         armorClass=rollStatMod();
         dexterity=rollStatMod();
         itemOverall["Armorclass"]=this->armorClass;
         itemOverall["Dexterity"]=this->dexterity;
     }
-    if (equipType == "weapon")
+    if (equipType == WEAPON)
     {
       atkBonus=rollStatMod();
       dmgBonus=rollStatMod();

@@ -17,7 +17,7 @@ protected:
     int currentHP;
     explicit Character(std::string name, int level);
     int level;
-    virtual DieType getDieType() const { return d6; } // Default DieType for Character
+    [[nodiscard]] virtual DieType getDieType() const { return d6; } // Default DieType for Character
 public:
     enum Ability {
         Strength,
@@ -36,9 +36,14 @@ public:
     virtual std::string getClassName() const ;
 private:
     std::string name;
+    int proficiencyBonus;
+    int armorClass;
+    int attackBonus;
+    int damageBonus;
     std::array<int,6> abilityScore{};
     std::array<int,6> abilityModifiers{};
     void generateAbilityScores();
     void calculateAbilityModifiers();
     int initializeHitPoints();
+    int initializeProficiencyBonus();
 };

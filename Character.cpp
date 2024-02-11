@@ -20,6 +20,11 @@ Character::Character(std::string name,int level): name(std::move(name)){
     generateAbilityScores();
     calculateAbilityModifiers();
     this -> currentHP = initializeHitPoints();
+    this -> proficiencyBonus = initializeProficiencyBonus();
+    this -> armorClass = 10 + getAbilityModifier(Dexterity);
+    this-> attackBonus = getAbilityModifier(Strength) + proficiencyBonus;
+    this -> damageBonus = getAbilityModifier(Strength) + 1;
+
 }
 
 
@@ -83,6 +88,20 @@ int Character::initializeHitPoints() {
 
 std::string Character::getClassName() const {
     return "Character";
+}
+
+int Character::initializeProficiencyBonus() {
+    if(level < 5) {
+        return 2;
+    } else if(level < 9) {
+        return 3;
+    } else if(level < 13) {
+        return 4;
+    } else if(level < 17) {
+        return 5;
+    } else {
+        return 6;
+    }
 }
 
 

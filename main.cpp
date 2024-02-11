@@ -5,11 +5,15 @@
 
 #include <iostream>
 #include "Fighter.h"
+#include "item.h"
 
 
 int main() {
-     Fighter fighter = Fighter("Reuven", 6);
-     fighter.showCharacterStats();
+     Character* fighter = new Fighter("Reuven", 6);
+     fighter->showCharacterStats();
+item item1 = item(item::ItemType::ARMOR);
+
+item1.printStats();
 
     return 0;
 

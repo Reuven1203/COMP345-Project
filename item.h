@@ -14,14 +14,24 @@ class item
 {
 
 public:
+    enum ItemType
+    {
+        HELMET,
+        ARMOR,
+        SHIELD,
+        RING,
+        BELT,
+        BOOTS,
+        WEAPON
+    };
     item();
     ~item();
-    item(string itemtype);
+    item(ItemType itemtype);
 
     int rollStatMod();
 
     // Setters
-    void setEquipType(string type);
+    void setEquipType(ItemType type);
     void setEquipStats();
 
     // Getters
@@ -39,11 +49,8 @@ public:
     
     void printStats();
 private:
-    mt19937 random;
-    uniform_int_distribution<int> dist;
     string itemName; // used if necessary in future
-
-    string equipType;            // helm,armor,shield,ring,belt,boots,weapon
+    ItemType equipType;            // helm,armor,shield,ring,belt,boots,weapon
     int enchantmentModifier = 0; //+1-+5 bonus rng based
 
     // Stats
