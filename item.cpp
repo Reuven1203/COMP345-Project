@@ -3,12 +3,10 @@
 */
 
 #include <iostream>
-#include <cstring>
-#include <random>
 #include <iomanip>
 #include <map>
-#include <chrono>
 #include "item.h"
+#include "Dice.h"
 
 using namespace std;
 
@@ -35,7 +33,8 @@ item::item(string equip):random(random_device{}())
 //Roll a random number from 1-5 and return modifier
 int item::rollStatMod()
 {
-   enchantmentModifier=dist(random);
+    Dice dice;
+   enchantmentModifier=dice.roll("1d5");
    return enchantmentModifier;
 }
 
