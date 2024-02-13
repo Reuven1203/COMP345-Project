@@ -9,6 +9,7 @@
 #include "random"
 #include <string>
 #include "Dice.h"
+#include "Item.h"
 
 
 
@@ -27,23 +28,37 @@ public:
         Wisdom,
         Charisma
     };
-    std::string getName() const;
-    int getLevel() const;
-    int getAbilityScore(Ability ability) const;
-    int getAbilityModifier(Ability ability) const;
+
+    enum Stats {
+        HP, // hit points
+        PB, // proficiency bonus
+        AC, // armor class
+        AB, // attack bonus
+        DB // damage bonus
+    };
+
+    [[nodiscard]] std::string getName() const;
+    [[nodiscard]] int getLevel() const;
+    [[nodiscard]] int getAbilityScore(Ability ability) const;
+    [[nodiscard]] int getAbilityModifier(Ability ability) const;
     void showCharacterStats() const;
-    int getCurrentHP() const;
-    virtual std::string getClassName() const ;
+    [[nodiscard]] virtual std::string getClassName() const ;
+    void equip(const Item& item);
+    void unequip(const Item& item);
+    void showWornItems() const;
+    [[nodiscard]] int getStat(Stats stats) const;
 private:
     std::string name;
-    int proficiencyBonus;
-    int armorClass;
-    int attackBonus;
-    int damageBonus;
     std::array<int,6> abilityScore{};
     std::array<int,6> abilityModifiers{};
     void generateAbilityScores();
     void calculateAbilityModifiers();
+    void calculateAbilityScores();
     int initializeHitPoints();
-    int initializeProficiencyBonus();
+    [[nodiscard]] int initializeProficiencyBonus() const;
+    static bool isAbility(const std::string& ability);
+    static Ability stringToEnum(const std::string& ability);
+    static Stats stringToEnumStats(const std::string& stats);
+    std::map<Stats, int> stats;
+    std::map<Item::ItemType, Item> wornItems;
 };

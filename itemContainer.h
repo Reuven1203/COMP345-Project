@@ -3,7 +3,7 @@
 */
 #include <iostream>
 #include <vector>
-#include "item.h"
+#include "Item.h"
 class container{
 public:
 container();
@@ -14,10 +14,10 @@ void getItems();
 void getItemStats();
 
 //setters
-void storeItem(item&);
+void storeItem(Item&);
 
 
 private:
-vector<item>storedItems;
+vector<Item>storedItems;
 string name;
 };

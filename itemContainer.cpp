@@ -5,7 +5,7 @@
 #include <iostream>
 #include <vector>
 #include "itemContainer.h"
-#include "item.h"
+#include "Item.h"
 
 
 using namespace std;
@@ -17,7 +17,7 @@ container::container(){
 container::~container(){}
 
 
-//prints item types in container
+//prints Item types in container
 void container::getItems()
 {
     cout<<"List of items in container:"<<endl;
@@ -38,8 +38,8 @@ void container::getItemStats()
 }
 
 
-//Store item into vector
-void container::storeItem(item& itemObtained)
+//Store Item into vector
+void container::storeItem(Item& itemObtained)
 {
     storedItems.push_back(itemObtained);
 }

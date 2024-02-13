@@ -10,7 +10,7 @@
 #include <map>
 
 using namespace std;
-class item
+class Item
 {
 
 public:
@@ -24,9 +24,10 @@ public:
         BOOTS,
         WEAPON
     };
-    item();
-    ~item();
-    item(ItemType itemtype);
+    ItemType equipType;            // helm,armor,shield,ring,belt,boots,weapon
+    Item();
+    ~Item();
+    Item(ItemType itemtype);
 
     int rollStatMod();
 
@@ -35,7 +36,7 @@ public:
     void setEquipStats();
 
     // Getters
-    string getEquipType();
+    string getEquipType() const;
     int getSTR();
     int getCON();
     int getINT();
@@ -47,10 +48,11 @@ public:
     int getDMGBonus();
 
     
-    void printStats();
+    void printStats() const;
+
+    map<string, int> itemOverall;
 private:
     string itemName; // used if necessary in future
-    ItemType equipType;            // helm,armor,shield,ring,belt,boots,weapon
     int enchantmentModifier = 0; //+1-+5 bonus rng based
 
     // Stats
@@ -67,7 +69,6 @@ private:
     int atkBonus = 0;
     int dmgBonus = 0;
 
-    map<string, int> itemOverall;
 };
 
 #endif // ITEM_H

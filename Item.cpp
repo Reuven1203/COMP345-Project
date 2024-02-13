@@ -5,15 +5,16 @@
 #include <iostream>
 #include <iomanip>
 #include <map>
-#include "item.h"
+#include "Item.h"
 #include "Dice.h"
+#include "Character.h"
 
 using namespace std;
 
-item::item() {}
-item::~item() {}
+Item::Item() {}
+Item::~Item() {}
 
-item::item(ItemType equip)
+Item::Item(ItemType equip)
 {
 
     this->equipType = equip;
@@ -21,7 +22,7 @@ item::item(ItemType equip)
 }
 
 //Roll a random number from 1-5 and return modifier
-int item::rollStatMod()
+int Item::rollStatMod()
 {
     Dice dice;
     int em = dice.roll("1d6");
@@ -34,7 +35,7 @@ int item::rollStatMod()
 }
 
 // Getters
-string item::getEquipType()
+string Item::getEquipType() const
 {
    switch(equipType)
    {
@@ -61,47 +62,46 @@ string item::getEquipType()
                                     break;
    }
 }
-int item::getSTR()
+int Item::getSTR()
 {
     return strength;
 }
-int item::getCON()
+int Item::getCON()
 {
     return constitution;
 }
-int item::getINT()
+int Item::getINT()
 {
     return intelligence;
 }
-int item::getWIS()
+int Item::getWIS()
 {
     return wisdom;
 }
-int item::getCHA()
+int Item::getCHA()
 {
     return charisma;
 }
-int item::getDEX()
+int Item::getDEX()
 {
     return dexterity;
 }
-int item::getAC()
+int Item::getAC()
 {
     return armorClass;
 }
-int item::getATKBONUS()
+int Item::getATKBONUS()
 {
     return atkBonus;
 }
-int item::getDMGBonus()
+int Item::getDMGBonus()
 {
     return dmgBonus;
 }
 
 
-//Prints stats of item
-void item::printStats()
-{
+//Prints stats of Item
+void Item::printStats() const {
 
     cout << "Item type:  " << getEquipType() << endl;
     for (auto const &stat:itemOverall)
@@ -112,14 +112,14 @@ void item::printStats()
 }
 
 // Setters
-void item::setEquipType(ItemType type)
+void Item::setEquipType(ItemType type)
 {
     this->equipType = type;
 }
 
 
-//Called when item is initialized
-void item::setEquipStats()
+//Called when Item is initialized
+void Item::setEquipStats()
 {
          
 
@@ -130,18 +130,18 @@ void item::setEquipStats()
         armorClass=rollStatMod();
         itemOverall["Intelligence"]=this->intelligence;
         itemOverall["Wisdom"]=this->wisdom;
-        itemOverall["Armorclass"]=this->armorClass;
+        itemOverall["ArmorClass"]=this->armorClass;
         
     }
     if (equipType == ARMOR)
     {
      armorClass=rollStatMod();
-     itemOverall["Armorclass"]=this->armorClass;
+     itemOverall["ArmorClass"]=this->armorClass;
     }
     if (equipType == SHIELD)
     {
      armorClass=rollStatMod();
-     itemOverall["Armorclass"]=this->armorClass;
+     itemOverall["ArmorClass"]=this->armorClass;
     }
     if (equipType == RING)
     {
@@ -150,7 +150,7 @@ void item::setEquipStats()
      constitution=rollStatMod();
      wisdom=rollStatMod();
      charisma=rollStatMod();
-     itemOverall["Armorclass"]=this->armorClass;
+     itemOverall["ArmorClass"]=this->armorClass;
      itemOverall["Charisma"]=this->charisma;
      itemOverall["Constitution"]=this->constitution;
      itemOverall["Wisdom"]=this->wisdom;
@@ -174,7 +174,7 @@ void item::setEquipStats()
     {
         armorClass=rollStatMod();
         dexterity=rollStatMod();
-        itemOverall["Armorclass"]=this->armorClass;
+        itemOverall["ArmorClass"]=this->armorClass;
         itemOverall["Dexterity"]=this->dexterity;
     }
     if (equipType == WEAPON)
