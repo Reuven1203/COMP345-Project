@@ -1,6 +1,9 @@
-//
-// Created by Reuven Ostrofsky on 2024-02-21.
-//
+/**
+ * @file FighterTest.cpp
+ * @brief Implementation of the FighterTest class methods.
+ * @author Reuven Ostrofsky
+ * @date 2024-02-21
+ */
 
 #include "FighterTest.h"
 
