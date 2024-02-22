@@ -93,7 +93,7 @@ public:
     void showWornItems() const;
     [[nodiscard]] int getStat(Stats stats) const;
 
-    **
+    /**
     * @class Character
     * @brief Represents a character in the game with abilities, stats, and equipped items.
     *
