@@ -1,6 +1,11 @@
-//
-// Created by Reuven Ostrofsky on 2024-02-21.
-//
+/**
+ * @file CharacterTest.cpp
+ * @brief Implementation of the CharacterTest class methods.
+ * @author Reuven Ostrofsky
+ * @date 2024-02-21
+ */
+
+
 
 #include "CharacterTest.h"
 
