@@ -93,21 +93,88 @@ public:
     void showWornItems() const;
     [[nodiscard]] int getStat(Stats stats) const;
 
+    **
+    * @class Character
+    * @brief Represents a character in the game with abilities, stats, and equipped items.
+    *
+    * This class manages the character's attributes such as name, level, ability scores, and equipped items.
+    * It includes functionalities for modifying these attributes and calculating derived statistics.
+    */
+
 private:
     std::string name; ///< Character's name.
     std::array<int, 6> abilityScore{}; ///< Scores for the character's abilities.
     std::array<int, 6> abilityModifiers{}; ///< Modifiers derived from the ability scores.
 
-    // Methods for internal mechanics
+    /**
+     * @brief Generates random ability scores for the character.
+     *
+     * This function uses dice rolls to randomly generate ability scores for the character.
+     */
     void generateAbilityScores();
+
+    /**
+     * @brief Calculates the ability modifiers based on ability scores.
+     *
+     * This function computes each ability modifier as the floor of ((abilityScore - 10) / 2).
+     */
     void calculateAbilityModifiers();
+
+    /**
+     * @brief Recalculates ability scores and modifiers based on equipped items.
+     *
+     * Adjusts the character's ability scores and modifiers according to the stats of equipped items.
+     */
     void calculateAbilityScores();
+
+    /**
+     * @brief Reduces character's ability scores after unequipping an item.
+     * @param item The item being unequipped.
+     *
+     * This function reduces the character's ability scores based on the item's stats.
+     */
     void reduceAbilityAfterUnequip(const Item& item);
+
+    /**
+     * @brief Initializes the character's hit points based on level and Constitution modifier.
+     * @return int The calculated hit points.
+     *
+     * Calculates initial hit points using the character's die type and Constitution modifier.
+     */
     [[nodiscard]] int initializeHitPoints();
+
+    /**
+     * @brief Initializes the character's proficiency bonus based on their level.
+     * @return int The calculated proficiency bonus.
+     *
+     * Determines the proficiency bonus based on the character's level according to D&D rules.
+     */
     [[nodiscard]] int initializeProficiencyBonus() const;
+
+    /**
+     * @brief Checks if a given string corresponds to a valid ability.
+     * @param ability The ability name to check.
+     * @return true if the string is a valid ability name, false otherwise.
+     */
     static bool isAbility(const std::string& ability);
-    static Ability stringToEnum(const std::string& ability);
-    static Stats stringToEnumStats(const std::string& stats);
+
+    /**
+     * @brief Converts a string to its corresponding Ability enum.
+     * @param str The string to convert.
+     * @return Ability The corresponding Ability enum.
+     *
+     * Throws std::invalid_argument if the string does not correspond to a valid ability.
+     */
+    static Ability stringToEnum(const std::string& str);
+
+    /**
+     * @brief Converts a string to its corresponding Stats enum.
+     * @param str The string to convert.
+     * @return Stats The corresponding Stats enum.
+     *
+     * Throws std::invalid_argument if the string does not correspond to a valid stat.
+     */
+    static Stats stringToEnumStats(const std::string& str);
 
     std::map<Stats, int> stats; ///< Map of character stats.
     std::map<Item::ItemType, Item> wornItems; ///< Currently equipped items.
@@ -116,6 +183,8 @@ private:
      * @brief Checks if an item is currently equipped.
      * @param item The item to check.
      * @return true If the item is equipped, false otherwise.
+     *
+     * Determines if the specified item is equipped by checking the wornItems map.
      */
     bool isItemEquipped(const Item &item);
 };
