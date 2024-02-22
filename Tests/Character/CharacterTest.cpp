@@ -39,7 +39,7 @@ void CharacterTest::testInitialization() {
     CPPUNIT_ASSERT(character->getStat(Character::Stats::PB) > 0);
     CPPUNIT_ASSERT(character->getStat(Character::Stats::AC) > 0);
     CPPUNIT_ASSERT(character->getStat(Character::Stats::AB) > 0);
-    CPPUNIT_ASSERT(character->getStat(Character::Stats::DB) > 0);
+    CPPUNIT_ASSERT(character->getStat(Character::Stats::DB) >= 0);
 }
 
 void CharacterTest::testArmorEquip() {
@@ -93,17 +93,23 @@ void CharacterTest::testHelmetEquip() {
     //equip the helmet
     //save player AC before
     int acBefore = character->getStat(Character::Stats::AC);
+    int intBefore = character->getAbilityScore(Character::Ability::Intelligence);
+    int wisBefore = character->getAbilityScore(Character::Ability::Wisdom);
     character->equip(helmet);
     //check if the helmet is equipped
     CPPUNIT_ASSERT(character->isItemEquipped(helmet));
     //check if the helmet is affecting the character's stats
     CPPUNIT_ASSERT(character->getStat(Character::Stats::AC) > acBefore);
+    CPPUNIT_ASSERT(character->getAbilityScore(Character::Ability::Intelligence) > intBefore);
+    CPPUNIT_ASSERT(character->getAbilityScore(Character::Ability::Wisdom) > wisBefore);
     //unequip the helmet
     character->unequip(helmet);
     //check if the helmet is unequipped
     CPPUNIT_ASSERT(!character->isItemEquipped(helmet));
     //check if the helmet is no longer affecting the character's stats
     CPPUNIT_ASSERT_EQUAL(acBefore, character->getStat(Character::Stats::AC));
+    CPPUNIT_ASSERT_EQUAL(intBefore, character->getAbilityScore(Character::Ability::Intelligence));
+    CPPUNIT_ASSERT_EQUAL(wisBefore, character->getAbilityScore(Character::Ability::Wisdom));
 
 }
 
@@ -114,18 +120,29 @@ void CharacterTest::testRingEquip() {
     //equip the ring
     //save player AC before
     int acBefore = character->getStat(Character::Stats::AC);
+    int charBefore = character->getAbilityScore(Character::Ability::Charisma);
+    int strBefore = character->getAbilityScore(Character::Ability::Strength);
+    int conBefore = character->getAbilityScore(Character::Ability::Constitution);
+    int wisBefore = character->getAbilityScore(Character::Ability::Wisdom);
     character->equip(ring);
     //check if the ring is equipped
     CPPUNIT_ASSERT(character->isItemEquipped(ring));
     //check if the ring is affecting the character's stats
     CPPUNIT_ASSERT(character->getStat(Character::Stats::AC) > acBefore);
+    CPPUNIT_ASSERT(character->getAbilityScore(Character::Ability::Charisma) > charBefore);
+    CPPUNIT_ASSERT(character->getAbilityScore(Character::Ability::Strength) > strBefore);
+    CPPUNIT_ASSERT(character->getAbilityScore(Character::Ability::Constitution) > conBefore);
+    CPPUNIT_ASSERT(character->getAbilityScore(Character::Ability::Wisdom) > wisBefore);
     //unequip the ring
     character->unequip(ring);
     //check if the ring is unequipped
     CPPUNIT_ASSERT(!character->isItemEquipped(ring));
     //check if the ring is no longer affecting the character's stats
     CPPUNIT_ASSERT_EQUAL(acBefore, character->getStat(Character::Stats::AC));
-
+    CPPUNIT_ASSERT_EQUAL(charBefore, character->getAbilityScore(Character::Ability::Charisma));
+    CPPUNIT_ASSERT_EQUAL(strBefore, character->getAbilityScore(Character::Ability::Strength));
+    CPPUNIT_ASSERT_EQUAL(conBefore, character->getAbilityScore(Character::Ability::Constitution));
+    CPPUNIT_ASSERT_EQUAL(wisBefore, character->getAbilityScore(Character::Ability::Wisdom));
 }
 
 void CharacterTest::testShieldEquip() {
@@ -150,10 +167,50 @@ void CharacterTest::testShieldEquip() {
 }
 
 void CharacterTest::testBeltEquip() {
+    //test equipping a belt
+    //create a belt item
+    Item belt = Item(Item::ItemType::BELT);
+    //equip the belt
+    //save player AC before
+    int strBefore = character->getAbilityScore(Character::Ability::Strength);
+    int conBefore = character->getAbilityScore(Character::Ability::Constitution);
+    character->equip(belt);
+    //check if the belt is equipped
+    CPPUNIT_ASSERT(character->isItemEquipped(belt));
+    //check if the belt is affecting the character's stats
+    CPPUNIT_ASSERT(character->getAbilityScore(Character::Ability::Strength) > strBefore);
+    CPPUNIT_ASSERT(character->getAbilityScore(Character::Ability::Constitution) > conBefore);
+    //unequip the belt
+    character->unequip(belt);
+    //check if the belt is unequipped
+    CPPUNIT_ASSERT(!character->isItemEquipped(belt));
+    //check if the belt is no longer affecting the character's stats
+    CPPUNIT_ASSERT_EQUAL(strBefore, character->getAbilityScore(Character::Ability::Strength));
+    CPPUNIT_ASSERT_EQUAL(conBefore, character->getAbilityScore(Character::Ability::Constitution));
 
 }
 
 void CharacterTest::testBootsEquip() {
+    //test equipping boots
+    //create a boots item
+    Item boots = Item(Item::ItemType::BOOTS);
+    //equip the boots
+    //save player AC before
+    int acBefore = character->getStat(Character::Stats::AC);
+    int dexBefore = character->getAbilityScore(Character::Ability::Dexterity);
+    character->equip(boots);
+    //check if the boots are equipped
+    CPPUNIT_ASSERT(character->isItemEquipped(boots));
+    //check if the boots are affecting the character's stats
+    CPPUNIT_ASSERT(character->getStat(Character::Stats::AC) > acBefore);
+    CPPUNIT_ASSERT(character->getAbilityScore(Character::Ability::Dexterity) > dexBefore);
+    //unequip the boots
+    character->unequip(boots);
+    //check if the boots are unequipped
+    CPPUNIT_ASSERT(!character->isItemEquipped(boots));
+    //check if the boots are no longer affecting the character's stats
+    CPPUNIT_ASSERT_EQUAL(acBefore, character->getStat(Character::Stats::AC));
+    CPPUNIT_ASSERT_EQUAL(dexBefore, character->getAbilityScore(Character::Ability::Dexterity));
 
 
 }

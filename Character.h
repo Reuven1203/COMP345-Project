@@ -14,6 +14,7 @@
 
 
 class Character {
+    friend class CharacterTest;
 protected:
     int currentHP;
     int level;
@@ -48,8 +49,6 @@ public:
     void showWornItems() const;
     [[nodiscard]] int getStat(Stats stats) const;
 
-    bool isItemEquipped(const Item &item);
-
 private:
     std::string name;
     std::array<int,6> abilityScore{};
@@ -57,6 +56,8 @@ private:
     void generateAbilityScores();
     void calculateAbilityModifiers();
     void calculateAbilityScores();
+    void reduceAbilityAfterUnequip(const Item& item);
+    [[nodiscard]]
     int initializeHitPoints();
     [[nodiscard]] int initializeProficiencyBonus() const;
     static bool isAbility(const std::string& ability);
@@ -64,5 +65,7 @@ private:
     static Stats stringToEnumStats(const std::string& stats);
     std::map<Stats, int> stats;
     std::map<Item::ItemType, Item> wornItems;
+    //    For testing
+    bool isItemEquipped(const Item &item);
 
 };

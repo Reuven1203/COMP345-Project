@@ -10,10 +10,19 @@
 
 class CharacterTest : public CppUnit::TestFixture {
 CPPUNIT_TEST_SUITE(CharacterTest);
+//Test simple addition test
 CPPUNIT_TEST(testAddition);
 CPPUNIT_TEST(testInitialization);
-//CPPUNIT_TEST(testArmorEquip);
+CPPUNIT_TEST(testArmorEquip);
+CPPUNIT_TEST(testWeaponEquip);
+CPPUNIT_TEST(testHelmetEquip);
+CPPUNIT_TEST(testShieldEquip);
+CPPUNIT_TEST(testRingEquip);
+CPPUNIT_TEST(testBeltEquip);
+CPPUNIT_TEST(testBootsEquip);
 CPPUNIT_TEST_SUITE_END();
+
+
 
 public:
     void setUp() override;
@@ -28,7 +37,7 @@ public:
     void testBeltEquip();
     void testBootsEquip();
 private:
-    Character* character;
+    Character* character{};
 
 };
 

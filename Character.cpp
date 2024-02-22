@@ -39,11 +39,22 @@ void Character::equip(const Item& item) {
     calculateAbilityScores();
 }
 
-void Character::unequip(const Item& item) {
-    wornItems.erase(item.equipType);
-    calculateAbilityScores();
+
+
+void Character::reduceAbilityAfterUnequip(const Item& item) {
+    for (const auto &stat: item.itemOverall) {
+        if(isAbility(stat.first) && stat.second != 0){
+            abilityScore[stringToEnum(stat.first)] -= stat.second;
+        }else{
+            stats[stringToEnumStats(stat.first)] -= stat.second;
+        }
+    }
 }
 
+void Character::unequip(const Item& item) {
+    wornItems.erase(item.equipType);
+    reduceAbilityAfterUnequip(item);
+}
 void Character::generateAbilityScores() {
     Dice dice = Dice();
     //should soon be replaced with the dice class
@@ -148,6 +159,7 @@ void Character::calculateAbilityScores() {
         }
     }
 }
+
 
 
  bool Character::isAbility(const string &ability) {
