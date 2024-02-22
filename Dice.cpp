@@ -1,6 +1,9 @@
-// Author: Julian D'Addario
-// Concordia University, 40050146
-// Date: Feb 7, 2024
+/**
+ * @file Dice.cpp
+ * @brief Implementation of the Dice class methods.
+ * @author Julian D'Addario
+ * @date Feb 7, 2024
+ */
 
 #include <iostream>
 #include "Dice.h"

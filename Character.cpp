@@ -28,38 +28,10 @@ Character::Character(std::string name,int level): name(std::move(name)){
 
 }
 
-
+//Accessors
 
 int Character::getLevel() const {
     return level;
-}
-
-void Character::equip(const Item& item) {
-    wornItems[item.equipType] = item;
-    calculateAbilityScores();
-}
-
-void Character::unequip(const Item& item) {
-    wornItems.erase(item.equipType);
-    calculateAbilityScores();
-}
-
-void Character::generateAbilityScores() {
-    Dice dice = Dice();
-    //should soon be replaced with the dice class
-    for(int& score : abilityScore) {
-        score = dice.roll("4d6");
-    }
-}
-
-int Character::getAbilityScore(Ability ability) const{
-    return abilityScore[ability];
-}
-
-void Character::calculateAbilityModifiers() {
-    for(int i = 0; i < abilityScore.size(); i++) {
-        abilityModifiers[i] = floor((abilityScore[i] - 10) / 2);
-    }
 }
 
 int Character::getAbilityModifier(Ability ability) const {
@@ -74,8 +46,77 @@ int Character::getStat(Stats stat) const {
     return this->stats.at(stat);
 }
 
+std::string Character::getClassName() const {
+    return "Character";
+}
+
+int Character::getAbilityScore(Ability ability) const{
+    return abilityScore[ability];
+}
+
+//Mutators
+
+void Character::equip(const Item& item) {
+    wornItems[item.equipType] = item;
+    calculateAbilityScores();
+}
+
+void Character::unequip(const Item& item) {
+    wornItems.erase(item.equipType);
+    reduceAbilityAfterUnequip(item);
+}
+
+void Character::showWornItems() const {
+    std::cout << getClassName() + " " << name << " is currently wearing the following items" << std::endl;
+    std::cout << "---------------------------------------------\n" << std::endl;
+    for (const auto &item: wornItems) {
+        item.second.printStats();
+        std::cout << "---------------------------------------------\n" << std::endl;
+    }
+}
+
+    void Character::calculateAbilityScores() {
+        for (const auto &item: wornItems) {
+            for (const auto &stat: item.second.itemOverall) {
+                if(isAbility(stat.first) && stat.second != 0){
+                    abilityScore[stringToEnum(stat.first)] += stat.second;
+                }else{
+                    stats[stringToEnumStats(stat.first)] += stat.second;
+                }
+
+            }
+        }
+    }
+
+    void Character::reduceAbilityAfterUnequip(const Item& item) {
+        for (const auto &stat: item.itemOverall) {
+            if(isAbility(stat.first) && stat.second != 0){
+                abilityScore[stringToEnum(stat.first)] -= stat.second;
+            }else{
+                stats[stringToEnumStats(stat.first)] -= stat.second;
+            }
+        }
+    }
 
 
+
+
+
+
+void Character::calculateAbilityModifiers() {
+    for(int i = 0; i < abilityScore.size(); i++) {
+        abilityModifiers[i] = floor((abilityScore[i] - 10) / 2);
+    }
+}
+
+//Utility methods
+void Character::generateAbilityScores() {
+    Dice dice = Dice();
+    //should soon be replaced with the dice class
+    for(int& score : abilityScore) {
+        score = dice.roll("4d6");
+    }
+}
 void Character::showCharacterStats() const {
     std::cout << "Name: " << name << std::endl;
     std::cout << "Class: " << getClassName() << std::endl;
@@ -102,10 +143,6 @@ int Character::initializeHitPoints() {
     return baseHP + dice.roll(levelString + 'd' + std::to_string(getDieType())+ '+' + std::to_string(getAbilityModifier(Constitution) * (level-1)));
 }
 
-std::string Character::getClassName() const {
-    return "Character";
-}
-
 int Character::initializeProficiencyBonus() const {
     if(level < 5) {
         return 2;
@@ -120,31 +157,19 @@ int Character::initializeProficiencyBonus() const {
     }
 }
 
-void Character::showWornItems() const {
-    std::cout << getClassName() + " " <<name << " is currently wearing the following items" << std::endl;
-    std::cout << "---------------------------------------------\n" << std::endl;
-    for(const auto& item : wornItems) {
-         item.second.printStats();
-        std::cout << "---------------------------------------------\n" << std::endl;
-    }
 
+
+
+
+bool Character::isItemEquipped (const Item& item) {
+    return wornItems.find(item.equipType) != wornItems.end();
 
 }
 
-void Character::calculateAbilityScores() {
-    for (const auto &item: wornItems) {
-        for (const auto &stat: item.second.itemOverall) {
-            if(isAbility(stat.first) && stat.second != 0){
-                abilityScore[stringToEnum(stat.first)] += stat.second;
-            }else{
-                stats[stringToEnumStats(stat.first)] += stat.second;
-            }
 
-        }
-    }
-}
 
- bool Character::isAbility(const string &ability) {
+
+bool Character::isAbility(const string &ability) {
     return ability == "Strength" || ability == "Dexterity" || ability == "Constitution" || ability == "Intelligence" || ability == "Wisdom" || ability == "Charisma";
 }
 
