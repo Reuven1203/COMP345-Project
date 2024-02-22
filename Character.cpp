@@ -1,25 +1,22 @@
-/**
- * @file Character.cpp
- * @brief Implementation of the Character class.
- *
- * Implements the functionality of the Character class including constructors,
- * ability score generation, item management, and stat calculations.
- */
+//
+// Created by Reuven Ostrofsky on 2024-01-30.
+//
 
 #include "Character.h"
 #include "Dice.h"
 
-/**
- * @brief Constructor for Character, initializes character with name and level.
- *
- * Ensures the character's level is within the game's limits (1-20). Initializes
- * ability scores and calculates modifiers and other initial statistics.
- *
- * @param name Name of the character.
- * @param level Initial level of the character.
- */
-Character::Character(std::string name, int level) : name(std::move(name)) {
-    this->level = std::max(1, std::min(level, 20));
+
+
+
+
+Character::Character(std::string name,int level): name(std::move(name)){
+    if(level < 1) {
+        this->level = 1;
+    } else if(level > 20) {
+        this->level = 20;
+    }else {
+        this->level = level;
+    }
     generateAbilityScores();
     calculateAbilityModifiers();
     stats[HP] = initializeHitPoints();
@@ -27,210 +24,188 @@ Character::Character(std::string name, int level) : name(std::move(name)) {
     stats[AC] = 10 + getAbilityModifier(Dexterity);
     stats[AB] = getAbilityModifier(Strength) + stats[PB];
     stats[DB] = getAbilityModifier(Strength) + 1;
+
+
 }
 
-/**
- * @brief Returns the character's current level.
- *
- * @return int The current level of the character.
- */
+//Accessors
+
 int Character::getLevel() const {
     return level;
 }
 
-/**
- * @brief Equips an item to the character and recalculates ability scores.
- *
- * @param item The item to equip.
- */
+int Character::getAbilityModifier(Ability ability) const {
+    return abilityModifiers[ability];
+}
+
+std::string Character::getName() const {
+    return name;
+}
+
+int Character::getStat(Stats stat) const {
+    return this->stats.at(stat);
+}
+
+std::string Character::getClassName() const {
+    return "Character";
+}
+
+int Character::getAbilityScore(Ability ability) const{
+    return abilityScore[ability];
+}
+
+//Mutators
+
 void Character::equip(const Item& item) {
     wornItems[item.equipType] = item;
     calculateAbilityScores();
 }
 
-/**
- * @brief Reduces ability scores and stats after unequipping an item.
- *
- * @param item The item to unequip.
- */
-void Character::reduceAbilityAfterUnequip(const Item& item) {
-    for (const auto &stat : item.itemOverall) {
-        if (isAbility(stat.first) && stat.second != 0) {
-            abilityScore[stringToEnum(stat.first)] -= stat.second;
-        } else {
-            stats[stringToEnumStats(stat.first)] -= stat.second;
-        }
-    }
-}
-
-/**
- * @brief Unequips an item from the character.
- *
- * @param item The item to remove.
- */
 void Character::unequip(const Item& item) {
     wornItems.erase(item.equipType);
     reduceAbilityAfterUnequip(item);
 }
 
-/**
- * @brief Generates random ability scores for the character using dice rolls.
- */
+void Character::showWornItems() const {
+    std::cout << getClassName() + " " << name << " is currently wearing the following items" << std::endl;
+    std::cout << "---------------------------------------------\n" << std::endl;
+    for (const auto &item: wornItems) {
+        item.second.printStats();
+        std::cout << "---------------------------------------------\n" << std::endl;
+    }
+}
+
+    void Character::calculateAbilityScores() {
+        for (const auto &item: wornItems) {
+            for (const auto &stat: item.second.itemOverall) {
+                if(isAbility(stat.first) && stat.second != 0){
+                    abilityScore[stringToEnum(stat.first)] += stat.second;
+                }else{
+                    stats[stringToEnumStats(stat.first)] += stat.second;
+                }
+
+            }
+        }
+    }
+
+    void Character::reduceAbilityAfterUnequip(const Item& item) {
+        for (const auto &stat: item.itemOverall) {
+            if(isAbility(stat.first) && stat.second != 0){
+                abilityScore[stringToEnum(stat.first)] -= stat.second;
+            }else{
+                stats[stringToEnumStats(stat.first)] -= stat.second;
+            }
+        }
+    }
+
+
+
+
+
+
+void Character::calculateAbilityModifiers() {
+    for(int i = 0; i < abilityScore.size(); i++) {
+        abilityModifiers[i] = floor((abilityScore[i] - 10) / 2);
+    }
+}
+
+//Utility methods
 void Character::generateAbilityScores() {
-    Dice dice;
-    for (int& score : abilityScore) {
+    Dice dice = Dice();
+    //should soon be replaced with the dice class
+    for(int& score : abilityScore) {
         score = dice.roll("4d6");
     }
 }
-
-/**
- * @brief Gets the score of a specified ability.
- *
- * @param ability The ability to query.
- * @return int The score of the specified ability.
- */
-int Character::getAbilityScore(Ability ability) const {
-    return abilityScore[ability];
-}
-
-/**
- * @brief Calculates the modifiers for the character's abilities.
- */
-void Character::calculateAbilityModifiers() {
-    for (size_t i = 0; i < abilityScore.size(); ++i) {
-        abilityModifiers[i] = (abilityScore[i] - 10) / 2;
-    }
-}
-
-/**
- * @brief Gets the modifier for a specified ability.
- *
- * @param ability The ability to query.
- * @return int The modifier for the specified ability.
- */
-int Character::getAbilityModifier(Ability ability) const {
-    return abilityModifiers[ability];
-}
-
-/**
- * @brief Returns the character's name.
- *
- * @return std::string The name of the character.
- */
-std::string Character::getName() const {
-    return name;
-}
-
-/**
- * @brief Gets a specified stat of the character.
- *
- * @param stat The stat to query.
- * @return int The value of the specified stat.
- */
-int Character::getStat(Stats stat) const {
-    return stats.at(stat);
-}
-
-/**
- * @brief Displays character statistics on standard output.
- */
 void Character::showCharacterStats() const {
-    // Method implementation
+    std::cout << "Name: " << name << std::endl;
+    std::cout << "Class: " << getClassName() << std::endl;
+    std::cout << "Level: " << level << std::endl;
+    std::cout << "Strength: " << abilityScore[Strength] << " Modifier: " << abilityModifiers[Strength] << std::endl;
+    std::cout << "Dexterity: " << abilityScore[Dexterity] << " Modifier: " << abilityModifiers[Dexterity] << std::endl;
+    std::cout << "Constitution: " << abilityScore[Constitution] << " Modifier: " << abilityModifiers[Constitution] << std::endl;
+    std::cout << "Intelligence: " << abilityScore[Intelligence] << " Modifier: " << abilityModifiers[Intelligence] << std::endl;
+    std::cout << "Wisdom: " << abilityScore[Wisdom] << " Modifier: " << abilityModifiers[Wisdom] << std::endl;
+    std::cout << "Charisma: " << abilityScore[Charisma] << " Modifier: " << abilityModifiers[Charisma] << std::endl;
+    std::cout << "Hit Points: " << getStat(HP) << std::endl;
+    std::cout << "Proficiency Bonus: " << getStat(PB) << std::endl;
+    std::cout << "Armor Class: " << getStat(AC) << std::endl;
+    std::cout << "Attack Bonus: " << getStat(AB) << std::endl;
+    std::cout << "Damage Bonus: " << getStat(DB) << std::endl;
+    std::cout << "____________________________________________________" << std::endl;
+
 }
 
-/**
- * @brief Initializes the character's hit points based on level and Constitution modifier.
- *
- * @return int The initial hit points of the character.
- */
 int Character::initializeHitPoints() {
-    Dice dice;
+    Dice dice = Dice();
     int baseHP = getDieType() + getAbilityModifier(Constitution);
-    std::string levelStr = std::to_string(level - 1);
-    return baseHP + dice.roll(levelStr + 'd' + std::to_string(getDieType()) + '+' + std::to_string(getAbilityModifier(Constitution) * (level - 1)));
+    std::string levelString = std::to_string(level-1);
+    return baseHP + dice.roll(levelString + 'd' + std::to_string(getDieType())+ '+' + std::to_string(getAbilityModifier(Constitution) * (level-1)));
 }
 
-/**
- * @brief Returns the class name of the character. Useful for subclasses.
- *
- * @return std::string The class name.
- */
-std::string Character::getClassName() const {
-    return "Character";
-}
-
-/**
- * @brief Calculates the proficiency bonus based on the character's level.
- *
- * @return int The proficiency bonus.
- */
 int Character::initializeProficiencyBonus() const {
-    if (level < 5) {
+    if(level < 5) {
         return 2;
-    } else if (level < 9) {
+    } else if(level < 9) {
         return 3;
-    } else if (level < 13) {
+    } else if(level < 13) {
         return 4;
-    } else if (level < 17) {
+    } else if(level < 17) {
         return 5;
     } else {
         return 6;
     }
 }
 
-/**
- * @brief Displays the items currently equipped by the character.
- */
-void Character::showWornItems() const {
-    // Method implementation
-}
 
-/**
- * @brief Checks if an item is currently equipped.
- *
- * @param item The item to check.
- * @return true If the item is equipped, false otherwise.
- */
-bool Character::isItemEquipped(const Item& item) {
+
+
+
+bool Character::isItemEquipped (const Item& item) {
     return wornItems.find(item.equipType) != wornItems.end();
+
 }
 
-/**
- * @brief Recalculates ability scores based on equipped items.
- */
-void Character::calculateAbilityScores() {
-    // Method implementation
+
+
+
+bool Character::isAbility(const string &ability) {
+    return ability == "Strength" || ability == "Dexterity" || ability == "Constitution" || ability == "Intelligence" || ability == "Wisdom" || ability == "Charisma";
 }
 
-/**
- * @brief Determines if a string corresponds to a valid ability.
- *
- * @param ability The ability string to validate.
- * @return true if the string is a valid ability, false otherwise.
- */
-bool Character::isAbility(const std::string& ability) {
-    // Method implementation
-    return false; // Placeholder return
+Character::Ability Character::stringToEnum(const string &str) {
+    if(str == "Strength") {
+        return Strength;
+    } else if(str == "Dexterity") {
+        return Dexterity;
+    } else if(str == "Constitution") {
+        return Constitution;
+    } else if(str == "Intelligence") {
+        return Intelligence;
+    } else if(str == "Wisdom") {
+        return Wisdom;
+    } else if(str == "Charisma") {
+        return Charisma;
+    } else {
+        throw std::invalid_argument("Invalid ability");
+    }
 }
 
-/**
- * @brief Converts a string to its corresponding Ability enum.
- *
- * @param str The string to convert.
- * @return Character::Ability The corresponding Ability enum.
- */
-Character::Ability Character::stringToEnum(const std::string& str) {
-    // Method implementation
-    return Strength; // Placeholder return
+Character::Stats Character::stringToEnumStats(const string &str) {
+    if(str == "HP") {
+        return HP;
+    } else if(str == "PB") {
+        return PB;
+    } else if(str == "ArmorClass") {
+        return AC;
+    } else if(str == "AttackBonus") {
+        return AB;
+    } else if(str == "DamageBonus") {
+        return DB;
+    } else {
+        throw std::invalid_argument("Invalid stat");
+    }
 }
 
-/**
- * @brief Converts a string to its corresponding Stats enum.
- *
- * @param str The string to convert.
- * @return Character::Stats The corresponding Stats enum.
- */
-Character::Stats Character::stringToEnumStats(const std::string& str) {
-    // Method implementation
-    return HP; // Placeholder return
-}
+
+
