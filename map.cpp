@@ -1,70 +1,194 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <iomanip>
 #include "map.h"
-//Initialize 2D vector map with space ' ' chars
-map::map(int x,int y):breadth(x),width(y)
-{
-    dungeon.resize(breadth);
-    for(int i=0;i<width;i++)
-    {
-        dungeon[i].resize(width);
-        fill(dungeon[i].begin(),dungeon[i].end(),' ');
-    }
-    
-    
-}
-//Setting Start point of map
-void map::setStart(int x,int y)
-{
-    this->startX=x;
-    this->startY=y;
-if(startX>breadth||startY>width||startX<0||startY<0)
-    {
-    cout<<"Start point is out of bounds.";
-    exit(1);
-    }
-  dungeon[startX][startY]='S';
+#include "cell.h"
 
+// Initialize 2D vector map with space ' ' chars
+dungeonMap::dungeonMap(int x, int y) : rows(x), cols(y), dungeon(rows, vector<cell>(cols))
+{
+}
+/////////////////////////////////////////////////////////////////////////////////////
+// SETTERS
+void dungeonMap::setChest(container *chest, int x, int y)
+{
+    if (dungeon[x][y].getCellType() == Nothing)
+        dungeon[x][y].setChest(chest);
+
+    else
+        cout << "Invalid location for chest." << endl;
 }
 
-//Setting End point of map
-void map::setEnd(int x,int y)
+void dungeonMap::setWall()
 {
+    bool done = false;
+    int wallCoordinateX;
+    int wallCoordinateY;
+    cout << "Wall Generation Mode" << endl;
 
-    this->endX=x;
-    this->endY=y;
-
-    if (endX>breadth||endY>width||endX<0||endY<0)
-     {   cout<<"End point is out of bounds.";
-        exit(1);
-     }
-     if (endX==startX && endY==startY)
-     {
-        cout<<"End point cannot be the same as Start point";
-        exit(1);
-     }
-    else dungeon[endX][endY]='E';
-}
-
-//Prints map
-void map::printMap()
-{
-      for (int i=0;i<dungeon.size();i++)
+    while (done != true)
     {
-        for(int j=0;j<dungeon.size();j++)
+        printMap();
+        cout << "Choose where to insert wall(-1 to exit): " << endl;
+        cout << "X coordinate: ";
+        cin >> wallCoordinateX;
+        if (wallCoordinateX == -1)
         {
-            cout<<"| "<< dungeon[i][j]<<" ";
+            done = true;
+            break;
         }
-        cout<<"|"<<endl;
+        if (wallCoordinateX >= rows || wallCoordinateX < 0)
+        {
+            cout << "Invalid X coordinate." << endl;
+            continue;
+        }
+        cout << "Y coordinate: ";
+        cin >> wallCoordinateY;
+
+        if (wallCoordinateY == -1)
+        {
+            done == true;
+            break;
+        }
+        if (wallCoordinateY >= cols || wallCoordinateY < 0)
+        {
+            cout << "Invalid Y coordinate." << endl;
+            continue;
+        }
+        if (dungeon[wallCoordinateX][wallCoordinateY].getCellType() == Start || dungeon[wallCoordinateX][wallCoordinateY].getCellType() == End)
+            cout << "Invalid location for Wall due to " << ((dungeon[wallCoordinateX][wallCoordinateY].getCellType() == Start) ? "Start" : "End") << " point" << endl;
+        else
+            dungeon[wallCoordinateX][wallCoordinateY].setCellType(Wall);
     }
-    cout<<"Legend:| S-Start | |E-End| | C-Character | |Ch-Chest| |O-Opponent| |D-Door| |W - Wall|";
 }
 
-//Validate's map to check if there is a valid path from start to end
-bool map::validMap()
+// Setting Start point of map
+void dungeonMap::setStart(int x, int y)
 {
+    if (x >= rows || y >= cols || x < 0 || y < 0)
+    {
+        cout << "Start point is out of bounds.";
+        exit(1);
+    }
+    this->startY = y;
+    this->startX = x;
+    dungeon[startX][startY].setCellType(Start);
+}
+
+// Setting End point of map
+void dungeonMap::setEnd(int x, int y)
+{
+    if (x >= rows || y >= cols || x < 0 || y < 0)
+    {
+        cout << "End point is out of bounds.";
+        exit(1);
+    }
+    this->endX = x;
+    this->endY = y;
+    dungeon[endX][endY].setCellType(End);
+}
+/////////////////////////////////////////////////////////////////////////////////////
+//Getters
+
+int dungeonMap::getStartX()
+{
+    return startX;
+}
+int dungeonMap::getStartY()
+{
+    return startY;
+}
+
+
+/////////////////////////////////////////////////////////////////////////////////////
+// Prints map
+void dungeonMap::printMap()
+{
+    int maxRowDigits = to_string(rows).length();
+    int maxColDigits = to_string(cols).length();
+
+    for (int row = 0; row < rows; row++)
+    {
+        cout << setw(maxColDigits) << row;
+
+        for (int col = 0; col < cols; col++)
+        {
+            switch (dungeon[row][col].getCellType())
+            {
+            case Nothing:
+            {
+                cout << "|  "
+                     << "   ";
+                break;
+            }
+            case Start:
+            {
+                cout << "|  "
+                     << "S  ";
+                break;
+            }
+            case End:
+            {
+                cout << "|  "
+                     << "E  ";
+                break;
+            }
+            case Player:
+            {
+                cout << "|  "
+                     << "P  ";
+                break;
+            }
+            case Wall:
+            {
+                cout << "|  "
+                     << "W  ";
+                break;
+            }
+            }
+        }
+        cout << "|" << endl;
+    }
+
+    for (int row = 0; row < rows; row++)
+    {
+        cout << setw(6) << row; // Matching the spacing for columns, adjust if necessary
+    }
+    cout << endl;
+    // cout << "Legend:| S-Start | |E-End| | C-Character | |Ch-Chest| |O-Opponent| |D-Door| |W - Wall|";
+}
+
+// Validate's map to check if there is a valid path from start to end
+void dungeonMap::validMap(int row, int col)
+{
+
+    if (row < 0 || col < 0 || row >= rows || col >= cols || dungeon[row][col].checkVisit() == true || dungeon[row][col].getCellType() == Wall)
+    {
+        clearCellVisit();
+        cout<<"Invalid Map, cannot reach End Point."<<endl;
+    }
+    if (dungeon[row][col].getCellType() == End)
+    {
+       clearCellVisit();
+       cout<<"Valid map, End point can be reached."<<endl;
+    }
+    dungeon[row][col].setVisit();
+    validMap(row + 1, col);
+    validMap(row - 1, col);
+    validMap(row, col + 1);
+    validMap(row, col - 1);
     
+}
 
-
+//Clear visit bool for cells during validMap Function
+void dungeonMap::clearCellVisit()
+{
+    for(int i=0;i<rows;i++)
+    {
+        for(int j=0;j<cols;j++)
+        {
+            dungeon[i][j].clearVisit();
+        }
+    }
 }
