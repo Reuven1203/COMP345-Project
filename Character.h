@@ -16,10 +16,10 @@
 class Character {
 protected:
     int currentHP;
-    explicit Character(std::string name, int level);
     int level;
     [[nodiscard]] virtual DieType getDieType() const { return d6; } // Default DieType for Character
 public:
+    explicit Character(std::string name, int level);
     enum Ability {
         Strength,
         Dexterity,
@@ -47,6 +47,9 @@ public:
     void unequip(const Item& item);
     void showWornItems() const;
     [[nodiscard]] int getStat(Stats stats) const;
+
+    bool isItemEquipped(const Item &item);
+
 private:
     std::string name;
     std::array<int,6> abilityScore{};
@@ -61,4 +64,5 @@ private:
     static Stats stringToEnumStats(const std::string& stats);
     std::map<Stats, int> stats;
     std::map<Item::ItemType, Item> wornItems;
+
 };

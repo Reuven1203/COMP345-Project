@@ -76,6 +76,8 @@ int Character::getStat(Stats stat) const {
 
 
 
+
+
 void Character::showCharacterStats() const {
     std::cout << "Name: " << name << std::endl;
     std::cout << "Class: " << getClassName() << std::endl;
@@ -130,7 +132,10 @@ void Character::showWornItems() const {
 
 
 }
+bool Character::isItemEquipped (const Item& item) {
+    return wornItems.find(item.equipType) != wornItems.end();
 
+}
 void Character::calculateAbilityScores() {
     for (const auto &item: wornItems) {
         for (const auto &stat: item.second.itemOverall) {
@@ -143,6 +148,7 @@ void Character::calculateAbilityScores() {
         }
     }
 }
+
 
  bool Character::isAbility(const string &ability) {
     return ability == "Strength" || ability == "Dexterity" || ability == "Constitution" || ability == "Intelligence" || ability == "Wisdom" || ability == "Charisma";
