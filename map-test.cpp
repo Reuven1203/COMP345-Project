@@ -4,9 +4,11 @@
 using namespace std;
 int main(){
 
-    map dungeon(5,5);
+     dungeonMap dungeon(5,5);
     dungeon.setStart(0,0);
     dungeon.setEnd(4,4);
-    dungeon.printMap();
+    
+    dungeon.setWall();
+    dungeon.validMap(dungeon.getStartX(),dungeon.getStartY());
     return 0;
 }
