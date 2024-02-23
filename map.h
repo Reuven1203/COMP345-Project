@@ -13,7 +13,7 @@ public:
 
     dungeonMap(int x, int y);
 
-    void validMap(int startX,int startY);
+    bool validMap(int startX,int startY);
     void printMap();
     void setStart(int x,int y);
     void setEnd(int x,int y);
@@ -21,6 +21,7 @@ public:
     void setChest(container *chest,int x,int y);
     void setPlayer(); //Add in player to start position
     //Add setDoor,setOpponent when necessary
+    void removeWall(int x,int y);
     void clearCellVisit();
     int getStartX();
     int getStartY();
