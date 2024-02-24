@@ -1,0 +1,539 @@
+\doxysection{Item Class Reference}
+\hypertarget{class_item}{}\label{class_item}\index{Item@{Item}}
+
+
+Class representing an item that can be equipped by a character.  
+
+
+
+
+{\ttfamily \#include $<$Item.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_item_ab5eeb575e9d66ebcfef9b58b667fad05}{Item\+Type}} \{ \newline
+\mbox{\hyperlink{class_item_ab5eeb575e9d66ebcfef9b58b667fad05a2930e02900083562ebbf7647fc974748}{HELMET}}
+, \mbox{\hyperlink{class_item_ab5eeb575e9d66ebcfef9b58b667fad05a01a2cad8626795753e845959db5dcf47}{ARMOR}}
+, \mbox{\hyperlink{class_item_ab5eeb575e9d66ebcfef9b58b667fad05abfbf249e602551bc62fac7f21a4fa155}{SHIELD}}
+, \mbox{\hyperlink{class_item_ab5eeb575e9d66ebcfef9b58b667fad05a2b4980317315d5cbc3cd42b547eb11c6}{RING}}
+, \newline
+\mbox{\hyperlink{class_item_ab5eeb575e9d66ebcfef9b58b667fad05a470245875f2408f25403e21fb445684c}{BELT}}
+, \mbox{\hyperlink{class_item_ab5eeb575e9d66ebcfef9b58b667fad05a8f991e952d4a679e39809250c6175b1e}{BOOTS}}
+, \mbox{\hyperlink{class_item_ab5eeb575e9d66ebcfef9b58b667fad05a2c8fa5df080abba5b02d47e659c112f1}{WEAPON}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enum to represent different types of items. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_item_a297720c02984eab37332ae795d22189d}{Item}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_item_a11663c84075b78c3ae5e30fdfcd7c458}{\texorpdfstring{$\sim$}{\string~}\+Item}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_item_ae99c8254cf230ac2267f4cd8af5064fd}{Item}} (\mbox{\hyperlink{class_item_ab5eeb575e9d66ebcfef9b58b667fad05}{Item\+Type}} itemtype)
+\begin{DoxyCompactList}\small\item\em Parameterized constructor. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_item_a7421dba941e6ca9b4aa875e53dee7776}{roll\+Stat\+Mod}} ()
+\begin{DoxyCompactList}\small\item\em Method to roll a random modifier for an item\textquotesingle{}s stats. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_item_ab8e979a96cf06215e1e66c88d7a6d6ad}{set\+Equip\+Type}} (\mbox{\hyperlink{class_item_ab5eeb575e9d66ebcfef9b58b667fad05}{Item\+Type}} type)
+\item 
+void \mbox{\hyperlink{class_item_a82f73245020e5fa99b684b10a58038fb}{set\+Equip\+Stats}} ()
+\item 
+string \mbox{\hyperlink{class_item_a7c938dfc887d36be815acc94152fee80}{get\+Equip\+Type}} () const
+\item 
+int \mbox{\hyperlink{class_item_ad1f359133a1a3b8958fc0a4900009333}{get\+STR}} ()
+\item 
+int \mbox{\hyperlink{class_item_abc447f0ba6034acd04d15e441c6c9ea8}{get\+CON}} ()
+\item 
+int \mbox{\hyperlink{class_item_a4acbceff9137db1c0327a54dd39cc148}{get\+INT}} ()
+\item 
+int \mbox{\hyperlink{class_item_ace7fe884248a08024312659095e59464}{get\+WIS}} ()
+\item 
+int \mbox{\hyperlink{class_item_ac205d9a7fc49567c239a3aa9d1643ce8}{get\+CHA}} ()
+\item 
+int \mbox{\hyperlink{class_item_ae228fec49fa884c8c18c55a604160130}{get\+DEX}} ()
+\item 
+int \mbox{\hyperlink{class_item_a6e611bdc812fc0e0ebdeb43b46d18db4}{get\+AC}} ()
+\item 
+int \mbox{\hyperlink{class_item_a122ea70ddecf55ed2b01565c84572865}{get\+ATKBONUS}} ()
+\item 
+int \mbox{\hyperlink{class_item_ae31eceb14a821c8becd53927221807de}{get\+DMGBonus}} ()
+\item 
+void \mbox{\hyperlink{class_item_aebb8bb531798a53468a8776a209f4fae}{print\+Stats}} () const
+\begin{DoxyCompactList}\small\item\em Method to print the stats of the item. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_item_ab5eeb575e9d66ebcfef9b58b667fad05}{Item\+Type}} \mbox{\hyperlink{class_item_a6a42b85897da5e73a5913404790e33e0}{equip\+Type}}
+\item 
+map$<$ string, int $>$ \mbox{\hyperlink{class_item_af5b78a340e4490cbd89c5781a138fafd}{item\+Overall}}
+\begin{DoxyCompactList}\small\item\em Map to store overall item statistics. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_item_a17b15dc1e47ddba7e5c98476aeae98a6}{item\+Name}}
+\begin{DoxyCompactList}\small\item\em Name of the item. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_item_a5866b44b63816265e197389f707ffe7b}{enchantment\+Modifier}} = 0
+\begin{DoxyCompactList}\small\item\em Enchantment modifier for the item. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_item_a6a41e330454a805923d12a1b85b79952}{strength}} = 0
+\begin{DoxyCompactList}\small\item\em Strength attribute modifier. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_item_a7320f91a9eee50c47ad9001c4558ad9a}{constitution}} = 0
+\begin{DoxyCompactList}\small\item\em Constitution attribute modifier. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_item_a7263d056be7c7e490695c8f9e58a0a62}{intelligence}} = 0
+\begin{DoxyCompactList}\small\item\em Intelligence attribute modifier. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_item_a02777809b18e153525f252fd7de64824}{wisdom}} = 0
+\begin{DoxyCompactList}\small\item\em Wisdom attribute modifier. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_item_a2636ace9be7fa4218d5d270fb476c036}{charisma}} = 0
+\begin{DoxyCompactList}\small\item\em Charisma attribute modifier. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_item_a42463b28e802877a4e2fce94589ad848}{dexterity}} = 0
+\begin{DoxyCompactList}\small\item\em Dexterity attribute modifier. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_item_ad0d8d8215d19d9a7b3fe139c90562f31}{armor\+Class}} = 0
+\begin{DoxyCompactList}\small\item\em Armor class modifier. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_item_a83411ac82bdfa5f01989a958ca9a8f4a}{atk\+Bonus}} = 0
+\begin{DoxyCompactList}\small\item\em Attack bonus modifier. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_item_a80898565f99592018635deea6a175ddd}{dmg\+Bonus}} = 0
+\begin{DoxyCompactList}\small\item\em Damage bonus modifier. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class representing an item that can be equipped by a character. 
+
+Definition at line \mbox{\hyperlink{_item_8h_source_l00023}{23}} of file \mbox{\hyperlink{_item_8h_source}{Item.\+h}}.
+
+
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{class_item_ab5eeb575e9d66ebcfef9b58b667fad05}\label{class_item_ab5eeb575e9d66ebcfef9b58b667fad05} 
+\index{Item@{Item}!ItemType@{ItemType}}
+\index{ItemType@{ItemType}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{ItemType}{ItemType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_item_ab5eeb575e9d66ebcfef9b58b667fad05}{Item\+::\+Item\+Type}}}
+
+
+
+Enum to represent different types of items. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HELMET@{HELMET}!Item@{Item}}\index{Item@{Item}!HELMET@{HELMET}}}\Hypertarget{class_item_ab5eeb575e9d66ebcfef9b58b667fad05a2930e02900083562ebbf7647fc974748}\label{class_item_ab5eeb575e9d66ebcfef9b58b667fad05a2930e02900083562ebbf7647fc974748} 
+HELMET&Represents a helmet item. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ARMOR@{ARMOR}!Item@{Item}}\index{Item@{Item}!ARMOR@{ARMOR}}}\Hypertarget{class_item_ab5eeb575e9d66ebcfef9b58b667fad05a01a2cad8626795753e845959db5dcf47}\label{class_item_ab5eeb575e9d66ebcfef9b58b667fad05a01a2cad8626795753e845959db5dcf47} 
+ARMOR&Represents an armor item. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SHIELD@{SHIELD}!Item@{Item}}\index{Item@{Item}!SHIELD@{SHIELD}}}\Hypertarget{class_item_ab5eeb575e9d66ebcfef9b58b667fad05abfbf249e602551bc62fac7f21a4fa155}\label{class_item_ab5eeb575e9d66ebcfef9b58b667fad05abfbf249e602551bc62fac7f21a4fa155} 
+SHIELD&Represents a shield item. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RING@{RING}!Item@{Item}}\index{Item@{Item}!RING@{RING}}}\Hypertarget{class_item_ab5eeb575e9d66ebcfef9b58b667fad05a2b4980317315d5cbc3cd42b547eb11c6}\label{class_item_ab5eeb575e9d66ebcfef9b58b667fad05a2b4980317315d5cbc3cd42b547eb11c6} 
+RING&Represents a ring item. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BELT@{BELT}!Item@{Item}}\index{Item@{Item}!BELT@{BELT}}}\Hypertarget{class_item_ab5eeb575e9d66ebcfef9b58b667fad05a470245875f2408f25403e21fb445684c}\label{class_item_ab5eeb575e9d66ebcfef9b58b667fad05a470245875f2408f25403e21fb445684c} 
+BELT&Represents a belt item. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BOOTS@{BOOTS}!Item@{Item}}\index{Item@{Item}!BOOTS@{BOOTS}}}\Hypertarget{class_item_ab5eeb575e9d66ebcfef9b58b667fad05a8f991e952d4a679e39809250c6175b1e}\label{class_item_ab5eeb575e9d66ebcfef9b58b667fad05a8f991e952d4a679e39809250c6175b1e} 
+BOOTS&Represents a boots item. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WEAPON@{WEAPON}!Item@{Item}}\index{Item@{Item}!WEAPON@{WEAPON}}}\Hypertarget{class_item_ab5eeb575e9d66ebcfef9b58b667fad05a2c8fa5df080abba5b02d47e659c112f1}\label{class_item_ab5eeb575e9d66ebcfef9b58b667fad05a2c8fa5df080abba5b02d47e659c112f1} 
+WEAPON&Represents a weapon item. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_item_8h_source_l00031}{31}} of file \mbox{\hyperlink{_item_8h_source}{Item.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_item_a297720c02984eab37332ae795d22189d}\label{class_item_a297720c02984eab37332ae795d22189d} 
+\index{Item@{Item}!Item@{Item}}
+\index{Item@{Item}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{Item()}{Item()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Item\+::\+Item (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+
+
+Definition at line \mbox{\hyperlink{_item_8cpp_source_l00014}{14}} of file \mbox{\hyperlink{_item_8cpp_source}{Item.\+cpp}}.
+
+\Hypertarget{class_item_a11663c84075b78c3ae5e30fdfcd7c458}\label{class_item_a11663c84075b78c3ae5e30fdfcd7c458} 
+\index{Item@{Item}!````~Item@{\texorpdfstring{$\sim$}{\string~}Item}}
+\index{````~Item@{\texorpdfstring{$\sim$}{\string~}Item}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Item()}{\string~Item()}}
+{\footnotesize\ttfamily Item\+::\texorpdfstring{$\sim$}{\string~}\+Item (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+
+
+Definition at line \mbox{\hyperlink{_item_8cpp_source_l00015}{15}} of file \mbox{\hyperlink{_item_8cpp_source}{Item.\+cpp}}.
+
+\Hypertarget{class_item_ae99c8254cf230ac2267f4cd8af5064fd}\label{class_item_ae99c8254cf230ac2267f4cd8af5064fd} 
+\index{Item@{Item}!Item@{Item}}
+\index{Item@{Item}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{Item()}{Item()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Item\+::\+Item (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_item_ab5eeb575e9d66ebcfef9b58b667fad05}{Item\+Type}}}]{itemtype }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Parameterized constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em itemtype} & The type of item to create. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_item_8cpp_source_l00017}{17}} of file \mbox{\hyperlink{_item_8cpp_source}{Item.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_item_a6e611bdc812fc0e0ebdeb43b46d18db4}\label{class_item_a6e611bdc812fc0e0ebdeb43b46d18db4} 
+\index{Item@{Item}!getAC@{getAC}}
+\index{getAC@{getAC}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{getAC()}{getAC()}}
+{\footnotesize\ttfamily int Item\+::get\+AC (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_item_8cpp_source_l00089}{89}} of file \mbox{\hyperlink{_item_8cpp_source}{Item.\+cpp}}.
+
+\Hypertarget{class_item_a122ea70ddecf55ed2b01565c84572865}\label{class_item_a122ea70ddecf55ed2b01565c84572865} 
+\index{Item@{Item}!getATKBONUS@{getATKBONUS}}
+\index{getATKBONUS@{getATKBONUS}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{getATKBONUS()}{getATKBONUS()}}
+{\footnotesize\ttfamily int Item\+::get\+ATKBONUS (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_item_8cpp_source_l00093}{93}} of file \mbox{\hyperlink{_item_8cpp_source}{Item.\+cpp}}.
+
+\Hypertarget{class_item_ac205d9a7fc49567c239a3aa9d1643ce8}\label{class_item_ac205d9a7fc49567c239a3aa9d1643ce8} 
+\index{Item@{Item}!getCHA@{getCHA}}
+\index{getCHA@{getCHA}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{getCHA()}{getCHA()}}
+{\footnotesize\ttfamily int Item\+::get\+CHA (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_item_8cpp_source_l00081}{81}} of file \mbox{\hyperlink{_item_8cpp_source}{Item.\+cpp}}.
+
+\Hypertarget{class_item_abc447f0ba6034acd04d15e441c6c9ea8}\label{class_item_abc447f0ba6034acd04d15e441c6c9ea8} 
+\index{Item@{Item}!getCON@{getCON}}
+\index{getCON@{getCON}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{getCON()}{getCON()}}
+{\footnotesize\ttfamily int Item\+::get\+CON (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_item_8cpp_source_l00069}{69}} of file \mbox{\hyperlink{_item_8cpp_source}{Item.\+cpp}}.
+
+\Hypertarget{class_item_ae228fec49fa884c8c18c55a604160130}\label{class_item_ae228fec49fa884c8c18c55a604160130} 
+\index{Item@{Item}!getDEX@{getDEX}}
+\index{getDEX@{getDEX}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{getDEX()}{getDEX()}}
+{\footnotesize\ttfamily int Item\+::get\+DEX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_item_8cpp_source_l00085}{85}} of file \mbox{\hyperlink{_item_8cpp_source}{Item.\+cpp}}.
+
+\Hypertarget{class_item_ae31eceb14a821c8becd53927221807de}\label{class_item_ae31eceb14a821c8becd53927221807de} 
+\index{Item@{Item}!getDMGBonus@{getDMGBonus}}
+\index{getDMGBonus@{getDMGBonus}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{getDMGBonus()}{getDMGBonus()}}
+{\footnotesize\ttfamily int Item\+::get\+DMGBonus (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_item_8cpp_source_l00097}{97}} of file \mbox{\hyperlink{_item_8cpp_source}{Item.\+cpp}}.
+
+\Hypertarget{class_item_a7c938dfc887d36be815acc94152fee80}\label{class_item_a7c938dfc887d36be815acc94152fee80} 
+\index{Item@{Item}!getEquipType@{getEquipType}}
+\index{getEquipType@{getEquipType}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{getEquipType()}{getEquipType()}}
+{\footnotesize\ttfamily string Item\+::get\+Equip\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{_item_8cpp_source_l00038}{38}} of file \mbox{\hyperlink{_item_8cpp_source}{Item.\+cpp}}.
+
+\Hypertarget{class_item_a4acbceff9137db1c0327a54dd39cc148}\label{class_item_a4acbceff9137db1c0327a54dd39cc148} 
+\index{Item@{Item}!getINT@{getINT}}
+\index{getINT@{getINT}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{getINT()}{getINT()}}
+{\footnotesize\ttfamily int Item\+::get\+INT (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_item_8cpp_source_l00073}{73}} of file \mbox{\hyperlink{_item_8cpp_source}{Item.\+cpp}}.
+
+\Hypertarget{class_item_ad1f359133a1a3b8958fc0a4900009333}\label{class_item_ad1f359133a1a3b8958fc0a4900009333} 
+\index{Item@{Item}!getSTR@{getSTR}}
+\index{getSTR@{getSTR}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{getSTR()}{getSTR()}}
+{\footnotesize\ttfamily int Item\+::get\+STR (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_item_8cpp_source_l00065}{65}} of file \mbox{\hyperlink{_item_8cpp_source}{Item.\+cpp}}.
+
+\Hypertarget{class_item_ace7fe884248a08024312659095e59464}\label{class_item_ace7fe884248a08024312659095e59464} 
+\index{Item@{Item}!getWIS@{getWIS}}
+\index{getWIS@{getWIS}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{getWIS()}{getWIS()}}
+{\footnotesize\ttfamily int Item\+::get\+WIS (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_item_8cpp_source_l00077}{77}} of file \mbox{\hyperlink{_item_8cpp_source}{Item.\+cpp}}.
+
+\Hypertarget{class_item_aebb8bb531798a53468a8776a209f4fae}\label{class_item_aebb8bb531798a53468a8776a209f4fae} 
+\index{Item@{Item}!printStats@{printStats}}
+\index{printStats@{printStats}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{printStats()}{printStats()}}
+{\footnotesize\ttfamily void Item\+::print\+Stats (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Method to print the stats of the item. 
+
+
+
+Definition at line \mbox{\hyperlink{_item_8cpp_source_l00104}{104}} of file \mbox{\hyperlink{_item_8cpp_source}{Item.\+cpp}}.
+
+\Hypertarget{class_item_a7421dba941e6ca9b4aa875e53dee7776}\label{class_item_a7421dba941e6ca9b4aa875e53dee7776} 
+\index{Item@{Item}!rollStatMod@{rollStatMod}}
+\index{rollStatMod@{rollStatMod}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{rollStatMod()}{rollStatMod()}}
+{\footnotesize\ttfamily int Item\+::roll\+Stat\+Mod (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Method to roll a random modifier for an item\textquotesingle{}s stats. 
+
+\begin{DoxyReturn}{Returns}
+The rolled modifier value. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_item_8cpp_source_l00025}{25}} of file \mbox{\hyperlink{_item_8cpp_source}{Item.\+cpp}}.
+
+\Hypertarget{class_item_a82f73245020e5fa99b684b10a58038fb}\label{class_item_a82f73245020e5fa99b684b10a58038fb} 
+\index{Item@{Item}!setEquipStats@{setEquipStats}}
+\index{setEquipStats@{setEquipStats}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{setEquipStats()}{setEquipStats()}}
+{\footnotesize\ttfamily void Item\+::set\+Equip\+Stats (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_item_8cpp_source_l00122}{122}} of file \mbox{\hyperlink{_item_8cpp_source}{Item.\+cpp}}.
+
+\Hypertarget{class_item_ab8e979a96cf06215e1e66c88d7a6d6ad}\label{class_item_ab8e979a96cf06215e1e66c88d7a6d6ad} 
+\index{Item@{Item}!setEquipType@{setEquipType}}
+\index{setEquipType@{setEquipType}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{setEquipType()}{setEquipType()}}
+{\footnotesize\ttfamily void Item\+::set\+Equip\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_item_ab5eeb575e9d66ebcfef9b58b667fad05}{Item\+Type}}}]{type }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_item_8cpp_source_l00115}{115}} of file \mbox{\hyperlink{_item_8cpp_source}{Item.\+cpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_item_ad0d8d8215d19d9a7b3fe139c90562f31}\label{class_item_ad0d8d8215d19d9a7b3fe139c90562f31} 
+\index{Item@{Item}!armorClass@{armorClass}}
+\index{armorClass@{armorClass}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{armorClass}{armorClass}}
+{\footnotesize\ttfamily int Item\+::armor\+Class = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Armor class modifier. 
+
+
+
+Definition at line \mbox{\hyperlink{_item_8h_source_l00097}{97}} of file \mbox{\hyperlink{_item_8h_source}{Item.\+h}}.
+
+\Hypertarget{class_item_a83411ac82bdfa5f01989a958ca9a8f4a}\label{class_item_a83411ac82bdfa5f01989a958ca9a8f4a} 
+\index{Item@{Item}!atkBonus@{atkBonus}}
+\index{atkBonus@{atkBonus}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{atkBonus}{atkBonus}}
+{\footnotesize\ttfamily int Item\+::atk\+Bonus = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Attack bonus modifier. 
+
+
+
+Definition at line \mbox{\hyperlink{_item_8h_source_l00098}{98}} of file \mbox{\hyperlink{_item_8h_source}{Item.\+h}}.
+
+\Hypertarget{class_item_a2636ace9be7fa4218d5d270fb476c036}\label{class_item_a2636ace9be7fa4218d5d270fb476c036} 
+\index{Item@{Item}!charisma@{charisma}}
+\index{charisma@{charisma}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{charisma}{charisma}}
+{\footnotesize\ttfamily int Item\+::charisma = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Charisma attribute modifier. 
+
+
+
+Definition at line \mbox{\hyperlink{_item_8h_source_l00095}{95}} of file \mbox{\hyperlink{_item_8h_source}{Item.\+h}}.
+
+\Hypertarget{class_item_a7320f91a9eee50c47ad9001c4558ad9a}\label{class_item_a7320f91a9eee50c47ad9001c4558ad9a} 
+\index{Item@{Item}!constitution@{constitution}}
+\index{constitution@{constitution}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{constitution}{constitution}}
+{\footnotesize\ttfamily int Item\+::constitution = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Constitution attribute modifier. 
+
+
+
+Definition at line \mbox{\hyperlink{_item_8h_source_l00092}{92}} of file \mbox{\hyperlink{_item_8h_source}{Item.\+h}}.
+
+\Hypertarget{class_item_a42463b28e802877a4e2fce94589ad848}\label{class_item_a42463b28e802877a4e2fce94589ad848} 
+\index{Item@{Item}!dexterity@{dexterity}}
+\index{dexterity@{dexterity}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{dexterity}{dexterity}}
+{\footnotesize\ttfamily int Item\+::dexterity = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Dexterity attribute modifier. 
+
+
+
+Definition at line \mbox{\hyperlink{_item_8h_source_l00096}{96}} of file \mbox{\hyperlink{_item_8h_source}{Item.\+h}}.
+
+\Hypertarget{class_item_a80898565f99592018635deea6a175ddd}\label{class_item_a80898565f99592018635deea6a175ddd} 
+\index{Item@{Item}!dmgBonus@{dmgBonus}}
+\index{dmgBonus@{dmgBonus}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{dmgBonus}{dmgBonus}}
+{\footnotesize\ttfamily int Item\+::dmg\+Bonus = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Damage bonus modifier. 
+
+
+
+Definition at line \mbox{\hyperlink{_item_8h_source_l00099}{99}} of file \mbox{\hyperlink{_item_8h_source}{Item.\+h}}.
+
+\Hypertarget{class_item_a5866b44b63816265e197389f707ffe7b}\label{class_item_a5866b44b63816265e197389f707ffe7b} 
+\index{Item@{Item}!enchantmentModifier@{enchantmentModifier}}
+\index{enchantmentModifier@{enchantmentModifier}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{enchantmentModifier}{enchantmentModifier}}
+{\footnotesize\ttfamily int Item\+::enchantment\+Modifier = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Enchantment modifier for the item. 
+
+
+
+Definition at line \mbox{\hyperlink{_item_8h_source_l00088}{88}} of file \mbox{\hyperlink{_item_8h_source}{Item.\+h}}.
+
+\Hypertarget{class_item_a6a42b85897da5e73a5913404790e33e0}\label{class_item_a6a42b85897da5e73a5913404790e33e0} 
+\index{Item@{Item}!equipType@{equipType}}
+\index{equipType@{equipType}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{equipType}{equipType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_item_ab5eeb575e9d66ebcfef9b58b667fad05}{Item\+Type}} Item\+::equip\+Type}
+
+
+
+Definition at line \mbox{\hyperlink{_item_8h_source_l00040}{40}} of file \mbox{\hyperlink{_item_8h_source}{Item.\+h}}.
+
+\Hypertarget{class_item_a7263d056be7c7e490695c8f9e58a0a62}\label{class_item_a7263d056be7c7e490695c8f9e58a0a62} 
+\index{Item@{Item}!intelligence@{intelligence}}
+\index{intelligence@{intelligence}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{intelligence}{intelligence}}
+{\footnotesize\ttfamily int Item\+::intelligence = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Intelligence attribute modifier. 
+
+
+
+Definition at line \mbox{\hyperlink{_item_8h_source_l00093}{93}} of file \mbox{\hyperlink{_item_8h_source}{Item.\+h}}.
+
+\Hypertarget{class_item_a17b15dc1e47ddba7e5c98476aeae98a6}\label{class_item_a17b15dc1e47ddba7e5c98476aeae98a6} 
+\index{Item@{Item}!itemName@{itemName}}
+\index{itemName@{itemName}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{itemName}{itemName}}
+{\footnotesize\ttfamily std\+::string Item\+::item\+Name\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Name of the item. 
+
+
+
+Definition at line \mbox{\hyperlink{_item_8h_source_l00087}{87}} of file \mbox{\hyperlink{_item_8h_source}{Item.\+h}}.
+
+\Hypertarget{class_item_af5b78a340e4490cbd89c5781a138fafd}\label{class_item_af5b78a340e4490cbd89c5781a138fafd} 
+\index{Item@{Item}!itemOverall@{itemOverall}}
+\index{itemOverall@{itemOverall}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{itemOverall}{itemOverall}}
+{\footnotesize\ttfamily map$<$string, int$>$ Item\+::item\+Overall}
+
+
+
+Map to store overall item statistics. 
+
+
+
+Definition at line \mbox{\hyperlink{_item_8h_source_l00085}{85}} of file \mbox{\hyperlink{_item_8h_source}{Item.\+h}}.
+
+\Hypertarget{class_item_a6a41e330454a805923d12a1b85b79952}\label{class_item_a6a41e330454a805923d12a1b85b79952} 
+\index{Item@{Item}!strength@{strength}}
+\index{strength@{strength}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{strength}{strength}}
+{\footnotesize\ttfamily int Item\+::strength = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Strength attribute modifier. 
+
+
+
+Definition at line \mbox{\hyperlink{_item_8h_source_l00091}{91}} of file \mbox{\hyperlink{_item_8h_source}{Item.\+h}}.
+
+\Hypertarget{class_item_a02777809b18e153525f252fd7de64824}\label{class_item_a02777809b18e153525f252fd7de64824} 
+\index{Item@{Item}!wisdom@{wisdom}}
+\index{wisdom@{wisdom}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{wisdom}{wisdom}}
+{\footnotesize\ttfamily int Item\+::wisdom = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Wisdom attribute modifier. 
+
+
+
+Definition at line \mbox{\hyperlink{_item_8h_source_l00094}{94}} of file \mbox{\hyperlink{_item_8h_source}{Item.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/reuvenostrofsky/\+Library/\+Mobile Documents/com\texorpdfstring{$\sim$}{\string~}apple\texorpdfstring{$\sim$}{\string~}\+Cloud\+Docs/\+Concordia/\+Winter 2024/\+Comp345/\+Assignments/\+COMP345-\/\+A1/\mbox{\hyperlink{_item_8h}{Item.\+h}}\item 
+/\+Users/reuvenostrofsky/\+Library/\+Mobile Documents/com\texorpdfstring{$\sim$}{\string~}apple\texorpdfstring{$\sim$}{\string~}\+Cloud\+Docs/\+Concordia/\+Winter 2024/\+Comp345/\+Assignments/\+COMP345-\/\+A1/\mbox{\hyperlink{_item_8cpp}{Item.\+cpp}}\end{DoxyCompactItemize}

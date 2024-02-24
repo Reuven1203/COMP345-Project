@@ -1,0 +1,92 @@
+\doxysection{/\+Users/reuvenostrofsky/\+Library/\+Mobile Documents/com\texorpdfstring{$\sim$}{\string~}apple\texorpdfstring{$\sim$}{\string~}\+Cloud\+Docs/\+Concordia/\+Winter 2024/\+Comp345/\+Assignments/\+COMP345-\/\+A1/\+Dice.h File Reference}
+\hypertarget{_dice_8h}{}\label{_dice_8h}\index{/Users/reuvenostrofsky/Library/Mobile Documents/com\texorpdfstring{$\sim$}{\string~}apple\texorpdfstring{$\sim$}{\string~}CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-\/A1/Dice.h@{/Users/reuvenostrofsky/Library/Mobile Documents/com\texorpdfstring{$\sim$}{\string~}apple\texorpdfstring{$\sim$}{\string~}CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-\/A1/Dice.h}}
+
+
+Declaration of the \doxylink{class_dice}{Dice} class and related enums and structs.  
+
+
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include "{}Random.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_roll}{Roll}}
+\begin{DoxyCompactList}\small\item\em Struct to represent a dice roll. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_dice}{Dice}}
+\begin{DoxyCompactList}\small\item\em Class for rolling dice. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_dice_8h_a230fe26a49ff11b10bb851e08f88d9d4}{Die\+Type}} \{ \newline
+\mbox{\hyperlink{_dice_8h_a230fe26a49ff11b10bb851e08f88d9d4a0f3bbd8fbda2286c2337cb0cc5193efe}{d4}} =4
+, \mbox{\hyperlink{_dice_8h_a230fe26a49ff11b10bb851e08f88d9d4ac04c128e4a3fa6eb2850cc348db6a002}{d6}} =6
+, \mbox{\hyperlink{_dice_8h_a230fe26a49ff11b10bb851e08f88d9d4a164ca6aa6a6622ac091ca25cc5bc3cf4}{d8}} =8
+, \mbox{\hyperlink{_dice_8h_a230fe26a49ff11b10bb851e08f88d9d4a019b0143eef620402dc7f0248eb621b7}{d10}} =10
+, \newline
+\mbox{\hyperlink{_dice_8h_a230fe26a49ff11b10bb851e08f88d9d4a0206a46644b9f8a84e490bb0b264e599}{d12}} =12
+, \mbox{\hyperlink{_dice_8h_a230fe26a49ff11b10bb851e08f88d9d4a8044c0658936701d37401befdb83a91f}{d20}} =20
+, \mbox{\hyperlink{_dice_8h_a230fe26a49ff11b10bb851e08f88d9d4a99253168f59aaae6a6e0541852f5894f}{d100}} =100
+ \}
+\begin{DoxyCompactList}\small\item\em Enum to represent different types of dice. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Declaration of the \doxylink{class_dice}{Dice} class and related enums and structs. 
+
+\begin{DoxyAuthor}{Author}
+Julian D\textquotesingle{}Addario 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Feb 7, 2024 
+\end{DoxyDate}
+
+
+Definition in file \mbox{\hyperlink{_dice_8h_source}{Dice.\+h}}.
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{_dice_8h_a230fe26a49ff11b10bb851e08f88d9d4}\label{_dice_8h_a230fe26a49ff11b10bb851e08f88d9d4} 
+\index{Dice.h@{Dice.h}!DieType@{DieType}}
+\index{DieType@{DieType}!Dice.h@{Dice.h}}
+\doxysubsubsection{\texorpdfstring{DieType}{DieType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_dice_8h_a230fe26a49ff11b10bb851e08f88d9d4}{Die\+Type}}}
+
+
+
+Enum to represent different types of dice. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{d4@{d4}!Dice.h@{Dice.h}}\index{Dice.h@{Dice.h}!d4@{d4}}}\Hypertarget{_dice_8h_a230fe26a49ff11b10bb851e08f88d9d4a0f3bbd8fbda2286c2337cb0cc5193efe}\label{_dice_8h_a230fe26a49ff11b10bb851e08f88d9d4a0f3bbd8fbda2286c2337cb0cc5193efe} 
+d4&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{d6@{d6}!Dice.h@{Dice.h}}\index{Dice.h@{Dice.h}!d6@{d6}}}\Hypertarget{_dice_8h_a230fe26a49ff11b10bb851e08f88d9d4ac04c128e4a3fa6eb2850cc348db6a002}\label{_dice_8h_a230fe26a49ff11b10bb851e08f88d9d4ac04c128e4a3fa6eb2850cc348db6a002} 
+d6&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{d8@{d8}!Dice.h@{Dice.h}}\index{Dice.h@{Dice.h}!d8@{d8}}}\Hypertarget{_dice_8h_a230fe26a49ff11b10bb851e08f88d9d4a164ca6aa6a6622ac091ca25cc5bc3cf4}\label{_dice_8h_a230fe26a49ff11b10bb851e08f88d9d4a164ca6aa6a6622ac091ca25cc5bc3cf4} 
+d8&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{d10@{d10}!Dice.h@{Dice.h}}\index{Dice.h@{Dice.h}!d10@{d10}}}\Hypertarget{_dice_8h_a230fe26a49ff11b10bb851e08f88d9d4a019b0143eef620402dc7f0248eb621b7}\label{_dice_8h_a230fe26a49ff11b10bb851e08f88d9d4a019b0143eef620402dc7f0248eb621b7} 
+d10&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{d12@{d12}!Dice.h@{Dice.h}}\index{Dice.h@{Dice.h}!d12@{d12}}}\Hypertarget{_dice_8h_a230fe26a49ff11b10bb851e08f88d9d4a0206a46644b9f8a84e490bb0b264e599}\label{_dice_8h_a230fe26a49ff11b10bb851e08f88d9d4a0206a46644b9f8a84e490bb0b264e599} 
+d12&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{d20@{d20}!Dice.h@{Dice.h}}\index{Dice.h@{Dice.h}!d20@{d20}}}\Hypertarget{_dice_8h_a230fe26a49ff11b10bb851e08f88d9d4a8044c0658936701d37401befdb83a91f}\label{_dice_8h_a230fe26a49ff11b10bb851e08f88d9d4a8044c0658936701d37401befdb83a91f} 
+d20&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{d100@{d100}!Dice.h@{Dice.h}}\index{Dice.h@{Dice.h}!d100@{d100}}}\Hypertarget{_dice_8h_a230fe26a49ff11b10bb851e08f88d9d4a99253168f59aaae6a6e0541852f5894f}\label{_dice_8h_a230fe26a49ff11b10bb851e08f88d9d4a99253168f59aaae6a6e0541852f5894f} 
+d100&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_dice_8h_source_l00017}{17}} of file \mbox{\hyperlink{_dice_8h_source}{Dice.\+h}}.
+

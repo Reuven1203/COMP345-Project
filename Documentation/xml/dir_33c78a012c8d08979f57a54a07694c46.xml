@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="dir_33c78a012c8d08979f57a54a07694c46" kind="dir">
+    <compoundname>/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Tests</compoundname>
+    <innerdir refid="dir_fc43c8c3672b004373891ac3cf051763">/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Tests/Character</innerdir>
+    <innerfile refid="_test_runner_8cpp">TestRunner.cpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Tests/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,35 @@
+\doxysection{/\+Users/reuvenostrofsky/\+Library/\+Mobile Documents/com\texorpdfstring{$\sim$}{\string~}apple\texorpdfstring{$\sim$}{\string~}\+Cloud\+Docs/\+Concordia/\+Winter 2024/\+Comp345/\+Assignments/\+COMP345-\/\+A1/\+Dice.h}
+\hypertarget{_dice_8h_source}{}\label{_dice_8h_source}\mbox{\hyperlink{_dice_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00008}00008\ \textcolor{preprocessor}{\#ifndef\ DICE\_DICE\_H}}
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00009}00009\ \textcolor{preprocessor}{\#define\ DICE\_DICE\_H}}
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00012}00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_random_8h}{Random.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00017}\mbox{\hyperlink{_dice_8h_a230fe26a49ff11b10bb851e08f88d9d4a019b0143eef620402dc7f0248eb621b7}{00017}}\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_dice_8h_a230fe26a49ff11b10bb851e08f88d9d4}{DieType}}\ \{\ \mbox{\hyperlink{_dice_8h_a230fe26a49ff11b10bb851e08f88d9d4a0f3bbd8fbda2286c2337cb0cc5193efe}{d4}}=4,\ \mbox{\hyperlink{_dice_8h_a230fe26a49ff11b10bb851e08f88d9d4ac04c128e4a3fa6eb2850cc348db6a002}{d6}}=6,\ \mbox{\hyperlink{_dice_8h_a230fe26a49ff11b10bb851e08f88d9d4a164ca6aa6a6622ac091ca25cc5bc3cf4}{d8}}=8,\ \mbox{\hyperlink{_dice_8h_a230fe26a49ff11b10bb851e08f88d9d4a019b0143eef620402dc7f0248eb621b7}{d10}}=10,\ \mbox{\hyperlink{_dice_8h_a230fe26a49ff11b10bb851e08f88d9d4a0206a46644b9f8a84e490bb0b264e599}{d12}}=12,\ \mbox{\hyperlink{_dice_8h_a230fe26a49ff11b10bb851e08f88d9d4a8044c0658936701d37401befdb83a91f}{d20}}=20,\ \mbox{\hyperlink{_dice_8h_a230fe26a49ff11b10bb851e08f88d9d4a99253168f59aaae6a6e0541852f5894f}{d100}}=100\ \};}
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00022}\mbox{\hyperlink{struct_roll}{00022}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_roll}{Roll}}\ \{}
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00023}\mbox{\hyperlink{struct_roll_a3cb71ced3ef29ff0afa456ad8118fdfb}{00023}}\ \ \ \ \ \mbox{\hyperlink{_dice_8h_a230fe26a49ff11b10bb851e08f88d9d4}{DieType}}\ \mbox{\hyperlink{struct_roll_a3cb71ced3ef29ff0afa456ad8118fdfb}{dieType}};\ }
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00024}\mbox{\hyperlink{struct_roll_a46259184936b6d6d4ea562c673d45c38}{00024}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_roll_a46259184936b6d6d4ea562c673d45c38}{numDice}};\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00025}\mbox{\hyperlink{struct_roll_a01f731aaab799072a0dc9e2117ef1b4a}{00025}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_roll_a01f731aaab799072a0dc9e2117ef1b4a}{numAdded}};\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00026}00026\ \};}
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00034}\mbox{\hyperlink{class_dice}{00034}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_dice}{Dice}}\ \{}
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00035}00035\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00042}00042\ \ \ \ \ \mbox{\hyperlink{struct_roll}{Roll}}\ \mbox{\hyperlink{class_dice_aa7ec1a35d7132d3dec12afa4a905e07d}{parseRoll}}(std::string\ str);}
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00051}00051\ \ \ \ \ \mbox{\hyperlink{_dice_8h_a230fe26a49ff11b10bb851e08f88d9d4}{DieType}}\ \mbox{\hyperlink{class_dice_ad11d882fd5b27d53ef927a7d8a9f9325}{parseDie}}(std::string\ dieTypeStr,\ std::string\ str);}
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00058}00058\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dice_a628f958b8db4a9c64355421c4473a83a}{diceRollStringErr}}(std::string\ str);}
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00060}00060\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00066}\mbox{\hyperlink{class_dice_a898cd5b1af808873efac3d979645e775}{00066}}\ \ \ \ \ \mbox{\hyperlink{class_dice_a898cd5b1af808873efac3d979645e775}{Dice}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00074}00074\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_dice_a4b5adb8de2005855739bd66ba3b79290}{roll}}(std::string\ rollString);}
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00075}00075\ \};}
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00077}00077\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//DICE\_DICE\_H}}
+
+\end{DoxyCode}

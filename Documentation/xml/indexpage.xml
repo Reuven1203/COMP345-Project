@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="indexpage" kind="page">
+    <compoundname>index</compoundname>
+    <title>COMP345-A1</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><anchor id="index_1md__2_users_2reuvenostrofsky_2_library_2_mobile_01_documents_2com_0iapple_0i_cloud_docs_2_concordia_2_winter_012024_2_comp345_2_assignments_2_c_o_m_p345-_a1_2_r_e_a_d_m_e"/> Comp345 d20 Assignment</para>
+<para>Requires C++17 or later. </para>
+    </detaileddescription>
+    <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/README.md"/>
+  </compounddef>
+</doxygen>

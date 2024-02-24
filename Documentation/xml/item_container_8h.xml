@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="item_container_8h" kind="file" language="C++">
+    <compoundname>itemContainer.h</compoundname>
+    <includes local="no">iostream</includes>
+    <includes local="no">vector</includes>
+    <includes refid="_item_8h" local="yes">Item.h</includes>
+    <includedby refid="item_container_8cpp" local="yes">/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/itemContainer.cpp</includedby>
+    <incdepgraph>
+      <node id="4">
+        <label>Item.h</label>
+        <link refid="_item_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/itemContainer.h</label>
+        <link refid="item_container_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>iostream</label>
+      </node>
+      <node id="6">
+        <label>map</label>
+      </node>
+      <node id="5">
+        <label>random</label>
+      </node>
+      <node id="3">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/itemContainer.cpp</label>
+        <link refid="item_container_8cpp"/>
+      </node>
+      <node id="1">
+        <label>/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/itemContainer.h</label>
+        <link refid="item_container_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classcontainer" prot="public">container</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>Author:<sp/>Richard<sp/>Mauricio</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/>ID:<sp/><sp/><sp/><sp/><sp/>40224398</highlight></codeline>
+<codeline lineno="3"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_item_8h" kindref="compound">Item.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7" refid="classcontainer" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classcontainer" kindref="compound">container</ref>{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><ref refid="classcontainer_1a37b5e9e48cf89b0e0e74c122cdc27027" kindref="member">container</ref>();</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><ref refid="classcontainer_1a6511207443e6f97ca31eb01c0dbc413b" kindref="member">~container</ref>();</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//getters</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcontainer_1ade56880f5e6a58f370ade4e1184a705a" kindref="member">getItems</ref>();</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcontainer_1a6043dca82ce0a2b258aa8e67071bcf33" kindref="member">getItemStats</ref>();</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">//setters</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classcontainer_1a021f0615f766a3b3189ea6b4a46790e1" kindref="member">storeItem</ref>(<ref refid="class_item" kindref="compound">Item</ref>&amp;);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="21" refid="classcontainer_1a705d84133ad98e0cc1b0896db149fa5e" refkind="member"><highlight class="normal">vector&lt;Item&gt;<ref refid="classcontainer_1a705d84133ad98e0cc1b0896db149fa5e" kindref="member">storedItems</ref>;</highlight></codeline>
+<codeline lineno="22" refid="classcontainer_1a51c87905771b9e8ac1dadac927c530b6" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="classcontainer_1a51c87905771b9e8ac1dadac927c530b6" kindref="member">name</ref>;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/itemContainer.h"/>
+  </compounddef>
+</doxygen>
