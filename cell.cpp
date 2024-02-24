@@ -5,27 +5,26 @@ using namespace std;
 
 cell::cell()
 {
-    visit=false;
-    type = Nothing;
-   
-    // player = nullptr;
-    chest = nullptr;
+    this->visit=false;
+    this->type = Nothing;
+     this->player = nullptr;
+    this->chest = nullptr;
 }
-cell::~cell(){};
+cell::~cell()= default;
 
 cell::cell(cellType types)
 {
     type=types;
 }
-// cell::cell(Character *person)
-// {
+cell::cell(Character *person) {
+    if (type==Nothing)
+    {
+        player = person;
+        type = Player;
+    }
 
-//     if (type==Nothing)
-//     {
-//         player = person;
-//         type = Player;
-//     }
-// }
+}
+
 
 cell::cell(container *itemStorage)
 {
@@ -52,14 +51,14 @@ void cell::setChest(container *itemStorage)
     chest = itemStorage;
 }
 
-// void cell::setPlayer(Character *person)
-// {
-//     player = person;
-// }
+ void cell::setPlayer(Character *person)
+ {
+     player = person;
+ }
 
 void cell::removeContent()
 {
-    // player = nullptr;
+    player = nullptr;
     chest = nullptr;
     type=Nothing;
 }
@@ -84,3 +83,21 @@ void cell::clearVisit()
 {
     visit=false;
 }
+
+void cell::setRowPos(int row) {
+    this->rowPos = row;
+}
+
+void cell::setColPos(int col) {
+    this->colPos = col;
+}
+
+int cell::getRowPos() const {
+    return this->rowPos;
+}
+
+int cell::getColPos() const {
+    return this->colPos;
+}
+
+
