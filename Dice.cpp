@@ -14,11 +14,9 @@
  *
  * @param roll string that caused the error
  */
-void Dice::diceRollStringErr(std:: string str) {
-    std::cout << "Error, invalid dice rolling string: " << str << '\n';
-    std::exit(1);
+void Dice::diceRollStringErr(const std:: string& str) {
+    throw std::invalid_argument("Error, invalid dice rolling string: " + str);
 }
-
 /*
  * Parses string to use the correct type of die
  *
@@ -57,6 +55,7 @@ DieType Dice::parseDie(std::string dieTypeStr, std::string str) {
 Roll Dice::parseRoll(std::string str) {
     // Initialize part of the string being parsed to 1 and numDice/die to empty strings.
     int part {1};
+    bool plus = false;
     std::string numDice {};
     std::string die {};
     // numAdded initialized to '0' as no 'z' in roll string xdy[+z] means adding 0 to dice roll.
@@ -70,6 +69,10 @@ Roll Dice::parseRoll(std::string str) {
             continue;
         }
         else if (str[i] == '+') {
+            if (plus && !checkIfNumber(str[i])) {
+                diceRollStringErr(str);
+            }
+            plus = true;
             part = 3;
             continue;
         }
@@ -82,6 +85,8 @@ Roll Dice::parseRoll(std::string str) {
         }
         else if (part == 3 && str[i] >= '0' && str[i] <= '9') {
             numAdded += str[i];
+        }else if (i == str.length()) {
+            break;
         }
     }
 
@@ -123,3 +128,7 @@ int Dice::roll(std::string rollString) {
     // Return final total
     return total;
 }
+
+bool Dice::checkIfNumber(char str){
+    return str >= '0' && str <= '9';
+};

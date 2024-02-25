@@ -32,6 +32,7 @@ struct Roll {
  * This class provides functionality to roll dice based on a given roll string.
  */
 class Dice {
+    friend class DiceTest; // For testing purposes
 private:
     /**
      * @brief Internal method to parse a string into a Roll struct.
@@ -55,7 +56,8 @@ private:
      *
      * @param str The invalid roll string.
      */
-    static void diceRollStringErr(std::string str);
+    static void diceRollStringErr(const std::string& str);
+    bool checkIfNumber(char c);
 
 public:
     /**
