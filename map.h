@@ -16,6 +16,8 @@
 #include <vector>
 #include "cell.h"
 
+class MapTest;
+
 class dungeonMap
 {
     friend class cell; ///< Allows cell class to access private members of dungeonMap.
@@ -160,6 +162,7 @@ private:
     bool isValidLocation(int row, int col); ///< Validates if a location can be modified.
     void addWallChoice(int* x, int* y); ///< Interactively allows adding a wall.
     void removeWallChoice(int* x, int* y); ///< Interactively allows removing a wall.
+    friend MapTest;
 };
 
 #endif // MAP_H

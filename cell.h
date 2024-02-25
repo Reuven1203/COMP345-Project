@@ -28,6 +28,8 @@ enum cellType
     Wall ///< Indicates the cell contains a wall.
 };
 
+class CellTest;
+
 /**
  * @class cell
  * @brief Represents a single cell within a dungeon map.
@@ -150,6 +152,7 @@ private:
      * @param col The column index to set for the cell.
      */
     void setColPos(int col);
+    friend CellTest;
 
     
     /* Add in when necessary
