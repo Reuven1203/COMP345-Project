@@ -1,6 +1,13 @@
-/* Author: Richard Mauricio
-   ID:     40224398
-*/
+/**
+ * @file Item.cpp
+ * @brief Implementation of the Item class for a game environment.
+ *
+ * This file provides the functionality to create items with different types and statistics for use within the game.
+ * Each item can have modifiers that affect the character's attributes.
+ *
+ * @author Richard Mauricio
+ * @date 2024-02-24
+ */
 
 #include <iostream>
 #include <iomanip>
@@ -11,11 +18,22 @@
 
 using namespace std;
 
+/**
+ * @brief Default constructor that marks the item as null.
+ */
 Item::Item() {
     this->nullItem = true;
 }
+
+/**
+ * @brief Destructor for the Item class.
+ */
 Item::~Item() {}
 
+/**
+ * @brief Constructor that initializes an item of a specific type.
+ * @param equip The type of the item being created.
+ */
 Item::Item(ItemType equip)
 {
     this->nullItem = false;
@@ -23,7 +41,14 @@ Item::Item(ItemType equip)
     setEquipStats();
 }
 
-//Roll a random number from 1-5 and return modifier
+/**
+ * @brief Rolls a random stat modifier for the item.
+ *
+ * Uses a dice roll to generate a random number between 1 and 5 as the enchantment modifier.
+ * If the roll is greater than 5, it re-rolls until a valid number is obtained.
+ *
+ * @return The enchantment modifier as an integer.
+ */
 int Item::rollStatMod()
 {
     Dice dice;
@@ -32,11 +57,17 @@ int Item::rollStatMod()
     {
         em = dice.roll("1d6");
     }
-   enchantmentModifier= em;
-   return enchantmentModifier;
+    enchantmentModifier = em;
+    return enchantmentModifier;
 }
 
-// Getters
+/**
+ * @brief Retrieves the equipment type as a string.
+ *
+ * Converts the enum value of the equipment type to a human-readable string.
+ *
+ * @return The equipment type in string format.
+ */
 string Item::getEquipType() const
 {
    switch(equipType)
@@ -64,48 +95,100 @@ string Item::getEquipType() const
                                     break;
    }
 }
+/**
+ * @brief Getter for the Strength attribute modifier.
+ * @return The strength modifier of the item.
+ */
 int Item::getSTR()
 {
     return strength;
 }
+/**
+ * @brief Getter for the Constitution attribute modifier.
+ * @return The constitution modifier of the item.
+ */
 int Item::getCON()
 {
     return constitution;
 }
+
+/**
+ * @brief Getter for the Intelligence attribute modifier.
+ * @return The intelligence modifier of the item.
+ */
 int Item::getINT()
 {
     return intelligence;
 }
+
+/**
+ * @brief Getter for the Wisdom attribute modifier.
+ * @return The wisdom modifier of the item.
+ */
 int Item::getWIS()
 {
     return wisdom;
 }
+
+/**
+ * @brief Getter for the Charisma attribute modifier.
+ * @return The charisma modifier of the item.
+ */
 int Item::getCHA()
 {
     return charisma;
 }
+
+/**
+ * @brief Getter for the Dexterity attribute modifier.
+ * @return The dexterity modifier of the item.
+ */
 int Item::getDEX()
 {
     return dexterity;
 }
+
+/**
+ * @brief Getter for the Armor Class modifier.
+ * @return The armor class modifier of the item.
+ */
 int Item::getAC()
 {
     return armorClass;
 }
+
+/**
+ * @brief Getter for the Attack Bonus modifier.
+ * @return The attack bonus modifier of the item.
+ */
 int Item::getATKBONUS()
 {
     return atkBonus;
 }
+
+/**
+ * @brief Getter for the Damage Bonus modifier.
+ * @return The damage bonus modifier of the item.
+ */
 int Item::getDMGBonus()
 {
     return dmgBonus;
 }
+
+/**
+ * @brief Checks if the item is a null item.
+ * @return True if the item is null, false otherwise.
+ */
 bool Item::getIfNull()
 {
     return nullItem;
 }
 
-//Prints stats of Item
+/**
+ * @brief Prints the statistics of the item.
+ *
+ * Outputs the type and all statistics of the item to standard output.
+ */
 void Item::printStats() const {
 
     cout << "Item type:  " << getEquipType() << endl;
@@ -115,15 +198,19 @@ void Item::printStats() const {
     }
     cout<<endl;
 }
-
-// Setters
+/**
+ * @brief Sets the equipment type of the item.
+ * @param type The new type for the item.
+ */
 void Item::setEquipType(ItemType type)
 {
     this->equipType = type;
 }
-
-
-//Called when Item is initialized
+/**
+ * @brief Initializes or sets the statistics for the item based on its type.
+ *
+ * Each item type has different statistics associated with it, which are set by this method.
+ */
 void Item::setEquipStats()
 {
          
