@@ -14,6 +14,8 @@ class ItemTest: public CppUnit::TestFixture {
     CPPUNIT_TEST(testConstructor);
     CPPUNIT_TEST(testRollStatMod);
     CPPUNIT_TEST(testGetters);
+    CPPUNIT_TEST(testSetEquipType);
+    CPPUNIT_TEST(testSetEquipStats);
     CPPUNIT_TEST_SUITE_END();
 
 public:
@@ -22,6 +24,8 @@ public:
     static void testConstructor();
     static void testRollStatMod();
     static void testGetters();
+    static void testSetEquipType();
+    static void testSetEquipStats();
 private:
     Item* item{};
 };
