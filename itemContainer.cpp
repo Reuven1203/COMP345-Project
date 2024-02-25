@@ -20,10 +20,12 @@ container::~container(){}
 //prints Item types in container
 void container::getItems()
 {
+    int counter = 0;
     cout<<"List of items in container:"<<endl;
     for(auto &i:storedItems)
     {
-        cout<<i.getEquipType()<<" | ";
+        cout<<counter<<". " << i.getEquipType() << " | ";
+        counter++;
     }
     cout<<"\n\n";
 }
@@ -42,4 +44,19 @@ void container::getItemStats()
 void container::storeItem(Item& itemObtained)
 {
     storedItems.push_back(itemObtained);
+}
+
+Item container::removeItemFromChest(int index)
+{
+ 
+        Item hold = storedItems[index];
+        deleteItemInChest(index);
+        return hold;
+        
+    
+}
+
+void container::deleteItemInChest(int index)
+{
+    storedItems.erase(storedItems.begin()+index);
 }

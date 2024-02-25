@@ -19,6 +19,7 @@ public:
     void setEnd(int x,int y);
     void setWall(int x,int y);
     void removeWall(int x,int y);
+    void removeCellContent(int x, int y);
     void setPlayer(Character *player, int x, int y);
     [[nodiscard]] int getStartX() const;
     [[nodiscard]] int getStartY() const;

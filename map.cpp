@@ -129,7 +129,7 @@ void dungeonMap::setStart(int x, int y)
     }
     this->startY = y;
     this->startX = x;
-    this->start = &dungeon[startX][startY];
+    //this->start = &dungeon[startX][startY];
 }
 
 // Setting End point of map
@@ -178,12 +178,18 @@ void dungeonMap::printMap()
 
         for (int col = 0; col < cols; col++)
         {
-            if (isStart(&dungeon[row][col]))
+            if (row==startX && col==startY && dungeon[row][col].getCellType()==Player)
             {
                 cout << "|  "
-                     << "S  ";
+                     << "S/P";
                 continue;
-            }else if(isEnd(&dungeon[row][col]))
+            }
+            else if(isStart(&dungeon[row][col])){
+                cout << "|  "
+                    << "S  ";
+                    continue;
+            }
+            else if(isEnd(&dungeon[row][col]))
             {
                 cout << "|  "
                      << "E  ";
@@ -208,6 +214,11 @@ void dungeonMap::printMap()
                 cout << "|  "
                      << "W  ";
                 break;
+            }
+            case Chest:
+            {
+                cout << "|  "
+                    << "C  ";
             }
             }
         }
@@ -306,4 +317,8 @@ void dungeonMap::removeWallChoice(int *x, int *y) {
         return;
     }
     removeWall(*x, *y);
+}
+
+void dungeonMap::removeCellContent(int x, int y) {
+    dungeon[x][y].removeContent();
 }
