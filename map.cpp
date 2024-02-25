@@ -61,9 +61,9 @@ void dungeonMap::setChest(container* chest, int x, int y)
  */
 void dungeonMap::setWall(int x, int y)
 {
-    if (dungeon[x][y].getCellType() == Nothing)
+    if (dungeon[y][x].getCellType() == Nothing)
     {
-        dungeon[x][y].setCellType(Wall);
+        dungeon[y][x].setCellType(Wall);
     }
     else
     {
@@ -435,7 +435,7 @@ void dungeonMap::removeWallChoice(int *x, int *y) {
         cout << "Invalid Y coordinate." << endl;
         return;
     }
-    removeWall(*x, *y);
+    removeWall(*y, *x);
 }
 /**
  * @brief Removes the content of a specified cell.
