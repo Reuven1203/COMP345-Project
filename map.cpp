@@ -169,7 +169,7 @@ void dungeonMap::userInputWalls()
                 setWall(wallCoordinateY, wallCoordinateX);
             if(!isValid()){
                 cout << "Invalid map, wall cannot be placed here." << endl;
-                removeWall(wallCoordinateX, wallCoordinateY);
+                removeWall(wallCoordinateY, wallCoordinateX);
             }
             break;
         }

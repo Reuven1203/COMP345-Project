@@ -216,8 +216,6 @@ void CharacterTest::testBootsEquip() {
     //check if the boots are no longer affecting the character's stats
     CPPUNIT_ASSERT_EQUAL(acBefore, character->getStat(Character::Stats::AC));
     CPPUNIT_ASSERT_EQUAL(dexBefore, character->getAbilityScore(Character::Ability::Dexterity));
-
-
 }
 
 

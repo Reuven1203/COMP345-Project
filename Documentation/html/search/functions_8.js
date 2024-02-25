@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['random_0',['random',['../namespace_random.html#a96193c13c6d59d02b8bd0462a75415c2',1,'Random']]],
-  ['reduceabilityafterunequip_1',['reduceAbilityAfterUnequip',['../class_character.html#ac6b5ccaa4ad98fe99685d3ddaf48edb3',1,'Character']]],
-  ['roll_2',['roll',['../class_dice.html#a4b5adb8de2005855739bd66ba3b79290',1,'Dice']]],
-  ['rollstatmod_3',['rollStatMod',['../class_item.html#a7421dba941e6ca9b4aa875e53dee7776',1,'Item']]]
+  ['parsedie_0',['parseDie',['../class_dice.html#ad11d882fd5b27d53ef927a7d8a9f9325',1,'Dice']]],
+  ['parseroll_1',['parseRoll',['../class_dice.html#aa7ec1a35d7132d3dec12afa4a905e07d',1,'Dice']]],
+  ['printmap_2',['printMap',['../classdungeon_map.html#a6cc5aebe4a6554dffad1ce8f0c329860',1,'dungeonMap']]],
+  ['printstats_3',['printStats',['../class_item.html#aebb8bb531798a53468a8776a209f4fae',1,'Item']]]
 ];

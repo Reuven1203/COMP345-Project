@@ -11,6 +11,7 @@
     <includedby refid="item_container_8cpp" local="yes">/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/itemContainer.cpp</includedby>
     <includedby refid="item_container_8h" local="yes">/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/itemContainer.h</includedby>
     <includedby refid="main_8cpp" local="yes">/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/main.cpp</includedby>
+    <includedby refid="map-test_8cpp" local="yes">/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/map-test.cpp</includedby>
     <incdepgraph>
       <node id="1">
         <label>/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h</label>
@@ -49,9 +50,11 @@
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="9" relation="include">
-        </childnode>
         <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
         </childnode>
       </node>
       <node id="5">
@@ -67,8 +70,10 @@
         </childnode>
         <childnode refid="8" relation="include">
         </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
       </node>
-      <node id="9">
+      <node id="10">
         <label>/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.cpp</label>
         <link refid="_item_8cpp"/>
       </node>
@@ -77,23 +82,25 @@
         <link refid="_item_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="9" relation="include">
+        <childnode refid="10" relation="include">
         </childnode>
-        <childnode refid="12" relation="include">
+        <childnode refid="21" relation="include">
         </childnode>
-        <childnode refid="13" relation="include">
+        <childnode refid="22" relation="include">
         </childnode>
         <childnode refid="8" relation="include">
         </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
       </node>
-      <node id="11">
+      <node id="12">
         <label>/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Tests/Character/CharacterTest.cpp</label>
         <link refid="_character_test_8cpp"/>
       </node>
-      <node id="10">
+      <node id="11">
         <label>/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Tests/Character/CharacterTest.h</label>
         <link refid="_character_test_8h"/>
-        <childnode refid="11" relation="include">
+        <childnode refid="12" relation="include">
         </childnode>
       </node>
       <node id="7">
@@ -106,19 +113,83 @@
         <childnode refid="7" relation="include">
         </childnode>
       </node>
-      <node id="12">
+      <node id="15">
+        <label>/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Tests/Map/CellTest.cpp</label>
+        <link refid="_cell_test_8cpp"/>
+      </node>
+      <node id="14">
+        <label>/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Tests/Map/CellTest.h</label>
+        <link refid="_cell_test_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Tests/Map/MapTest.cpp</label>
+        <link refid="_map_test_8cpp"/>
+      </node>
+      <node id="16">
+        <label>/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Tests/Map/MapTest.h</label>
+        <link refid="_map_test_8h"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/cell.cpp</label>
+        <link refid="cell_8cpp"/>
+      </node>
+      <node id="13">
+        <label>/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/cell.h</label>
+        <link refid="cell_8h"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
         <label>/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/itemContainer.cpp</label>
         <link refid="item_container_8cpp"/>
       </node>
-      <node id="13">
+      <node id="22">
         <label>/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/itemContainer.h</label>
         <link refid="item_container_8h"/>
-        <childnode refid="12" relation="include">
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
         </childnode>
       </node>
       <node id="8">
         <label>/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/main.cpp</label>
         <link refid="main_8cpp"/>
+      </node>
+      <node id="9">
+        <label>/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/map-test.cpp</label>
+        <link refid="map-test_8cpp"/>
+      </node>
+      <node id="19">
+        <label>/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/map.cpp</label>
+        <link refid="map_8cpp"/>
+      </node>
+      <node id="20">
+        <label>/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/map.h</label>
+        <link refid="map_8h"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
       </node>
     </invincdepgraph>
     <innerclass refid="class_item" prot="public">Item</innerclass>
@@ -177,27 +248,28 @@
 <codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_item_1a6e611bdc812fc0e0ebdeb43b46d18db4" kindref="member">getAC</ref>();</highlight></codeline>
 <codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_item_1a122ea70ddecf55ed2b01565c84572865" kindref="member">getATKBONUS</ref>();</highlight></codeline>
 <codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_item_1ae31eceb14a821c8becd53927221807de" kindref="member">getDMGBonus</ref>();</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"></highlight></codeline>
-<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_item_1aebb8bb531798a53468a8776a209f4fae" kindref="member">printStats</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="85" refid="class_item_1af5b78a340e4490cbd89c5781a138fafd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>map&lt;string,<sp/>int&gt;<sp/><ref refid="class_item_1af5b78a340e4490cbd89c5781a138fafd" kindref="member">itemOverall</ref>;</highlight></codeline>
-<codeline lineno="86"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="87" refid="class_item_1a17b15dc1e47ddba7e5c98476aeae98a6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="class_item_1a17b15dc1e47ddba7e5c98476aeae98a6" kindref="member">itemName</ref>;<sp/></highlight></codeline>
-<codeline lineno="88" refid="class_item_1a5866b44b63816265e197389f707ffe7b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_item_1a5866b44b63816265e197389f707ffe7b" kindref="member">enchantmentModifier</ref><sp/>=<sp/>0;<sp/></highlight></codeline>
-<codeline lineno="89"><highlight class="normal"></highlight></codeline>
-<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Stats</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="91" refid="class_item_1a6a41e330454a805923d12a1b85b79952" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_item_1a6a41e330454a805923d12a1b85b79952" kindref="member">strength</ref><sp/>=<sp/>0;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="92" refid="class_item_1a7320f91a9eee50c47ad9001c4558ad9a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_item_1a7320f91a9eee50c47ad9001c4558ad9a" kindref="member">constitution</ref><sp/>=<sp/>0;<sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="93" refid="class_item_1a7263d056be7c7e490695c8f9e58a0a62" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_item_1a7263d056be7c7e490695c8f9e58a0a62" kindref="member">intelligence</ref><sp/>=<sp/>0;<sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="94" refid="class_item_1a02777809b18e153525f252fd7de64824" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_item_1a02777809b18e153525f252fd7de64824" kindref="member">wisdom</ref><sp/>=<sp/>0;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="95" refid="class_item_1a2636ace9be7fa4218d5d270fb476c036" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_item_1a2636ace9be7fa4218d5d270fb476c036" kindref="member">charisma</ref><sp/>=<sp/>0;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="96" refid="class_item_1a42463b28e802877a4e2fce94589ad848" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_item_1a42463b28e802877a4e2fce94589ad848" kindref="member">dexterity</ref><sp/>=<sp/>0;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="97" refid="class_item_1ad0d8d8215d19d9a7b3fe139c90562f31" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_item_1ad0d8d8215d19d9a7b3fe139c90562f31" kindref="member">armorClass</ref><sp/>=<sp/>0;<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="98" refid="class_item_1a83411ac82bdfa5f01989a958ca9a8f4a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_item_1a83411ac82bdfa5f01989a958ca9a8f4a" kindref="member">atkBonus</ref><sp/>=<sp/>0;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="99" refid="class_item_1a80898565f99592018635deea6a175ddd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_item_1a80898565f99592018635deea6a175ddd" kindref="member">dmgBonus</ref><sp/>=<sp/>0;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="100"><highlight class="normal"></highlight></codeline>
-<codeline lineno="101"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="102"><highlight class="normal"></highlight></codeline>
-<codeline lineno="103"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>ITEM_H</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_item_1aced4ea8fa470b7e2bd9a1717485c1561" kindref="member">getIfNull</ref>();</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_item_1aebb8bb531798a53468a8776a209f4fae" kindref="member">printStats</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="86" refid="class_item_1af5b78a340e4490cbd89c5781a138fafd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>map&lt;string,<sp/>int&gt;<sp/><ref refid="class_item_1af5b78a340e4490cbd89c5781a138fafd" kindref="member">itemOverall</ref>;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="88" refid="class_item_1a17b15dc1e47ddba7e5c98476aeae98a6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="class_item_1a17b15dc1e47ddba7e5c98476aeae98a6" kindref="member">itemName</ref>;<sp/></highlight></codeline>
+<codeline lineno="89" refid="class_item_1a5866b44b63816265e197389f707ffe7b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_item_1a5866b44b63816265e197389f707ffe7b" kindref="member">enchantmentModifier</ref><sp/>=<sp/>0;<sp/></highlight></codeline>
+<codeline lineno="90" refid="class_item_1aa2cfc4d8efb50b11acd8b887d3be5599" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_item_1aa2cfc4d8efb50b11acd8b887d3be5599" kindref="member">nullItem</ref>;<sp/></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Stats</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92" refid="class_item_1a6a41e330454a805923d12a1b85b79952" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_item_1a6a41e330454a805923d12a1b85b79952" kindref="member">strength</ref><sp/>=<sp/>0;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="93" refid="class_item_1a7320f91a9eee50c47ad9001c4558ad9a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_item_1a7320f91a9eee50c47ad9001c4558ad9a" kindref="member">constitution</ref><sp/>=<sp/>0;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="94" refid="class_item_1a7263d056be7c7e490695c8f9e58a0a62" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_item_1a7263d056be7c7e490695c8f9e58a0a62" kindref="member">intelligence</ref><sp/>=<sp/>0;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="95" refid="class_item_1a02777809b18e153525f252fd7de64824" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_item_1a02777809b18e153525f252fd7de64824" kindref="member">wisdom</ref><sp/>=<sp/>0;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="96" refid="class_item_1a2636ace9be7fa4218d5d270fb476c036" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_item_1a2636ace9be7fa4218d5d270fb476c036" kindref="member">charisma</ref><sp/>=<sp/>0;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="97" refid="class_item_1a42463b28e802877a4e2fce94589ad848" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_item_1a42463b28e802877a4e2fce94589ad848" kindref="member">dexterity</ref><sp/>=<sp/>0;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="98" refid="class_item_1ad0d8d8215d19d9a7b3fe139c90562f31" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_item_1ad0d8d8215d19d9a7b3fe139c90562f31" kindref="member">armorClass</ref><sp/>=<sp/>0;<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="99" refid="class_item_1a83411ac82bdfa5f01989a958ca9a8f4a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_item_1a83411ac82bdfa5f01989a958ca9a8f4a" kindref="member">atkBonus</ref><sp/>=<sp/>0;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="100" refid="class_item_1a80898565f99592018635deea6a175ddd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_item_1a80898565f99592018635deea6a175ddd" kindref="member">dmgBonus</ref><sp/>=<sp/>0;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>ITEM_H</highlight></codeline>
     </programlisting>
     <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h"/>
   </compounddef>

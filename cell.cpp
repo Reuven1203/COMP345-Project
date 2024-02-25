@@ -131,7 +131,7 @@ void cell::setVisit()
  * @brief Checks if the cell has been visited.
  * @return True if the cell has been visited, false otherwise.
  */
-bool cell::checkVisit()
+bool cell::checkVisit() const
 {
     return visit;
 }

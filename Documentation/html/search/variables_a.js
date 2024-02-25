@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['wisdom_0',['wisdom',['../class_item.html#a02777809b18e153525f252fd7de64824',1,'Item']]],
-  ['wornitems_1',['wornItems',['../class_character.html#a7305cd337b9a73ca07cbf556e1307159',1,'Character']]]
+  ['rowpos_0',['rowPos',['../classcell.html#adad0ce2fe57a3e5d42e0970bbc9d0886',1,'cell']]],
+  ['rows_1',['rows',['../classdungeon_map.html#a8e0a4ff4a178a843565a1e04bf2b0ef0',1,'dungeonMap']]]
 ];

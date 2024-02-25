@@ -326,14 +326,12 @@
 <codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//check<sp/>if<sp/>the<sp/>boots<sp/>are<sp/>no<sp/>longer<sp/>affecting<sp/>the<sp/>character&apos;s<sp/>stats</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/>CPPUNIT_ASSERT_EQUAL(acBefore,<sp/><ref refid="class_character_test_1af8b6fc706c0d8e5abe908b470867efe9" kindref="member">character</ref>-&gt;<ref refid="class_character_1a8638de4be3d350860ed4c5b9da042135" kindref="member">getStat</ref>(<ref refid="class_character_1ac972d17bc509adbc4144b18fde09a814a6538c0adde2f27226f0bd7f078f92a2c" kindref="member">Character::Stats::AC</ref>));</highlight></codeline>
 <codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/>CPPUNIT_ASSERT_EQUAL(dexBefore,<sp/><ref refid="class_character_test_1af8b6fc706c0d8e5abe908b470867efe9" kindref="member">character</ref>-&gt;<ref refid="class_character_1a8e448101ce949905977f6a3c421172b1" kindref="member">getAbilityScore</ref>(<ref refid="class_character_1ac375a6d6120ce429749a78bb15e1d402a039993368e103d9c94bfcc64075a8589" kindref="member">Character::Ability::Dexterity</ref>));</highlight></codeline>
-<codeline lineno="219"><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="220"><highlight class="normal"></highlight></codeline>
-<codeline lineno="221"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"></highlight></codeline>
 <codeline lineno="222"><highlight class="normal"></highlight></codeline>
 <codeline lineno="223"><highlight class="normal"></highlight></codeline>
 <codeline lineno="224"><highlight class="normal"></highlight></codeline>
-<codeline lineno="225"><highlight class="normal"></highlight></codeline>
-<codeline lineno="226"><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Tests/Character/CharacterTest.cpp"/>
   </compounddef>

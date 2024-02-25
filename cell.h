@@ -16,6 +16,7 @@
 #include "itemContainer.h"
 #include "Character.h"
 
+
  /**
   * @enum cellType
   * @brief Enumerates the possible types of contents a cell can hold.
@@ -40,6 +41,7 @@ class CellTest;
 class cell
 {
     friend class dungeonMap; ///< Allows dungeonMap full access to cell's private members.
+    friend class CellTest; ///< Allows CellTest class to access private and protected members for testing purposes.
 
 public:
     /**
@@ -96,7 +98,7 @@ public:
      * @brief Checks if the cell has been visited.
      * @return True if the cell has been visited, false otherwise.
      */
-    bool checkVisit();
+    bool checkVisit() const;
 
     /**
      * @brief Clears the visited mark from the cell.

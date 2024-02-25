@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['stats_0',['Stats',['../class_character.html#ac972d17bc509adbc4144b18fde09a814',1,'Character']]]
+  ['itemtype_0',['ItemType',['../class_item.html#ab5eeb575e9d66ebcfef9b58b667fad05',1,'Item']]]
 ];

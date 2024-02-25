@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['_7econtainer_0',['~container',['../classcontainer.html#a6511207443e6f97ca31eb01c0dbc413b',1,'container']]],
-  ['_7eitem_1',['~Item',['../class_item.html#a11663c84075b78c3ae5e30fdfcd7c458',1,'Item']]]
+  ['unequip_0',['unequip',['../class_character.html#a96f3ff3409c036f66237c80cabfb6718',1,'Character']]],
+  ['userinputwalls_1',['userInputWalls',['../classdungeon_map.html#a87d047ae9453a8ac360ccbce6a99e694',1,'dungeonMap']]]
 ];

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['_7econtainer_0',['~container',['../classcontainer.html#a6511207443e6f97ca31eb01c0dbc413b',1,'container']]],
-  ['_7eitem_1',['~Item',['../class_item.html#a11663c84075b78c3ae5e30fdfcd7c458',1,'Item']]]
+  ['visit_0',['visit',['../classcell.html#af0c1bfe807bb0c43d1ff3cbcb31267d3',1,'cell']]]
 ];

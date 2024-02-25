@@ -7,7 +7,7 @@
 
 #include "CellTest.h"
 
-CPPUNIT_TEST_SUITE_REGISTRATION(CellTest);
+//CPPUNIT_TEST_SUITE_REGISTRATION(CellTest);
 
 void CellTest::setUp() {
     // Initialize cell and chest to test

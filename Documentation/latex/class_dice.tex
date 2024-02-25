@@ -2,7 +2,7 @@
 \hypertarget{class_dice}{}\label{class_dice}\index{Dice@{Dice}}
 
 
-Class for rolling dice.  
+Class for rolling dice. This class provides functionality to roll dice based on a given roll string.  
 
 
 
@@ -13,7 +13,7 @@ Class for rolling dice.
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_dice_a898cd5b1af808873efac3d979645e775}{Dice}} ()=default
-\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Default constructor. Constructs a \doxylink{class_dice}{Dice} object. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_dice_a4b5adb8de2005855739bd66ba3b79290}{roll}} (std\+::string roll\+String)
 \begin{DoxyCompactList}\small\item\em \doxylink{struct_roll}{Roll} dice based on the given roll string. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Member Functions}
@@ -22,20 +22,25 @@ int \mbox{\hyperlink{class_dice_a4b5adb8de2005855739bd66ba3b79290}{roll}} (std\+
 \mbox{\hyperlink{struct_roll}{Roll}} \mbox{\hyperlink{class_dice_aa7ec1a35d7132d3dec12afa4a905e07d}{parse\+Roll}} (std\+::string str)
 \begin{DoxyCompactList}\small\item\em Internal method to parse a string into a \doxylink{struct_roll}{Roll} struct. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{_dice_8h_a230fe26a49ff11b10bb851e08f88d9d4}{Die\+Type}} \mbox{\hyperlink{class_dice_ad11d882fd5b27d53ef927a7d8a9f9325}{parse\+Die}} (std\+::string die\+Type\+Str, std\+::string str)
-\begin{DoxyCompactList}\small\item\em Internal method to parse a die type string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Internal method to parse a die type string. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_dice_a2286e75e2cb76cf84b335c0140238abe}{check\+If\+Number}} (char c)
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Static Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static void \mbox{\hyperlink{class_dice_a628f958b8db4a9c64355421c4473a83a}{dice\+Roll\+String\+Err}} (std\+::string str)
+static void \mbox{\hyperlink{class_dice_a222ad3efc4844a40a8f717dff00e32d9}{dice\+Roll\+String\+Err}} (const std\+::string \&str)
 \begin{DoxyCompactList}\small\item\em Output error message for invalid roll string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_dice_af623f2b9433932f5d0d4d855eb3ec8d4}{Dice\+Test}}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Class for rolling dice. 
+Class for rolling dice. This class provides functionality to roll dice based on a given roll string. 
 
-This class provides functionality to roll dice based on a given roll string. 
-
-Definition at line \mbox{\hyperlink{_dice_8h_source_l00034}{34}} of file \mbox{\hyperlink{_dice_8h_source}{Dice.\+h}}.
+Definition at line \mbox{\hyperlink{_dice_8h_source_l00033}{33}} of file \mbox{\hyperlink{_dice_8h_source}{Dice.\+h}}.
 
 
 
@@ -48,26 +53,45 @@ Definition at line \mbox{\hyperlink{_dice_8h_source_l00034}{34}} of file \mbox{\
 
 
 
-Default constructor. 
+Default constructor. Constructs a \doxylink{class_dice}{Dice} object. 
 
-Constructs a \doxylink{class_dice}{Dice} object. 
+
 
 \doxysubsection{Member Function Documentation}
-\Hypertarget{class_dice_a628f958b8db4a9c64355421c4473a83a}\label{class_dice_a628f958b8db4a9c64355421c4473a83a} 
+\Hypertarget{class_dice_a2286e75e2cb76cf84b335c0140238abe}\label{class_dice_a2286e75e2cb76cf84b335c0140238abe} 
+\index{Dice@{Dice}!checkIfNumber@{checkIfNumber}}
+\index{checkIfNumber@{checkIfNumber}!Dice@{Dice}}
+\doxysubsubsection{\texorpdfstring{checkIfNumber()}{checkIfNumber()}}
+{\footnotesize\ttfamily bool Dice\+::check\+If\+Number (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00129}{129}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
+
+\Hypertarget{class_dice_a222ad3efc4844a40a8f717dff00e32d9}\label{class_dice_a222ad3efc4844a40a8f717dff00e32d9} 
 \index{Dice@{Dice}!diceRollStringErr@{diceRollStringErr}}
 \index{diceRollStringErr@{diceRollStringErr}!Dice@{Dice}}
 \doxysubsubsection{\texorpdfstring{diceRollStringErr()}{diceRollStringErr()}}
-{\footnotesize\ttfamily void Dice\+::dice\+Roll\+String\+Err (\begin{DoxyParamCaption}\item[{std\+::string}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+{\footnotesize\ttfamily void Dice\+::dice\+Roll\+String\+Err (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
 
 
 
 Output error message for invalid roll string. 
 
+Output error string.
+
 
 \begin{DoxyParams}{Parameters}
-{\em str} & The invalid roll string. \\
+{\em str} & The invalid roll string.\\
+\hline
+{\em str} & \doxylink{struct_roll}{Roll} string that caused the error \\
 \hline
 \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em invalid\+\_\+argument} & with offending string \\
+\hline
+\end{DoxyExceptions}
 
 
 Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00017}{17}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
@@ -90,11 +114,21 @@ Internal method to parse a die type string.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-The corresponding Die\+Type enum value. 
+The corresponding Die\+Type enum value.
+\end{DoxyReturn}
+@\+Brief Parses string to use the correct type of die 
+\begin{DoxyParams}{Parameters}
+{\em die\+Type\+Str} & String to be parsed into Die\+Type \\
+\hline
+{\em str} & \doxylink{struct_roll}{Roll} str to be passed to error method if error found \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+proper Die\+Type according to parameter, or error and exit if die\+Type\+Str does not match any valid types of dice. 
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00030}{30}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
+Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00027}{27}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
 
 \Hypertarget{class_dice_aa7ec1a35d7132d3dec12afa4a905e07d}\label{class_dice_aa7ec1a35d7132d3dec12afa4a905e07d} 
 \index{Dice@{Dice}!parseRoll@{parseRoll}}
@@ -106,17 +140,27 @@ Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00030}{30}} of file \mbox
 
 Internal method to parse a string into a \doxylink{struct_roll}{Roll} struct. 
 
+Parses roll string into \doxylink{struct_roll}{Roll} struct to be easily used by \doxylink{class_dice_a4b5adb8de2005855739bd66ba3b79290}{Dice\+::roll()} method, handles errors in input string.
+
 
 \begin{DoxyParams}{Parameters}
 {\em str} & The roll string to parse. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-A \doxylink{struct_roll}{Roll} struct representing the parsed roll. 
+A \doxylink{struct_roll}{Roll} struct representing the parsed roll.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em str} & \doxylink{class_dice}{Dice} roll string to be parsed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{struct_roll}{Roll} struct consisting of int of dice to roll, Die\+Type of type of die to roll, and int added to roll. 
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00057}{57}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
+Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00053}{53}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
 
 \Hypertarget{class_dice_a4b5adb8de2005855739bd66ba3b79290}\label{class_dice_a4b5adb8de2005855739bd66ba3b79290} 
 \index{Dice@{Dice}!roll@{roll}}
@@ -128,17 +172,40 @@ Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00057}{57}} of file \mbox
 
 \doxylink{struct_roll}{Roll} dice based on the given roll string. 
 
+Rolls dice according to roll\+String using \doxylink{namespace_random_a96193c13c6d59d02b8bd0462a75415c2}{Random\+::random()} Mersenne Twister PRNG.
+
 
 \begin{DoxyParams}{Parameters}
 {\em roll\+String} & The roll string in format xdy\mbox{[}+z\mbox{]} or xdy+z. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-The total roll value. 
+The total roll value.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em roll\+String} & \doxylink{struct_roll}{Roll} string in format xdy\mbox{[}+z\mbox{]} or xdy+z which specifies how many times to roll which type of die, and final addition. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+sum of dice rolled randomly according to param roll\+String 
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00106}{106}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
+Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00108}{108}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
+
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{class_dice_af623f2b9433932f5d0d4d855eb3ec8d4}\label{class_dice_af623f2b9433932f5d0d4d855eb3ec8d4} 
+\index{Dice@{Dice}!DiceTest@{DiceTest}}
+\index{DiceTest@{DiceTest}!Dice@{Dice}}
+\doxysubsubsection{\texorpdfstring{DiceTest}{DiceTest}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{class_dice_test}{Dice\+Test}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line \mbox{\hyperlink{_dice_8h_source_l00034}{34}} of file \mbox{\hyperlink{_dice_8h_source}{Dice.\+h}}.
 
 
 

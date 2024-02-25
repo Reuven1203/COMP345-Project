@@ -1,5 +1,67 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.10.0" xml:lang="en-US">
+  <compound refid="classcell" kind="class"><name>cell</name>
+    <member refid="classcell_1a25bb64a8fca21832304292addf404ec9" kind="friend"><name>dungeonMap</name></member>
+    <member refid="classcell_1aa6e52858049b82380f93c701d3487d34" kind="variable"><name>type</name></member>
+    <member refid="classcell_1aaea9f991bf05bba2ac35b23a69b8cf41" kind="variable"><name>chest</name></member>
+    <member refid="classcell_1a136f682b91a2171a4beb94d3931d10a7" kind="variable"><name>player</name></member>
+    <member refid="classcell_1af0c1bfe807bb0c43d1ff3cbcb31267d3" kind="variable"><name>visit</name></member>
+    <member refid="classcell_1adad0ce2fe57a3e5d42e0970bbc9d0886" kind="variable"><name>rowPos</name></member>
+    <member refid="classcell_1a9a6538dfb762aa88958f875c6c763d20" kind="variable"><name>colPos</name></member>
+    <member refid="classcell_1afb98171f10889eef8fc4017c61990213" kind="variable"><name>CellTest</name></member>
+    <member refid="classcell_1a5f9e893bce5c3f050bb20db0d0b615ca" kind="function"><name>cell</name></member>
+    <member refid="classcell_1a335fd618a8e84f4e36572f801b35b3f9" kind="function"><name>~cell</name></member>
+    <member refid="classcell_1a6281d3a115ab646781bbec58a84539e3" kind="function"><name>cell</name></member>
+    <member refid="classcell_1a342502b297bb5eb4662aca7129f10989" kind="function"><name>cell</name></member>
+    <member refid="classcell_1a8645ed65a339020d79d69de5f6575283" kind="function"><name>cell</name></member>
+    <member refid="classcell_1a893cbe18bdee6b7524a3aeb7b8f8d623" kind="function"><name>setWall</name></member>
+    <member refid="classcell_1a92e910cf0202820ad4f2df6c08a15853" kind="function"><name>setChest</name></member>
+    <member refid="classcell_1a72a10273f9f4dc89e6b27e12aa164501" kind="function"><name>setPlayer</name></member>
+    <member refid="classcell_1aaf67693ed84047e2d8b2672ac69f87b0" kind="function"><name>setVisit</name></member>
+    <member refid="classcell_1a6880e7d0f72a654fac5d78d52665c40f" kind="function"><name>checkVisit</name></member>
+    <member refid="classcell_1ad0bb01581383bd2194ff0fda9c59eda2" kind="function"><name>clearVisit</name></member>
+    <member refid="classcell_1a55fa5a49ea165a348d006c5ab5285b9a" kind="function"><name>getCellType</name></member>
+    <member refid="classcell_1a4b5d7bc93f619c54ce940f9c705610ad" kind="function"><name>getRowPos</name></member>
+    <member refid="classcell_1a6061699c82cc1e81fd96b5d3f9527a5d" kind="function"><name>getColPos</name></member>
+    <member refid="classcell_1ad28e3d2c69cefd9965eabb53307b2b19" kind="function"><name>removeContent</name></member>
+    <member refid="classcell_1ae4ddef4c7ef81852e1d260ba8a0a5572" kind="function"><name>setCellType</name></member>
+    <member refid="classcell_1a190ba218acc2d5798781f3219bcb76cf" kind="function"><name>setRowPos</name></member>
+    <member refid="classcell_1aced1077a44dafd58114bf42fe735eff6" kind="function"><name>setColPos</name></member>
+  </compound>
+  <compound refid="class_cell_test" kind="class"><name>CellTest</name>
+    <member refid="class_cell_test_1ad5dfa5e00b5b76fe826f11c6a8ec3628" kind="variable"><name>c</name></member>
+    <member refid="class_cell_test_1a8c24f2fefea6cef8d2d27b3c1d01d9ce" kind="variable"><name>chest</name></member>
+    <member refid="class_cell_test_1a782ade7399ab37b84d3d8fa15f6ec0a2" kind="function"><name>CPPUNIT_TEST_SUITE</name></member>
+    <member refid="class_cell_test_1ac7053a9078ff35f1382be19c05433bbd" kind="function"><name>CPPUNIT_TEST</name></member>
+    <member refid="class_cell_test_1a47642006dc804e519b36174408c89191" kind="function"><name>CPPUNIT_TEST</name></member>
+    <member refid="class_cell_test_1a8f210aba442527b01871efc6b9c0ad92" kind="function"><name>CPPUNIT_TEST</name></member>
+    <member refid="class_cell_test_1abb25b6efcbbecfa8833e231ce829605a" kind="function"><name>CPPUNIT_TEST</name></member>
+    <member refid="class_cell_test_1ad4dd3f5bad213343345920122c436ec2" kind="function"><name>CPPUNIT_TEST</name></member>
+    <member refid="class_cell_test_1af88d8de0a3112d3c65bcb3b52a35f2cd" kind="function"><name>CPPUNIT_TEST</name></member>
+    <member refid="class_cell_test_1acbd062393b2b30b9682a640c896c8c16" kind="function"><name>CPPUNIT_TEST</name></member>
+    <member refid="class_cell_test_1aa64a052b1cc2ce0012872b0123877a96" kind="function"><name>CPPUNIT_TEST</name></member>
+    <member refid="class_cell_test_1ab451bef96ebab2664588998ceb8f2d5c" kind="function"><name>CPPUNIT_TEST</name></member>
+    <member refid="class_cell_test_1a34272b731e5c415ba488926c7a6b48fb" kind="function"><name>CPPUNIT_TEST</name></member>
+    <member refid="class_cell_test_1a09f45f01a92a27d458719a64fccb4508" kind="function"><name>CPPUNIT_TEST</name></member>
+    <member refid="class_cell_test_1a461515ebd2b034108e4f560d54586e59" kind="function"><name>CPPUNIT_TEST</name></member>
+    <member refid="class_cell_test_1aa20a0dfde87f40ee18eae5e04ae33d6c" kind="function"><name>CPPUNIT_TEST</name></member>
+    <member refid="class_cell_test_1a0d4c7821d20541bb75503523d2fe69e4" kind="function"><name>CPPUNIT_TEST_SUITE_END</name></member>
+    <member refid="class_cell_test_1aa6886375c34f9018bf686b54cb052dd2" kind="function"><name>setUp</name></member>
+    <member refid="class_cell_test_1abec8d514b4a51a74f1474045b3cfad49" kind="function"><name>tearDown</name></member>
+    <member refid="class_cell_test_1a5f61d012d063d0ac7d18a3f0c944394d" kind="function"><name>testConstructor</name></member>
+    <member refid="class_cell_test_1a485f39b4a1b80c30de2ebf7e167851ad" kind="function"><name>testChestConstructor</name></member>
+    <member refid="class_cell_test_1af43819ea6898b8611772ea6523c0a995" kind="function"><name>testSetWall</name></member>
+    <member refid="class_cell_test_1a06395262c391b3d468748577befb06fc" kind="function"><name>testSetCellType</name></member>
+    <member refid="class_cell_test_1a8cd773b7a3ba3029bb755d3e87d416ff" kind="function"><name>testRemoveContent</name></member>
+    <member refid="class_cell_test_1a430bbf1d0f2ef1f2976846886131df92" kind="function"><name>testGetCellType</name></member>
+    <member refid="class_cell_test_1a8642db6718e524a31b060ac941a79d87" kind="function"><name>testSetVisit</name></member>
+    <member refid="class_cell_test_1a81ed1759bc28e65478f0f38c4b066ad5" kind="function"><name>testCheckVisit</name></member>
+    <member refid="class_cell_test_1a48729cdc8c2e0f3f35c9ab9821ca7099" kind="function"><name>testClearVisit</name></member>
+    <member refid="class_cell_test_1acd153368c19005c313ec62f4bba36389" kind="function"><name>testSetRowPos</name></member>
+    <member refid="class_cell_test_1ae5170bab1b8177ac92c2cd187887ba12" kind="function"><name>testGetRowPos</name></member>
+    <member refid="class_cell_test_1aa2683707d8ef4b17a3b19088123cb20c" kind="function"><name>testSetColPos</name></member>
+    <member refid="class_cell_test_1aeb598d9b620ff2d944e4d7a2d340382d" kind="function"><name>testGetColPos</name></member>
+  </compound>
   <compound refid="class_character" kind="class"><name>Character</name>
     <member refid="class_character_1ac375a6d6120ce429749a78bb15e1d402" kind="enum"><name>Ability</name></member>
     <member refid="class_character_1ac375a6d6120ce429749a78bb15e1d402aa490c397eb4162d21a50685377c163fd" kind="enumvalue"><name>Strength</name></member>
@@ -71,20 +133,82 @@
     <member refid="class_character_test_1a9218c5fd7aac20e0cc42ff35cdf94355" kind="function"><name>testAddition</name></member>
   </compound>
   <compound refid="classcontainer" kind="class"><name>container</name>
-    <member refid="classcontainer_1a705d84133ad98e0cc1b0896db149fa5e" kind="variable"><name>storedItems</name></member>
-    <member refid="classcontainer_1a51c87905771b9e8ac1dadac927c530b6" kind="variable"><name>name</name></member>
+    <member refid="classcontainer_1adf312a6956942b32ad80bb91ae9e8f5f" kind="variable"><name>storedItems</name></member>
+    <member refid="classcontainer_1a4d438d6ab38eafc68e8b829231d74b7f" kind="variable"><name>name</name></member>
     <member refid="classcontainer_1a37b5e9e48cf89b0e0e74c122cdc27027" kind="function"><name>container</name></member>
     <member refid="classcontainer_1a6511207443e6f97ca31eb01c0dbc413b" kind="function"><name>~container</name></member>
     <member refid="classcontainer_1ade56880f5e6a58f370ade4e1184a705a" kind="function"><name>getItems</name></member>
     <member refid="classcontainer_1a6043dca82ce0a2b258aa8e67071bcf33" kind="function"><name>getItemStats</name></member>
-    <member refid="classcontainer_1a021f0615f766a3b3189ea6b4a46790e1" kind="function"><name>storeItem</name></member>
+    <member refid="classcontainer_1aa8d08e0d1968e6189d2ab7526e734397" kind="function"><name>storeItem</name></member>
+    <member refid="classcontainer_1ae598b0f2bc7d88d87ed7229dbca2fdaf" kind="function"><name>removeItemFromChest</name></member>
+    <member refid="classcontainer_1a9ed59582af89c704d6e42c197ff831af" kind="function"><name>deleteItemInChest</name></member>
   </compound>
   <compound refid="class_dice" kind="class"><name>Dice</name>
+    <member refid="class_dice_1af623f2b9433932f5d0d4d855eb3ec8d4" kind="friend"><name>DiceTest</name></member>
     <member refid="class_dice_1aa7ec1a35d7132d3dec12afa4a905e07d" kind="function"><name>parseRoll</name></member>
     <member refid="class_dice_1ad11d882fd5b27d53ef927a7d8a9f9325" kind="function"><name>parseDie</name></member>
-    <member refid="class_dice_1a628f958b8db4a9c64355421c4473a83a" kind="function"><name>diceRollStringErr</name></member>
+    <member refid="class_dice_1a2286e75e2cb76cf84b335c0140238abe" kind="function"><name>checkIfNumber</name></member>
+    <member refid="class_dice_1a222ad3efc4844a40a8f717dff00e32d9" kind="function"><name>diceRollStringErr</name></member>
     <member refid="class_dice_1a898cd5b1af808873efac3d979645e775" kind="function"><name>Dice</name></member>
     <member refid="class_dice_1a4b5adb8de2005855739bd66ba3b79290" kind="function"><name>roll</name></member>
+  </compound>
+  <compound refid="class_dice_test" kind="class"><name>DiceTest</name>
+    <member refid="class_dice_test_1a4155121b3ee6b20c5d2ce370b129c33c" kind="variable"><name>dice</name></member>
+    <member refid="class_dice_test_1ae60af42068499ec4e3dac71d8a7d31d5" kind="function"><name>CPPUNIT_TEST_SUITE</name></member>
+    <member refid="class_dice_test_1a4fbe7c7945f7f7ae21cdb79550ddbdbf" kind="function"><name>CPPUNIT_TEST</name></member>
+    <member refid="class_dice_test_1a8f742c7d42867cf2834ebbcc37991560" kind="function"><name>CPPUNIT_TEST</name></member>
+    <member refid="class_dice_test_1a6f9a16d11e4e4c47c571d93e94b3ae7b" kind="function"><name>CPPUNIT_TEST</name></member>
+    <member refid="class_dice_test_1ad09fb3d5a75d416ba95c3e713a2f3c6b" kind="function"><name>CPPUNIT_TEST</name></member>
+    <member refid="class_dice_test_1a8200325837de38fdee61cdec137b64a4" kind="function"><name>CPPUNIT_TEST_SUITE_END</name></member>
+    <member refid="class_dice_test_1ae6ed2a54d9536eaf6604c66602d255b2" kind="function"><name>setUp</name></member>
+    <member refid="class_dice_test_1a6eb02608089c0410d4ee336aae07313e" kind="function"><name>tearDown</name></member>
+    <member refid="class_dice_test_1ac2d7ac7b67905f17c1565a70b9455b0a" kind="function"><name>testParseRollValid</name></member>
+    <member refid="class_dice_test_1a724289d9a0c51da6e5b03f4fa17c9006" kind="function"><name>testParseRollInvalid</name></member>
+    <member refid="class_dice_test_1a620bb09f5e368dd961ad5ca8a6669662" kind="function"><name>testRoll</name></member>
+    <member refid="class_dice_test_1a19d12936e6f3bc358e7457f8c880fe06" kind="function"><name>testParseDie</name></member>
+  </compound>
+  <compound refid="classdungeon_map" kind="class"><name>dungeonMap</name>
+    <member refid="classdungeon_map_1aae88f49f4ddcc1e24b2e6c1841c35018" kind="friend"><name>cell</name></member>
+    <member refid="classdungeon_map_1a52bea5246299d72743a44ff919b020c0" kind="variable"><name>dungeon</name></member>
+    <member refid="classdungeon_map_1a8e0a4ff4a178a843565a1e04bf2b0ef0" kind="variable"><name>rows</name></member>
+    <member refid="classdungeon_map_1ab73761a9be5be656c94069d09e455785" kind="variable"><name>cols</name></member>
+    <member refid="classdungeon_map_1a913bdc2bec70b53305d56018887c19d8" kind="variable"><name>start</name></member>
+    <member refid="classdungeon_map_1a10ada3e5e257d9070cd2b7bfdefd65b4" kind="variable"><name>end</name></member>
+    <member refid="classdungeon_map_1abc4ece7530782d492470a5efd6aa7df2" kind="variable"><name>startX</name></member>
+    <member refid="classdungeon_map_1af6dca69e1f0af226383b2ab99164286e" kind="variable"><name>startY</name></member>
+    <member refid="classdungeon_map_1afc9b5d7fc69a73d9c5aaccafed9c0727" kind="variable"><name>endX</name></member>
+    <member refid="classdungeon_map_1a89c6e436c2eb556abe2b25f91e8dd2ca" kind="variable"><name>endY</name></member>
+    <member refid="classdungeon_map_1a84f07f4b05590675764454cb694046db" kind="variable"><name>MapTest</name></member>
+    <member refid="classdungeon_map_1a361e24a68b31f0f8d5cc325c43a43e90" kind="function"><name>dungeonMap</name></member>
+    <member refid="classdungeon_map_1a1a4879d5559acbe3ef59a5cba433aa5f" kind="function"><name>~dungeonMap</name></member>
+    <member refid="classdungeon_map_1a0450d4b358f8b72db34fe1d381ecc995" kind="function"><name>dungeonMap</name></member>
+    <member refid="classdungeon_map_1aed7fd4ed7ae89ab3f623821670ad8821" kind="function"><name>isValid</name></member>
+    <member refid="classdungeon_map_1a6cc5aebe4a6554dffad1ce8f0c329860" kind="function"><name>printMap</name></member>
+    <member refid="classdungeon_map_1a9c254a1956a8e91b29bdc0e6e985e802" kind="function"><name>setStart</name></member>
+    <member refid="classdungeon_map_1ab551620665275076f6303cc3515dac0c" kind="function"><name>setEnd</name></member>
+    <member refid="classdungeon_map_1a51f74f974a199ff36436880d2785388a" kind="function"><name>setWall</name></member>
+    <member refid="classdungeon_map_1a1ba9b0a8651b589453113f0fbf77ec2e" kind="function"><name>removeWall</name></member>
+    <member refid="classdungeon_map_1aba0dec6a2ee7eb6f4e4bdfd9b607713d" kind="function"><name>removeCellContent</name></member>
+    <member refid="classdungeon_map_1aeca6af6bcd268e1ed8131da8f679f2aa" kind="function"><name>setPlayer</name></member>
+    <member refid="classdungeon_map_1af9da7f8b3bb86842bb041c2fded5e820" kind="function"><name>getStartX</name></member>
+    <member refid="classdungeon_map_1a1bf5004a04d80c4b2bd1962ee951df57" kind="function"><name>getStartY</name></member>
+    <member refid="classdungeon_map_1a3536aaaac270ded633a530cce4ec9960" kind="function"><name>getRowSize</name></member>
+    <member refid="classdungeon_map_1ada468fbf89bf1ed69ac0e8e9a46d1791" kind="function"><name>getColSize</name></member>
+    <member refid="classdungeon_map_1a87d047ae9453a8ac360ccbce6a99e694" kind="function"><name>userInputWalls</name></member>
+    <member refid="classdungeon_map_1aaa80f16f18601d94888c2c92227a1a17" kind="function"><name>setChest</name></member>
+    <member refid="classdungeon_map_1ad874a7da8c443475c30978d5c1f4d09a" kind="function"><name>clearCellVisit</name></member>
+    <member refid="classdungeon_map_1a55fe6f43aa82d5b3c5717349e1120120" kind="function"><name>getCell</name></member>
+    <member refid="classdungeon_map_1a32fea6a05559b9ae7ebb120afb835bab" kind="function"><name>isStart</name></member>
+    <member refid="classdungeon_map_1a2592c056ced4eafac693b66afb48a356" kind="function"><name>isEnd</name></member>
+    <member refid="classdungeon_map_1a361d190172db4167e629588bebf6d6d1" kind="function"><name>dfs</name></member>
+    <member refid="classdungeon_map_1a8864523f758dfd18b69e73effd913de4" kind="function"><name>addWallInteraction</name></member>
+    <member refid="classdungeon_map_1ab582df4fec05220f7e987ec7575dd1fb" kind="function"><name>removeWallInteraction</name></member>
+    <member refid="classdungeon_map_1a7f3011ce042bfcd9d2ff74b77504b45b" kind="function"><name>getWallCoordinates</name></member>
+    <member refid="classdungeon_map_1a8e70de27b2b9d3a844bdd60d977a751c" kind="function"><name>isValidRow</name></member>
+    <member refid="classdungeon_map_1a70ff5156a07df6fb41aabb9d48e18a23" kind="function"><name>isValidCol</name></member>
+    <member refid="classdungeon_map_1a150f227079dd340c78ea18f5a23af255" kind="function"><name>isValidLocation</name></member>
+    <member refid="classdungeon_map_1aa0c8b749510b96b4e8210b00e9b267a5" kind="function"><name>addWallChoice</name></member>
+    <member refid="classdungeon_map_1a1550fbd2accaad98acd7c69ea5a7a74b" kind="function"><name>removeWallChoice</name></member>
   </compound>
   <compound refid="class_fighter" kind="class"><name>Fighter</name>
     <member refid="class_fighter_1abf32519d935df18963172d31d45029f6" kind="function"><name>Fighter</name></member>
@@ -113,6 +237,7 @@
     <member refid="class_item_1af5b78a340e4490cbd89c5781a138fafd" kind="variable"><name>itemOverall</name></member>
     <member refid="class_item_1a17b15dc1e47ddba7e5c98476aeae98a6" kind="variable"><name>itemName</name></member>
     <member refid="class_item_1a5866b44b63816265e197389f707ffe7b" kind="variable"><name>enchantmentModifier</name></member>
+    <member refid="class_item_1aa2cfc4d8efb50b11acd8b887d3be5599" kind="variable"><name>nullItem</name></member>
     <member refid="class_item_1a6a41e330454a805923d12a1b85b79952" kind="variable"><name>strength</name></member>
     <member refid="class_item_1a7320f91a9eee50c47ad9001c4558ad9a" kind="variable"><name>constitution</name></member>
     <member refid="class_item_1a7263d056be7c7e490695c8f9e58a0a62" kind="variable"><name>intelligence</name></member>
@@ -138,7 +263,66 @@
     <member refid="class_item_1a6e611bdc812fc0e0ebdeb43b46d18db4" kind="function"><name>getAC</name></member>
     <member refid="class_item_1a122ea70ddecf55ed2b01565c84572865" kind="function"><name>getATKBONUS</name></member>
     <member refid="class_item_1ae31eceb14a821c8becd53927221807de" kind="function"><name>getDMGBonus</name></member>
+    <member refid="class_item_1aced4ea8fa470b7e2bd9a1717485c1561" kind="function"><name>getIfNull</name></member>
     <member refid="class_item_1aebb8bb531798a53468a8776a209f4fae" kind="function"><name>printStats</name></member>
+  </compound>
+  <compound refid="class_item_test" kind="class"><name>ItemTest</name>
+    <member refid="class_item_test_1a84186065415edce991aae6e739671f62" kind="variable"><name>item</name></member>
+    <member refid="class_item_test_1a599cd21ac095674994fb88f3995e5982" kind="function"><name>CPPUNIT_TEST_SUITE</name></member>
+    <member refid="class_item_test_1ac2164485624147b6ba88525480ec35ae" kind="function"><name>CPPUNIT_TEST</name></member>
+    <member refid="class_item_test_1a23a0529d0791b250c4cc966abffad570" kind="function"><name>CPPUNIT_TEST</name></member>
+    <member refid="class_item_test_1af5a62247acb7cc98e87abbd7213185b3" kind="function"><name>CPPUNIT_TEST</name></member>
+    <member refid="class_item_test_1af3154171fa2f67ccf9ca57fa8c3e5d70" kind="function"><name>CPPUNIT_TEST</name></member>
+    <member refid="class_item_test_1a4afe3ddfbcb5803843190c38021f4004" kind="function"><name>CPPUNIT_TEST</name></member>
+    <member refid="class_item_test_1a71da00374b331067521f4501c2cb1b08" kind="function"><name>CPPUNIT_TEST_SUITE_END</name></member>
+    <member refid="class_item_test_1a13ad46c14f9f3219de4087ea56eea1a5" kind="function"><name>setUp</name></member>
+    <member refid="class_item_test_1abb448fe61c731b95c5d3e706c3a69d42" kind="function"><name>tearDown</name></member>
+    <member refid="class_item_test_1ac5fcc542f3174b0683a2c893083487d0" kind="function"><name>testConstructor</name></member>
+    <member refid="class_item_test_1a27bb8fc55dda64cc16a6920e195c182a" kind="function"><name>testRollStatMod</name></member>
+    <member refid="class_item_test_1ac01790bc726767c1d738e7efeec4f69f" kind="function"><name>testGetters</name></member>
+    <member refid="class_item_test_1a751e861adc03a5e120de5757bb4b44f8" kind="function"><name>testSetEquipType</name></member>
+    <member refid="class_item_test_1a78af742b629505161f1fa88c2a526f0f" kind="function"><name>testSetEquipStats</name></member>
+  </compound>
+  <compound refid="class_map_test" kind="class"><name>MapTest</name>
+    <member refid="class_map_test_1aea807b19c05f1f2cea1032db2ef817ab" kind="variable"><name>map</name></member>
+    <member refid="class_map_test_1a21e447c35d11a109a986c0a744ce1083" kind="function"><name>CPPUNIT_TEST_SUITE</name></member>
+    <member refid="class_map_test_1a01fc0b35fe8ba5cfd87e3f9fac221241" kind="function"><name>CPPUNIT_TEST</name></member>
+    <member refid="class_map_test_1aed643306db14d0462a41794026ef9ab6" kind="function"><name>CPPUNIT_TEST</name></member>
+    <member refid="class_map_test_1af38acb6f091438b07fd7a6dc791838f4" kind="function"><name>CPPUNIT_TEST</name></member>
+    <member refid="class_map_test_1a1d716a7a36f9af4807faffa7f0b3c7d8" kind="function"><name>CPPUNIT_TEST</name></member>
+    <member refid="class_map_test_1a004d30bcd1d7112767da331eb2e0a9f5" kind="function"><name>CPPUNIT_TEST</name></member>
+    <member refid="class_map_test_1a1a15a5a437b5cfb50a82c8dab96fc7fb" kind="function"><name>CPPUNIT_TEST</name></member>
+    <member refid="class_map_test_1a02d848627f4ba692b8b00ca43e4aec9b" kind="function"><name>CPPUNIT_TEST</name></member>
+    <member refid="class_map_test_1a9392de0646eb222c0b3d26f58bb97d89" kind="function"><name>CPPUNIT_TEST</name></member>
+    <member refid="class_map_test_1a7bbe426770e12c0679441f4d89f3c3db" kind="function"><name>CPPUNIT_TEST</name></member>
+    <member refid="class_map_test_1a321c9027cb9443bcdc891e6dcee58c5e" kind="function"><name>CPPUNIT_TEST</name></member>
+    <member refid="class_map_test_1a57dc994ffefdb5fdadb5ae204209cb24" kind="function"><name>CPPUNIT_TEST</name></member>
+    <member refid="class_map_test_1aa0a84428dbe7659407286dd5dff8fc56" kind="function"><name>CPPUNIT_TEST</name></member>
+    <member refid="class_map_test_1ab99a8614edafc1a61f1b2589bd1e002b" kind="function"><name>CPPUNIT_TEST</name></member>
+    <member refid="class_map_test_1a1c4d643a232a7f01e02d7b6852063925" kind="function"><name>CPPUNIT_TEST</name></member>
+    <member refid="class_map_test_1ac3a05f1ed3e038d823ee8a5ca84e2f4d" kind="function"><name>CPPUNIT_TEST</name></member>
+    <member refid="class_map_test_1a81019059ea63cdc71d67a6814405c5a3" kind="function"><name>CPPUNIT_TEST</name></member>
+    <member refid="class_map_test_1aa0af4e1b0874df61be03a22eebb37dfe" kind="function"><name>CPPUNIT_TEST</name></member>
+    <member refid="class_map_test_1a7199d07930d583c22e85b8f5778b9f6c" kind="function"><name>CPPUNIT_TEST_SUITE_END</name></member>
+    <member refid="class_map_test_1ada6cb55f4ce75dc2316794f004a712b9" kind="function"><name>setUp</name></member>
+    <member refid="class_map_test_1a61ade0eb6c2875f0c0a8d6ba621d1bf2" kind="function"><name>tearDown</name></member>
+    <member refid="class_map_test_1a1c0e207ec392754e82542fc75352ba22" kind="function"><name>testValid</name></member>
+    <member refid="class_map_test_1a9c92e41e71f3d3d7dcdbb938dc1502c5" kind="function"><name>testInvalid</name></member>
+    <member refid="class_map_test_1abe4574480d9aeb4f4161c38cdd03a804" kind="function"><name>testSetStart</name></member>
+    <member refid="class_map_test_1ac0d9c072aaef333a632c3bcf818913fe" kind="function"><name>testSetEnd</name></member>
+    <member refid="class_map_test_1a4b1044e1e8dc0331bad1c0fc811a7700" kind="function"><name>testGetCell</name></member>
+    <member refid="class_map_test_1aed10e4a37c77b4571d5bb05cd253e126" kind="function"><name>testConstructor</name></member>
+    <member refid="class_map_test_1a72d7b9d118cd3c7854b29e344ecb792e" kind="function"><name>testSetChest</name></member>
+    <member refid="class_map_test_1a446a044a11f7bf5849d7c047e5733589" kind="function"><name>testSetWall</name></member>
+    <member refid="class_map_test_1a9d71bac71d555b7e3747d97ed116660d" kind="function"><name>testRemoveWall</name></member>
+    <member refid="class_map_test_1ac6da0974f59d356711fe1bc7a478ec3b" kind="function"><name>testSetPlayer</name></member>
+    <member refid="class_map_test_1a1444df25cbb29b32e61c875404e700b5" kind="function"><name>testValidRow</name></member>
+    <member refid="class_map_test_1ae03487d45b787b3c68fe9137e1b6da9c" kind="function"><name>testValidCol</name></member>
+    <member refid="class_map_test_1a6d30bb9e8d1fae870887a7b07f867089" kind="function"><name>testValidLocation</name></member>
+    <member refid="class_map_test_1a070574b49d3e05526eb5c40d0a172f77" kind="function"><name>testRowSize</name></member>
+    <member refid="class_map_test_1a4a8646cfff8a81f214288d4b2903735a" kind="function"><name>testColSize</name></member>
+    <member refid="class_map_test_1a7cbd67ee463ec43583e952c846813f9a" kind="function"><name>testClearCellVisit</name></member>
+    <member refid="class_map_test_1a7c8ccb63e6c13c6e187657eee81b0e7d" kind="function"><name>testRemoveCellContent</name></member>
   </compound>
   <compound refid="struct_roll" kind="struct"><name>Roll</name>
     <member refid="struct_roll_1a3cb71ced3ef29ff0afa456ad8118fdfb" kind="variable"><name>dieType</name></member>
@@ -153,43 +337,150 @@
   </compound>
   <compound refid="namespacestd" kind="namespace"><name>std</name>
   </compound>
+  <compound refid="cell_8cpp_8o_8d" kind="file"><name>cell.cpp.o.d</name>
+  </compound>
+  <compound refid="item_container_8cpp_8o_8d" kind="file"><name>itemContainer.cpp.o.d</name>
+  </compound>
+  <compound refid="map-test_8cpp_8o_8d" kind="file"><name>map-test.cpp.o.d</name>
+  </compound>
+  <compound refid="map_8cpp_8o_8d" kind="file"><name>map.cpp.o.d</name>
+  </compound>
+  <compound refid="_a1_8dir_2_character_8cpp_8o_8d" kind="file"><name>Character.cpp.o.d</name>
+  </compound>
+  <compound refid="_c_o_m_p345___a1___tests_8dir_2_character_8cpp_8o_8d" kind="file"><name>Character.cpp.o.d</name>
+  </compound>
+  <compound refid="_a1_8dir_2_dice_8cpp_8o_8d" kind="file"><name>Dice.cpp.o.d</name>
+  </compound>
+  <compound refid="_c_o_m_p345___a1___tests_8dir_2_dice_8cpp_8o_8d" kind="file"><name>Dice.cpp.o.d</name>
+  </compound>
+  <compound refid="_a1_8dir_2_fighter_8cpp_8o_8d" kind="file"><name>Fighter.cpp.o.d</name>
+  </compound>
+  <compound refid="_c_o_m_p345___a1___tests_8dir_2_fighter_8cpp_8o_8d" kind="file"><name>Fighter.cpp.o.d</name>
+  </compound>
+  <compound refid="_a1_8dir_2_item_8cpp_8o_8d" kind="file"><name>Item.cpp.o.d</name>
+  </compound>
+  <compound refid="_c_o_m_p345___a1___tests_8dir_2_item_8cpp_8o_8d" kind="file"><name>Item.cpp.o.d</name>
+  </compound>
+  <compound refid="_character_test_8cpp_8o_8d" kind="file"><name>CharacterTest.cpp.o.d</name>
+  </compound>
+  <compound refid="_fighter_test_8cpp_8o_8d" kind="file"><name>FighterTest.cpp.o.d</name>
+  </compound>
+  <compound refid="_test_runner_8cpp_8o_8d" kind="file"><name>TestRunner.cpp.o.d</name>
+  </compound>
+  <compound refid="cell_8cpp" kind="file"><name>cell.cpp</name>
+  </compound>
+  <compound refid="cell_8h" kind="file"><name>cell.h</name>
+    <member refid="cell_8h_1a274ceed3b07859c48505f65b1fe42328" kind="enum"><name>cellType</name></member>
+    <member refid="cell_8h_1a274ceed3b07859c48505f65b1fe42328a97a9c10ba67e86a8a88c5cc92c22112f" kind="enumvalue"><name>Player</name></member>
+    <member refid="cell_8h_1a274ceed3b07859c48505f65b1fe42328a0b44d4e916221e52c4ba47a8efb5e2fc" kind="enumvalue"><name>Nothing</name></member>
+    <member refid="cell_8h_1a274ceed3b07859c48505f65b1fe42328a99146093a7115faea73cdd6848aaa595" kind="enumvalue"><name>Chest</name></member>
+    <member refid="cell_8h_1a274ceed3b07859c48505f65b1fe42328a5587855d9c996218f85bf20a8bd424d0" kind="enumvalue"><name>Wall</name></member>
+  </compound>
   <compound refid="_character_8cpp" kind="file"><name>Character.cpp</name>
   </compound>
   <compound refid="_character_8h" kind="file"><name>Character.h</name>
   </compound>
-  <compound refid="_c_make_c_compiler_id_8c" kind="file"><name>CMakeCCompilerId.c</name>
-    <member refid="_c_make_c_compiler_id_8c_1ae5510d82e4946f1656f4969911c54736" kind="define"><name>__has_include</name></member>
-    <member refid="_c_make_c_compiler_id_8c_1a81dee0709ded976b2e0319239f72d174" kind="define"><name>COMPILER_ID</name></member>
-    <member refid="_c_make_c_compiler_id_8c_1a2ae9b72bb13abaabfcf2ee0ba7d3fa1d" kind="define"><name>STRINGIFY_HELPER</name></member>
-    <member refid="_c_make_c_compiler_id_8c_1a43e1cad902b6477bec893cb6430bd6c8" kind="define"><name>STRINGIFY</name></member>
-    <member refid="_c_make_c_compiler_id_8c_1adbc5372f40838899018fadbc89bd588b" kind="define"><name>PLATFORM_ID</name></member>
-    <member refid="_c_make_c_compiler_id_8c_1aba35d0d200deaeb06aee95ca297acb28" kind="define"><name>ARCHITECTURE_ID</name></member>
-    <member refid="_c_make_c_compiler_id_8c_1ad1280362da42492bbc11aa78cbf776ad" kind="define"><name>DEC</name></member>
-    <member refid="_c_make_c_compiler_id_8c_1a46d5d95daa1bef867bd0179594310ed5" kind="define"><name>HEX</name></member>
-    <member refid="_c_make_c_compiler_id_8c_1adaee3ee7c5a7a22451ea25e762e1d7d5" kind="define"><name>C_VERSION</name></member>
-    <member refid="_c_make_c_compiler_id_8c_1a4b0efeb7a5d59313986b3a0390f050f6" kind="variable"><name>info_compiler</name></member>
-    <member refid="_c_make_c_compiler_id_8c_1a2321403dee54ee23f0c2fa849c60f7d4" kind="variable"><name>info_platform</name></member>
-    <member refid="_c_make_c_compiler_id_8c_1a59647e99d304ed33b15cb284c27ed391" kind="variable"><name>info_arch</name></member>
-    <member refid="_c_make_c_compiler_id_8c_1a4607cccf070750927b458473ca82c090" kind="variable"><name>info_language_standard_default</name></member>
-    <member refid="_c_make_c_compiler_id_8c_1a0f46a8a39e09d9b803c4766904fd7e99" kind="variable"><name>info_language_extensions_default</name></member>
-    <member refid="_c_make_c_compiler_id_8c_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
+  <compound refid="build_2_c_make_files_23_828_83_2_compiler_id_c_2_c_make_c_compiler_id_8c" kind="file"><name>CMakeCCompilerId.c</name>
+    <member refid="build_2_c_make_files_23_828_83_2_compiler_id_c_2_c_make_c_compiler_id_8c_1ae5510d82e4946f1656f4969911c54736" kind="define"><name>__has_include</name></member>
+    <member refid="build_2_c_make_files_23_828_83_2_compiler_id_c_2_c_make_c_compiler_id_8c_1a81dee0709ded976b2e0319239f72d174" kind="define"><name>COMPILER_ID</name></member>
+    <member refid="build_2_c_make_files_23_828_83_2_compiler_id_c_2_c_make_c_compiler_id_8c_1a2ae9b72bb13abaabfcf2ee0ba7d3fa1d" kind="define"><name>STRINGIFY_HELPER</name></member>
+    <member refid="build_2_c_make_files_23_828_83_2_compiler_id_c_2_c_make_c_compiler_id_8c_1a43e1cad902b6477bec893cb6430bd6c8" kind="define"><name>STRINGIFY</name></member>
+    <member refid="build_2_c_make_files_23_828_83_2_compiler_id_c_2_c_make_c_compiler_id_8c_1adbc5372f40838899018fadbc89bd588b" kind="define"><name>PLATFORM_ID</name></member>
+    <member refid="build_2_c_make_files_23_828_83_2_compiler_id_c_2_c_make_c_compiler_id_8c_1aba35d0d200deaeb06aee95ca297acb28" kind="define"><name>ARCHITECTURE_ID</name></member>
+    <member refid="build_2_c_make_files_23_828_83_2_compiler_id_c_2_c_make_c_compiler_id_8c_1ad1280362da42492bbc11aa78cbf776ad" kind="define"><name>DEC</name></member>
+    <member refid="build_2_c_make_files_23_828_83_2_compiler_id_c_2_c_make_c_compiler_id_8c_1a46d5d95daa1bef867bd0179594310ed5" kind="define"><name>HEX</name></member>
+    <member refid="build_2_c_make_files_23_828_83_2_compiler_id_c_2_c_make_c_compiler_id_8c_1adaee3ee7c5a7a22451ea25e762e1d7d5" kind="define"><name>C_VERSION</name></member>
+    <member refid="build_2_c_make_files_23_828_83_2_compiler_id_c_2_c_make_c_compiler_id_8c_1a4b0efeb7a5d59313986b3a0390f050f6" kind="variable"><name>info_compiler</name></member>
+    <member refid="build_2_c_make_files_23_828_83_2_compiler_id_c_2_c_make_c_compiler_id_8c_1a2321403dee54ee23f0c2fa849c60f7d4" kind="variable"><name>info_platform</name></member>
+    <member refid="build_2_c_make_files_23_828_83_2_compiler_id_c_2_c_make_c_compiler_id_8c_1a59647e99d304ed33b15cb284c27ed391" kind="variable"><name>info_arch</name></member>
+    <member refid="build_2_c_make_files_23_828_83_2_compiler_id_c_2_c_make_c_compiler_id_8c_1a4607cccf070750927b458473ca82c090" kind="variable"><name>info_language_standard_default</name></member>
+    <member refid="build_2_c_make_files_23_828_83_2_compiler_id_c_2_c_make_c_compiler_id_8c_1a0f46a8a39e09d9b803c4766904fd7e99" kind="variable"><name>info_language_extensions_default</name></member>
+    <member refid="build_2_c_make_files_23_828_83_2_compiler_id_c_2_c_make_c_compiler_id_8c_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
   </compound>
-  <compound refid="_c_make_c_x_x_compiler_id_8cpp" kind="file"><name>CMakeCXXCompilerId.cpp</name>
-    <member refid="_c_make_c_x_x_compiler_id_8cpp_1ae5510d82e4946f1656f4969911c54736" kind="define"><name>__has_include</name></member>
-    <member refid="_c_make_c_x_x_compiler_id_8cpp_1a81dee0709ded976b2e0319239f72d174" kind="define"><name>COMPILER_ID</name></member>
-    <member refid="_c_make_c_x_x_compiler_id_8cpp_1a2ae9b72bb13abaabfcf2ee0ba7d3fa1d" kind="define"><name>STRINGIFY_HELPER</name></member>
-    <member refid="_c_make_c_x_x_compiler_id_8cpp_1a43e1cad902b6477bec893cb6430bd6c8" kind="define"><name>STRINGIFY</name></member>
-    <member refid="_c_make_c_x_x_compiler_id_8cpp_1adbc5372f40838899018fadbc89bd588b" kind="define"><name>PLATFORM_ID</name></member>
-    <member refid="_c_make_c_x_x_compiler_id_8cpp_1aba35d0d200deaeb06aee95ca297acb28" kind="define"><name>ARCHITECTURE_ID</name></member>
-    <member refid="_c_make_c_x_x_compiler_id_8cpp_1ad1280362da42492bbc11aa78cbf776ad" kind="define"><name>DEC</name></member>
-    <member refid="_c_make_c_x_x_compiler_id_8cpp_1a46d5d95daa1bef867bd0179594310ed5" kind="define"><name>HEX</name></member>
-    <member refid="_c_make_c_x_x_compiler_id_8cpp_1a34cc889e576a1ae6c84ae9e0a851ba21" kind="define"><name>CXX_STD</name></member>
-    <member refid="_c_make_c_x_x_compiler_id_8cpp_1a4b0efeb7a5d59313986b3a0390f050f6" kind="variable"><name>info_compiler</name></member>
-    <member refid="_c_make_c_x_x_compiler_id_8cpp_1a2321403dee54ee23f0c2fa849c60f7d4" kind="variable"><name>info_platform</name></member>
-    <member refid="_c_make_c_x_x_compiler_id_8cpp_1a59647e99d304ed33b15cb284c27ed391" kind="variable"><name>info_arch</name></member>
-    <member refid="_c_make_c_x_x_compiler_id_8cpp_1a4607cccf070750927b458473ca82c090" kind="variable"><name>info_language_standard_default</name></member>
-    <member refid="_c_make_c_x_x_compiler_id_8cpp_1a0f46a8a39e09d9b803c4766904fd7e99" kind="variable"><name>info_language_extensions_default</name></member>
-    <member refid="_c_make_c_x_x_compiler_id_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
+  <compound refid="cmake-build-debug_2_c_make_files_23_827_88_2_compiler_id_c_2_c_make_c_compiler_id_8c" kind="file"><name>CMakeCCompilerId.c</name>
+    <member refid="cmake-build-debug_2_c_make_files_23_827_88_2_compiler_id_c_2_c_make_c_compiler_id_8c_1ae5510d82e4946f1656f4969911c54736" kind="define"><name>__has_include</name></member>
+    <member refid="cmake-build-debug_2_c_make_files_23_827_88_2_compiler_id_c_2_c_make_c_compiler_id_8c_1a81dee0709ded976b2e0319239f72d174" kind="define"><name>COMPILER_ID</name></member>
+    <member refid="cmake-build-debug_2_c_make_files_23_827_88_2_compiler_id_c_2_c_make_c_compiler_id_8c_1a2ae9b72bb13abaabfcf2ee0ba7d3fa1d" kind="define"><name>STRINGIFY_HELPER</name></member>
+    <member refid="cmake-build-debug_2_c_make_files_23_827_88_2_compiler_id_c_2_c_make_c_compiler_id_8c_1a43e1cad902b6477bec893cb6430bd6c8" kind="define"><name>STRINGIFY</name></member>
+    <member refid="cmake-build-debug_2_c_make_files_23_827_88_2_compiler_id_c_2_c_make_c_compiler_id_8c_1adbc5372f40838899018fadbc89bd588b" kind="define"><name>PLATFORM_ID</name></member>
+    <member refid="cmake-build-debug_2_c_make_files_23_827_88_2_compiler_id_c_2_c_make_c_compiler_id_8c_1aba35d0d200deaeb06aee95ca297acb28" kind="define"><name>ARCHITECTURE_ID</name></member>
+    <member refid="cmake-build-debug_2_c_make_files_23_827_88_2_compiler_id_c_2_c_make_c_compiler_id_8c_1ad1280362da42492bbc11aa78cbf776ad" kind="define"><name>DEC</name></member>
+    <member refid="cmake-build-debug_2_c_make_files_23_827_88_2_compiler_id_c_2_c_make_c_compiler_id_8c_1a46d5d95daa1bef867bd0179594310ed5" kind="define"><name>HEX</name></member>
+    <member refid="cmake-build-debug_2_c_make_files_23_827_88_2_compiler_id_c_2_c_make_c_compiler_id_8c_1adaee3ee7c5a7a22451ea25e762e1d7d5" kind="define"><name>C_VERSION</name></member>
+    <member refid="cmake-build-debug_2_c_make_files_23_827_88_2_compiler_id_c_2_c_make_c_compiler_id_8c_1a4b0efeb7a5d59313986b3a0390f050f6" kind="variable"><name>info_compiler</name></member>
+    <member refid="cmake-build-debug_2_c_make_files_23_827_88_2_compiler_id_c_2_c_make_c_compiler_id_8c_1a2321403dee54ee23f0c2fa849c60f7d4" kind="variable"><name>info_platform</name></member>
+    <member refid="cmake-build-debug_2_c_make_files_23_827_88_2_compiler_id_c_2_c_make_c_compiler_id_8c_1a59647e99d304ed33b15cb284c27ed391" kind="variable"><name>info_arch</name></member>
+    <member refid="cmake-build-debug_2_c_make_files_23_827_88_2_compiler_id_c_2_c_make_c_compiler_id_8c_1a4607cccf070750927b458473ca82c090" kind="variable"><name>info_language_standard_default</name></member>
+    <member refid="cmake-build-debug_2_c_make_files_23_827_88_2_compiler_id_c_2_c_make_c_compiler_id_8c_1a0f46a8a39e09d9b803c4766904fd7e99" kind="variable"><name>info_language_extensions_default</name></member>
+    <member refid="cmake-build-debug_2_c_make_files_23_827_88_2_compiler_id_c_2_c_make_c_compiler_id_8c_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="cmake-build-debug_2_c_make_files_23_828_83_2_compiler_id_c_2_c_make_c_compiler_id_8c" kind="file"><name>CMakeCCompilerId.c</name>
+    <member refid="cmake-build-debug_2_c_make_files_23_828_83_2_compiler_id_c_2_c_make_c_compiler_id_8c_1ae5510d82e4946f1656f4969911c54736" kind="define"><name>__has_include</name></member>
+    <member refid="cmake-build-debug_2_c_make_files_23_828_83_2_compiler_id_c_2_c_make_c_compiler_id_8c_1a81dee0709ded976b2e0319239f72d174" kind="define"><name>COMPILER_ID</name></member>
+    <member refid="cmake-build-debug_2_c_make_files_23_828_83_2_compiler_id_c_2_c_make_c_compiler_id_8c_1a2ae9b72bb13abaabfcf2ee0ba7d3fa1d" kind="define"><name>STRINGIFY_HELPER</name></member>
+    <member refid="cmake-build-debug_2_c_make_files_23_828_83_2_compiler_id_c_2_c_make_c_compiler_id_8c_1a43e1cad902b6477bec893cb6430bd6c8" kind="define"><name>STRINGIFY</name></member>
+    <member refid="cmake-build-debug_2_c_make_files_23_828_83_2_compiler_id_c_2_c_make_c_compiler_id_8c_1adbc5372f40838899018fadbc89bd588b" kind="define"><name>PLATFORM_ID</name></member>
+    <member refid="cmake-build-debug_2_c_make_files_23_828_83_2_compiler_id_c_2_c_make_c_compiler_id_8c_1aba35d0d200deaeb06aee95ca297acb28" kind="define"><name>ARCHITECTURE_ID</name></member>
+    <member refid="cmake-build-debug_2_c_make_files_23_828_83_2_compiler_id_c_2_c_make_c_compiler_id_8c_1ad1280362da42492bbc11aa78cbf776ad" kind="define"><name>DEC</name></member>
+    <member refid="cmake-build-debug_2_c_make_files_23_828_83_2_compiler_id_c_2_c_make_c_compiler_id_8c_1a46d5d95daa1bef867bd0179594310ed5" kind="define"><name>HEX</name></member>
+    <member refid="cmake-build-debug_2_c_make_files_23_828_83_2_compiler_id_c_2_c_make_c_compiler_id_8c_1adaee3ee7c5a7a22451ea25e762e1d7d5" kind="define"><name>C_VERSION</name></member>
+    <member refid="cmake-build-debug_2_c_make_files_23_828_83_2_compiler_id_c_2_c_make_c_compiler_id_8c_1a4b0efeb7a5d59313986b3a0390f050f6" kind="variable"><name>info_compiler</name></member>
+    <member refid="cmake-build-debug_2_c_make_files_23_828_83_2_compiler_id_c_2_c_make_c_compiler_id_8c_1a2321403dee54ee23f0c2fa849c60f7d4" kind="variable"><name>info_platform</name></member>
+    <member refid="cmake-build-debug_2_c_make_files_23_828_83_2_compiler_id_c_2_c_make_c_compiler_id_8c_1a59647e99d304ed33b15cb284c27ed391" kind="variable"><name>info_arch</name></member>
+    <member refid="cmake-build-debug_2_c_make_files_23_828_83_2_compiler_id_c_2_c_make_c_compiler_id_8c_1a4607cccf070750927b458473ca82c090" kind="variable"><name>info_language_standard_default</name></member>
+    <member refid="cmake-build-debug_2_c_make_files_23_828_83_2_compiler_id_c_2_c_make_c_compiler_id_8c_1a0f46a8a39e09d9b803c4766904fd7e99" kind="variable"><name>info_language_extensions_default</name></member>
+    <member refid="cmake-build-debug_2_c_make_files_23_828_83_2_compiler_id_c_2_c_make_c_compiler_id_8c_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="build_2_c_make_files_23_828_83_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp" kind="file"><name>CMakeCXXCompilerId.cpp</name>
+    <member refid="build_2_c_make_files_23_828_83_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp_1ae5510d82e4946f1656f4969911c54736" kind="define"><name>__has_include</name></member>
+    <member refid="build_2_c_make_files_23_828_83_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp_1a81dee0709ded976b2e0319239f72d174" kind="define"><name>COMPILER_ID</name></member>
+    <member refid="build_2_c_make_files_23_828_83_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp_1a2ae9b72bb13abaabfcf2ee0ba7d3fa1d" kind="define"><name>STRINGIFY_HELPER</name></member>
+    <member refid="build_2_c_make_files_23_828_83_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp_1a43e1cad902b6477bec893cb6430bd6c8" kind="define"><name>STRINGIFY</name></member>
+    <member refid="build_2_c_make_files_23_828_83_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp_1adbc5372f40838899018fadbc89bd588b" kind="define"><name>PLATFORM_ID</name></member>
+    <member refid="build_2_c_make_files_23_828_83_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp_1aba35d0d200deaeb06aee95ca297acb28" kind="define"><name>ARCHITECTURE_ID</name></member>
+    <member refid="build_2_c_make_files_23_828_83_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp_1ad1280362da42492bbc11aa78cbf776ad" kind="define"><name>DEC</name></member>
+    <member refid="build_2_c_make_files_23_828_83_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp_1a46d5d95daa1bef867bd0179594310ed5" kind="define"><name>HEX</name></member>
+    <member refid="build_2_c_make_files_23_828_83_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp_1a34cc889e576a1ae6c84ae9e0a851ba21" kind="define"><name>CXX_STD</name></member>
+    <member refid="build_2_c_make_files_23_828_83_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp_1a4b0efeb7a5d59313986b3a0390f050f6" kind="variable"><name>info_compiler</name></member>
+    <member refid="build_2_c_make_files_23_828_83_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp_1a2321403dee54ee23f0c2fa849c60f7d4" kind="variable"><name>info_platform</name></member>
+    <member refid="build_2_c_make_files_23_828_83_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp_1a59647e99d304ed33b15cb284c27ed391" kind="variable"><name>info_arch</name></member>
+    <member refid="build_2_c_make_files_23_828_83_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp_1a4607cccf070750927b458473ca82c090" kind="variable"><name>info_language_standard_default</name></member>
+    <member refid="build_2_c_make_files_23_828_83_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp_1a0f46a8a39e09d9b803c4766904fd7e99" kind="variable"><name>info_language_extensions_default</name></member>
+    <member refid="build_2_c_make_files_23_828_83_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="cmake-build-debug_2_c_make_files_23_827_88_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp" kind="file"><name>CMakeCXXCompilerId.cpp</name>
+    <member refid="cmake-build-debug_2_c_make_files_23_827_88_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp_1ae5510d82e4946f1656f4969911c54736" kind="define"><name>__has_include</name></member>
+    <member refid="cmake-build-debug_2_c_make_files_23_827_88_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp_1a81dee0709ded976b2e0319239f72d174" kind="define"><name>COMPILER_ID</name></member>
+    <member refid="cmake-build-debug_2_c_make_files_23_827_88_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp_1a2ae9b72bb13abaabfcf2ee0ba7d3fa1d" kind="define"><name>STRINGIFY_HELPER</name></member>
+    <member refid="cmake-build-debug_2_c_make_files_23_827_88_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp_1a43e1cad902b6477bec893cb6430bd6c8" kind="define"><name>STRINGIFY</name></member>
+    <member refid="cmake-build-debug_2_c_make_files_23_827_88_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp_1adbc5372f40838899018fadbc89bd588b" kind="define"><name>PLATFORM_ID</name></member>
+    <member refid="cmake-build-debug_2_c_make_files_23_827_88_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp_1aba35d0d200deaeb06aee95ca297acb28" kind="define"><name>ARCHITECTURE_ID</name></member>
+    <member refid="cmake-build-debug_2_c_make_files_23_827_88_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp_1ad1280362da42492bbc11aa78cbf776ad" kind="define"><name>DEC</name></member>
+    <member refid="cmake-build-debug_2_c_make_files_23_827_88_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp_1a46d5d95daa1bef867bd0179594310ed5" kind="define"><name>HEX</name></member>
+    <member refid="cmake-build-debug_2_c_make_files_23_827_88_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp_1a34cc889e576a1ae6c84ae9e0a851ba21" kind="define"><name>CXX_STD</name></member>
+    <member refid="cmake-build-debug_2_c_make_files_23_827_88_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp_1a4b0efeb7a5d59313986b3a0390f050f6" kind="variable"><name>info_compiler</name></member>
+    <member refid="cmake-build-debug_2_c_make_files_23_827_88_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp_1a2321403dee54ee23f0c2fa849c60f7d4" kind="variable"><name>info_platform</name></member>
+    <member refid="cmake-build-debug_2_c_make_files_23_827_88_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp_1a59647e99d304ed33b15cb284c27ed391" kind="variable"><name>info_arch</name></member>
+    <member refid="cmake-build-debug_2_c_make_files_23_827_88_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp_1a4607cccf070750927b458473ca82c090" kind="variable"><name>info_language_standard_default</name></member>
+    <member refid="cmake-build-debug_2_c_make_files_23_827_88_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp_1a0f46a8a39e09d9b803c4766904fd7e99" kind="variable"><name>info_language_extensions_default</name></member>
+    <member refid="cmake-build-debug_2_c_make_files_23_827_88_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="cmake-build-debug_2_c_make_files_23_828_83_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp" kind="file"><name>CMakeCXXCompilerId.cpp</name>
+    <member refid="cmake-build-debug_2_c_make_files_23_828_83_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp_1ae5510d82e4946f1656f4969911c54736" kind="define"><name>__has_include</name></member>
+    <member refid="cmake-build-debug_2_c_make_files_23_828_83_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp_1a81dee0709ded976b2e0319239f72d174" kind="define"><name>COMPILER_ID</name></member>
+    <member refid="cmake-build-debug_2_c_make_files_23_828_83_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp_1a2ae9b72bb13abaabfcf2ee0ba7d3fa1d" kind="define"><name>STRINGIFY_HELPER</name></member>
+    <member refid="cmake-build-debug_2_c_make_files_23_828_83_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp_1a43e1cad902b6477bec893cb6430bd6c8" kind="define"><name>STRINGIFY</name></member>
+    <member refid="cmake-build-debug_2_c_make_files_23_828_83_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp_1adbc5372f40838899018fadbc89bd588b" kind="define"><name>PLATFORM_ID</name></member>
+    <member refid="cmake-build-debug_2_c_make_files_23_828_83_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp_1aba35d0d200deaeb06aee95ca297acb28" kind="define"><name>ARCHITECTURE_ID</name></member>
+    <member refid="cmake-build-debug_2_c_make_files_23_828_83_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp_1ad1280362da42492bbc11aa78cbf776ad" kind="define"><name>DEC</name></member>
+    <member refid="cmake-build-debug_2_c_make_files_23_828_83_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp_1a46d5d95daa1bef867bd0179594310ed5" kind="define"><name>HEX</name></member>
+    <member refid="cmake-build-debug_2_c_make_files_23_828_83_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp_1a34cc889e576a1ae6c84ae9e0a851ba21" kind="define"><name>CXX_STD</name></member>
+    <member refid="cmake-build-debug_2_c_make_files_23_828_83_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp_1a4b0efeb7a5d59313986b3a0390f050f6" kind="variable"><name>info_compiler</name></member>
+    <member refid="cmake-build-debug_2_c_make_files_23_828_83_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp_1a2321403dee54ee23f0c2fa849c60f7d4" kind="variable"><name>info_platform</name></member>
+    <member refid="cmake-build-debug_2_c_make_files_23_828_83_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp_1a59647e99d304ed33b15cb284c27ed391" kind="variable"><name>info_arch</name></member>
+    <member refid="cmake-build-debug_2_c_make_files_23_828_83_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp_1a4607cccf070750927b458473ca82c090" kind="variable"><name>info_language_standard_default</name></member>
+    <member refid="cmake-build-debug_2_c_make_files_23_828_83_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp_1a0f46a8a39e09d9b803c4766904fd7e99" kind="variable"><name>info_language_extensions_default</name></member>
+    <member refid="cmake-build-debug_2_c_make_files_23_828_83_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
   </compound>
   <compound refid="_dice_8cpp" kind="file"><name>Dice.cpp</name>
   </compound>
@@ -219,6 +510,13 @@
   <compound refid="main_8cpp" kind="file"><name>main.cpp</name>
     <member refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" kind="function"><name>main</name></member>
   </compound>
+  <compound refid="map-test_8cpp" kind="file"><name>map-test.cpp</name>
+    <member refid="map-test_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="map_8cpp" kind="file"><name>map.cpp</name>
+  </compound>
+  <compound refid="map_8h" kind="file"><name>map.h</name>
+  </compound>
   <compound refid="_random_8h" kind="file"><name>Random.h</name>
   </compound>
   <compound refid="_r_e_a_d_m_e_8md" kind="file"><name>README.md</name>
@@ -233,20 +531,70 @@
   </compound>
   <compound refid="_fighter_test_8h" kind="file"><name>FighterTest.h</name>
   </compound>
+  <compound refid="_dice_test_8cpp" kind="file"><name>DiceTest.cpp</name>
+    <member refid="_dice_test_8cpp_1a3ac77e5cf1043b4a814c2bef908a9cdd" kind="function"><name>CPPUNIT_TEST_SUITE_REGISTRATION</name></member>
+  </compound>
+  <compound refid="_dice_test_8h" kind="file"><name>DiceTest.h</name>
+  </compound>
+  <compound refid="_item_test_8cpp" kind="file"><name>ItemTest.cpp</name>
+    <member refid="_item_test_8cpp_1a446e6e7fefe3cc2b2f255ea29b674b9a" kind="function"><name>CPPUNIT_TEST_SUITE_REGISTRATION</name></member>
+  </compound>
+  <compound refid="_item_test_8h" kind="file"><name>ItemTest.h</name>
+  </compound>
+  <compound refid="_cell_test_8cpp" kind="file"><name>CellTest.cpp</name>
+    <member refid="_cell_test_8cpp_1afa9893c4001a296af4c151fcf46447b2" kind="function"><name>CPPUNIT_TEST_SUITE_REGISTRATION</name></member>
+  </compound>
+  <compound refid="_cell_test_8h" kind="file"><name>CellTest.h</name>
+  </compound>
+  <compound refid="_map_test_8cpp" kind="file"><name>MapTest.cpp</name>
+    <member refid="_map_test_8cpp_1a2ee438416ab9ccaf888fb81ef8291165" kind="function"><name>CPPUNIT_TEST_SUITE_REGISTRATION</name></member>
+  </compound>
+  <compound refid="_map_test_8h" kind="file"><name>MapTest.h</name>
+  </compound>
   <compound refid="_test_runner_8cpp" kind="file"><name>TestRunner.cpp</name>
     <member refid="_test_runner_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
   </compound>
   <compound refid="dir_a30f206eb85b936aebf778f8ca08be7c" kind="dir"><name>/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/cmake-build-debug/CMakeFiles/3.27.8</name>
   </compound>
+  <compound refid="dir_29b991757baefd4c9fee1250ebc1a608" kind="dir"><name>/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/build/CMakeFiles/3.28.3</name>
+  </compound>
+  <compound refid="dir_f8f8398536af5cece0761a7627ac8f8f" kind="dir"><name>/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/cmake-build-debug/CMakeFiles/3.28.3</name>
+  </compound>
+  <compound refid="dir_6038cf63833db06004e9ce079e478c92" kind="dir"><name>/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/build/CMakeFiles/A1.dir</name>
+  </compound>
+  <compound refid="dir_4fef79e7177ba769987a8da36c892c5f" kind="dir"><name>/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/build</name>
+  </compound>
+  <compound refid="dir_32a1595782dcf78745fa16f6be310040" kind="dir"><name>/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/build/CMakeFiles/COMP345_A1_Tests.dir/Tests/Character</name>
+  </compound>
   <compound refid="dir_fc43c8c3672b004373891ac3cf051763" kind="dir"><name>/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Tests/Character</name>
   </compound>
   <compound refid="dir_95e29a8b8ee7c54052c171a88bb95675" kind="dir"><name>/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/cmake-build-debug</name>
   </compound>
+  <compound refid="dir_63772b626f2709090f0bdca0f40827b4" kind="dir"><name>/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/build/CMakeFiles</name>
+  </compound>
   <compound refid="dir_f89abcb304c928c7d889aa5625570de5" kind="dir"><name>/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/cmake-build-debug/CMakeFiles</name>
+  </compound>
+  <compound refid="dir_6f6cd2b999599266ccaedecc3ad2b842" kind="dir"><name>/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/build/CMakeFiles/COMP345_A1_Tests.dir</name>
+  </compound>
+  <compound refid="dir_3339dc3fb3b6edb5c9435acb2bc8a9d8" kind="dir"><name>/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/build/CMakeFiles/3.28.3/CompilerIdC</name>
   </compound>
   <compound refid="dir_36a319fdfa90daea3fe65386bde15ea1" kind="dir"><name>/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/cmake-build-debug/CMakeFiles/3.27.8/CompilerIdC</name>
   </compound>
+  <compound refid="dir_dc1ef5bebdd75288f0b4d7d181aee05d" kind="dir"><name>/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/cmake-build-debug/CMakeFiles/3.28.3/CompilerIdC</name>
+  </compound>
+  <compound refid="dir_e754fd9bcb8b040d1f011f426f0f0d21" kind="dir"><name>/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/build/CMakeFiles/3.28.3/CompilerIdCXX</name>
+  </compound>
   <compound refid="dir_d27ff1c24db4b8ed35c08a97f94ed8ec" kind="dir"><name>/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/cmake-build-debug/CMakeFiles/3.27.8/CompilerIdCXX</name>
+  </compound>
+  <compound refid="dir_dda24293cd68ac31b3330dac20dcbbf8" kind="dir"><name>/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/cmake-build-debug/CMakeFiles/3.28.3/CompilerIdCXX</name>
+  </compound>
+  <compound refid="dir_70d789ee67e00236d0e4d8d91fd705ce" kind="dir"><name>/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Tests/Dice</name>
+  </compound>
+  <compound refid="dir_d60deb01f333dc592860cdd491b4371f" kind="dir"><name>/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Tests/Item</name>
+  </compound>
+  <compound refid="dir_12088c1dd414390254e1a827a9974a04" kind="dir"><name>/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Tests/Map</name>
+  </compound>
+  <compound refid="dir_e0c3b885a8db158c6a826494c391c2ce" kind="dir"><name>/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/build/CMakeFiles/COMP345_A1_Tests.dir/Tests</name>
   </compound>
   <compound refid="dir_33c78a012c8d08979f57a54a07694c46" kind="dir"><name>/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Tests</name>
   </compound>
