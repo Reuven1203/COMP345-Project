@@ -1,0 +1,41 @@
+\doxysection{/\+Users/reuvenostrofsky/\+Library/\+Mobile Documents/com\texorpdfstring{$\sim$}{\string~}apple\texorpdfstring{$\sim$}{\string~}\+Cloud\+Docs/\+Concordia/\+Winter 2024/\+Comp345/\+Assignments/\+COMP345-\/\+A1/main.cpp}
+\hypertarget{main_8cpp_source}{}\label{main_8cpp_source}\mbox{\hyperlink{main_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00001}00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00002}00002\ \textcolor{comment}{//\ Created\ by\ Reuven\ Ostrofsky\ on\ 2024-\/01-\/30.}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00003}00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_fighter_8h}{Fighter.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_item_8h}{Item.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00011}\mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{00011}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00012}00012\ \ \ \ \ \ \mbox{\hyperlink{class_character}{Character}}*\ fighter\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_fighter}{Fighter}}(\textcolor{stringliteral}{"{}Reuven"{}},\ 6);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00013}00013\ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Fighter's\ stats\ before\ equipment:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00014}00014\ \textcolor{comment}{//\ \ \ \ \ fighter-\/>showCharacterStats();}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00015}00015\ \ \ \ \ \ \mbox{\hyperlink{class_item}{Item}}\ item1\ =\ \mbox{\hyperlink{class_item}{Item}}(\mbox{\hyperlink{class_item_ab5eeb575e9d66ebcfef9b58b667fad05a01a2cad8626795753e845959db5dcf47}{Item::ItemType::ARMOR}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00016}00016\ \ \ \ \ \ \mbox{\hyperlink{class_item}{Item}}\ item2\ =\ \mbox{\hyperlink{class_item}{Item}}(\mbox{\hyperlink{class_item_ab5eeb575e9d66ebcfef9b58b667fad05a2c8fa5df080abba5b02d47e659c112f1}{Item::ItemType::WEAPON}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00017}00017\ \ \ \ \ \ \mbox{\hyperlink{class_item}{Item}}\ item3\ =\ \mbox{\hyperlink{class_item}{Item}}(\mbox{\hyperlink{class_item_ab5eeb575e9d66ebcfef9b58b667fad05abfbf249e602551bc62fac7f21a4fa155}{Item::ItemType::SHIELD}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00020}00020\ \ \ \ \ \ fighter-\/>\mbox{\hyperlink{class_character_a84a3a39656655d9a47844887976aafd2}{equip}}(item1);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ fighter-\/>\mbox{\hyperlink{class_character_a84a3a39656655d9a47844887976aafd2}{equip}}(item2);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ fighter-\/>\mbox{\hyperlink{class_character_a84a3a39656655d9a47844887976aafd2}{equip}}(item3);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ fighter-\/>\mbox{\hyperlink{class_character_a087c2ae6cb50f358dc2955f6c27a9351}{showWornItems}}();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00025}00025\ \textcolor{comment}{//\ \ \ \ \ \ \ \ std::cout\ <<\ "{}\(\backslash\)n\(\backslash\)nFighter's\ stats\ after\ equipment:\ "{}\ <<\ std::endl;}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00026}00026\ \textcolor{comment}{//\ \ \ \ \ \ \ \ fighter-\/>showCharacterStats();}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ fighter-\/>\mbox{\hyperlink{class_character_a96f3ff3409c036f66237c80cabfb6718}{unequip}}(item1);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ fighter-\/>\mbox{\hyperlink{class_character_a087c2ae6cb50f358dc2955f6c27a9351}{showWornItems}}();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00033}00033\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00035}00035\ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00036}00036\ }
+
+\end{DoxyCode}

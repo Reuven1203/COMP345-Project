@@ -1,0 +1,177 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="class_dice" kind="class" language="C++" prot="public">
+    <compoundname>Dice</compoundname>
+    <includes refid="_dice_8h" local="no">Dice.h</includes>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_dice_1aa7ec1a35d7132d3dec12afa4a905e07d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_roll" kindref="compound">Roll</ref></type>
+        <definition>Roll Dice::parseRoll</definition>
+        <argsstring>(std::string str)</argsstring>
+        <name>parseRoll</name>
+        <qualifiedname>Dice::parseRoll</qualifiedname>
+        <param>
+          <type>std::string</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+<para>Internal method to parse a string into a <ref refid="struct_roll" kindref="compound">Roll</ref> struct. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The roll string to parse. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A <ref refid="struct_roll" kindref="compound">Roll</ref> struct representing the parsed roll. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Dice.h" line="42" column="10" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Dice.cpp" bodystart="57" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="class_dice_1ad11d882fd5b27d53ef927a7d8a9f9325" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_dice_8h_1a230fe26a49ff11b10bb851e08f88d9d4" kindref="member">DieType</ref></type>
+        <definition>DieType Dice::parseDie</definition>
+        <argsstring>(std::string dieTypeStr, std::string str)</argsstring>
+        <name>parseDie</name>
+        <qualifiedname>Dice::parseDie</qualifiedname>
+        <param>
+          <type>std::string</type>
+          <declname>dieTypeStr</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+<para>Internal method to parse a die type string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dieTypeStr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The die type string to parse. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The original roll string (used for error handling). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The corresponding DieType enum value. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Dice.h" line="51" column="13" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Dice.cpp" bodystart="30" bodyend="49"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="class_dice_1a628f958b8db4a9c64355421c4473a83a" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dice::diceRollStringErr</definition>
+        <argsstring>(std::string str)</argsstring>
+        <name>diceRollStringErr</name>
+        <qualifiedname>Dice::diceRollStringErr</qualifiedname>
+        <param>
+          <type>std::string</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+<para>Output error message for invalid roll string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The invalid roll string. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Dice.h" line="58" column="17" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Dice.cpp" bodystart="17" bodyend="20"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_dice_1a898cd5b1af808873efac3d979645e775" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dice::Dice</definition>
+        <argsstring>()=default</argsstring>
+        <name>Dice</name>
+        <qualifiedname>Dice::Dice</qualifiedname>
+        <briefdescription>
+<para>Default constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructs a <ref refid="class_dice" kindref="compound">Dice</ref> object. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Dice.h" line="66" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="class_dice_1a4b5adb8de2005855739bd66ba3b79290" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Dice::roll</definition>
+        <argsstring>(std::string rollString)</argsstring>
+        <name>roll</name>
+        <qualifiedname>Dice::roll</qualifiedname>
+        <param>
+          <type>std::string</type>
+          <declname>rollString</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="struct_roll" kindref="compound">Roll</ref> dice based on the given roll string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>rollString</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The roll string in format xdy[+z] or xdy+z. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The total roll value. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Dice.h" line="74" column="9" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Dice.cpp" bodystart="106" bodyend="125"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Class for rolling dice. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This class provides functionality to roll dice based on a given roll string. </para>
+    </detaileddescription>
+    <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Dice.h" line="34" column="1" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Dice.h" bodystart="34" bodyend="75"/>
+    <listofallmembers>
+      <member refid="class_dice_1a898cd5b1af808873efac3d979645e775" prot="public" virt="non-virtual"><scope>Dice</scope><name>Dice</name></member>
+      <member refid="class_dice_1a628f958b8db4a9c64355421c4473a83a" prot="private" virt="non-virtual"><scope>Dice</scope><name>diceRollStringErr</name></member>
+      <member refid="class_dice_1ad11d882fd5b27d53ef927a7d8a9f9325" prot="private" virt="non-virtual"><scope>Dice</scope><name>parseDie</name></member>
+      <member refid="class_dice_1aa7ec1a35d7132d3dec12afa4a905e07d" prot="private" virt="non-virtual"><scope>Dice</scope><name>parseRoll</name></member>
+      <member refid="class_dice_1a4b5adb8de2005855739bd66ba3b79290" prot="public" virt="non-virtual"><scope>Dice</scope><name>roll</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

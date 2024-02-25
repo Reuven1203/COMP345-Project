@@ -1,0 +1,45 @@
+\doxysection{Random Namespace Reference}
+\hypertarget{namespace_random}{}\label{namespace_random}\index{Random@{Random}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{namespace_random_a96193c13c6d59d02b8bd0462a75415c2}{random}} (int min, int max)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+std\+::mt19937 \mbox{\hyperlink{namespace_random_a8ef67d318c787f6b1eb57f9b8cc5c6b1}{mt\+\_\+random}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespace_random_a96193c13c6d59d02b8bd0462a75415c2}\label{namespace_random_a96193c13c6d59d02b8bd0462a75415c2} 
+\index{Random@{Random}!random@{random}}
+\index{random@{random}!Random@{Random}}
+\doxysubsubsection{\texorpdfstring{random()}{random()}}
+{\footnotesize\ttfamily int Random\+::random (\begin{DoxyParamCaption}\item[{int}]{min,  }\item[{int}]{max }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_random_8h_source_l00020}{20}} of file \mbox{\hyperlink{_random_8h_source}{Random.\+h}}.
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespace_random_a8ef67d318c787f6b1eb57f9b8cc5c6b1}\label{namespace_random_a8ef67d318c787f6b1eb57f9b8cc5c6b1} 
+\index{Random@{Random}!mt\_random@{mt\_random}}
+\index{mt\_random@{mt\_random}!Random@{Random}}
+\doxysubsubsection{\texorpdfstring{mt\_random}{mt\_random}}
+{\footnotesize\ttfamily std\+::mt19937 Random\+::mt\+\_\+random\hspace{0.3cm}{\ttfamily [inline]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{\ \textcolor{keyword}{static\_cast<}std::mt19937::result\_type\textcolor{keyword}{>}(}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ std::chrono::steady\_clock::now().time\_since\_epoch().count()}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ )\}}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{_random_8h_source_l00016}{16}} of file \mbox{\hyperlink{_random_8h_source}{Random.\+h}}.
+

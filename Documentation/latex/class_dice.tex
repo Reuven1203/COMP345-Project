@@ -1,0 +1,148 @@
+\doxysection{Dice Class Reference}
+\hypertarget{class_dice}{}\label{class_dice}\index{Dice@{Dice}}
+
+
+Class for rolling dice.  
+
+
+
+
+{\ttfamily \#include $<$Dice.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_dice_a898cd5b1af808873efac3d979645e775}{Dice}} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_dice_a4b5adb8de2005855739bd66ba3b79290}{roll}} (std\+::string roll\+String)
+\begin{DoxyCompactList}\small\item\em \doxylink{struct_roll}{Roll} dice based on the given roll string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_roll}{Roll}} \mbox{\hyperlink{class_dice_aa7ec1a35d7132d3dec12afa4a905e07d}{parse\+Roll}} (std\+::string str)
+\begin{DoxyCompactList}\small\item\em Internal method to parse a string into a \doxylink{struct_roll}{Roll} struct. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_dice_8h_a230fe26a49ff11b10bb851e08f88d9d4}{Die\+Type}} \mbox{\hyperlink{class_dice_ad11d882fd5b27d53ef927a7d8a9f9325}{parse\+Die}} (std\+::string die\+Type\+Str, std\+::string str)
+\begin{DoxyCompactList}\small\item\em Internal method to parse a die type string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_dice_a628f958b8db4a9c64355421c4473a83a}{dice\+Roll\+String\+Err}} (std\+::string str)
+\begin{DoxyCompactList}\small\item\em Output error message for invalid roll string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for rolling dice. 
+
+This class provides functionality to roll dice based on a given roll string. 
+
+Definition at line \mbox{\hyperlink{_dice_8h_source_l00034}{34}} of file \mbox{\hyperlink{_dice_8h_source}{Dice.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_dice_a898cd5b1af808873efac3d979645e775}\label{class_dice_a898cd5b1af808873efac3d979645e775} 
+\index{Dice@{Dice}!Dice@{Dice}}
+\index{Dice@{Dice}!Dice@{Dice}}
+\doxysubsubsection{\texorpdfstring{Dice()}{Dice()}}
+{\footnotesize\ttfamily Dice\+::\+Dice (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default constructor. 
+
+Constructs a \doxylink{class_dice}{Dice} object. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_dice_a628f958b8db4a9c64355421c4473a83a}\label{class_dice_a628f958b8db4a9c64355421c4473a83a} 
+\index{Dice@{Dice}!diceRollStringErr@{diceRollStringErr}}
+\index{diceRollStringErr@{diceRollStringErr}!Dice@{Dice}}
+\doxysubsubsection{\texorpdfstring{diceRollStringErr()}{diceRollStringErr()}}
+{\footnotesize\ttfamily void Dice\+::dice\+Roll\+String\+Err (\begin{DoxyParamCaption}\item[{std\+::string}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Output error message for invalid roll string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The invalid roll string. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00017}{17}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
+
+\Hypertarget{class_dice_ad11d882fd5b27d53ef927a7d8a9f9325}\label{class_dice_ad11d882fd5b27d53ef927a7d8a9f9325} 
+\index{Dice@{Dice}!parseDie@{parseDie}}
+\index{parseDie@{parseDie}!Dice@{Dice}}
+\doxysubsubsection{\texorpdfstring{parseDie()}{parseDie()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_dice_8h_a230fe26a49ff11b10bb851e08f88d9d4}{Die\+Type}} Dice\+::parse\+Die (\begin{DoxyParamCaption}\item[{std\+::string}]{die\+Type\+Str,  }\item[{std\+::string}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Internal method to parse a die type string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em die\+Type\+Str} & The die type string to parse. \\
+\hline
+{\em str} & The original roll string (used for error handling). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The corresponding Die\+Type enum value. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00030}{30}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
+
+\Hypertarget{class_dice_aa7ec1a35d7132d3dec12afa4a905e07d}\label{class_dice_aa7ec1a35d7132d3dec12afa4a905e07d} 
+\index{Dice@{Dice}!parseRoll@{parseRoll}}
+\index{parseRoll@{parseRoll}!Dice@{Dice}}
+\doxysubsubsection{\texorpdfstring{parseRoll()}{parseRoll()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_roll}{Roll}} Dice\+::parse\+Roll (\begin{DoxyParamCaption}\item[{std\+::string}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Internal method to parse a string into a \doxylink{struct_roll}{Roll} struct. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The roll string to parse. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{struct_roll}{Roll} struct representing the parsed roll. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00057}{57}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
+
+\Hypertarget{class_dice_a4b5adb8de2005855739bd66ba3b79290}\label{class_dice_a4b5adb8de2005855739bd66ba3b79290} 
+\index{Dice@{Dice}!roll@{roll}}
+\index{roll@{roll}!Dice@{Dice}}
+\doxysubsubsection{\texorpdfstring{roll()}{roll()}}
+{\footnotesize\ttfamily int Dice\+::roll (\begin{DoxyParamCaption}\item[{std\+::string}]{roll\+String }\end{DoxyParamCaption})}
+
+
+
+\doxylink{struct_roll}{Roll} dice based on the given roll string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em roll\+String} & The roll string in format xdy\mbox{[}+z\mbox{]} or xdy+z. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The total roll value. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00106}{106}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/reuvenostrofsky/\+Library/\+Mobile Documents/com\texorpdfstring{$\sim$}{\string~}apple\texorpdfstring{$\sim$}{\string~}\+Cloud\+Docs/\+Concordia/\+Winter 2024/\+Comp345/\+Assignments/\+COMP345-\/\+A1/\mbox{\hyperlink{_dice_8h}{Dice.\+h}}\item 
+/\+Users/reuvenostrofsky/\+Library/\+Mobile Documents/com\texorpdfstring{$\sim$}{\string~}apple\texorpdfstring{$\sim$}{\string~}\+Cloud\+Docs/\+Concordia/\+Winter 2024/\+Comp345/\+Assignments/\+COMP345-\/\+A1/\mbox{\hyperlink{_dice_8cpp}{Dice.\+cpp}}\end{DoxyCompactItemize}

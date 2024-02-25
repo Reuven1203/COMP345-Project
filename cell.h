@@ -2,41 +2,47 @@
 #define CELL_H
 #include <iostream>
 #include "itemContainer.h"
-// #include "Character.h"
+ #include "Character.h"
 
 enum cellType
 {
-    Player,Nothing,Chest,Wall,Start,End
+    Player,Nothing,Chest,Wall
 };
 class cell
 {
+    friend class dungeonMap;
 public:
     cell();
     ~cell();
 
-    // cell(Character *person);
-    cell(container *itemStorage);
-    cell(cellType types);
-    void setCellType(cellType types);
+    explicit cell(Character *person);
+    explicit cell(container *itemStorage);
+    explicit cell(cellType types);
+
     void setWall();
-    // void setPlayer(Character *person);
     void setChest(container *chest);
-
-
+    void setPlayer(Character *player);
     void setVisit();
     bool checkVisit();
     void clearVisit();
     cellType getCellType();
+    [[nodiscard]] int getRowPos() const;
+    [[nodiscard]] int getColPos() const;
 
     void removeContent(); //To remove anything thats in cell 
 
 
 private:
     cellType type;
-    container  *chest;
-    bool visit; //for map validation
+    container  *chest{};
+    Character *player{};
+    bool visit{}; //for map validation
+    void setCellType(cellType types);
+    int rowPos{};
+    int colPos{};
+    void setRowPos(int row);
+    void setColPos(int col);
 
-    // Character *player;
 
     /* Add in when necessary
     Opponent enemy;

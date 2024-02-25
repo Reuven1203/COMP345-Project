@@ -1,0 +1,21 @@
+\doxysection{Test\+Runner.\+cpp}
+\hypertarget{_test_runner_8cpp_source}{}\label{_test_runner_8cpp_source}\index{/Users/reuvenostrofsky/Library/Mobile Documents/com\texorpdfstring{$\sim$}{\string~}apple\texorpdfstring{$\sim$}{\string~}CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-\/A1/Tests/TestRunner.cpp@{/Users/reuvenostrofsky/Library/Mobile Documents/com\texorpdfstring{$\sim$}{\string~}apple\texorpdfstring{$\sim$}{\string~}CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-\/A1/Tests/TestRunner.cpp}}
+\mbox{\hyperlink{_test_runner_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_test_runner_8cpp_source_l00001}00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_test_runner_8cpp_source_l00002}00002\ \textcolor{comment}{//\ Created\ by\ Reuven\ Ostrofsky\ on\ 2024-\/02-\/21.}}
+\DoxyCodeLine{\Hypertarget{_test_runner_8cpp_source_l00003}00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_test_runner_8cpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_test_runner_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <cppunit/ui/text/TestRunner.h>}}
+\DoxyCodeLine{\Hypertarget{_test_runner_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <cppunit/extensions/TestFactoryRegistry.h>}}
+\DoxyCodeLine{\Hypertarget{_test_runner_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <cppunit/CompilerOutputter.h>}}
+\DoxyCodeLine{\Hypertarget{_test_runner_8cpp_source_l00008}\mbox{\hyperlink{_test_runner_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{00008}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}*\ argv[])\ \{}
+\DoxyCodeLine{\Hypertarget{_test_runner_8cpp_source_l00009}00009\ \ \ \ \ CppUnit::TextUi::TestRunner\ runner;}
+\DoxyCodeLine{\Hypertarget{_test_runner_8cpp_source_l00010}00010\ \ \ \ \ CppUnit::TestFactoryRegistry\ \&registry\ =\ CppUnit::TestFactoryRegistry::getRegistry();}
+\DoxyCodeLine{\Hypertarget{_test_runner_8cpp_source_l00011}00011\ \ \ \ \ runner.addTest(registry.makeTest());}
+\DoxyCodeLine{\Hypertarget{_test_runner_8cpp_source_l00012}00012\ \ \ \ \ runner.setOutputter(\textcolor{keyword}{new}\ CppUnit::CompilerOutputter(\&runner.result(),\ std::cerr));}
+\DoxyCodeLine{\Hypertarget{_test_runner_8cpp_source_l00013}00013\ \ \ \ \ \textcolor{keywordtype}{bool}\ wasSuccessful\ =\ runner.run(\textcolor{stringliteral}{"{}"{}},\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_test_runner_8cpp_source_l00014}00014\ \ \ \ \ \textcolor{keywordflow}{return}\ wasSuccessful\ ?\ 0\ :\ 1;}
+\DoxyCodeLine{\Hypertarget{_test_runner_8cpp_source_l00015}00015\ \}}
+
+\end{DoxyCode}

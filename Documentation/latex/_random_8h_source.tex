@@ -1,0 +1,30 @@
+\doxysection{/\+Users/reuvenostrofsky/\+Library/\+Mobile Documents/com\texorpdfstring{$\sim$}{\string~}apple\texorpdfstring{$\sim$}{\string~}\+Cloud\+Docs/\+Concordia/\+Winter 2024/\+Comp345/\+Assignments/\+COMP345-\/\+A1/\+Random.h}
+\hypertarget{_random_8h_source}{}\label{_random_8h_source}\mbox{\hyperlink{_random_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_random_8h_source_l00001}00001\ \textcolor{comment}{//\ Author:\ Julian\ D'Addario}}
+\DoxyCodeLine{\Hypertarget{_random_8h_source_l00002}00002\ \textcolor{comment}{//\ Concordia\ University,\ 40050146}}
+\DoxyCodeLine{\Hypertarget{_random_8h_source_l00003}00003\ \textcolor{comment}{//\ Date:\ Feb\ 7,\ 2024}}
+\DoxyCodeLine{\Hypertarget{_random_8h_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_random_8h_source_l00005}00005\ \textcolor{preprocessor}{\#ifndef\ DICE\_RANDOM\_H}}
+\DoxyCodeLine{\Hypertarget{_random_8h_source_l00006}00006\ \textcolor{preprocessor}{\#define\ DICE\_RANDOM\_H}}
+\DoxyCodeLine{\Hypertarget{_random_8h_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_random_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <random>}}
+\DoxyCodeLine{\Hypertarget{_random_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{\Hypertarget{_random_8h_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_random_8h_source_l00011}00011\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_random_8h_source_l00012}00012\ \textcolor{comment}{\ *\ Creating\ global\ Random\ to\ avoid\ reusing\ random\ generators.}}
+\DoxyCodeLine{\Hypertarget{_random_8h_source_l00013}00013\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{_random_8h_source_l00014}\mbox{\hyperlink{namespace_random}{00014}}\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_random}{Random}}\ \{}
+\DoxyCodeLine{\Hypertarget{_random_8h_source_l00015}00015\ \ \ \ \ \textcolor{comment}{//\ Declaring\ Mersenne\ Twister\ generator\ and\ seeding\ with\ steady\_clock\ to\ avoid\ local\ system\ time\ manipulation.}}
+\DoxyCodeLine{\Hypertarget{_random_8h_source_l00016}\mbox{\hyperlink{namespace_random_a8ef67d318c787f6b1eb57f9b8cc5c6b1}{00016}}\ \ \ \ \ \textcolor{keyword}{inline}\ std::mt19937\ \mbox{\hyperlink{namespace_random_a8ef67d318c787f6b1eb57f9b8cc5c6b1}{mt\_random}}\ \{\ \textcolor{keyword}{static\_cast<}std::mt19937::result\_type\textcolor{keyword}{>}(}
+\DoxyCodeLine{\Hypertarget{_random_8h_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ std::chrono::steady\_clock::now().time\_since\_epoch().count()}
+\DoxyCodeLine{\Hypertarget{_random_8h_source_l00018}00018\ \ \ \ \ \ \ \ \ \ \ \ \ )\};}
+\DoxyCodeLine{\Hypertarget{_random_8h_source_l00019}00019\ \ \ \ \ \textcolor{comment}{//\ Function\ to\ generate\ random\ integer\ from\ min\ to\ max,\ inclusive.}}
+\DoxyCodeLine{\Hypertarget{_random_8h_source_l00020}\mbox{\hyperlink{namespace_random_a96193c13c6d59d02b8bd0462a75415c2}{00020}}\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespace_random_a96193c13c6d59d02b8bd0462a75415c2}{random}}(\textcolor{keywordtype}{int}\ min,\ \textcolor{keywordtype}{int}\ max)\ \{}
+\DoxyCodeLine{\Hypertarget{_random_8h_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::uniform\_int\_distribution\{min,\ max\}(\mbox{\hyperlink{namespace_random_a8ef67d318c787f6b1eb57f9b8cc5c6b1}{mt\_random}});}
+\DoxyCodeLine{\Hypertarget{_random_8h_source_l00022}00022\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_random_8h_source_l00023}00023\ \}\ \textcolor{comment}{//\ Random}}
+\DoxyCodeLine{\Hypertarget{_random_8h_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_random_8h_source_l00025}00025\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//DICE\_RANDOM\_H}}
+
+\end{DoxyCode}

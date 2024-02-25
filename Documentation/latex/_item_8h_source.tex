@@ -1,0 +1,70 @@
+\doxysection{/\+Users/reuvenostrofsky/\+Library/\+Mobile Documents/com\texorpdfstring{$\sim$}{\string~}apple\texorpdfstring{$\sim$}{\string~}\+Cloud\+Docs/\+Concordia/\+Winter 2024/\+Comp345/\+Assignments/\+COMP345-\/\+A1/\+Item.h}
+\hypertarget{_item_8h_source}{}\label{_item_8h_source}\mbox{\hyperlink{_item_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_item_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{_item_8h_source_l00011}00011\ \textcolor{preprocessor}{\#ifndef\ ITEM\_H}}
+\DoxyCodeLine{\Hypertarget{_item_8h_source_l00012}00012\ \textcolor{preprocessor}{\#define\ ITEM\_H}}
+\DoxyCodeLine{\Hypertarget{_item_8h_source_l00013}00013\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{_item_8h_source_l00014}00014\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{_item_8h_source_l00015}00015\ \textcolor{preprocessor}{\#include\ <random>}}
+\DoxyCodeLine{\Hypertarget{_item_8h_source_l00016}00016\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{\Hypertarget{_item_8h_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{_item_8h_source_l00018}00018\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{_item_8h_source_l00023}\mbox{\hyperlink{class_item}{00023}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_item}{Item}}}
+\DoxyCodeLine{\Hypertarget{_item_8h_source_l00024}00024\ \{}
+\DoxyCodeLine{\Hypertarget{_item_8h_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_item_8h_source_l00026}00026\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_item_8h_source_l00031}\mbox{\hyperlink{class_item_ab5eeb575e9d66ebcfef9b58b667fad05}{00031}}\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{class_item_ab5eeb575e9d66ebcfef9b58b667fad05}{ItemType}}\ \{}
+\DoxyCodeLine{\Hypertarget{_item_8h_source_l00032}\mbox{\hyperlink{class_item_ab5eeb575e9d66ebcfef9b58b667fad05a2930e02900083562ebbf7647fc974748}{00032}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_item_ab5eeb575e9d66ebcfef9b58b667fad05a2930e02900083562ebbf7647fc974748}{HELMET}},\ }
+\DoxyCodeLine{\Hypertarget{_item_8h_source_l00033}\mbox{\hyperlink{class_item_ab5eeb575e9d66ebcfef9b58b667fad05a01a2cad8626795753e845959db5dcf47}{00033}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_item_ab5eeb575e9d66ebcfef9b58b667fad05a01a2cad8626795753e845959db5dcf47}{ARMOR}},\ \ }
+\DoxyCodeLine{\Hypertarget{_item_8h_source_l00034}\mbox{\hyperlink{class_item_ab5eeb575e9d66ebcfef9b58b667fad05abfbf249e602551bc62fac7f21a4fa155}{00034}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_item_ab5eeb575e9d66ebcfef9b58b667fad05abfbf249e602551bc62fac7f21a4fa155}{SHIELD}},\ }
+\DoxyCodeLine{\Hypertarget{_item_8h_source_l00035}\mbox{\hyperlink{class_item_ab5eeb575e9d66ebcfef9b58b667fad05a2b4980317315d5cbc3cd42b547eb11c6}{00035}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_item_ab5eeb575e9d66ebcfef9b58b667fad05a2b4980317315d5cbc3cd42b547eb11c6}{RING}},\ \ \ }
+\DoxyCodeLine{\Hypertarget{_item_8h_source_l00036}\mbox{\hyperlink{class_item_ab5eeb575e9d66ebcfef9b58b667fad05a470245875f2408f25403e21fb445684c}{00036}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_item_ab5eeb575e9d66ebcfef9b58b667fad05a470245875f2408f25403e21fb445684c}{BELT}},\ \ \ }
+\DoxyCodeLine{\Hypertarget{_item_8h_source_l00037}\mbox{\hyperlink{class_item_ab5eeb575e9d66ebcfef9b58b667fad05a8f991e952d4a679e39809250c6175b1e}{00037}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_item_ab5eeb575e9d66ebcfef9b58b667fad05a8f991e952d4a679e39809250c6175b1e}{BOOTS}},\ \ }
+\DoxyCodeLine{\Hypertarget{_item_8h_source_l00038}00038\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_item_ab5eeb575e9d66ebcfef9b58b667fad05a2c8fa5df080abba5b02d47e659c112f1}{WEAPON}}\ \ }
+\DoxyCodeLine{\Hypertarget{_item_8h_source_l00039}\mbox{\hyperlink{class_item_ab5eeb575e9d66ebcfef9b58b667fad05a2c8fa5df080abba5b02d47e659c112f1}{00039}}\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_item_8h_source_l00040}\mbox{\hyperlink{class_item_a6a42b85897da5e73a5913404790e33e0}{00040}}\ \ \ \ \ \mbox{\hyperlink{class_item_ab5eeb575e9d66ebcfef9b58b667fad05}{ItemType}}\ \mbox{\hyperlink{class_item_a6a42b85897da5e73a5913404790e33e0}{equipType}};}
+\DoxyCodeLine{\Hypertarget{_item_8h_source_l00043}00043\ \textcolor{comment}{//\ helm,armor,shield,ring,belt,boots,weapon}}
+\DoxyCodeLine{\Hypertarget{_item_8h_source_l00044}00044\ \ \ \ \ \mbox{\hyperlink{class_item_a297720c02984eab37332ae795d22189d}{Item}}();}
+\DoxyCodeLine{\Hypertarget{_item_8h_source_l00048}00048\ \ \ \ \ \mbox{\hyperlink{class_item_a11663c84075b78c3ae5e30fdfcd7c458}{\string~Item}}();}
+\DoxyCodeLine{\Hypertarget{_item_8h_source_l00054}00054\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_item_a297720c02984eab37332ae795d22189d}{Item}}(\mbox{\hyperlink{class_item_ab5eeb575e9d66ebcfef9b58b667fad05}{ItemType}}\ itemtype);}
+\DoxyCodeLine{\Hypertarget{_item_8h_source_l00060}00060\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_item_a7421dba941e6ca9b4aa875e53dee7776}{rollStatMod}}();}
+\DoxyCodeLine{\Hypertarget{_item_8h_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{_item_8h_source_l00062}00062\ \ \ \ \ \textcolor{comment}{//\ Setters}}
+\DoxyCodeLine{\Hypertarget{_item_8h_source_l00063}00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_item_ab8e979a96cf06215e1e66c88d7a6d6ad}{setEquipType}}(\mbox{\hyperlink{class_item_ab5eeb575e9d66ebcfef9b58b667fad05}{ItemType}}\ type);}
+\DoxyCodeLine{\Hypertarget{_item_8h_source_l00064}00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_item_a82f73245020e5fa99b684b10a58038fb}{setEquipStats}}();}
+\DoxyCodeLine{\Hypertarget{_item_8h_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{_item_8h_source_l00066}00066\ \ \ \ \ \textcolor{comment}{//\ Getters}}
+\DoxyCodeLine{\Hypertarget{_item_8h_source_l00067}00067\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_item_a7c938dfc887d36be815acc94152fee80}{getEquipType}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_item_8h_source_l00068}00068\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_item_ad1f359133a1a3b8958fc0a4900009333}{getSTR}}();}
+\DoxyCodeLine{\Hypertarget{_item_8h_source_l00069}00069\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_item_abc447f0ba6034acd04d15e441c6c9ea8}{getCON}}();}
+\DoxyCodeLine{\Hypertarget{_item_8h_source_l00070}00070\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_item_a4acbceff9137db1c0327a54dd39cc148}{getINT}}();}
+\DoxyCodeLine{\Hypertarget{_item_8h_source_l00071}00071\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_item_ace7fe884248a08024312659095e59464}{getWIS}}();}
+\DoxyCodeLine{\Hypertarget{_item_8h_source_l00072}00072\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_item_ac205d9a7fc49567c239a3aa9d1643ce8}{getCHA}}();}
+\DoxyCodeLine{\Hypertarget{_item_8h_source_l00073}00073\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_item_ae228fec49fa884c8c18c55a604160130}{getDEX}}();}
+\DoxyCodeLine{\Hypertarget{_item_8h_source_l00074}00074\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_item_a6e611bdc812fc0e0ebdeb43b46d18db4}{getAC}}();}
+\DoxyCodeLine{\Hypertarget{_item_8h_source_l00075}00075\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_item_a122ea70ddecf55ed2b01565c84572865}{getATKBONUS}}();}
+\DoxyCodeLine{\Hypertarget{_item_8h_source_l00076}00076\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_item_ae31eceb14a821c8becd53927221807de}{getDMGBonus}}();}
+\DoxyCodeLine{\Hypertarget{_item_8h_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{_item_8h_source_l00081}00081\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_item_aebb8bb531798a53468a8776a209f4fae}{printStats}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_item_8h_source_l00085}\mbox{\hyperlink{class_item_af5b78a340e4490cbd89c5781a138fafd}{00085}}\ \ \ \ \ map<string,\ int>\ \mbox{\hyperlink{class_item_af5b78a340e4490cbd89c5781a138fafd}{itemOverall}};}
+\DoxyCodeLine{\Hypertarget{_item_8h_source_l00086}00086\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_item_8h_source_l00087}\mbox{\hyperlink{class_item_a17b15dc1e47ddba7e5c98476aeae98a6}{00087}}\ \ \ \ \ std::string\ \mbox{\hyperlink{class_item_a17b15dc1e47ddba7e5c98476aeae98a6}{itemName}};\ }
+\DoxyCodeLine{\Hypertarget{_item_8h_source_l00088}\mbox{\hyperlink{class_item_a5866b44b63816265e197389f707ffe7b}{00088}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_item_a5866b44b63816265e197389f707ffe7b}{enchantmentModifier}}\ =\ 0;\ }
+\DoxyCodeLine{\Hypertarget{_item_8h_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{_item_8h_source_l00090}00090\ \ \ \ \ \textcolor{comment}{//\ Stats}}
+\DoxyCodeLine{\Hypertarget{_item_8h_source_l00091}\mbox{\hyperlink{class_item_a6a41e330454a805923d12a1b85b79952}{00091}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_item_a6a41e330454a805923d12a1b85b79952}{strength}}\ =\ 0;\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_item_8h_source_l00092}\mbox{\hyperlink{class_item_a7320f91a9eee50c47ad9001c4558ad9a}{00092}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_item_a7320f91a9eee50c47ad9001c4558ad9a}{constitution}}\ =\ 0;\ \ \ }
+\DoxyCodeLine{\Hypertarget{_item_8h_source_l00093}\mbox{\hyperlink{class_item_a7263d056be7c7e490695c8f9e58a0a62}{00093}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_item_a7263d056be7c7e490695c8f9e58a0a62}{intelligence}}\ =\ 0;\ \ \ }
+\DoxyCodeLine{\Hypertarget{_item_8h_source_l00094}\mbox{\hyperlink{class_item_a02777809b18e153525f252fd7de64824}{00094}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_item_a02777809b18e153525f252fd7de64824}{wisdom}}\ =\ 0;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_item_8h_source_l00095}\mbox{\hyperlink{class_item_a2636ace9be7fa4218d5d270fb476c036}{00095}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_item_a2636ace9be7fa4218d5d270fb476c036}{charisma}}\ =\ 0;\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_item_8h_source_l00096}\mbox{\hyperlink{class_item_a42463b28e802877a4e2fce94589ad848}{00096}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_item_a42463b28e802877a4e2fce94589ad848}{dexterity}}\ =\ 0;\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_item_8h_source_l00097}\mbox{\hyperlink{class_item_ad0d8d8215d19d9a7b3fe139c90562f31}{00097}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_item_ad0d8d8215d19d9a7b3fe139c90562f31}{armorClass}}\ =\ 0;\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_item_8h_source_l00098}\mbox{\hyperlink{class_item_a83411ac82bdfa5f01989a958ca9a8f4a}{00098}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_item_a83411ac82bdfa5f01989a958ca9a8f4a}{atkBonus}}\ =\ 0;\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_item_8h_source_l00099}\mbox{\hyperlink{class_item_a80898565f99592018635deea6a175ddd}{00099}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_item_a80898565f99592018635deea6a175ddd}{dmgBonus}}\ =\ 0;\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_item_8h_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{_item_8h_source_l00101}00101\ \};}
+\DoxyCodeLine{\Hypertarget{_item_8h_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{_item_8h_source_l00103}00103\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ITEM\_H}}
+
+\end{DoxyCode}

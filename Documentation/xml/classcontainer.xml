@@ -1,0 +1,127 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="classcontainer" kind="class" language="C++" prot="public">
+    <compoundname>container</compoundname>
+    <includes refid="item_container_8h" local="no">itemContainer.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classcontainer_1a705d84133ad98e0cc1b0896db149fa5e" prot="private" static="no" mutable="no">
+        <type>vector&lt; <ref refid="class_item" kindref="compound">Item</ref> &gt;</type>
+        <definition>vector&lt;Item&gt; container::storedItems</definition>
+        <argsstring></argsstring>
+        <name>storedItems</name>
+        <qualifiedname>container::storedItems</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/itemContainer.h" line="21" column="7" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/itemContainer.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcontainer_1a51c87905771b9e8ac1dadac927c530b6" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string container::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <qualifiedname>container::name</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/itemContainer.h" line="22" column="8" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/itemContainer.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcontainer_1a37b5e9e48cf89b0e0e74c122cdc27027" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>container::container</definition>
+        <argsstring>()</argsstring>
+        <name>container</name>
+        <qualifiedname>container::container</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/itemContainer.h" line="9" column="1" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/itemContainer.cpp" bodystart="13" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classcontainer_1a6511207443e6f97ca31eb01c0dbc413b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>container::~container</definition>
+        <argsstring>()</argsstring>
+        <name>~container</name>
+        <qualifiedname>container::~container</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/itemContainer.h" line="10" column="1" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/itemContainer.cpp" bodystart="17" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classcontainer_1ade56880f5e6a58f370ade4e1184a705a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void container::getItems</definition>
+        <argsstring>()</argsstring>
+        <name>getItems</name>
+        <qualifiedname>container::getItems</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/itemContainer.h" line="13" column="6" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/itemContainer.cpp" bodystart="21" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classcontainer_1a6043dca82ce0a2b258aa8e67071bcf33" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void container::getItemStats</definition>
+        <argsstring>()</argsstring>
+        <name>getItemStats</name>
+        <qualifiedname>container::getItemStats</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/itemContainer.h" line="14" column="6" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/itemContainer.cpp" bodystart="32" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="classcontainer_1a021f0615f766a3b3189ea6b4a46790e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void container::storeItem</definition>
+        <argsstring>(Item &amp;)</argsstring>
+        <name>storeItem</name>
+        <qualifiedname>container::storeItem</qualifiedname>
+        <param>
+          <type><ref refid="class_item" kindref="compound">Item</ref> &amp;</type>
+          <defname>itemObtained</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/itemContainer.h" line="17" column="6" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/itemContainer.cpp" bodystart="42" bodyend="45"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/itemContainer.h" line="7" column="1" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/itemContainer.h" bodystart="7" bodyend="23"/>
+    <listofallmembers>
+      <member refid="classcontainer_1a37b5e9e48cf89b0e0e74c122cdc27027" prot="public" virt="non-virtual"><scope>container</scope><name>container</name></member>
+      <member refid="classcontainer_1ade56880f5e6a58f370ade4e1184a705a" prot="public" virt="non-virtual"><scope>container</scope><name>getItems</name></member>
+      <member refid="classcontainer_1a6043dca82ce0a2b258aa8e67071bcf33" prot="public" virt="non-virtual"><scope>container</scope><name>getItemStats</name></member>
+      <member refid="classcontainer_1a51c87905771b9e8ac1dadac927c530b6" prot="private" virt="non-virtual"><scope>container</scope><name>name</name></member>
+      <member refid="classcontainer_1a705d84133ad98e0cc1b0896db149fa5e" prot="private" virt="non-virtual"><scope>container</scope><name>storedItems</name></member>
+      <member refid="classcontainer_1a021f0615f766a3b3189ea6b4a46790e1" prot="public" virt="non-virtual"><scope>container</scope><name>storeItem</name></member>
+      <member refid="classcontainer_1a6511207443e6f97ca31eb01c0dbc413b" prot="public" virt="non-virtual"><scope>container</scope><name>~container</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
