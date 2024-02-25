@@ -1,3 +1,13 @@
+/**
+ * @file map.cpp
+ * @brief Implementation of the dungeonMap class for creating and managing a dungeon map.
+ *
+ * Provides functionalities to manipulate the dungeon map, including adding or removing walls,
+ * setting start and end points, and managing player and chest locations within the map.
+ *
+ * @author Richard Mauricio
+ * @date 2024-02-24
+ */
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -5,7 +15,13 @@
 #include "map.h"
 #include "cell.h"
 
-// Initialize 2D vector map with space ' ' chars
+using namespace std;
+
+/**
+ * @brief Constructor initializing the dungeon map with given dimensions.
+ * @param x Number of rows in the dungeon.
+ * @param y Number of columns in the dungeon.
+ */
 dungeonMap::dungeonMap(int x, int y) : rows(x), cols(y)
 {
     dungeon.resize(rows, vector<cell>(cols, cell()));
@@ -18,65 +34,118 @@ dungeonMap::dungeonMap(int x, int y) : rows(x), cols(y)
         }
     }
 }
-/////////////////////////////////////////////////////////////////////////////////////
-// SETTERS
-void dungeonMap::setChest(container *chest, int x, int y)
+
+/**
+ * @brief Places a chest in the specified location within the dungeon.
+ * @param chest Pointer to the chest object.
+ * @param x Row index for placing the chest.
+ * @param y Column index for placing the chest.
+ */
+void dungeonMap::setChest(container* chest, int x, int y)
 {
-    if (dungeon[x][y].getCellType() == Nothing){
+    if (dungeon[x][y].getCellType() == Nothing)
+    {
         dungeon[x][y].setCellType(Chest);
         dungeon[x][y].setChest(chest);
     }
     else
+    {
         cout << "Invalid location for chest." << endl;
+    }
 }
 
+/**
+ * @brief Adds a wall to the specified location in the dungeon.
+ * @param x Row index where the wall is to be added.
+ * @param y Column index where the wall is to be added.
+ */
 void dungeonMap::setWall(int x, int y)
 {
     if (dungeon[x][y].getCellType() == Nothing)
+    {
         dungeon[x][y].setCellType(Wall);
+    }
     else
-        cout << "Invalid location for wall due to existing object" << endl;
+    {
+        cout << "Invalid location for wall due to existing object." << endl;
+    }
 }
 
-void dungeonMap::removeWall(int x, int y) {
-    if (dungeon[x][y].getCellType() != Wall)
-        cout << "No wall exists here." << endl;
-    else
+/**
+ * @brief Removes a wall from the specified location in the dungeon.
+ * @param x Row index from which the wall is to be removed.
+ * @param y Column index from which the wall is to be removed.
+ */
+void dungeonMap::removeWall(int x, int y)
+{
+    if (dungeon[x][y].getCellType() == Wall)
     {
         dungeon[x][y].setCellType(Nothing);
     }
-}
-
-void dungeonMap::setPlayer(Character *player, int x, int y)
-{
-    if(dungeon[x][y].getCellType() != Nothing){
-        cout << "Invalid location for player." << endl;
-        return;
+    else
+    {
+        cout << "No wall exists here." << endl;
     }
-    dungeon[x][y].setCellType(Player);
-    dungeon[x][y].setPlayer(player);
 }
 
-bool dungeonMap::isValidRow(int row) const{
+/**
+ * @brief Sets the player's location in the dungeon.
+ * @param player Pointer to the player character.
+ * @param x Row index for the player's location.
+ * @param y Column index for the player's location.
+ */
+void dungeonMap::setPlayer(Character* player, int x, int y)
+{
+    if (dungeon[x][y].getCellType() == Nothing)
+    {
+        dungeon[x][y].setCellType(Player);
+        dungeon[x][y].setPlayer(player);
+    }
+    else
+    {
+        cout << "Invalid location for player." << endl;
+    }
+}
+
+/**
+ * @brief Validates if the specified row index is within the bounds of the dungeon.
+ * @param row Row index to be validated.
+ * @return True if the row index is within bounds, otherwise false.
+ */
+bool dungeonMap::isValidRow(int row) const
+{
     return row >= 0 && row < rows;
-
 }
 
-bool dungeonMap::isValidCol(int col) const {
+/**
+ * @brief Validates if the specified column index is within the bounds of the dungeon.
+ * @param col Column index to be validated.
+ * @return True if the column index is within bounds, otherwise false.
+ */
+bool dungeonMap::isValidCol(int col) const
+{
     return col >= 0 && col < cols;
 }
 
-bool dungeonMap::isValidLocation(int row, int col) {
-    if ((row == startX && col == startY) || (row == endX && col == endY)){
-        cout << "Invalid location due to " << (isStart(&dungeon[row][col]) ? "Start" : "End") << " point" << endl;
+/**
+ * @brief Validates if a location is valid for placing or removing objects.
+ * @param row Row index of the location.
+ * @param col Column index of the location.
+ * @return True if the location is valid, otherwise false.
+ */
+bool dungeonMap::isValidLocation(int row, int col)
+{
+    if ((row == startX && col == startY) || (row == endX && col == endY))
+    {
+        cout << "Invalid location due to " << (isStart(&dungeon[row][col]) ? "Start" : "End") << " point." << endl;
         return false;
     }
     return true;
-
 }
 
-
-
+/**
+ * @brief Interactive mode for the user to add or remove walls within the dungeon.
+ */
 
 void dungeonMap::userInputWalls()
 {
@@ -118,8 +187,11 @@ void dungeonMap::userInputWalls()
         }
     }
 }
-
-// Setting Start point of map
+/**
+ * @brief Sets the start point of the dungeon.
+ * @param x Row index of the start point.
+ * @param y Column index of the start point.
+ */
 void dungeonMap::setStart(int x, int y)
 {
     if (x >= rows || y >= cols || x < 0 || y < 0)
@@ -129,10 +201,13 @@ void dungeonMap::setStart(int x, int y)
     }
     this->startY = y;
     this->startX = x;
-    this->start = &dungeon[startX][startY];
+    //this->start = &dungeon[startX][startY];
 }
-
-// Setting End point of map
+/**
+ * @brief Sets the end point of the dungeon.
+ * @param x Row index of the end point.
+ * @param y Column index of the end point.
+ */
 void dungeonMap::setEnd(int x, int y)
 {
     if (x >= rows || y >= cols || x < 0 || y < 0)
@@ -144,29 +219,48 @@ void dungeonMap::setEnd(int x, int y)
     this->endY = y;
     this->end = &dungeon[endX][endY];
 }
-/////////////////////////////////////////////////////////////////////////////////////
-// Getters
+/**
+ * @brief Retrieves the number of rows in the dungeon.
+ * @return Number of rows.
+ */
 int dungeonMap::getRowSize() const
 {
     return rows;
 }
+/**
+ * @brief Retrieves the number of columns in the dungeon.
+ * @return Number of columns.
+ */
 int dungeonMap::getColSize() const
 {
     return cols;
 }
+/**
+ * @brief Retrieves a cell from the dungeon.
+ * @param row Row index of the cell.
+ * @param col Column index of the cell.
+ * @return The cell at the specified location.
+ */
 cell dungeonMap::getCell(int row, int col) const {
     return dungeon[row][col];
 }
-
+/**
+ * @brief Returns the row index of the start point.
+ * @return Row index of the start point.
+ */
 int dungeonMap::getStartX() const {
     return startX;
 }
-
+/**
+ * @brief Returns the column index of the start point.
+ * @return Column index of the start point.
+ */
 int dungeonMap::getStartY() const {
     return startY;
 }
-/////////////////////////////////////////////////////////////////////////////////////
-// Prints map
+/**
+ * @brief Prints the current state of the dungeon map.
+ */
 void dungeonMap::printMap()
 {
     int maxRowDigits = to_string(rows).length();
@@ -178,12 +272,18 @@ void dungeonMap::printMap()
 
         for (int col = 0; col < cols; col++)
         {
-            if (isStart(&dungeon[row][col]))
+            if (row==startX && col==startY && dungeon[row][col].getCellType()==Player)
             {
                 cout << "|  "
-                     << "S  ";
+                     << "S/P";
                 continue;
-            }else if(isEnd(&dungeon[row][col]))
+            }
+            else if(isStart(&dungeon[row][col])){
+                cout << "|  "
+                    << "S  ";
+                    continue;
+            }
+            else if(isEnd(&dungeon[row][col]))
             {
                 cout << "|  "
                      << "E  ";
@@ -209,6 +309,11 @@ void dungeonMap::printMap()
                      << "W  ";
                 break;
             }
+            case Chest:
+            {
+                cout << "|  "
+                    << "C  ";
+            }
             }
         }
         cout << "|" << endl;
@@ -222,7 +327,11 @@ void dungeonMap::printMap()
     // cout << "Legend:| S-Start | |E-End| | C-Character | |Ch-Chest| |O-Opponent| |D-Door| |W - Wall|";
 }
 
-// Validate's map to check if there is a valid path from start to end
+/*
+*@brief Validate's map to check if there is a valid path from start to end
+*@retun True if the path exists, otherwise false.
+*/
+
 bool dungeonMap::dfs(int row, int col)
 {
 
@@ -243,7 +352,10 @@ bool dungeonMap::dfs(int row, int col)
     }
     return false;
 }
-
+/**
+ * @brief Validates if there is a path from the start point to the end point in the dungeon.
+ * @return True if such a path exists, otherwise false.
+ */
 bool dungeonMap::isValid()
 {
     bool valid = dfs(startX, startY);
@@ -251,7 +363,9 @@ bool dungeonMap::isValid()
     return valid;
 }
 
-// Clear visit bool for cells during validMap Function
+/**
+ * @brief Clears the 'visited' state of all cells in the dungeon.
+ */
 void dungeonMap::clearCellVisit()
 {
     for (int i = 0; i < rows; i++)
@@ -262,16 +376,28 @@ void dungeonMap::clearCellVisit()
         }
     }
 }
-
+/**
+ * @brief Checks if a specified cell is the start point.
+ * @param cell Pointer to the cell to be checked.
+ * @return True if the cell is the start point, otherwise false.
+ */
 bool dungeonMap::isStart(cell *cell) const {
     return cell->getColPos() == startY && cell->getRowPos() == startX;
 }
-
+/**
+ * @brief Checks if a specified cell is the end point.
+ * @param cell Pointer to the cell to be checked.
+ * @return True if the cell is the end point, otherwise false.
+ */
 bool dungeonMap::isEnd(cell *cell) const {
     return cell->getColPos() == endY && cell->getRowPos() == endX;
 }
 
-
+/**
+ * @brief Helper function to interactively add a wall to the dungeon.
+ * @param x Pointer to store the row coordinate chosen by the user.
+ * @param y Pointer to store the column coordinate chosen by the user.
+ */
 void dungeonMap::addWallChoice(int *x, int *y)
 {
     cout << "X coordinate: ";
@@ -289,7 +415,11 @@ void dungeonMap::addWallChoice(int *x, int *y)
         return;
     }
 }
-
+/**
+ * @brief Helper function to interactively remove a wall from the dungeon.
+ * @param x Pointer to store the row coordinate chosen by the user.
+ * @param y Pointer to store the column coordinate chosen by the user.
+ */
 void dungeonMap::removeWallChoice(int *x, int *y) {
     cout << "X coordinate: ";
     cin >> *x;
@@ -306,4 +436,12 @@ void dungeonMap::removeWallChoice(int *x, int *y) {
         return;
     }
     removeWall(*x, *y);
+}
+/**
+ * @brief Removes the content of a specified cell.
+ * @param x Row index of the cell.
+ * @param y Column index of the cell.
+ */
+void dungeonMap::removeCellContent(int x, int y) {
+    dungeon[x][y].removeContent();
 }
