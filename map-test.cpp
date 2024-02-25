@@ -14,14 +14,6 @@ int main()
     Item *helm=new Item(Item::ItemType::HELMET);
     chest->storeItem(*ring);
     chest->storeItem(*helm);
-    {
-
-        int choice;
-        chest->getItems();
-        cout << "Select Which Item to Retreieve from Chest" << endl;
-        cin >> choice;
-        chest->removeItemFromChest(choice);
-    }
     chest->getItems();
     
     dungeonMap dungeon(5, 5);

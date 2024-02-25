@@ -61,9 +61,9 @@ void dungeonMap::setChest(container* chest, int x, int y)
  */
 void dungeonMap::setWall(int x, int y)
 {
-    if (dungeon[y][x].getCellType() == Nothing)
+    if (dungeon[x][y].getCellType() == Nothing)
     {
-        dungeon[y][x].setCellType(Wall);
+        dungeon[x][y].setCellType(Wall);
     }
     else
     {
@@ -166,7 +166,7 @@ void dungeonMap::userInputWalls()
             cout << "Choose where to insert wall(-1 to exit): " << endl;
             addWallChoice(&wallCoordinateX, &wallCoordinateY);
             if(isValidLocation(wallCoordinateX, wallCoordinateY))
-                setWall(wallCoordinateX, wallCoordinateY);
+                setWall(wallCoordinateY, wallCoordinateX);
             if(!isValid()){
                 cout << "Invalid map, wall cannot be placed here." << endl;
                 removeWall(wallCoordinateX, wallCoordinateY);
