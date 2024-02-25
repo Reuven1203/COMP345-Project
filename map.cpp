@@ -166,7 +166,7 @@ void dungeonMap::userInputWalls()
             cout << "Choose where to insert wall(-1 to exit): " << endl;
             addWallChoice(&wallCoordinateX, &wallCoordinateY);
             if(isValidLocation(wallCoordinateX, wallCoordinateY))
-                setWall(wallCoordinateX, wallCoordinateY);
+                setWall(wallCoordinateY, wallCoordinateX);
             if(!isValid()){
                 cout << "Invalid map, wall cannot be placed here." << endl;
                 removeWall(wallCoordinateX, wallCoordinateY);
@@ -435,7 +435,7 @@ void dungeonMap::removeWallChoice(int *x, int *y) {
         cout << "Invalid Y coordinate." << endl;
         return;
     }
-    removeWall(*x, *y);
+    removeWall(*y, *x);
 }
 /**
  * @brief Removes the content of a specified cell.
