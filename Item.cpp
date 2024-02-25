@@ -11,12 +11,14 @@
 
 using namespace std;
 
-Item::Item() {}
+Item::Item() {
+    this->nullItem = true;
+}
 Item::~Item() {}
 
 Item::Item(ItemType equip)
 {
-
+    this->nullItem = false;
     this->equipType = equip;
     setEquipStats();
 }
@@ -98,7 +100,10 @@ int Item::getDMGBonus()
 {
     return dmgBonus;
 }
-
+bool Item::getIfNull()
+{
+    return nullItem;
+}
 
 //Prints stats of Item
 void Item::printStats() const {

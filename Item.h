@@ -74,6 +74,7 @@ public:
     int getAC();
     int getATKBONUS();
     int getDMGBonus();
+    bool getIfNull();
 
 /**
      * @brief Method to print the stats of the item.
@@ -86,7 +87,7 @@ public:
 private:
     std::string itemName; ///< Name of the item.
     int enchantmentModifier = 0; ///< Enchantment modifier for the item.
-
+    bool nullItem; ///< If item has no stats, will be initialized to true.
     // Stats
     int strength = 0;       ///< Strength attribute modifier.
     int constitution = 0;   ///< Constitution attribute modifier.
