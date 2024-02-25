@@ -76,4 +76,22 @@ void ItemTest::testGetters() {
     CPPUNIT_ASSERT(weapon.getEquipType() == "Weapon");
 }
 
+void ItemTest::testSetEquipType() {
+    Item helmet_shield{Item::ItemType::HELMET};
+    CPPUNIT_ASSERT(helmet_shield.getEquipType() == "Helmet");
+    helmet_shield.setEquipType(Item::ItemType::SHIELD);
+    CPPUNIT_ASSERT(helmet_shield.getEquipType() == "Shield");
+}
 
+void ItemTest::testSetEquipStats() {
+    Item ring{Item::ItemType::RING};
+    int ac {ring.getAC()};
+    int str {ring.getSTR()};
+    int con {ring.getCON()};
+    int wis {ring.getWIS()};
+    int cha {ring.getCHA()};
+    ring.setEquipStats();
+    bool same = ring.getAC() == ac && ring.getSTR() == str && ring.getCON() == con
+            && ring.getWIS() == wis && ring.getCHA() == cha;
+    CPPUNIT_ASSERT(!same);
+}

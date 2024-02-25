@@ -5,7 +5,7 @@
 #ifndef COMP345_A1_DICETEST_H
 #define COMP345_A1_DICETEST_H
 
-#include <cppunit/extensions/HelperMacros.h>;
+#include <cppunit/extensions/HelperMacros.h>
 #include "../../Dice.h"
 
 
@@ -15,6 +15,7 @@ class DiceTest: public CppUnit::TestFixture {
     CPPUNIT_TEST(testParseRollValid);
     CPPUNIT_TEST(testRoll);
     CPPUNIT_TEST(testParseRollInvalid);
+    CPPUNIT_TEST(testParseDie);
     CPPUNIT_TEST_SUITE_END();
 
 public:
@@ -23,6 +24,7 @@ public:
     void testParseRollValid();
     void testParseRollInvalid();
     void testRoll();
+    void testParseDie();
 private:
     Dice* dice{};
 
