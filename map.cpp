@@ -166,7 +166,7 @@ void dungeonMap::userInputWalls()
             cout << "Choose where to insert wall(-1 to exit): " << endl;
             addWallChoice(&wallCoordinateX, &wallCoordinateY);
             if(isValidLocation(wallCoordinateX, wallCoordinateY))
-                setWall(wallCoordinateY, wallCoordinateX);
+                setWall(wallCoordinateX, wallCoordinateY);
             if(!isValid()){
                 cout << "Invalid map, wall cannot be placed here." << endl;
                 removeWall(wallCoordinateX, wallCoordinateY);
@@ -400,18 +400,18 @@ bool dungeonMap::isEnd(cell *cell) const {
  */
 void dungeonMap::addWallChoice(int *x, int *y)
 {
-    cout << "X coordinate: ";
+    cout << "Y coordinate: ";
     cin >> *x;
     if (!isValidRow(*x))
     {
-        cout << "Invalid X coordinate." << endl;
+        cout << "Invalid Y coordinate." << endl;
         return;
     }
-    cout << "Y coordinate: ";
+    cout << "X coordinate: ";
     cin >> *y;
     if (!isValidCol(*y))
     {
-        cout << "Invalid Y coordinate." << endl;
+        cout << "Invalid X coordinate." << endl;
         return;
     }
 }
@@ -421,21 +421,21 @@ void dungeonMap::addWallChoice(int *x, int *y)
  * @param y Pointer to store the column coordinate chosen by the user.
  */
 void dungeonMap::removeWallChoice(int *x, int *y) {
-    cout << "X coordinate: ";
+    cout << "Y coordinate: ";
     cin >> *x;
     if (!isValidRow(*x))
-    {
-        cout << "Invalid X coordinate." << endl;
-        return;
-    }
-    cout << "Y coordinate: ";
-    cin >> *y;
-    if (!isValidCol(*y))
     {
         cout << "Invalid Y coordinate." << endl;
         return;
     }
-    removeWall(*y, *x);
+    cout << "X coordinate: ";
+    cin >> *y;
+    if (!isValidCol(*y))
+    {
+        cout << "Invalid X coordinate." << endl;
+        return;
+    }
+    removeWall(*x, *y);
 }
 /**
  * @brief Removes the content of a specified cell.
