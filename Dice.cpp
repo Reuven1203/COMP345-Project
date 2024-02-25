@@ -9,19 +9,18 @@
 #include "Dice.h"
 #include "Random.h"
 
-/*
- * Output error string
- *
- * @param roll string that caused the error
+/**
+ * @brief Output error string
+ * @param str: Roll string that caused the error
+ * @throw invalid_argument with offending string
  */
 void Dice::diceRollStringErr(const std:: string& str) {
     throw std::invalid_argument("Error, invalid dice rolling string: " + str);
 }
-/*
- * Parses string to use the correct type of die
- *
- * @param dieTypeStr to be parsed
- * @param roll str to be passed to error method if error found
+/**
+ * @Brief Parses string to use the correct type of die
+ * @param dieTypeStr String to be parsed into DieType
+ * @param str Roll str to be passed to error method if error found
  * @return proper DieType according to parameter,
  * or error and exit if dieTypeStr does not match any valid types of dice.
  */
@@ -46,10 +45,9 @@ DieType Dice::parseDie(std::string dieTypeStr, std::string str) {
     }
 }
 
-/*
- * Parses roll string into Roll struct to be easily used by Dice::roll() method, handles errors in input string.
- *
- * @param dice roll string to be parsed
+/**
+ * @brief Parses roll string into Roll struct to be easily used by Dice::roll() method, handles errors in input string.
+ * @param str: Dice roll string to be parsed
  * @return Roll struct consisting of int of dice to roll, DieType of type of die to roll, and int added to roll.
  */
 Roll Dice::parseRoll(std::string str) {
@@ -101,10 +99,9 @@ Roll Dice::parseRoll(std::string str) {
     }
 }
 
-/*
- * Rolls dice according to rollString using Random::random() Mersenne Twister PRNG.
- *
- * @param rollString in format xdy[+z} or xdy+z which specifies how many times to roll which type of die, and
+/**
+ * @brief Rolls dice according to rollString using Random::random() Mersenne Twister PRNG.
+ * @param rollString: Roll string in format xdy[+z] or xdy+z which specifies how many times to roll which type of die, and
  * final addition.
  * @return sum of dice rolled randomly according to param rollString
  */
