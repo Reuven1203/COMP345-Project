@@ -32,13 +32,15 @@ After building, you can run the project executables directly from the build dire
 To run the test suite, follow the build instructions and then use the following command:
 ```./COMP345_A1_Tests```
 
-## Contribution Guidelines
-Contributions are welcome. Please ensure that any contributions follow the existing project structure and coding standards. Add tests for new features when applicable.
-
 ## Design and Implementation Details
 - **Character Abilities and Stats:** Dynamically adjusted based on equipped items.
 - **Item Effects:** Defined by enchantment modifiers affecting character abilities and stats.
 - **Dice Rolling:** Utilizes a custom `Dice` class for simulating dice rolls according to the d20 system.
 
+## Game Rules and Implementation
+This project adheres to specific d20 game rules across its various components. Here is a brief overview:
+
+### Abilities Assignment Based on Equipped Items
+Characters have their abilities (e.g., Strength, Dexterity) and stats (e.g., Armor Class) dynamically adjusted based on the items they equip. Each item type (e.g., Helmet, Armor) has specific effects on the character's abilities and stats, determined by enchantment modifiers. For example, equipping a Helmet might increase a character's Intelligence and Wisdom, while a Belt might boost Strength and Constitution. This dynamic adjustment allows for a flexible and strategic approach to character development and gameplay, adhering to the d20 system's rules.
+
 For more detailed information on the design decisions and implementation details, refer to the header files and Doxygen-generated documentation.
-```
