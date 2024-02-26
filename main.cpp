@@ -11,7 +11,7 @@
 int main() {
      Character* fighter = new Fighter("Reuven", 6);
      std::cout << "Fighter's stats before equipment: " << std::endl;
-//     fighter->showCharacterStats();
+     fighter->showCharacterStats();
      Item item1 = Item(Item::ItemType::ARMOR);
      Item item2 = Item(Item::ItemType::WEAPON);
      Item item3 = Item(Item::ItemType::SHIELD);
@@ -22,13 +22,12 @@ int main() {
         fighter->equip(item3);
         fighter->showWornItems();
 
-//        std::cout << "\n\nFighter's stats after equipment: " << std::endl;
-//        fighter->showCharacterStats();
-
+        std::cout << "\n\nFighter's stats after equipment: " << std::endl;
+        fighter->showCharacterStats();
         fighter->unequip(item1);
-
         fighter->showWornItems();
-
+        std::cout << "\n\nFighter's stats after unequipping armor: " << std::endl;
+        fighter->showCharacterStats();
 
     return 0;
 

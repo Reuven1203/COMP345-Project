@@ -12,7 +12,7 @@ find_package(CppUnit REQUIRED)
 include_directories(${CPPUNIT_INCLUDE_DIRS})
 
 # Main application executable
-add_executable(A1
+add_executable(A1-map
         Character.cpp
         map-test.cpp
         Fighter.cpp
@@ -20,6 +20,16 @@ add_executable(A1
         Item.cpp
         itemContainer.cpp
         cell.cpp
+        map.cpp)
+
+add_executable(A1-Character
+        Character.cpp
+        Fighter.cpp
+        Dice.cpp
+        Item.cpp
+        itemContainer.cpp
+        cell.cpp
+        main.cpp
         map.cpp)
 
 # Testing Others
