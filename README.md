@@ -1,32 +1,58 @@
-# COMP345-A1
+
+# COMP345-A1 Project
 
 ## Overview
-This repository contains a C++ project for the COMP345 d20 assignment, designed to be compiled and executed with C++17 or later. The project demonstrates the implementation of a solution to one of the specified problems (Part 1, 2, 3, or 4) related to the d20 game system. It includes a driver to compile and execute the code, showcasing the creation and functionality of characters, maps, item containers, or dice as per the project requirements and d20 game rules.
+This project is a C++ implementation for the COMP345 d20 assignment. It showcases the creation and functionality of characters, maps, item containers, and dice, adhering to the d20 game system rules.
 
 ## Project Structure
-- **Character, Map, Item Container, and Dice Implementation:** Core components of the project, including their creation and interaction following the d20 specifications.
-- **CppUnit Test Suite:** Accompanies each part of the project, ensuring that the implementation passes all provided test cases. Additional test cases are also included to further validate the functionality.
-- **Documentation:** Code and test cases are documented using Doxygen, providing clear insights into the game rules, design decisions, and the rationale behind the selection of libraries.
+- **Core Components:** Implementation of characters, maps, item containers, and dice.
+- **CppUnit Test Suite:** Ensures functionality passes all test cases.
+- **Documentation:** Provided via Doxygen comments in the code.
 
-## Getting Started
-To compile and run the project:
-1. Ensure you have a C++17 compatible compiler installed.
-2. Clone the repository to your local machine.
-3. Navigate to the project directory and compile the code using your preferred C++ compiler.
-4. Execute the compiled driver to see demonstrations of the implemented features.
+## Compilation and Build Instructions
+To compile and build the project, follow these steps:
 
-## Contribution
-- **Driver Implementation:** The `main.cpp` file contains the driver code, demonstrating possible uses of the implemented features through object creation and functionality testing.
-- **Test Cases:** The `Tests` directory contains the CppUnit test suites for each component, including additional test cases provided by the contributors.
+1. Ensure you have CMake and a C++17 compatible compiler installed.
+2. Clone the repository:
+   ```
+git clone https://github.com/Reuven1203/COMP345-A1.git
+   ```
+3. Navigate to the project directory:
+   ```
+cd COMP345-A1
+   ```
+4. Create a build directory and navigate into it:
+   ```
+mkdir build && cd build
+   ```
+5. Run CMake to generate the build system:
+   ```
+cmake ..
+   ```
+6. Compile the project:
+   ```
+cmake --build .
+   ```
 
-## Design and Libraries
-The project's design and the selection of libraries are documented within the header files, offering insights into the architectural choices and the advantages of chosen libraries.
+## Running the Project
+After building, you can run the project executables directly from the build directory. The project includes several executables, such as `A1-map`, `A1-Character`, and `dice_run`, which can be run as follows:
+```
+./A1-Character
+```
 
-## Game Rules and Implementation
-This project adheres to specific d20 game rules across its various components (characters, maps, item containers, and dice). Detailed documentation of these rules and their implementation is embedded within the code files and Doxygen comments. Here is a brief overview:
+## Testing
+To run the test suite, follow the build instructions and then use the following command:
+```
+./COMP345_A1_Tests
+```
 
-### Abilities Assignment Based on Equipped Items
-Characters have their abilities (e.g., Strength, Dexterity) and stats (e.g., Armor Class) dynamically adjusted based on the items they equip. Each item type (e.g., Helmet, Armor) has specific effects on the character's abilities and stats, determined by enchantment modifiers. For example, equipping a Helmet might increase a character's Intelligence and Wisdom, while a Belt might boost Strength and Constitution. This dynamic adjustment allows for a flexible and strategic approach to character development and gameplay, adhering to the d20 system's rules.
+## Contribution Guidelines
+Contributions are welcome. Please ensure that any contributions follow the existing project structure and coding standards. Add tests for new features when applicable.
 
-## Note
-This project focuses on the coding aspect of software development, aligning with the course's emphasis. External documentation beyond what is provided within the code and this README is discouraged.
+## Design and Implementation Details
+- **Character Abilities and Stats:** Dynamically adjusted based on equipped items.
+- **Item Effects:** Defined by enchantment modifiers affecting character abilities and stats.
+- **Dice Rolling:** Utilizes a custom `Dice` class for simulating dice rolls according to the d20 system.
+
+For more detailed information on the design decisions and implementation details, refer to the header files and Doxygen-generated documentation.
+```
