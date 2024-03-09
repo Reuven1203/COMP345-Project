@@ -4,8 +4,8 @@
 
 
 #include <iostream>
-#include "Fighter.h"
-#include "Item.h"
+#include "Character/Fighter.h"
+#include "Item/Item.h"
 
 
 int main() {

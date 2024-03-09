@@ -14,8 +14,8 @@
 #include <string>
 #include <array>
 #include <map>
-#include "Dice.h" // Dice class for rolling dice
-#include "Item.h" // Item class for managing items
+#include "../Dice/Dice.h" // Dice class for rolling dice
+#include "../Item/Item.h" // Item class for managing items
 
 /**
  * @class Character

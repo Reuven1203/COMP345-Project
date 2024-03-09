@@ -1,8 +1,8 @@
 #include <iostream>
-#include "map.h"
-#include "Fighter.h"
-#include "Item.h"
-#include "itemContainer.h"
+#include "Map/map.h"
+#include "Character/Fighter.h"
+#include "Item/Item.h"
+#include "Item/itemContainer.h"
 
 using namespace std;
 int main()

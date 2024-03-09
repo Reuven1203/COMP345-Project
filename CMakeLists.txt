@@ -13,35 +13,35 @@ include_directories(${CPPUNIT_INCLUDE_DIRS})
 
 # Main application executable
 add_executable(A1-map
-        Character.cpp
+        Character/Character.cpp
         map-test.cpp
-        Fighter.cpp
-        Dice.cpp
-        Item.cpp
-        itemContainer.cpp
-        cell.cpp
-        map.cpp)
+        Character/Fighter.cpp
+        Dice/Dice.cpp
+        Item/Item.cpp
+        Item/itemContainer.cpp
+        Map/cell.cpp
+        Map/map.cpp)
 
 add_executable(A1-Character
-        Character.cpp
-        Fighter.cpp
-        Dice.cpp
-        Item.cpp
-        itemContainer.cpp
-        cell.cpp
+        Character/Character.cpp
+        Character/Fighter.cpp
+        Dice/Dice.cpp
+        Item/Item.cpp
+        Item/itemContainer.cpp
+        Map/cell.cpp
         main.cpp
-        map.cpp)
+        Map/map.cpp)
 
 # Testing Others
 add_executable(dice_run
-        Character.cpp
+        Character/Character.cpp
         main.cpp
-        Fighter.cpp
-        Dice.cpp
-        Item.cpp
-        itemContainer.cpp
-        cell.cpp
-        map.cpp)
+        Character/Fighter.cpp
+        Dice/Dice.cpp
+        Item/Item.cpp
+        Item/itemContainer.cpp
+        Map/cell.cpp
+        Map/map.cpp)
 
 # Enable testing
 enable_testing()
@@ -52,16 +52,16 @@ include_directories(Tests)
 # Test executable
 add_executable(
         COMP345_A1_Tests
-        Character.cpp
-        Fighter.cpp
-        Item.cpp
-        Dice.cpp
-        map.cpp
-        map.h
-        cell.cpp
-        cell.h
-        itemContainer.cpp
-        itemContainer.h
+        Character/Character.cpp
+        Character/Fighter.cpp
+        Item/Item.cpp
+        Dice/Dice.cpp
+        Map/map.cpp
+        Map/map.h
+        Map/cell.cpp
+        Map/cell.h
+        Item/itemContainer.cpp
+        Item/itemContainer.h
         Tests/Character/CharacterTest.cpp
         Tests/Character/CharacterTest.h
         Tests/TestRunner.cpp

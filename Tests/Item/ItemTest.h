@@ -4,7 +4,7 @@
 
 #ifndef COMP345_A1_ITEMTEST_H
 #define COMP345_A1_ITEMTEST_H
-#include "../Item.h"
+#include "../../Item/Item.h"
 
 #include <cppunit/extensions/HelperMacros.h>
 

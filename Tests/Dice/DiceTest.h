@@ -6,7 +6,7 @@
 #define COMP345_A1_DICETEST_H
 
 #include <cppunit/extensions/HelperMacros.h>
-#include "../../Dice.h"
+#include "../../Dice/Dice.h"
 
 /**
  * @class DiceTest

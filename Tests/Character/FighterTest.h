@@ -9,7 +9,7 @@
 #define COMP345_A1_FIGHTERTEST_H
 
 #include <cppunit/extensions/HelperMacros.h>
-#include "../../Fighter.h"
+#include "../../Character/Fighter.h"
 
 /**
  * @class FighterTest

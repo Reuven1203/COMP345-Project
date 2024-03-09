@@ -9,8 +9,8 @@
 #define COMP345_A1_MAPTEST_H
 
 #include <cppunit/extensions/HelperMacros.h>
-#include "../../map.h"
-#include "../../cell.h"
+#include "../../Map/map.h"
+#include "../../Map/cell.h"
 
 /**
  * @class MapTest

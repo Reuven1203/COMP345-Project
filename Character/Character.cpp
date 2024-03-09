@@ -3,7 +3,7 @@
 //
 
 #include "Character.h"
-#include "Dice.h"
+#include "../Dice/Dice.h"
 
 
 

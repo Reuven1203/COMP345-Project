@@ -9,7 +9,7 @@
 #define COMP345_A1_FIGHTER_H
 
 #include "Character.h"
-#include "Dice.h"
+#include "../Dice/Dice.h"
 
 /**
  * @brief A static constant representing the class name "Fighter".

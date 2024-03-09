@@ -9,9 +9,9 @@
 #define COMP345_A1_CELLTEST_H
 
 #include <cppunit/extensions/HelperMacros.h>
-#include "../../map.h"
-#include "../../cell.h"
-#include "../../itemContainer.h"
+#include "../../Map/map.h"
+#include "../../Map/cell.h"
+#include "../../Item/itemContainer.h"
 
 /**
  * @class CellTest
