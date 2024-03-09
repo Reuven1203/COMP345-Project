@@ -16,6 +16,7 @@
 #include <map>
 #include "../Dice/Dice.h" // Dice class for rolling dice
 #include "../Item/Item.h" // Item class for managing items
+#include "../Observer/Observable.h"
 
 /**
  * @class Character
@@ -24,7 +25,7 @@
  * Characters have abilities, levels, stats, and can equip items to modify their attributes.
  * This class provides the basic functionality for managing a character's attributes and equipment.
  */
-class Character {
+class Character : public Observable {
     friend class CharacterTest; ///< Allows CharacterTest class to access private and protected members for testing purposes.
 
 protected:

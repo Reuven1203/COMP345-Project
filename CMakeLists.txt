@@ -20,7 +20,12 @@ add_executable(A1-map
         Item/Item.cpp
         Item/itemContainer.cpp
         Map/cell.cpp
-        Map/map.cpp)
+        Map/map.cpp
+        Observer/Observable.cpp
+        Observer/Observable.h
+        Observer/CharacterObserver/CharacterDisplay.cpp
+        Observer/CharacterObserver/CharacterDisplay.h
+)
 
 add_executable(A1-Character
         Character/Character.cpp
@@ -30,7 +35,14 @@ add_executable(A1-Character
         Item/itemContainer.cpp
         Map/cell.cpp
         main.cpp
-        Map/map.cpp)
+        Map/map.cpp
+        Observer/Observable.cpp
+        Observer/Observable.h
+        Observer/Observer.cpp
+        Observer/Observer.h
+        Observer/CharacterObserver/CharacterDisplay.cpp
+        Observer/CharacterObserver/CharacterDisplay.h
+)
 
 # Testing Others
 add_executable(dice_run
@@ -74,6 +86,20 @@ add_executable(
         Tests/Map/CellTest.cpp
         Tests/Map/CellTest.h
 )
-
+add_executable(CharacterObserver
+        CharacterObserverDriver.cpp
+        Character/Character.cpp
+        Character/Fighter.cpp
+        Dice/Dice.cpp
+        Item/Item.cpp
+        Item/itemContainer.cpp
+        Map/cell.cpp
+        Map/map.cpp
+        Observer/Observable.cpp
+        Observer/Observable.h
+        Observer/CharacterObserver/CharacterDisplay.cpp
+        Observer/CharacterObserver/CharacterDisplay.h
+)
 # Link the CppUnit library
 target_link_libraries(COMP345_A1_Tests ${CPPUNIT_LIBRARIES})
+
