@@ -2,34 +2,45 @@
 \hypertarget{classcontainer}{}\label{classcontainer}\index{container@{container}}
 
 
+Manages a collection of items.  
+
+
+
+
 {\ttfamily \#include $<$item\+Container.\+h$>$}
 
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classcontainer_a37b5e9e48cf89b0e0e74c122cdc27027}{container}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Default constructor for the container class. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classcontainer_a6511207443e6f97ca31eb01c0dbc413b}{\texorpdfstring{$\sim$}{\string~}container}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Destructor for the container class. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classcontainer_ade56880f5e6a58f370ade4e1184a705a}{get\+Items}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Prints the types of all items stored in the container. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classcontainer_a6043dca82ce0a2b258aa8e67071bcf33}{get\+Item\+Stats}} ()
-\item 
-void \mbox{\hyperlink{classcontainer_a021f0615f766a3b3189ea6b4a46790e1}{store\+Item}} (\mbox{\hyperlink{class_item}{Item}} \&)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Prints the stats of all items stored in the container. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcontainer_aa8d08e0d1968e6189d2ab7526e734397}{store\+Item}} (\mbox{\hyperlink{class_item}{Item}} \&item\+Obtained)
+\begin{DoxyCompactList}\small\item\em Stores a new item in the container. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_item}{Item}} \mbox{\hyperlink{classcontainer_ae598b0f2bc7d88d87ed7229dbca2fdaf}{remove\+Item\+From\+Chest}} (int index)
+\begin{DoxyCompactList}\small\item\em Removes an item from the container at a specified index and returns it. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcontainer_a9ed59582af89c704d6e42c197ff831af}{delete\+Item\+In\+Chest}} (int index)
+\begin{DoxyCompactList}\small\item\em Deletes an item from the container at a specified index. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-vector$<$ \mbox{\hyperlink{class_item}{Item}} $>$ \mbox{\hyperlink{classcontainer_a705d84133ad98e0cc1b0896db149fa5e}{stored\+Items}}
-\item 
-string \mbox{\hyperlink{classcontainer_a51c87905771b9e8ac1dadac927c530b6}{name}}
-\end{DoxyCompactItemize}
+std\+::vector$<$ \mbox{\hyperlink{class_item}{Item}} $>$ \mbox{\hyperlink{classcontainer_adf312a6956942b32ad80bb91ae9e8f5f}{stored\+Items}}
+\begin{DoxyCompactList}\small\item\em Vector of items stored in the container. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classcontainer_a4d438d6ab38eafc68e8b829231d74b7f}{name}}
+\begin{DoxyCompactList}\small\item\em Name of the container. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
+Manages a collection of items. 
 
+This class is responsible for storing items in a vector, providing functionalities to add and remove items, and to print information about the items contained. 
 
-Definition at line \mbox{\hyperlink{item_container_8h_source_l00007}{7}} of file \mbox{\hyperlink{item_container_8h_source}{item\+Container.\+h}}.
+Definition at line \mbox{\hyperlink{item_container_8h_source_l00027}{27}} of file \mbox{\hyperlink{item_container_8h_source}{item\+Container.\+h}}.
 
 
 
@@ -42,7 +53,11 @@ Definition at line \mbox{\hyperlink{item_container_8h_source_l00007}{7}} of file
 
 
 
-Definition at line \mbox{\hyperlink{item_container_8cpp_source_l00013}{13}} of file \mbox{\hyperlink{item_container_8cpp_source}{item\+Container.\+cpp}}.
+Default constructor for the container class. 
+
+Default constructor initializing container with an empty name. 
+
+Definition at line \mbox{\hyperlink{item_container_8cpp_source_l00022}{22}} of file \mbox{\hyperlink{item_container_8cpp_source}{item\+Container.\+cpp}}.
 
 \Hypertarget{classcontainer_a6511207443e6f97ca31eb01c0dbc413b}\label{classcontainer_a6511207443e6f97ca31eb01c0dbc413b} 
 \index{container@{container}!````~container@{\texorpdfstring{$\sim$}{\string~}container}}
@@ -52,11 +67,41 @@ Definition at line \mbox{\hyperlink{item_container_8cpp_source_l00013}{13}} of f
 
 
 
-Definition at line \mbox{\hyperlink{item_container_8cpp_source_l00017}{17}} of file \mbox{\hyperlink{item_container_8cpp_source}{item\+Container.\+cpp}}.
+Destructor for the container class. 
+
+
+
+Definition at line \mbox{\hyperlink{item_container_8cpp_source_l00027}{27}} of file \mbox{\hyperlink{item_container_8cpp_source}{item\+Container.\+cpp}}.
 
 
 
 \doxysubsection{Member Function Documentation}
+\Hypertarget{classcontainer_a9ed59582af89c704d6e42c197ff831af}\label{classcontainer_a9ed59582af89c704d6e42c197ff831af} 
+\index{container@{container}!deleteItemInChest@{deleteItemInChest}}
+\index{deleteItemInChest@{deleteItemInChest}!container@{container}}
+\doxysubsubsection{\texorpdfstring{deleteItemInChest()}{deleteItemInChest()}}
+{\footnotesize\ttfamily void container\+::delete\+Item\+In\+Chest (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+Deletes an item from the container at a specified index. 
+
+Deletes an item from the container based on its index.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of the item to be deleted.\\
+\hline
+\end{DoxyParams}
+Erases the item from the vector of stored items at the specified index. 
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of the item to delete from the container. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{item_container_8cpp_source_l00090}{90}} of file \mbox{\hyperlink{item_container_8cpp_source}{item\+Container.\+cpp}}.
+
 \Hypertarget{classcontainer_ade56880f5e6a58f370ade4e1184a705a}\label{classcontainer_ade56880f5e6a58f370ade4e1184a705a} 
 \index{container@{container}!getItems@{getItems}}
 \index{getItems@{getItems}!container@{container}}
@@ -65,7 +110,15 @@ Definition at line \mbox{\hyperlink{item_container_8cpp_source_l00017}{17}} of f
 
 
 
-Definition at line \mbox{\hyperlink{item_container_8cpp_source_l00021}{21}} of file \mbox{\hyperlink{item_container_8cpp_source}{item\+Container.\+cpp}}.
+Prints the types of all items stored in the container. 
+
+Prints the types of items currently stored in the container.
+
+Iterates through the stored items and prints their types to standard output.
+
+Iterates through all stored items and prints their equipment type. 
+
+Definition at line \mbox{\hyperlink{item_container_8cpp_source_l00034}{34}} of file \mbox{\hyperlink{item_container_8cpp_source}{item\+Container.\+cpp}}.
 
 \Hypertarget{classcontainer_a6043dca82ce0a2b258aa8e67071bcf33}\label{classcontainer_a6043dca82ce0a2b258aa8e67071bcf33} 
 \index{container@{container}!getItemStats@{getItemStats}}
@@ -75,9 +128,49 @@ Definition at line \mbox{\hyperlink{item_container_8cpp_source_l00021}{21}} of f
 
 
 
-Definition at line \mbox{\hyperlink{item_container_8cpp_source_l00032}{32}} of file \mbox{\hyperlink{item_container_8cpp_source}{item\+Container.\+cpp}}.
+Prints the stats of all items stored in the container. 
 
-\Hypertarget{classcontainer_a021f0615f766a3b3189ea6b4a46790e1}\label{classcontainer_a021f0615f766a3b3189ea6b4a46790e1} 
+Prints the stats of each item stored in the container.
+
+Iterates through the stored items and invokes their {\ttfamily print\+Stats} method to display their stats.
+
+Iterates through all stored items and calls their print\+Stats method. 
+
+Definition at line \mbox{\hyperlink{item_container_8cpp_source_l00051}{51}} of file \mbox{\hyperlink{item_container_8cpp_source}{item\+Container.\+cpp}}.
+
+\Hypertarget{classcontainer_ae598b0f2bc7d88d87ed7229dbca2fdaf}\label{classcontainer_ae598b0f2bc7d88d87ed7229dbca2fdaf} 
+\index{container@{container}!removeItemFromChest@{removeItemFromChest}}
+\index{removeItemFromChest@{removeItemFromChest}!container@{container}}
+\doxysubsubsection{\texorpdfstring{removeItemFromChest()}{removeItemFromChest()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_item}{Item}} container\+::remove\+Item\+From\+Chest (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+Removes an item from the container at a specified index and returns it. 
+
+Removes an item from the container based on its index and returns it.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of the item to be removed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The item that was removed from the container.
+\end{DoxyReturn}
+Erases the item from the vector of stored items at the specified index and returns the item. 
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of the item to remove from the container. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The item that was removed. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{item_container_8cpp_source_l00077}{77}} of file \mbox{\hyperlink{item_container_8cpp_source}{item\+Container.\+cpp}}.
+
+\Hypertarget{classcontainer_aa8d08e0d1968e6189d2ab7526e734397}\label{classcontainer_aa8d08e0d1968e6189d2ab7526e734397} 
 \index{container@{container}!storeItem@{storeItem}}
 \index{storeItem@{storeItem}!container@{container}}
 \doxysubsubsection{\texorpdfstring{storeItem()}{storeItem()}}
@@ -85,30 +178,54 @@ Definition at line \mbox{\hyperlink{item_container_8cpp_source_l00032}{32}} of f
 
 
 
-Definition at line \mbox{\hyperlink{item_container_8cpp_source_l00042}{42}} of file \mbox{\hyperlink{item_container_8cpp_source}{item\+Container.\+cpp}}.
+Stores a new item in the container. 
+
+Stores an item into the container.
+
+Adds the specified item to the vector of stored items. 
+\begin{DoxyParams}{Parameters}
+{\em item\+Obtained} & Reference to the item to be stored.\\
+\hline
+\end{DoxyParams}
+Adds the provided item to the vector of stored items. 
+\begin{DoxyParams}{Parameters}
+{\em item\+Obtained} & The item to be stored in the container. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{item_container_8cpp_source_l00065}{65}} of file \mbox{\hyperlink{item_container_8cpp_source}{item\+Container.\+cpp}}.
 
 
 
 \doxysubsection{Member Data Documentation}
-\Hypertarget{classcontainer_a51c87905771b9e8ac1dadac927c530b6}\label{classcontainer_a51c87905771b9e8ac1dadac927c530b6} 
+\Hypertarget{classcontainer_a4d438d6ab38eafc68e8b829231d74b7f}\label{classcontainer_a4d438d6ab38eafc68e8b829231d74b7f} 
 \index{container@{container}!name@{name}}
 \index{name@{name}!container@{container}}
 \doxysubsubsection{\texorpdfstring{name}{name}}
-{\footnotesize\ttfamily string container\+::name\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily std\+::string container\+::name\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
-Definition at line \mbox{\hyperlink{item_container_8h_source_l00022}{22}} of file \mbox{\hyperlink{item_container_8h_source}{item\+Container.\+h}}.
+Name of the container. 
 
-\Hypertarget{classcontainer_a705d84133ad98e0cc1b0896db149fa5e}\label{classcontainer_a705d84133ad98e0cc1b0896db149fa5e} 
+
+
+Definition at line \mbox{\hyperlink{item_container_8h_source_l00078}{78}} of file \mbox{\hyperlink{item_container_8h_source}{item\+Container.\+h}}.
+
+\Hypertarget{classcontainer_adf312a6956942b32ad80bb91ae9e8f5f}\label{classcontainer_adf312a6956942b32ad80bb91ae9e8f5f} 
 \index{container@{container}!storedItems@{storedItems}}
 \index{storedItems@{storedItems}!container@{container}}
 \doxysubsubsection{\texorpdfstring{storedItems}{storedItems}}
-{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{class_item}{Item}}$>$ container\+::stored\+Items\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_item}{Item}}$>$ container\+::stored\+Items\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
-Definition at line \mbox{\hyperlink{item_container_8h_source_l00021}{21}} of file \mbox{\hyperlink{item_container_8h_source}{item\+Container.\+h}}.
+Vector of items stored in the container. 
+
+
+
+Definition at line \mbox{\hyperlink{item_container_8h_source_l00077}{77}} of file \mbox{\hyperlink{item_container_8h_source}{item\+Container.\+h}}.
 
 
 

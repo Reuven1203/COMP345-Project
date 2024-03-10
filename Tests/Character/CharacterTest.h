@@ -9,7 +9,7 @@
 #define CHARACTERTEST_H
 
 #include <cppunit/extensions/HelperMacros.h>
-#include "../../Character.h"
+#include "../../Character/Character.h"
 
 /**
  * @class CharacterTest

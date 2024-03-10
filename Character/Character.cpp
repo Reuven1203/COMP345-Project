@@ -3,7 +3,7 @@
 //
 
 #include "Character.h"
-#include "Dice.h"
+#include "../Dice/Dice.h"
 
 
 
@@ -59,11 +59,13 @@ int Character::getAbilityScore(Ability ability) const{
 void Character::equip(const Item& item) {
     wornItems[item.equipType] = item;
     calculateAbilityScores();
+    notify();
 }
 
 void Character::unequip(const Item& item) {
     wornItems.erase(item.equipType);
     reduceAbilityAfterUnequip(item);
+    notify();
 }
 
 void Character::showWornItems() const {
@@ -116,6 +118,7 @@ void Character::generateAbilityScores() {
     for(int& score : abilityScore) {
         score = dice.roll("4d6");
     }
+    notify();
 }
 void Character::showCharacterStats() const {
     std::cout << "Name: " << name << std::endl;

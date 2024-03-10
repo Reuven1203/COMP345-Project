@@ -6,119 +6,102 @@
 \DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_dice_8h}{Dice.h}}"{}}}
 \DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_random_8h}{Random.h}}"{}}}
 \DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00011}00011\ }
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00012}00012\ \textcolor{comment}{/*}}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00013}00013\ \textcolor{comment}{\ *\ Output\ error\ string}}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00014}00014\ \textcolor{comment}{\ *}}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00015}00015\ \textcolor{comment}{\ *\ @param\ roll\ string\ that\ caused\ the\ error}}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00016}00016\ \textcolor{comment}{\ */}}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00017}\mbox{\hyperlink{class_dice_a628f958b8db4a9c64355421c4473a83a}{00017}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dice_a628f958b8db4a9c64355421c4473a83a}{Dice::diceRollStringErr}}(std::\ string\ str)\ \{}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00018}00018\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Error,\ invalid\ dice\ rolling\ string:\ "{}}\ <<\ str\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00019}00019\ \ \ \ \ std::exit(1);}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00020}00020\ \}}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00021}00021\ }
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00022}00022\ \textcolor{comment}{/*}}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00023}00023\ \textcolor{comment}{\ *\ Parses\ string\ to\ use\ the\ correct\ type\ of\ die}}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00024}00024\ \textcolor{comment}{\ *}}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00025}00025\ \textcolor{comment}{\ *\ @param\ dieTypeStr\ to\ be\ parsed}}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00026}00026\ \textcolor{comment}{\ *\ @param\ roll\ str\ to\ be\ passed\ to\ error\ method\ if\ error\ found}}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00027}00027\ \textcolor{comment}{\ *\ @return\ proper\ DieType\ according\ to\ parameter,}}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00028}00028\ \textcolor{comment}{\ *\ or\ error\ and\ exit\ if\ dieTypeStr\ does\ not\ match\ any\ valid\ types\ of\ dice.}}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00029}00029\ \textcolor{comment}{\ */}}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00030}\mbox{\hyperlink{class_dice_ad11d882fd5b27d53ef927a7d8a9f9325}{00030}}\ \mbox{\hyperlink{_dice_8h_a230fe26a49ff11b10bb851e08f88d9d4}{DieType}}\ \mbox{\hyperlink{class_dice_ad11d882fd5b27d53ef927a7d8a9f9325}{Dice::parseDie}}(std::string\ dieTypeStr,\ std::string\ str)\ \{}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00031}00031\ \ \ \ \ \textcolor{keywordtype}{int}\ dNum\ \{\};}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00032}00032\ \ \ \ \ \textcolor{comment}{//\ Attempt\ to\ convert\ string\ to\ int,\ error\ if\ invalid}}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00033}00033\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ dNum\ =\ stoi(dieTypeStr);}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00035}00035\ \ \ \ \ \}\ \textcolor{keywordflow}{catch}(std::invalid\_argument\ \&e)\ \{}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dice_a628f958b8db4a9c64355421c4473a83a}{diceRollStringErr}}(str);}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00037}00037\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00038}00038\ \ \ \ \ \textcolor{comment}{//\ Switch\ to\ choose\ which\ DieType\ to\ return,\ giving\ error\ if\ the\ dNum\ does\ not\ match\ any\ valid\ types\ of\ dice.}}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00039}00039\ \ \ \ \ \textcolor{keywordflow}{switch}(dNum)\ \{}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 4:\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{_dice_8h_a230fe26a49ff11b10bb851e08f88d9d4a0f3bbd8fbda2286c2337cb0cc5193efe}{d4}};}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 6:\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{_dice_8h_a230fe26a49ff11b10bb851e08f88d9d4ac04c128e4a3fa6eb2850cc348db6a002}{d6}};}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 8:\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{_dice_8h_a230fe26a49ff11b10bb851e08f88d9d4a164ca6aa6a6622ac091ca25cc5bc3cf4}{d8}};}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 10:\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{_dice_8h_a230fe26a49ff11b10bb851e08f88d9d4a019b0143eef620402dc7f0248eb621b7}{d10}};}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 12:\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{_dice_8h_a230fe26a49ff11b10bb851e08f88d9d4a0206a46644b9f8a84e490bb0b264e599}{d12}};}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 20:\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{_dice_8h_a230fe26a49ff11b10bb851e08f88d9d4a8044c0658936701d37401befdb83a91f}{d20}};}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 100:\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{_dice_8h_a230fe26a49ff11b10bb851e08f88d9d4a99253168f59aaae6a6e0541852f5894f}{d100}};}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:\ \mbox{\hyperlink{class_dice_a628f958b8db4a9c64355421c4473a83a}{diceRollStringErr}}(str);}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00048}00048\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00049}00049\ \}}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00050}00050\ }
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00051}00051\ \textcolor{comment}{/*}}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00052}00052\ \textcolor{comment}{\ *\ Parses\ roll\ string\ into\ Roll\ struct\ to\ be\ easily\ used\ by\ Dice::roll()\ method,\ handles\ errors\ in\ input\ string.}}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00053}00053\ \textcolor{comment}{\ *}}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00054}00054\ \textcolor{comment}{\ *\ @param\ dice\ roll\ string\ to\ be\ parsed}}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00055}00055\ \textcolor{comment}{\ *\ @return\ Roll\ struct\ consisting\ of\ int\ of\ dice\ to\ roll,\ DieType\ of\ type\ of\ die\ to\ roll,\ and\ int\ added\ to\ roll.}}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00056}00056\ \textcolor{comment}{\ */}}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00057}\mbox{\hyperlink{class_dice_aa7ec1a35d7132d3dec12afa4a905e07d}{00057}}\ \mbox{\hyperlink{struct_roll}{Roll}}\ \mbox{\hyperlink{class_dice_aa7ec1a35d7132d3dec12afa4a905e07d}{Dice::parseRoll}}(std::string\ str)\ \{}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00058}00058\ \ \ \ \ \textcolor{comment}{//\ Initialize\ part\ of\ the\ string\ being\ parsed\ to\ 1\ and\ numDice/die\ to\ empty\ strings.}}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00059}00059\ \ \ \ \ \textcolor{keywordtype}{int}\ part\ \{1\};}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00060}00060\ \ \ \ \ std::string\ numDice\ \{\};}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00061}00061\ \ \ \ \ std::string\ die\ \{\};}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00062}00062\ \ \ \ \ \textcolor{comment}{//\ numAdded\ initialized\ to\ '0'\ as\ no\ 'z'\ in\ roll\ string\ xdy[+z]\ means\ adding\ 0\ to\ dice\ roll.}}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00063}00063\ \ \ \ \ std::string\ numAdded\ \{\textcolor{charliteral}{'0'}\};}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00064}00064\ }
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00065}00065\ \ \ \ \ \textcolor{comment}{//\ Loops\ through\ string\ indices,\ changing\ parts\ when\ 'd'\ or\ '+'\ are\ found}}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00066}00066\ \ \ \ \ \textcolor{comment}{//\ and\ appending\ found\ digits\ to\ end\ of\ their\ respective\ strings.}}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00067}00067\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ \{0\};\ i\ <=\ str.length();\ i++)\ \{}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (str[i]\ ==\ \textcolor{charliteral}{'d'})\ \{}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ part\ =\ 2;}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (str[i]\ ==\ \textcolor{charliteral}{'+'})\ \{}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ part\ =\ 3;}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00076}00076\ }
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (part\ ==\ 1\ \&\&\ str[i]\ >=\ \textcolor{charliteral}{'0'}\ \&\&\ str[i]\ <=\ \textcolor{charliteral}{'9'})\ \{}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ numDice\ +=\ str[i];}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (part\ ==\ 2\ \&\&\ str[i]\ >=\ \textcolor{charliteral}{'0'}\ \&\&\ str[i]\ <=\ \textcolor{charliteral}{'9'})\ \{}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ die\ +=\ str[i];}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (part\ ==\ 3\ \&\&\ str[i]\ >=\ \textcolor{charliteral}{'0'}\ \&\&\ str[i]\ <=\ \textcolor{charliteral}{'9'})\ \{}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ numAdded\ +=\ str[i];}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00086}00086\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00087}00087\ }
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00088}00088\ \ \ \ \ \textcolor{comment}{//\ Calls\ Dice::parseDie\ method\ to\ convert\ die\ string\ to\ a\ DieType}}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00089}00089\ \ \ \ \ \mbox{\hyperlink{_dice_8h_a230fe26a49ff11b10bb851e08f88d9d4}{DieType}}\ dieType\ \{\mbox{\hyperlink{class_dice_ad11d882fd5b27d53ef927a7d8a9f9325}{parseDie}}(die,\ str)\};}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00017}\mbox{\hyperlink{class_dice_a222ad3efc4844a40a8f717dff00e32d9}{00017}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dice_a222ad3efc4844a40a8f717dff00e32d9}{Dice::diceRollStringErr}}(\textcolor{keyword}{const}\ std::\ string\&\ str)\ \{}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00018}00018\ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Error,\ invalid\ dice\ rolling\ string:\ "{}}\ +\ str);}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00019}00019\ \}}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00027}\mbox{\hyperlink{class_dice_ad11d882fd5b27d53ef927a7d8a9f9325}{00027}}\ \mbox{\hyperlink{_dice_8h_a230fe26a49ff11b10bb851e08f88d9d4}{DieType}}\ \mbox{\hyperlink{class_dice_ad11d882fd5b27d53ef927a7d8a9f9325}{Dice::parseDie}}(std::string\ dieTypeStr,\ std::string\ str)\ \{}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00028}00028\ \ \ \ \ \textcolor{keywordtype}{int}\ dNum\ \{\};}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00029}00029\ \ \ \ \ \textcolor{comment}{//\ Attempt\ to\ convert\ string\ to\ int,\ error\ if\ invalid}}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00030}00030\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ dNum\ =\ stoi(dieTypeStr);}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00032}00032\ \ \ \ \ \}\ \textcolor{keywordflow}{catch}(std::invalid\_argument\ \&e)\ \{}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dice_a222ad3efc4844a40a8f717dff00e32d9}{diceRollStringErr}}(str);}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00034}00034\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00035}00035\ \ \ \ \ \textcolor{comment}{//\ Switch\ to\ choose\ which\ DieType\ to\ return,\ giving\ error\ if\ the\ dNum\ does\ not\ match\ any\ valid\ types\ of\ dice.}}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00036}00036\ \ \ \ \ \textcolor{keywordflow}{switch}(dNum)\ \{}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 4:\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{_dice_8h_a230fe26a49ff11b10bb851e08f88d9d4a0f3bbd8fbda2286c2337cb0cc5193efe}{d4}};}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 6:\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{_dice_8h_a230fe26a49ff11b10bb851e08f88d9d4ac04c128e4a3fa6eb2850cc348db6a002}{d6}};}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 8:\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{_dice_8h_a230fe26a49ff11b10bb851e08f88d9d4a164ca6aa6a6622ac091ca25cc5bc3cf4}{d8}};}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 10:\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{_dice_8h_a230fe26a49ff11b10bb851e08f88d9d4a019b0143eef620402dc7f0248eb621b7}{d10}};}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 12:\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{_dice_8h_a230fe26a49ff11b10bb851e08f88d9d4a0206a46644b9f8a84e490bb0b264e599}{d12}};}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 20:\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{_dice_8h_a230fe26a49ff11b10bb851e08f88d9d4a8044c0658936701d37401befdb83a91f}{d20}};}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 100:\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{_dice_8h_a230fe26a49ff11b10bb851e08f88d9d4a99253168f59aaae6a6e0541852f5894f}{d100}};}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:\ \mbox{\hyperlink{class_dice_a222ad3efc4844a40a8f717dff00e32d9}{diceRollStringErr}}(str);}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00045}00045\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00046}00046\ \}}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00053}\mbox{\hyperlink{class_dice_aa7ec1a35d7132d3dec12afa4a905e07d}{00053}}\ \mbox{\hyperlink{struct_roll}{Roll}}\ \mbox{\hyperlink{class_dice_aa7ec1a35d7132d3dec12afa4a905e07d}{Dice::parseRoll}}(std::string\ str)\ \{}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00054}00054\ \ \ \ \ \textcolor{comment}{//\ Initialize\ part\ of\ the\ string\ being\ parsed\ to\ 1\ and\ numDice/die\ to\ empty\ strings.}}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00055}00055\ \ \ \ \ \textcolor{keywordtype}{int}\ part\ \{1\};}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00056}00056\ \ \ \ \ \textcolor{keywordtype}{bool}\ plus\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00057}00057\ \ \ \ \ std::string\ numDice\ \{\};}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00058}00058\ \ \ \ \ std::string\ die\ \{\};}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00059}00059\ \ \ \ \ \textcolor{comment}{//\ numAdded\ initialized\ to\ '0'\ as\ no\ 'z'\ in\ roll\ string\ xdy[+z]\ means\ adding\ 0\ to\ dice\ roll.}}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00060}00060\ \ \ \ \ std::string\ numAdded\ \{\textcolor{charliteral}{'0'}\};}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00062}00062\ \ \ \ \ \textcolor{comment}{//\ Loops\ through\ string\ indices,\ changing\ parts\ when\ 'd'\ or\ '+'\ are\ found}}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00063}00063\ \ \ \ \ \textcolor{comment}{//\ and\ appending\ found\ digits\ to\ end\ of\ their\ respective\ strings.}}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00064}00064\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ \{0\};\ i\ <=\ str.length();\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (str[i]\ ==\ \textcolor{charliteral}{'d'})\ \{}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ part\ =\ 2;}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (str[i]\ ==\ \textcolor{charliteral}{'+'})\ \{}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (plus\ \&\&\ !\mbox{\hyperlink{class_dice_a2286e75e2cb76cf84b335c0140238abe}{checkIfNumber}}(str[i]))\ \{}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dice_a222ad3efc4844a40a8f717dff00e32d9}{diceRollStringErr}}(str);}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ plus\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ part\ =\ 3;}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (part\ ==\ 1\ \&\&\ str[i]\ >=\ \textcolor{charliteral}{'0'}\ \&\&\ str[i]\ <=\ \textcolor{charliteral}{'9'})\ \{}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ numDice\ +=\ str[i];}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (part\ ==\ 2\ \&\&\ str[i]\ >=\ \textcolor{charliteral}{'0'}\ \&\&\ str[i]\ <=\ \textcolor{charliteral}{'9'})\ \{}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ die\ +=\ str[i];}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (part\ ==\ 3\ \&\&\ str[i]\ >=\ \textcolor{charliteral}{'0'}\ \&\&\ str[i]\ <=\ \textcolor{charliteral}{'9'})\ \{}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ numAdded\ +=\ str[i];}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (i\ ==\ str.length())\ \{}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00089}00089\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00090}00090\ }
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00091}00091\ \ \ \ \ \textcolor{comment}{//\ Attempt\ to\ convert\ string\ for\ roll\ to\ ints,\ handling\ errors.}}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00092}00092\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_roll}{Roll}}\{dieType,\ stoi(numDice),\ stoi(numAdded)\};}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00094}00094\ \ \ \ \ \}\ \textcolor{keywordflow}{catch}(std::invalid\_argument\ \&e)\ \{}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dice_a628f958b8db4a9c64355421c4473a83a}{diceRollStringErr}}(str);}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00096}00096\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00097}00097\ \}}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00098}00098\ }
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00099}00099\ \textcolor{comment}{/*}}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00100}00100\ \textcolor{comment}{\ *\ Rolls\ dice\ according\ to\ rollString\ using\ Random::random()\ Mersenne\ Twister\ PRNG.}}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00101}00101\ \textcolor{comment}{\ *}}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00102}00102\ \textcolor{comment}{\ *\ @param\ rollString\ in\ format\ xdy[+z\}\ or\ xdy+z\ which\ specifies\ how\ many\ times\ to\ roll\ which\ type\ of\ die,\ and}}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00103}00103\ \textcolor{comment}{\ *\ final\ addition.}}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00104}00104\ \textcolor{comment}{\ *\ @return\ sum\ of\ dice\ rolled\ randomly\ according\ to\ param\ rollString}}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00105}00105\ \textcolor{comment}{\ */}}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00106}\mbox{\hyperlink{class_dice_a4b5adb8de2005855739bd66ba3b79290}{00106}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_dice_a4b5adb8de2005855739bd66ba3b79290}{Dice::roll}}(std::string\ rollString)\ \{}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00107}00107\ \ \ \ \ \textcolor{comment}{//\ Calls\ Dice::parseRoll\ to\ parse\ string\ into\ a\ roll\ usable\ with\ Random::random()}}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00108}00108\ \ \ \ \ \mbox{\hyperlink{struct_roll}{Roll}}\ roll\_guide\ \{\mbox{\hyperlink{class_dice_aa7ec1a35d7132d3dec12afa4a905e07d}{Dice::parseRoll}}(rollString)\};}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00109}00109\ }
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00110}00110\ \ \ \ \ \textcolor{comment}{//\ Initialize\ total\ to\ 0}}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00111}00111\ \ \ \ \ \textcolor{keywordtype}{int}\ total\ \{0\};}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00112}00112\ }
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00113}00113\ \ \ \ \ \textcolor{comment}{//\ Iterates\ number\ of\ times\ equal\ to\ the\ number\ of\ dice\ to\ roll\ (x).}}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00114}00114\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ \{0\};\ i\ <\ roll\_guide.numDice;\ i++)\ \{}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Each\ individual\ roll\ is\ rolled\ randomly\ between\ 1\ and\ the\ max\ for\ the\ DieType\ (y)}}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ (ex:\ d4\ max\ (y)\ =\ 4,\ d100\ max\ (y)\ =\ 100),\ and\ adds\ each\ roll\ to\ total}}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ total\ +=\ \mbox{\hyperlink{namespace_random_a96193c13c6d59d02b8bd0462a75415c2}{Random::random}}(1,\ roll\_guide.dieType);}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00118}00118\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00119}00119\ }
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00120}00120\ \ \ \ \ \textcolor{comment}{//\ Add\ z\ to\ rolled\ total}}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00121}00121\ \ \ \ \ total\ +=\ roll\_guide.numAdded;}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00122}00122\ }
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00123}00123\ \ \ \ \ \textcolor{comment}{//\ Return\ final\ total}}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00124}00124\ \ \ \ \ \textcolor{keywordflow}{return}\ total;}
-\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00125}00125\ \}}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00091}00091\ \ \ \ \ \textcolor{comment}{//\ Calls\ Dice::parseDie\ method\ to\ convert\ die\ string\ to\ a\ DieType}}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00092}00092\ \ \ \ \ \mbox{\hyperlink{_dice_8h_a230fe26a49ff11b10bb851e08f88d9d4}{DieType}}\ dieType\ \{\mbox{\hyperlink{class_dice_ad11d882fd5b27d53ef927a7d8a9f9325}{parseDie}}(die,\ str)\};}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00094}00094\ \ \ \ \ \textcolor{comment}{//\ Attempt\ to\ convert\ string\ for\ roll\ to\ ints,\ handling\ errors.}}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00095}00095\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_roll}{Roll}}\{dieType,\ stoi(numDice),\ stoi(numAdded)\};}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00097}00097\ \ \ \ \ \}\ \textcolor{keywordflow}{catch}(std::invalid\_argument\ \&e)\ \{}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dice_a222ad3efc4844a40a8f717dff00e32d9}{diceRollStringErr}}(str);}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00099}00099\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00100}00100\ \}}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00108}\mbox{\hyperlink{class_dice_a4b5adb8de2005855739bd66ba3b79290}{00108}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_dice_a4b5adb8de2005855739bd66ba3b79290}{Dice::roll}}(std::string\ rollString)\ \{}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00109}00109\ \ \ \ \ \textcolor{comment}{//\ Calls\ Dice::parseRoll\ to\ parse\ string\ into\ a\ roll\ usable\ with\ Random::random()}}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00110}00110\ \ \ \ \ \mbox{\hyperlink{struct_roll}{Roll}}\ roll\_guide\ \{\mbox{\hyperlink{class_dice_aa7ec1a35d7132d3dec12afa4a905e07d}{Dice::parseRoll}}(rollString)\};}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00112}00112\ \ \ \ \ \textcolor{comment}{//\ Initialize\ total\ to\ 0}}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00113}00113\ \ \ \ \ \textcolor{keywordtype}{int}\ total\ \{0\};}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00115}00115\ \ \ \ \ \textcolor{comment}{//\ Iterates\ number\ of\ times\ equal\ to\ the\ number\ of\ dice\ to\ roll\ (x).}}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00116}00116\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ \{0\};\ i\ <\ roll\_guide.numDice;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Each\ individual\ roll\ is\ rolled\ randomly\ between\ 1\ and\ the\ max\ for\ the\ DieType\ (y)}}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ (ex:\ d4\ max\ (y)\ =\ 4,\ d100\ max\ (y)\ =\ 100),\ and\ adds\ each\ roll\ to\ total}}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ total\ +=\ \mbox{\hyperlink{namespace_random_a96193c13c6d59d02b8bd0462a75415c2}{Random::random}}(1,\ roll\_guide.dieType);}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00120}00120\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00121}00121\ }
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00122}00122\ \ \ \ \ \textcolor{comment}{//\ Add\ z\ to\ rolled\ total}}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00123}00123\ \ \ \ \ total\ +=\ roll\_guide.numAdded;}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00124}00124\ }
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00125}00125\ \ \ \ \ \textcolor{comment}{//\ Return\ final\ total}}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00126}00126\ \ \ \ \ \textcolor{keywordflow}{return}\ total;}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00127}00127\ \}}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00128}00128\ }
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00129}\mbox{\hyperlink{class_dice_a2286e75e2cb76cf84b335c0140238abe}{00129}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_dice_a2286e75e2cb76cf84b335c0140238abe}{Dice::checkIfNumber}}(\textcolor{keywordtype}{char}\ str)\{}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00130}00130\ \ \ \ \ \textcolor{keywordflow}{return}\ str\ >=\ \textcolor{charliteral}{'0'}\ \&\&\ str\ <=\ \textcolor{charliteral}{'9'};}
+\DoxyCodeLine{\Hypertarget{_dice_8cpp_source_l00131}00131\ \};}
 
 \end{DoxyCode}

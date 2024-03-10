@@ -9,9 +9,36 @@
     <programlisting>
 <codeline><highlight class="normal">#<sp/>COMP345-A1</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">Comp345<sp/>d20<sp/>Assignment</highlight></codeline>
+<codeline><highlight class="normal">##<sp/>Overview</highlight></codeline>
+<codeline><highlight class="normal">This<sp/>repository<sp/>contains<sp/>a<sp/>C++<sp/>project<sp/>for<sp/>the<sp/>COMP345<sp/>d20<sp/>assignment,<sp/>designed<sp/>to<sp/>be<sp/>compiled<sp/>and<sp/>executed<sp/>with<sp/>C++17<sp/>or<sp/>later.<sp/>The<sp/>project<sp/>demonstrates<sp/>the<sp/>implementation<sp/>of<sp/>a<sp/>solution<sp/>to<sp/>one<sp/>of<sp/>the<sp/>specified<sp/>problems<sp/>(Part<sp/>1,<sp/>2,<sp/>3,<sp/>or<sp/>4)<sp/>related<sp/>to<sp/>the<sp/>d20<sp/>game<sp/>system.<sp/>It<sp/>includes<sp/>a<sp/>driver<sp/>to<sp/>compile<sp/>and<sp/>execute<sp/>the<sp/>code,<sp/>showcasing<sp/>the<sp/>creation<sp/>and<sp/>functionality<sp/>of<sp/>characters,<sp/>maps,<sp/>item<sp/>containers,<sp/>or<sp/>dice<sp/>as<sp/>per<sp/>the<sp/>project<sp/>requirements<sp/>and<sp/>d20<sp/>game<sp/>rules.</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">Requires<sp/>C++17<sp/>or<sp/>later.</highlight></codeline>
+<codeline><highlight class="normal">##<sp/>Project<sp/>Structure</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Character,<sp/>Map,<sp/>Item<sp/>Container,<sp/>and<sp/>Dice<sp/>Implementation:**<sp/>Core<sp/>components<sp/>of<sp/>the<sp/>project,<sp/>including<sp/>their<sp/>creation<sp/>and<sp/>interaction<sp/>following<sp/>the<sp/>d20<sp/>specifications.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**CppUnit<sp/>Test<sp/>Suite:**<sp/>Accompanies<sp/>each<sp/>part<sp/>of<sp/>the<sp/>project,<sp/>ensuring<sp/>that<sp/>the<sp/>implementation<sp/>passes<sp/>all<sp/>provided<sp/>test<sp/>cases.<sp/>Additional<sp/>test<sp/>cases<sp/>are<sp/>also<sp/>included<sp/>to<sp/>further<sp/>validate<sp/>the<sp/>functionality.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Documentation:**<sp/>Code<sp/>and<sp/>test<sp/>cases<sp/>are<sp/>documented<sp/>using<sp/>Doxygen,<sp/>providing<sp/>clear<sp/>insights<sp/>into<sp/>the<sp/>game<sp/>rules,<sp/>design<sp/>decisions,<sp/>and<sp/>the<sp/>rationale<sp/>behind<sp/>the<sp/>selection<sp/>of<sp/>libraries.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Getting<sp/>Started</highlight></codeline>
+<codeline><highlight class="normal">To<sp/>compile<sp/>and<sp/>run<sp/>the<sp/>project:</highlight></codeline>
+<codeline><highlight class="normal">1.<sp/>Ensure<sp/>you<sp/>have<sp/>a<sp/>C++17<sp/>compatible<sp/>compiler<sp/>installed.</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>Clone<sp/>the<sp/>repository<sp/>to<sp/>your<sp/>local<sp/>machine.</highlight></codeline>
+<codeline><highlight class="normal">3.<sp/>Navigate<sp/>to<sp/>the<sp/>project<sp/>directory<sp/>and<sp/>compile<sp/>the<sp/>code<sp/>using<sp/>your<sp/>preferred<sp/>C++<sp/>compiler.</highlight></codeline>
+<codeline><highlight class="normal">4.<sp/>Execute<sp/>the<sp/>compiled<sp/>driver<sp/>to<sp/>see<sp/>demonstrations<sp/>of<sp/>the<sp/>implemented<sp/>features.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Contribution</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Driver<sp/>Implementation:**<sp/>The<sp/>`main.cpp`<sp/>file<sp/>contains<sp/>the<sp/>driver<sp/>code,<sp/>demonstrating<sp/>possible<sp/>uses<sp/>of<sp/>the<sp/>implemented<sp/>features<sp/>through<sp/>object<sp/>creation<sp/>and<sp/>functionality<sp/>testing.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Test<sp/>Cases:**<sp/>The<sp/>`Tests`<sp/>directory<sp/>contains<sp/>the<sp/>CppUnit<sp/>test<sp/>suites<sp/>for<sp/>each<sp/>component,<sp/>including<sp/>additional<sp/>test<sp/>cases<sp/>provided<sp/>by<sp/>the<sp/>contributors.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Design<sp/>and<sp/>Libraries</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>project&apos;s<sp/>design<sp/>and<sp/>the<sp/>selection<sp/>of<sp/>libraries<sp/>are<sp/>documented<sp/>within<sp/>the<sp/>header<sp/>files,<sp/>offering<sp/>insights<sp/>into<sp/>the<sp/>architectural<sp/>choices<sp/>and<sp/>the<sp/>advantages<sp/>of<sp/>chosen<sp/>libraries.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Game<sp/>Rules<sp/>and<sp/>Implementation</highlight></codeline>
+<codeline><highlight class="normal">This<sp/>project<sp/>adheres<sp/>to<sp/>specific<sp/>d20<sp/>game<sp/>rules<sp/>across<sp/>its<sp/>various<sp/>components<sp/>(characters,<sp/>maps,<sp/>item<sp/>containers,<sp/>and<sp/>dice).<sp/>Detailed<sp/>documentation<sp/>of<sp/>these<sp/>rules<sp/>and<sp/>their<sp/>implementation<sp/>is<sp/>embedded<sp/>within<sp/>the<sp/>code<sp/>files<sp/>and<sp/>Doxygen<sp/>comments.<sp/>Here<sp/>is<sp/>a<sp/>brief<sp/>overview:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Abilities<sp/>Assignment<sp/>Based<sp/>on<sp/>Equipped<sp/>Items</highlight></codeline>
+<codeline><highlight class="normal">Characters<sp/>have<sp/>their<sp/>abilities<sp/>(e.g.,<sp/>Strength,<sp/>Dexterity)<sp/>and<sp/>stats<sp/>(e.g.,<sp/>Armor<sp/>Class)<sp/>dynamically<sp/>adjusted<sp/>based<sp/>on<sp/>the<sp/>items<sp/>they<sp/>equip.<sp/>Each<sp/>item<sp/>type<sp/>(e.g.,<sp/>Helmet,<sp/>Armor)<sp/>has<sp/>specific<sp/>effects<sp/>on<sp/>the<sp/>character&apos;s<sp/>abilities<sp/>and<sp/>stats,<sp/>determined<sp/>by<sp/>enchantment<sp/>modifiers.<sp/>For<sp/>example,<sp/>equipping<sp/>a<sp/>Helmet<sp/>might<sp/>increase<sp/>a<sp/>character&apos;s<sp/>Intelligence<sp/>and<sp/>Wisdom,<sp/>while<sp/>a<sp/>Belt<sp/>might<sp/>boost<sp/>Strength<sp/>and<sp/>Constitution.<sp/>This<sp/>dynamic<sp/>adjustment<sp/>allows<sp/>for<sp/>a<sp/>flexible<sp/>and<sp/>strategic<sp/>approach<sp/>to<sp/>character<sp/>development<sp/>and<sp/>gameplay,<sp/>adhering<sp/>to<sp/>the<sp/>d20<sp/>system&apos;s<sp/>rules.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Note</highlight></codeline>
+<codeline><highlight class="normal">This<sp/>project<sp/>focuses<sp/>on<sp/>the<sp/>coding<sp/>aspect<sp/>of<sp/>software<sp/>development,<sp/>aligning<sp/>with<sp/>the<sp/>course&apos;s<sp/>emphasis.<sp/>External<sp/>documentation<sp/>beyond<sp/>what<sp/>is<sp/>provided<sp/>within<sp/>the<sp/>code<sp/>and<sp/>this<sp/>README<sp/>is<sp/>discouraged.</highlight></codeline>
     </programlisting>
     <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/README.md"/>
   </compounddef>

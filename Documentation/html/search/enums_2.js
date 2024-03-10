@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['itemtype_0',['ItemType',['../class_item.html#ab5eeb575e9d66ebcfef9b58b667fad05',1,'Item']]]
+  ['dietype_0',['DieType',['../_dice_8h.html#a230fe26a49ff11b10bb851e08f88d9d4',1,'Dice.h']]]
 ];

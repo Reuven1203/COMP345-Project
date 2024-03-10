@@ -40,6 +40,7 @@ void ItemTest::testRollStatMod() {
 }
 
 void ItemTest::testGetters() {
+    // Create item of each ItemType and check to see if getters return properly initialized values
     Item ring(Item::ItemType::RING);
     CPPUNIT_ASSERT(ring.getAC() >= 1 && ring.getAC() <= 5);
     CPPUNIT_ASSERT(ring.getWIS() >= 1 && ring.getWIS() <= 5);
@@ -76,4 +77,24 @@ void ItemTest::testGetters() {
     CPPUNIT_ASSERT(weapon.getEquipType() == "Weapon");
 }
 
+void ItemTest::testSetEquipType() {
+    // Change ItemType of an item and test
+    Item helmet_shield{Item::ItemType::HELMET};
+    CPPUNIT_ASSERT(helmet_shield.getEquipType() == "Helmet");
+    helmet_shield.setEquipType(Item::ItemType::SHIELD);
+    CPPUNIT_ASSERT(helmet_shield.getEquipType() == "Shield");
+}
 
+void ItemTest::testSetEquipStats() {
+    // Rerolls item stats on a ring, has 1/(5^5) chance of failing with same roll
+    Item ring{Item::ItemType::RING};
+    int ac {ring.getAC()};
+    int str {ring.getSTR()};
+    int con {ring.getCON()};
+    int wis {ring.getWIS()};
+    int cha {ring.getCHA()};
+    ring.setEquipStats();
+    bool same = ring.getAC() == ac && ring.getSTR() == str && ring.getCON() == con
+            && ring.getWIS() == wis && ring.getCHA() == cha;
+    CPPUNIT_ASSERT(!same);
+}

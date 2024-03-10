@@ -1,23 +1,4 @@
 var searchData=
 [
-  ['generateabilityscores_0',['generateAbilityScores',['../class_character.html#a61c38f189478ee3809f6490ede100e4d',1,'Character']]],
-  ['getabilitymodifier_1',['getAbilityModifier',['../class_character.html#a1fdb0946af9cfe713785a88e06f20b34',1,'Character']]],
-  ['getabilityscore_2',['getAbilityScore',['../class_character.html#a8e448101ce949905977f6a3c421172b1',1,'Character']]],
-  ['getac_3',['getAC',['../class_item.html#a6e611bdc812fc0e0ebdeb43b46d18db4',1,'Item']]],
-  ['getatkbonus_4',['getATKBONUS',['../class_item.html#a122ea70ddecf55ed2b01565c84572865',1,'Item']]],
-  ['getcha_5',['getCHA',['../class_item.html#ac205d9a7fc49567c239a3aa9d1643ce8',1,'Item']]],
-  ['getclassname_6',['getClassName',['../class_character.html#acbf3e5cddba034622dbbadfe742ba2d9',1,'Character::getClassName()'],['../class_fighter.html#a5e86ce51f2e3bddaacce7652f616c4e6',1,'Fighter::getClassName()']]],
-  ['getcon_7',['getCON',['../class_item.html#abc447f0ba6034acd04d15e441c6c9ea8',1,'Item']]],
-  ['getdex_8',['getDEX',['../class_item.html#ae228fec49fa884c8c18c55a604160130',1,'Item']]],
-  ['getdietype_9',['getDieType',['../class_character.html#aea131e1bce548f9e781af0dc5f4f29ce',1,'Character::getDieType()'],['../class_fighter.html#a7efe440440e5c6e1104462dcca59cf84',1,'Fighter::getDieType()']]],
-  ['getdmgbonus_10',['getDMGBonus',['../class_item.html#ae31eceb14a821c8becd53927221807de',1,'Item']]],
-  ['getequiptype_11',['getEquipType',['../class_item.html#a7c938dfc887d36be815acc94152fee80',1,'Item']]],
-  ['getint_12',['getINT',['../class_item.html#a4acbceff9137db1c0327a54dd39cc148',1,'Item']]],
-  ['getitems_13',['getItems',['../classcontainer.html#ade56880f5e6a58f370ade4e1184a705a',1,'container']]],
-  ['getitemstats_14',['getItemStats',['../classcontainer.html#a6043dca82ce0a2b258aa8e67071bcf33',1,'container']]],
-  ['getlevel_15',['getLevel',['../class_character.html#a06713215a5850ec92194a1a711fb8cd7',1,'Character']]],
-  ['getname_16',['getName',['../class_character.html#ad79f892fe576c7ef0804cad502d94517',1,'Character']]],
-  ['getstat_17',['getStat',['../class_character.html#a8638de4be3d350860ed4c5b9da042135',1,'Character']]],
-  ['getstr_18',['getSTR',['../class_item.html#ad1f359133a1a3b8958fc0a4900009333',1,'Item']]],
-  ['getwis_19',['getWIS',['../class_item.html#ace7fe884248a08024312659095e59464',1,'Item']]]
+  ['fighter_0',['Fighter',['../class_fighter.html#abf32519d935df18963172d31d45029f6',1,'Fighter']]]
 ];

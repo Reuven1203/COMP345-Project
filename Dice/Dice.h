@@ -28,7 +28,6 @@ struct Roll {
 /**
  * @class Dice
  * @brief Class for rolling dice.
- *
  * This class provides functionality to roll dice based on a given roll string.
  */
 class Dice {
@@ -62,7 +61,6 @@ private:
 public:
     /**
      * @brief Default constructor.
-     *
      * Constructs a Dice object.
      */
     Dice() = default;

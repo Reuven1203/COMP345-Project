@@ -102,7 +102,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" line="85" column="9" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" bodystart="85" bodyend="-1"/>
+        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" line="86" column="9" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" bodystart="86" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="private-attrib">
@@ -119,7 +119,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" line="87" column="17" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" bodystart="87" bodyend="-1"/>
+        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" line="88" column="17" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" bodystart="88" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_item_1a5866b44b63816265e197389f707ffe7b" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -135,7 +135,22 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" line="88" column="9" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" bodystart="88" bodyend="-1"/>
+        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" line="89" column="9" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_item_1aa2cfc4d8efb50b11acd8b887d3be5599" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Item::nullItem</definition>
+        <argsstring></argsstring>
+        <name>nullItem</name>
+        <qualifiedname>Item::nullItem</qualifiedname>
+        <briefdescription>
+<para>If item has no stats, will be initialized to true. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" line="90" column="10" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" bodystart="90" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_item_1a6a41e330454a805923d12a1b85b79952" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -151,7 +166,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" line="91" column="9" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" bodystart="91" bodyend="-1"/>
+        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" line="92" column="9" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" bodystart="92" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_item_1a7320f91a9eee50c47ad9001c4558ad9a" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -167,7 +182,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" line="92" column="9" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" bodystart="92" bodyend="-1"/>
+        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" line="93" column="9" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" bodystart="93" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_item_1a7263d056be7c7e490695c8f9e58a0a62" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -183,7 +198,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" line="93" column="9" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" bodystart="93" bodyend="-1"/>
+        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" line="94" column="9" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" bodystart="94" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_item_1a02777809b18e153525f252fd7de64824" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -199,7 +214,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" line="94" column="9" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" bodystart="94" bodyend="-1"/>
+        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" line="95" column="9" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" bodystart="95" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_item_1a2636ace9be7fa4218d5d270fb476c036" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -215,7 +230,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" line="95" column="9" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" bodystart="95" bodyend="-1"/>
+        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" line="96" column="9" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" bodystart="96" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_item_1a42463b28e802877a4e2fce94589ad848" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -231,7 +246,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" line="96" column="9" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" bodystart="96" bodyend="-1"/>
+        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" line="97" column="9" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" bodystart="97" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_item_1ad0d8d8215d19d9a7b3fe139c90562f31" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -247,7 +262,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" line="97" column="9" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" bodystart="97" bodyend="-1"/>
+        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" line="98" column="9" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" bodystart="98" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_item_1a83411ac82bdfa5f01989a958ca9a8f4a" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -263,7 +278,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" line="98" column="9" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" bodystart="98" bodyend="-1"/>
+        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" line="99" column="9" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" bodystart="99" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_item_1a80898565f99592018635deea6a175ddd" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -279,7 +294,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" line="99" column="9" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" bodystart="99" bodyend="-1"/>
+        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" line="100" column="9" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" bodystart="100" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -293,10 +308,11 @@
 <para>Default constructor. </para>
         </briefdescription>
         <detaileddescription>
+<para>Default constructor that marks the item as null. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" line="44" column="5" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.cpp" bodystart="14" bodyend="14"/>
+        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" line="44" column="5" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.cpp" bodystart="24" bodyend="26"/>
       </memberdef>
       <memberdef kind="function" id="class_item_1a11663c84075b78c3ae5e30fdfcd7c458" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -308,10 +324,11 @@
 <para>Destructor. </para>
         </briefdescription>
         <detaileddescription>
+<para>Destructor for the <ref refid="class_item" kindref="compound">Item</ref> class. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" line="48" column="5" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.cpp" bodystart="15" bodyend="15"/>
+        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" line="48" column="5" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.cpp" bodystart="31" bodyend="31"/>
       </memberdef>
       <memberdef kind="function" id="class_item_1ae99c8254cf230ac2267f4cd8af5064fd" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
@@ -322,17 +339,27 @@
         <param>
           <type><ref refid="class_item_1ab5eeb575e9d66ebcfef9b58b667fad05" kindref="member">ItemType</ref></type>
           <declname>itemtype</declname>
+          <defname>equip</defname>
         </param>
         <briefdescription>
 <para>Parameterized constructor. </para>
         </briefdescription>
         <detaileddescription>
+<para>Constructor that initializes an item of a specific type.</para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>itemtype</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The type of item to create. </para>
+<para>The type of item to create.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>equip</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the item being created. </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -340,7 +367,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" line="54" column="14" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.cpp" bodystart="17" bodyend="22"/>
+        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" line="54" column="14" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.cpp" bodystart="37" bodyend="42"/>
       </memberdef>
       <memberdef kind="function" id="class_item_1a7421dba941e6ca9b4aa875e53dee7776" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -352,13 +379,17 @@
 <para>Method to roll a random modifier for an item&apos;s stats. </para>
         </briefdescription>
         <detaileddescription>
-<para><simplesect kind="return"><para>The rolled modifier value. </para>
+<para>Rolls a random stat modifier for the item.</para>
+<para><simplesect kind="return"><para>The rolled modifier value.</para>
+</simplesect>
+Uses a dice roll to generate a random number between 1 and 5 as the enchantment modifier. If the roll is greater than 5, it re-rolls until a valid number is obtained.</para>
+<para><simplesect kind="return"><para>The enchantment modifier as an integer. </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" line="60" column="9" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.cpp" bodystart="25" bodyend="35"/>
+        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" line="60" column="9" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.cpp" bodystart="52" bodyend="62"/>
       </memberdef>
       <memberdef kind="function" id="class_item_1ab8e979a96cf06215e1e66c88d7a6d6ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -371,12 +402,23 @@
           <declname>type</declname>
         </param>
         <briefdescription>
+<para>Sets the equipment type of the item. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new type for the item. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" line="63" column="10" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.cpp" bodystart="115" bodyend="118"/>
+        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" line="63" column="10" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.cpp" bodystart="205" bodyend="208"/>
       </memberdef>
       <memberdef kind="function" id="class_item_1a82f73245020e5fa99b684b10a58038fb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -385,12 +427,14 @@
         <name>setEquipStats</name>
         <qualifiedname>Item::setEquipStats</qualifiedname>
         <briefdescription>
+<para>Initializes or sets the statistics for the item based on its type. </para>
         </briefdescription>
         <detaileddescription>
+<para>Each item type has different statistics associated with it, which are set by this method. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" line="64" column="10" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.cpp" bodystart="122" bodyend="187"/>
+        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" line="64" column="10" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.cpp" bodystart="214" bodyend="279"/>
       </memberdef>
       <memberdef kind="function" id="class_item_1a7c938dfc887d36be815acc94152fee80" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>string</type>
@@ -399,12 +443,17 @@
         <name>getEquipType</name>
         <qualifiedname>Item::getEquipType</qualifiedname>
         <briefdescription>
+<para>Retrieves the equipment type as a string. </para>
         </briefdescription>
         <detaileddescription>
+<para>Converts the enum value of the equipment type to a human-readable string.</para>
+<para><simplesect kind="return"><para>The equipment type in string format. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" line="67" column="12" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.cpp" bodystart="38" bodyend="64"/>
+        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" line="67" column="12" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.cpp" bodystart="71" bodyend="97"/>
       </memberdef>
       <memberdef kind="function" id="class_item_1ad1f359133a1a3b8958fc0a4900009333" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -413,12 +462,16 @@
         <name>getSTR</name>
         <qualifiedname>Item::getSTR</qualifiedname>
         <briefdescription>
+<para>Getter for the Strength attribute modifier. </para>
         </briefdescription>
         <detaileddescription>
+<para><simplesect kind="return"><para>The strength modifier of the item. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" line="68" column="9" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.cpp" bodystart="65" bodyend="68"/>
+        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" line="68" column="9" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.cpp" bodystart="102" bodyend="105"/>
       </memberdef>
       <memberdef kind="function" id="class_item_1abc447f0ba6034acd04d15e441c6c9ea8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -427,12 +480,16 @@
         <name>getCON</name>
         <qualifiedname>Item::getCON</qualifiedname>
         <briefdescription>
+<para>Getter for the Constitution attribute modifier. </para>
         </briefdescription>
         <detaileddescription>
+<para><simplesect kind="return"><para>The constitution modifier of the item. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" line="69" column="9" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.cpp" bodystart="69" bodyend="72"/>
+        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" line="69" column="9" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.cpp" bodystart="110" bodyend="113"/>
       </memberdef>
       <memberdef kind="function" id="class_item_1a4acbceff9137db1c0327a54dd39cc148" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -441,12 +498,16 @@
         <name>getINT</name>
         <qualifiedname>Item::getINT</qualifiedname>
         <briefdescription>
+<para>Getter for the Intelligence attribute modifier. </para>
         </briefdescription>
         <detaileddescription>
+<para><simplesect kind="return"><para>The intelligence modifier of the item. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" line="70" column="9" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.cpp" bodystart="73" bodyend="76"/>
+        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" line="70" column="9" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.cpp" bodystart="119" bodyend="122"/>
       </memberdef>
       <memberdef kind="function" id="class_item_1ace7fe884248a08024312659095e59464" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -455,12 +516,16 @@
         <name>getWIS</name>
         <qualifiedname>Item::getWIS</qualifiedname>
         <briefdescription>
+<para>Getter for the Wisdom attribute modifier. </para>
         </briefdescription>
         <detaileddescription>
+<para><simplesect kind="return"><para>The wisdom modifier of the item. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" line="71" column="9" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.cpp" bodystart="77" bodyend="80"/>
+        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" line="71" column="9" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.cpp" bodystart="128" bodyend="131"/>
       </memberdef>
       <memberdef kind="function" id="class_item_1ac205d9a7fc49567c239a3aa9d1643ce8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -469,12 +534,16 @@
         <name>getCHA</name>
         <qualifiedname>Item::getCHA</qualifiedname>
         <briefdescription>
+<para>Getter for the Charisma attribute modifier. </para>
         </briefdescription>
         <detaileddescription>
+<para><simplesect kind="return"><para>The charisma modifier of the item. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" line="72" column="9" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.cpp" bodystart="81" bodyend="84"/>
+        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" line="72" column="9" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.cpp" bodystart="137" bodyend="140"/>
       </memberdef>
       <memberdef kind="function" id="class_item_1ae228fec49fa884c8c18c55a604160130" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -483,12 +552,16 @@
         <name>getDEX</name>
         <qualifiedname>Item::getDEX</qualifiedname>
         <briefdescription>
+<para>Getter for the Dexterity attribute modifier. </para>
         </briefdescription>
         <detaileddescription>
+<para><simplesect kind="return"><para>The dexterity modifier of the item. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" line="73" column="9" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.cpp" bodystart="85" bodyend="88"/>
+        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" line="73" column="9" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.cpp" bodystart="146" bodyend="149"/>
       </memberdef>
       <memberdef kind="function" id="class_item_1a6e611bdc812fc0e0ebdeb43b46d18db4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -497,12 +570,16 @@
         <name>getAC</name>
         <qualifiedname>Item::getAC</qualifiedname>
         <briefdescription>
+<para>Getter for the Armor Class modifier. </para>
         </briefdescription>
         <detaileddescription>
+<para><simplesect kind="return"><para>The armor class modifier of the item. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" line="74" column="9" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.cpp" bodystart="89" bodyend="92"/>
+        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" line="74" column="9" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.cpp" bodystart="155" bodyend="158"/>
       </memberdef>
       <memberdef kind="function" id="class_item_1a122ea70ddecf55ed2b01565c84572865" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -511,12 +588,16 @@
         <name>getATKBONUS</name>
         <qualifiedname>Item::getATKBONUS</qualifiedname>
         <briefdescription>
+<para>Getter for the Attack Bonus modifier. </para>
         </briefdescription>
         <detaileddescription>
+<para><simplesect kind="return"><para>The attack bonus modifier of the item. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" line="75" column="9" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.cpp" bodystart="93" bodyend="96"/>
+        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" line="75" column="9" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.cpp" bodystart="164" bodyend="167"/>
       </memberdef>
       <memberdef kind="function" id="class_item_1ae31eceb14a821c8becd53927221807de" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -525,12 +606,34 @@
         <name>getDMGBonus</name>
         <qualifiedname>Item::getDMGBonus</qualifiedname>
         <briefdescription>
+<para>Getter for the Damage Bonus modifier. </para>
         </briefdescription>
         <detaileddescription>
+<para><simplesect kind="return"><para>The damage bonus modifier of the item. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" line="76" column="9" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.cpp" bodystart="97" bodyend="100"/>
+        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" line="76" column="9" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.cpp" bodystart="173" bodyend="176"/>
+      </memberdef>
+      <memberdef kind="function" id="class_item_1aced4ea8fa470b7e2bd9a1717485c1561" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Item::getIfNull</definition>
+        <argsstring>()</argsstring>
+        <name>getIfNull</name>
+        <qualifiedname>Item::getIfNull</qualifiedname>
+        <briefdescription>
+<para>Checks if the item is a null item. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>True if the item is null, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" line="77" column="10" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.cpp" bodystart="182" bodyend="185"/>
       </memberdef>
       <memberdef kind="function" id="class_item_1aebb8bb531798a53468a8776a209f4fae" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -542,10 +645,12 @@
 <para>Method to print the stats of the item. </para>
         </briefdescription>
         <detaileddescription>
+<para>Prints the statistics of the item.</para>
+<para>Outputs the type and all statistics of the item to standard output. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" line="81" column="10" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.cpp" bodystart="104" bodyend="112"/>
+        <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" line="82" column="10" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.cpp" bodystart="192" bodyend="200"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -553,7 +658,7 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" line="23" column="1" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" bodystart="24" bodyend="101"/>
+    <location file="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" line="23" column="1" bodyfile="/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-A1/Item.h" bodystart="24" bodyend="102"/>
     <listofallmembers>
       <member refid="class_item_1ab5eeb575e9d66ebcfef9b58b667fad05a01a2cad8626795753e845959db5dcf47" prot="public" virt="non-virtual"><scope>Item</scope><name>ARMOR</name></member>
       <member refid="class_item_1ad0d8d8215d19d9a7b3fe139c90562f31" prot="private" virt="non-virtual"><scope>Item</scope><name>armorClass</name></member>
@@ -573,6 +678,7 @@
       <member refid="class_item_1ae228fec49fa884c8c18c55a604160130" prot="public" virt="non-virtual"><scope>Item</scope><name>getDEX</name></member>
       <member refid="class_item_1ae31eceb14a821c8becd53927221807de" prot="public" virt="non-virtual"><scope>Item</scope><name>getDMGBonus</name></member>
       <member refid="class_item_1a7c938dfc887d36be815acc94152fee80" prot="public" virt="non-virtual"><scope>Item</scope><name>getEquipType</name></member>
+      <member refid="class_item_1aced4ea8fa470b7e2bd9a1717485c1561" prot="public" virt="non-virtual"><scope>Item</scope><name>getIfNull</name></member>
       <member refid="class_item_1a4acbceff9137db1c0327a54dd39cc148" prot="public" virt="non-virtual"><scope>Item</scope><name>getINT</name></member>
       <member refid="class_item_1ad1f359133a1a3b8958fc0a4900009333" prot="public" virt="non-virtual"><scope>Item</scope><name>getSTR</name></member>
       <member refid="class_item_1ace7fe884248a08024312659095e59464" prot="public" virt="non-virtual"><scope>Item</scope><name>getWIS</name></member>
@@ -583,6 +689,7 @@
       <member refid="class_item_1a17b15dc1e47ddba7e5c98476aeae98a6" prot="private" virt="non-virtual"><scope>Item</scope><name>itemName</name></member>
       <member refid="class_item_1af5b78a340e4490cbd89c5781a138fafd" prot="public" virt="non-virtual"><scope>Item</scope><name>itemOverall</name></member>
       <member refid="class_item_1ab5eeb575e9d66ebcfef9b58b667fad05" prot="public" virt="non-virtual"><scope>Item</scope><name>ItemType</name></member>
+      <member refid="class_item_1aa2cfc4d8efb50b11acd8b887d3be5599" prot="private" virt="non-virtual"><scope>Item</scope><name>nullItem</name></member>
       <member refid="class_item_1aebb8bb531798a53468a8776a209f4fae" prot="public" virt="non-virtual"><scope>Item</scope><name>printStats</name></member>
       <member refid="class_item_1ab5eeb575e9d66ebcfef9b58b667fad05a2b4980317315d5cbc3cd42b547eb11c6" prot="public" virt="non-virtual"><scope>Item</scope><name>RING</name></member>
       <member refid="class_item_1a7421dba941e6ca9b4aa875e53dee7776" prot="public" virt="non-virtual"><scope>Item</scope><name>rollStatMod</name></member>
