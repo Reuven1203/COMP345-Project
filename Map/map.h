@@ -15,10 +15,8 @@
 #include <iostream>
 #include <vector>
 #include "cell.h"
-
-class MapTest;
-
-class dungeonMap
+#include "Subject.h"
+class dungeonMap:public Subject
 {
     friend class cell; ///< Allows cell class to access private members of dungeonMap.
 public:
@@ -104,6 +102,12 @@ public:
      * @return The column index of the start point.
      */
     [[nodiscard]] int getStartY() const;
+    
+    void setPlayerX(int x);
+    void setPlayerY(int y);
+    int getPlayerX() const;
+    int getPlayerY() const;
+
 
     /**
      * @brief Gets the total number of rows in the dungeon.
@@ -142,7 +146,9 @@ public:
      * @return The cell at the given row and column.
      */
     cell getCell(int row, int col) const;
-
+    int getEndX();
+    int getEndY();
+    void movePlayer(int direction); //1=up 2=down 3=left 4=right
 private:
     vector<vector<cell>> dungeon; ///< 2D vector of cells representing the dungeon layout.
     int rows; ///< Number of rows in the dungeon.
@@ -151,6 +157,8 @@ private:
     cell* end{}; ///< Pointer to the ending cell.
     int startX{}, startY{}; ///< Coordinates of the starting point.
     int endX{}, endY{}; ///< Coordinates of the ending point.
+    bool wallDetect(int x, int y);
+    bool chestDetect(int x, int y);
     bool isStart(cell* cell) const; ///< Checks if a cell is the start point.
     bool isEnd(cell* cell) const; ///< Checks if a cell is the end point.
     bool dfs(int row, int col); ///< Performs depth-first search for path validation.
@@ -162,7 +170,7 @@ private:
     bool isValidLocation(int row, int col); ///< Validates if a location can be modified.
     void addWallChoice(int* x, int* y); ///< Interactively allows adding a wall.
     void removeWallChoice(int* x, int* y); ///< Interactively allows removing a wall.
-    friend MapTest;
+    int playerX, playerY;///<Keeps track of where player is
 };
 
 #endif // MAP_H

@@ -13,9 +13,8 @@
 #define CELL_H
 
 #include <iostream>
-#include "../Item/itemContainer.h"
-#include "../Character/Character.h"
-
+#include "itemContainer.h"
+#include "Character.h"
 
  /**
   * @enum cellType
@@ -29,8 +28,6 @@ enum cellType
     Wall ///< Indicates the cell contains a wall.
 };
 
-class CellTest;
-
 /**
  * @class cell
  * @brief Represents a single cell within a dungeon map.
@@ -41,7 +38,6 @@ class CellTest;
 class cell
 {
     friend class dungeonMap; ///< Allows dungeonMap full access to cell's private members.
-    friend class CellTest; ///< Allows CellTest class to access private and protected members for testing purposes.
 
 public:
     /**
@@ -88,7 +84,11 @@ public:
      * @param player Pointer to the Character object to be placed in the cell.
      */
     void setPlayer(Character* player);
-
+    /*
+    * @brief Gets player pointer from current cell
+    *
+    */
+    Character* getPlayer();
     /**
      * @brief Marks the cell as visited, used in map traversal validation.
      */
@@ -98,7 +98,7 @@ public:
      * @brief Checks if the cell has been visited.
      * @return True if the cell has been visited, false otherwise.
      */
-    bool checkVisit() const;
+    bool checkVisit();
 
     /**
      * @brief Clears the visited mark from the cell.
@@ -111,6 +111,7 @@ public:
      */
     cellType getCellType();
 
+    container* getChest();
     /**
      * @brief Gets the row position of the cell.
      * @return The row index of the cell in the dungeon map.
@@ -127,7 +128,7 @@ public:
      * @brief Removes any content from the cell, resetting it to empty.
      */
     void removeContent();
-
+    void removePlayer();
 private:
     cellType type; ///< The type of content the cell currently holds.
     container* chest{}; ///< Optional pointer to a container object if the cell holds a chest.
@@ -154,7 +155,6 @@ private:
      * @param col The column index to set for the cell.
      */
     void setColPos(int col);
-    friend CellTest;
 
     
     /* Add in when necessary
