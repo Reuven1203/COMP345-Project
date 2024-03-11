@@ -11,10 +11,10 @@ find_package(CppUnit REQUIRED)
 
 include_directories(${CPPUNIT_INCLUDE_DIRS})
 
-# Main application executable
-add_executable(A1-map
+
+# Common source files
+set(COMMON_SOURCES
         Character/Character.cpp
-        map-test.cpp
         Character/Fighter.cpp
         Dice/Dice.cpp
         Item/Item.cpp
@@ -25,22 +25,21 @@ add_executable(A1-map
         Observer/Observable.h
         Observer/CharacterObserver/CharacterDisplay.cpp
         Observer/CharacterObserver/CharacterDisplay.h
+        Utils/Utils.cpp
+        Utils/Utils.h
+)
+
+# Main application executable
+add_executable(A1-map
+        ${COMMON_SOURCES}
+        map-test.cpp
+        Observer/MapObserver/MapObserver.cpp
+        Observer/MapObserver/MapObserver.h
 )
 
 add_executable(A1-Character
-        Character/Character.cpp
-        Character/Fighter.cpp
-        Dice/Dice.cpp
-        Item/Item.cpp
-        Item/itemContainer.cpp
-        Map/cell.cpp
+        ${COMMON_SOURCES}
         main.cpp
-        Map/map.cpp
-        Observer/Observable.cpp
-        Observer/Observable.h
-        Observer/Observer.h
-        Observer/CharacterObserver/CharacterDisplay.cpp
-        Observer/CharacterObserver/CharacterDisplay.h
 )
 
 # Testing Others
@@ -63,18 +62,7 @@ include_directories(Tests)
 # Test executable
 add_executable(
         COMP345_A1_Tests
-        Character/Character.cpp
-        Character/Fighter.cpp
-        Item/Item.cpp
-        Dice/Dice.cpp
-        Map/map.cpp
-        Map/map.h
-        Map/cell.cpp
-        Map/cell.h
-        Item/itemContainer.cpp
-        Item/itemContainer.h
-        Observer/Observable.cpp
-        Observer/Observable.h
+        ${COMMON_SOURCES}
         Tests/Character/CharacterTest.cpp
         Tests/Character/CharacterTest.h
         Tests/TestRunner.cpp
@@ -86,23 +74,10 @@ add_executable(
         Tests/Map/MapTest.h
         Tests/Map/CellTest.cpp
         Tests/Map/CellTest.h
-        Tests/Observer/ObservableTest.cpp
-        Tests/Observer/ObservableTest.h
-        Tests/Observer/MockObserver.h
 )
 add_executable(CharacterObserver
+        ${COMMON_SOURCES}
         CharacterObserverDriver.cpp
-        Character/Character.cpp
-        Character/Fighter.cpp
-        Dice/Dice.cpp
-        Item/Item.cpp
-        Item/itemContainer.cpp
-        Map/cell.cpp
-        Map/map.cpp
-        Observer/Observable.cpp
-        Observer/Observable.h
-        Observer/CharacterObserver/CharacterDisplay.cpp
-        Observer/CharacterObserver/CharacterDisplay.h
 )
 # Link the CppUnit library
 target_link_libraries(COMP345_A1_Tests ${CPPUNIT_LIBRARIES})

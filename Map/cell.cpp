@@ -98,6 +98,7 @@ void cell::setChest(container* itemStorage)
 void cell::setPlayer(Character* person)
 {
     player = person;
+    type = Player;
 }
 
 /**
@@ -109,7 +110,14 @@ void cell::removeContent()
     chest = nullptr;
     type = Nothing;
 }
-
+/*
+*@brief Removes player pointer at cell
+*/
+void cell::removePlayer()
+{
+    player = nullptr;
+    
+}
 /**
  * @brief Retrieves the cell's content type.
  * @return The cellType indicating the current content of the cell.
@@ -131,7 +139,7 @@ void cell::setVisit()
  * @brief Checks if the cell has been visited.
  * @return True if the cell has been visited, false otherwise.
  */
-bool cell::checkVisit() const
+bool cell::checkVisit()
 {
     return visit;
 }
@@ -178,4 +186,15 @@ int cell::getRowPos() const
 int cell::getColPos() const
 {
     return this->colPos;
+}
+
+
+Character* cell::getPlayer()
+{
+    return this->player;
+}
+
+container* cell::getChest()
+{
+    return this->chest;
 }
