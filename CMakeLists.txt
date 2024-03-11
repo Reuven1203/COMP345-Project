@@ -88,6 +88,10 @@ add_executable(
         Tests/Map/MapTest.h
         Tests/Map/CellTest.cpp
         Tests/Map/CellTest.h
+        Utils/Utils.cpp
+        Utils/Utils.h
+        Observer/Observable.cpp
+        Observer/Observable.h
 )
 add_executable(CharacterObserver
         CharacterObserverDriver.cpp
