@@ -38,7 +38,6 @@ add_executable(A1-Character
         Map/map.cpp
         Observer/Observable.cpp
         Observer/Observable.h
-        Observer/Observer.cpp
         Observer/Observer.h
         Observer/CharacterObserver/CharacterDisplay.cpp
         Observer/CharacterObserver/CharacterDisplay.h

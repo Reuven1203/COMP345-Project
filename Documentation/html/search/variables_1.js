@@ -2,7 +2,7 @@ var searchData=
 [
   ['c_0',['c',['../class_cell_test.html#ad5dfa5e00b5b76fe826f11c6a8ec3628',1,'CellTest']]],
   ['celltest_1',['CellTest',['../classcell.html#afb98171f10889eef8fc4017c61990213',1,'cell']]],
-  ['character_2',['character',['../class_character_test.html#af8b6fc706c0d8e5abe908b470867efe9',1,'CharacterTest']]],
+  ['character_2',['character',['../class_character_display.html#a7977b867124a8cbe19615b9769bb8b0f',1,'CharacterDisplay::character'],['../class_character_test.html#af8b6fc706c0d8e5abe908b470867efe9',1,'CharacterTest::character']]],
   ['charisma_3',['charisma',['../class_item.html#a2636ace9be7fa4218d5d270fb476c036',1,'Item']]],
   ['chest_4',['chest',['../classcell.html#aaea9f991bf05bba2ac35b23a69b8cf41',1,'cell::chest'],['../class_cell_test.html#a8c24f2fefea6cef8d2d27b3c1d01d9ce',1,'CellTest::chest']]],
   ['classname_5',['className',['../_fighter_8h.html#af8c4a770667f6c49f79353a5f8306384',1,'Fighter.h']]],

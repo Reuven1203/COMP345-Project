@@ -12,7 +12,7 @@ The \doxylink{class_character}{Character} class represents an entity in the game
 Inheritance diagram for Character\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{class_character}
+\includegraphics[height=3.000000cm]{class_character}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public Types}
@@ -62,11 +62,23 @@ void \mbox{\hyperlink{class_character_a087c2ae6cb50f358dc2955f6c27a9351}{show\+W
 \begin{DoxyCompactList}\small\item\em Displays the items currently equipped by the character. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_character_a8638de4be3d350860ed4c5b9da042135}{get\+Stat}} (\mbox{\hyperlink{class_character_ac972d17bc509adbc4144b18fde09a814}{Stats}} \mbox{\hyperlink{class_character_a44f76b68965975ae1addd1c579d5a250}{stats}}) const
 \begin{DoxyCompactList}\small\item\em Gets the value of a specified stat for the character. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_observable}{Observable}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_observable_a6efa28f8d9b8e5ab249533f684363a4f}{attach}} (\mbox{\hyperlink{class_observer}{Observer}} \texorpdfstring{$\ast$}{*}observer)
+\begin{DoxyCompactList}\small\item\em Attaches an observer to the observable object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_observable_a242e67bc26e3934370e863af3c08d1cb}{detach}} (\mbox{\hyperlink{class_observer}{Observer}} \texorpdfstring{$\ast$}{*}observer)
+\begin{DoxyCompactList}\small\item\em Detaches an observer from the observable object. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 virtual \mbox{\hyperlink{_dice_8h_a230fe26a49ff11b10bb851e08f88d9d4}{Die\+Type}} \mbox{\hyperlink{class_character_aea131e1bce548f9e781af0dc5f4f29ce}{get\+Die\+Type}} () const
 \begin{DoxyCompactList}\small\item\em Returns the default die type used for hit points calculation. Can be overridden by derived classes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_observable}{Observable}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_observable_a099bf851e05bb8c1a25e83f2a1389e58}{notify}} ()
+\begin{DoxyCompactList}\small\item\em Notifies all attached observers of a change. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -129,10 +141,6 @@ Characters have abilities, levels, stats, and can equip items to modify their at
 
 This class manages the character\textquotesingle{}s attributes such as name, level, ability scores, and equipped items. It includes functionalities for modifying these attributes and calculating derived statistics. 
 
-Definition at line \mbox{\hyperlink{_character_8h_source_l00027}{27}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
-
-
-
 \doxysubsection{Member Enumeration Documentation}
 \Hypertarget{class_character_ac375a6d6120ce429749a78bb15e1d402}\label{class_character_ac375a6d6120ce429749a78bb15e1d402} 
 \index{Character@{Character}!Ability@{Ability}}
@@ -170,10 +178,6 @@ Charisma&\\
 \hline
 
 \end{DoxyEnumFields}
-
-
-Definition at line \mbox{\hyperlink{_character_8h_source_l00052}{52}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
-
 \Hypertarget{class_character_ac972d17bc509adbc4144b18fde09a814}\label{class_character_ac972d17bc509adbc4144b18fde09a814} 
 \index{Character@{Character}!Stats@{Stats}}
 \index{Stats@{Stats}!Character@{Character}}
@@ -208,10 +212,6 @@ DB&Damage Bonus. \\
 \end{DoxyEnumFields}
 
 
-Definition at line \mbox{\hyperlink{_character_8h_source_l00065}{65}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
-
-
-
 \doxysubsection{Constructor \& Destructor Documentation}
 \Hypertarget{class_character_a22d0e11a466d9915761a929b991f057e}\label{class_character_a22d0e11a466d9915761a929b991f057e} 
 \index{Character@{Character}!Character@{Character}}
@@ -232,10 +232,6 @@ Constructor that initializes a character with a name and level.
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00012}{12}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
-
-
-
 \doxysubsection{Member Function Documentation}
 \Hypertarget{class_character_a41e037769916b418a44f14ff915e0d89}\label{class_character_a41e037769916b418a44f14ff915e0d89} 
 \index{Character@{Character}!calculateAbilityModifiers@{calculateAbilityModifiers}}
@@ -247,11 +243,7 @@ Definition at line \mbox{\hyperlink{_character_8cpp_source_l00012}{12}} of file 
 
 Calculates the ability modifiers based on ability scores. 
 
-This function computes each ability modifier as the floor of ((ability\+Score -\/ 10) / 2). 
-
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00106}{106}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
-
-\Hypertarget{class_character_aabf35a66ae6ece5944cb63babd174bff}\label{class_character_aabf35a66ae6ece5944cb63babd174bff} 
+This function computes each ability modifier as the floor of ((ability\+Score -\/ 10) / 2). \Hypertarget{class_character_aabf35a66ae6ece5944cb63babd174bff}\label{class_character_aabf35a66ae6ece5944cb63babd174bff} 
 \index{Character@{Character}!calculateAbilityScores@{calculateAbilityScores}}
 \index{calculateAbilityScores@{calculateAbilityScores}!Character@{Character}}
 \doxysubsubsection{\texorpdfstring{calculateAbilityScores()}{calculateAbilityScores()}}
@@ -261,11 +253,7 @@ Definition at line \mbox{\hyperlink{_character_8cpp_source_l00106}{106}} of file
 
 Recalculates ability scores and modifiers based on equipped items. 
 
-Adjusts the character\textquotesingle{}s ability scores and modifiers according to the stats of equipped items. 
-
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00078}{78}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
-
-\Hypertarget{class_character_a84a3a39656655d9a47844887976aafd2}\label{class_character_a84a3a39656655d9a47844887976aafd2} 
+Adjusts the character\textquotesingle{}s ability scores and modifiers according to the stats of equipped items. \Hypertarget{class_character_a84a3a39656655d9a47844887976aafd2}\label{class_character_a84a3a39656655d9a47844887976aafd2} 
 \index{Character@{Character}!equip@{equip}}
 \index{equip@{equip}!Character@{Character}}
 \doxysubsubsection{\texorpdfstring{equip()}{equip()}}
@@ -280,11 +268,7 @@ Equips an item to the character.
 {\em item} & The item to be equipped.\\
 \hline
 \end{DoxyParams}
-This function equips an item to the character, potentially altering the character\textquotesingle{}s ability scores and other statistics based on the item\textquotesingle{}s properties. If the character already has an item equipped in the same slot, the behavior of this function is defined by the game mechanics (e.\+g., the previous item may need to be unequipped first). 
-
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00059}{59}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
-
-\Hypertarget{class_character_a61c38f189478ee3809f6490ede100e4d}\label{class_character_a61c38f189478ee3809f6490ede100e4d} 
+This function equips an item to the character, potentially altering the character\textquotesingle{}s ability scores and other statistics based on the item\textquotesingle{}s properties. If the character already has an item equipped in the same slot, the behavior of this function is defined by the game mechanics (e.\+g., the previous item may need to be unequipped first). \Hypertarget{class_character_a61c38f189478ee3809f6490ede100e4d}\label{class_character_a61c38f189478ee3809f6490ede100e4d} 
 \index{Character@{Character}!generateAbilityScores@{generateAbilityScores}}
 \index{generateAbilityScores@{generateAbilityScores}!Character@{Character}}
 \doxysubsubsection{\texorpdfstring{generateAbilityScores()}{generateAbilityScores()}}
@@ -294,11 +278,7 @@ Definition at line \mbox{\hyperlink{_character_8cpp_source_l00059}{59}} of file 
 
 Generates random ability scores for the character. 
 
-This function uses dice rolls to randomly generate ability scores for the character. 
-
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00113}{113}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
-
-\Hypertarget{class_character_a1fdb0946af9cfe713785a88e06f20b34}\label{class_character_a1fdb0946af9cfe713785a88e06f20b34} 
+This function uses dice rolls to randomly generate ability scores for the character. \Hypertarget{class_character_a1fdb0946af9cfe713785a88e06f20b34}\label{class_character_a1fdb0946af9cfe713785a88e06f20b34} 
 \index{Character@{Character}!getAbilityModifier@{getAbilityModifier}}
 \index{getAbilityModifier@{getAbilityModifier}!Character@{Character}}
 \doxysubsubsection{\texorpdfstring{getAbilityModifier()}{getAbilityModifier()}}
@@ -316,11 +296,7 @@ Gets the modifier for a specific ability for the character.
 \begin{DoxyReturn}{Returns}
 int The modifier of the specified ability.
 \end{DoxyReturn}
-This function returns the modifier for a specified ability. Ability modifiers are derived from ability scores and are used in calculating the outcomes of actions that depend on the character\textquotesingle{}s abilities. 
-
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00037}{37}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
-
-\Hypertarget{class_character_a8e448101ce949905977f6a3c421172b1}\label{class_character_a8e448101ce949905977f6a3c421172b1} 
+This function returns the modifier for a specified ability. Ability modifiers are derived from ability scores and are used in calculating the outcomes of actions that depend on the character\textquotesingle{}s abilities. \Hypertarget{class_character_a8e448101ce949905977f6a3c421172b1}\label{class_character_a8e448101ce949905977f6a3c421172b1} 
 \index{Character@{Character}!getAbilityScore@{getAbilityScore}}
 \index{getAbilityScore@{getAbilityScore}!Character@{Character}}
 \doxysubsubsection{\texorpdfstring{getAbilityScore()}{getAbilityScore()}}
@@ -338,11 +314,7 @@ Gets the score of a specific ability for the character.
 \begin{DoxyReturn}{Returns}
 int The score of the specified ability.
 \end{DoxyReturn}
-This function returns the score for a specified ability. Ability scores determine the character\textquotesingle{}s capabilities in various aspects such as strength, intelligence, and dexterity. 
-
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00053}{53}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
-
-\Hypertarget{class_character_acbf3e5cddba034622dbbadfe742ba2d9}\label{class_character_acbf3e5cddba034622dbbadfe742ba2d9} 
+This function returns the score for a specified ability. Ability scores determine the character\textquotesingle{}s capabilities in various aspects such as strength, intelligence, and dexterity. \Hypertarget{class_character_acbf3e5cddba034622dbbadfe742ba2d9}\label{class_character_acbf3e5cddba034622dbbadfe742ba2d9} 
 \index{Character@{Character}!getClassName@{getClassName}}
 \index{getClassName@{getClassName}!Character@{Character}}
 \doxysubsubsection{\texorpdfstring{getClassName()}{getClassName()}}
@@ -358,10 +330,6 @@ std\+::string The class name of the character.
 
 
 Reimplemented in \mbox{\hyperlink{class_fighter_a5e86ce51f2e3bddaacce7652f616c4e6}{Fighter}}.
-
-
-
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00049}{49}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
 
 \Hypertarget{class_character_aea131e1bce548f9e781af0dc5f4f29ce}\label{class_character_aea131e1bce548f9e781af0dc5f4f29ce} 
 \index{Character@{Character}!getDieType@{getDieType}}
@@ -380,10 +348,6 @@ Die\+Type The default die type for the character.
 
 Reimplemented in \mbox{\hyperlink{class_fighter_a7efe440440e5c6e1104462dcca59cf84}{Fighter}}.
 
-
-
-Definition at line \mbox{\hyperlink{_character_8h_source_l00038}{38}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
-
 \Hypertarget{class_character_a06713215a5850ec92194a1a711fb8cd7}\label{class_character_a06713215a5850ec92194a1a711fb8cd7} 
 \index{Character@{Character}!getLevel@{getLevel}}
 \index{getLevel@{getLevel}!Character@{Character}}
@@ -397,11 +361,7 @@ Gets the character\textquotesingle{}s current level.
 \begin{DoxyReturn}{Returns}
 int The current level of the character.
 \end{DoxyReturn}
-This function returns the character\textquotesingle{}s level. Levels represent the character\textquotesingle{}s progress and experience in the game. Higher levels typically indicate stronger characters. 
-
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00033}{33}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
-
-\Hypertarget{class_character_ad79f892fe576c7ef0804cad502d94517}\label{class_character_ad79f892fe576c7ef0804cad502d94517} 
+This function returns the character\textquotesingle{}s level. Levels represent the character\textquotesingle{}s progress and experience in the game. Higher levels typically indicate stronger characters. \Hypertarget{class_character_ad79f892fe576c7ef0804cad502d94517}\label{class_character_ad79f892fe576c7ef0804cad502d94517} 
 \index{Character@{Character}!getName@{getName}}
 \index{getName@{getName}!Character@{Character}}
 \doxysubsubsection{\texorpdfstring{getName()}{getName()}}
@@ -414,11 +374,7 @@ Gets the character\textquotesingle{}s name.
 \begin{DoxyReturn}{Returns}
 std\+::string The name of the character.
 \end{DoxyReturn}
-This function returns the name of the character. The name is used to identify the character in the game and does not affect any game mechanics. 
-
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00041}{41}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
-
-\Hypertarget{class_character_a8638de4be3d350860ed4c5b9da042135}\label{class_character_a8638de4be3d350860ed4c5b9da042135} 
+This function returns the name of the character. The name is used to identify the character in the game and does not affect any game mechanics. \Hypertarget{class_character_a8638de4be3d350860ed4c5b9da042135}\label{class_character_a8638de4be3d350860ed4c5b9da042135} 
 \index{Character@{Character}!getStat@{getStat}}
 \index{getStat@{getStat}!Character@{Character}}
 \doxysubsubsection{\texorpdfstring{getStat()}{getStat()}}
@@ -436,11 +392,7 @@ Gets the value of a specified stat for the character.
 \begin{DoxyReturn}{Returns}
 int The value of the specified stat.
 \end{DoxyReturn}
-This function returns the current value of a specified stat (e.\+g., hit points, armor class). Stats are derived from the character\textquotesingle{}s level, ability scores, and equipped items. This method allows querying the character\textquotesingle{}s stats to determine their capabilities and status in the game. 
-
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00045}{45}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
-
-\Hypertarget{class_character_a1f223b67659517e58517db65a92231bf}\label{class_character_a1f223b67659517e58517db65a92231bf} 
+This function returns the current value of a specified stat (e.\+g., hit points, armor class). Stats are derived from the character\textquotesingle{}s level, ability scores, and equipped items. This method allows querying the character\textquotesingle{}s stats to determine their capabilities and status in the game. \Hypertarget{class_character_a1f223b67659517e58517db65a92231bf}\label{class_character_a1f223b67659517e58517db65a92231bf} 
 \index{Character@{Character}!initializeHitPoints@{initializeHitPoints}}
 \index{initializeHitPoints@{initializeHitPoints}!Character@{Character}}
 \doxysubsubsection{\texorpdfstring{initializeHitPoints()}{initializeHitPoints()}}
@@ -453,11 +405,7 @@ Initializes the character\textquotesingle{}s hit points based on level and Const
 \begin{DoxyReturn}{Returns}
 int The calculated hit points.
 \end{DoxyReturn}
-Calculates initial hit points using the character\textquotesingle{}s die type and Constitution modifier. 
-
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00139}{139}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
-
-\Hypertarget{class_character_a105d03889388d94653de79e80693fda2}\label{class_character_a105d03889388d94653de79e80693fda2} 
+Calculates initial hit points using the character\textquotesingle{}s die type and Constitution modifier. \Hypertarget{class_character_a105d03889388d94653de79e80693fda2}\label{class_character_a105d03889388d94653de79e80693fda2} 
 \index{Character@{Character}!initializeProficiencyBonus@{initializeProficiencyBonus}}
 \index{initializeProficiencyBonus@{initializeProficiencyBonus}!Character@{Character}}
 \doxysubsubsection{\texorpdfstring{initializeProficiencyBonus()}{initializeProficiencyBonus()}}
@@ -470,11 +418,7 @@ Initializes the character\textquotesingle{}s proficiency bonus based on their le
 \begin{DoxyReturn}{Returns}
 int The calculated proficiency bonus.
 \end{DoxyReturn}
-Determines the proficiency bonus based on the character\textquotesingle{}s level according to D\&D rules. 
-
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00146}{146}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
-
-\Hypertarget{class_character_a15ed8572a155e744d9be1a00de6dd9b8}\label{class_character_a15ed8572a155e744d9be1a00de6dd9b8} 
+Determines the proficiency bonus based on the character\textquotesingle{}s level according to D\&D rules. \Hypertarget{class_character_a15ed8572a155e744d9be1a00de6dd9b8}\label{class_character_a15ed8572a155e744d9be1a00de6dd9b8} 
 \index{Character@{Character}!isAbility@{isAbility}}
 \index{isAbility@{isAbility}!Character@{Character}}
 \doxysubsubsection{\texorpdfstring{isAbility()}{isAbility()}}
@@ -492,10 +436,6 @@ Checks if a given string corresponds to a valid ability.
 \begin{DoxyReturn}{Returns}
 true if the string is a valid ability name, false otherwise. 
 \end{DoxyReturn}
-
-
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00172}{172}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
-
 \Hypertarget{class_character_a7ecc56eb0326ddaaa41ff66a1bdcf471}\label{class_character_a7ecc56eb0326ddaaa41ff66a1bdcf471} 
 \index{Character@{Character}!isItemEquipped@{isItemEquipped}}
 \index{isItemEquipped@{isItemEquipped}!Character@{Character}}
@@ -514,11 +454,7 @@ Checks if an item is currently equipped.
 \begin{DoxyReturn}{Returns}
 true If the item is equipped, false otherwise.
 \end{DoxyReturn}
-Determines if the specified item is equipped by checking the worn\+Items map. 
-
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00164}{164}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
-
-\Hypertarget{class_character_ac6b5ccaa4ad98fe99685d3ddaf48edb3}\label{class_character_ac6b5ccaa4ad98fe99685d3ddaf48edb3} 
+Determines if the specified item is equipped by checking the worn\+Items map. \Hypertarget{class_character_ac6b5ccaa4ad98fe99685d3ddaf48edb3}\label{class_character_ac6b5ccaa4ad98fe99685d3ddaf48edb3} 
 \index{Character@{Character}!reduceAbilityAfterUnequip@{reduceAbilityAfterUnequip}}
 \index{reduceAbilityAfterUnequip@{reduceAbilityAfterUnequip}!Character@{Character}}
 \doxysubsubsection{\texorpdfstring{reduceAbilityAfterUnequip()}{reduceAbilityAfterUnequip()}}
@@ -533,11 +469,7 @@ Reduces character\textquotesingle{}s ability scores after unequipping an item.
 {\em item} & The item being unequipped.\\
 \hline
 \end{DoxyParams}
-This function reduces the character\textquotesingle{}s ability scores based on the item\textquotesingle{}s stats. 
-
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00091}{91}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
-
-\Hypertarget{class_character_a3caa2fa1be51737fa682e1634151828c}\label{class_character_a3caa2fa1be51737fa682e1634151828c} 
+This function reduces the character\textquotesingle{}s ability scores based on the item\textquotesingle{}s stats. \Hypertarget{class_character_a3caa2fa1be51737fa682e1634151828c}\label{class_character_a3caa2fa1be51737fa682e1634151828c} 
 \index{Character@{Character}!showCharacterStats@{showCharacterStats}}
 \index{showCharacterStats@{showCharacterStats}!Character@{Character}}
 \doxysubsubsection{\texorpdfstring{showCharacterStats()}{showCharacterStats()}}
@@ -546,10 +478,6 @@ Definition at line \mbox{\hyperlink{_character_8cpp_source_l00091}{91}} of file 
 
 
 Displays the character\textquotesingle{}s stats to the standard output. 
-
-
-
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00120}{120}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
 
 \Hypertarget{class_character_a087c2ae6cb50f358dc2955f6c27a9351}\label{class_character_a087c2ae6cb50f358dc2955f6c27a9351} 
 \index{Character@{Character}!showWornItems@{showWornItems}}
@@ -561,11 +489,7 @@ Definition at line \mbox{\hyperlink{_character_8cpp_source_l00120}{120}} of file
 
 Displays the items currently equipped by the character. 
 
-This function prints out a list of the items that the character is currently wearing, along with their stats or effects. This can be used to provide the player with an overview of their equipped items and their contributions to the character\textquotesingle{}s abilities. 
-
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00069}{69}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
-
-\Hypertarget{class_character_af625dc801ad5f2672fcdb8c78a623a53}\label{class_character_af625dc801ad5f2672fcdb8c78a623a53} 
+This function prints out a list of the items that the character is currently wearing, along with their stats or effects. This can be used to provide the player with an overview of their equipped items and their contributions to the character\textquotesingle{}s abilities. \Hypertarget{class_character_af625dc801ad5f2672fcdb8c78a623a53}\label{class_character_af625dc801ad5f2672fcdb8c78a623a53} 
 \index{Character@{Character}!stringToEnum@{stringToEnum}}
 \index{stringToEnum@{stringToEnum}!Character@{Character}}
 \doxysubsubsection{\texorpdfstring{stringToEnum()}{stringToEnum()}}
@@ -583,11 +507,7 @@ Converts a string to its corresponding Ability enum.
 \begin{DoxyReturn}{Returns}
 Ability The corresponding Ability enum.
 \end{DoxyReturn}
-Throws std\+::invalid\+\_\+argument if the string does not correspond to a valid ability. 
-
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00176}{176}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
-
-\Hypertarget{class_character_a56a1a6de9c6d8fb8842407890040573a}\label{class_character_a56a1a6de9c6d8fb8842407890040573a} 
+Throws std\+::invalid\+\_\+argument if the string does not correspond to a valid ability. \Hypertarget{class_character_a56a1a6de9c6d8fb8842407890040573a}\label{class_character_a56a1a6de9c6d8fb8842407890040573a} 
 \index{Character@{Character}!stringToEnumStats@{stringToEnumStats}}
 \index{stringToEnumStats@{stringToEnumStats}!Character@{Character}}
 \doxysubsubsection{\texorpdfstring{stringToEnumStats()}{stringToEnumStats()}}
@@ -605,11 +525,7 @@ Converts a string to its corresponding Stats enum.
 \begin{DoxyReturn}{Returns}
 Stats The corresponding Stats enum.
 \end{DoxyReturn}
-Throws std\+::invalid\+\_\+argument if the string does not correspond to a valid stat. 
-
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00194}{194}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
-
-\Hypertarget{class_character_a96f3ff3409c036f66237c80cabfb6718}\label{class_character_a96f3ff3409c036f66237c80cabfb6718} 
+Throws std\+::invalid\+\_\+argument if the string does not correspond to a valid stat. \Hypertarget{class_character_a96f3ff3409c036f66237c80cabfb6718}\label{class_character_a96f3ff3409c036f66237c80cabfb6718} 
 \index{Character@{Character}!unequip@{unequip}}
 \index{unequip@{unequip}!Character@{Character}}
 \doxysubsubsection{\texorpdfstring{unequip()}{unequip()}}
@@ -626,10 +542,6 @@ Unequips an item from the character.
 \end{DoxyParams}
 This function removes an item from the character\textquotesingle{}s equipment, reversing any changes to the character\textquotesingle{}s statistics that were made by equipping the item. If the item is not currently equipped, the function may simply do nothing or handle the situation as appropriate. 
 
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00064}{64}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
-
-
-
 \doxysubsection{Friends And Related Symbol Documentation}
 \Hypertarget{class_character_a516c4be79a2de3e0996ec37e97d86892}\label{class_character_a516c4be79a2de3e0996ec37e97d86892} 
 \index{Character@{Character}!CharacterTest@{CharacterTest}}
@@ -640,10 +552,6 @@ Definition at line \mbox{\hyperlink{_character_8cpp_source_l00064}{64}} of file 
 
 
 Allows \doxylink{class_character_test}{Character\+Test} class to access private and protected members for testing purposes. 
-
-
-
-Definition at line \mbox{\hyperlink{_character_8h_source_l00028}{28}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
 
 
 
@@ -658,10 +566,6 @@ Definition at line \mbox{\hyperlink{_character_8h_source_l00028}{28}} of file \m
 
 Modifiers derived from the ability scores. 
 
-
-
-Definition at line \mbox{\hyperlink{_character_8h_source_l00177}{177}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
-
 \Hypertarget{class_character_ad0d8a946d29c84108685dfde973d91a6}\label{class_character_ad0d8a946d29c84108685dfde973d91a6} 
 \index{Character@{Character}!abilityScore@{abilityScore}}
 \index{abilityScore@{abilityScore}!Character@{Character}}
@@ -671,10 +575,6 @@ Definition at line \mbox{\hyperlink{_character_8h_source_l00177}{177}} of file \
 
 
 Scores for the character\textquotesingle{}s abilities. 
-
-
-
-Definition at line \mbox{\hyperlink{_character_8h_source_l00176}{176}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
 
 \Hypertarget{class_character_a94c828a56970fdba54a2fb277c43129f}\label{class_character_a94c828a56970fdba54a2fb277c43129f} 
 \index{Character@{Character}!currentHP@{currentHP}}
@@ -686,10 +586,6 @@ Definition at line \mbox{\hyperlink{_character_8h_source_l00176}{176}} of file \
 
 Current hit points of the character. 
 
-
-
-Definition at line \mbox{\hyperlink{_character_8h_source_l00031}{31}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
-
 \Hypertarget{class_character_af15a478fe650b87f59cbe5d071697307}\label{class_character_af15a478fe650b87f59cbe5d071697307} 
 \index{Character@{Character}!level@{level}}
 \index{level@{level}!Character@{Character}}
@@ -699,10 +595,6 @@ Definition at line \mbox{\hyperlink{_character_8h_source_l00031}{31}} of file \m
 
 
 Level of the character. 
-
-
-
-Definition at line \mbox{\hyperlink{_character_8h_source_l00032}{32}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
 
 \Hypertarget{class_character_a6592c35167738421f3e04ca8808d37db}\label{class_character_a6592c35167738421f3e04ca8808d37db} 
 \index{Character@{Character}!name@{name}}
@@ -714,10 +606,6 @@ Definition at line \mbox{\hyperlink{_character_8h_source_l00032}{32}} of file \m
 
 \doxylink{class_character}{Character}\textquotesingle{}s name. 
 
-
-
-Definition at line \mbox{\hyperlink{_character_8h_source_l00175}{175}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
-
 \Hypertarget{class_character_a44f76b68965975ae1addd1c579d5a250}\label{class_character_a44f76b68965975ae1addd1c579d5a250} 
 \index{Character@{Character}!stats@{stats}}
 \index{stats@{stats}!Character@{Character}}
@@ -727,10 +615,6 @@ Definition at line \mbox{\hyperlink{_character_8h_source_l00175}{175}} of file \
 
 
 Map of character stats. 
-
-
-
-Definition at line \mbox{\hyperlink{_character_8h_source_l00249}{249}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
 
 \Hypertarget{class_character_a7305cd337b9a73ca07cbf556e1307159}\label{class_character_a7305cd337b9a73ca07cbf556e1307159} 
 \index{Character@{Character}!wornItems@{wornItems}}
@@ -744,11 +628,7 @@ Currently equipped items.
 
 
 
-Definition at line \mbox{\hyperlink{_character_8h_source_l00250}{250}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
-
-
-
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-/\+Users/reuvenostrofsky/\+Library/\+Mobile Documents/com\texorpdfstring{$\sim$}{\string~}apple\texorpdfstring{$\sim$}{\string~}\+Cloud\+Docs/\+Concordia/\+Winter 2024/\+Comp345/\+Assignments/\+COMP345-\/\+A1/\mbox{\hyperlink{_character_8h}{Character.\+h}}\item 
-/\+Users/reuvenostrofsky/\+Library/\+Mobile Documents/com\texorpdfstring{$\sim$}{\string~}apple\texorpdfstring{$\sim$}{\string~}\+Cloud\+Docs/\+Concordia/\+Winter 2024/\+Comp345/\+Assignments/\+COMP345-\/\+A1/\mbox{\hyperlink{_character_8cpp}{Character.\+cpp}}\end{DoxyCompactItemize}
+Character/\mbox{\hyperlink{_character_8h}{Character.\+h}}\item 
+Character/\mbox{\hyperlink{_character_8cpp}{Character.\+cpp}}\end{DoxyCompactItemize}

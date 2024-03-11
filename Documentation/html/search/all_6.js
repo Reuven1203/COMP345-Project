@@ -1,13 +1,10 @@
 var searchData=
 [
-  ['fighter_0',['Fighter',['../class_fighter.html',1,'']]],
-  ['fighter_1',['fighter',['../class_fighter_test.html#a3691340758939660d2ad393520c01042',1,'FighterTest']]],
-  ['fighter_2',['Fighter',['../class_fighter.html#abf32519d935df18963172d31d45029f6',1,'Fighter']]],
-  ['fighter_2ecpp_3',['Fighter.cpp',['../_fighter_8cpp.html',1,'']]],
-  ['fighter_2ecpp_2eo_2ed_4',['Fighter.cpp.o.d',['../_a1_8dir_2_fighter_8cpp_8o_8d.html',1,'(Global Namespace)'],['../_c_o_m_p345___a1___tests_8dir_2_fighter_8cpp_8o_8d.html',1,'(Global Namespace)']]],
-  ['fighter_2eh_5',['Fighter.h',['../_fighter_8h.html',1,'']]],
-  ['fightertest_6',['FighterTest',['../class_fighter_test.html',1,'']]],
-  ['fightertest_2ecpp_7',['FighterTest.cpp',['../_fighter_test_8cpp.html',1,'']]],
-  ['fightertest_2ecpp_2eo_2ed_8',['FighterTest.cpp.o.d',['../_fighter_test_8cpp_8o_8d.html',1,'']]],
-  ['fightertest_2eh_9',['FighterTest.h',['../_fighter_test_8h.html',1,'']]]
+  ['enchantmentmodifier_0',['enchantmentModifier',['../class_item.html#a5866b44b63816265e197389f707ffe7b',1,'Item']]],
+  ['end_1',['end',['../classdungeon_map.html#a10ada3e5e257d9070cd2b7bfdefd65b4',1,'dungeonMap']]],
+  ['endx_2',['endX',['../classdungeon_map.html#afc9b5d7fc69a73d9c5aaccafed9c0727',1,'dungeonMap']]],
+  ['endy_3',['endY',['../classdungeon_map.html#a89c6e436c2eb556abe2b25f91e8dd2ca',1,'dungeonMap']]],
+  ['equip_4',['equip',['../class_character.html#a84a3a39656655d9a47844887976aafd2',1,'Character']]],
+  ['equipped_20items_5',['Abilities Assignment Based on Equipped Items',['../index.html#autotoc_md8',1,'']]],
+  ['equiptype_6',['equipType',['../class_item.html#a6a42b85897da5e73a5913404790e33e0',1,'Item']]]
 ];

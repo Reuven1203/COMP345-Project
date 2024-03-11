@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['player_0',['player',['../classcell.html#a136f682b91a2171a4beb94d3931d10a7',1,'cell']]]
+  ['observers_0',['observers',['../class_observable.html#ac0f0caa653626a0aba8f0c1791fc5019',1,'Observable']]]
 ];
