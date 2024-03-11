@@ -25,6 +25,7 @@
  * it notifies all registered observers by calling their update method.
  */
 class Observable {
+    friend class ObservableTest; ///< Friend class for unit testing purposes.
     std::list<Observer*> observers; ///< List of pointers to Observer objects.
 
 public:

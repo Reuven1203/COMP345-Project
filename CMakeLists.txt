@@ -73,6 +73,8 @@ add_executable(
         Map/cell.h
         Item/itemContainer.cpp
         Item/itemContainer.h
+        Observer/Observable.cpp
+        Observer/Observable.h
         Tests/Character/CharacterTest.cpp
         Tests/Character/CharacterTest.h
         Tests/TestRunner.cpp
@@ -84,6 +86,9 @@ add_executable(
         Tests/Map/MapTest.h
         Tests/Map/CellTest.cpp
         Tests/Map/CellTest.h
+        Tests/Observer/ObservableTest.cpp
+        Tests/Observer/ObservableTest.h
+        Tests/Observer/MockObserver.h
 )
 add_executable(CharacterObserver
         CharacterObserverDriver.cpp
