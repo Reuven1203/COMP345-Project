@@ -6,10 +6,19 @@
 
 
 using namespace std;
+
+#ifdef _WIN32
 #define KEY_UP 72
 #define KEY_DOWN 80
 #define KEY_LEFT 75
 #define KEY_RIGHT 77
+#else
+#define KEY_UP 65
+#define KEY_DOWN 66
+#define KEY_LEFT 68
+#define KEY_RIGHT 67
+#endif
+
 
 MapObserver::MapObserver(dungeonMap* m) {
 	_subject = m;
@@ -27,15 +36,12 @@ void MapObserver::moveCharacter()
 	while (true)
 	{	
 		update();
-		
+
 		if (ch == 27)// ESC key pressed
 	     	{
 			break;
 			}
-		
 		cout << "Use arrow keys to move Player(P) (ESC to quit)..."<<endl;
-		ch = _getch();
-		if (ch == 224 || ch == -32) { //Reads the downward press of arrow key
 			switch ((ch = _getch()))
 			{
 			case KEY_UP://UP arrow key
@@ -83,13 +89,12 @@ void MapObserver::moveCharacter()
 				break;
 
 			}
-		}
+
 		
 	}
 }
 void MapObserver::update()
 {
-    std::cout << "update called" << std::endl;
 #ifdef _WIN32
     system("cls");
 #else
