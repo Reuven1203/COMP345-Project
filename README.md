@@ -1,4 +1,4 @@
-
+\mainpage
 # COMP345-A1 Project
 
 ## Overview

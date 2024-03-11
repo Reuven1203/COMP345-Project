@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['a1_0',['COMP345-A1',['../index.html',1,'']]]
+  ['345_20project_0',['COMP-345 Project',['../index.html',1,'']]]
 ];

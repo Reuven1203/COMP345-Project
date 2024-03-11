@@ -12,7 +12,7 @@ Represents a fighter character in the game.
 Inheritance diagram for Fighter\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{class_fighter}
+\includegraphics[height=3.000000cm]{class_fighter}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public Member Functions}
@@ -45,6 +45,13 @@ void \mbox{\hyperlink{class_character_a087c2ae6cb50f358dc2955f6c27a9351}{show\+W
 \begin{DoxyCompactList}\small\item\em Displays the items currently equipped by the character. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_character_a8638de4be3d350860ed4c5b9da042135}{get\+Stat}} (\mbox{\hyperlink{class_character_ac972d17bc509adbc4144b18fde09a814}{Stats}} \mbox{\hyperlink{class_character_a44f76b68965975ae1addd1c579d5a250}{stats}}) const
 \begin{DoxyCompactList}\small\item\em Gets the value of a specified stat for the character. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_observable}{Observable}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_observable_a6efa28f8d9b8e5ab249533f684363a4f}{attach}} (\mbox{\hyperlink{class_observer}{Observer}} \texorpdfstring{$\ast$}{*}observer)
+\begin{DoxyCompactList}\small\item\em Attaches an observer to the observable object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_observable_a242e67bc26e3934370e863af3c08d1cb}{detach}} (\mbox{\hyperlink{class_observer}{Observer}} \texorpdfstring{$\ast$}{*}observer)
+\begin{DoxyCompactList}\small\item\em Detaches an observer from the observable object. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -73,6 +80,11 @@ enum \mbox{\hyperlink{class_character_ac972d17bc509adbc4144b18fde09a814}{Stats}}
 \mbox{\hyperlink{class_character_ac972d17bc509adbc4144b18fde09a814af945add5d91299ea3f36fd3c6721748b}{DB}}
  \}
 \begin{DoxyCompactList}\small\item\em Enumerates the different stats a character can possess. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_observable}{Observable}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_observable_a099bf851e05bb8c1a25e83f2a1389e58}{notify}} ()
+\begin{DoxyCompactList}\small\item\em Notifies all attached observers of a change. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_character}{Character}}}
 \begin{DoxyCompactItemize}
 \item 
@@ -86,10 +98,6 @@ int \mbox{\hyperlink{class_character_af15a478fe650b87f59cbe5d071697307}{level}}
 Represents a fighter character in the game. 
 
 Inherits from the \doxylink{class_character}{Character} class. 
-
-Definition at line \mbox{\hyperlink{_fighter_8h_source_l00024}{24}} of file \mbox{\hyperlink{_fighter_8h_source}{Fighter.\+h}}.
-
-
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \Hypertarget{class_fighter_abf32519d935df18963172d31d45029f6}\label{class_fighter_abf32519d935df18963172d31d45029f6} 
@@ -111,10 +119,6 @@ Constructs a \doxylink{class_fighter}{Fighter} object.
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{_fighter_8cpp_source_l00011}{11}} of file \mbox{\hyperlink{_fighter_8cpp_source}{Fighter.\+cpp}}.
-
-
-
 \doxysubsection{Member Function Documentation}
 \Hypertarget{class_fighter_a5e86ce51f2e3bddaacce7652f616c4e6}\label{class_fighter_a5e86ce51f2e3bddaacce7652f616c4e6} 
 \index{Fighter@{Fighter}!getClassName@{getClassName}}
@@ -132,10 +136,6 @@ The name of the fighter\textquotesingle{}s class ("{}\+Fighter"{}).
 
 
 Reimplemented from \mbox{\hyperlink{class_character_acbf3e5cddba034622dbbadfe742ba2d9}{Character}}.
-
-
-
-Definition at line \mbox{\hyperlink{_fighter_8cpp_source_l00014}{14}} of file \mbox{\hyperlink{_fighter_8cpp_source}{Fighter.\+cpp}}.
 
 \Hypertarget{class_fighter_a7efe440440e5c6e1104462dcca59cf84}\label{class_fighter_a7efe440440e5c6e1104462dcca59cf84} 
 \index{Fighter@{Fighter}!getDieType@{getDieType}}
@@ -156,11 +156,7 @@ Reimplemented from \mbox{\hyperlink{class_character_aea131e1bce548f9e781af0dc5f4
 
 
 
-Definition at line \mbox{\hyperlink{_fighter_8h_source_l00044}{44}} of file \mbox{\hyperlink{_fighter_8h_source}{Fighter.\+h}}.
-
-
-
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-/\+Users/reuvenostrofsky/\+Library/\+Mobile Documents/com\texorpdfstring{$\sim$}{\string~}apple\texorpdfstring{$\sim$}{\string~}\+Cloud\+Docs/\+Concordia/\+Winter 2024/\+Comp345/\+Assignments/\+COMP345-\/\+A1/\mbox{\hyperlink{_fighter_8h}{Fighter.\+h}}\item 
-/\+Users/reuvenostrofsky/\+Library/\+Mobile Documents/com\texorpdfstring{$\sim$}{\string~}apple\texorpdfstring{$\sim$}{\string~}\+Cloud\+Docs/\+Concordia/\+Winter 2024/\+Comp345/\+Assignments/\+COMP345-\/\+A1/\mbox{\hyperlink{_fighter_8cpp}{Fighter.\+cpp}}\end{DoxyCompactItemize}
+Character/\mbox{\hyperlink{_fighter_8h}{Fighter.\+h}}\item 
+Character/\mbox{\hyperlink{_fighter_8cpp}{Fighter.\+cpp}}\end{DoxyCompactItemize}

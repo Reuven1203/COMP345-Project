@@ -27,8 +27,8 @@ add_executable(A1-map
         Observer/CharacterObserver/CharacterDisplay.h
         Observer/MapObserver/MapObserver.cpp
         Observer/MapObserver/MapObserver.h
-        Utils/utils.h
-        Utils/utils.cpp
+        Utils/Utils.cpp
+        Utils/Utils.h
 )
 
 add_executable(A1-Character
@@ -42,7 +42,6 @@ add_executable(A1-Character
         Map/map.cpp
         Observer/Observable.cpp
         Observer/Observable.h
-        Observer/Observer.cpp
         Observer/Observer.h
         Observer/CharacterObserver/CharacterDisplay.cpp
         Observer/CharacterObserver/CharacterDisplay.h
@@ -89,16 +88,6 @@ add_executable(
         Tests/Map/MapTest.h
         Tests/Map/CellTest.cpp
         Tests/Map/CellTest.h
-        Observer/Observable.cpp
-        Observer/Observable.h
-        Observer/Observer.cpp
-        Observer/Observer.h
-        Observer/CharacterObserver/CharacterDisplay.cpp
-        Observer/CharacterObserver/CharacterDisplay.h
-        Utils/utils.h
-        Utils/utils.cpp
-
-
 )
 add_executable(CharacterObserver
         CharacterObserverDriver.cpp

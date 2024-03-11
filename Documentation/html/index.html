@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Comp-345 Documentation: COMP345-A1</title>
+<title>COMP-345 Project: COMP-345 Project</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,7 +23,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Comp-345 Documentation
+   <div id="projectname">COMP-345 Project
    </div>
   </td>
  </tr>
@@ -71,46 +71,57 @@ $(function() {
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">COMP345-A1 </div></div>
+  <div class="headertitle"><div class="title">COMP-345 Project </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md__2_users_2reuvenostrofsky_2_library_2_mobile_01_documents_2com_0iapple_0i_cloud_docs_2_concordia_2_winter_012024_2_comp345_2_assignments_2_c_o_m_p345-_a1_2_r_e_a_d_m_e"></a> </p>
-<h1><a class="anchor" id="autotoc_md1"></a>
-Overview</h1>
-<p>This repository contains a C++ project for the COMP345 d20 assignment, designed to be compiled and executed with C++17 or later. The project demonstrates the implementation of a solution to one of the specified problems (Part 1, 2, 3, or 4) related to the d20 game system. It includes a driver to compile and execute the code, showcasing the creation and functionality of characters, maps, item containers, or dice as per the project requirements and d20 game rules.</p>
-<h1><a class="anchor" id="autotoc_md2"></a>
-Project Structure</h1>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md0"></a>
+COMP345-A1 Project</h1>
+<h2><a class="anchor" id="autotoc_md1"></a>
+Overview</h2>
+<p>This project is a C++ implementation for the COMP345 d20 assignment. It showcases the creation and functionality of characters, maps, item containers, and dice, adhering to the d20 game system rules.</p>
+<h2><a class="anchor" id="autotoc_md2"></a>
+Project Structure</h2>
 <ul>
-<li><b><a class="el" href="class_character.html" title="The Character class represents an entity in the game with various attributes and behaviors.">Character</a>, Map, <a class="el" href="class_item.html" title="Class representing an item that can be equipped by a character.">Item</a> Container, and <a class="el" href="class_dice.html" title="Class for rolling dice. This class provides functionality to roll dice based on a given roll string.">Dice</a> Implementation:</b> Core components of the project, including their creation and interaction following the d20 specifications.</li>
-<li><b>CppUnit Test Suite:</b> Accompanies each part of the project, ensuring that the implementation passes all provided test cases. Additional test cases are also included to further validate the functionality.</li>
-<li><b>Documentation:</b> Code and test cases are documented using Doxygen, providing clear insights into the game rules, design decisions, and the rationale behind the selection of libraries.</li>
+<li><b>Core Components:</b> Implementation of characters, maps, item containers, and dice.</li>
+<li><b>CppUnit Test Suite:</b> Ensures functionality passes all test cases.</li>
+<li><b>Documentation:</b> Provided via Doxygen comments in the code.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md3"></a>
-Getting Started</h1>
-<p>To compile and run the project:</p><ol type="1">
-<li>Ensure you have a C++17 compatible compiler installed.</li>
-<li>Clone the repository to your local machine.</li>
-<li>Navigate to the project directory and compile the code using your preferred C++ compiler.</li>
-<li>Execute the compiled driver to see demonstrations of the implemented features.</li>
+<h2><a class="anchor" id="autotoc_md3"></a>
+Compilation and Build Instructions</h2>
+<p>To compile and build the project, follow these steps:</p>
+<ol type="1">
+<li>Ensure you have CMake and a C++17 compatible compiler installed.</li>
+<li>Clone the repository: <div class="fragment"><div class="line">clone https://github.com/Reuven1203/COMP345-A1.git</div>
+</div><!-- fragment --></li>
+<li>Navigate to the project directory: <div class="fragment"><div class="line">COMP345-A1  </div>
+</div><!-- fragment --></li>
+<li>Create a build directory and navigate into it: <div class="fragment"><div class="line">build &amp;&amp; cd build   </div>
+</div><!-- fragment --></li>
+<li>Run CMake to generate the build system: <div class="fragment"><div class="line">..   </div>
+</div><!-- fragment --></li>
+<li>Compile the project: <div class="fragment"><div class="line">--build .  </div>
+</div><!-- fragment --></li>
 </ol>
-<h1><a class="anchor" id="autotoc_md4"></a>
-Contribution</h1>
+<h2><a class="anchor" id="autotoc_md4"></a>
+Running the Project</h2>
+<p>After building, you can run the project executables directly from the build directory. The project includes several executables, such as <code>A1-map</code>, <code>A1-Character</code>, and <code>dice_run</code>, which can be run as follows: </p><div class="fragment"><div class="line">/A1-Character</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md5"></a>
+Testing</h2>
+<p>To run the test suite, follow the build instructions and then use the following command: </p><div class="fragment"><div class="line">/COMP345_A1_Tests</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md6"></a>
+Design and Implementation Details</h2>
 <ul>
-<li><b>Driver Implementation:</b> The <code><a class="el" href="main_8cpp.html">main.cpp</a></code> file contains the driver code, demonstrating possible uses of the implemented features through object creation and functionality testing.</li>
-<li><b>Test Cases:</b> The <code>Tests</code> directory contains the CppUnit test suites for each component, including additional test cases provided by the contributors.</li>
+<li><b><a class="el" href="class_character.html" title="The Character class represents an entity in the game with various attributes and behaviors.">Character</a> Abilities and Stats:</b> Dynamically adjusted based on equipped items.</li>
+<li><b><a class="el" href="class_item.html" title="Class representing an item that can be equipped by a character.">Item</a> Effects:</b> Defined by enchantment modifiers affecting character abilities and stats.</li>
+<li><b><a class="el" href="class_dice.html" title="Class for rolling dice. This class provides functionality to roll dice based on a given roll string.">Dice</a> Rolling:</b> Utilizes a custom <code><a class="el" href="class_dice.html" title="Class for rolling dice. This class provides functionality to roll dice based on a given roll string.">Dice</a></code> class for simulating dice rolls according to the d20 system.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md5"></a>
-Design and Libraries</h1>
-<p>The project's design and the selection of libraries are documented within the header files, offering insights into the architectural choices and the advantages of chosen libraries.</p>
-<h1><a class="anchor" id="autotoc_md6"></a>
-Game Rules and Implementation</h1>
-<p>This project adheres to specific d20 game rules across its various components (characters, maps, item containers, and dice). Detailed documentation of these rules and their implementation is embedded within the code files and Doxygen comments. Here is a brief overview:</p>
 <h2><a class="anchor" id="autotoc_md7"></a>
-Abilities Assignment Based on Equipped Items</h2>
+Game Rules and Implementation</h2>
+<p>This project adheres to specific d20 game rules across its various components. Here is a brief overview:</p>
+<h3><a class="anchor" id="autotoc_md8"></a>
+Abilities Assignment Based on Equipped Items</h3>
 <p>Characters have their abilities (e.g., Strength, Dexterity) and stats (e.g., Armor Class) dynamically adjusted based on the items they equip. Each item type (e.g., Helmet, Armor) has specific effects on the character's abilities and stats, determined by enchantment modifiers. For example, equipping a Helmet might increase a character's Intelligence and Wisdom, while a Belt might boost Strength and Constitution. This dynamic adjustment allows for a flexible and strategic approach to character development and gameplay, adhering to the d20 system's rules.</p>
-<h1><a class="anchor" id="autotoc_md8"></a>
-Note</h1>
-<p>This project focuses on the coding aspect of software development, aligning with the course's emphasis. External documentation beyond what is provided within the code and this README is discouraged. </p>
+<p>For more detailed information on the design decisions and implementation details, refer to the header files and Doxygen-generated documentation. </p>
 </div></div><!-- PageDoc -->
 <a href="doxygen_crawl.html"/>
 </div><!-- contents -->
