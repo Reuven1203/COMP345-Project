@@ -12,9 +12,10 @@
 #include <vector>
 #include <algorithm>
 #include <iomanip>
-#include <conio.h>
 #include "map.h"
 #include "cell.h"
+#include "../Utils/utils.h"
+
 
 using namespace std;
 
@@ -160,14 +161,14 @@ void dungeonMap::userInputWalls()
     int choice = 0;
     while (!done)
     {
-        Notify();
+        notify();
         cout << "Choose: 1. Add wall || 2. Remove Wall || 3. Exit" << endl;
         cin >> choice;
         switch (choice)
         {
         case (1):
         {
-            Notify();
+            notify();
             cout << "Choose where to insert wall(-1 to exit): " << endl;
             addWallChoice(&wallCoordinateX, &wallCoordinateY);
             if(isValidLocation(wallCoordinateX, wallCoordinateY))
@@ -514,7 +515,7 @@ void dungeonMap::removeWallChoice(int *x, int *y) {
  */
 void dungeonMap::removeCellContent(int x, int y) {
     dungeon[x][y].removeContent();
-    Notify();
+    notify();
 }
 
 /**
@@ -565,7 +566,7 @@ void dungeonMap::movePlayer(int direction)
             dungeon[playerX - 1][playerY].setPlayer(player);
             dungeon[playerX][playerY].removeContent();
             this->playerX = playerX - 1;
-            Notify();
+            notify();
             cout << "*************Chest found!**************"<<endl;
            
             chestTemp->getItems();
@@ -579,7 +580,7 @@ void dungeonMap::movePlayer(int direction)
 
             _getch();
         }
-        Notify();
+        notify();
        
         break;
     }
@@ -605,7 +606,7 @@ void dungeonMap::movePlayer(int direction)
             dungeon[playerX + 1][playerY].setPlayer(player);
             dungeon[playerX][playerY].removeContent();
             this->playerX = playerX + 1;
-            Notify();
+            notify();
             cout << "*************Chest found!**************" << endl;
 
             chestTemp->getItems();
@@ -619,7 +620,7 @@ void dungeonMap::movePlayer(int direction)
 
             _getch();
         }
-        Notify();
+        notify();
        
         break;
     }
@@ -645,7 +646,7 @@ void dungeonMap::movePlayer(int direction)
             dungeon[playerX ][playerY-1].setPlayer(player);
             dungeon[playerX][playerY].removeContent();
             this->playerY = playerY - 1;
-            Notify();
+            notify();
             cout << "*************Chest found!**************" << endl;
 
             chestTemp->getItems();
@@ -659,7 +660,7 @@ void dungeonMap::movePlayer(int direction)
 
             _getch();
         }
-        Notify();
+        notify();
        
         break;
     }
@@ -685,7 +686,7 @@ void dungeonMap::movePlayer(int direction)
             dungeon[playerX][playerY+1].setPlayer(player);
             dungeon[playerX][playerY].removeContent();
             this->playerY = playerY + 1;
-            Notify();
+            notify();
             cout << "*************Chest found!**************" << endl;
 
             chestTemp->getItems();
@@ -699,7 +700,7 @@ void dungeonMap::movePlayer(int direction)
 
             _getch();
         }
-        Notify();
+        notify();
       
         break;
     }

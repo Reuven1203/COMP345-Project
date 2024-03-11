@@ -15,10 +15,10 @@
 #include <iostream>
 #include <vector>
 #include "cell.h"
-#include "Subject.h"
-class dungeonMap:public Subject
+class dungeonMap:public Observable
 {
     friend class cell; ///< Allows cell class to access private members of dungeonMap.
+    friend class MapTest; ///< Allows MapTest full access to dungeonMap's private members.
 public:
     /**
      * @brief Default constructor.

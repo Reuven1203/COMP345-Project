@@ -1,19 +1,19 @@
 #include <iostream>
-#include "map.h"
-#include "Fighter.h"
-#include "Item.h"
-#include "itemContainer.h"
-#include "MapObserver.h"
-#include <conio.h>
+#include "./Map/map.h"
+#include "./Character/Fighter.h"
+#include "./Item/Item.h"
+#include "./Item/itemContainer.h"
+#include "Observer/MapObserver/MapObserver.h"
+#include "./Utils//utils.h"
 
 using namespace std;
 int main()
 {
-    dungeonMap* m = new dungeonMap(10, 10); //5x5 map
-    MapObserver* control = new MapObserver(m);
+    auto* m = new dungeonMap(10, 10); //5x5 map
+    auto* control = new MapObserver(m);
     Character* fighter = new Fighter("Reuven", 6);
-    container* chest1 = new container();
-    container* chest2 = new container();
+    auto* chest1 = new container();
+    auto* chest2 = new container();
     Item* ring = new Item(Item::ItemType::RING);
     Item* helmet = new Item(Item::ItemType::HELMET);
     chest1->storeItem(*ring);

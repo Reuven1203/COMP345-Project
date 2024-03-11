@@ -13,8 +13,8 @@
 #define CELL_H
 
 #include <iostream>
-#include "itemContainer.h"
-#include "Character.h"
+#include "../Item/itemContainer.h"
+#include "../Character/Character.h"
 
  /**
   * @enum cellType
@@ -38,6 +38,7 @@ enum cellType
 class cell
 {
     friend class dungeonMap; ///< Allows dungeonMap full access to cell's private members.
+    friend class CellTest; ///< Allows CellTest full access to cell's private members.
 
 public:
     /**
