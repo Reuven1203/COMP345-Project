@@ -11,7 +11,7 @@ int main()
 {
 
 //    while (true) {
-//        int ch = _getch();
+//        int ch = keyPress();
 //    }
 
     auto* m = new dungeonMap(10, 10); //5x5 map
