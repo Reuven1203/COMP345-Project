@@ -277,3 +277,48 @@ void Item::setEquipStats()
       itemOverall["AttackBonus"]=this->atkBonus;
     }
 }
+
+void Item::setSTR(int str) {
+    strength = str;
+    itemOverall["Strength"] = strength;
+}
+
+void Item::setCON(int con) {
+    constitution = con;
+    itemOverall["Constitution"] = constitution;
+}
+
+void Item::setINT(int intel) {
+    intelligence = intel;
+    itemOverall["Intelligence"] = intelligence;
+}
+
+void Item::setWIS(int wis) {
+    wisdom = wis;
+    itemOverall["Wisdom"] = wisdom;
+}
+
+void Item::setCHA(int cha) {
+    charisma = cha;
+    itemOverall["Charisma"] = charisma;
+}
+
+void Item::setDEX(int dex) {
+    dexterity = dex;
+    itemOverall["Dexterity"] = dexterity;
+}
+
+void Item::setAC(int ac) {
+    armorClass = ac;
+    itemOverall["ArmorClass"] = armorClass;
+}
+
+void Item::setATKBONUS(int atk) {
+    atkBonus = atk;
+    itemOverall["AttackBonus"] = atkBonus;
+}
+
+void Item::setDMGBonus(int dmg) {
+    dmgBonus = dmg;
+    itemOverall["DamageBonus"] = dmgBonus;
+}

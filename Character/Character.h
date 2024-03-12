@@ -27,10 +27,10 @@
  */
 class Character : public Observable {
     friend class CharacterTest; ///< Allows CharacterTest class to access private and protected members for testing purposes.
-
+    friend class MapBuilder;
 protected:
-    int currentHP; ///< Current hit points of the character.
-    int level; ///< Level of the character.
+    int currentHP{}; ///< Current hit points of the character.
+    int level{}; ///< Level of the character.
 
     /**
      * @brief Returns the default die type used for hit points calculation. Can be overridden by derived classes.
@@ -45,6 +45,16 @@ public:
      * @param level The initial level of the character, clamped between 1 and 20.
      */
     explicit Character(std::string name, int level);
+
+    /**
+     * Constructor that initializes a character with a name, level, abilityScores, and hp values.
+     * @param name The name of the character
+     * @param level The initial level of the character, clamped between 1 and 20
+     * @param abilityScores The ability scores of the character
+     * @param maxHp The max HP of the character
+     * @param currentHp The current HP of the character
+     */
+    explicit Character(std::string name, int level, int abilityScores[6], int maxHp, int currentHp);
 
     /**
      * @enum Ability
