@@ -145,11 +145,15 @@ public:
      * @param col The column index of the cell.
      * @return The cell at the given row and column.
      */
+
+    vector<int>getWalls();
+   
     cell getCell(int row, int col) const;
     int getEndX();
     int getEndY();
     void movePlayer(int direction); //1=up 2=down 3=left 4=right
 private:
+   
     vector<vector<cell>> dungeon; ///< 2D vector of cells representing the dungeon layout.
     int rows; ///< Number of rows in the dungeon.
     int cols; ///< Number of columns in the dungeon.

@@ -707,3 +707,19 @@ void dungeonMap::movePlayer(int direction)
   }
 }
 
+vector<int> dungeonMap::getWalls() {
+    vector<int>wallCoordinates;
+    for (int row = 0;row < rows;row++)
+    {
+        for (int col = 0;col < cols;col++)
+        {
+            if (dungeon[row][col].getCellType() == Wall) 
+            {
+                wallCoordinates.push_back(dungeon[row][col].rowPos);
+                wallCoordinates.push_back(dungeon[row][col].colPos);
+            }
+        }
+    }
+    return wallCoordinates;
+}
+
