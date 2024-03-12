@@ -3,6 +3,8 @@
 //
 
 #include "Character.h"
+
+#include <utility>
 #include "../Dice/Dice.h"
 
 
@@ -26,6 +28,31 @@ Character::Character(std::string name,int level): name(std::move(name)){
     stats[DB] = getAbilityModifier(Strength) + 1;
 
 
+}
+
+Character::Character(std::string name, int level, const int *abilityScores, int maxHp, int currentHp,
+                     std::map<Item::ItemType, Item> wornItems) {
+
+    this->name = std::move(name);
+    if(level < 1) {
+        this->level = 1;
+    } else if(level > 20) {
+        this->level = 20;
+    }else {
+        this->level = level;
+    }
+    for(int i = 0; i < 6; i++) {
+        abilityScore[i] = abilityScores[i];
+    }
+    this->currentHP = currentHp;
+    calculateAbilityModifiers();
+    stats[HP] = maxHp;
+    stats[PB] = initializeProficiencyBonus();
+    stats[AC] = 10 + getAbilityModifier(Dexterity);
+    stats[AB] = getAbilityModifier(Strength) + stats[PB];
+    stats[DB] = getAbilityModifier(Strength) + 1;
+    this->wornItems = std::move(wornItems);
+    calculateAbilityScores();
 }
 
 //Accessors
@@ -209,6 +236,8 @@ Character::Stats Character::stringToEnumStats(const string &str) {
         throw std::invalid_argument("Invalid stat");
     }
 }
+
+
 
 
 
