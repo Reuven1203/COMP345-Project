@@ -9,6 +9,11 @@
 using namespace std;
 int main()
 {
+
+//    while (true) {
+//        int ch = keyPress();
+//    }
+
     auto* m = new dungeonMap(10, 10); //5x5 map
     auto* control = new MapObserver(m);
     Character* fighter = new Fighter("Reuven", 6);

@@ -25,8 +25,8 @@ set(COMMON_SOURCES
         Observer/Observable.h
         Observer/CharacterObserver/CharacterDisplay.cpp
         Observer/CharacterObserver/CharacterDisplay.h
-        Utils/Utils.cpp
-        Utils/Utils.h
+        Utils/utils.cpp
+        Utils/utils.h
 )
 
 # Main application executable
@@ -52,6 +52,22 @@ add_executable(dice_run
         Item/itemContainer.cpp
         Map/cell.cpp
         Map/map.cpp)
+
+add_executable(MapBuilderTest
+        ${COMMON_SOURCES}
+        Character/Character.h
+        Character/Fighter.h
+        MapBuilderDriver.cpp
+        Map/map.cpp
+        Map/map.h
+        MapSaves/testsave.csv
+        CampaignEditor/DefaultMapBuilder.h
+        CampaignEditor/MapDirector.h
+        CampaignEditor/MapBuilder.cpp
+        CampaignEditor/MapBuilder.h
+        Map/cell.cpp
+        Map/cell.h
+)
 
 # Enable testing
 enable_testing()

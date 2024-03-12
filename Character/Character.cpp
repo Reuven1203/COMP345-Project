@@ -3,6 +3,8 @@
 //
 
 #include "Character.h"
+
+#include <utility>
 #include "../Dice/Dice.h"
 
 
@@ -26,6 +28,52 @@ Character::Character(std::string name,int level): name(std::move(name)){
     stats[DB] = getAbilityModifier(Strength) + 1;
 
 
+}
+
+Character::Character(std::string name, int level, int abilityScores[6], int maxHp,int currentHp) {
+    this->name = std::move(name);
+    if(level < 1) {
+        this->level = 1;
+    } else if(level > 20) {
+        this->level = 20;
+    }else {
+        this->level = level;
+    }
+    for(int i = 0; i < 6; i++) {
+        abilityScore[i] = abilityScores[i];
+    }
+    this->currentHP = currentHp;
+    calculateAbilityModifiers();
+    stats[HP] = maxHp;
+    stats[PB] = initializeProficiencyBonus();
+    stats[AC] = 10 + getAbilityModifier(Dexterity);
+    stats[AB] = getAbilityModifier(Strength) + stats[PB];
+    stats[DB] = getAbilityModifier(Strength) + 1;
+
+}
+
+Character::Character(std::string name, int level, const int *abilityScores, int maxHp, int currentHp,
+                     std::map<Item::ItemType, Item> wornItems) {
+
+    this->name = std::move(name);
+    if(level < 1) {
+        this->level = 1;
+    } else if(level > 20) {
+        this->level = 20;
+    }else {
+        this->level = level;
+    }
+    for(int i = 0; i < 6; i++) {
+        abilityScore[i] = abilityScores[i];
+    }
+    this->currentHP = currentHp;
+    calculateAbilityModifiers();
+    stats[HP] = maxHp;
+    stats[PB] = initializeProficiencyBonus();
+    stats[AC] = 10 + getAbilityModifier(Dexterity);
+    stats[AB] = getAbilityModifier(Strength) + stats[PB];
+    stats[DB] = getAbilityModifier(Strength) + 1;
+    this->wornItems = std::move(wornItems);
 }
 
 //Accessors
@@ -58,7 +106,7 @@ int Character::getAbilityScore(Ability ability) const{
 
 void Character::equip(const Item& item) {
     wornItems[item.equipType] = item;
-    calculateAbilityScores();
+    calculateAbilityScores(item);
     notify();
 }
 
@@ -77,9 +125,9 @@ void Character::showWornItems() const {
     }
 }
 
-    void Character::calculateAbilityScores() {
-        for (const auto &item: wornItems) {
-            for (const auto &stat: item.second.itemOverall) {
+
+    void Character::calculateAbilityScores(const Item &item) {
+            for (const auto &stat: item.itemOverall) {
                 if(isAbility(stat.first) && stat.second != 0){
                     abilityScore[stringToEnum(stat.first)] += stat.second;
                 }else{
@@ -87,7 +135,6 @@ void Character::showWornItems() const {
                 }
 
             }
-        }
     }
 
     void Character::reduceAbilityAfterUnequip(const Item& item) {
@@ -209,6 +256,8 @@ Character::Stats Character::stringToEnumStats(const string &str) {
         throw std::invalid_argument("Invalid stat");
     }
 }
+
+
 
 
 

@@ -143,7 +143,7 @@ bool dungeonMap::isValidLocation(int row, int col)
     {
         cout << "Invalid location due to " << (isStart(&dungeon[row][col]) ? "Start" : "End") << " point." << endl;
         cout << "Press any key to continue....";
-        _getch();
+        keyPress();
         return false;
     }
     return true;
@@ -177,7 +177,7 @@ void dungeonMap::userInputWalls()
                 cout << "Invalid map, wall cannot be placed here." << endl;
                 removeWall(wallCoordinateX, wallCoordinateY);
                 cout << "Press any key to continue....";
-                _getch();
+                keyPress();
             }
             break;
         }
@@ -494,7 +494,7 @@ void dungeonMap::removeWallChoice(int *x, int *y) {
     {
         cout << "Invalid Y coordinate." << endl;
         cout << "Press any key to continue....";
-        _getch();
+        keyPress();
         return;
     }
     cout << "X coordinate: ";
@@ -503,7 +503,7 @@ void dungeonMap::removeWallChoice(int *x, int *y) {
     {
         cout << "Invalid X coordinate." << endl;
         cout << "Press any key to continue....";
-        _getch();
+        keyPress();
         return;
     }
     removeWall(*x, *y);
@@ -538,7 +538,7 @@ void dungeonMap::removeCellContent(int x, int y) {
  */
 void dungeonMap::movePlayer(int direction)
 {
-    
+
     Character* player = nullptr;
     container* chestTemp = nullptr;
     switch (direction)
@@ -546,14 +546,14 @@ void dungeonMap::movePlayer(int direction)
     case 1: //Moving up
     {
         if (!isValidRow(playerX-1)) {
-            
+
             return;
         }
         if (wallDetect((playerX - 1), playerY)) ///<If there's a wall at the position player wants to go to, prevent movement
         {
             return;
         }
-        
+
         player = dungeon[playerX][playerY].getPlayer();
         if (!chestDetect(playerX-1,playerY)) { ///<If there's no chest player will move normally
             dungeon[playerX - 1][playerY].setPlayer(player);
@@ -568,7 +568,7 @@ void dungeonMap::movePlayer(int direction)
             this->playerX = playerX - 1;
             notify();
             cout << "*************Chest found!**************"<<endl;
-           
+
             chestTemp->getItems();
             cout << "-------------Item details--------------" << "\n\n";
             chestTemp->getItemStats();
@@ -578,16 +578,16 @@ void dungeonMap::movePlayer(int direction)
             player->showWornItems();
             cout << "Press any key to continue...."<<endl;
 
-            _getch();
+            keyPress();
         }
         notify();
-       
+
         break;
     }
     case 2: //Moving down
     {
         if (!isValidRow(playerX + 1)) {
-            
+
             return;
         }
         if (wallDetect(playerX + 1, playerY)) ///<If there's a wall at the position player wants to go to, prevent movement
@@ -618,16 +618,16 @@ void dungeonMap::movePlayer(int direction)
             player->showWornItems();
             cout << "Press any key to continue...." << endl;
 
-            _getch();
+            keyPress();
         }
         notify();
-       
+
         break;
     }
     case 3: //Moving left
     {
         if (!isValidCol(playerY - 1)) {
-         
+
             return;
         }
         if (wallDetect(playerX, playerY-1)) ///<If there's a wall at the position player wants to go to, prevent movement
@@ -658,16 +658,16 @@ void dungeonMap::movePlayer(int direction)
             player->showWornItems();
             cout << "Press any key to continue...." << endl;
 
-            _getch();
+            keyPress();
         }
         notify();
-       
+
         break;
     }
     case 4: //Moving right
     {
-        if (!isValidCol(playerY + 1)) { 
-           
+        if (!isValidCol(playerY + 1)) {
+
             return;
         }
         if (wallDetect(playerX, playerY+1)) ///<If there's a wall at the position player wants to go to, prevent movement
@@ -698,10 +698,10 @@ void dungeonMap::movePlayer(int direction)
             player->showWornItems();
             cout << "Press any key to continue...." << endl;
 
-            _getch();
+            keyPress();
         }
         notify();
-      
+
         break;
     }
   }
