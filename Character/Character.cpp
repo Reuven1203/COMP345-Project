@@ -52,7 +52,6 @@ Character::Character(std::string name, int level, const int *abilityScores, int 
     stats[AB] = getAbilityModifier(Strength) + stats[PB];
     stats[DB] = getAbilityModifier(Strength) + 1;
     this->wornItems = std::move(wornItems);
-    calculateAbilityScores();
 }
 
 //Accessors
@@ -85,7 +84,7 @@ int Character::getAbilityScore(Ability ability) const{
 
 void Character::equip(const Item& item) {
     wornItems[item.equipType] = item;
-    calculateAbilityScores();
+    calculateAbilityScores(item);
     notify();
 }
 
@@ -104,9 +103,9 @@ void Character::showWornItems() const {
     }
 }
 
-    void Character::calculateAbilityScores() {
-        for (const auto &item: wornItems) {
-            for (const auto &stat: item.second.itemOverall) {
+
+    void Character::calculateAbilityScores(const Item &item) {
+            for (const auto &stat: item.itemOverall) {
                 if(isAbility(stat.first) && stat.second != 0){
                     abilityScore[stringToEnum(stat.first)] += stat.second;
                 }else{
@@ -114,7 +113,6 @@ void Character::showWornItems() const {
                 }
 
             }
-        }
     }
 
     void Character::reduceAbilityAfterUnequip(const Item& item) {

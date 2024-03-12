@@ -197,7 +197,7 @@ private:
      *
      * Adjusts the character's ability scores and modifiers according to the stats of equipped items.
      */
-    void calculateAbilityScores();
+    void calculateAbilityScores(const Item& item);
 
     /**
      * @brief Reduces character's ability scores after unequipping an item.
