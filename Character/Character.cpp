@@ -30,6 +30,28 @@ Character::Character(std::string name,int level): name(std::move(name)){
 
 }
 
+Character::Character(std::string name, int level, int abilityScores[6], int maxHp,int currentHp) {
+    this->name = std::move(name);
+    if(level < 1) {
+        this->level = 1;
+    } else if(level > 20) {
+        this->level = 20;
+    }else {
+        this->level = level;
+    }
+    for(int i = 0; i < 6; i++) {
+        abilityScore[i] = abilityScores[i];
+    }
+    this->currentHP = currentHp;
+    calculateAbilityModifiers();
+    stats[HP] = maxHp;
+    stats[PB] = initializeProficiencyBonus();
+    stats[AC] = 10 + getAbilityModifier(Dexterity);
+    stats[AB] = getAbilityModifier(Strength) + stats[PB];
+    stats[DB] = getAbilityModifier(Strength) + 1;
+    calculateAbilityScores();
+}
+
 Character::Character(std::string name, int level, const int *abilityScores, int maxHp, int currentHp,
                      std::map<Item::ItemType, Item> wornItems) {
 

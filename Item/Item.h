@@ -62,6 +62,15 @@ public:
     // Setters
     void setEquipType(ItemType type);
     void setEquipStats();
+    void setSTR(int str);
+    void setCON(int con);
+    void setINT(int intel);
+    void setWIS(int wis);
+    void setCHA(int cha);
+    void setDEX(int dex);
+    void setAC(int ac);
+    void setATKBONUS(int atk);
+    void setDMGBonus(int dmg);
 
     // Getters
     string getEquipType() const;
