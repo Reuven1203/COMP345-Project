@@ -7,8 +7,7 @@
 
 #include <iostream>
 
-int _getch();
-
+int keyPress();
 
 
 #endif //COMP345_A1_UTILS_H

@@ -1,4 +1,3 @@
-//
 // Created by Reuven Ostrofsky on 2024-03-11.
 //
 
@@ -6,11 +5,16 @@
 #include "utils.h"
 #ifdef _WIN32
 #include <conio.h>
-#else
+
+int keyPress() {
+  return  _getch();
+}
+
+#elif defined(__APPLE__) && defined(__MACH__)
 #include <termios.h>
 #include <unistd.h>
 
-int _getch() {
+int keyPress() {
     struct termios oldt{}, newt{};
     int ch;
     tcgetattr(STDIN_FILENO, &oldt);
@@ -57,9 +61,8 @@ int _getch() {
     }
 
     tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
+    std::cout << ch << std::endl;
     return ch;
 }
 
-
 #endif
-
