@@ -49,7 +49,7 @@ Character::Character(std::string name, int level, int abilityScores[6], int maxH
     stats[AC] = 10 + getAbilityModifier(Dexterity);
     stats[AB] = getAbilityModifier(Strength) + stats[PB];
     stats[DB] = getAbilityModifier(Strength) + 1;
-    calculateAbilityScores();
+
 }
 
 Character::Character(std::string name, int level, const int *abilityScores, int maxHp, int currentHp,
