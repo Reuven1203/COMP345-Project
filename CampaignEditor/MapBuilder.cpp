@@ -113,23 +113,31 @@ MapInfo MapBuilder::getMapInfo(std::string filename) {
         }
     }
 
-    int stats[6] = {
-            info["playerstats"][1],
-            info["playerstats"][2],
-            info["playerstats"][3],
-            info["playerstats"][4],
-            info["playerstats"][5],
-            info["playerstats"][6]
-    };
+    auto *p = new Character("default", 1);
 
-    auto* p = new Character(playerName, info["playerstats"][0], stats,
-                            info["playerstats"][7], info["playerstats"][8]);
-
-    for (auto& i : items) {
-        p->equip(i.second);
+    if(info.find("playerloc") == info.end()) {
+        info["playerloc"].push_back(-1);
     }
 
-    p->calculateAbilityModifiers();
+    if(info.find("playerstats") != info.end()) {
+        int stats[6] = {
+                info["playerstats"][1],
+                info["playerstats"][2],
+                info["playerstats"][3],
+                info["playerstats"][4],
+                info["playerstats"][5],
+                info["playerstats"][6]
+        };
+
+        p = new Character(playerName, info["playerstats"][0], stats,
+                                info["playerstats"][7], info["playerstats"][8]);
+
+        for (auto &i: items) {
+            p->equip(i.second);
+        }
+
+        p->calculateAbilityModifiers();
+    }
 
     file.close();
 
