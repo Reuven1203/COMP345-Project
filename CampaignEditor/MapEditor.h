@@ -1,6 +1,6 @@
-//
-// Created by z3p on 12/03/24.
-//
+/**
+ * @author Julian D'Addario
+ */
 
 #ifndef COMP345_A1_MAPEDITOR_H
 #define COMP345_A1_MAPEDITOR_H
@@ -18,7 +18,9 @@ public:
     MapEditor();
     void run();
     void createNewMap();
+    void setMap(dungeonMap m);
     std::string getFileName();
+    void edit();
     dungeonMap getMap();
 private:
     dungeonMap map {};
@@ -27,8 +29,8 @@ private:
     void setStart();
     void setEnd();
     void setWalls();
-    void saveMap();
     void loadMap();
+    void saveMap();
     void save(std::string filename);
 };
 

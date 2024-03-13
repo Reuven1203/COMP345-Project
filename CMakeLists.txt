@@ -92,6 +92,14 @@ add_executable(A2-Campaign
         Campaign/Campaign.cpp
         Campaign/Campaign.h
         CampaignDriver.cpp
+        CampaignEditor/CampaignEditor.cpp
+        CampaignEditor/CampaignEditor.h
+        CampaignEditor/MapEditor.h
+        CampaignEditor/MapEditor.cpp
+        CampaignEditor/MapBuilder.h
+        CampaignEditor/MapBuilder.cpp
+        CampaignEditor/MapDirector.h
+        CampaignEditor/DefaultMapBuilder.h
 )
 
 # Enable testing

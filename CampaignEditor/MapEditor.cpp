@@ -1,13 +1,13 @@
-//
-// Created by z3p on 12/03/24.
-//
+/**
+ * @author Julian D'Addario
+ */
 
 #include "MapEditor.h"
 
 MapEditor::MapEditor() = default;
 
 int MapEditor::getUserInput() {
-    std::cout << "Editing Commands:" << '\n';
+    std::cout << "Map Editing Commands:" << '\n';
     std::cout << " 1 - Set Start Position" << '\n';
     std::cout << " 2 - Set End Position" << '\n';
     std::cout << " 3 - Set Wall" << '\n';
@@ -56,9 +56,9 @@ void MapEditor::loadMap() {
     std::cin >> file;
 
     MapDirector director {};
-    MapBuilder* testMapBuilder = new DefaultMapBuilder(file);
+    MapBuilder* mapBuilder = new DefaultMapBuilder(file);
 
-    director.setMapBuilder(testMapBuilder);
+    director.setMapBuilder(mapBuilder);
     director.constructMap();
 
     map = *director.getMap();
@@ -101,12 +101,7 @@ void MapEditor::save(std::string filename) {
     output << wallLine << '\n';
 }
 
-/**
- * @brief Main map editing interface/loop.
- */
-void MapEditor::run() {
-    createNewMap();
-
+void MapEditor::edit() {
     while(true) {
         map.printMap();
         int input {getUserInput()};
@@ -135,6 +130,14 @@ void MapEditor::run() {
     }
 }
 
+/**
+ * @brief Main map editing interface/loop.
+ */
+void MapEditor::run() {
+    createNewMap();
+    edit();
+}
+
 void MapEditor::createNewMap() {
     std::cout << "Please enter map grid dimensions: " << '\n';
 
@@ -155,4 +158,8 @@ std::string MapEditor::getFileName() {
 
 dungeonMap MapEditor::getMap() {
     return map;
+}
+
+void MapEditor::setMap(dungeonMap m) {
+    map = m;
 }
