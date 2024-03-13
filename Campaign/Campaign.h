@@ -1,6 +1,6 @@
-//
-// Created by z3p on 12/03/24.
-//
+/**
+ * @author Julian D'Addario
+ */
 
 #ifndef COMP345_A1_CAMPAIGN_H
 #define COMP345_A1_CAMPAIGN_H
@@ -16,9 +16,11 @@ public:
     dungeonMap getMap(int index);
     void printCampaign();
     void addMap(dungeonMap map);
+    void removeMap(int index);
     void setPlayer(Character character);
     void setPlayerPosition(int mapNum, int xPos, int yPos);
     void startCampaign();
+    void clear();
     dungeonMap* currentMap();
     dungeonMap* nextMap();
 private:

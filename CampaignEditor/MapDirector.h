@@ -1,6 +1,6 @@
-//
-// Created by z3p on 11/03/24.
-//
+/**
+ * @author Julian D'Addario
+ */
 
 #ifndef COMP345_A1_MAPDIRECTOR_H
 #define COMP345_A1_MAPDIRECTOR_H

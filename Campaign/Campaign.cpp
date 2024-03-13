@@ -1,6 +1,6 @@
-//
-// Created by z3p on 12/03/24.
-//
+/**
+ * @author Julian D'Addario
+ */
 
 #include "Campaign.h"
 
@@ -58,4 +58,12 @@ dungeonMap* Campaign::nextMap() {
 
 dungeonMap *Campaign::currentMap() {
     return &campaign[currentMapIndex];
+}
+
+void Campaign::removeMap(int index) {
+    campaign.erase(campaign.begin()+index);
+}
+
+void Campaign::clear() {
+    campaign.clear();
 }

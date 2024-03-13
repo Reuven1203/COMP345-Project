@@ -1,6 +1,6 @@
-//
-// Created by z3p on 07/03/24.
-//
+/**
+ * @author Julian D'Addario
+ */
 
 #include "../Map/map.h"
 #include "../Character/Character.h"
