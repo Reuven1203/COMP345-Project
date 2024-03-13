@@ -69,6 +69,31 @@ add_executable(MapBuilderTest
         Map/cell.h
 )
 
+add_executable(A2-MapEditor
+        ${COMMON_SOURCES}
+        Character/Character.h
+        Character/Fighter.h
+        Map/map.cpp
+        Map/map.h
+        CampaignEditor/MapEditor.h
+        CampaignEditor/MapEditor.cpp
+        Map/cell.h
+        MapEditorDriver.cpp
+        Observer/MapObserver/MapObserver.h
+        Observer/MapObserver/MapObserver.cpp
+        CampaignEditor/MapBuilder.h
+        CampaignEditor/MapBuilder.cpp
+        CampaignEditor/MapDirector.h
+        CampaignEditor/DefaultMapBuilder.h
+)
+
+add_executable(A2-Campaign
+        ${COMMON_SOURCES}
+        Campaign/Campaign.cpp
+        Campaign/Campaign.h
+        CampaignDriver.cpp
+)
+
 # Enable testing
 enable_testing()
 

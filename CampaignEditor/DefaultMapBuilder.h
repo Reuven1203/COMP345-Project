@@ -24,8 +24,10 @@ public:
         }
     }
     void buildPlayer() override {
-        player = mapInfo.player;
-        map->setPlayer(player, mapInfo.playerPos[0], mapInfo.playerPos[1]);
+        if(mapInfo.playerPos[0] != -1) {
+            player = mapInfo.player;
+            map->setPlayer(player, mapInfo.playerPos[0], mapInfo.playerPos[1]);
+        }
     }
 private:
     MapInfo mapInfo;
