@@ -60,7 +60,7 @@ public:
      * @param type The FighterType enum to convert.
      * @return The string representation of the FighterType enum.
      */
-    [[nodiscard]] std::string FighterTypeEnumToString(FighterType type) const;
+    [[nodiscard]] static std::string FighterTypeEnumToString(FighterType type) ;
 
 
 

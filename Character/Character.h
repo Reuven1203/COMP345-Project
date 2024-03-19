@@ -172,13 +172,12 @@ public:
  */
     [[nodiscard]] int getStat(Stats stats) const;
 
+
     /**
-    * @class Character
-    * @brief Represents a character in the game with abilities, stats, and equipped items.
-    *
-    * This class manages the character's attributes such as name, level, ability scores, and equipped items.
-    * It includes functionalities for modifying these attributes and calculating derived statistics.
-    */
+     * @brief Increases character's level by 1
+     */
+
+    void levelUp();
 
 protected:
 

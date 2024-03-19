@@ -261,6 +261,14 @@ Character::Stats Character::stringToEnumStats(const string &str) {
     }
 }
 
+void Character::levelUp() {
+    Dice dice = Dice();
+    level++;
+    stats[HP] += dice.roll("1d10") + getAbilityModifier(Constitution);
+    stats[AB] ++;
+    notify();
+}
+
 
 
 

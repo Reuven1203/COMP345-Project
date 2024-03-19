@@ -22,7 +22,7 @@ Fighter::FighterType Fighter::getFighterType() const {
     return fighterType;
 }
 
-std::string Fighter::FighterTypeEnumToString(FighterType type) const {
+std::string Fighter::FighterTypeEnumToString(FighterType type) {
     switch (type) {
         case BULLY:
             return "Bully";
