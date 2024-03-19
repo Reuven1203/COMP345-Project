@@ -3,8 +3,8 @@
 //
 
 #include <iostream>
-#include "CampaignEditor/MapDirector.h"
-#include "CampaignEditor/DefaultMapBuilder.h"
+#include "Director/MapDirector/MapDirector.h"
+#include "Builder/MapBuilder/DefaultMapBuilder.h"
 #include "Character/Fighter.h"
 
 int main() {

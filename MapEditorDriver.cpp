@@ -4,8 +4,8 @@
 
 #include <iostream>
 #include "CampaignEditor/MapEditor.h"
-#include "CampaignEditor/MapDirector.h"
-#include "CampaignEditor/DefaultMapBuilder.h"
+#include "Director/MapDirector/MapDirector.h"
+#include "Builder/MapBuilder/DefaultMapBuilder.h"
 
 int main() {
     MapEditor mapEdit = MapEditor();

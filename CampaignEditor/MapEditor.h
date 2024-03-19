@@ -7,9 +7,9 @@
 
 #include "../Map/map.h"
 #include "../Observer/MapObserver/MapObserver.h"
-#include "MapDirector.h"
-#include "MapBuilder.h"
-#include "DefaultMapBuilder.h"
+#include "../Director/MapDirector/MapDirector.h"
+#include "../Builder/MapBuilder/MapBuilder.h"
+#include "../Builder/MapBuilder/DefaultMapBuilder.h"
 #include <fstream>
 #include <iostream>
 

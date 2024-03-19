@@ -75,10 +75,10 @@ add_executable(MapBuilderTest
         Map/map.cpp
         Map/map.h
         MapSaves/testsave.csv
-        CampaignEditor/DefaultMapBuilder.h
-        CampaignEditor/MapDirector.h
-        CampaignEditor/MapBuilder.cpp
-        CampaignEditor/MapBuilder.h
+        Builder/MapBuilder/DefaultMapBuilder.h
+        Director/MapDirector/MapDirector.h
+        Builder/MapBuilder/MapBuilder.cpp
+        Builder/MapBuilder/MapBuilder.h
         Map/cell.cpp
         Map/cell.h
 )
@@ -95,10 +95,10 @@ add_executable(A2-MapEditor
         MapEditorDriver.cpp
         Observer/MapObserver/MapObserver.h
         Observer/MapObserver/MapObserver.cpp
-        CampaignEditor/MapBuilder.h
-        CampaignEditor/MapBuilder.cpp
-        CampaignEditor/MapDirector.h
-        CampaignEditor/DefaultMapBuilder.h
+        Builder/MapBuilder/MapBuilder.h
+        Builder/MapBuilder/MapBuilder.cpp
+        Director/MapDirector/MapDirector.h
+        Builder/MapBuilder/DefaultMapBuilder.h
 )
 
 add_executable(A2-Campaign
@@ -110,10 +110,10 @@ add_executable(A2-Campaign
         CampaignEditor/CampaignEditor.h
         CampaignEditor/MapEditor.h
         CampaignEditor/MapEditor.cpp
-        CampaignEditor/MapBuilder.h
-        CampaignEditor/MapBuilder.cpp
-        CampaignEditor/MapDirector.h
-        CampaignEditor/DefaultMapBuilder.h
+        Builder/MapBuilder/MapBuilder.h
+        Builder/MapBuilder/MapBuilder.cpp
+        Director/MapDirector/MapDirector.h
+        Builder/MapBuilder/DefaultMapBuilder.h
 )
 
 # Enable testing
@@ -146,4 +146,3 @@ add_executable(CharacterObserver
 )
 # Link the CppUnit library
 target_link_libraries(COMP345_A1_Tests ${CPPUNIT_LIBRARIES})
-

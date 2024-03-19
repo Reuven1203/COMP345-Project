@@ -2,8 +2,8 @@
  * @author Julian D'Addario
  */
 
-#include "../Map/map.h"
-#include "../Character/Character.h"
+#include "../../Map/map.h"
+#include "../../Character/Character.h"
 
 #ifndef COMP345_A1_MAPBUILDER_H
 #define COMP345_A1_MAPBUILDER_H

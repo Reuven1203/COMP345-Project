@@ -5,7 +5,7 @@
 #ifndef COMP345_A1_MAPDIRECTOR_H
 #define COMP345_A1_MAPDIRECTOR_H
 
-#include "MapBuilder.h"
+#include "../../Builder/MapBuilder/MapBuilder.h"
 
 class MapDirector {
 public:

@@ -25,7 +25,7 @@ int CampaignEditor::getUserInput() {
 void CampaignEditor::addMap() {
     MapEditor mapEdit = MapEditor();
     mapEdit.run();
-    campaign.addMap(mapEdit.getMap());
+    campaign.addMap(*mapEdit.getMap());
     mapFiles.push_back(mapEdit.getFileName());
 }
 
