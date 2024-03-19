@@ -1,5 +1,5 @@
 \mainpage
-# COMP345-A1 Project
+# COMP345 Project
 
 ## Overview
 This project is a C++ implementation for the COMP345 d20 assignment. It showcases the creation and functionality of characters, maps, item containers, and dice, adhering to the d20 game system rules.
