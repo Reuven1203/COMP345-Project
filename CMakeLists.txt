@@ -35,17 +35,31 @@ add_executable(A1-map
         map-test.cpp
         Observer/MapObserver/MapObserver.cpp
         Observer/MapObserver/MapObserver.h
+        Builder/FighterBuilder/TankFighterBuilder/TankFighterBuilder.cpp
+        Builder/FighterBuilder/TankFighterBuilder/TankFighterBuilder.h
 )
 
-add_executable(A1-Character
+add_executable(FighterBuilder
         ${COMMON_SOURCES}
-        main.cpp
+        Builder/FighterBuilder/FighterBuilder.h
+        FighterBuilderDriver.cpp
+        FighterBuilderDriver.cpp
+        Builder/FighterBuilder/BullyFighterBuilder/BullyFighterBuilder.cpp
+        Builder/FighterBuilder/BullyFighterBuilder/BullyFighterBuilder.h
+        Builder/FighterBuilder/FighterBuilder.cpp
+        Builder/FighterBuilder/NimbleFighterBuilder/NimbleFighterBuilder.cpp
+        Builder/FighterBuilder/NimbleFighterBuilder/NimbleFighterBuilder.h
+        Builder/FighterBuilder/TankFighterBuilder/TankFighterBuilder.cpp
+        Builder/FighterBuilder/TankFighterBuilder/TankFighterBuilder.h
+        Director/FighterDirector/FighterDirector.cpp
+        Director/FighterDirector/FighterDirector.h
+        Observer/CharacterObserver/FighterObserver.cpp
+        Observer/CharacterObserver/FighterObserver.h
 )
 
 # Testing Others
 add_executable(dice_run
         Character/Character.cpp
-        main.cpp
         Character/Fighter.cpp
         Dice/Dice.cpp
         Item/Item.cpp
@@ -127,6 +141,8 @@ add_executable(
 add_executable(CharacterObserver
         ${COMMON_SOURCES}
         CharacterObserverDriver.cpp
+        Observer/CharacterObserver/FighterObserver.cpp
+        Observer/CharacterObserver/FighterObserver.h
 )
 # Link the CppUnit library
 target_link_libraries(COMP345_A1_Tests ${CPPUNIT_LIBRARIES})

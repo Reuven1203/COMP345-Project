@@ -21,7 +21,7 @@ public:
     void setMap(dungeonMap m);
     std::string getFileName();
     void edit();
-    dungeonMap getMap();
+    dungeonMap* getMap();
 private:
     dungeonMap map {};
     std::string fileName {};

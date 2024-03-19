@@ -19,18 +19,18 @@ Character::Character(std::string name,int level): name(std::move(name)){
     }else {
         this->level = level;
     }
-    generateAbilityScores();
-    calculateAbilityModifiers();
-    stats[HP] = initializeHitPoints();
-    stats[PB] = initializeProficiencyBonus();
-    stats[AC] = 10 + getAbilityModifier(Dexterity);
-    stats[AB] = getAbilityModifier(Strength) + stats[PB];
-    stats[DB] = getAbilityModifier(Strength) + 1;
+//    generateAbilityScores();
+//    calculateAbilityModifiers();
+//    stats[HP] = initializeHitPoints();
+//    stats[PB] = initializeProficiencyBonus();
+//    stats[AC] = 10 + getAbilityModifier(Dexterity);
+//    stats[AB] = getAbilityModifier(Strength) + stats[PB];
+//    stats[DB] = getAbilityModifier(Strength) + 1;
 
 
 }
 
-Character::Character(std::string name, int level, int abilityScores[6], int maxHp,int currentHp) {
+Character::Character(std::string name, int level, const int abilityScores[6], int maxHp,int currentHp) {
     this->name = std::move(name);
     if(level < 1) {
         this->level = 1;
@@ -104,6 +104,11 @@ int Character::getAbilityScore(Ability ability) const{
 
 //Mutators
 
+void Character::setName(const std::string &name) {
+    Character::name = name;
+    notify();
+}
+
 void Character::equip(const Item& item) {
     wornItems[item.equipType] = item;
     calculateAbilityScores(item);
@@ -165,7 +170,6 @@ void Character::generateAbilityScores() {
     for(int& score : abilityScore) {
         score = dice.roll("4d6");
     }
-    notify();
 }
 void Character::showCharacterStats() const {
     std::cout << "Name: " << name << std::endl;

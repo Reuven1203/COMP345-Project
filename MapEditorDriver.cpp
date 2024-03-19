@@ -9,8 +9,11 @@
 
 int main() {
     MapEditor mapEdit = MapEditor();
-    mapEdit.run();
-
+    mapEdit.createNewMap();
+    // get a reference from map in map editor
+    dungeonMap* map = mapEdit.getMap();
+    MapObserver mapObs = MapObserver(map);
+    mapEdit.edit();
     MapDirector director {};
     MapBuilder* testMapBuilder = new DefaultMapBuilder( mapEdit.getFileName() );
 

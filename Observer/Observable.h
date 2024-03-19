@@ -47,13 +47,12 @@ public:
      */
     void detach(Observer* observer);
 
-protected:
-    /**
-     * @brief Notifies all attached observers of a change.
-     *
-     * Calls the update method on all attached observers, indicating that something has changed in the observable.
-     */
-    void notify();
+/**
+ * @brief Notifies all attached observers of a change.
+ *
+ * Calls the update method on all attached observers, indicating that something has changed in the observable.
+ */
+void notify();
 };
 
 #endif //COMP345_A1_OBSERVABLE_H

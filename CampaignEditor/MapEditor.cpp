@@ -156,8 +156,8 @@ std::string MapEditor::getFileName() {
     return fileName;
 }
 
-dungeonMap MapEditor::getMap() {
-    return map;
+dungeonMap* MapEditor::getMap() {
+    return &map;
 }
 
 void MapEditor::setMap(dungeonMap m) {

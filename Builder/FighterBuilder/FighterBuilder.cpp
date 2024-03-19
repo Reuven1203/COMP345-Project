@@ -1,0 +1,26 @@
+#include "FighterBuilder.h"
+
+
+
+
+void FighterBuilder::buildAbilityModifiers() {
+    fighter->calculateAbilityModifiers();
+}
+
+void FighterBuilder::buildStats() {
+    fighter->stats[Character::HP] = fighter->initializeHitPoints();
+    fighter->stats[Character::PB] = fighter->initializeProficiencyBonus();
+    fighter->stats[Character::AC] = 10 + fighter->getAbilityModifier(Character::Dexterity);
+    fighter->stats[Character::AB] = fighter->getAbilityModifier(Character::Strength) + fighter->stats[Character::PB];
+    fighter->stats[Character::DB] = fighter->getAbilityModifier(Character::Strength) + 1;
+}
+
+Fighter *FighterBuilder::getFighter() {
+    return fighter;
+}
+
+void FighterBuilder::buildName(string name) {
+    fighter->setName(name);
+}
+
+

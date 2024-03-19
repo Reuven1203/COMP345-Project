@@ -28,17 +28,15 @@
 class Character : public Observable {
     friend class CharacterTest; ///< Allows CharacterTest class to access private and protected members for testing purposes.
     friend class MapBuilder;
-protected:
-    int currentHP{}; ///< Current hit points of the character.
-    int level{}; ///< Level of the character.
-
-    /**
-     * @brief Returns the default die type used for hit points calculation. Can be overridden by derived classes.
-     * @return DieType The default die type for the character.
-     */
-    [[nodiscard]] virtual DieType getDieType() const { return d6; }
 
 public:
+    enum Stats {
+        HP, ///< Hit Points
+        PB, ///< Proficiency Bonus
+        AC, ///< Armor Class
+        AB, ///< Attack Bonus
+        DB  ///< Damage Bonus
+    };
     /**
      * @brief Constructor that initializes a character with a name and level.
      * @param name The name of the character.
@@ -54,7 +52,7 @@ public:
      * @param maxHp The max HP of the character
      * @param currentHp The current HP of the character
      */
-    explicit Character(std::string name, int level, int abilityScores[6], int maxHp, int currentHp);
+    explicit Character(std::string name, int level, const int abilityScores[6], int maxHp, int currentHp);
 
     /**
      * @enum Ability
@@ -73,13 +71,7 @@ public:
      * @enum Stats
      * @brief Enumerates the different stats a character can possess.
      */
-    enum Stats {
-        HP, ///< Hit Points
-        PB, ///< Proficiency Bonus
-        AC, ///< Armor Class
-        AB, ///< Attack Bonus
-        DB  ///< Damage Bonus
-    };
+
 
     // Getter methods for character properties
     /**
@@ -121,6 +113,12 @@ public:
  * actions that depend on the character's abilities.
  */
     [[nodiscard]] int getAbilityModifier(Ability ability) const;
+
+    /**
+     * @brief Changes the character's name
+     * @param name
+     */
+    void setName(const std::string &n);
 
     /**
      * @brief Displays the character's stats to the standard output.
@@ -182,10 +180,47 @@ public:
     * It includes functionalities for modifying these attributes and calculating derived statistics.
     */
 
+protected:
+
+    int currentHP{}; ///< Current hit points of the character.
+    int level{}; ///< Level of the character.
+
+    /**
+     * @brief Returns the default die type used for hit points calculation. Can be overridden by derived classes.
+     * @return DieType The default die type for the character.
+     */
+    [[nodiscard]] virtual DieType getDieType() const { return d6; }
+
+/**
+ * @brief Calculates the ability modifiers based on ability scores.
+ *
+ * This function computes each ability modifier as the floor of ((abilityScore - 10) / 2).
+ */
+    void calculateAbilityModifiers();
+
+/**
+     * @brief Initializes the character's hit points based on level and Constitution modifier.
+     * @return int The calculated hit points.
+     *
+     * Calculates initial hit points using the character's die type and Constitution modifier.
+     */
+    [[nodiscard]] int initializeHitPoints();
+
+    /**
+     * @brief Initializes the character's proficiency bonus based on their level.
+     * @return int The calculated proficiency bonus.
+     *
+     * Determines the proficiency bonus based on the character's level according to D&D rules.
+     */
+    [[nodiscard]] int initializeProficiencyBonus() const;
+
+    std::map<Stats, int> stats;
+
+    std::array<int, 6> abilityScore{};
 private:
     explicit Character(std::string name, int level, const int abilityScores[6], int maxHp,int currentHp, std::map<Item::ItemType, Item> wornItems);
     std::string name; ///< Character's name.
-    std::array<int, 6> abilityScore{}; ///< Scores for the character's abilities.
+    ///< Scores for the character's abilities.
     std::array<int, 6> abilityModifiers{}; ///< Modifiers derived from the ability scores.
 
     /**
@@ -193,14 +228,7 @@ private:
      *
      * This function uses dice rolls to randomly generate ability scores for the character.
      */
-    void generateAbilityScores();
-
-    /**
-     * @brief Calculates the ability modifiers based on ability scores.
-     *
-     * This function computes each ability modifier as the floor of ((abilityScore - 10) / 2).
-     */
-    void calculateAbilityModifiers();
+    virtual void generateAbilityScores();
 
     /**
      * @brief Recalculates ability scores and modifiers based on equipped items.
@@ -217,21 +245,9 @@ private:
      */
     void reduceAbilityAfterUnequip(const Item& item);
 
-    /**
-     * @brief Initializes the character's hit points based on level and Constitution modifier.
-     * @return int The calculated hit points.
-     *
-     * Calculates initial hit points using the character's die type and Constitution modifier.
-     */
-    [[nodiscard]] int initializeHitPoints();
 
-    /**
-     * @brief Initializes the character's proficiency bonus based on their level.
-     * @return int The calculated proficiency bonus.
-     *
-     * Determines the proficiency bonus based on the character's level according to D&D rules.
-     */
-    [[nodiscard]] int initializeProficiencyBonus() const;
+
+
 
     /**
      * @brief Checks if a given string corresponds to a valid ability.
@@ -258,7 +274,7 @@ private:
      */
     static Stats stringToEnumStats(const std::string& str);
 
-    std::map<Stats, int> stats; ///< Map of character stats.
+    ///< Map of character stats.
     std::map<Item::ItemType, Item> wornItems; ///< Currently equipped items.
 
     /**
