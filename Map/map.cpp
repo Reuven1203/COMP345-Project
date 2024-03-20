@@ -265,20 +265,20 @@ int dungeonMap::getStartX() const {
 int dungeonMap::getStartY() const {
     return startY;
 }
-void dungeonMap::setPlayerX(int x)
-{
-    playerX = x;
-}
-void dungeonMap::setPlayerY(int y)
-{
-    playerY = y;
-}
-int dungeonMap::getPlayerX() const {
-    return playerX;
-}
-int dungeonMap::getPlayerY() const {
-    return playerY;
-}
+//void dungeonMap::setPlayerX(int x)
+//{
+//    playerX = x;
+//}
+//void dungeonMap::setPlayerY(int y)
+//{
+//    playerY = y;
+//}
+//int dungeonMap::getPlayerX() const {
+//    return playerX;
+//}
+//int dungeonMap::getPlayerY() const {
+//    return playerY;
+//}
 /*
 *
 *@brief Returns the end points
@@ -481,6 +481,13 @@ bool dungeonMap::chestDetect(int x, int y)
     else return false;
 }
 
+bool dungeonMap::playerDetect(int x, int y) {
+    if (dungeon[x][y].getCellType() == Player)
+        return true;
+    else return false;
+
+}
+
 /**
  * @brief Helper function to interactively remove a wall from the dungeon.
  * @param x Pointer to store the row coordinate chosen by the user.
@@ -535,173 +542,62 @@ void dungeonMap::removeCellContent(int x, int y) {
  * If either condition is not met, the function returns without moving the player.
  * Otherwise, the player is moved to the new location, and any game state updates are performed.
  */
-void dungeonMap::movePlayer(Character* player,int direction)
-{
-    container* chestTemp = nullptr;
-    switch (direction)
-    {
-    case 1: //Moving up
-    {
-        if (!isValidRow(playerX-1)) {
+void dungeonMap::movePlayer(Character* player, int direction) {
+    int playerX = playerPositions[player].first;
+    int playerY = playerPositions[player].second;
+    int newX = playerX, newY = playerY;
 
-            return;
-        }
-        if (wallDetect((playerX - 1), playerY)) ///<If there's a wall at the position player wants to go to, prevent movement
-        {
-            return;
-        }
-
-        player = dungeon[playerX][playerY].getPlayer();
-        if (!chestDetect(playerX-1,playerY)) { ///<If there's no chest player will move normally
-            dungeon[playerX - 1][playerY].setPlayer(player);
-            dungeon[playerX][playerY].removeContent();
-            this->playerX = playerX - 1;
-        }
-        else {
-            int choice;
-            chestTemp = dungeon[playerX - 1][playerY].getChest(); ///<If there is a chest then chest is saved in chestTemp and player moves and obtains items in chest
-            dungeon[playerX - 1][playerY].setPlayer(player);
-            dungeon[playerX][playerY].removeContent();
-            this->playerX = playerX - 1;
-            notify();
-            cout << "*************Chest found!**************"<<endl;
-
-            chestTemp->getItems();
-            cout << "-------------Item details--------------" << "\n\n";
-            chestTemp->getItemStats();
-            cout << "Select which item(number) to obtain: ";
-            cin >> choice;
-            player->equip(chestTemp->removeItemFromChest(choice));
-            player->showWornItems();
-            cout << "Press any key to continue...."<<endl;
-
-            keyPress();
-        }
-        notify();
-
-        break;
+    // Determine new position based on the direction
+    switch (direction) {
+        case 1: // Up
+            newX--;
+            break;
+        case 2: // Down
+            newX++;
+            break;
+        case 3: // Left
+            newY--;
+            break;
+        case 4: // Right
+            newY++;
+            break;
+        default:
+            return; // Invalid direction
     }
-    case 2: //Moving down
-    {
-        if (!isValidRow(playerX + 1)) {
 
-            return;
-        }
-        if (wallDetect(playerX + 1, playerY)) ///<If there's a wall at the position player wants to go to, prevent movement
-        {
-            return;
-        }
-        player = dungeon[playerX][playerY].getPlayer();
-        if (!chestDetect(playerX + 1, playerY)) { ///<If there's no chest player will move normally
-            dungeon[playerX + 1][playerY].setPlayer(player);
-            dungeon[playerX][playerY].removeContent();
-            this->playerX = playerX + 1;
-        }
-        else {
-            int choice;
-            chestTemp = dungeon[playerX + 1][playerY].getChest(); ///<If there is a chest then chest is saved in chestTemp and player moves and obtains items in chest
-            dungeon[playerX + 1][playerY].setPlayer(player);
-            dungeon[playerX][playerY].removeContent();
-            this->playerX = playerX + 1;
-            notify();
-            cout << "*************Chest found!**************" << endl;
-
-            chestTemp->getItems();
-            cout << "-------------Item details--------------" << "\n\n";
-            chestTemp->getItemStats();
-            cout << "Select which item(number) to obtain: ";
-            cin >> choice;
-            player->equip(chestTemp->removeItemFromChest(choice));
-            player->showWornItems();
-            cout << "Press any key to continue...." << endl;
-
-            keyPress();
-        }
+    // Check for valid move
+    if (!isValidRow(newX) || !isValidCol(newY) || wallDetect(newX, newY)) {
         notify();
-
-        break;
+        return; // Invalid move
     }
-    case 3: //Moving left
-    {
-        if (!isValidCol(playerY - 1)) {
 
-            return;
-        }
-        if (wallDetect(playerX, playerY-1)) ///<If there's a wall at the position player wants to go to, prevent movement
-        {
-            return;
-        }
-        player = dungeon[playerX][playerY].getPlayer();
-        if (!chestDetect(playerX, playerY-1)) { ///<If there's no chest player will move normally
-            dungeon[playerX][playerY-1].setPlayer(player);
-            dungeon[playerX][playerY].removeContent();
-            this->playerY = playerY - 1;
-        }
-        else {
-            int choice;
-            chestTemp = dungeon[playerX][playerY-1].getChest(); ///<If there is a chest then chest is saved in chestTemp and player moves and obtains items in chest
-            dungeon[playerX ][playerY-1].setPlayer(player);
-            dungeon[playerX][playerY].removeContent();
-            this->playerY = playerY - 1;
-            notify();
-            cout << "*************Chest found!**************" << endl;
+    // Check for a chest at the new position
+    if (chestDetect(newX, newY)) {
+        cout << "*************Chest found!**************" << endl;
+        container* chestTemp = dungeon[newX][newY].getChest();
+        chestTemp->getItems();
+        cout << "-------------Item details--------------" << "\n\n";
+        chestTemp->getItemStats();
 
-            chestTemp->getItems();
-            cout << "-------------Item details--------------" << "\n\n";
-            chestTemp->getItemStats();
-            cout << "Select which item(number) to obtain: ";
-            cin >> choice;
-            player->equip(chestTemp->removeItemFromChest(choice));
-            player->showWornItems();
-            cout << "Press any key to continue...." << endl;
-
-            keyPress();
-        }
-        notify();
-
-        break;
+        int choice;
+        cout << "Select which item(number) to obtain: ";
+        cin >> choice;
+        player->equip(chestTemp->removeItemFromChest(choice));
+        player->showWornItems();
+        cout << "Press any key to continue...." << endl;
+        keyPress();
+    }else if(playerDetect(newX, newY)){
+        cout << "*************Player found!**************" << endl;
+        cout << "Press any key to continue...." << endl;
+        keyPress();
+    }else{
+        // Move the player
+        dungeon[newX][newY].setPlayer(player);
+        dungeon[playerX][playerY].removeContent();
+        playerPositions[player] = std::make_pair(newX, newY);
     }
-    case 4: //Moving right
-    {
-        if (!isValidCol(playerY + 1)) {
 
-            return;
-        }
-        if (wallDetect(playerX, playerY+1)) ///<If there's a wall at the position player wants to go to, prevent movement
-        {
-            return;
-        }
-        player = dungeon[playerX][playerY].getPlayer();
-        if (!chestDetect(playerX, playerY+1)) { ///<If there's no chest player will move normally
-            dungeon[playerX ][playerY+1].setPlayer(player);
-            dungeon[playerX][playerY].removeContent();
-            this->playerY = playerY + 1;
-        }
-        else {
-            int choice;
-            chestTemp = dungeon[playerX ][playerY+1].getChest(); ///<If there is a chest then chest is saved in chestTemp and player moves and obtains items in chest
-            dungeon[playerX][playerY+1].setPlayer(player);
-            dungeon[playerX][playerY].removeContent();
-            this->playerY = playerY + 1;
-            notify();
-            cout << "*************Chest found!**************" << endl;
-
-            chestTemp->getItems();
-            cout << "-------------Item details--------------" << "\n\n";
-            chestTemp->getItemStats();
-            cout << "Select which item(number) to obtain: ";
-            cin >> choice;
-            player->equip(chestTemp->removeItemFromChest(choice));
-            player->showWornItems();
-            cout << "Press any key to continue...." << endl;
-
-            keyPress();
-        }
-        notify();
-
-        break;
-    }
-  }
+    notify();
 }
 
 vector<int> dungeonMap::getWalls() {
@@ -719,4 +615,6 @@ vector<int> dungeonMap::getWalls() {
     }
     return wallCoordinates;
 }
+
+
 

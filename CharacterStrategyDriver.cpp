@@ -21,13 +21,24 @@ int main() {
     BullyFighterBuilder builder;
     director.setBuilder(&builder);
     Fighter* fighter = director.constructFighter("Bully");
+    Fighter* fighter2 = director.constructFighter("Bully");
     fighter->setStrategy(new HumanPlayerStrategy());
+    m->setStart(1, 2);
     m->setPlayer(fighter,1, 2);
-    int ch;
+    m->setPlayer(fighter2, 4, 4);
+    m->setWall(0, 8);
+    auto* chest1 = new container();
+    auto* chest2 = new container();
+    Item* ring = new Item(Item::ItemType::RING);
+    Item* helmet = new Item(Item::ItemType::HELMET);
+    chest1->storeItem(*ring);
+    chest2->storeItem(*helmet);
+    m->setChest(chest1,3,3);
+    m->setChest(chest2, 8, 8);
+    m->notify();
+    int ch = 0;
     while(true) {
-//       fighter->move(*m);
-        ch = keyPress();
-        std::cout << "Key pressed: " << ch << std::endl;
+       fighter->move(*m);
     }
 
 

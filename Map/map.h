@@ -167,6 +167,7 @@ private:
     int endX{}, endY{}; ///< Coordinates of the ending point.
     bool wallDetect(int x, int y);
     bool chestDetect(int x, int y);
+    bool playerDetect(int x, int y);
     bool isStart(cell* cell) const; ///< Checks if a cell is the start point.
     bool isEnd(cell* cell) const; ///< Checks if a cell is the end point.
     bool dfs(int row, int col); ///< Performs depth-first search for path validation.
@@ -178,7 +179,7 @@ private:
     bool isValidLocation(int row, int col); ///< Validates if a location can be modified.
     void addWallChoice(int* x, int* y); ///< Interactively allows adding a wall.
     void removeWallChoice(int* x, int* y); ///< Interactively allows removing a wall.
-    int playerX, playerY;///<Keeps track of where player is
+//    int playerX, playerY;///<Keeps track of where player is
 };
 
 #endif // MAP_H

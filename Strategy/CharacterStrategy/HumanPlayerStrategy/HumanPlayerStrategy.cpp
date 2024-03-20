@@ -10,7 +10,6 @@ void HumanPlayerStrategy::move(Character *player, dungeonMap &map) {
     int ch = 0;
     cout << "Use arrow keys to move Player(P) (ESC to quit)..." << endl;
     ch = keyPress();
-    std::cout << "Key pressed: " << ch << std::endl;
     switch (ch) {
         case KEY_UP: // UP arrow key
             map.movePlayer(player, 1);

@@ -37,7 +37,7 @@ MapObserver::~MapObserver()
 //            case KEY_UP://UP arrow key
 //            {
 //
-//                _subject->movePlayer(_subject.,1);
+////                _subject->movePlayer(_subject.,1);
 //                if (mapFinishedCheck())
 //                {
 //                    exit(EXIT_SUCCESS);
@@ -47,7 +47,7 @@ MapObserver::~MapObserver()
 //            case KEY_DOWN://DOWN arrow key
 //            {
 //
-//                _subject->movePlayer(2);
+////                _subject->movePlayer(2);
 //                if (mapFinishedCheck())
 //                {
 //                    exit(EXIT_SUCCESS);
@@ -57,7 +57,7 @@ MapObserver::~MapObserver()
 //            case KEY_LEFT://LEFT arrow key
 //            {
 //
-//                _subject->movePlayer(3);
+////                _subject->movePlayer(3);
 //                if (mapFinishedCheck())
 //                {
 //                    exit(EXIT_SUCCESS);
@@ -67,7 +67,7 @@ MapObserver::~MapObserver()
 //            case KEY_RIGHT://RIGHT arrow key
 //            {
 //
-//                _subject->movePlayer(4);
+////                _subject->movePlayer(4);
 //                if (mapFinishedCheck())
 //                {
 //                    exit(EXIT_SUCCESS);
@@ -100,15 +100,15 @@ void MapObserver::displayMap()
     _subject->printMap();
 }
 
-bool MapObserver::mapFinishedCheck()
-{
-    if (_subject->getEndX()==_subject->getPlayerX() && _subject->getEndY()==_subject->getPlayerY())
-    {
-        cout << "You've reached the end!" << endl;
-        cout << "Dungeon cleared! Press any key to end game.....";
-        keyPress();
-        return true;
-
-    }
-    return false;
-}
+//bool MapObserver::mapFinishedCheck()
+//{
+//    if (_subject->getEndX()==_subject->getPlayerX() && _subject->getEndY()==_subject->getPlayerY())
+//    {
+//        cout << "You've reached the end!" << endl;
+//        cout << "Dungeon cleared! Press any key to end game.....";
+//        keyPress();
+//        return true;
+//
+//    }
+//    return false;
+//}
