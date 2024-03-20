@@ -98,12 +98,11 @@ void dungeonMap::removeWall(int x, int y)
  */
 void dungeonMap::setPlayer(Character* player, int x, int y)
 {
-    if (dungeon[x][y].getCellType() == Nothing)
-    {
+    if (isValidRow(x) && isValidCol(y) && !wallDetect(x, y)) {
         dungeon[x][y].setCellType(Player);
         dungeon[x][y].setPlayer(player);
-        playerX = x;
-        playerY = y;
+        playerPositions[player] = std::make_pair(x, y);
+        notify();
     }
     else
     {
@@ -536,10 +535,8 @@ void dungeonMap::removeCellContent(int x, int y) {
  * If either condition is not met, the function returns without moving the player.
  * Otherwise, the player is moved to the new location, and any game state updates are performed.
  */
-void dungeonMap::movePlayer(int direction)
+void dungeonMap::movePlayer(Character* player,int direction)
 {
-
-    Character* player = nullptr;
     container* chestTemp = nullptr;
     switch (direction)
     {

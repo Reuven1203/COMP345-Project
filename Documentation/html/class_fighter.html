@@ -72,8 +72,12 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="class_fighter-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Fighter Class Reference</div></div>
 </div><!--header-->
@@ -94,18 +98,55 @@ Inheritance diagram for Fighter:</div>
   </map>
 </div></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a4ca2bb044a13bbd40fdd2a5f018ecae9" id="r_a4ca2bb044a13bbd40fdd2a5f018ecae9"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4ca2bb044a13bbd40fdd2a5f018ecae9">FighterType</a> { <a class="el" href="#a4ca2bb044a13bbd40fdd2a5f018ecae9a8adc282bb4bfa2ed8c1b4eea67e68096">BULLY</a>
+, <a class="el" href="#a4ca2bb044a13bbd40fdd2a5f018ecae9a0802c97434d590756b975186faa2f653">NIMBLE</a>
+, <a class="el" href="#a4ca2bb044a13bbd40fdd2a5f018ecae9a768d8d56d2291d95f16ca4cdf9be4875">TANK</a>
+ }</td></tr>
+<tr class="separator:a4ca2bb044a13bbd40fdd2a5f018ecae9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_types_class_character"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_class_character')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="class_character.html">Character</a></td></tr>
+<tr class="memitem:ac972d17bc509adbc4144b18fde09a814 inherit pub_types_class_character" id="r_ac972d17bc509adbc4144b18fde09a814"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_character.html#ac972d17bc509adbc4144b18fde09a814">Stats</a> { <br />
+&#160;&#160;<a class="el" href="class_character.html#ac972d17bc509adbc4144b18fde09a814aacdd03fbf146ae0937547d7229e4b237">HP</a>
+, <a class="el" href="class_character.html#ac972d17bc509adbc4144b18fde09a814a29d0239ccdf81ca1851ea3a88daa603a">PB</a>
+, <a class="el" href="class_character.html#ac972d17bc509adbc4144b18fde09a814a6538c0adde2f27226f0bd7f078f92a2c">AC</a>
+, <a class="el" href="class_character.html#ac972d17bc509adbc4144b18fde09a814a3cc4d1a60b42ce91520888ec800c01f6">AB</a>
+, <br />
+&#160;&#160;<a class="el" href="class_character.html#ac972d17bc509adbc4144b18fde09a814af945add5d91299ea3f36fd3c6721748b">DB</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:ac972d17bc509adbc4144b18fde09a814"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumerates the different stats a character can possess.  <a href="class_character.html#ac972d17bc509adbc4144b18fde09a814">More...</a><br /></td></tr>
+<tr class="separator:ac972d17bc509adbc4144b18fde09a814 inherit pub_types_class_character"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac375a6d6120ce429749a78bb15e1d402 inherit pub_types_class_character" id="r_ac375a6d6120ce429749a78bb15e1d402"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_character.html#ac375a6d6120ce429749a78bb15e1d402">Ability</a> { <br />
+&#160;&#160;<a class="el" href="class_character.html#ac375a6d6120ce429749a78bb15e1d402aa490c397eb4162d21a50685377c163fd">Strength</a>
+, <a class="el" href="class_character.html#ac375a6d6120ce429749a78bb15e1d402a039993368e103d9c94bfcc64075a8589">Dexterity</a>
+, <a class="el" href="class_character.html#ac375a6d6120ce429749a78bb15e1d402ab4f803b1039df0efcfeb6b991e76e7fe">Constitution</a>
+, <a class="el" href="class_character.html#ac375a6d6120ce429749a78bb15e1d402a0d0c589d82ce615e4e49841b0776c015">Intelligence</a>
+, <br />
+&#160;&#160;<a class="el" href="class_character.html#ac375a6d6120ce429749a78bb15e1d402acccd442e217f28399690abe6127ab3ee">Wisdom</a>
+, <a class="el" href="class_character.html#ac375a6d6120ce429749a78bb15e1d402a69347c021481a9bd4a34be445665ce38">Charisma</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:ac375a6d6120ce429749a78bb15e1d402"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumerates the different abilities a character can have.  <a href="class_character.html#ac375a6d6120ce429749a78bb15e1d402">More...</a><br /></td></tr>
+<tr class="separator:ac375a6d6120ce429749a78bb15e1d402 inherit pub_types_class_character"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:abf32519d935df18963172d31d45029f6" id="r_abf32519d935df18963172d31d45029f6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abf32519d935df18963172d31d45029f6">Fighter</a> (std::string <a class="el" href="class_character.html#a6592c35167738421f3e04ca8808d37db">name</a>, int <a class="el" href="class_character.html#af15a478fe650b87f59cbe5d071697307">level</a>)</td></tr>
-<tr class="memdesc:abf32519d935df18963172d31d45029f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="class_fighter.html" title="Represents a fighter character in the game.">Fighter</a> object.  <br /></td></tr>
-<tr class="separator:abf32519d935df18963172d31d45029f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe836357d9c8a9bcdf73688c1a2cfe50" id="r_afe836357d9c8a9bcdf73688c1a2cfe50"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afe836357d9c8a9bcdf73688c1a2cfe50">Fighter</a> (std::string <a class="el" href="class_character.html#a6592c35167738421f3e04ca8808d37db">name</a>, int <a class="el" href="class_character.html#af15a478fe650b87f59cbe5d071697307">level</a>, <a class="el" href="#a4ca2bb044a13bbd40fdd2a5f018ecae9">FighterType</a> type)</td></tr>
+<tr class="memdesc:afe836357d9c8a9bcdf73688c1a2cfe50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="class_fighter.html" title="Represents a fighter character in the game.">Fighter</a> object.  <br /></td></tr>
+<tr class="separator:afe836357d9c8a9bcdf73688c1a2cfe50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e86ce51f2e3bddaacce7652f616c4e6" id="r_a5e86ce51f2e3bddaacce7652f616c4e6"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5e86ce51f2e3bddaacce7652f616c4e6">getClassName</a> () const override</td></tr>
 <tr class="memdesc:a5e86ce51f2e3bddaacce7652f616c4e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the name of the fighter's class.  <br /></td></tr>
 <tr class="separator:a5e86ce51f2e3bddaacce7652f616c4e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8e8e5c99ece3c7179e4f0f99e556714" id="r_af8e8e5c99ece3c7179e4f0f99e556714"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a4ca2bb044a13bbd40fdd2a5f018ecae9">FighterType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af8e8e5c99ece3c7179e4f0f99e556714">getFighterType</a> () const</td></tr>
+<tr class="memdesc:af8e8e5c99ece3c7179e4f0f99e556714"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the type of fighter.  <br /></td></tr>
+<tr class="separator:af8e8e5c99ece3c7179e4f0f99e556714"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_character"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_class_character')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_character.html">Character</a></td></tr>
 <tr class="memitem:a22d0e11a466d9915761a929b991f057e inherit pub_methods_class_character" id="r_a22d0e11a466d9915761a929b991f057e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_character.html#a22d0e11a466d9915761a929b991f057e">Character</a> (std::string <a class="el" href="class_character.html#a6592c35167738421f3e04ca8808d37db">name</a>, int <a class="el" href="class_character.html#af15a478fe650b87f59cbe5d071697307">level</a>)</td></tr>
 <tr class="memdesc:a22d0e11a466d9915761a929b991f057e inherit pub_methods_class_character"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor that initializes a character with a name and level.  <br /></td></tr>
 <tr class="separator:a22d0e11a466d9915761a929b991f057e inherit pub_methods_class_character"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1225e6f5f16ab12fd0791e18568d51e7 inherit pub_methods_class_character" id="r_a1225e6f5f16ab12fd0791e18568d51e7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_character.html#a1225e6f5f16ab12fd0791e18568d51e7">Character</a> (std::string <a class="el" href="class_character.html#a6592c35167738421f3e04ca8808d37db">name</a>, int <a class="el" href="class_character.html#af15a478fe650b87f59cbe5d071697307">level</a>, const int abilityScores[6], int maxHp, int currentHp)</td></tr>
+<tr class="separator:a1225e6f5f16ab12fd0791e18568d51e7 inherit pub_methods_class_character"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad79f892fe576c7ef0804cad502d94517 inherit pub_methods_class_character" id="r_ad79f892fe576c7ef0804cad502d94517"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_character.html#ad79f892fe576c7ef0804cad502d94517">getName</a> () const</td></tr>
 <tr class="memdesc:ad79f892fe576c7ef0804cad502d94517 inherit pub_methods_class_character"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the character's name.  <br /></td></tr>
 <tr class="separator:ad79f892fe576c7ef0804cad502d94517 inherit pub_methods_class_character"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -118,6 +159,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1fdb0946af9cfe713785a88e06f20b34 inherit pub_methods_class_character" id="r_a1fdb0946af9cfe713785a88e06f20b34"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_character.html#a1fdb0946af9cfe713785a88e06f20b34">getAbilityModifier</a> (<a class="el" href="class_character.html#ac375a6d6120ce429749a78bb15e1d402">Ability</a> ability) const</td></tr>
 <tr class="memdesc:a1fdb0946af9cfe713785a88e06f20b34 inherit pub_methods_class_character"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the modifier for a specific ability for the character.  <br /></td></tr>
 <tr class="separator:a1fdb0946af9cfe713785a88e06f20b34 inherit pub_methods_class_character"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f6fdca1d046e720f3016005f0b1b012 inherit pub_methods_class_character" id="r_a5f6fdca1d046e720f3016005f0b1b012"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_character.html#a5f6fdca1d046e720f3016005f0b1b012">setName</a> (const std::string &amp;n)</td></tr>
+<tr class="memdesc:a5f6fdca1d046e720f3016005f0b1b012 inherit pub_methods_class_character"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes the character's name.  <br /></td></tr>
+<tr class="separator:a5f6fdca1d046e720f3016005f0b1b012 inherit pub_methods_class_character"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3caa2fa1be51737fa682e1634151828c inherit pub_methods_class_character" id="r_a3caa2fa1be51737fa682e1634151828c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_character.html#a3caa2fa1be51737fa682e1634151828c">showCharacterStats</a> () const</td></tr>
 <tr class="memdesc:a3caa2fa1be51737fa682e1634151828c inherit pub_methods_class_character"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays the character's stats to the standard output.  <br /></td></tr>
 <tr class="separator:a3caa2fa1be51737fa682e1634151828c inherit pub_methods_class_character"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -133,6 +177,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8638de4be3d350860ed4c5b9da042135 inherit pub_methods_class_character" id="r_a8638de4be3d350860ed4c5b9da042135"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_character.html#a8638de4be3d350860ed4c5b9da042135">getStat</a> (<a class="el" href="class_character.html#ac972d17bc509adbc4144b18fde09a814">Stats</a> <a class="el" href="class_character.html#a44f76b68965975ae1addd1c579d5a250">stats</a>) const</td></tr>
 <tr class="memdesc:a8638de4be3d350860ed4c5b9da042135 inherit pub_methods_class_character"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the value of a specified stat for the character.  <br /></td></tr>
 <tr class="separator:a8638de4be3d350860ed4c5b9da042135 inherit pub_methods_class_character"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaaffb44b62eb70df0e545700c6011210 inherit pub_methods_class_character" id="r_aaaffb44b62eb70df0e545700c6011210"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_character.html#aaaffb44b62eb70df0e545700c6011210">levelUp</a> ()</td></tr>
+<tr class="memdesc:aaaffb44b62eb70df0e545700c6011210 inherit pub_methods_class_character"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increases character's level by 1.  <br /></td></tr>
+<tr class="separator:aaaffb44b62eb70df0e545700c6011210 inherit pub_methods_class_character"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_observable"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_class_observable')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_observable.html">Observable</a></td></tr>
 <tr class="memitem:a6efa28f8d9b8e5ab249533f684363a4f inherit pub_methods_class_observable" id="r_a6efa28f8d9b8e5ab249533f684363a4f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_observable.html#a6efa28f8d9b8e5ab249533f684363a4f">attach</a> (<a class="el" href="class_observer.html">Observer</a> *observer)</td></tr>
 <tr class="memdesc:a6efa28f8d9b8e5ab249533f684363a4f inherit pub_methods_class_observable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attaches an observer to the observable object.  <br /></td></tr>
@@ -140,57 +187,92 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a242e67bc26e3934370e863af3c08d1cb inherit pub_methods_class_observable" id="r_a242e67bc26e3934370e863af3c08d1cb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_observable.html#a242e67bc26e3934370e863af3c08d1cb">detach</a> (<a class="el" href="class_observer.html">Observer</a> *observer)</td></tr>
 <tr class="memdesc:a242e67bc26e3934370e863af3c08d1cb inherit pub_methods_class_observable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detaches an observer from the observable object.  <br /></td></tr>
 <tr class="separator:a242e67bc26e3934370e863af3c08d1cb inherit pub_methods_class_observable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a099bf851e05bb8c1a25e83f2a1389e58 inherit pub_methods_class_observable" id="r_a099bf851e05bb8c1a25e83f2a1389e58"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_observable.html#a099bf851e05bb8c1a25e83f2a1389e58">notify</a> ()</td></tr>
+<tr class="memdesc:a099bf851e05bb8c1a25e83f2a1389e58 inherit pub_methods_class_observable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notifies all attached observers of a change.  <br /></td></tr>
+<tr class="separator:a099bf851e05bb8c1a25e83f2a1389e58 inherit pub_methods_class_observable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:add27b2f3fe2725ee5ad638a6f9df2287" id="r_add27b2f3fe2725ee5ad638a6f9df2287"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#add27b2f3fe2725ee5ad638a6f9df2287">FighterTypeEnumToString</a> (<a class="el" href="#a4ca2bb044a13bbd40fdd2a5f018ecae9">FighterType</a> type)</td></tr>
+<tr class="memdesc:add27b2f3fe2725ee5ad638a6f9df2287"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the FighterType enum to a string.  <br /></td></tr>
+<tr class="separator:add27b2f3fe2725ee5ad638a6f9df2287"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a7efe440440e5c6e1104462dcca59cf84" id="r_a7efe440440e5c6e1104462dcca59cf84"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_dice_8h.html#a230fe26a49ff11b10bb851e08f88d9d4">DieType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7efe440440e5c6e1104462dcca59cf84">getDieType</a> () const override</td></tr>
 <tr class="memdesc:a7efe440440e5c6e1104462dcca59cf84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the die type for the fighter's hit points calculation.  <br /></td></tr>
 <tr class="separator:a7efe440440e5c6e1104462dcca59cf84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4aac49b7648b9151ce41a00d73f3c119" id="r_a4aac49b7648b9151ce41a00d73f3c119"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4aac49b7648b9151ce41a00d73f3c119">setAbilityScore</a> (<a class="el" href="class_character.html#ac375a6d6120ce429749a78bb15e1d402">Ability</a> ability, int score)</td></tr>
+<tr class="memdesc:a4aac49b7648b9151ce41a00d73f3c119"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates the ability scores for the fighter.  <br /></td></tr>
+<tr class="separator:a4aac49b7648b9151ce41a00d73f3c119"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a82138f381c86fa8afb2d79b1d218ac2d" id="r_a82138f381c86fa8afb2d79b1d218ac2d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a4ca2bb044a13bbd40fdd2a5f018ecae9">FighterType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a82138f381c86fa8afb2d79b1d218ac2d">fighterType</a></td></tr>
+<tr class="memdesc:a82138f381c86fa8afb2d79b1d218ac2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of fighter. Can be BULLY, NIMBLE, or TANK.  <br /></td></tr>
+<tr class="separator:a82138f381c86fa8afb2d79b1d218ac2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:aa7b245f3a3aa9bf949a05b17945c501e" id="r_aa7b245f3a3aa9bf949a05b17945c501e"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa7b245f3a3aa9bf949a05b17945c501e">FighterBuilder</a></td></tr>
+<tr class="separator:aa7b245f3a3aa9bf949a05b17945c501e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25fd04cdc6b67d272fdae524a0013842" id="r_a25fd04cdc6b67d272fdae524a0013842"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a25fd04cdc6b67d272fdae524a0013842">BullyFighterBuilder</a></td></tr>
+<tr class="separator:a25fd04cdc6b67d272fdae524a0013842"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f51d1502fc3545da39168fe2ec27d9a" id="r_a7f51d1502fc3545da39168fe2ec27d9a"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7f51d1502fc3545da39168fe2ec27d9a">NimbleFighterBuilder</a></td></tr>
+<tr class="separator:a7f51d1502fc3545da39168fe2ec27d9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34292d271836c4dde6fc0e6c6353b1a3" id="r_a34292d271836c4dde6fc0e6c6353b1a3"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a34292d271836c4dde6fc0e6c6353b1a3">TankFighterBuilder</a></td></tr>
+<tr class="separator:a34292d271836c4dde6fc0e6c6353b1a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pub_types_class_character"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_class_character')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="class_character.html">Character</a></td></tr>
-<tr class="memitem:ac375a6d6120ce429749a78bb15e1d402 inherit pub_types_class_character" id="r_ac375a6d6120ce429749a78bb15e1d402"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_character.html#ac375a6d6120ce429749a78bb15e1d402">Ability</a> { <br />
-&#160;&#160;<a class="el" href="class_character.html#ac375a6d6120ce429749a78bb15e1d402aa490c397eb4162d21a50685377c163fd">Strength</a>
-, <a class="el" href="class_character.html#ac375a6d6120ce429749a78bb15e1d402a039993368e103d9c94bfcc64075a8589">Dexterity</a>
-, <a class="el" href="class_character.html#ac375a6d6120ce429749a78bb15e1d402ab4f803b1039df0efcfeb6b991e76e7fe">Constitution</a>
-, <a class="el" href="class_character.html#ac375a6d6120ce429749a78bb15e1d402a0d0c589d82ce615e4e49841b0776c015">Intelligence</a>
-, <br />
-&#160;&#160;<a class="el" href="class_character.html#ac375a6d6120ce429749a78bb15e1d402acccd442e217f28399690abe6127ab3ee">Wisdom</a>
-, <a class="el" href="class_character.html#ac375a6d6120ce429749a78bb15e1d402a69347c021481a9bd4a34be445665ce38">Charisma</a>
-<br />
- }</td></tr>
-<tr class="memdesc:ac375a6d6120ce429749a78bb15e1d402"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumerates the different abilities a character can have.  <a href="class_character.html#ac375a6d6120ce429749a78bb15e1d402">More...</a><br /></td></tr>
-<tr class="separator:ac375a6d6120ce429749a78bb15e1d402 inherit pub_types_class_character"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac972d17bc509adbc4144b18fde09a814 inherit pub_types_class_character" id="r_ac972d17bc509adbc4144b18fde09a814"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_character.html#ac972d17bc509adbc4144b18fde09a814">Stats</a> { <br />
-&#160;&#160;<a class="el" href="class_character.html#ac972d17bc509adbc4144b18fde09a814aacdd03fbf146ae0937547d7229e4b237">HP</a>
-, <a class="el" href="class_character.html#ac972d17bc509adbc4144b18fde09a814a29d0239ccdf81ca1851ea3a88daa603a">PB</a>
-, <a class="el" href="class_character.html#ac972d17bc509adbc4144b18fde09a814a6538c0adde2f27226f0bd7f078f92a2c">AC</a>
-, <a class="el" href="class_character.html#ac972d17bc509adbc4144b18fde09a814a3cc4d1a60b42ce91520888ec800c01f6">AB</a>
-, <br />
-&#160;&#160;<a class="el" href="class_character.html#ac972d17bc509adbc4144b18fde09a814af945add5d91299ea3f36fd3c6721748b">DB</a>
-<br />
- }</td></tr>
-<tr class="memdesc:ac972d17bc509adbc4144b18fde09a814"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumerates the different stats a character can possess.  <a href="class_character.html#ac972d17bc509adbc4144b18fde09a814">More...</a><br /></td></tr>
-<tr class="separator:ac972d17bc509adbc4144b18fde09a814 inherit pub_types_class_character"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_methods_class_observable"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_class_observable')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_observable.html">Observable</a></td></tr>
-<tr class="memitem:a099bf851e05bb8c1a25e83f2a1389e58 inherit pro_methods_class_observable" id="r_a099bf851e05bb8c1a25e83f2a1389e58"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_observable.html#a099bf851e05bb8c1a25e83f2a1389e58">notify</a> ()</td></tr>
-<tr class="memdesc:a099bf851e05bb8c1a25e83f2a1389e58 inherit pro_methods_class_observable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notifies all attached observers of a change.  <br /></td></tr>
-<tr class="separator:a099bf851e05bb8c1a25e83f2a1389e58 inherit pro_methods_class_observable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_class_character"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_class_character')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_character.html">Character</a></td></tr>
+<tr class="memitem:a41e037769916b418a44f14ff915e0d89 inherit pro_methods_class_character" id="r_a41e037769916b418a44f14ff915e0d89"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_character.html#a41e037769916b418a44f14ff915e0d89">calculateAbilityModifiers</a> ()</td></tr>
+<tr class="memdesc:a41e037769916b418a44f14ff915e0d89 inherit pro_methods_class_character"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the ability modifiers based on ability scores.  <br /></td></tr>
+<tr class="separator:a41e037769916b418a44f14ff915e0d89 inherit pro_methods_class_character"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f223b67659517e58517db65a92231bf inherit pro_methods_class_character" id="r_a1f223b67659517e58517db65a92231bf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_character.html#a1f223b67659517e58517db65a92231bf">initializeHitPoints</a> ()</td></tr>
+<tr class="memdesc:a1f223b67659517e58517db65a92231bf inherit pro_methods_class_character"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the character's hit points based on level and Constitution modifier.  <br /></td></tr>
+<tr class="separator:a1f223b67659517e58517db65a92231bf inherit pro_methods_class_character"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a105d03889388d94653de79e80693fda2 inherit pro_methods_class_character" id="r_a105d03889388d94653de79e80693fda2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_character.html#a105d03889388d94653de79e80693fda2">initializeProficiencyBonus</a> () const</td></tr>
+<tr class="memdesc:a105d03889388d94653de79e80693fda2 inherit pro_methods_class_character"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the character's proficiency bonus based on their level.  <br /></td></tr>
+<tr class="separator:a105d03889388d94653de79e80693fda2 inherit pro_methods_class_character"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_class_character"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_class_character')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_character.html">Character</a></td></tr>
-<tr class="memitem:a94c828a56970fdba54a2fb277c43129f inherit pro_attribs_class_character" id="r_a94c828a56970fdba54a2fb277c43129f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_character.html#a94c828a56970fdba54a2fb277c43129f">currentHP</a></td></tr>
+<tr class="memitem:a94c828a56970fdba54a2fb277c43129f inherit pro_attribs_class_character" id="r_a94c828a56970fdba54a2fb277c43129f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_character.html#a94c828a56970fdba54a2fb277c43129f">currentHP</a> {}</td></tr>
 <tr class="memdesc:a94c828a56970fdba54a2fb277c43129f inherit pro_attribs_class_character"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current hit points of the character.  <br /></td></tr>
 <tr class="separator:a94c828a56970fdba54a2fb277c43129f inherit pro_attribs_class_character"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af15a478fe650b87f59cbe5d071697307 inherit pro_attribs_class_character" id="r_af15a478fe650b87f59cbe5d071697307"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_character.html#af15a478fe650b87f59cbe5d071697307">level</a></td></tr>
+<tr class="memitem:af15a478fe650b87f59cbe5d071697307 inherit pro_attribs_class_character" id="r_af15a478fe650b87f59cbe5d071697307"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_character.html#af15a478fe650b87f59cbe5d071697307">level</a> {}</td></tr>
 <tr class="memdesc:af15a478fe650b87f59cbe5d071697307 inherit pro_attribs_class_character"><td class="mdescLeft">&#160;</td><td class="mdescRight">Level of the character.  <br /></td></tr>
 <tr class="separator:af15a478fe650b87f59cbe5d071697307 inherit pro_attribs_class_character"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44f76b68965975ae1addd1c579d5a250 inherit pro_attribs_class_character" id="r_a44f76b68965975ae1addd1c579d5a250"><td class="memItemLeft" align="right" valign="top">std::map&lt; <a class="el" href="class_character.html#ac972d17bc509adbc4144b18fde09a814">Stats</a>, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_character.html#a44f76b68965975ae1addd1c579d5a250">stats</a></td></tr>
+<tr class="separator:a44f76b68965975ae1addd1c579d5a250 inherit pro_attribs_class_character"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0d8a946d29c84108685dfde973d91a6 inherit pro_attribs_class_character" id="r_ad0d8a946d29c84108685dfde973d91a6"><td class="memItemLeft" align="right" valign="top">std::array&lt; int, 6 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_character.html#ad0d8a946d29c84108685dfde973d91a6">abilityScore</a> {}</td></tr>
+<tr class="separator:ad0d8a946d29c84108685dfde973d91a6 inherit pro_attribs_class_character"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents a fighter character in the game. </p>
 <p>Inherits from the <a class="el" href="class_character.html" title="The Character class represents an entity in the game with various attributes and behaviors.">Character</a> class. </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="abf32519d935df18963172d31d45029f6" name="abf32519d935df18963172d31d45029f6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abf32519d935df18963172d31d45029f6">&#9670;&#160;</a></span>Fighter()</h2>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
+<a id="a4ca2bb044a13bbd40fdd2a5f018ecae9" name="a4ca2bb044a13bbd40fdd2a5f018ecae9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ca2bb044a13bbd40fdd2a5f018ecae9">&#9670;&#160;</a></span>FighterType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#a4ca2bb044a13bbd40fdd2a5f018ecae9">Fighter::FighterType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a4ca2bb044a13bbd40fdd2a5f018ecae9a8adc282bb4bfa2ed8c1b4eea67e68096" name="a4ca2bb044a13bbd40fdd2a5f018ecae9a8adc282bb4bfa2ed8c1b4eea67e68096"></a>BULLY&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a4ca2bb044a13bbd40fdd2a5f018ecae9a0802c97434d590756b975186faa2f653" name="a4ca2bb044a13bbd40fdd2a5f018ecae9a0802c97434d590756b975186faa2f653"></a>NIMBLE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a4ca2bb044a13bbd40fdd2a5f018ecae9a768d8d56d2291d95f16ca4cdf9be4875" name="a4ca2bb044a13bbd40fdd2a5f018ecae9a768d8d56d2291d95f16ca4cdf9be4875"></a>TANK&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="afe836357d9c8a9bcdf73688c1a2cfe50" name="afe836357d9c8a9bcdf73688c1a2cfe50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe836357d9c8a9bcdf73688c1a2cfe50">&#9670;&#160;</a></span>Fighter()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -206,7 +288,12 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>level</em></span>&#160;)</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>level</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a4ca2bb044a13bbd40fdd2a5f018ecae9">FighterType</a></td>          <td class="paramname"><span class="paramname"><em>type</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -228,6 +315,40 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="add27b2f3fe2725ee5ad638a6f9df2287" name="add27b2f3fe2725ee5ad638a6f9df2287"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add27b2f3fe2725ee5ad638a6f9df2287">&#9670;&#160;</a></span>FighterTypeEnumToString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Fighter::FighterTypeEnumToString </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a4ca2bb044a13bbd40fdd2a5f018ecae9">FighterType</a></td>          <td class="paramname"><span class="paramname"><em>type</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts the FighterType enum to a string. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">type</td><td>The FighterType enum to convert. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The string representation of the FighterType enum. </dd></dl>
+
+</div>
+</div>
 <a id="a5e86ce51f2e3bddaacce7652f616c4e6" name="a5e86ce51f2e3bddaacce7652f616c4e6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5e86ce51f2e3bddaacce7652f616c4e6">&#9670;&#160;</a></span>getClassName()</h2>
 
@@ -285,6 +406,172 @@ Additional Inherited Members</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The die type for hit points calculation (d10). </dd></dl>
 
 <p>Reimplemented from <a class="el" href="class_character.html#aea131e1bce548f9e781af0dc5f4f29ce">Character</a>.</p>
+
+</div>
+</div>
+<a id="af8e8e5c99ece3c7179e4f0f99e556714" name="af8e8e5c99ece3c7179e4f0f99e556714"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8e8e5c99ece3c7179e4f0f99e556714">&#9670;&#160;</a></span>getFighterType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a4ca2bb044a13bbd40fdd2a5f018ecae9">Fighter::FighterType</a> Fighter::getFighterType </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the type of fighter. </p>
+<dl class="section return"><dt>Returns</dt><dd>The type of fighter. </dd></dl>
+
+</div>
+</div>
+<a id="a4aac49b7648b9151ce41a00d73f3c119" name="a4aac49b7648b9151ce41a00d73f3c119"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4aac49b7648b9151ce41a00d73f3c119">&#9670;&#160;</a></span>setAbilityScore()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Fighter::setAbilityScore </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_character.html#ac375a6d6120ce429749a78bb15e1d402">Character::Ability</a></td>          <td class="paramname"><span class="paramname"><em>ability</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>score</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Generates the ability scores for the fighter. </p>
+<p>Sets the ability score modifiers for the fighter. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Symbol Documentation</h2>
+<a id="a25fd04cdc6b67d272fdae524a0013842" name="a25fd04cdc6b67d272fdae524a0013842"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25fd04cdc6b67d272fdae524a0013842">&#9670;&#160;</a></span>BullyFighterBuilder</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="class_bully_fighter_builder.html">BullyFighterBuilder</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa7b245f3a3aa9bf949a05b17945c501e" name="aa7b245f3a3aa9bf949a05b17945c501e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7b245f3a3aa9bf949a05b17945c501e">&#9670;&#160;</a></span>FighterBuilder</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="class_fighter_builder.html">FighterBuilder</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7f51d1502fc3545da39168fe2ec27d9a" name="a7f51d1502fc3545da39168fe2ec27d9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f51d1502fc3545da39168fe2ec27d9a">&#9670;&#160;</a></span>NimbleFighterBuilder</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="class_nimble_fighter_builder.html">NimbleFighterBuilder</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a34292d271836c4dde6fc0e6c6353b1a3" name="a34292d271836c4dde6fc0e6c6353b1a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34292d271836c4dde6fc0e6c6353b1a3">&#9670;&#160;</a></span>TankFighterBuilder</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="class_tank_fighter_builder.html">TankFighterBuilder</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a82138f381c86fa8afb2d79b1d218ac2d" name="a82138f381c86fa8afb2d79b1d218ac2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82138f381c86fa8afb2d79b1d218ac2d">&#9670;&#160;</a></span>fighterType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a4ca2bb044a13bbd40fdd2a5f018ecae9">FighterType</a> Fighter::fighterType</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The type of fighter. Can be BULLY, NIMBLE, or TANK. </p>
 
 </div>
 </div>

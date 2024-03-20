@@ -15,11 +15,15 @@
 #include <iostream>
 #include <vector>
 #include "cell.h"
+#include "../Observer/Observable.h"
+#include "../Character/Character.h"
+class Character;  // Forward declaration
 class dungeonMap:public Observable
 {
     friend class cell; ///< Allows cell class to access private members of dungeonMap.
     friend class MapTest; ///< Allows MapTest full access to dungeonMap's private members.
 public:
+    std::map<Character*, std::pair<int, int>> playerPositions;
     /**
      * @brief Default constructor.
      */
@@ -151,7 +155,7 @@ public:
     cell getCell(int row, int col) const;
     int getEndX();
     int getEndY();
-    void movePlayer(int direction); //1=up 2=down 3=left 4=right
+    void movePlayer(Character *player,int direction); //1=up 2=down 3=left 4=right
 private:
    
     vector<vector<cell>> dungeon; ///< 2D vector of cells representing the dungeon layout.
@@ -169,7 +173,7 @@ private:
     void addWallInteraction(); ///< Helper function for wall addition interaction.
     void removeWallInteraction(); ///< Helper function for wall removal interaction.
     void getWallCoordinates(int& x, int& y); ///< Prompts user for wall coordinates.
-    bool isValidRow(int row) const; ///< Validates row index.
+    bool isValidRow(int row) const; ///< Valiådates row index.
     bool isValidCol(int col) const; ///< Validates column index.
     bool isValidLocation(int row, int col); ///< Validates if a location can be modified.
     void addWallChoice(int* x, int* y); ///< Interactively allows adding a wall.

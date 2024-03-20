@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['parsedie_0',['parseDie',['../class_dice.html#ad11d882fd5b27d53ef927a7d8a9f9325',1,'Dice']]],
-  ['parseroll_1',['parseRoll',['../class_dice.html#aa7ec1a35d7132d3dec12afa4a905e07d',1,'Dice']]],
-  ['printmap_2',['printMap',['../classdungeon_map.html#a6cc5aebe4a6554dffad1ce8f0c329860',1,'dungeonMap']]],
-  ['printstats_3',['printStats',['../class_item.html#aebb8bb531798a53468a8776a209f4fae',1,'Item']]]
+  ['levelup_0',['levelUp',['../class_character.html#aaaffb44b62eb70df0e545700c6011210',1,'Character']]],
+  ['loadcampaign_1',['loadCampaign',['../class_campaign_editor.html#a42c5fb5cee4a91db86bc73fecf9dd0a2',1,'CampaignEditor']]],
+  ['loadmap_2',['loadMap',['../class_map_editor.html#ae3e14ccb54a875f42d64b3d4490aad9e',1,'MapEditor']]]
 ];

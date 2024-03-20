@@ -6,6 +6,7 @@
 
 #include <utility>
 #include "../Dice/Dice.h"
+#include "../Strategy/CharacterStrategy/CharacterStrategy.h"
 
 
 
@@ -267,6 +268,13 @@ void Character::levelUp() {
     stats[HP] += dice.roll("1d10") + getAbilityModifier(Constitution);
     stats[AB] ++;
     notify();
+}
+
+void Character::move(dungeonMap &map) {
+    strategy->move(this, map);
+}
+void Character::setStrategy(CharacterStrategy *str) {
+    this->strategy = str;
 }
 
 

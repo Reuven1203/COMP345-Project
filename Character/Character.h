@@ -15,9 +15,10 @@
 #include <array>
 #include <map>
 #include "../Dice/Dice.h" // Dice class for rolling dice
+#include "../Dice/Dice.h" // Dice class for rolling dice
 #include "../Item/Item.h" // Item class for managing items
 #include "../Observer/Observable.h"
-
+#include "../Strategy/CharacterStrategy/CharacterStrategy.h"
 /**
  * @class Character
  * @brief The Character class represents an entity in the game with various attributes and behaviors.
@@ -25,6 +26,8 @@
  * Characters have abilities, levels, stats, and can equip items to modify their attributes.
  * This class provides the basic functionality for managing a character's attributes and equipment.
  */
+ class CharacterStrategy;
+class dungeonMap;
 class Character : public Observable {
     friend class CharacterTest; ///< Allows CharacterTest class to access private and protected members for testing purposes.
     friend class MapBuilder;
@@ -179,6 +182,10 @@ public:
 
     void levelUp();
 
+    void move(dungeonMap& map);
+
+    void setStrategy(CharacterStrategy* strategy);
+
 protected:
 
     int currentHP{}; ///< Current hit points of the character.
@@ -221,7 +228,7 @@ private:
     std::string name; ///< Character's name.
     ///< Scores for the character's abilities.
     std::array<int, 6> abilityModifiers{}; ///< Modifiers derived from the ability scores.
-
+    CharacterStrategy* strategy = nullptr;
     /**
      * @brief Generates random ability scores for the character.
      *
