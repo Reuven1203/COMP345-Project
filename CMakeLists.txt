@@ -12,49 +12,45 @@ find_package(CppUnit REQUIRED)
 include_directories(${CPPUNIT_INCLUDE_DIRS})
 
 
-# Common source files
+# Automatically include all .cpp and .h files from the specified directories
+file(GLOB_RECURSE CHARACTER_SOURCES "Character/*.cpp" "Character/*.h")
+file(GLOB_RECURSE DICE_SOURCES "Dice/*.cpp" "Dice/*.h")
+file(GLOB_RECURSE ITEM_SOURCES "Item/*.cpp" "Item/*.h")
+file(GLOB_RECURSE MAP_SOURCES "Map/*.cpp" "Map/*.h")
+file(GLOB_RECURSE OBSERVER_SOURCES "Observer/*.cpp" "Observer/*.h")
+file(GLOB_RECURSE UTILS_SOURCES "Utils/*.cpp" "Utils/*.h")
+file(GLOB_RECURSE BUILDER_SOURCES "Builder/*.cpp" "Builder/*.h")
+file(GLOB_RECURSE DIRECTOR_SOURCES "Director/*.cpp" "Director/*.h")
+file(GLOB_RECURSE STRATEGY_SOURCES "Strategy/*.cpp" "Strategy/*.h")
+
+# Combine all sources
 set(COMMON_SOURCES
-        Character/Character.cpp
-        Character/Fighter.cpp
-        Dice/Dice.cpp
-        Item/Item.cpp
-        Item/itemContainer.cpp
-        Map/cell.cpp
-        Map/map.cpp
-        Observer/Observable.cpp
-        Observer/Observable.h
-        Observer/CharacterObserver/CharacterDisplay.cpp
-        Observer/CharacterObserver/CharacterDisplay.h
-        Utils/utils.cpp
-        Utils/utils.h
+        ${CHARACTER_SOURCES}
+        ${DICE_SOURCES}
+        ${ITEM_SOURCES}
+        ${MAP_SOURCES}
+        ${OBSERVER_SOURCES}
+        ${UTILS_SOURCES}
+        ${BUILDER_SOURCES}
+        ${DIRECTOR_SOURCES}
+        ${STRATEGY_SOURCES}
+
 )
 
 # Main application executable
 add_executable(A1-map
         ${COMMON_SOURCES}
         map-test.cpp
-        Observer/MapObserver/MapObserver.cpp
-        Observer/MapObserver/MapObserver.h
-        Builder/FighterBuilder/TankFighterBuilder/TankFighterBuilder.cpp
-        Builder/FighterBuilder/TankFighterBuilder/TankFighterBuilder.h
 )
 
 add_executable(FighterBuilder
         ${COMMON_SOURCES}
-        Builder/FighterBuilder/FighterBuilder.h
         FighterBuilderDriver.cpp
-        FighterBuilderDriver.cpp
-        Builder/FighterBuilder/BullyFighterBuilder/BullyFighterBuilder.cpp
-        Builder/FighterBuilder/BullyFighterBuilder/BullyFighterBuilder.h
-        Builder/FighterBuilder/FighterBuilder.cpp
-        Builder/FighterBuilder/NimbleFighterBuilder/NimbleFighterBuilder.cpp
-        Builder/FighterBuilder/NimbleFighterBuilder/NimbleFighterBuilder.h
-        Builder/FighterBuilder/TankFighterBuilder/TankFighterBuilder.cpp
-        Builder/FighterBuilder/TankFighterBuilder/TankFighterBuilder.h
-        Director/FighterDirector/FighterDirector.cpp
-        Director/FighterDirector/FighterDirector.h
-        Observer/CharacterObserver/FighterObserver.cpp
-        Observer/CharacterObserver/FighterObserver.h
+)
+
+add_executable(CharacterStrategyDriver
+        ${COMMON_SOURCES}
+        CharacterStrategyDriver.cpp
 )
 
 # Testing Others
@@ -69,36 +65,15 @@ add_executable(dice_run
 
 add_executable(MapBuilderTest
         ${COMMON_SOURCES}
-        Character/Character.h
-        Character/Fighter.h
         MapBuilderDriver.cpp
-        Map/map.cpp
-        Map/map.h
         MapSaves/testsave.csv
-        Builder/MapBuilder/DefaultMapBuilder.h
-        Director/MapDirector/MapDirector.h
-        Builder/MapBuilder/MapBuilder.cpp
-        Builder/MapBuilder/MapBuilder.h
-        Map/cell.cpp
-        Map/cell.h
 )
 
 add_executable(A2-MapEditor
         ${COMMON_SOURCES}
-        Character/Character.h
-        Character/Fighter.h
-        Map/map.cpp
-        Map/map.h
         CampaignEditor/MapEditor.h
         CampaignEditor/MapEditor.cpp
-        Map/cell.h
         MapEditorDriver.cpp
-        Observer/MapObserver/MapObserver.h
-        Observer/MapObserver/MapObserver.cpp
-        Builder/MapBuilder/MapBuilder.h
-        Builder/MapBuilder/MapBuilder.cpp
-        Director/MapDirector/MapDirector.h
-        Builder/MapBuilder/DefaultMapBuilder.h
 )
 
 add_executable(A2-Campaign
@@ -110,10 +85,6 @@ add_executable(A2-Campaign
         CampaignEditor/CampaignEditor.h
         CampaignEditor/MapEditor.h
         CampaignEditor/MapEditor.cpp
-        Builder/MapBuilder/MapBuilder.h
-        Builder/MapBuilder/MapBuilder.cpp
-        Director/MapDirector/MapDirector.h
-        Builder/MapBuilder/DefaultMapBuilder.h
 )
 
 # Enable testing
@@ -141,8 +112,6 @@ add_executable(
 add_executable(CharacterObserver
         ${COMMON_SOURCES}
         CharacterObserverDriver.cpp
-        Observer/CharacterObserver/FighterObserver.cpp
-        Observer/CharacterObserver/FighterObserver.h
 )
 # Link the CppUnit library
 target_link_libraries(COMP345_A1_Tests ${CPPUNIT_LIBRARIES})

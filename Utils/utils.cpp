@@ -61,7 +61,7 @@ int keyPress() {
     }
 
     tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
-    std::cout << ch << std::endl;
+//    std::cout << ch << std::endl;
     return ch;
 }
 

@@ -1,20 +1,6 @@
 var searchData=
 [
-  ['setcelltype_0',['setCellType',['../classcell.html#ae4ddef4c7ef81852e1d260ba8a0a5572',1,'cell']]],
-  ['setchest_1',['setChest',['../classcell.html#a92e910cf0202820ad4f2df6c08a15853',1,'cell::setChest()'],['../classdungeon_map.html#aaa80f16f18601d94888c2c92227a1a17',1,'dungeonMap::setChest()']]],
-  ['setcolpos_2',['setColPos',['../classcell.html#aced1077a44dafd58114bf42fe735eff6',1,'cell']]],
-  ['setend_3',['setEnd',['../classdungeon_map.html#ab551620665275076f6303cc3515dac0c',1,'dungeonMap']]],
-  ['setequipstats_4',['setEquipStats',['../class_item.html#a82f73245020e5fa99b684b10a58038fb',1,'Item']]],
-  ['setequiptype_5',['setEquipType',['../class_item.html#ab8e979a96cf06215e1e66c88d7a6d6ad',1,'Item']]],
-  ['setplayer_6',['setPlayer',['../classcell.html#a72a10273f9f4dc89e6b27e12aa164501',1,'cell::setPlayer()'],['../classdungeon_map.html#aeca6af6bcd268e1ed8131da8f679f2aa',1,'dungeonMap::setPlayer()']]],
-  ['setrowpos_7',['setRowPos',['../classcell.html#a190ba218acc2d5798781f3219bcb76cf',1,'cell']]],
-  ['setstart_8',['setStart',['../classdungeon_map.html#a9c254a1956a8e91b29bdc0e6e985e802',1,'dungeonMap']]],
-  ['setup_9',['setUp',['../class_character_test.html#ac6e2545f8e23b7eab656943c16ba634c',1,'CharacterTest::setUp()'],['../class_fighter_test.html#a7857b0dd9da30ea8ef688956e683144b',1,'FighterTest::setUp()'],['../class_dice_test.html#ae6ed2a54d9536eaf6604c66602d255b2',1,'DiceTest::setUp()'],['../class_item_test.html#a13ad46c14f9f3219de4087ea56eea1a5',1,'ItemTest::setUp()'],['../class_cell_test.html#aa6886375c34f9018bf686b54cb052dd2',1,'CellTest::setUp()'],['../class_map_test.html#ada6cb55f4ce75dc2316794f004a712b9',1,'MapTest::setUp()']]],
-  ['setvisit_10',['setVisit',['../classcell.html#aaf67693ed84047e2d8b2672ac69f87b0',1,'cell']]],
-  ['setwall_11',['setWall',['../classcell.html#a893cbe18bdee6b7524a3aeb7b8f8d623',1,'cell::setWall()'],['../classdungeon_map.html#a51f74f974a199ff36436880d2785388a',1,'dungeonMap::setWall()']]],
-  ['showcharacterstats_12',['showCharacterStats',['../class_character.html#a3caa2fa1be51737fa682e1634151828c',1,'Character']]],
-  ['showwornitems_13',['showWornItems',['../class_character.html#a087c2ae6cb50f358dc2955f6c27a9351',1,'Character']]],
-  ['storeitem_14',['storeItem',['../classcontainer.html#aa8d08e0d1968e6189d2ab7526e734397',1,'container']]],
-  ['stringtoenum_15',['stringToEnum',['../class_character.html#af625dc801ad5f2672fcdb8c78a623a53',1,'Character']]],
-  ['stringtoenumstats_16',['stringToEnumStats',['../class_character.html#a56a1a6de9c6d8fb8842407890040573a',1,'Character']]]
+  ['nextmap_0',['nextMap',['../class_campaign.html#a3f04c227bc7e692f95824ce168576697',1,'Campaign']]],
+  ['nimblefighterbuilder_1',['NimbleFighterBuilder',['../class_nimble_fighter_builder.html#a5a42c80d4e15f636c43eae938315d9a5',1,'NimbleFighterBuilder::NimbleFighterBuilder()'],['../class_nimble_fighter_builder.html#a1986928820e3545229319c0609288b40',1,'NimbleFighterBuilder::NimbleFighterBuilder(string name, int level)']]],
+  ['notify_2',['notify',['../class_observable.html#a099bf851e05bb8c1a25e83f2a1389e58',1,'Observable']]]
 ];

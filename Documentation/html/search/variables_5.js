@@ -1,12 +1,9 @@
 var searchData=
 [
-  ['info_5farch_0',['info_arch',['../_c_make_c_compiler_id_8c.html#a59647e99d304ed33b15cb284c27ed391',1,'info_arch:&#160;CMakeCCompilerId.c'],['../_c_make_c_x_x_compiler_id_8cpp.html#a59647e99d304ed33b15cb284c27ed391',1,'info_arch:&#160;CMakeCXXCompilerId.cpp']]],
-  ['info_5fcompiler_1',['info_compiler',['../_c_make_c_compiler_id_8c.html#a4b0efeb7a5d59313986b3a0390f050f6',1,'info_compiler:&#160;CMakeCCompilerId.c'],['../_c_make_c_x_x_compiler_id_8cpp.html#a4b0efeb7a5d59313986b3a0390f050f6',1,'info_compiler:&#160;CMakeCXXCompilerId.cpp']]],
-  ['info_5flanguage_5fextensions_5fdefault_2',['info_language_extensions_default',['../_c_make_c_compiler_id_8c.html#a0f46a8a39e09d9b803c4766904fd7e99',1,'info_language_extensions_default:&#160;CMakeCCompilerId.c'],['../_c_make_c_x_x_compiler_id_8cpp.html#a0f46a8a39e09d9b803c4766904fd7e99',1,'info_language_extensions_default:&#160;CMakeCXXCompilerId.cpp']]],
-  ['info_5flanguage_5fstandard_5fdefault_3',['info_language_standard_default',['../_c_make_c_compiler_id_8c.html#a4607cccf070750927b458473ca82c090',1,'info_language_standard_default:&#160;CMakeCCompilerId.c'],['../_c_make_c_x_x_compiler_id_8cpp.html#a4607cccf070750927b458473ca82c090',1,'info_language_standard_default:&#160;CMakeCXXCompilerId.cpp']]],
-  ['info_5fplatform_4',['info_platform',['../_c_make_c_compiler_id_8c.html#a2321403dee54ee23f0c2fa849c60f7d4',1,'info_platform:&#160;CMakeCCompilerId.c'],['../_c_make_c_x_x_compiler_id_8cpp.html#a2321403dee54ee23f0c2fa849c60f7d4',1,'info_platform:&#160;CMakeCXXCompilerId.cpp']]],
-  ['intelligence_5',['intelligence',['../class_item.html#a7263d056be7c7e490695c8f9e58a0a62',1,'Item']]],
-  ['item_6',['item',['../class_item_test.html#a84186065415edce991aae6e739671f62',1,'ItemTest']]],
-  ['itemname_7',['itemName',['../class_item.html#a17b15dc1e47ddba7e5c98476aeae98a6',1,'Item']]],
-  ['itemoverall_8',['itemOverall',['../class_item.html#af5b78a340e4490cbd89c5781a138fafd',1,'Item']]]
+  ['enchantmentmodifier_0',['enchantmentModifier',['../class_item.html#a5866b44b63816265e197389f707ffe7b',1,'Item']]],
+  ['end_1',['end',['../classdungeon_map.html#a10ada3e5e257d9070cd2b7bfdefd65b4',1,'dungeonMap']]],
+  ['endpos_2',['endPos',['../struct_map_info.html#ad73d7e437112d3832bc73f52547081fb',1,'MapInfo']]],
+  ['endx_3',['endX',['../classdungeon_map.html#afc9b5d7fc69a73d9c5aaccafed9c0727',1,'dungeonMap']]],
+  ['endy_4',['endY',['../classdungeon_map.html#a89c6e436c2eb556abe2b25f91e8dd2ca',1,'dungeonMap']]],
+  ['equiptype_5',['equipType',['../class_item.html#a6a42b85897da5e73a5913404790e33e0',1,'Item']]]
 ];

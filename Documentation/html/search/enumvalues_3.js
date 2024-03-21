@@ -8,5 +8,6 @@ var searchData=
   ['d6_5',['d6',['../_dice_8h.html#a230fe26a49ff11b10bb851e08f88d9d4ac04c128e4a3fa6eb2850cc348db6a002',1,'Dice.h']]],
   ['d8_6',['d8',['../_dice_8h.html#a230fe26a49ff11b10bb851e08f88d9d4a164ca6aa6a6622ac091ca25cc5bc3cf4',1,'Dice.h']]],
   ['db_7',['DB',['../class_character.html#ac972d17bc509adbc4144b18fde09a814af945add5d91299ea3f36fd3c6721748b',1,'Character']]],
-  ['dexterity_8',['Dexterity',['../class_character.html#ac375a6d6120ce429749a78bb15e1d402a039993368e103d9c94bfcc64075a8589',1,'Character']]]
+  ['dexterity_8',['Dexterity',['../class_character.html#ac375a6d6120ce429749a78bb15e1d402a039993368e103d9c94bfcc64075a8589',1,'Character']]],
+  ['down_9',['DOWN',['../class_character_strategy.html#acf59c73d136885d37114349baf274938ac0cbfb58c1b4889fc8cdd8e8e3498e6b',1,'CharacterStrategy']]]
 ];
