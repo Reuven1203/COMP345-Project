@@ -13,8 +13,13 @@ class dungeonMap;
 class CharacterStrategy {
 public:
     virtual void move(Character *player, dungeonMap& map) = 0;
-    virtual void attack() = 0;
-    virtual void freeAction() = 0;
+    static inline bool isAdjacent(int sourceX, int sourceY, int targetX, int targetY) {
+        return (sourceX == targetX && sourceY == targetY + 1) || (sourceX == targetX && sourceY == targetY - 1) ||
+               (sourceX == targetX + 1 && sourceY == targetY) || (sourceX == targetX - 1 && sourceY == targetY);
+    }
+
+    virtual void attack(Character *source, Character *target) = 0;
+
 };
 
 

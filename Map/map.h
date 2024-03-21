@@ -156,21 +156,25 @@ public:
     int getEndX();
     int getEndY();
     void movePlayer(Character *player,int direction); //1=up 2=down 3=left 4=right
-private:
-   
+    void setUserPlayer(Character *player);
+    Character* getUserPlayer();
+    bool dfs(int row, int col, int targetRow, int targetCol, std::vector<std::pair<int, int>>& path); ///< Performs depth-first search for path validation.
+    bool dfs(int row, int col, int targetRow, int targetCol); ///< Performs depth-first search for path validation.
     vector<vector<cell>> dungeon; ///< 2D vector of cells representing the dungeon layout.
+private:
     int rows; ///< Number of rows in the dungeon.
     int cols; ///< Number of columns in the dungeon.
     cell* start{}; ///< Pointer to the starting cell.
     cell* end{}; ///< Pointer to the ending cell.
     int startX{}, startY{}; ///< Coordinates of the starting point.
     int endX{}, endY{}; ///< Coordinates of the ending point.
+    Character *userPlayer;
     bool wallDetect(int x, int y);
     bool chestDetect(int x, int y);
     bool playerDetect(int x, int y);
+    static void interactWithChest(Character *player, container *chest);
     bool isStart(cell* cell) const; ///< Checks if a cell is the start point.
     bool isEnd(cell* cell) const; ///< Checks if a cell is the end point.
-    bool dfs(int row, int col); ///< Performs depth-first search for path validation.
     void addWallInteraction(); ///< Helper function for wall addition interaction.
     void removeWallInteraction(); ///< Helper function for wall removal interaction.
     void getWallCoordinates(int& x, int& y); ///< Prompts user for wall coordinates.

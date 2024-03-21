@@ -197,7 +197,6 @@ int Character::initializeHitPoints() {
     std::string levelString = std::to_string(level-1);
     return baseHP + dice.roll(levelString + 'd' + std::to_string(getDieType())+ '+' + std::to_string(getAbilityModifier(Constitution) * (level-1)));
 }
-
 int Character::initializeProficiencyBonus() const {
     if(level < 5) {
         return 2;
@@ -275,6 +274,23 @@ void Character::move(dungeonMap &map) {
 }
 void Character::setStrategy(CharacterStrategy *str) {
     this->strategy = str;
+}
+
+CharacterStrategy *Character::getStrategy() const {
+    return strategy;
+}
+
+void Character::setCurrentHP(int hp) {
+    currentHP = hp;
+    notify();
+}
+
+int Character::getCurrentHP() const {
+    return currentHP;
+}
+
+void Character::attack(Character *target) {
+    strategy->attack(this, target);
 }
 
 

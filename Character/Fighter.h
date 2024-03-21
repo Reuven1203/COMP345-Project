@@ -35,6 +35,12 @@ public:
         NIMBLE,
         TANK
     };
+
+    /**
+     * @brief Default constructor.
+     */
+    Fighter() = default;
+
     /**
      * @brief Constructs a Fighter object.
      * @param name The name of the fighter.

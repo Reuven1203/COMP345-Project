@@ -11,9 +11,7 @@
 class HumanPlayerStrategy: public CharacterStrategy{
 public:
     void move(Character *player, dungeonMap& map) override;
-    void attack() override;
-    void freeAction() override;
-
+    void attack(Character *source, Character *target) override;
 };
 
 

@@ -15,6 +15,7 @@
 #include "map.h"
 #include "cell.h"
 #include "../Utils/utils.h"
+#include "../Strategy/CharacterStrategy/HumanPlayerStrategy/HumanPlayerStrategy.h"
 
 
 using namespace std;
@@ -98,6 +99,13 @@ void dungeonMap::removeWall(int x, int y)
  */
 void dungeonMap::setPlayer(Character* player, int x, int y)
 {
+    //check if player exists in the dungeon, if so then move the player to that location
+    if (playerPositions.find(player) != playerPositions.end())
+    {
+        int oldX = playerPositions[player].first;
+        int oldY = playerPositions[player].second;
+        dungeon[oldX][oldY].removeContent();
+    }
     if (isValidRow(x) && isValidCol(y) && !wallDetect(x, y)) {
         dungeon[x][y].setCellType(Player);
         dungeon[x][y].setPlayer(player);
@@ -366,22 +374,29 @@ void dungeonMap::printMap()
 *@retun True if the path exists, otherwise false.
 */
 
-bool dungeonMap::dfs(int row, int col)
-{
+bool dungeonMap::dfs(int startX, int startY, int endX, int endY) {
+    //dummy path
+    std::vector<std::pair<int, int>> path;
+   return dfs(startX, startY, endX, endY, path);
+}
 
-    if (row < 0 || col < 0 || row >= rows || col >= cols || dungeon[row][col].checkVisit() || dungeon[row][col].getCellType() == Wall)
+bool dungeonMap::dfs(int row, int col, int targetRow, int targetCol, std::vector<std::pair<int, int>>& path)
+{
+    if (row < 0 || col < 0 || row >= rows || col >= cols || dungeon[row][col].checkVisit() || dungeon[row][col].getCellType() == Wall )
     {
         return false;
     }
-    if (isEnd(&dungeon[row][col])) {
+    if (row == targetRow && col == targetCol) {
+        path.emplace_back(row, col);
         return true;
     }
     dungeon[row][col].setVisit();
-    if (dfs(row + 1, col) ||
-        dfs(row - 1, col) ||
-        dfs(row, col + 1) ||
-        dfs(row, col - 1))
+    if (dfs(row + 1, col,targetRow, targetCol, path) ||
+        dfs(row - 1, col, targetRow, targetCol, path) ||
+        dfs(row, col + 1, targetRow, targetCol, path) ||
+        dfs(row, col - 1, targetRow, targetCol, path))
     {
+        path.emplace_back(row, col);
         return true;
     }
     return false;
@@ -392,7 +407,7 @@ bool dungeonMap::dfs(int row, int col)
  */
 bool dungeonMap::isValid()
 {
-    bool valid = dfs(startX, startY);
+    bool valid = dfs(startX, startY, endX, endY);
     clearCellVisit();
     return valid;
 }
@@ -542,6 +557,19 @@ void dungeonMap::removeCellContent(int x, int y) {
  * If either condition is not met, the function returns without moving the player.
  * Otherwise, the player is moved to the new location, and any game state updates are performed.
  */
+ void dungeonMap::interactWithChest(Character* player, container *chestTemp){
+    chestTemp->getItems();
+    cout << "-------------Item details--------------" << "\n\n";
+    chestTemp->getItemStats();
+
+    int choice;
+    cout << "Select which item(number) to obtain: ";
+    cin >> choice;
+    player->equip(chestTemp->removeItemFromChest(choice));
+    player->showWornItems();
+    cout << "Press any key to continue...." << endl;
+    keyPress();
+ }
 void dungeonMap::movePlayer(Character* player, int direction) {
     int playerX = playerPositions[player].first;
     int playerY = playerPositions[player].second;
@@ -573,19 +601,10 @@ void dungeonMap::movePlayer(Character* player, int direction) {
 
     // Check for a chest at the new position
     if (chestDetect(newX, newY)) {
-        cout << "*************Chest found!**************" << endl;
-        container* chestTemp = dungeon[newX][newY].getChest();
-        chestTemp->getItems();
-        cout << "-------------Item details--------------" << "\n\n";
-        chestTemp->getItemStats();
-
-        int choice;
-        cout << "Select which item(number) to obtain: ";
-        cin >> choice;
-        player->equip(chestTemp->removeItemFromChest(choice));
-        player->showWornItems();
-        cout << "Press any key to continue...." << endl;
-        keyPress();
+        if(dynamic_cast<HumanPlayerStrategy*>(player->getStrategy()) != nullptr){
+            cout << "*************Chest found!**************" << endl;
+            interactWithChest(player, dungeon[newX][newY].getChest());
+        }
     }else if(playerDetect(newX, newY)){
         cout << "*************Player found!**************" << endl;
         cout << "Press any key to continue...." << endl;
@@ -615,6 +634,16 @@ vector<int> dungeonMap::getWalls() {
     }
     return wallCoordinates;
 }
+
+void dungeonMap::setUserPlayer(Character *player) {
+    userPlayer = player;
+}
+
+Character* dungeonMap::getUserPlayer() {
+    return this->userPlayer;
+
+}
+
 
 
 

@@ -7,8 +7,11 @@
 #include "./Map/map.h"
 #include "./Observer/MapObserver/MapObserver.h"
 #include "./Strategy/CharacterStrategy/HumanPlayerStrategy/HumanPlayerStrategy.h"
+#include "./Strategy/CharacterStrategy/AggressorStrategy/AggressorStrategy.h"
+#include "./Strategy/CharacterStrategy/FriendlyStrategy/FriendlyStrategy.h"
 #include "Director/FighterDirector/FighterDirector.h"
 #include "./Builder/FighterBuilder/BullyFighterBuilder/BullyFighterBuilder.h"
+
 #include "./Utils/utils.h"
 
 
@@ -21,11 +24,16 @@ int main() {
     BullyFighterBuilder builder;
     director.setBuilder(&builder);
     Fighter* fighter = director.constructFighter("Bully");
-    Fighter* fighter2 = director.constructFighter("Bully");
+    m->setUserPlayer(fighter);
+    Fighter* fighter2 = director.constructFighter("Bully 2");
+    Fighter* fighter3 = director.constructFighter("Bully 3");
     fighter->setStrategy(new HumanPlayerStrategy());
+    fighter2->setStrategy(new AggressorStrategy());
+    fighter3->setStrategy(new FriendlyStrategy());
     m->setStart(1, 2);
-    m->setPlayer(fighter,1, 2);
+    m->setPlayer(fighter,m->getStartX(), m->getStartY());
     m->setPlayer(fighter2, 4, 4);
+    m->setPlayer(fighter3, 5, 5);
     m->setWall(0, 8);
     auto* chest1 = new container();
     auto* chest2 = new container();
@@ -36,10 +44,9 @@ int main() {
     m->setChest(chest1,3,3);
     m->setChest(chest2, 8, 8);
     m->notify();
-    int ch = 0;
-    while(true) {
-       fighter->move(*m);
-    }
+    fighter->move(*m);
+    fighter2->move(*m);
+    fighter3->move(*m);
 
 
 

@@ -10,11 +10,8 @@
 
 class AggressorStrategy: public CharacterStrategy{
 public:
-//    void move(dungeonMap& map) override;
-//    void attack() override;
-
-
-
+    void move(Character *aggressor,dungeonMap& map) override;
+    void attack(Character* source, Character *target) override;
 };
 
 

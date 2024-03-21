@@ -40,6 +40,12 @@ public:
         AB, ///< Attack Bonus
         DB  ///< Damage Bonus
     };
+
+    /**
+     * @brief Default constructor.
+     */
+    Character() = default;
+
     /**
      * @brief Constructor that initializes a character with a name and level.
      * @param name The name of the character.
@@ -185,7 +191,10 @@ public:
     void move(dungeonMap& map);
 
     void setStrategy(CharacterStrategy* strategy);
-
+    CharacterStrategy *getStrategy() const;
+    void setCurrentHP(int hp);
+    int getCurrentHP() const;
+    void attack(Character* target);
 protected:
 
     int currentHP{}; ///< Current hit points of the character.
