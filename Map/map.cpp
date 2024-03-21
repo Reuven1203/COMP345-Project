@@ -293,6 +293,12 @@ int dungeonMap::getEndY()
 {
     return endY;
 }
+
+SubjectType dungeonMap::getType()
+{
+    return SubjectType::map;
+}
+
 /**
  * @brief Prints the current state of the dungeon map.
  */

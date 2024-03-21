@@ -6,7 +6,7 @@
 #define COMP345_A1_OBSERVABLE_H
 #include <list>
 #include "Observer.h"
-
+#include "../Utils/utils.h"
 /**
  * @file Observable.h
  * @brief Declaration of the Observable class as part of the Observer design pattern.
@@ -29,6 +29,7 @@ class Observable {
     std::list<Observer*> observers; ///< List of pointers to Observer objects.
 
 public:
+    
     /**
      * @brief Attaches an observer to the observable object.
      *
@@ -46,13 +47,16 @@ public:
      * @param observer Pointer to the Observer to be detached.
      */
     void detach(Observer* observer);
-
+    
+    virtual SubjectType getType();
 /**
  * @brief Notifies all attached observers of a change.
  *
  * Calls the update method on all attached observers, indicating that something has changed in the observable.
  */
+
 void notify();
+void notifyGameObserver();
 };
 
 #endif //COMP345_A1_OBSERVABLE_H

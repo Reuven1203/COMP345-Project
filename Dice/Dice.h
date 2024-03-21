@@ -10,7 +10,7 @@
 
 #include <string>
 #include "Random.h"
-
+#include "../Observer/Observable.h"
 /**
  * @brief Enum to represent different types of dice.
  */
@@ -30,7 +30,7 @@ struct Roll {
  * @brief Class for rolling dice.
  * This class provides functionality to roll dice based on a given roll string.
  */
-class Dice {
+class Dice:public Observable {
     friend class DiceTest; // For testing purposes
 private:
     /**
@@ -64,7 +64,7 @@ public:
      * Constructs a Dice object.
      */
     Dice() = default;
-
+    SubjectType getType();
     /**
      * @brief Roll dice based on the given roll string.
      *

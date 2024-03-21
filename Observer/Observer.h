@@ -4,7 +4,7 @@
 
 #ifndef COMP345_A1_OBSERVER_H
 #define COMP345_A1_OBSERVER_H
-
+#include "../Utils/utils.h"
 /**
  * @file Observer.h
  * @brief Declaration of the Observer class as part of the Observer design pattern.
@@ -24,8 +24,12 @@
  * a pure virtual update method that must be overridden by derived classes to define
  * how they should be updated.
  */
+
+
 class Observer {
 public:
+    
+
     /**
      * @brief Virtual destructor for the Observer class.
      *
@@ -40,6 +44,7 @@ public:
      * Concrete observers must override this method to specify how they should respond to these changes.
      */
     virtual void update() = 0;
+    virtual void update(Observable* ) = 0;
 };
 
 #endif //COMP345_A1_OBSERVER_H

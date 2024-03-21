@@ -129,3 +129,8 @@ int Dice::roll(std::string rollString) {
 bool Dice::checkIfNumber(char str){
     return str >= '0' && str <= '9';
 };
+
+SubjectType Dice::getType()
+{
+    return SubjectType::dice;
+}

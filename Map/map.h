@@ -147,7 +147,7 @@ public:
      */
 
     vector<int>getWalls();
-   
+    SubjectType getType();
     cell getCell(int row, int col) const;
     int getEndX();
     int getEndY();
