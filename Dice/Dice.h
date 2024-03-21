@@ -66,8 +66,6 @@ public:
     Dice() = default;
 
 
-    SubjectType getType();
-
 
     /**
      * @brief Roll dice based on the given roll string.

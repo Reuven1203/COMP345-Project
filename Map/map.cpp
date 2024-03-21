@@ -36,6 +36,8 @@ dungeonMap::dungeonMap(int x, int y) : rows(x), cols(y)
             dungeon[i][j].setColPos(j);
         }
     }
+    EventData event(EventData::EventType::MapCreated, x, y);
+    notifyGameObserver(event);
 }
 
 /**
@@ -50,6 +52,9 @@ void dungeonMap::setChest(container* chest, int x, int y)
     {
         dungeon[x][y].setCellType(Chest);
         dungeon[x][y].setChest(chest);
+        notify();
+        EventData event(EventData(EventData::EventType::ChestPlaced, x, y));
+        notifyGameObserver(event);
     }
     else
     {
@@ -67,6 +72,8 @@ void dungeonMap::setWall(int x, int y)
     if (dungeon[x][y].getCellType() == Nothing)
     {
         dungeon[x][y].setCellType(Wall);
+        EventData event(EventData::EventType::WallPlaced, x, y);
+        notifyGameObserver(event);
     }
     else
     {
@@ -84,6 +91,8 @@ void dungeonMap::removeWall(int x, int y)
     if (dungeon[x][y].getCellType() == Wall)
     {
         dungeon[x][y].setCellType(Nothing);
+        EventData event(EventData::EventType::WallRemoved, x, y);
+        notifyGameObserver(event);
     }
     else
     {
@@ -111,6 +120,9 @@ void dungeonMap::setPlayer(Character* player, int x, int y)
         dungeon[x][y].setPlayer(player);
         playerPositions[player] = std::make_pair(x, y);
         notify();
+        EventData event(EventData(EventData::EventType::PlayerPlaced, player->getName(), x, y));
+        notifyGameObserver(event);
+
     }
     else
     {
@@ -180,6 +192,7 @@ void dungeonMap::userInputWalls()
             addWallChoice(&wallCoordinateX, &wallCoordinateY);
             if(isValidLocation(wallCoordinateX, wallCoordinateY))
                 setWall(wallCoordinateX, wallCoordinateY);
+           
             if(!isValid()){
                 cout << "Invalid map, wall cannot be placed here." << endl;
                 removeWall(wallCoordinateX, wallCoordinateY);
@@ -192,6 +205,8 @@ void dungeonMap::userInputWalls()
         {
             cout << "Input coordinates to remove wall (-1) to exit" << endl;
             removeWallChoice(&wallCoordinateX, &wallCoordinateY);
+
+            
             break;
         }
         case (3):
@@ -216,6 +231,9 @@ void dungeonMap::setStart(int x, int y)
     }
     this->startY = y;
     this->startX = x;
+    EventData event(EventData(EventData::EventType::StartPointPlaced, x, y));
+    notifyGameObserver(event);
+ 
     //this->start = &dungeon[startX][startY];
 }
 /**
@@ -233,6 +251,9 @@ void dungeonMap::setEnd(int x, int y)
     this->endX = x;
     this->endY = y;
     this->end = &dungeon[endX][endY];
+    EventData event(EventData(EventData::EventType::EndPointPlaced, x, y));
+    notifyGameObserver(event);
+   
 }
 /**
  * @brief Retrieves the number of rows in the dungeon.
@@ -301,10 +322,7 @@ int dungeonMap::getEndY()
     return endY;
 }
 
-SubjectType dungeonMap::getType()
-{
-    return SubjectType::map;
-}
+
 
 /**
  * @brief Prints the current state of the dungeon map.
@@ -367,7 +385,7 @@ void dungeonMap::printMap()
         cout << "|" << endl;
     }
 
-    for (int row = 0; row < rows; row++)
+    for (int row = 0; row < cols; row++)
     {
         cout << setw(6) << row; // Matching the spacing for columns, adjust if necessary
     }
@@ -584,17 +602,33 @@ void dungeonMap::movePlayer(Character* player, int direction) {
     // Determine new position based on the direction
     switch (direction) {
         case 1: // Up
+        {
             newX--;
+            EventData event(EventData::EventType::PlayerMovedUp,player->getName(), newX, newY);
+            notifyGameObserver(event);
             break;
+        }
         case 2: // Down
+        {
             newX++;
+            EventData event(EventData::EventType::PlayerMovedDown, player->getName(), newX, newY);
+            notifyGameObserver(event);
             break;
+        }
         case 3: // Left
+        {
             newY--;
+            EventData event(EventData::EventType::PlayerMovedLeft, player->getName(), newX, newY);
+            notifyGameObserver(event);
             break;
+        }
         case 4: // Right
+        {
             newY++;
+            EventData event(EventData::EventType::PlayerMovedRight, player->getName(), newX, newY);
+            notifyGameObserver(event);
             break;
+        }
         default:
             return; // Invalid direction
     }

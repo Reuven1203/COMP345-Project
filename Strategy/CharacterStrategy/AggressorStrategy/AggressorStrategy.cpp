@@ -39,7 +39,15 @@ void AggressorStrategy::attack(Character *source, Character *target) {
         std::cout << "Attack hit!" << std::endl;
         int damage = dice.roll("1d6") + source->getStat(Character::Stats::DB);
         target->setCurrentHP(target->getCurrentHP() - damage);
+        
+       
+
+        EventData event(EventData::EventType::AttackedResult, "Attack Hit!", source->getName(),target->getName(), 2,target->getCurrentHP(),damage);
+        notifyGameObserver(event);
     } else {
+        EventData event(EventData::EventType::AttackedResult, "Attack Missed!", source->getName(),target->getName(), 2,target->getCurrentHP(),0);
+        notifyGameObserver(event);
+
         std::cout << "Attack missed!" << std::endl;
     }
 }

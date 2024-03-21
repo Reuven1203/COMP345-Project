@@ -107,10 +107,10 @@ public:
      */
     [[nodiscard]] int getStartY() const;
     
-    void setPlayerX(int x);
+   /* void setPlayerX(int x);
     void setPlayerY(int y);
     int getPlayerX() const;
-    int getPlayerY() const;
+    int getPlayerY() const;*/
 
 
     /**
@@ -151,7 +151,7 @@ public:
      */
 
     vector<int>getWalls();
-    SubjectType getType();
+ 
     cell getCell(int row, int col) const;
     int getEndX();
     int getEndY();

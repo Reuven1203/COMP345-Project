@@ -5,6 +5,7 @@
 #ifndef COMP345_A1_OBSERVER_H
 #define COMP345_A1_OBSERVER_H
 #include "../Utils/utils.h"
+#include "../Events/EventData.h"
 /**
  * @file Observer.h
  * @brief Declaration of the Observer class as part of the Observer design pattern.
@@ -45,7 +46,7 @@ public:
      * Concrete observers must override this method to specify how they should respond to these changes.
      */
     virtual void update() = 0;
-    virtual void update(Observable*)=0;
+    virtual void update(EventData&)=0;
 };
 
 #endif //COMP345_A1_OBSERVER_H

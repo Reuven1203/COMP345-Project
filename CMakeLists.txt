@@ -25,6 +25,7 @@ file(GLOB_RECURSE UTILS_SOURCES "Utils/*.cpp" "Utils/*.h")
 file(GLOB_RECURSE BUILDER_SOURCES "Builder/*.cpp" "Builder/*.h")
 file(GLOB_RECURSE DIRECTOR_SOURCES "Director/*.cpp" "Director/*.h")
 file(GLOB_RECURSE STRATEGY_SOURCES "Strategy/*.cpp" "Strategy/*.h")
+file(GLOB_RECURSE STRATEGY_SOURCES  "Events/*.h")
 
 # Combine all sources
 set(COMMON_SOURCES
@@ -50,6 +51,11 @@ add_executable(A1-map
 add_executable(FighterBuilder
         ${COMMON_SOURCES}
         FighterBuilderDriver.cpp
+)
+
+add_executable(GameObserverDriver
+	${COMMON_SOURCES}
+	GameObserverDriver.cpp
 )
 
 add_executable(CharacterStrategyDriver

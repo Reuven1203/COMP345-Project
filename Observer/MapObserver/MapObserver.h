@@ -13,7 +13,7 @@ public:
 	void moveCharacter();
 	void displayMap();
 	void update() override;
-	void update(Observable*) override {};
+	void update(EventData&) override { };
 	bool mapFinishedCheck();
 private:
 	dungeonMap* _subject{};

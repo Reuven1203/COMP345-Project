@@ -7,6 +7,7 @@
 #include <list>
 #include "Observer.h"
 #include "../Utils/utils.h"
+#include "../Events/EventData.h"
 /**
  * @file Observable.h
  * @brief Declaration of the Observable class as part of the Observer design pattern.
@@ -48,7 +49,7 @@ public:
      */
     void detach(Observer* observer);
     
-    virtual SubjectType getType();
+
 /**
  * @brief Notifies all attached observers of a change.
  *
@@ -56,7 +57,7 @@ public:
  */
 
 void notify();
-void notifyGameObserver();
+void notifyGameObserver(EventData&);
 };
 
 #endif //COMP345_A1_OBSERVABLE_H

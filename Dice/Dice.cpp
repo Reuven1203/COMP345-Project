@@ -121,7 +121,7 @@ int Dice::roll(std::string rollString) {
 
     // Add z to rolled total
     total += roll_guide.numAdded;
-
+   
     // Return final total
     return total;
 }
@@ -131,7 +131,3 @@ bool Dice::checkIfNumber(char str){
 };
 
 
-SubjectType Dice::getType()
-{
-    return SubjectType::dice;
-}

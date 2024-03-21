@@ -14,13 +14,15 @@
 #include <vector>
 #include <random>
 #include <map>
+#include "../Events/EventData.h"
+#include "../Observer/Observable.h"
 
 using namespace std;
 /**
 * @class Item
 * @brief Class representing an item that can be equipped by a character.
 */
-class Item
+class Item:public Observable
 {
 
 public:
@@ -51,7 +53,7 @@ public:
      *
      * @param itemtype The type of item to create.
      */
-    explicit Item(ItemType itemtype);
+    explicit Item(ItemType itemtype,Observer* log);
 /**
      * @brief Method to roll a random modifier for an item's stats.
      *
