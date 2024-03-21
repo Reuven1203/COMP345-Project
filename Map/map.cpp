@@ -651,5 +651,3 @@ Character* dungeonMap::getUserPlayer() {
 }
 
 
-
-

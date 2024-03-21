@@ -25,6 +25,7 @@
  * how they should be updated.
  */
 
+class Observable;
 
 class Observer {
 public:
@@ -44,7 +45,7 @@ public:
      * Concrete observers must override this method to specify how they should respond to these changes.
      */
     virtual void update() = 0;
-    virtual void update(Observable* ) = 0;
+    virtual void update(Observable*)=0;
 };
 
 #endif //COMP345_A1_OBSERVER_H

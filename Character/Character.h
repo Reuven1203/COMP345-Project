@@ -232,6 +232,9 @@ protected:
     std::map<Stats, int> stats;
 
     std::array<int, 6> abilityScore{};
+
+    SubjectType getType();
+
 private:
     explicit Character(std::string name, int level, const int abilityScores[6], int maxHp,int currentHp, std::map<Item::ItemType, Item> wornItems);
     std::string name; ///< Character's name.

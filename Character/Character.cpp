@@ -293,7 +293,10 @@ void Character::attack(Character *target) {
     strategy->attack(this, target);
 }
 
-
+SubjectType Character::getType()
+{
+    return SubjectType::character;
+}
 
 
 

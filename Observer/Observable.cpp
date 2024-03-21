@@ -30,3 +30,8 @@ void Observable::notifyGameObserver()
         }
     }
 }
+
+SubjectType Observable::getType()
+{
+    return SubjectType::none;
+}

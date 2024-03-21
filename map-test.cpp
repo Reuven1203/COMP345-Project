@@ -31,6 +31,6 @@ int main()
     m->setChest(chest1,3,3);
     m->setChest(chest2, 0, 0);
     m->userInputWalls();
-//    control->moveCharacter();
+    
     return 0;
 }
