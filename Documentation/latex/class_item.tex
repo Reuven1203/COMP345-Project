@@ -38,6 +38,24 @@ void \mbox{\hyperlink{class_item_ab8e979a96cf06215e1e66c88d7a6d6ad}{set\+Equip\+
 \begin{DoxyCompactList}\small\item\em Sets the equipment type of the item. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_item_a82f73245020e5fa99b684b10a58038fb}{set\+Equip\+Stats}} ()
 \begin{DoxyCompactList}\small\item\em Initializes or sets the statistics for the item based on its type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_item_a194e45978286c20093813e45beb12314}{set\+STR}} (int str)
+\item 
+void \mbox{\hyperlink{class_item_ad7c3589f69faa6176bd435c01a85283a}{set\+CON}} (int con)
+\item 
+void \mbox{\hyperlink{class_item_a11f045a02ef2863ba9ba11810f91dc95}{set\+INT}} (int intel)
+\item 
+void \mbox{\hyperlink{class_item_a2fe08de0c2a85b88299ca3c7c9dee656}{set\+WIS}} (int wis)
+\item 
+void \mbox{\hyperlink{class_item_a3a098c362ad1417dec844132659dbdb7}{set\+CHA}} (int cha)
+\item 
+void \mbox{\hyperlink{class_item_ada3c3873e3a940b625bf3e4735878b50}{set\+DEX}} (int dex)
+\item 
+void \mbox{\hyperlink{class_item_ac426724f02a45f3108fd72c1f214c38e}{set\+AC}} (int ac)
+\item 
+void \mbox{\hyperlink{class_item_a1ce11234c1cfd5de21ce4255084208f5}{set\+ATKBONUS}} (int atk)
+\item 
+void \mbox{\hyperlink{class_item_adb36afbfcd9f3ae8ec1c5df70d291cb4}{set\+DMGBonus}} (int dmg)
+\item 
 string \mbox{\hyperlink{class_item_a7c938dfc887d36be815acc94152fee80}{get\+Equip\+Type}} () const
 \begin{DoxyCompactList}\small\item\em Retrieves the equipment type as a string. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_item_ad1f359133a1a3b8958fc0a4900009333}{get\+STR}} ()
@@ -364,6 +382,42 @@ Uses a dice roll to generate a random number between 1 and 5 as the enchantment 
 \begin{DoxyReturn}{Returns}
 The enchantment modifier as an integer. 
 \end{DoxyReturn}
+\Hypertarget{class_item_ac426724f02a45f3108fd72c1f214c38e}\label{class_item_ac426724f02a45f3108fd72c1f214c38e} 
+\index{Item@{Item}!setAC@{setAC}}
+\index{setAC@{setAC}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{setAC()}{setAC()}}
+{\footnotesize\ttfamily void Item\+::set\+AC (\begin{DoxyParamCaption}\item[{int}]{ac }\end{DoxyParamCaption})}
+
+\Hypertarget{class_item_a1ce11234c1cfd5de21ce4255084208f5}\label{class_item_a1ce11234c1cfd5de21ce4255084208f5} 
+\index{Item@{Item}!setATKBONUS@{setATKBONUS}}
+\index{setATKBONUS@{setATKBONUS}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{setATKBONUS()}{setATKBONUS()}}
+{\footnotesize\ttfamily void Item\+::set\+ATKBONUS (\begin{DoxyParamCaption}\item[{int}]{atk }\end{DoxyParamCaption})}
+
+\Hypertarget{class_item_a3a098c362ad1417dec844132659dbdb7}\label{class_item_a3a098c362ad1417dec844132659dbdb7} 
+\index{Item@{Item}!setCHA@{setCHA}}
+\index{setCHA@{setCHA}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{setCHA()}{setCHA()}}
+{\footnotesize\ttfamily void Item\+::set\+CHA (\begin{DoxyParamCaption}\item[{int}]{cha }\end{DoxyParamCaption})}
+
+\Hypertarget{class_item_ad7c3589f69faa6176bd435c01a85283a}\label{class_item_ad7c3589f69faa6176bd435c01a85283a} 
+\index{Item@{Item}!setCON@{setCON}}
+\index{setCON@{setCON}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{setCON()}{setCON()}}
+{\footnotesize\ttfamily void Item\+::set\+CON (\begin{DoxyParamCaption}\item[{int}]{con }\end{DoxyParamCaption})}
+
+\Hypertarget{class_item_ada3c3873e3a940b625bf3e4735878b50}\label{class_item_ada3c3873e3a940b625bf3e4735878b50} 
+\index{Item@{Item}!setDEX@{setDEX}}
+\index{setDEX@{setDEX}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{setDEX()}{setDEX()}}
+{\footnotesize\ttfamily void Item\+::set\+DEX (\begin{DoxyParamCaption}\item[{int}]{dex }\end{DoxyParamCaption})}
+
+\Hypertarget{class_item_adb36afbfcd9f3ae8ec1c5df70d291cb4}\label{class_item_adb36afbfcd9f3ae8ec1c5df70d291cb4} 
+\index{Item@{Item}!setDMGBonus@{setDMGBonus}}
+\index{setDMGBonus@{setDMGBonus}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{setDMGBonus()}{setDMGBonus()}}
+{\footnotesize\ttfamily void Item\+::set\+DMGBonus (\begin{DoxyParamCaption}\item[{int}]{dmg }\end{DoxyParamCaption})}
+
 \Hypertarget{class_item_a82f73245020e5fa99b684b10a58038fb}\label{class_item_a82f73245020e5fa99b684b10a58038fb} 
 \index{Item@{Item}!setEquipStats@{setEquipStats}}
 \index{setEquipStats@{setEquipStats}!Item@{Item}}
@@ -389,6 +443,24 @@ Sets the equipment type of the item.
 {\em type} & The new type for the item. \\
 \hline
 \end{DoxyParams}
+\Hypertarget{class_item_a11f045a02ef2863ba9ba11810f91dc95}\label{class_item_a11f045a02ef2863ba9ba11810f91dc95} 
+\index{Item@{Item}!setINT@{setINT}}
+\index{setINT@{setINT}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{setINT()}{setINT()}}
+{\footnotesize\ttfamily void Item\+::set\+INT (\begin{DoxyParamCaption}\item[{int}]{intel }\end{DoxyParamCaption})}
+
+\Hypertarget{class_item_a194e45978286c20093813e45beb12314}\label{class_item_a194e45978286c20093813e45beb12314} 
+\index{Item@{Item}!setSTR@{setSTR}}
+\index{setSTR@{setSTR}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{setSTR()}{setSTR()}}
+{\footnotesize\ttfamily void Item\+::set\+STR (\begin{DoxyParamCaption}\item[{int}]{str }\end{DoxyParamCaption})}
+
+\Hypertarget{class_item_a2fe08de0c2a85b88299ca3c7c9dee656}\label{class_item_a2fe08de0c2a85b88299ca3c7c9dee656} 
+\index{Item@{Item}!setWIS@{setWIS}}
+\index{setWIS@{setWIS}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{setWIS()}{setWIS()}}
+{\footnotesize\ttfamily void Item\+::set\+WIS (\begin{DoxyParamCaption}\item[{int}]{wis }\end{DoxyParamCaption})}
+
 
 
 \doxysubsection{Member Data Documentation}

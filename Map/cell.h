@@ -14,7 +14,8 @@
 
 #include <iostream>
 #include "../Item/itemContainer.h"
-#include "../Character/Character.h"
+class Character;  // Forward declaration
+
 
  /**
   * @enum cellType

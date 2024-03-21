@@ -18,6 +18,15 @@ Inheritance diagram for Character\+:\begin{figure}[H]
 \doxysubsubsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
+enum \mbox{\hyperlink{class_character_ac972d17bc509adbc4144b18fde09a814}{Stats}} \{ \newline
+\mbox{\hyperlink{class_character_ac972d17bc509adbc4144b18fde09a814aacdd03fbf146ae0937547d7229e4b237}{HP}}
+, \mbox{\hyperlink{class_character_ac972d17bc509adbc4144b18fde09a814a29d0239ccdf81ca1851ea3a88daa603a}{PB}}
+, \mbox{\hyperlink{class_character_ac972d17bc509adbc4144b18fde09a814a6538c0adde2f27226f0bd7f078f92a2c}{AC}}
+, \mbox{\hyperlink{class_character_ac972d17bc509adbc4144b18fde09a814a3cc4d1a60b42ce91520888ec800c01f6}{AB}}
+, \newline
+\mbox{\hyperlink{class_character_ac972d17bc509adbc4144b18fde09a814af945add5d91299ea3f36fd3c6721748b}{DB}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enumerates the different stats a character can possess. \end{DoxyCompactList}\item 
 enum \mbox{\hyperlink{class_character_ac375a6d6120ce429749a78bb15e1d402}{Ability}} \{ \newline
 \mbox{\hyperlink{class_character_ac375a6d6120ce429749a78bb15e1d402aa490c397eb4162d21a50685377c163fd}{Strength}}
 , \mbox{\hyperlink{class_character_ac375a6d6120ce429749a78bb15e1d402a039993368e103d9c94bfcc64075a8589}{Dexterity}}
@@ -27,21 +36,14 @@ enum \mbox{\hyperlink{class_character_ac375a6d6120ce429749a78bb15e1d402}{Ability
 \mbox{\hyperlink{class_character_ac375a6d6120ce429749a78bb15e1d402acccd442e217f28399690abe6127ab3ee}{Wisdom}}
 , \mbox{\hyperlink{class_character_ac375a6d6120ce429749a78bb15e1d402a69347c021481a9bd4a34be445665ce38}{Charisma}}
  \}
-\begin{DoxyCompactList}\small\item\em Enumerates the different abilities a character can have. \end{DoxyCompactList}\item 
-enum \mbox{\hyperlink{class_character_ac972d17bc509adbc4144b18fde09a814}{Stats}} \{ \newline
-\mbox{\hyperlink{class_character_ac972d17bc509adbc4144b18fde09a814aacdd03fbf146ae0937547d7229e4b237}{HP}}
-, \mbox{\hyperlink{class_character_ac972d17bc509adbc4144b18fde09a814a29d0239ccdf81ca1851ea3a88daa603a}{PB}}
-, \mbox{\hyperlink{class_character_ac972d17bc509adbc4144b18fde09a814a6538c0adde2f27226f0bd7f078f92a2c}{AC}}
-, \mbox{\hyperlink{class_character_ac972d17bc509adbc4144b18fde09a814a3cc4d1a60b42ce91520888ec800c01f6}{AB}}
-, \newline
-\mbox{\hyperlink{class_character_ac972d17bc509adbc4144b18fde09a814af945add5d91299ea3f36fd3c6721748b}{DB}}
- \}
-\begin{DoxyCompactList}\small\item\em Enumerates the different stats a character can possess. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Enumerates the different abilities a character can have. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_character_a22d0e11a466d9915761a929b991f057e}{Character}} (std\+::string \mbox{\hyperlink{class_character_a6592c35167738421f3e04ca8808d37db}{name}}, int \mbox{\hyperlink{class_character_af15a478fe650b87f59cbe5d071697307}{level}})
 \begin{DoxyCompactList}\small\item\em Constructor that initializes a character with a name and level. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_character_a1225e6f5f16ab12fd0791e18568d51e7}{Character}} (std\+::string \mbox{\hyperlink{class_character_a6592c35167738421f3e04ca8808d37db}{name}}, int \mbox{\hyperlink{class_character_af15a478fe650b87f59cbe5d071697307}{level}}, const int ability\+Scores\mbox{[}6\mbox{]}, int max\+Hp, int current\+Hp)
+\item 
 std\+::string \mbox{\hyperlink{class_character_ad79f892fe576c7ef0804cad502d94517}{get\+Name}} () const
 \begin{DoxyCompactList}\small\item\em Gets the character\textquotesingle{}s name. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_character_a06713215a5850ec92194a1a711fb8cd7}{get\+Level}} () const
@@ -50,6 +52,8 @@ int \mbox{\hyperlink{class_character_a8e448101ce949905977f6a3c421172b1}{get\+Abi
 \begin{DoxyCompactList}\small\item\em Gets the score of a specific ability for the character. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_character_a1fdb0946af9cfe713785a88e06f20b34}{get\+Ability\+Modifier}} (\mbox{\hyperlink{class_character_ac375a6d6120ce429749a78bb15e1d402}{Ability}} ability) const
 \begin{DoxyCompactList}\small\item\em Gets the modifier for a specific ability for the character. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_character_a5f6fdca1d046e720f3016005f0b1b012}{set\+Name}} (const std\+::string \&n)
+\begin{DoxyCompactList}\small\item\em Changes the character\textquotesingle{}s name. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_character_a3caa2fa1be51737fa682e1634151828c}{show\+Character\+Stats}} () const
 \begin{DoxyCompactList}\small\item\em Displays the character\textquotesingle{}s stats to the standard output. \end{DoxyCompactList}\item 
 virtual std\+::string \mbox{\hyperlink{class_character_acbf3e5cddba034622dbbadfe742ba2d9}{get\+Class\+Name}} () const
@@ -61,46 +65,51 @@ void \mbox{\hyperlink{class_character_a96f3ff3409c036f66237c80cabfb6718}{unequip
 void \mbox{\hyperlink{class_character_a087c2ae6cb50f358dc2955f6c27a9351}{show\+Worn\+Items}} () const
 \begin{DoxyCompactList}\small\item\em Displays the items currently equipped by the character. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_character_a8638de4be3d350860ed4c5b9da042135}{get\+Stat}} (\mbox{\hyperlink{class_character_ac972d17bc509adbc4144b18fde09a814}{Stats}} \mbox{\hyperlink{class_character_a44f76b68965975ae1addd1c579d5a250}{stats}}) const
-\begin{DoxyCompactList}\small\item\em Gets the value of a specified stat for the character. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Gets the value of a specified stat for the character. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_character_aaaffb44b62eb70df0e545700c6011210}{level\+Up}} ()
+\begin{DoxyCompactList}\small\item\em Increases character\textquotesingle{}s level by 1. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_observable}{Observable}}}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{class_observable_a6efa28f8d9b8e5ab249533f684363a4f}{attach}} (\mbox{\hyperlink{class_observer}{Observer}} \texorpdfstring{$\ast$}{*}observer)
 \begin{DoxyCompactList}\small\item\em Attaches an observer to the observable object. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_observable_a242e67bc26e3934370e863af3c08d1cb}{detach}} (\mbox{\hyperlink{class_observer}{Observer}} \texorpdfstring{$\ast$}{*}observer)
-\begin{DoxyCompactList}\small\item\em Detaches an observer from the observable object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Detaches an observer from the observable object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_observable_a099bf851e05bb8c1a25e83f2a1389e58}{notify}} ()
+\begin{DoxyCompactList}\small\item\em Notifies all attached observers of a change. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 virtual \mbox{\hyperlink{_dice_8h_a230fe26a49ff11b10bb851e08f88d9d4}{Die\+Type}} \mbox{\hyperlink{class_character_aea131e1bce548f9e781af0dc5f4f29ce}{get\+Die\+Type}} () const
-\begin{DoxyCompactList}\small\item\em Returns the default die type used for hit points calculation. Can be overridden by derived classes. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_observable}{Observable}}}
-\begin{DoxyCompactItemize}
-\item 
-void \mbox{\hyperlink{class_observable_a099bf851e05bb8c1a25e83f2a1389e58}{notify}} ()
-\begin{DoxyCompactList}\small\item\em Notifies all attached observers of a change. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Protected Attributes}
-\begin{DoxyCompactItemize}
-\item 
-int \mbox{\hyperlink{class_character_a94c828a56970fdba54a2fb277c43129f}{current\+HP}}
-\begin{DoxyCompactList}\small\item\em Current hit points of the character. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{class_character_af15a478fe650b87f59cbe5d071697307}{level}}
-\begin{DoxyCompactList}\small\item\em Level of the character. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Private Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-void \mbox{\hyperlink{class_character_a61c38f189478ee3809f6490ede100e4d}{generate\+Ability\+Scores}} ()
-\begin{DoxyCompactList}\small\item\em Generates random ability scores for the character. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Returns the default die type used for hit points calculation. Can be overridden by derived classes. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_character_a41e037769916b418a44f14ff915e0d89}{calculate\+Ability\+Modifiers}} ()
 \begin{DoxyCompactList}\small\item\em Calculates the ability modifiers based on ability scores. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_character_aabf35a66ae6ece5944cb63babd174bff}{calculate\+Ability\+Scores}} ()
-\begin{DoxyCompactList}\small\item\em Recalculates ability scores and modifiers based on equipped items. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_character_ac6b5ccaa4ad98fe99685d3ddaf48edb3}{reduce\+Ability\+After\+Unequip}} (const \mbox{\hyperlink{class_item}{Item}} \&item)
-\begin{DoxyCompactList}\small\item\em Reduces character\textquotesingle{}s ability scores after unequipping an item. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_character_a1f223b67659517e58517db65a92231bf}{initialize\+Hit\+Points}} ()
 \begin{DoxyCompactList}\small\item\em Initializes the character\textquotesingle{}s hit points based on level and Constitution modifier. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_character_a105d03889388d94653de79e80693fda2}{initialize\+Proficiency\+Bonus}} () const
-\begin{DoxyCompactList}\small\item\em Initializes the character\textquotesingle{}s proficiency bonus based on their level. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Initializes the character\textquotesingle{}s proficiency bonus based on their level. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_character_a94c828a56970fdba54a2fb277c43129f}{current\+HP}} \{\}
+\begin{DoxyCompactList}\small\item\em Current hit points of the character. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_character_af15a478fe650b87f59cbe5d071697307}{level}} \{\}
+\begin{DoxyCompactList}\small\item\em Level of the character. \end{DoxyCompactList}\item 
+std\+::map$<$ \mbox{\hyperlink{class_character_ac972d17bc509adbc4144b18fde09a814}{Stats}}, int $>$ \mbox{\hyperlink{class_character_a44f76b68965975ae1addd1c579d5a250}{stats}}
+\item 
+std\+::array$<$ int, 6 $>$ \mbox{\hyperlink{class_character_ad0d8a946d29c84108685dfde973d91a6}{ability\+Score}} \{\}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_character_aaa7029e080c77fa2023fe18d59946312}{Character}} (std\+::string \mbox{\hyperlink{class_character_a6592c35167738421f3e04ca8808d37db}{name}}, int \mbox{\hyperlink{class_character_af15a478fe650b87f59cbe5d071697307}{level}}, const int ability\+Scores\mbox{[}6\mbox{]}, int max\+Hp, int current\+Hp, std\+::map$<$ \mbox{\hyperlink{class_item_ab5eeb575e9d66ebcfef9b58b667fad05}{Item\+::\+Item\+Type}}, \mbox{\hyperlink{class_item}{Item}} $>$ \mbox{\hyperlink{class_character_a7305cd337b9a73ca07cbf556e1307159}{worn\+Items}})
+\item 
+virtual void \mbox{\hyperlink{class_character_a61c38f189478ee3809f6490ede100e4d}{generate\+Ability\+Scores}} ()
+\begin{DoxyCompactList}\small\item\em Generates random ability scores for the character. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_character_a615b37edba5584294e020db7568e1b11}{calculate\+Ability\+Scores}} (const \mbox{\hyperlink{class_item}{Item}} \&item)
+\begin{DoxyCompactList}\small\item\em Recalculates ability scores and modifiers based on equipped items. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_character_ac6b5ccaa4ad98fe99685d3ddaf48edb3}{reduce\+Ability\+After\+Unequip}} (const \mbox{\hyperlink{class_item}{Item}} \&item)
+\begin{DoxyCompactList}\small\item\em Reduces character\textquotesingle{}s ability scores after unequipping an item. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_character_a7ecc56eb0326ddaaa41ff66a1bdcf471}{is\+Item\+Equipped}} (const \mbox{\hyperlink{class_item}{Item}} \&item)
 \begin{DoxyCompactList}\small\item\em Checks if an item is currently equipped. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Static Private Member Functions}
@@ -116,30 +125,24 @@ static \mbox{\hyperlink{class_character_ac972d17bc509adbc4144b18fde09a814}{Stats
 \begin{DoxyCompactItemize}
 \item 
 std\+::string \mbox{\hyperlink{class_character_a6592c35167738421f3e04ca8808d37db}{name}}
-\begin{DoxyCompactList}\small\item\em \doxylink{class_character}{Character}\textquotesingle{}s name. \end{DoxyCompactList}\item 
-std\+::array$<$ int, 6 $>$ \mbox{\hyperlink{class_character_ad0d8a946d29c84108685dfde973d91a6}{ability\+Score}} \{\}
 \begin{DoxyCompactList}\small\item\em Scores for the character\textquotesingle{}s abilities. \end{DoxyCompactList}\item 
 std\+::array$<$ int, 6 $>$ \mbox{\hyperlink{class_character_afa6498337b4bad335d6d5b6183365264}{ability\+Modifiers}} \{\}
 \begin{DoxyCompactList}\small\item\em Modifiers derived from the ability scores. \end{DoxyCompactList}\item 
-std\+::map$<$ \mbox{\hyperlink{class_character_ac972d17bc509adbc4144b18fde09a814}{Stats}}, int $>$ \mbox{\hyperlink{class_character_a44f76b68965975ae1addd1c579d5a250}{stats}}
-\begin{DoxyCompactList}\small\item\em Map of character stats. \end{DoxyCompactList}\item 
 std\+::map$<$ \mbox{\hyperlink{class_item_ab5eeb575e9d66ebcfef9b58b667fad05}{Item\+::\+Item\+Type}}, \mbox{\hyperlink{class_item}{Item}} $>$ \mbox{\hyperlink{class_character_a7305cd337b9a73ca07cbf556e1307159}{worn\+Items}}
 \begin{DoxyCompactList}\small\item\em Currently equipped items. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
 class \mbox{\hyperlink{class_character_a516c4be79a2de3e0996ec37e97d86892}{Character\+Test}}
-\begin{DoxyCompactList}\small\item\em Allows \doxylink{class_character_test}{Character\+Test} class to access private and protected members for testing purposes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Allows \doxylink{class_character_test}{Character\+Test} class to access private and protected members for testing purposes. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_character_a210030392f9aa7ca34ae7be0ee4f372d}{Map\+Builder}}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 The \doxylink{class_character}{Character} class represents an entity in the game with various attributes and behaviors. 
 
-Represents a character in the game with abilities, stats, and equipped items.
-
-Characters have abilities, levels, stats, and can equip items to modify their attributes. This class provides the basic functionality for managing a character\textquotesingle{}s attributes and equipment.
-
-This class manages the character\textquotesingle{}s attributes such as name, level, ability scores, and equipped items. It includes functionalities for modifying these attributes and calculating derived statistics. 
+Characters have abilities, levels, stats, and can equip items to modify their attributes. This class provides the basic functionality for managing a character\textquotesingle{}s attributes and equipment. 
 
 \doxysubsection{Member Enumeration Documentation}
 \Hypertarget{class_character_ac375a6d6120ce429749a78bb15e1d402}\label{class_character_ac375a6d6120ce429749a78bb15e1d402} 
@@ -216,7 +219,7 @@ DB&Damage Bonus. \\
 \Hypertarget{class_character_a22d0e11a466d9915761a929b991f057e}\label{class_character_a22d0e11a466d9915761a929b991f057e} 
 \index{Character@{Character}!Character@{Character}}
 \index{Character@{Character}!Character@{Character}}
-\doxysubsubsection{\texorpdfstring{Character()}{Character()}}
+\doxysubsubsection{\texorpdfstring{Character()}{Character()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
 {\footnotesize\ttfamily Character\+::\+Character (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{int}]{level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
 
@@ -230,6 +233,31 @@ Constructor that initializes a character with a name and level.
 {\em level} & The initial level of the character, clamped between 1 and 20. \\
 \hline
 \end{DoxyParams}
+\Hypertarget{class_character_a1225e6f5f16ab12fd0791e18568d51e7}\label{class_character_a1225e6f5f16ab12fd0791e18568d51e7} 
+\index{Character@{Character}!Character@{Character}}
+\index{Character@{Character}!Character@{Character}}
+\doxysubsubsection{\texorpdfstring{Character()}{Character()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Character\+::\+Character (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{int}]{level,  }\item[{const int}]{ability\+Scores\mbox{[}6\mbox{]},  }\item[{int}]{max\+Hp,  }\item[{int}]{current\+Hp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Constructor that initializes a character with a name, level, ability\+Scores, and hp values. 
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the character \\
+\hline
+{\em level} & The initial level of the character, clamped between 1 and 20 \\
+\hline
+{\em ability\+Scores} & The ability scores of the character \\
+\hline
+{\em max\+Hp} & The max HP of the character \\
+\hline
+{\em current\+Hp} & The current HP of the character \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_character_aaa7029e080c77fa2023fe18d59946312}\label{class_character_aaa7029e080c77fa2023fe18d59946312} 
+\index{Character@{Character}!Character@{Character}}
+\index{Character@{Character}!Character@{Character}}
+\doxysubsubsection{\texorpdfstring{Character()}{Character()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Character\+::\+Character (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{int}]{level,  }\item[{const int}]{ability\+Scores\mbox{[}6\mbox{]},  }\item[{int}]{max\+Hp,  }\item[{int}]{current\+Hp,  }\item[{std\+::map$<$ \mbox{\hyperlink{class_item_ab5eeb575e9d66ebcfef9b58b667fad05}{Item\+::\+Item\+Type}}, \mbox{\hyperlink{class_item}{Item}} $>$}]{worn\+Items }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [private]}}
+
 
 
 \doxysubsection{Member Function Documentation}
@@ -237,17 +265,17 @@ Constructor that initializes a character with a name and level.
 \index{Character@{Character}!calculateAbilityModifiers@{calculateAbilityModifiers}}
 \index{calculateAbilityModifiers@{calculateAbilityModifiers}!Character@{Character}}
 \doxysubsubsection{\texorpdfstring{calculateAbilityModifiers()}{calculateAbilityModifiers()}}
-{\footnotesize\ttfamily void Character\+::calculate\+Ability\+Modifiers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily void Character\+::calculate\+Ability\+Modifiers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
 Calculates the ability modifiers based on ability scores. 
 
-This function computes each ability modifier as the floor of ((ability\+Score -\/ 10) / 2). \Hypertarget{class_character_aabf35a66ae6ece5944cb63babd174bff}\label{class_character_aabf35a66ae6ece5944cb63babd174bff} 
+This function computes each ability modifier as the floor of ((ability\+Score -\/ 10) / 2). \Hypertarget{class_character_a615b37edba5584294e020db7568e1b11}\label{class_character_a615b37edba5584294e020db7568e1b11} 
 \index{Character@{Character}!calculateAbilityScores@{calculateAbilityScores}}
 \index{calculateAbilityScores@{calculateAbilityScores}!Character@{Character}}
 \doxysubsubsection{\texorpdfstring{calculateAbilityScores()}{calculateAbilityScores()}}
-{\footnotesize\ttfamily void Character\+::calculate\+Ability\+Scores (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily void Character\+::calculate\+Ability\+Scores (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_item}{Item}} \&}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
@@ -272,7 +300,7 @@ This function equips an item to the character, potentially altering the characte
 \index{Character@{Character}!generateAbilityScores@{generateAbilityScores}}
 \index{generateAbilityScores@{generateAbilityScores}!Character@{Character}}
 \doxysubsubsection{\texorpdfstring{generateAbilityScores()}{generateAbilityScores()}}
-{\footnotesize\ttfamily void Character\+::generate\+Ability\+Scores (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily void Character\+::generate\+Ability\+Scores (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
 
 
 
@@ -396,7 +424,7 @@ This function returns the current value of a specified stat (e.\+g., hit points,
 \index{Character@{Character}!initializeHitPoints@{initializeHitPoints}}
 \index{initializeHitPoints@{initializeHitPoints}!Character@{Character}}
 \doxysubsubsection{\texorpdfstring{initializeHitPoints()}{initializeHitPoints()}}
-{\footnotesize\ttfamily int Character\+::initialize\+Hit\+Points (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily int Character\+::initialize\+Hit\+Points (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
@@ -409,7 +437,7 @@ Calculates initial hit points using the character\textquotesingle{}s die type an
 \index{Character@{Character}!initializeProficiencyBonus@{initializeProficiencyBonus}}
 \index{initializeProficiencyBonus@{initializeProficiencyBonus}!Character@{Character}}
 \doxysubsubsection{\texorpdfstring{initializeProficiencyBonus()}{initializeProficiencyBonus()}}
-{\footnotesize\ttfamily int Character\+::initialize\+Proficiency\+Bonus (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily int Character\+::initialize\+Proficiency\+Bonus (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
@@ -454,7 +482,17 @@ Checks if an item is currently equipped.
 \begin{DoxyReturn}{Returns}
 true If the item is equipped, false otherwise.
 \end{DoxyReturn}
-Determines if the specified item is equipped by checking the worn\+Items map. \Hypertarget{class_character_ac6b5ccaa4ad98fe99685d3ddaf48edb3}\label{class_character_ac6b5ccaa4ad98fe99685d3ddaf48edb3} 
+Determines if the specified item is equipped by checking the worn\+Items map. \Hypertarget{class_character_aaaffb44b62eb70df0e545700c6011210}\label{class_character_aaaffb44b62eb70df0e545700c6011210} 
+\index{Character@{Character}!levelUp@{levelUp}}
+\index{levelUp@{levelUp}!Character@{Character}}
+\doxysubsubsection{\texorpdfstring{levelUp()}{levelUp()}}
+{\footnotesize\ttfamily void Character\+::level\+Up (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Increases character\textquotesingle{}s level by 1. 
+
+\Hypertarget{class_character_ac6b5ccaa4ad98fe99685d3ddaf48edb3}\label{class_character_ac6b5ccaa4ad98fe99685d3ddaf48edb3} 
 \index{Character@{Character}!reduceAbilityAfterUnequip@{reduceAbilityAfterUnequip}}
 \index{reduceAbilityAfterUnequip@{reduceAbilityAfterUnequip}!Character@{Character}}
 \doxysubsubsection{\texorpdfstring{reduceAbilityAfterUnequip()}{reduceAbilityAfterUnequip()}}
@@ -469,7 +507,22 @@ Reduces character\textquotesingle{}s ability scores after unequipping an item.
 {\em item} & The item being unequipped.\\
 \hline
 \end{DoxyParams}
-This function reduces the character\textquotesingle{}s ability scores based on the item\textquotesingle{}s stats. \Hypertarget{class_character_a3caa2fa1be51737fa682e1634151828c}\label{class_character_a3caa2fa1be51737fa682e1634151828c} 
+This function reduces the character\textquotesingle{}s ability scores based on the item\textquotesingle{}s stats. \Hypertarget{class_character_a5f6fdca1d046e720f3016005f0b1b012}\label{class_character_a5f6fdca1d046e720f3016005f0b1b012} 
+\index{Character@{Character}!setName@{setName}}
+\index{setName@{setName}!Character@{Character}}
+\doxysubsubsection{\texorpdfstring{setName()}{setName()}}
+{\footnotesize\ttfamily void Character\+::set\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{n }\end{DoxyParamCaption})}
+
+
+
+Changes the character\textquotesingle{}s name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_character_a3caa2fa1be51737fa682e1634151828c}\label{class_character_a3caa2fa1be51737fa682e1634151828c} 
 \index{Character@{Character}!showCharacterStats@{showCharacterStats}}
 \index{showCharacterStats@{showCharacterStats}!Character@{Character}}
 \doxysubsubsection{\texorpdfstring{showCharacterStats()}{showCharacterStats()}}
@@ -525,7 +578,7 @@ Converts a string to its corresponding Stats enum.
 \begin{DoxyReturn}{Returns}
 Stats The corresponding Stats enum.
 \end{DoxyReturn}
-Throws std\+::invalid\+\_\+argument if the string does not correspond to a valid stat. \Hypertarget{class_character_a96f3ff3409c036f66237c80cabfb6718}\label{class_character_a96f3ff3409c036f66237c80cabfb6718} 
+Throws std\+::invalid\+\_\+argument if the string does not correspond to a valid stat. Map of character stats. \Hypertarget{class_character_a96f3ff3409c036f66237c80cabfb6718}\label{class_character_a96f3ff3409c036f66237c80cabfb6718} 
 \index{Character@{Character}!unequip@{unequip}}
 \index{unequip@{unequip}!Character@{Character}}
 \doxysubsubsection{\texorpdfstring{unequip()}{unequip()}}
@@ -553,6 +606,12 @@ This function removes an item from the character\textquotesingle{}s equipment, r
 
 Allows \doxylink{class_character_test}{Character\+Test} class to access private and protected members for testing purposes. 
 
+\Hypertarget{class_character_a210030392f9aa7ca34ae7be0ee4f372d}\label{class_character_a210030392f9aa7ca34ae7be0ee4f372d} 
+\index{Character@{Character}!MapBuilder@{MapBuilder}}
+\index{MapBuilder@{MapBuilder}!Character@{Character}}
+\doxysubsubsection{\texorpdfstring{MapBuilder}{MapBuilder}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{class_map_builder}{Map\+Builder}}\hspace{0.3cm}{\ttfamily [friend]}}
+
 
 
 \doxysubsection{Member Data Documentation}
@@ -570,17 +629,13 @@ Modifiers derived from the ability scores.
 \index{Character@{Character}!abilityScore@{abilityScore}}
 \index{abilityScore@{abilityScore}!Character@{Character}}
 \doxysubsubsection{\texorpdfstring{abilityScore}{abilityScore}}
-{\footnotesize\ttfamily std\+::array$<$int, 6$>$ Character\+::ability\+Score \{\}\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Scores for the character\textquotesingle{}s abilities. 
+{\footnotesize\ttfamily std\+::array$<$int, 6$>$ Character\+::ability\+Score \{\}\hspace{0.3cm}{\ttfamily [protected]}}
 
 \Hypertarget{class_character_a94c828a56970fdba54a2fb277c43129f}\label{class_character_a94c828a56970fdba54a2fb277c43129f} 
 \index{Character@{Character}!currentHP@{currentHP}}
 \index{currentHP@{currentHP}!Character@{Character}}
 \doxysubsubsection{\texorpdfstring{currentHP}{currentHP}}
-{\footnotesize\ttfamily int Character\+::current\+HP\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily int Character\+::current\+HP \{\}\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
@@ -590,7 +645,7 @@ Current hit points of the character.
 \index{Character@{Character}!level@{level}}
 \index{level@{level}!Character@{Character}}
 \doxysubsubsection{\texorpdfstring{level}{level}}
-{\footnotesize\ttfamily int Character\+::level\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily int Character\+::level \{\}\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
@@ -604,17 +659,13 @@ Level of the character.
 
 
 
-\doxylink{class_character}{Character}\textquotesingle{}s name. 
+Scores for the character\textquotesingle{}s abilities. 
 
-\Hypertarget{class_character_a44f76b68965975ae1addd1c579d5a250}\label{class_character_a44f76b68965975ae1addd1c579d5a250} 
+\doxylink{class_character}{Character}\textquotesingle{}s name. \Hypertarget{class_character_a44f76b68965975ae1addd1c579d5a250}\label{class_character_a44f76b68965975ae1addd1c579d5a250} 
 \index{Character@{Character}!stats@{stats}}
 \index{stats@{stats}!Character@{Character}}
 \doxysubsubsection{\texorpdfstring{stats}{stats}}
-{\footnotesize\ttfamily std\+::map$<$\mbox{\hyperlink{class_character_ac972d17bc509adbc4144b18fde09a814}{Stats}}, int$>$ Character\+::stats\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Map of character stats. 
+{\footnotesize\ttfamily std\+::map$<$\mbox{\hyperlink{class_character_ac972d17bc509adbc4144b18fde09a814}{Stats}}, int$>$ Character\+::stats\hspace{0.3cm}{\ttfamily [protected]}}
 
 \Hypertarget{class_character_a7305cd337b9a73ca07cbf556e1307159}\label{class_character_a7305cd337b9a73ca07cbf556e1307159} 
 \index{Character@{Character}!wornItems@{wornItems}}
