@@ -7,6 +7,20 @@
 
 #include <iostream>
 
+#ifdef _WIN32
+#define KEY_UP 72
+#define KEY_DOWN 80
+#define KEY_LEFT 75
+#define KEY_RIGHT 77
+#define ENTER 13
+#else
+#define KEY_UP 65
+#define KEY_DOWN 66
+#define KEY_LEFT 68
+#define KEY_RIGHT 67
+#define ENTER 10
+#endif
+
 int keyPress();
 
 

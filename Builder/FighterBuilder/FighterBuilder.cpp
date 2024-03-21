@@ -16,7 +16,9 @@ void FighterBuilder::buildStats() {
 }
 
 Fighter *FighterBuilder::getFighter() {
-    return fighter;
+    Fighter* result = fighter;  // Hold the created fighter object
+    fighter = new Fighter();    // Reset for the next build
+    return result;
 }
 
 void FighterBuilder::buildName(string name) {
