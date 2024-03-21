@@ -53,11 +53,11 @@ Item::Item(ItemType equip,Observer* logger)
  */
 int Item::rollStatMod()
 {
-    Dice dice;
-    int em = dice.roll("1d6");
+
+    int em = Dice::GetGlobal().roll("1d6");
     while (em > 5)
     {
-        em = dice.roll("1d6");
+        em = Dice::GetGlobal().roll("1d6");
     }
     enchantmentModifier = em;
     

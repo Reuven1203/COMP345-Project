@@ -19,11 +19,11 @@ BullyFighterBuilder::~BullyFighterBuilder() {
 
 
 void BullyFighterBuilder::buildAbilityScores() {
-    Dice dice = Dice();
+   
     int abilityScores[6];
     //for loop
     for (int &abilityScore: abilityScores) {
-        abilityScore = dice.roll("3d6");
+        abilityScore = Dice::GetGlobal().roll("3d6");
     }
     //sort in descending order
     std::sort(abilityScores, abilityScores + 6, std::greater<int>());

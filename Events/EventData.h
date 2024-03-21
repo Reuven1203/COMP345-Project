@@ -22,7 +22,6 @@ struct EventData {
 		//Dice related
 		DiceRolled,
 		//Player related
-		CharacterAttacked,
 		AttackedResult,
 
 	}type;
@@ -32,8 +31,7 @@ struct EventData {
 	int charType;//1 player,2 enemy,3 friendly
 	string name,name2,statname,result;
 	
-	/*EventData(EventType type, string resultOfAtk,string charName, int 
-) :type(type), result(resultOfAtk),name(charName), chartype(charType) {};*/
+
 	EventData(EventType type, string resultOfAtk, string attackerName,string defenderName, int charType,int _currentHP,int _dmgDealt) :type(type), result(resultOfAtk), name(attackerName),name2(defenderName), charType(charType),charCurrentHP(_currentHP),dmgDealt(_dmgDealt) {};
 	
 	

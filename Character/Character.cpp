@@ -166,10 +166,10 @@ void Character::calculateAbilityModifiers() {
 
 //Utility methods
 void Character::generateAbilityScores() {
-    Dice dice = Dice();
+    
     //should soon be replaced with the dice class
     for(int& score : abilityScore) {
-        score = dice.roll("4d6");
+        score = Dice::GetGlobal().roll("4d6");
     }
 }
 void Character::showCharacterStats() const {
@@ -192,10 +192,10 @@ void Character::showCharacterStats() const {
 }
 
 int Character::initializeHitPoints() {
-    Dice dice = Dice();
+    
     int baseHP = getDieType() + getAbilityModifier(Constitution);
     std::string levelString = std::to_string(level-1);
-    return baseHP + dice.roll(levelString + 'd' + std::to_string(getDieType())+ '+' + std::to_string(getAbilityModifier(Constitution) * (level-1)));
+    return baseHP + Dice::GetGlobal().roll(levelString + 'd' + std::to_string(getDieType()) + '+' + std::to_string(getAbilityModifier(Constitution) * (level - 1)));
 }
 int Character::initializeProficiencyBonus() const {
     if(level < 5) {
@@ -262,9 +262,9 @@ Character::Stats Character::stringToEnumStats(const string &str) {
 }
 
 void Character::levelUp() {
-    Dice dice = Dice();
+   
     level++;
-    stats[HP] += dice.roll("1d10") + getAbilityModifier(Constitution);
+    stats[HP] += Dice::GetGlobal().roll("1d10") + getAbilityModifier(Constitution);
     stats[AB] ++;
     notify();
 }

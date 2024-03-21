@@ -1,6 +1,7 @@
 #include <iostream>
 #include "./Map/map.h"
 #include "./Character/Fighter.h"
+#include "../Dice/Dice.h"
 #include "Observer/MapObserver/MapObserver.h"
 #include "Director/FighterDirector/FighterDirector.h"
 #include "./Strategy/CharacterStrategy/HumanPlayerStrategy/HumanPlayerStrategy.h"
@@ -14,16 +15,17 @@ int main()
 {
 
 
-
+   
     auto* logger = new GameObserver();
     auto* m = new dungeonMap(10, 10); 
     logger->attachObservable(m);
     auto* control = new MapObserver(m);
     m->attach(control);
-    
+    Dice::GetGlobal().attach(logger);
     FighterDirector director{};
     BullyFighterBuilder builder;
     director.setBuilder(&builder);
+    
     Fighter* fighter = director.constructFighter("Bully");
     Fighter* fighter2 = director.constructFighter("Bully 2");
     Fighter* fighter3 = director.constructFighter("Bully 3");
@@ -63,5 +65,7 @@ int main()
     fighter2->move(*m);
     fighter3->move(*m);
     fighter3->attack(fighter);
+    Dice::GetGlobal().detach(logger);
+    Dice::GetGlobal().roll("1d6");
     return 0;
 }

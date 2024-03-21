@@ -14,7 +14,7 @@ GameObserver::GameObserver()
 	_dice = nullptr;
 	_char = nullptr;
 
-	log.open("Eventlog.txt");
+	log.open("../Events/EventLog.txt");
 	if(!log.is_open())
 	{
 		cout << "Eventlog.txt not found" << endl;
@@ -142,7 +142,7 @@ void GameObserver::update(EventData& event)
 	}
 	case EventData::EventType::DiceRolled:
 	{
-		log << setw(30) << "Player Moved Right to" << "X:" << event.newY << " Y:" << event.newX << endl;
+		log << setw(30) << "Dice " << event.name << " rolled. Result: " << event.rolledStat << endl;
 		break;
 
 	}
@@ -165,7 +165,7 @@ void GameObserver::update(EventData& event)
 		{
 			log << "--------------------------------------" << endl;
 			log <<setw(30)<< "Friendly Character: " << event.name << " attempted to attack." << endl;
-			log << setw(30) <<"* Result: "<< event.result <<"*"<< endl;
+			log << setw(30) <<"Result: "<< event.result << endl;
 			log << "--------------------------------------" << endl;
 		}
 		

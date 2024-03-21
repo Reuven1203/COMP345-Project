@@ -9,6 +9,8 @@
 #include "Dice.h"
 #include "Random.h"
 
+
+
 /**
  * @brief Output error string
  * @param str: Roll string that caused the error
@@ -121,7 +123,8 @@ int Dice::roll(std::string rollString) {
 
     // Add z to rolled total
     total += roll_guide.numAdded;
-   
+    EventData event(EventData::EventType::DiceRolled, rollString, total);
+    notifyGameObserver(event);
     // Return final total
     return total;
 }
