@@ -197,23 +197,86 @@ public:
     int getCurrentHP() const;
     void attack(Character* target);
 
-    //TODO: document
+    /**
+ * @brief Accessor method for Strength attribute
+ * @return Strength value of character
+ */
     virtual int getSTR() const;
+    /**
+     * @brief Accessor method for Dexterity attribute
+     * @return int Dexterity value of character
+     */
     virtual int getDEX() const;
+    /**
+     * @brief Accessor method for Constitution attribute
+     * @return int Constitution value of character
+     */
     virtual int getCON() const;
+    /**
+     * @brief Accessor method for Intelligence attribute
+     * @return int Intelligence value of character
+     */
     virtual int getINT() const;
+    /**
+     * @brief Accessor method for Wisdom attribute
+     * @return int Wisdom value of character
+     */
     virtual int getWIS() const;
+    /**
+     * @brief Accessor method for Charisma attribute
+     * @return int Charisma value of character
+     */
     virtual int getCHA() const;
+    /**
+     * @brief Accessor method for Attack attribute
+     * @return int Attack value of character
+     */
     virtual int getATK() const;
+    /**
+     * @brief Accessor method for Damage attribute
+     * @return int Damage value of character
+     */
     virtual int getDMG() const;
+    /**
+     * @brief Accessor method for Armor Class attribute
+     * @return int Armor Class value of character
+     */
     virtual int getAC() const;
 
+    /**
+     * @brief Checks if Character has weapon decorator
+     * @return bool true if Character has weapon decorator, false if not
+     */
     virtual bool hasWeapon() const;
+    /**
+     * @brief Checks if Character has helmet decorator
+     * @return bool true if Character has helmet decorator, false if not
+     */
     virtual bool hasHelmet() const;
+    /**
+     * @brief Checks if Character has armor decorator
+     * @return bool true if Character has armor decorator, false if not
+     */
     virtual bool hasArmor() const;
+    /**
+     * @brief Checks if Character has shield decorator
+     * @return bool true if Character has shield decorator, false if not
+     */
     virtual bool hasShield() const;
+    /**
+     * @brief Checks if Character has ring decorator
+     * @return bool true if Character has ring decorator, false if not
+     */
     virtual bool hasRing() const;
+    /**
+     * @brief Checks if Character has belt decorator
+     * @return bool true if Character has belt decorator, false if not
+     */
     virtual bool hasBelt() const;
+    /**
+     * @brief Checks if Character has boots decorator
+     * @return bool true if Character has boots decorator, false if not
+     */
     virtual bool hasBoots() const;
 
 protected:

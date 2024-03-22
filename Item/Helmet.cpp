@@ -1,11 +1,14 @@
-//
-// Created by z3p on 21/03/24.
-//
+/**
+ * @file Armor.cpp
+ * @brief Implements Armor class methods
+ * @author Julian D'Addario
+ */
 
 #include "Helmet.h"
 
 Helmet::Helmet(Item *item, Character *character) :
     intel(item->getINT()), wis(item->getWIS()), ac(item->getAC()), ItemDecorator(character) {
+    // Don't let equip happen if character already has helmet
     if(character_->hasHelmet()) {
         std::cerr << "Helmet already equipped. Please remove equipment.";
         std::exit(1);

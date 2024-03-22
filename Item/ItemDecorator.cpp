@@ -1,6 +1,8 @@
-//
-// Created by z3p on 21/03/24.
-//
+/**
+ * @file ItemDecorator.cpp
+ * @brief Implements ItemDecorator class methods
+ * @author Julian D'Addario
+ */
 
 #include "ItemDecorator.h"
 
@@ -37,10 +39,6 @@ int ItemDecorator::getATK() const {
 
 int ItemDecorator::getDMG() const {
     return character_->getDMG();
-}
-
-void ItemDecorator::showCharacterStats() const {
-    character_->showCharacterStats();
 }
 
 int ItemDecorator::getAC() const {

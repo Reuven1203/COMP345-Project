@@ -255,13 +255,13 @@ void Item::setEquipStats()
         itemOverall["Strength"]=this->strength;
         itemOverall["Constitution"]=this->constitution;
     }
-    {
-        constitution=rollStatMod();
-        strength=rollStatMod();
-        itemOverall["Strength"]=this->strength;
-        itemOverall["Constitution"]=this->constitution;
-     
-    }
+//    {
+//        constitution=rollStatMod();
+//        strength=rollStatMod();
+//        itemOverall["Strength"]=this->strength;
+//        itemOverall["Constitution"]=this->constitution;
+//
+//    }
     if (equipType == BOOTS)
     {
         armorClass=rollStatMod();
