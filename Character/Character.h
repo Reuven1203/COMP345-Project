@@ -31,6 +31,7 @@ class dungeonMap;
 class Character : public Observable {
     friend class CharacterTest; ///< Allows CharacterTest class to access private and protected members for testing purposes.
     friend class MapBuilder;
+    friend class ItemDecorator;
 
 public:
     enum Stats {
@@ -132,7 +133,7 @@ public:
     /**
      * @brief Displays the character's stats to the standard output.
      */
-    void showCharacterStats() const;
+    virtual void showCharacterStats() const;
 
     /**
      * @brief Returns the class name of the character. Allows for polymorphic behavior.
@@ -195,6 +196,26 @@ public:
     void setCurrentHP(int hp);
     int getCurrentHP() const;
     void attack(Character* target);
+
+    //TODO: document
+    virtual int getSTR() const;
+    virtual int getDEX() const;
+    virtual int getCON() const;
+    virtual int getINT() const;
+    virtual int getWIS() const;
+    virtual int getCHA() const;
+    virtual int getATK() const;
+    virtual int getDMG() const;
+    virtual int getAC() const;
+
+    virtual bool hasWeapon() const;
+    virtual bool hasHelmet() const;
+    virtual bool hasArmor() const;
+    virtual bool hasShield() const;
+    virtual bool hasRing() const;
+    virtual bool hasBelt() const;
+    virtual bool hasBoots() const;
+
 protected:
 
     int currentHP{}; ///< Current hit points of the character.
@@ -232,6 +253,7 @@ protected:
     std::map<Stats, int> stats;
 
     std::array<int, 6> abilityScore{};
+
 private:
     explicit Character(std::string name, int level, const int abilityScores[6], int maxHp,int currentHp, std::map<Item::ItemType, Item> wornItems);
     std::string name; ///< Character's name.
@@ -300,6 +322,7 @@ private:
      * Determines if the specified item is equipped by checking the wornItems map.
      */
     bool isItemEquipped(const Item &item);
+
 };
 
 #endif //CHARACTER_H
