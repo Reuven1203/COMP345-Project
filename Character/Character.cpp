@@ -153,11 +153,6 @@ void Character::showWornItems() const {
         }
     }
 
-
-
-
-
-
 void Character::calculateAbilityModifiers() {
     for(int i = 0; i < abilityScore.size(); i++) {
         abilityModifiers[i] = floor((abilityScore[i] - 10) / 2);
@@ -176,12 +171,12 @@ void Character::showCharacterStats() const {
     std::cout << "Name: " << name << std::endl;
     std::cout << "Class: " << getClassName() << std::endl;
     std::cout << "Level: " << level << std::endl;
-    std::cout << "Strength: " << abilityScore[Strength] << " Modifier: " << abilityModifiers[Strength] << std::endl;
-    std::cout << "Dexterity: " << abilityScore[Dexterity] << " Modifier: " << abilityModifiers[Dexterity] << std::endl;
-    std::cout << "Constitution: " << abilityScore[Constitution] << " Modifier: " << abilityModifiers[Constitution] << std::endl;
-    std::cout << "Intelligence: " << abilityScore[Intelligence] << " Modifier: " << abilityModifiers[Intelligence] << std::endl;
-    std::cout << "Wisdom: " << abilityScore[Wisdom] << " Modifier: " << abilityModifiers[Wisdom] << std::endl;
-    std::cout << "Charisma: " << abilityScore[Charisma] << " Modifier: " << abilityModifiers[Charisma] << std::endl;
+    std::cout << "Strength: " << getSTR() << " Modifier: " << abilityModifiers[Strength] << std::endl;
+    std::cout << "Dexterity: " << getDEX() << " Modifier: " << abilityModifiers[Dexterity] << std::endl;
+    std::cout << "Constitution: " << getCON() << " Modifier: " << abilityModifiers[Constitution] << std::endl;
+    std::cout << "Intelligence: " << getINT() << " Modifier: " << abilityModifiers[Intelligence] << std::endl;
+    std::cout << "Wisdom: " << getWIS() << " Modifier: " << abilityModifiers[Wisdom] << std::endl;
+    std::cout << "Charisma: " << getCHA() << " Modifier: " << abilityModifiers[Charisma] << std::endl;
     std::cout << "Hit Points: " << getStat(HP) << std::endl;
     std::cout << "Proficiency Bonus: " << getStat(PB) << std::endl;
     std::cout << "Armor Class: " << getStat(AC) << std::endl;
@@ -293,7 +288,66 @@ void Character::attack(Character *target) {
     strategy->attack(this, target);
 }
 
+int Character::getSTR() const {
+    return abilityScore[Strength];
+}
 
+int Character::getDEX() const {
+    return abilityScore[Dexterity];
+}
 
+int Character::getCON() const {
+    return abilityScore[Constitution];
+}
 
+int Character::getINT() const {
+    return abilityScore[Intelligence];
+}
 
+int Character::getWIS() const {
+    return abilityScore[Wisdom];
+}
+
+int Character::getCHA() const {
+    return abilityScore[Charisma];
+}
+
+int Character::getATK() const {
+    return stats.at(AB);
+}
+
+int Character::getDMG() const {
+    return stats.at(DB);
+}
+
+int Character::getAC() const {
+    return stats.at(AC);
+}
+
+bool Character::hasWeapon() const {
+    return false;
+}
+
+bool Character::hasHelmet() const {
+    return false;
+}
+
+bool Character::hasArmor() const {
+    return false;
+}
+
+bool Character::hasShield() const {
+    return false;
+}
+
+bool Character::hasRing() const {
+    return false;
+}
+
+bool Character::hasBelt() const {
+    return false;
+}
+
+bool Character::hasBoots() const {
+    return false;
+}
