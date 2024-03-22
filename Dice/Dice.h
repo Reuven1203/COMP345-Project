@@ -67,9 +67,15 @@ public:
      * @brief Default constructor.
      * Constructs a Dice object.
      */
-    
+     // Prevent copy construction and assignment
     Dice(const Dice&) = delete;
 
+
+    /**
+   * @brief Provides global access to the Dice singleton.
+   *
+   * @return Reference to the global Dice singleton instance.
+   */
    static Dice& GetGlobal() 
    {
       static Dice _dice;
