@@ -41,6 +41,7 @@ set(COMMON_SOURCES
 add_executable(A1-map
         ${COMMON_SOURCES}
         map-test.cpp
+        ItemDecoratorDriver.cpp
 )
 
 add_executable(FighterBuilder
@@ -85,6 +86,27 @@ add_executable(A2-Campaign
         CampaignEditor/CampaignEditor.h
         CampaignEditor/MapEditor.h
         CampaignEditor/MapEditor.cpp
+)
+
+add_executable(A3-ItemDecorator
+        ${COMMON_SOURCES}
+        Item/ItemDecorator.cpp
+        Item/ItemDecorator.h
+        ItemDecoratorDriver.cpp
+        Item/Weapon.h
+        Item/Weapon.cpp
+        Item/Helmet.cpp
+        Item/Helmet.h
+        Item/Shield.cpp
+        Item/Shield.h
+        Item/Ring.cpp
+        Item/Ring.h
+        Item/Belt.cpp
+        Item/Belt.h
+        Item/Boots.cpp
+        Item/Boots.h
+        Item/UnequipItem.cpp
+        Item/UnequipItem.h
 )
 
 # Enable testing
