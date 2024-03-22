@@ -28,19 +28,17 @@ Item::Item() {
 /**
  * @brief Destructor for the Item class.
  */
-Item::~Item() {  }
+Item::~Item() {}
 
 /**
  * @brief Constructor that initializes an item of a specific type.
  * @param equip The type of the item being created.
  */
-Item::Item(ItemType equip,Observer* logger)
+Item::Item(ItemType equip)
 {
     this->nullItem = false;
     this->equipType = equip;
-    this->attach(logger);
     setEquipStats();
-    
 }
 
 /**
@@ -53,14 +51,13 @@ Item::Item(ItemType equip,Observer* logger)
  */
 int Item::rollStatMod()
 {
-
-    int em = Dice::GetGlobal().roll("1d6");
+    Dice dice;
+    int em = dice.roll("1d6");
     while (em > 5)
     {
-        em = Dice::GetGlobal().roll("1d6");
+        em = dice.roll("1d6");
     }
     enchantmentModifier = em;
-    
     return enchantmentModifier;
 }
 
@@ -221,17 +218,8 @@ void Item::setEquipStats()
     if (equipType == HELMET)
     {
         intelligence=rollStatMod();
-        EventData event(EventData::EventType::ItemStatRolled, "Helmet","Intelligence",intelligence);
-        notifyGameObserver(event);
-
         wisdom=rollStatMod();
-        EventData event2(EventData::EventType::ItemStatRolled, "Helmet", "Wisdom", wisdom);
-        notifyGameObserver(event2);
-
         armorClass=rollStatMod();
-        EventData event3(EventData::EventType::ItemStatRolled, "Helmet", "ArmorClass", armorClass);
-        notifyGameObserver(event3);
-
         itemOverall["Intelligence"]=this->intelligence;
         itemOverall["Wisdom"]=this->wisdom;
         itemOverall["ArmorClass"]=this->armorClass;
@@ -240,41 +228,20 @@ void Item::setEquipStats()
     if (equipType == ARMOR)
     {
      armorClass=rollStatMod();
-     EventData event(EventData::EventType::ItemStatRolled, "Armor", "ArmorClass", armorClass);
-     notifyGameObserver(event);
-
      itemOverall["ArmorClass"]=this->armorClass;
     }
     if (equipType == SHIELD)
     {
      armorClass=rollStatMod();
-     EventData event(EventData::EventType::ItemStatRolled, "Shield", "ArmorClass", armorClass);
-     notifyGameObserver(event);
-
      itemOverall["ArmorClass"]=this->armorClass;
     }
     if (equipType == RING)
     {
      armorClass=rollStatMod();
-     EventData event(EventData::EventType::ItemStatRolled, "Ring", "ArmorClass", armorClass);
-     notifyGameObserver(event);
-
      strength=rollStatMod();
-     EventData event2(EventData::EventType::ItemStatRolled, "Ring", "Strength", strength);
-     notifyGameObserver(event2);
-
      constitution=rollStatMod();
-     EventData event3(EventData::EventType::ItemStatRolled, "Ring", "Constitution", constitution);
-     notifyGameObserver(event3);
-
      wisdom=rollStatMod();
-     EventData event4(EventData::EventType::ItemStatRolled, "Ring", "Wisdom", wisdom);
-     notifyGameObserver(event4);
-
      charisma=rollStatMod();
-     EventData event5(EventData::EventType::ItemStatRolled, "Ring", "ArmorClass", charisma);
-     notifyGameObserver(event5);
-
      itemOverall["ArmorClass"]=this->armorClass;
      itemOverall["Charisma"]=this->charisma;
      itemOverall["Constitution"]=this->constitution;
@@ -284,38 +251,28 @@ void Item::setEquipStats()
     if (equipType == BELT)
     {
         strength=rollStatMod();
-        EventData event(EventData::EventType::ItemStatRolled, "Belt", "Strength", strength);
-        notifyGameObserver(event);
-
         constitution=rollStatMod();
-        EventData event2(EventData::EventType::ItemStatRolled, "Belt", "Constitution", constitution);
-        notifyGameObserver(event);
-
         itemOverall["Strength"]=this->strength;
         itemOverall["Constitution"]=this->constitution;
     }
-   
+//    {
+//        constitution=rollStatMod();
+//        strength=rollStatMod();
+//        itemOverall["Strength"]=this->strength;
+//        itemOverall["Constitution"]=this->constitution;
+//
+//    }
     if (equipType == BOOTS)
     {
         armorClass=rollStatMod();
-        EventData event(EventData::EventType::ItemStatRolled, "Boots", "ArmorClass", armorClass);
-        notifyGameObserver(event);
         dexterity=rollStatMod();
-        EventData event2(EventData::EventType::ItemStatRolled, "Boots", "Dexterity", dexterity);
-        notifyGameObserver(event2);
-
         itemOverall["ArmorClass"]=this->armorClass;
         itemOverall["Dexterity"]=this->dexterity;
     }
     if (equipType == WEAPON)
     {
       atkBonus=rollStatMod();
-      EventData event(EventData::EventType::ItemStatRolled, "Weapon", "AtkBonus", atkBonus);
-      notifyGameObserver(event);
       dmgBonus=rollStatMod();
-      EventData event2(EventData::EventType::ItemStatRolled, "Weapon", "DmgBonus", dmgBonus);
-      notifyGameObserver(event2);
-
       itemOverall["DamageBonus"]=this->dmgBonus;
       itemOverall["AttackBonus"]=this->atkBonus;
     }
