@@ -53,7 +53,7 @@ public:
      *
      * @param itemtype The type of item to create.
      */
-    explicit Item(ItemType itemtype,Observer* log);
+    explicit Item(ItemType itemtype);
 /**
      * @brief Method to roll a random modifier for an item's stats.
      *

@@ -37,8 +37,8 @@ int main()
     m->setUserPlayer(fighter);
     auto* chest1 = new container();
     auto* chest2 = new container();
-    Item* ring = new Item(Item::ItemType::RING,logger);
-    Item* helmet = new Item(Item::ItemType::HELMET,logger);
+    Item* ring = new Item(Item::ItemType::RING);
+    Item* helmet = new Item(Item::ItemType::HELMET);
     fighter->getStrategy()->attach(logger);
     fighter2->getStrategy()->attach(logger);
 
