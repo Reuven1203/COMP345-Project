@@ -65,6 +65,7 @@ int main()
     fighter2->move(*m);
     fighter3->move(*m);
     fighter3->attack(fighter);
+   //Showcasing detaching from logger does not log the dice roll
     Dice::GetGlobal().detach(logger);
     Dice::GetGlobal().roll("1d6");
     return 0;
