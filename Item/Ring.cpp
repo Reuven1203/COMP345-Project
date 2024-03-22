@@ -1,12 +1,15 @@
-//
-// Created by z3p on 21/03/24.
-//
+/**
+ * @file Ring.cpp
+ * @brief Implements Ring class methods
+ * @author Julian D'Addario
+ */
 
 #include "Ring.h"
 
 Ring::Ring(Item *item, Character *character) :
     ac(item->getAC()), str(item->getSTR()), con(item->getCON()), wis(item->getWIS()), cha(item->getCHA()),
     ItemDecorator(character) {
+    // Don't let equip happen if character already has ring
     if(character_->hasRing()) {
         std::cerr << "Ring already equipped. Please remove equipment.";
         std::exit(1);

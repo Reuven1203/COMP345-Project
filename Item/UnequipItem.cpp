@@ -1,6 +1,8 @@
-//
-// Created by z3p on 22/03/24.
-//
+/**
+ * @file UnequippedItem.cpp
+ * @brief Implements UnequippedItem class methods
+ * @author Julian D'Addario
+ */
 
 #include "UnequipItem.h"
 
@@ -9,6 +11,8 @@ UnequipItem::UnequipItem(Item *item, Character *character) :
     cha(item->getCHA()), dex(item->getDEX()), atk(item->getATKBONUS()), dmg(item->getDMGBonus()),
     itemType(item->equipType), ItemDecorator(character)
 {
+    // Based on itemType, don't allow unequip to happen if character does not have an item of that
+    // ItemType equipped already.
     switch(itemType) {
         case Item::HELMET:
             if(!character_->hasHelmet()) {

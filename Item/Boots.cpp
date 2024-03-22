@@ -1,11 +1,14 @@
-//
-// Created by z3p on 21/03/24.
-//
+/**
+ * @file Boots.cpp
+ * @brief Implements Boots class methods
+ * @author Julian D'Addario
+ */
 
 #include "Boots.h"
 
 Boots::Boots(Item *item, Character *character) :
     ac(item->getAC()), dex(item->getDEX()), ItemDecorator(character) {
+    // Don't let equip happen if character already has boots
     if(character_->hasBoots()) {
         std::cerr << "Boots already equipped. Please remove equipment.";
         std::exit(1);
