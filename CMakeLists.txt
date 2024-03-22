@@ -56,6 +56,12 @@ add_executable(FighterBuilder
 add_executable(GameObserverDriver
 	${COMMON_SOURCES}
 	GameObserverDriver.cpp
+	Strategy/CharacterStrategy/AggressorStrategy/AggressorStrategy.h
+	Strategy/CharacterStrategy/AggressorStrategy/AggressorStrategy.cpp
+	Strategy/CharacterStrategy/FriendlyStrategy/FriendlyStrategy.h
+	Strategy/CharacterStrategy/FriendlyStrategy/FriendlyStrategy.cpp
+	Strategy/CharacterStrategy/HumanPlayerStrategy/HumanPlayerStrategy.h
+	Strategy/CharacterStrategy/HumanPlayerStrategy/HumanPlayerStrategy.cpp
 )
 
 add_executable(CharacterStrategyDriver

@@ -38,13 +38,6 @@ void Fighter::setAbilityScore(Character::Ability ability, int score) {
 }
 
 
-void Fighter::attachDie(Dice* die)
-{
-    dice = die;
-}
-
-
-
 
 
 

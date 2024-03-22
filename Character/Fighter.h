@@ -92,7 +92,7 @@ private:
 
     void setAbilityScore(Ability ability, int score);
 
-    Dice* dice;
+   
 
 };
 
