@@ -6,9 +6,6 @@ set(CMAKE_CXX_STANDARD 17)
 # Add the current directory to the list of paths that CMake uses to find modules
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}")
 
-set(CPPUNIT_INCLUDE_DIR "C:/Users/RJ/Desktop/cppunit/CppUnit/include")
-set(CPPUNIT_LIBRARY "C:/Users/RJ/Desktop/cppunit/CppUnit/lib/cppunit.lib")
-
 # Now CMake should be able to find and use your custom FindCppUnit.cmake module
 find_package(CppUnit REQUIRED)
 
@@ -25,7 +22,6 @@ file(GLOB_RECURSE UTILS_SOURCES "Utils/*.cpp" "Utils/*.h")
 file(GLOB_RECURSE BUILDER_SOURCES "Builder/*.cpp" "Builder/*.h")
 file(GLOB_RECURSE DIRECTOR_SOURCES "Director/*.cpp" "Director/*.h")
 file(GLOB_RECURSE STRATEGY_SOURCES "Strategy/*.cpp" "Strategy/*.h")
-file(GLOB_RECURSE STRATEGY_SOURCES  "Events/*.h")
 
 # Combine all sources
 set(COMMON_SOURCES
@@ -38,7 +34,6 @@ set(COMMON_SOURCES
         ${BUILDER_SOURCES}
         ${DIRECTOR_SOURCES}
         ${STRATEGY_SOURCES}
-	${EVENTS_SOURCES}
 
 )
 
@@ -52,17 +47,6 @@ add_executable(A1-map
 add_executable(FighterBuilder
         ${COMMON_SOURCES}
         FighterBuilderDriver.cpp
-)
-
-add_executable(GameObserverDriver
-	${COMMON_SOURCES}
-	GameObserverDriver.cpp
-	Strategy/CharacterStrategy/AggressorStrategy/AggressorStrategy.h
-	Strategy/CharacterStrategy/AggressorStrategy/AggressorStrategy.cpp
-	Strategy/CharacterStrategy/FriendlyStrategy/FriendlyStrategy.h
-	Strategy/CharacterStrategy/FriendlyStrategy/FriendlyStrategy.cpp
-	Strategy/CharacterStrategy/HumanPlayerStrategy/HumanPlayerStrategy.h
-	Strategy/CharacterStrategy/HumanPlayerStrategy/HumanPlayerStrategy.cpp
 )
 
 add_executable(CharacterStrategyDriver

@@ -23,12 +23,5 @@
 
 int keyPress();
 
-enum class SubjectType
-{
-    map,
-    character,
-    dice,
-    none
-};
 
 #endif //COMP345_A1_UTILS_H

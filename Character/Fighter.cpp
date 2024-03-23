@@ -46,3 +46,7 @@ void Fighter::setAbilityScore(Character::Ability ability, int score) {
 
 
 
+
+
+
+

@@ -25,8 +25,5 @@ void FriendlyStrategy::move(Character *friendly, dungeonMap &map) {
 }
 
 void FriendlyStrategy::attack(Character *source, Character *target) {
-    EventData event(EventData::EventType::AttackedResult, "Friendly characters do not attack",source->getName()," ", 3,source->getCurrentHP(),0);
-    notifyGameObserver(event);
 std::cout << "Friendly characters do not attack" << std::endl;
-
 }
