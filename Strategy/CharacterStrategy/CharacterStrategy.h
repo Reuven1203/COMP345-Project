@@ -7,10 +7,11 @@
 
 #include "../../Character/Character.h"
 #include "../../Map/map.h"
+#include "../Observer/GameObserver/GameObserver.h"
 
 class dungeonMap;
 
-class CharacterStrategy {
+class CharacterStrategy:public Observable {
 public:
     virtual void move(Character *player, dungeonMap& map) = 0;
     static inline bool isAdjacent(int sourceX, int sourceY, int targetX, int targetY) {

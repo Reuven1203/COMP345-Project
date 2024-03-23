@@ -14,13 +14,15 @@
 #include <vector>
 #include <random>
 #include <map>
+#include "../Events/EventData.h"
+#include "../Observer/Observable.h"
 
 using namespace std;
 /**
 * @class Item
 * @brief Class representing an item that can be equipped by a character.
 */
-class Item
+class Item:public Observable
 {
 
 public:

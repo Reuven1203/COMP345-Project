@@ -38,10 +38,10 @@ void HumanPlayerStrategy::move(Character *player, dungeonMap &map) {
 }
 
 void HumanPlayerStrategy::attack(Character *source, Character *target) {
-    Dice dice;
-    int attackRoll = dice.roll("1d20") + source->getStat(Character::Stats::AB);
+    
+    int attackRoll = Dice::GetGlobal().roll("1d20") + source->getStat(Character::Stats::AB);
     if (attackRoll >= target->getStat(Character::Stats::AC)) {
-        int damage = dice.roll("1d6") + source->getStat(Character::Stats::DB);
+        int damage = Dice::GetGlobal().roll("1d6") + source->getStat(Character::Stats::DB);
         target->setCurrentHP(target->getCurrentHP() - damage);
     } else {
         std::cout << "Attack missed!" << std::endl;

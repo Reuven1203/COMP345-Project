@@ -1,2 +1,6 @@
 /cmake-build-debug/
 /Documentation/
+CMakeLists.txt
+.vs/
+build/
+out/

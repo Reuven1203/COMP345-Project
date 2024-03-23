@@ -68,7 +68,7 @@ public:
      */
     [[nodiscard]] static std::string FighterTypeEnumToString(FighterType type) ;
 
-
+    void attachDie(Dice*);
 
 private:
 
@@ -92,6 +92,7 @@ private:
 
     void setAbilityScore(Ability ability, int score);
 
+   
 
 };
 

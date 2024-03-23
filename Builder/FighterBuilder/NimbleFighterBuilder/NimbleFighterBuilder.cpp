@@ -17,7 +17,7 @@ NimbleFighterBuilder::~NimbleFighterBuilder() {
 }
 
 void NimbleFighterBuilder::buildAbilityScores() {
-    Dice dice = Dice();
+    Dice& dice = Dice::GetGlobal();
     int abilityScores[6];
     //for loop
     for (int &abilityScore: abilityScores) {
