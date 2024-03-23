@@ -20,11 +20,11 @@ void Observable::notify() {
         observer->update();
     }
 }
-void Observable::notifyGameObserver(EventData& event)
+void Observable::notifyGameObserver(const EventData& event)
 {
     for (auto observer : observers)
     {
-        GameObserver* gameobserver = dynamic_cast<GameObserver*>(observer);
+        auto* gameobserver = dynamic_cast<GameObserver*>(observer);
         if (gameobserver)
         {
             gameobserver->update(event);

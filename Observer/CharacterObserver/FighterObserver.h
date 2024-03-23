@@ -30,6 +30,7 @@ public:
      * accordingly. It should define the specific actions to take in response to the Fighter's state change.
      */
     void update() override;
+    void update(EventData&) override {};
 };
 
 #endif //COMP345_A1_FIGHTEROBSERVER_H

@@ -1,14 +1,14 @@
 #include <iostream>
 #include "./Map/map.h"
 #include "./Character/Fighter.h"
-#include "../Dice/Dice.h"
+#include "./Dice/Dice.h"
 #include "Observer/MapObserver/MapObserver.h"
 #include "Director/FighterDirector/FighterDirector.h"
 #include "./Strategy/CharacterStrategy/HumanPlayerStrategy/HumanPlayerStrategy.h"
 #include "./Strategy/CharacterStrategy/AggressorStrategy/AggressorStrategy.h"
 #include "./Strategy/CharacterStrategy/FriendlyStrategy/FriendlyStrategy.h"
 #include "Builder/FighterBuilder/BullyFighterBuilder/BullyFighterBuilder.h"
-#include "../Observer/GameObserver/GameObserver.h"
+#include "./Observer/GameObserver/GameObserver.h"
 #include "./Utils/utils.h"
 using namespace std;
 int main()

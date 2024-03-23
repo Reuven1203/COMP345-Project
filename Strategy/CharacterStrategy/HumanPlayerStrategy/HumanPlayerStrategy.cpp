@@ -3,7 +3,6 @@
 //
 
 #include "HumanPlayerStrategy.h"
-#include "../Utils/utils.h"
 #include "../FriendlyStrategy/FriendlyStrategy.h"
 #include "../AggressorStrategy/AggressorStrategy.h"
 

@@ -47,6 +47,7 @@ public:
      */
     virtual void update() = 0;
     virtual void update(EventData&)=0;
+
 };
 
 #endif //COMP345_A1_OBSERVER_H

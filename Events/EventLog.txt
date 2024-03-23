@@ -1,55 +1,60 @@
-----------MAP CREATED-----------------
-Map size:                     10x10
+                         Dice 3d6 rolled. Result: 16
+                         Dice 3d6 rolled. Result: 12
+                         Dice 3d6 rolled. Result: 13
+                         Dice 3d6 rolled. Result: 5
+                         Dice 3d6 rolled. Result: 12
+                         Dice 3d6 rolled. Result: 7
+                         Dice 3d6 rolled. Result: 9
+                         Dice 3d6 rolled. Result: 11
+                         Dice 3d6 rolled. Result: 12
+                         Dice 3d6 rolled. Result: 10
+                         Dice 3d6 rolled. Result: 18
+                         Dice 3d6 rolled. Result: 12
+                         Dice 3d6 rolled. Result: 18
+                         Dice 3d6 rolled. Result: 9
+                         Dice 3d6 rolled. Result: 12
+                         Dice 3d6 rolled. Result: 14
+                         Dice 3d6 rolled. Result: 8
+                         Dice 3d6 rolled. Result: 12
+                       Bully 2placed at X:4 Y : 1
+                       Bully 3placed at X:5 Y : 5
+         Start Point placed atX:2 Y:1
+                         Bullyplaced at X:2 Y : 1
+           End Point placed atX:4 Y:4
+               Chest placed atX:3 Y:3
+               Chest placed atX:0 Y:0
+                Wall placed atX:2 Y:5
+                Wall placed atX:3 Y:9
+                Wall placed atX:2 Y:4
+               Wall Removed atX:3 Y:9
+                         Bully Moved Right to X:3 Y:1
+                         Bully Moved Right to X:4 Y:1
+                         Bully Moved Up to X:3 Y : 0
+                         Bully Moved Right to X:4 Y:0
+                         Bully Moved Right to X:5 Y:0
+                         Bully Moved Right to X:6 Y:0
+                         Bully Moved Down to X:6 Y:1
+                         Bully Moved Down to X:6 Y:2
+                         Bully Moved Down to X:6 Y:3
+                         Bully Moved Down to X:6 Y:4
+                         Bully Moved Down to X:6 Y:5
+                         Bully Moved Down to X:6 Y:6
+                         Bully Moved Down to X:6 Y:7
+                         Bully Moved Left to X:5 Y:7
+                         Bully Moved Left to X:4 Y:7
+                         Bully Moved Left to X:3 Y:7
+                         Bully Moved Up to X:3 Y : 6
+                       Bully 2placed at X:3 Y : 5
+                         Dice 1d20 rolled. Result: 5
+                         Dice 1d6 rolled. Result: 6
 --------------------------------------
-Dice                          3d6 rolled. Result: 12
-Dice                          3d6 rolled. Result: 11
-Dice                          3d6 rolled. Result: 10
-Dice                          3d6 rolled. Result: 5
-Dice                          3d6 rolled. Result: 9
-Dice                          3d6 rolled. Result: 15
-Dice                          3d6 rolled. Result: 8
-Dice                          3d6 rolled. Result: 11
-Dice                          3d6 rolled. Result: 15
-Dice                          3d6 rolled. Result: 14
-Dice                          3d6 rolled. Result: 5
-Dice                          3d6 rolled. Result: 11
-Dice                          3d6 rolled. Result: 15
-Dice                          3d6 rolled. Result: 9
-Dice                          3d6 rolled. Result: 11
-Dice                          3d6 rolled. Result: 9
-Dice                          3d6 rolled. Result: 17
-Dice                          3d6 rolled. Result: 10
-Bully 2                       placed at X:4 Y : 1
-Bully 3                       placed at X:5 Y : 5
-Start Point placed at         X:2 Y:1
-Bully                         placed at X:2 Y : 1
-End Point placed at           X:4 Y:4
-Chest placed at               X:3 Y:3
-Chest placed at               X:0 Y:0
-Wall placed at                X:2 Y:5
-Wall placed at                X:3 Y:9
-Wall placed at                X:2 Y:4
-Wall Removed at               X:3 Y:9
-Bully                          Moved Down to X:2 Y:2
-Bully                          Moved Right to X:3 Y:2
-Bully                          Moved Right to X:4 Y:2
-Bully                          Moved Right to X:5 Y:2
-Bully                          Moved Down to X:5 Y:3
-Bully                          Moved Left to X:4 Y:3
-Bully                          Moved Down to X:4 Y:4
-Bully                          Moved Up to X:4 Y : 3
-Bully                          Moved Left to X:3 Y:3
-Bully 2                       placed at X:4 Y : 2
-Dice                          1d20 rolled. Result: 15
-Dice                          1d6 rolled. Result: 1
+             Enemy Character: Bully 2 attempted to attack Bully
+                      Result: Attack Hit!
+                 Damage Dealt:11 to Bully
+                         Bullycurrent HP:-11
 --------------------------------------
-Enemy Character:              Bully 2 attempted to attack Bully
-Result:                       Attack Hit!
-Damage Dealt:                 4 to Bully
-Bully                         current HP:-4
+                       Bully 3placed at X:3 Y : 7
 --------------------------------------
-Bully 3                       placed at X:4 Y : 2
---------------------------------------
-Friendly Character:           Bully 3 attempted to attack.
-Result:                       Friendly characters do not attack
+          Friendly Character: Bully 3 attempted to attack.
+                      Result: Friendly characters do not attack
 --------------------------------------

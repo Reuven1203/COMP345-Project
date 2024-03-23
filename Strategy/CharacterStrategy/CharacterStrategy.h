@@ -7,7 +7,7 @@
 
 #include "../../Character/Character.h"
 #include "../../Map/map.h"
-#include "../Observer/GameObserver/GameObserver.h"
+#include "../../Observer/GameObserver/GameObserver.h"
 
 class dungeonMap;
 

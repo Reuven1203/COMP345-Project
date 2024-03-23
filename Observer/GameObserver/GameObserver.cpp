@@ -6,7 +6,6 @@
 #include <fstream>
 #include <iomanip>
 #include "GameObserver.h"
-#include "../Events/EventData.h"
 using namespace std;
 
 GameObserver::GameObserver()
@@ -64,7 +63,7 @@ void GameObserver::detachObservable(Observable* subject)
 	
 }
 
-void GameObserver::update(EventData& event)
+void GameObserver::update(const EventData& event)
 {
 	
 	

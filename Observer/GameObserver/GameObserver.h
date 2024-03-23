@@ -15,10 +15,12 @@
 #include <vector>
 #include "../Observer.h"
 #include "../Observable.h"
-#include "../Map/map.h"
-#include "../Character/Character.h"
-#include "../Dice/Dice.h"
-#include "../Events/EventData.h"
+#include "../../Character/Character.h"
+#include "../../Dice/Dice.h"
+#include "../../Events/EventData.h"
+#include "../../Map/map.h"
+
+class dungeonMap;
 
 using namespace std;
 
@@ -45,7 +47,7 @@ public:
      * Attaches the observer to a dungeonMap observable.
      * @param dungeonMap* Pointer to the dungeonMap to observe.
      */
-    void attachObservable(dungeonMap*);
+    void attachObservable(dungeonMap* map);
 
     /**
      * Attaches the observer to a Character observable.
@@ -74,7 +76,9 @@ public:
      * Updates the observer with specific event data.
      * @param event Reference to the EventData object containing event specifics.
      */
-    void update(EventData& event) override;
+    void update(const EventData& event);
+
+    void update(EventData&) override { };
 
     /**
      * Logs an event. The specifics of the logging mechanism depend on the implementation.

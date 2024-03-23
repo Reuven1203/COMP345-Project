@@ -57,7 +57,7 @@ public:
  */
 
 void notify();
-void notifyGameObserver(EventData&);
+void notifyGameObserver(const EventData&);
 };
 
 #endif //COMP345_A1_OBSERVABLE_H
