@@ -1,0 +1,4 @@
+/Users/reuvenostrofsky/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/Users/reuvenostrofsky/Applications/CLion.app/Contents/bin/ninja/mac/aarch64/ninja "-DCMAKE_CXX_FLAGS=-fcoverage-mapping -fprofile-instr-generate" "-DCMAKE_C_FLAGS=-fcoverage-mapping -fprofile-instr-generate" -G Ninja -S "/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-Project" -B "/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-Project/cmake-build-debug-coverage"
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-Project/cmake-build-debug-coverage
