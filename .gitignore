@@ -1,6 +1,6 @@
 /cmake-build-debug/
 /Documentation/
-CMakeLists.txt
 .vs/
 build/
 out/
+/cmake-build-debug-coverage/
