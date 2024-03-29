@@ -1,0 +1,110 @@
+\doxysection{Map\+Observer Class Reference}
+\hypertarget{class_map_observer}{}\label{class_map_observer}\index{MapObserver@{MapObserver}}
+
+
+{\ttfamily \#include $<$Map\+Observer.\+h$>$}
+
+Inheritance diagram for Map\+Observer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_map_observer}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_map_observer_a3dbb09630faedfc8a54c190ac15c1178}{Map\+Observer}} ()=default
+\item 
+\mbox{\hyperlink{class_map_observer_ad2f931a487015c9adcc7970da5430399}{Map\+Observer}} (\mbox{\hyperlink{classdungeon_map}{dungeon\+Map}} \texorpdfstring{$\ast$}{*}m)
+\item 
+\mbox{\hyperlink{class_map_observer_ad01413d7909ff2df5c9de6ddc62eb5bf}{\texorpdfstring{$\sim$}{\string~}\+Map\+Observer}} ()
+\item 
+void \mbox{\hyperlink{class_map_observer_a2613c50a81cfff1625f83d69e1e7db66}{move\+Character}} ()
+\item 
+void \mbox{\hyperlink{class_map_observer_ac147ba26556b1e4c669d91eecfc6a86f}{display\+Map}} ()
+\item 
+void \mbox{\hyperlink{class_map_observer_a8a3016364d12b7c647e35bb1f04bf4a2}{update}} () override
+\begin{DoxyCompactList}\small\item\em Pure virtual update method that must be implemented by concrete observers. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_map_observer_af3a338c0e72ec96dd94734ae8802c85d}{map\+Finished\+Check}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_observer}{Observer}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_observer_a37824643eeaef086de17bba2717d865a}{\texorpdfstring{$\sim$}{\string~}\+Observer}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for the \doxylink{class_observer}{Observer} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdungeon_map}{dungeon\+Map}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_map_observer_ad1e660632f58fb41ede0793d4692bbf0}{\+\_\+subject}} \{\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_map_observer_a3dbb09630faedfc8a54c190ac15c1178}\label{class_map_observer_a3dbb09630faedfc8a54c190ac15c1178} 
+\index{MapObserver@{MapObserver}!MapObserver@{MapObserver}}
+\index{MapObserver@{MapObserver}!MapObserver@{MapObserver}}
+\doxysubsubsection{\texorpdfstring{MapObserver()}{MapObserver()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Map\+Observer\+::\+Map\+Observer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{class_map_observer_ad2f931a487015c9adcc7970da5430399}\label{class_map_observer_ad2f931a487015c9adcc7970da5430399} 
+\index{MapObserver@{MapObserver}!MapObserver@{MapObserver}}
+\index{MapObserver@{MapObserver}!MapObserver@{MapObserver}}
+\doxysubsubsection{\texorpdfstring{MapObserver()}{MapObserver()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Map\+Observer\+::\+Map\+Observer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdungeon_map}{dungeon\+Map}} \texorpdfstring{$\ast$}{*}}]{m }\end{DoxyParamCaption})}
+
+\Hypertarget{class_map_observer_ad01413d7909ff2df5c9de6ddc62eb5bf}\label{class_map_observer_ad01413d7909ff2df5c9de6ddc62eb5bf} 
+\index{MapObserver@{MapObserver}!````~MapObserver@{\texorpdfstring{$\sim$}{\string~}MapObserver}}
+\index{````~MapObserver@{\texorpdfstring{$\sim$}{\string~}MapObserver}!MapObserver@{MapObserver}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}MapObserver()}{\string~MapObserver()}}
+{\footnotesize\ttfamily Map\+Observer\+::\texorpdfstring{$\sim$}{\string~}\+Map\+Observer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_map_observer_ac147ba26556b1e4c669d91eecfc6a86f}\label{class_map_observer_ac147ba26556b1e4c669d91eecfc6a86f} 
+\index{MapObserver@{MapObserver}!displayMap@{displayMap}}
+\index{displayMap@{displayMap}!MapObserver@{MapObserver}}
+\doxysubsubsection{\texorpdfstring{displayMap()}{displayMap()}}
+{\footnotesize\ttfamily void Map\+Observer\+::display\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_map_observer_af3a338c0e72ec96dd94734ae8802c85d}\label{class_map_observer_af3a338c0e72ec96dd94734ae8802c85d} 
+\index{MapObserver@{MapObserver}!mapFinishedCheck@{mapFinishedCheck}}
+\index{mapFinishedCheck@{mapFinishedCheck}!MapObserver@{MapObserver}}
+\doxysubsubsection{\texorpdfstring{mapFinishedCheck()}{mapFinishedCheck()}}
+{\footnotesize\ttfamily bool Map\+Observer\+::map\+Finished\+Check (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_map_observer_a2613c50a81cfff1625f83d69e1e7db66}\label{class_map_observer_a2613c50a81cfff1625f83d69e1e7db66} 
+\index{MapObserver@{MapObserver}!moveCharacter@{moveCharacter}}
+\index{moveCharacter@{moveCharacter}!MapObserver@{MapObserver}}
+\doxysubsubsection{\texorpdfstring{moveCharacter()}{moveCharacter()}}
+{\footnotesize\ttfamily void Map\+Observer\+::move\+Character (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_map_observer_a8a3016364d12b7c647e35bb1f04bf4a2}\label{class_map_observer_a8a3016364d12b7c647e35bb1f04bf4a2} 
+\index{MapObserver@{MapObserver}!update@{update}}
+\index{update@{update}!MapObserver@{MapObserver}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Map\+Observer\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Pure virtual update method that must be implemented by concrete observers. 
+
+This method is called to notify the observer of changes in the subject it is observing. Concrete observers must override this method to specify how they should respond to these changes. 
+
+Implements \mbox{\hyperlink{class_observer_ac75e4b339faeb3ea6fe0a01bf0b4a215}{Observer}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_map_observer_ad1e660632f58fb41ede0793d4692bbf0}\label{class_map_observer_ad1e660632f58fb41ede0793d4692bbf0} 
+\index{MapObserver@{MapObserver}!\_subject@{\_subject}}
+\index{\_subject@{\_subject}!MapObserver@{MapObserver}}
+\doxysubsubsection{\texorpdfstring{\_subject}{\_subject}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classdungeon_map}{dungeon\+Map}}\texorpdfstring{$\ast$}{*} Map\+Observer\+::\+\_\+subject \{\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Observer/\+Map\+Observer/\mbox{\hyperlink{_map_observer_8h}{Map\+Observer.\+h}}\item 
+Observer/\+Map\+Observer/\mbox{\hyperlink{_map_observer_8cpp}{Map\+Observer.\+cpp}}\end{DoxyCompactItemize}

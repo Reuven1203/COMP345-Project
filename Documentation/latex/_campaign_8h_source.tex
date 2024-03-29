@@ -1,0 +1,37 @@
+\doxysection{Campaign.\+h}
+\hypertarget{_campaign_8h_source}{}\label{_campaign_8h_source}\index{Campaign/Campaign.h@{Campaign/Campaign.h}}
+\mbox{\hyperlink{_campaign_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ COMP345\_A1\_CAMPAIGN\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ COMP345\_A1\_CAMPAIGN\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{map_8h}{../Map/map.h}}"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_campaign}{Campaign}}\ \{}
+\DoxyCodeLine{00012\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{class_campaign_ae81c5b000e416b0ef31994efdf871c40}{Campaign}}();}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{class_campaign_ae81c5b000e416b0ef31994efdf871c40}{Campaign}}(\mbox{\hyperlink{class_character}{Character}}\ \mbox{\hyperlink{class_campaign_aefce1dc50084708b2725c7dbdfb4737e}{player}},\ std::vector<dungeonMap>\ maps);}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{classdungeon_map}{dungeonMap}}\ \mbox{\hyperlink{class_campaign_ac4d8c6618ada1a433839206316c2d1bf}{getMap}}(\textcolor{keywordtype}{int}\ index);}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_campaign_ab7c8cf19f2db558f014e3bb305b3677c}{printCampaign}}();}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_campaign_a71c8264adc22b70876f8dfb8fa6e3047}{addMap}}(\mbox{\hyperlink{classdungeon_map}{dungeonMap}}\ map);}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_campaign_af5981f29571e8c242024515f2afca1f4}{removeMap}}(\textcolor{keywordtype}{int}\ index);}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_campaign_a3b6647a2bb505ced6242a7b095793949}{setPlayer}}(\mbox{\hyperlink{class_character}{Character}}\ character);}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_campaign_a23461ab1629a92cf416bad9ac75c05ac}{setPlayerPosition}}(\textcolor{keywordtype}{int}\ mapNum,\ \textcolor{keywordtype}{int}\ xPos,\ \textcolor{keywordtype}{int}\ yPos);}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_campaign_a617a873a00c488d7619b7a2c829f7d48}{startCampaign}}();}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_campaign_a8c30e95f937cad74c4cda3708d164029}{clear}}();}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{classdungeon_map}{dungeonMap}}*\ \mbox{\hyperlink{class_campaign_ac97426cc3f579a0404486280180d4596}{currentMap}}();}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{classdungeon_map}{dungeonMap}}*\ \mbox{\hyperlink{class_campaign_a3f04c227bc7e692f95824ce168576697}{nextMap}}();}
+\DoxyCodeLine{00026\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00027\ \ \ \ \ std::vector<dungeonMap>\ \mbox{\hyperlink{class_campaign_a8ae2e6010040f3e732efc011a57620fd}{campaign}}\ \{\};}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{class_character}{Character}}\ \mbox{\hyperlink{class_campaign_aefce1dc50084708b2725c7dbdfb4737e}{player}}\ \{\textcolor{stringliteral}{"{}default"{}},\ 1\};}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_campaign_ab6e48eb1078fe4fc25e7e1e85e5f9cfb}{playerPos}}[3]\ \{-\/1,\ -\/1,\ -\/1\};}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_campaign_af30d8ff96ab41fafa795ecaa05886499}{currentMapIndex}}\ \{0\};}
+\DoxyCodeLine{00031\ \};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//COMP345\_A1\_CAMPAIGN\_H}}
+
+\end{DoxyCode}

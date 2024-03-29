@@ -1,0 +1,26 @@
+\doxysection{Item/\+Armor.h File Reference}
+\hypertarget{_armor_8h}{}\label{_armor_8h}\index{Item/Armor.h@{Item/Armor.h}}
+
+
+Defines \doxylink{class_armor}{Armor} class, which is an \doxylink{class_item_decorator}{Item\+Decorator} to equip an \doxylink{class_armor}{Armor} item by wrapping.  
+
+
+{\ttfamily \#include "{}Item\+Decorator.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_armor}{Armor}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_armor}{Armor} class represents the equipping of an \doxylink{class_item}{Item} with Item\+Type\+::\+ARMOR. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines \doxylink{class_armor}{Armor} class, which is an \doxylink{class_item_decorator}{Item\+Decorator} to equip an \doxylink{class_armor}{Armor} item by wrapping. 
+
+Defines \doxylink{class_item_decorator}{Item\+Decorator} class, which allows items to be equipped by wrapping.
+
+\begin{DoxyAuthor}{Author}
+Julian D\textquotesingle{}Addario
+
+Julian D\textquotesingle{}Addario
+\end{DoxyAuthor}
+This class allows for items to be equipped to characters, based on the type of item being equipped. This class should not be used on its own, rather instead using the subclasses (\doxylink{class_armor}{Armor}, \doxylink{class_helmet}{Helmet}, \doxylink{class_weapon}{Weapon}, etc). Holds a pointer to a character whose accessors are overridden in order to modify attribute values based on the items equipped/unequipped to/from the character. 

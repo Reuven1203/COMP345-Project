@@ -1,0 +1,140 @@
+\doxysection{Map\+Builder Class Reference}
+\hypertarget{class_map_builder}{}\label{class_map_builder}\index{MapBuilder@{MapBuilder}}
+
+
+{\ttfamily \#include $<$Map\+Builder.\+h$>$}
+
+Inheritance diagram for Map\+Builder\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_map_builder}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_map_builder_af4cafbce7258e6d8061c453a79e25c9b}{virtual}} \mbox{\hyperlink{class_map_builder_a8cb32cce8364fdae0d962de7194e4a15}{\texorpdfstring{$\sim$}{\string~}\+Map\+Builder}} ()=\mbox{\hyperlink{class_map_builder_af4cafbce7258e6d8061c453a79e25c9b}{default}}
+\item 
+\mbox{\hyperlink{classdungeon_map}{dungeon\+Map}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_map_builder_a1f1a281ae0a7140f2c34c53761819337}{get\+Map}} ()
+\item 
+\mbox{\hyperlink{class_character}{Character}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_map_builder_a143decc8234a92c86a450a34241caa3f}{get\+Player}} ()
+\item 
+\mbox{\hyperlink{struct_map_info}{Map\+Info}} \mbox{\hyperlink{class_map_builder_ac81c75f5e453080e302678284fd2c9ad}{get\+Map\+Info}} (std\+::string file\+Name)
+\item 
+\mbox{\hyperlink{class_map_builder_af4cafbce7258e6d8061c453a79e25c9b}{void}} \mbox{\hyperlink{class_map_builder_a007f7357a2ab366f59cab11a66a4643d}{create\+New\+Map}} ()
+\item 
+\mbox{\hyperlink{class_map_builder_af4cafbce7258e6d8061c453a79e25c9b}{virtual}} \mbox{\hyperlink{class_map_builder_af4cafbce7258e6d8061c453a79e25c9b}{void}} \mbox{\hyperlink{class_map_builder_a718c9e89c61da4578d24f8b250e4724e}{build\+Map\+Size}} ()=0
+\item 
+\mbox{\hyperlink{class_map_builder_af4cafbce7258e6d8061c453a79e25c9b}{virtual}} \mbox{\hyperlink{class_map_builder_af4cafbce7258e6d8061c453a79e25c9b}{void}} \mbox{\hyperlink{class_map_builder_a9cbc7fe2c9ee860fdf0813b64444fc0a}{build\+Start\+End}} ()=0
+\item 
+\mbox{\hyperlink{class_map_builder_af4cafbce7258e6d8061c453a79e25c9b}{virtual}} \mbox{\hyperlink{class_map_builder_af4cafbce7258e6d8061c453a79e25c9b}{void}} \mbox{\hyperlink{class_map_builder_a54bf9315c8774264c792adbdef1c3adf}{build\+Walls}} ()=0
+\item 
+\mbox{\hyperlink{class_map_builder_af4cafbce7258e6d8061c453a79e25c9b}{virtual}} \mbox{\hyperlink{class_map_builder_af4cafbce7258e6d8061c453a79e25c9b}{void}} \mbox{\hyperlink{class_map_builder_a3afd546ff83c8b674679daa74e63d41b}{build\+Player}} ()=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdungeon_map}{dungeon\+Map}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_map_builder_af4cafbce7258e6d8061c453a79e25c9b}{map}}
+\item 
+\mbox{\hyperlink{class_character}{Character}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_map_builder_a258191ce0c42f6e1632d2d34cfad64ab}{player}} = \mbox{\hyperlink{class_map_builder_af4cafbce7258e6d8061c453a79e25c9b}{nullptr}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_map_builder_a8cb32cce8364fdae0d962de7194e4a15}\label{class_map_builder_a8cb32cce8364fdae0d962de7194e4a15} 
+\index{MapBuilder@{MapBuilder}!````~MapBuilder@{\texorpdfstring{$\sim$}{\string~}MapBuilder}}
+\index{````~MapBuilder@{\texorpdfstring{$\sim$}{\string~}MapBuilder}!MapBuilder@{MapBuilder}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}MapBuilder()}{\string~MapBuilder()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_map_builder_af4cafbce7258e6d8061c453a79e25c9b}{virtual}} Map\+Builder\+::\texorpdfstring{$\sim$}{\string~}\+Map\+Builder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_map_builder_a718c9e89c61da4578d24f8b250e4724e}\label{class_map_builder_a718c9e89c61da4578d24f8b250e4724e} 
+\index{MapBuilder@{MapBuilder}!buildMapSize@{buildMapSize}}
+\index{buildMapSize@{buildMapSize}!MapBuilder@{MapBuilder}}
+\doxysubsubsection{\texorpdfstring{buildMapSize()}{buildMapSize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_map_builder_af4cafbce7258e6d8061c453a79e25c9b}{virtual}} \mbox{\hyperlink{class_map_builder_af4cafbce7258e6d8061c453a79e25c9b}{void}} Map\+Builder\+::build\+Map\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_default_map_builder_af66d8598514cc0e6242a9d524b78fe5c}{Default\+Map\+Builder}}.
+
+\Hypertarget{class_map_builder_a3afd546ff83c8b674679daa74e63d41b}\label{class_map_builder_a3afd546ff83c8b674679daa74e63d41b} 
+\index{MapBuilder@{MapBuilder}!buildPlayer@{buildPlayer}}
+\index{buildPlayer@{buildPlayer}!MapBuilder@{MapBuilder}}
+\doxysubsubsection{\texorpdfstring{buildPlayer()}{buildPlayer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_map_builder_af4cafbce7258e6d8061c453a79e25c9b}{virtual}} \mbox{\hyperlink{class_map_builder_af4cafbce7258e6d8061c453a79e25c9b}{void}} Map\+Builder\+::build\+Player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_default_map_builder_a66d6701bef7eb4fdfa7e16520e5241c5}{Default\+Map\+Builder}}.
+
+\Hypertarget{class_map_builder_a9cbc7fe2c9ee860fdf0813b64444fc0a}\label{class_map_builder_a9cbc7fe2c9ee860fdf0813b64444fc0a} 
+\index{MapBuilder@{MapBuilder}!buildStartEnd@{buildStartEnd}}
+\index{buildStartEnd@{buildStartEnd}!MapBuilder@{MapBuilder}}
+\doxysubsubsection{\texorpdfstring{buildStartEnd()}{buildStartEnd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_map_builder_af4cafbce7258e6d8061c453a79e25c9b}{virtual}} \mbox{\hyperlink{class_map_builder_af4cafbce7258e6d8061c453a79e25c9b}{void}} Map\+Builder\+::build\+Start\+End (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_default_map_builder_a789e9e99bcaac6a49c1632ca63c87ef5}{Default\+Map\+Builder}}.
+
+\Hypertarget{class_map_builder_a54bf9315c8774264c792adbdef1c3adf}\label{class_map_builder_a54bf9315c8774264c792adbdef1c3adf} 
+\index{MapBuilder@{MapBuilder}!buildWalls@{buildWalls}}
+\index{buildWalls@{buildWalls}!MapBuilder@{MapBuilder}}
+\doxysubsubsection{\texorpdfstring{buildWalls()}{buildWalls()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_map_builder_af4cafbce7258e6d8061c453a79e25c9b}{virtual}} \mbox{\hyperlink{class_map_builder_af4cafbce7258e6d8061c453a79e25c9b}{void}} Map\+Builder\+::build\+Walls (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_default_map_builder_a93f25b5e79ac0bbce824931aaf01ab1b}{Default\+Map\+Builder}}.
+
+\Hypertarget{class_map_builder_a007f7357a2ab366f59cab11a66a4643d}\label{class_map_builder_a007f7357a2ab366f59cab11a66a4643d} 
+\index{MapBuilder@{MapBuilder}!createNewMap@{createNewMap}}
+\index{createNewMap@{createNewMap}!MapBuilder@{MapBuilder}}
+\doxysubsubsection{\texorpdfstring{createNewMap()}{createNewMap()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_map_builder_af4cafbce7258e6d8061c453a79e25c9b}{void}} Map\+Builder\+::create\+New\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_map_builder_a1f1a281ae0a7140f2c34c53761819337}\label{class_map_builder_a1f1a281ae0a7140f2c34c53761819337} 
+\index{MapBuilder@{MapBuilder}!getMap@{getMap}}
+\index{getMap@{getMap}!MapBuilder@{MapBuilder}}
+\doxysubsubsection{\texorpdfstring{getMap()}{getMap()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classdungeon_map}{dungeon\+Map}} \texorpdfstring{$\ast$}{*} Map\+Builder\+::get\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_map_builder_ac81c75f5e453080e302678284fd2c9ad}\label{class_map_builder_ac81c75f5e453080e302678284fd2c9ad} 
+\index{MapBuilder@{MapBuilder}!getMapInfo@{getMapInfo}}
+\index{getMapInfo@{getMapInfo}!MapBuilder@{MapBuilder}}
+\doxysubsubsection{\texorpdfstring{getMapInfo()}{getMapInfo()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_map_info}{Map\+Info}} Map\+Builder\+::get\+Map\+Info (\begin{DoxyParamCaption}\item[{std\+::string}]{filename }\end{DoxyParamCaption})}
+
+\begin{DoxyAuthor}{Author}
+Julian D\textquotesingle{}Addario 
+\end{DoxyAuthor}
+\Hypertarget{class_map_builder_a143decc8234a92c86a450a34241caa3f}\label{class_map_builder_a143decc8234a92c86a450a34241caa3f} 
+\index{MapBuilder@{MapBuilder}!getPlayer@{getPlayer}}
+\index{getPlayer@{getPlayer}!MapBuilder@{MapBuilder}}
+\doxysubsubsection{\texorpdfstring{getPlayer()}{getPlayer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_character}{Character}} \texorpdfstring{$\ast$}{*} Map\+Builder\+::get\+Player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_map_builder_af4cafbce7258e6d8061c453a79e25c9b}\label{class_map_builder_af4cafbce7258e6d8061c453a79e25c9b} 
+\index{MapBuilder@{MapBuilder}!map@{map}}
+\index{map@{map}!MapBuilder@{MapBuilder}}
+\doxysubsubsection{\texorpdfstring{map}{map}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classdungeon_map}{dungeon\+Map}}\texorpdfstring{$\ast$}{*} Map\+Builder\+::map\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_map_builder_a258191ce0c42f6e1632d2d34cfad64ab}\label{class_map_builder_a258191ce0c42f6e1632d2d34cfad64ab} 
+\index{MapBuilder@{MapBuilder}!player@{player}}
+\index{player@{player}!MapBuilder@{MapBuilder}}
+\doxysubsubsection{\texorpdfstring{player}{player}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_character}{Character}}\texorpdfstring{$\ast$}{*} Map\+Builder\+::player = \mbox{\hyperlink{class_map_builder_af4cafbce7258e6d8061c453a79e25c9b}{nullptr}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Builder/\+Map\+Builder/\mbox{\hyperlink{_map_builder_8h}{Map\+Builder.\+h}}\item 
+Builder/\+Map\+Builder/\mbox{\hyperlink{_map_builder_8cpp}{Map\+Builder.\+cpp}}\end{DoxyCompactItemize}

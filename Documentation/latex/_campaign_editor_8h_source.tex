@@ -1,0 +1,40 @@
+\doxysection{Campaign\+Editor.\+h}
+\hypertarget{_campaign_editor_8h_source}{}\label{_campaign_editor_8h_source}\index{CampaignEditor/CampaignEditor.h@{CampaignEditor/CampaignEditor.h}}
+\mbox{\hyperlink{_campaign_editor_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ COMP345\_A1\_CAMPAIGNEDITOR\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ COMP345\_A1\_CAMPAIGNEDITOR\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{map_8h}{../Map/map.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_map_observer_8h}{../Observer/MapObserver/MapObserver.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_map_director_8h}{../Director/MapDirector/MapDirector.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_map_builder_8h}{../Builder/MapBuilder/MapBuilder.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_default_map_builder_8h}{../Builder/MapBuilder/DefaultMapBuilder.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_campaign_8h}{../Campaign/Campaign.h}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_campaign_editor}{CampaignEditor}}\ \{}
+\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{class_campaign_editor_a1f9e45e60a19fb2372d38a9a9f0dd745}{CampaignEditor}}();}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_campaign_editor_a21da75aad5bff82dc95e9c1af7b6eea5}{run}}();}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{class_campaign}{Campaign}}\ \mbox{\hyperlink{class_campaign_editor_aa4455868c928cd0edc82c7099257209f}{getCampaign}}();}
+\DoxyCodeLine{00022\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_campaign}{Campaign}}\ \mbox{\hyperlink{class_campaign_editor_ac6e62583a5a630f290334e777b32b069}{campaign}}\ \{\};}
+\DoxyCodeLine{00024\ \ \ \ \ std::vector<std::string>\ \mbox{\hyperlink{class_campaign_editor_ae59c264987c7b387a8b9e6809669a3af}{mapFiles}};}
+\DoxyCodeLine{00025\ \ \ \ \ std::string\ \mbox{\hyperlink{class_campaign_editor_a1d03f578691899721fa7fed5542d567a}{fileName}}\ \{\};}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_campaign_editor_a33fd65abdef2f28a193d8d4042fe4d7d}{printCampaignDetails}}();}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_campaign_editor_a1d9d75818593da361408e0c928e879b0}{getUserInput}}();}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_campaign_editor_ad716f4ad05c7401e9b2e8563ee827d37}{addMap}}();}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_campaign_editor_aeb4ffe0a48aeaab7881beafb5dc03253}{removeMap}}();}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_campaign_editor_af0deb82f985e87c4d553853576b0b355}{editMap}}();}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_campaign_editor_a0dc0e6eeef97e09ad5d18d8d8b2d2ec4}{saveCampaign}}();}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_campaign_editor_ace15dd75a1c3f86a701dc095e7794385}{save}}(std::string\ filename);}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_campaign_editor_a42c5fb5cee4a91db86bc73fecf9dd0a2}{loadCampaign}}();}
+\DoxyCodeLine{00034\ \};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//COMP345\_A1\_CAMPAIGNEDITOR\_H}}
+
+\end{DoxyCode}

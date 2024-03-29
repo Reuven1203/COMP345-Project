@@ -1,0 +1,150 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.27"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "COMP345-A1",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "A1-map::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-A1-map-Debug-fceb3409bf9dc8132fcc.json",
+					"name" : "A1-map",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "A2-Campaign::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-A2-Campaign-Debug-3d505dc1458ff09fa48e.json",
+					"name" : "A2-Campaign",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "A2-MapEditor::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-A2-MapEditor-Debug-3a616f76ac25a08c0ef7.json",
+					"name" : "A2-MapEditor",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "A3-ItemDecorator::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-A3-ItemDecorator-Debug-8f075dcff2d18492735c.json",
+					"name" : "A3-ItemDecorator",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "COMP345_A1_Tests::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-COMP345_A1_Tests-Debug-b39ff7246e98e5db37fd.json",
+					"name" : "COMP345_A1_Tests",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "CharacterObserver::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-CharacterObserver-Debug-4a5b8455793ba88502a0.json",
+					"name" : "CharacterObserver",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "CharacterStrategyDriver::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-CharacterStrategyDriver-Debug-d835172a5d7807dc85b4.json",
+					"name" : "CharacterStrategyDriver",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "FighterBuilder::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-FighterBuilder-Debug-3ec31b9ead2fc1a75622.json",
+					"name" : "FighterBuilder",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "GameObserverDriver::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-GameObserverDriver-Debug-e6dbf88cdd4c2be9adef.json",
+					"name" : "GameObserverDriver",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "MapBuilderTest::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-MapBuilderTest-Debug-65f9397ac1c084963f6f.json",
+					"name" : "MapBuilderTest",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "dice_run::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-dice_run-Debug-aa42b1148190a10de9f2.json",
+					"name" : "dice_run",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-Project/cmake-build-debug",
+		"source" : "/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-Project"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

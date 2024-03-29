@@ -1,0 +1,151 @@
+\doxysection{Campaign\+Editor Class Reference}
+\hypertarget{class_campaign_editor}{}\label{class_campaign_editor}\index{CampaignEditor@{CampaignEditor}}
+
+
+{\ttfamily \#include $<$Campaign\+Editor.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_campaign_editor_a1f9e45e60a19fb2372d38a9a9f0dd745}{Campaign\+Editor}} ()
+\item 
+void \mbox{\hyperlink{class_campaign_editor_a21da75aad5bff82dc95e9c1af7b6eea5}{run}} ()
+\item 
+\mbox{\hyperlink{class_campaign}{Campaign}} \mbox{\hyperlink{class_campaign_editor_aa4455868c928cd0edc82c7099257209f}{get\+Campaign}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_campaign_editor_a33fd65abdef2f28a193d8d4042fe4d7d}{print\+Campaign\+Details}} ()
+\item 
+int \mbox{\hyperlink{class_campaign_editor_a1d9d75818593da361408e0c928e879b0}{get\+User\+Input}} ()
+\item 
+void \mbox{\hyperlink{class_campaign_editor_ad716f4ad05c7401e9b2e8563ee827d37}{add\+Map}} ()
+\item 
+void \mbox{\hyperlink{class_campaign_editor_aeb4ffe0a48aeaab7881beafb5dc03253}{remove\+Map}} ()
+\item 
+void \mbox{\hyperlink{class_campaign_editor_af0deb82f985e87c4d553853576b0b355}{edit\+Map}} ()
+\item 
+void \mbox{\hyperlink{class_campaign_editor_a0dc0e6eeef97e09ad5d18d8d8b2d2ec4}{save\+Campaign}} ()
+\item 
+void \mbox{\hyperlink{class_campaign_editor_ace15dd75a1c3f86a701dc095e7794385}{save}} (std\+::string filename)
+\item 
+void \mbox{\hyperlink{class_campaign_editor_a42c5fb5cee4a91db86bc73fecf9dd0a2}{load\+Campaign}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_campaign}{Campaign}} \mbox{\hyperlink{class_campaign_editor_ac6e62583a5a630f290334e777b32b069}{campaign}} \{\}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_campaign_editor_ae59c264987c7b387a8b9e6809669a3af}{map\+Files}}
+\item 
+std\+::string \mbox{\hyperlink{class_campaign_editor_a1d03f578691899721fa7fed5542d567a}{file\+Name}} \{\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Julian D\textquotesingle{}Addario 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_campaign_editor_a1f9e45e60a19fb2372d38a9a9f0dd745}\label{class_campaign_editor_a1f9e45e60a19fb2372d38a9a9f0dd745} 
+\index{CampaignEditor@{CampaignEditor}!CampaignEditor@{CampaignEditor}}
+\index{CampaignEditor@{CampaignEditor}!CampaignEditor@{CampaignEditor}}
+\doxysubsubsection{\texorpdfstring{CampaignEditor()}{CampaignEditor()}}
+{\footnotesize\ttfamily Campaign\+Editor\+::\+Campaign\+Editor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\begin{DoxyAuthor}{Author}
+Julian D\textquotesingle{}Addario 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_campaign_editor_ad716f4ad05c7401e9b2e8563ee827d37}\label{class_campaign_editor_ad716f4ad05c7401e9b2e8563ee827d37} 
+\index{CampaignEditor@{CampaignEditor}!addMap@{addMap}}
+\index{addMap@{addMap}!CampaignEditor@{CampaignEditor}}
+\doxysubsubsection{\texorpdfstring{addMap()}{addMap()}}
+{\footnotesize\ttfamily void Campaign\+Editor\+::add\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_campaign_editor_af0deb82f985e87c4d553853576b0b355}\label{class_campaign_editor_af0deb82f985e87c4d553853576b0b355} 
+\index{CampaignEditor@{CampaignEditor}!editMap@{editMap}}
+\index{editMap@{editMap}!CampaignEditor@{CampaignEditor}}
+\doxysubsubsection{\texorpdfstring{editMap()}{editMap()}}
+{\footnotesize\ttfamily void Campaign\+Editor\+::edit\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_campaign_editor_aa4455868c928cd0edc82c7099257209f}\label{class_campaign_editor_aa4455868c928cd0edc82c7099257209f} 
+\index{CampaignEditor@{CampaignEditor}!getCampaign@{getCampaign}}
+\index{getCampaign@{getCampaign}!CampaignEditor@{CampaignEditor}}
+\doxysubsubsection{\texorpdfstring{getCampaign()}{getCampaign()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_campaign}{Campaign}} Campaign\+Editor\+::get\+Campaign (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_campaign_editor_a1d9d75818593da361408e0c928e879b0}\label{class_campaign_editor_a1d9d75818593da361408e0c928e879b0} 
+\index{CampaignEditor@{CampaignEditor}!getUserInput@{getUserInput}}
+\index{getUserInput@{getUserInput}!CampaignEditor@{CampaignEditor}}
+\doxysubsubsection{\texorpdfstring{getUserInput()}{getUserInput()}}
+{\footnotesize\ttfamily int Campaign\+Editor\+::get\+User\+Input (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_campaign_editor_a42c5fb5cee4a91db86bc73fecf9dd0a2}\label{class_campaign_editor_a42c5fb5cee4a91db86bc73fecf9dd0a2} 
+\index{CampaignEditor@{CampaignEditor}!loadCampaign@{loadCampaign}}
+\index{loadCampaign@{loadCampaign}!CampaignEditor@{CampaignEditor}}
+\doxysubsubsection{\texorpdfstring{loadCampaign()}{loadCampaign()}}
+{\footnotesize\ttfamily void Campaign\+Editor\+::load\+Campaign (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_campaign_editor_a33fd65abdef2f28a193d8d4042fe4d7d}\label{class_campaign_editor_a33fd65abdef2f28a193d8d4042fe4d7d} 
+\index{CampaignEditor@{CampaignEditor}!printCampaignDetails@{printCampaignDetails}}
+\index{printCampaignDetails@{printCampaignDetails}!CampaignEditor@{CampaignEditor}}
+\doxysubsubsection{\texorpdfstring{printCampaignDetails()}{printCampaignDetails()}}
+{\footnotesize\ttfamily void Campaign\+Editor\+::print\+Campaign\+Details (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_campaign_editor_aeb4ffe0a48aeaab7881beafb5dc03253}\label{class_campaign_editor_aeb4ffe0a48aeaab7881beafb5dc03253} 
+\index{CampaignEditor@{CampaignEditor}!removeMap@{removeMap}}
+\index{removeMap@{removeMap}!CampaignEditor@{CampaignEditor}}
+\doxysubsubsection{\texorpdfstring{removeMap()}{removeMap()}}
+{\footnotesize\ttfamily void Campaign\+Editor\+::remove\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_campaign_editor_a21da75aad5bff82dc95e9c1af7b6eea5}\label{class_campaign_editor_a21da75aad5bff82dc95e9c1af7b6eea5} 
+\index{CampaignEditor@{CampaignEditor}!run@{run}}
+\index{run@{run}!CampaignEditor@{CampaignEditor}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void Campaign\+Editor\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{class_campaign_editor_ace15dd75a1c3f86a701dc095e7794385}\label{class_campaign_editor_ace15dd75a1c3f86a701dc095e7794385} 
+\index{CampaignEditor@{CampaignEditor}!save@{save}}
+\index{save@{save}!CampaignEditor@{CampaignEditor}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily void Campaign\+Editor\+::save (\begin{DoxyParamCaption}\item[{std\+::string}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_campaign_editor_a0dc0e6eeef97e09ad5d18d8d8b2d2ec4}\label{class_campaign_editor_a0dc0e6eeef97e09ad5d18d8d8b2d2ec4} 
+\index{CampaignEditor@{CampaignEditor}!saveCampaign@{saveCampaign}}
+\index{saveCampaign@{saveCampaign}!CampaignEditor@{CampaignEditor}}
+\doxysubsubsection{\texorpdfstring{saveCampaign()}{saveCampaign()}}
+{\footnotesize\ttfamily void Campaign\+Editor\+::save\+Campaign (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_campaign_editor_ac6e62583a5a630f290334e777b32b069}\label{class_campaign_editor_ac6e62583a5a630f290334e777b32b069} 
+\index{CampaignEditor@{CampaignEditor}!campaign@{campaign}}
+\index{campaign@{campaign}!CampaignEditor@{CampaignEditor}}
+\doxysubsubsection{\texorpdfstring{campaign}{campaign}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_campaign}{Campaign}} Campaign\+Editor\+::campaign \{\}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_campaign_editor_a1d03f578691899721fa7fed5542d567a}\label{class_campaign_editor_a1d03f578691899721fa7fed5542d567a} 
+\index{CampaignEditor@{CampaignEditor}!fileName@{fileName}}
+\index{fileName@{fileName}!CampaignEditor@{CampaignEditor}}
+\doxysubsubsection{\texorpdfstring{fileName}{fileName}}
+{\footnotesize\ttfamily std\+::string Campaign\+Editor\+::file\+Name \{\}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_campaign_editor_ae59c264987c7b387a8b9e6809669a3af}\label{class_campaign_editor_ae59c264987c7b387a8b9e6809669a3af} 
+\index{CampaignEditor@{CampaignEditor}!mapFiles@{mapFiles}}
+\index{mapFiles@{mapFiles}!CampaignEditor@{CampaignEditor}}
+\doxysubsubsection{\texorpdfstring{mapFiles}{mapFiles}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ Campaign\+Editor\+::map\+Files\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Campaign\+Editor/\mbox{\hyperlink{_campaign_editor_8h}{Campaign\+Editor.\+h}}\item 
+Campaign\+Editor/\mbox{\hyperlink{_campaign_editor_8cpp}{Campaign\+Editor.\+cpp}}\end{DoxyCompactItemize}

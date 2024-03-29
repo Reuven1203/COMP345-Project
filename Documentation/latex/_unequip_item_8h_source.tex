@@ -1,0 +1,47 @@
+\doxysection{Unequip\+Item.\+h}
+\hypertarget{_unequip_item_8h_source}{}\label{_unequip_item_8h_source}\index{Item/UnequipItem.h@{Item/UnequipItem.h}}
+\mbox{\hyperlink{_unequip_item_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifndef\ COMP345\_A1\_UNEQUIPITEM\_H}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ COMP345\_A1\_UNEQUIPITEM\_H}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_item_decorator_8h}{ItemDecorator.h}}"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_unequip_item}{UnequipItem}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_item_decorator}{ItemDecorator}}\ \{}
+\DoxyCodeLine{00021\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{comment}{//\ Holds\ ItemType,\ INT,\ WIS,\ AC,\ STR,\ CON,\ CHA,\ DEX,\ ATK,\ and\ DMG\ of\ item\ to\ be\ unequipped}}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_item_ab5eeb575e9d66ebcfef9b58b667fad05}{Item::ItemType}}\ \mbox{\hyperlink{class_unequip_item_ac3e56f3a655d95c3eda16d5b9e97c225}{itemType}};}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_unequip_item_a61bd31d09986de86a42339ff1c1ceadf}{intel}};}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_unequip_item_aadc3d7cb59ae26bf10db07a82223ec75}{wis}};}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_unequip_item_a2c9018dfcc3a92823384acbf27999e0e}{ac}};}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_unequip_item_a6cdfca68fe554dffc5fc923a4fc43053}{str}};}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_unequip_item_a1ffbed1610d75bc18659c6802f2ccfba}{con}};}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_unequip_item_a356e492e8099d19a814caa1823b2691d}{cha}};}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_unequip_item_a4eec11df9de4a21a41415dc6739d4628}{dex}};}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_unequip_item_af4fa54b24c9ba7c7688e5589e97d2f83}{atk}};}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_unequip_item_a5cf83aa422fc2d9cf78a537be357ccba}{dmg}};}
+\DoxyCodeLine{00033\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{class_unequip_item_ac3871f5c33da55280122e28d39822b35}{UnequipItem}}(\mbox{\hyperlink{class_item}{Item}}*\ item,\ \mbox{\hyperlink{class_character}{Character}}*\ character);}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_unequip_item_a3ac7f93c069618b98b60154bcc638c07}{getSTR}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_unequip_item_a797c4453bc0140a83d072a0de314ecbe}{getDEX}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_unequip_item_a8d3de0113659d29b1b77d96eeb96677c}{getCON}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_unequip_item_a093fc06edd1428f925482678ad310265}{getINT}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_unequip_item_af5ad5c4c28b247af4cfa157d0f4cf62a}{getWIS}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_unequip_item_a88828783d0a834ae8058c921b693f33f}{getCHA}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_unequip_item_a7e046cbf91e9be1c86d5b55df3a74373}{getATK}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_unequip_item_aaaa3c6e1913e7971fae0d6382133ae39}{getDMG}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_unequip_item_a86ba6f7a44cf75b7eadd378f7f1de4f2}{getAC}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_unequip_item_a84551a7dad151207e20e88f720b8a75d}{hasWeapon}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_unequip_item_a6560615c4ae364bae5e398bfa48edcaf}{hasHelmet}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_unequip_item_a1b48c06b6bc5f0914e19f6b2420bffa7}{hasArmor}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_unequip_item_a74c86625f078009ad675e2431044a8be}{hasShield}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_unequip_item_acb2f1939cdc700944a929e297169f713}{hasRing}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_unequip_item_a636cedfd79b6e41e62322c547c1f9374}{hasBelt}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_unequip_item_a2fd82a482df5807ed0e64f9db693d558}{hasBoots}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00136\ \};}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//COMP345\_A1\_UNEQUIPITEM\_H}}
+
+\end{DoxyCode}
