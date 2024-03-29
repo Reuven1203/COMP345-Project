@@ -1,0 +1,440 @@
+\doxysection{cell Class Reference}
+\hypertarget{classcell}{}\label{classcell}\index{cell@{cell}}
+
+
+Represents a single cell within a dungeon map.  
+
+
+
+
+{\ttfamily \#include $<$cell.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcell_a5f9e893bce5c3f050bb20db0d0b615ca}{cell}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor initializing the cell to empty. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classcell_a335fd618a8e84f4e36572f801b35b3f9}{\texorpdfstring{$\sim$}{\string~}cell}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the cell class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classcell_a6281d3a115ab646781bbec58a84539e3}{cell}} (\mbox{\hyperlink{class_character}{Character}} \texorpdfstring{$\ast$}{*}person)
+\begin{DoxyCompactList}\small\item\em Constructor initializing the cell with a character. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classcell_a342502b297bb5eb4662aca7129f10989}{cell}} (\mbox{\hyperlink{classcontainer}{container}} \texorpdfstring{$\ast$}{*}item\+Storage)
+\begin{DoxyCompactList}\small\item\em Constructor initializing the cell with a container. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classcell_a8645ed65a339020d79d69de5f6575283}{cell}} (\mbox{\hyperlink{cell_8h_a274ceed3b07859c48505f65b1fe42328}{cell\+Type}} types)
+\begin{DoxyCompactList}\small\item\em Constructor initializing the cell with a specific type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcell_a893cbe18bdee6b7524a3aeb7b8f8d623}{set\+Wall}} ()
+\begin{DoxyCompactList}\small\item\em Sets the cell\textquotesingle{}s content to a wall. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcell_a92e910cf0202820ad4f2df6c08a15853}{set\+Chest}} (\mbox{\hyperlink{classcontainer}{container}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classcell_aaea9f991bf05bba2ac35b23a69b8cf41}{chest}})
+\begin{DoxyCompactList}\small\item\em Sets the cell\textquotesingle{}s content to a chest. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcell_a72a10273f9f4dc89e6b27e12aa164501}{set\+Player}} (\mbox{\hyperlink{class_character}{Character}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classcell_a136f682b91a2171a4beb94d3931d10a7}{player}})
+\begin{DoxyCompactList}\small\item\em Sets the cell\textquotesingle{}s content to a player. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_character}{Character}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classcell_af290ca356abfe56e0badc6f442d58cbf}{get\+Player}} ()
+\item 
+void \mbox{\hyperlink{classcell_aaf67693ed84047e2d8b2672ac69f87b0}{set\+Visit}} ()
+\begin{DoxyCompactList}\small\item\em Marks the cell as visited, used in map traversal validation. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classcell_a6880e7d0f72a654fac5d78d52665c40f}{check\+Visit}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the cell has been visited. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcell_ad0bb01581383bd2194ff0fda9c59eda2}{clear\+Visit}} ()
+\begin{DoxyCompactList}\small\item\em Clears the visited mark from the cell. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{cell_8h_a274ceed3b07859c48505f65b1fe42328}{cell\+Type}} \mbox{\hyperlink{classcell_a55fa5a49ea165a348d006c5ab5285b9a}{get\+Cell\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the cell\textquotesingle{}s content type. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classcontainer}{container}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classcell_a7dc17e71a71c6ea4ee26944b048556a7}{get\+Chest}} ()
+\item 
+int \mbox{\hyperlink{classcell_a4b5d7bc93f619c54ce940f9c705610ad}{get\+Row\+Pos}} () const
+\begin{DoxyCompactList}\small\item\em Gets the row position of the cell. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classcell_a6061699c82cc1e81fd96b5d3f9527a5d}{get\+Col\+Pos}} () const
+\begin{DoxyCompactList}\small\item\em Gets the column position of the cell. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcell_ad28e3d2c69cefd9965eabb53307b2b19}{remove\+Content}} ()
+\begin{DoxyCompactList}\small\item\em Removes any content from the cell, resetting it to empty. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcell_a95f08804e22dbb2520c083a1123e099c}{remove\+Player}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classcell_ae4ddef4c7ef81852e1d260ba8a0a5572}{set\+Cell\+Type}} (\mbox{\hyperlink{cell_8h_a274ceed3b07859c48505f65b1fe42328}{cell\+Type}} types)
+\begin{DoxyCompactList}\small\item\em Sets the cell\textquotesingle{}s content type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcell_a190ba218acc2d5798781f3219bcb76cf}{set\+Row\+Pos}} (int row)
+\begin{DoxyCompactList}\small\item\em Sets the row position of the cell. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcell_aced1077a44dafd58114bf42fe735eff6}{set\+Col\+Pos}} (int col)
+\begin{DoxyCompactList}\small\item\em Sets the column position of the cell. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{cell_8h_a274ceed3b07859c48505f65b1fe42328}{cell\+Type}} \mbox{\hyperlink{classcell_aa6e52858049b82380f93c701d3487d34}{type}}
+\begin{DoxyCompactList}\small\item\em The type of content the cell currently holds. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classcontainer}{container}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classcell_aaea9f991bf05bba2ac35b23a69b8cf41}{chest}} \{\}
+\begin{DoxyCompactList}\small\item\em Optional pointer to a container object if the cell holds a chest. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_character}{Character}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classcell_a136f682b91a2171a4beb94d3931d10a7}{player}} \{\}
+\begin{DoxyCompactList}\small\item\em Optional pointer to a \doxylink{class_character}{Character} object if the cell holds a player. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classcell_af0c1bfe807bb0c43d1ff3cbcb31267d3}{visit}} \{\}
+\begin{DoxyCompactList}\small\item\em Flag indicating whether the cell has been visited (for map validation). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classcell_adad0ce2fe57a3e5d42e0970bbc9d0886}{row\+Pos}} \{\}
+\begin{DoxyCompactList}\small\item\em Row index of the cell in the dungeon map. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classcell_a9a6538dfb762aa88958f875c6c763d20}{col\+Pos}} \{\}
+\begin{DoxyCompactList}\small\item\em Column index of the cell in the dungeon map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classcell_a25bb64a8fca21832304292addf404ec9}{dungeon\+Map}}
+\begin{DoxyCompactList}\small\item\em Allows \doxylink{classdungeon_map}{dungeon\+Map} full access to cell\textquotesingle{}s private members. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classcell_a4a8fb13b6ff304aefc7aa29538062941}{Cell\+Test}}
+\begin{DoxyCompactList}\small\item\em Allows \doxylink{class_cell_test}{Cell\+Test} full access to cell\textquotesingle{}s private members. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a single cell within a dungeon map. 
+
+A cell can contain a player, a chest, a wall, or nothing. It supports operations to set and query its contents, as well as to mark it as visited for map traversal algorithms. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classcell_a5f9e893bce5c3f050bb20db0d0b615ca}\label{classcell_a5f9e893bce5c3f050bb20db0d0b615ca} 
+\index{cell@{cell}!cell@{cell}}
+\index{cell@{cell}!cell@{cell}}
+\doxysubsubsection{\texorpdfstring{cell()}{cell()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily cell\+::cell (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor initializing the cell to empty. 
+
+Default constructor initializing the cell as empty and not visited. \Hypertarget{classcell_a335fd618a8e84f4e36572f801b35b3f9}\label{classcell_a335fd618a8e84f4e36572f801b35b3f9} 
+\index{cell@{cell}!````~cell@{\texorpdfstring{$\sim$}{\string~}cell}}
+\index{````~cell@{\texorpdfstring{$\sim$}{\string~}cell}!cell@{cell}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}cell()}{\string~cell()}}
+{\footnotesize\ttfamily cell\+::\texorpdfstring{$\sim$}{\string~}cell (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Destructor for the cell class. 
+
+\Hypertarget{classcell_a6281d3a115ab646781bbec58a84539e3}\label{classcell_a6281d3a115ab646781bbec58a84539e3} 
+\index{cell@{cell}!cell@{cell}}
+\index{cell@{cell}!cell@{cell}}
+\doxysubsubsection{\texorpdfstring{cell()}{cell()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily cell\+::cell (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_character}{Character}} \texorpdfstring{$\ast$}{*}}]{person }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructor initializing the cell with a character. 
+
+Constructor initializing the cell with a player.
+
+
+\begin{DoxyParams}{Parameters}
+{\em person} & Pointer to the \doxylink{class_character}{Character} object to place in the cell. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classcell_a342502b297bb5eb4662aca7129f10989}\label{classcell_a342502b297bb5eb4662aca7129f10989} 
+\index{cell@{cell}!cell@{cell}}
+\index{cell@{cell}!cell@{cell}}
+\doxysubsubsection{\texorpdfstring{cell()}{cell()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily cell\+::cell (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcontainer}{container}} \texorpdfstring{$\ast$}{*}}]{item\+Storage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructor initializing the cell with a container. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item\+Storage} & Pointer to the container object to place in the cell. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classcell_a8645ed65a339020d79d69de5f6575283}\label{classcell_a8645ed65a339020d79d69de5f6575283} 
+\index{cell@{cell}!cell@{cell}}
+\index{cell@{cell}!cell@{cell}}
+\doxysubsubsection{\texorpdfstring{cell()}{cell()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily cell\+::cell (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cell_8h_a274ceed3b07859c48505f65b1fe42328}{cell\+Type}}}]{types }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructor initializing the cell with a specific type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em types} & cell\+Type indicating the initial content of the cell. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcell_a6880e7d0f72a654fac5d78d52665c40f}\label{classcell_a6880e7d0f72a654fac5d78d52665c40f} 
+\index{cell@{cell}!checkVisit@{checkVisit}}
+\index{checkVisit@{checkVisit}!cell@{cell}}
+\doxysubsubsection{\texorpdfstring{checkVisit()}{checkVisit()}}
+{\footnotesize\ttfamily bool cell\+::check\+Visit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks if the cell has been visited. 
+
+\begin{DoxyReturn}{Returns}
+True if the cell has been visited, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classcell_ad0bb01581383bd2194ff0fda9c59eda2}\label{classcell_ad0bb01581383bd2194ff0fda9c59eda2} 
+\index{cell@{cell}!clearVisit@{clearVisit}}
+\index{clearVisit@{clearVisit}!cell@{cell}}
+\doxysubsubsection{\texorpdfstring{clearVisit()}{clearVisit()}}
+{\footnotesize\ttfamily void cell\+::clear\+Visit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Clears the visited mark from the cell. 
+
+\Hypertarget{classcell_a55fa5a49ea165a348d006c5ab5285b9a}\label{classcell_a55fa5a49ea165a348d006c5ab5285b9a} 
+\index{cell@{cell}!getCellType@{getCellType}}
+\index{getCellType@{getCellType}!cell@{cell}}
+\doxysubsubsection{\texorpdfstring{getCellType()}{getCellType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{cell_8h_a274ceed3b07859c48505f65b1fe42328}{cell\+Type}} cell\+::get\+Cell\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retrieves the cell\textquotesingle{}s content type. 
+
+\begin{DoxyReturn}{Returns}
+The cell\+Type indicating the current content of the cell. 
+\end{DoxyReturn}
+\Hypertarget{classcell_a7dc17e71a71c6ea4ee26944b048556a7}\label{classcell_a7dc17e71a71c6ea4ee26944b048556a7} 
+\index{cell@{cell}!getChest@{getChest}}
+\index{getChest@{getChest}!cell@{cell}}
+\doxysubsubsection{\texorpdfstring{getChest()}{getChest()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classcontainer}{container}} \texorpdfstring{$\ast$}{*} cell\+::get\+Chest (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classcell_a6061699c82cc1e81fd96b5d3f9527a5d}\label{classcell_a6061699c82cc1e81fd96b5d3f9527a5d} 
+\index{cell@{cell}!getColPos@{getColPos}}
+\index{getColPos@{getColPos}!cell@{cell}}
+\doxysubsubsection{\texorpdfstring{getColPos()}{getColPos()}}
+{\footnotesize\ttfamily int cell\+::get\+Col\+Pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the column position of the cell. 
+
+\begin{DoxyReturn}{Returns}
+The column index of the cell in the dungeon map. 
+\end{DoxyReturn}
+\Hypertarget{classcell_af290ca356abfe56e0badc6f442d58cbf}\label{classcell_af290ca356abfe56e0badc6f442d58cbf} 
+\index{cell@{cell}!getPlayer@{getPlayer}}
+\index{getPlayer@{getPlayer}!cell@{cell}}
+\doxysubsubsection{\texorpdfstring{getPlayer()}{getPlayer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_character}{Character}} \texorpdfstring{$\ast$}{*} cell\+::get\+Player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classcell_a4b5d7bc93f619c54ce940f9c705610ad}\label{classcell_a4b5d7bc93f619c54ce940f9c705610ad} 
+\index{cell@{cell}!getRowPos@{getRowPos}}
+\index{getRowPos@{getRowPos}!cell@{cell}}
+\doxysubsubsection{\texorpdfstring{getRowPos()}{getRowPos()}}
+{\footnotesize\ttfamily int cell\+::get\+Row\+Pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the row position of the cell. 
+
+\begin{DoxyReturn}{Returns}
+The row index of the cell in the dungeon map. 
+\end{DoxyReturn}
+\Hypertarget{classcell_ad28e3d2c69cefd9965eabb53307b2b19}\label{classcell_ad28e3d2c69cefd9965eabb53307b2b19} 
+\index{cell@{cell}!removeContent@{removeContent}}
+\index{removeContent@{removeContent}!cell@{cell}}
+\doxysubsubsection{\texorpdfstring{removeContent()}{removeContent()}}
+{\footnotesize\ttfamily void cell\+::remove\+Content (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Removes any content from the cell, resetting it to empty. 
+
+\Hypertarget{classcell_a95f08804e22dbb2520c083a1123e099c}\label{classcell_a95f08804e22dbb2520c083a1123e099c} 
+\index{cell@{cell}!removePlayer@{removePlayer}}
+\index{removePlayer@{removePlayer}!cell@{cell}}
+\doxysubsubsection{\texorpdfstring{removePlayer()}{removePlayer()}}
+{\footnotesize\ttfamily void cell\+::remove\+Player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classcell_ae4ddef4c7ef81852e1d260ba8a0a5572}\label{classcell_ae4ddef4c7ef81852e1d260ba8a0a5572} 
+\index{cell@{cell}!setCellType@{setCellType}}
+\index{setCellType@{setCellType}!cell@{cell}}
+\doxysubsubsection{\texorpdfstring{setCellType()}{setCellType()}}
+{\footnotesize\ttfamily void cell\+::set\+Cell\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cell_8h_a274ceed3b07859c48505f65b1fe42328}{cell\+Type}}}]{types }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Sets the cell\textquotesingle{}s content type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em types} & The cell\+Type to set as the cell\textquotesingle{}s content. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classcell_a92e910cf0202820ad4f2df6c08a15853}\label{classcell_a92e910cf0202820ad4f2df6c08a15853} 
+\index{cell@{cell}!setChest@{setChest}}
+\index{setChest@{setChest}!cell@{cell}}
+\doxysubsubsection{\texorpdfstring{setChest()}{setChest()}}
+{\footnotesize\ttfamily void cell\+::set\+Chest (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcontainer}{container}} \texorpdfstring{$\ast$}{*}}]{item\+Storage }\end{DoxyParamCaption})}
+
+
+
+Sets the cell\textquotesingle{}s content to a chest. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em chest} & Pointer to the container object to be placed in the cell.\\
+\hline
+{\em item\+Storage} & Pointer to the container object to be placed in the cell. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classcell_aced1077a44dafd58114bf42fe735eff6}\label{classcell_aced1077a44dafd58114bf42fe735eff6} 
+\index{cell@{cell}!setColPos@{setColPos}}
+\index{setColPos@{setColPos}!cell@{cell}}
+\doxysubsubsection{\texorpdfstring{setColPos()}{setColPos()}}
+{\footnotesize\ttfamily void cell\+::set\+Col\+Pos (\begin{DoxyParamCaption}\item[{int}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Sets the column position of the cell. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em col} & The column index to set for the cell. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classcell_a72a10273f9f4dc89e6b27e12aa164501}\label{classcell_a72a10273f9f4dc89e6b27e12aa164501} 
+\index{cell@{cell}!setPlayer@{setPlayer}}
+\index{setPlayer@{setPlayer}!cell@{cell}}
+\doxysubsubsection{\texorpdfstring{setPlayer()}{setPlayer()}}
+{\footnotesize\ttfamily void cell\+::set\+Player (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_character}{Character}} \texorpdfstring{$\ast$}{*}}]{person }\end{DoxyParamCaption})}
+
+
+
+Sets the cell\textquotesingle{}s content to a player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointer to the \doxylink{class_character}{Character} object to be placed in the cell.\\
+\hline
+{\em person} & Pointer to the \doxylink{class_character}{Character} object to be placed in the cell. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classcell_a190ba218acc2d5798781f3219bcb76cf}\label{classcell_a190ba218acc2d5798781f3219bcb76cf} 
+\index{cell@{cell}!setRowPos@{setRowPos}}
+\index{setRowPos@{setRowPos}!cell@{cell}}
+\doxysubsubsection{\texorpdfstring{setRowPos()}{setRowPos()}}
+{\footnotesize\ttfamily void cell\+::set\+Row\+Pos (\begin{DoxyParamCaption}\item[{int}]{row }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Sets the row position of the cell. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row} & The row index to set for the cell. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classcell_aaf67693ed84047e2d8b2672ac69f87b0}\label{classcell_aaf67693ed84047e2d8b2672ac69f87b0} 
+\index{cell@{cell}!setVisit@{setVisit}}
+\index{setVisit@{setVisit}!cell@{cell}}
+\doxysubsubsection{\texorpdfstring{setVisit()}{setVisit()}}
+{\footnotesize\ttfamily void cell\+::set\+Visit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Marks the cell as visited, used in map traversal validation. 
+
+\Hypertarget{classcell_a893cbe18bdee6b7524a3aeb7b8f8d623}\label{classcell_a893cbe18bdee6b7524a3aeb7b8f8d623} 
+\index{cell@{cell}!setWall@{setWall}}
+\index{setWall@{setWall}!cell@{cell}}
+\doxysubsubsection{\texorpdfstring{setWall()}{setWall()}}
+{\footnotesize\ttfamily void cell\+::set\+Wall (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Sets the cell\textquotesingle{}s content to a wall. 
+
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{classcell_a4a8fb13b6ff304aefc7aa29538062941}\label{classcell_a4a8fb13b6ff304aefc7aa29538062941} 
+\index{cell@{cell}!CellTest@{CellTest}}
+\index{CellTest@{CellTest}!cell@{cell}}
+\doxysubsubsection{\texorpdfstring{CellTest}{CellTest}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{class_cell_test}{Cell\+Test}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Allows \doxylink{class_cell_test}{Cell\+Test} full access to cell\textquotesingle{}s private members. 
+
+\Hypertarget{classcell_a25bb64a8fca21832304292addf404ec9}\label{classcell_a25bb64a8fca21832304292addf404ec9} 
+\index{cell@{cell}!dungeonMap@{dungeonMap}}
+\index{dungeonMap@{dungeonMap}!cell@{cell}}
+\doxysubsubsection{\texorpdfstring{dungeonMap}{dungeonMap}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{classdungeon_map}{dungeon\+Map}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Allows \doxylink{classdungeon_map}{dungeon\+Map} full access to cell\textquotesingle{}s private members. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classcell_aaea9f991bf05bba2ac35b23a69b8cf41}\label{classcell_aaea9f991bf05bba2ac35b23a69b8cf41} 
+\index{cell@{cell}!chest@{chest}}
+\index{chest@{chest}!cell@{cell}}
+\doxysubsubsection{\texorpdfstring{chest}{chest}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classcontainer}{container}}\texorpdfstring{$\ast$}{*} cell\+::chest \{\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Optional pointer to a container object if the cell holds a chest. 
+
+\Hypertarget{classcell_a9a6538dfb762aa88958f875c6c763d20}\label{classcell_a9a6538dfb762aa88958f875c6c763d20} 
+\index{cell@{cell}!colPos@{colPos}}
+\index{colPos@{colPos}!cell@{cell}}
+\doxysubsubsection{\texorpdfstring{colPos}{colPos}}
+{\footnotesize\ttfamily int cell\+::col\+Pos \{\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Column index of the cell in the dungeon map. 
+
+\Hypertarget{classcell_a136f682b91a2171a4beb94d3931d10a7}\label{classcell_a136f682b91a2171a4beb94d3931d10a7} 
+\index{cell@{cell}!player@{player}}
+\index{player@{player}!cell@{cell}}
+\doxysubsubsection{\texorpdfstring{player}{player}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_character}{Character}}\texorpdfstring{$\ast$}{*} cell\+::player \{\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Optional pointer to a \doxylink{class_character}{Character} object if the cell holds a player. 
+
+\Hypertarget{classcell_adad0ce2fe57a3e5d42e0970bbc9d0886}\label{classcell_adad0ce2fe57a3e5d42e0970bbc9d0886} 
+\index{cell@{cell}!rowPos@{rowPos}}
+\index{rowPos@{rowPos}!cell@{cell}}
+\doxysubsubsection{\texorpdfstring{rowPos}{rowPos}}
+{\footnotesize\ttfamily int cell\+::row\+Pos \{\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Row index of the cell in the dungeon map. 
+
+\Hypertarget{classcell_aa6e52858049b82380f93c701d3487d34}\label{classcell_aa6e52858049b82380f93c701d3487d34} 
+\index{cell@{cell}!type@{type}}
+\index{type@{type}!cell@{cell}}
+\doxysubsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily \mbox{\hyperlink{cell_8h_a274ceed3b07859c48505f65b1fe42328}{cell\+Type}} cell\+::type\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The type of content the cell currently holds. 
+
+\Hypertarget{classcell_af0c1bfe807bb0c43d1ff3cbcb31267d3}\label{classcell_af0c1bfe807bb0c43d1ff3cbcb31267d3} 
+\index{cell@{cell}!visit@{visit}}
+\index{visit@{visit}!cell@{cell}}
+\doxysubsubsection{\texorpdfstring{visit}{visit}}
+{\footnotesize\ttfamily bool cell\+::visit \{\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Flag indicating whether the cell has been visited (for map validation). 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Map/\mbox{\hyperlink{cell_8h}{cell.\+h}}\item 
+Map/\mbox{\hyperlink{cell_8cpp}{cell.\+cpp}}\end{DoxyCompactItemize}

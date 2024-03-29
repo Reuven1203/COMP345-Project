@@ -1,0 +1,27 @@
+\doxysection{Mock\+Observer.\+h}
+\hypertarget{_mock_observer_8h_source}{}\label{_mock_observer_8h_source}\index{Tests/Observer/MockObserver.h@{Tests/Observer/MockObserver.h}}
+\mbox{\hyperlink{_mock_observer_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ Reuven\ Ostrofsky\ on\ 2024-\/03-\/11.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ COMP345\_A1\_MOCKOBSERVER\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ COMP345\_A1\_MOCKOBSERVER\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_observer_8h}{../../Observer/Observer.h}}"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_mock_observer}{MockObserver}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_observer}{Observer}}\ \ \{}
+\DoxyCodeLine{00011\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_mock_observer_a12288607c733a42d3a4ea48e414edc62}{updated}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \mbox{\hyperlink{class_mock_observer_aa9440852c4826576ead0aac18407e75a}{update}}()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_mock_observer_a12288607c733a42d3a4ea48e414edc62}{updated}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00016\ \ \ \ \ \}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//COMP345\_A1\_MOCKOBSERVER\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,954 @@
+\doxysection{dungeon\+Map Class Reference}
+\hypertarget{classdungeon_map}{}\label{classdungeon_map}\index{dungeonMap@{dungeonMap}}
+
+
+{\ttfamily \#include $<$map.\+h$>$}
+
+Inheritance diagram for dungeon\+Map\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdungeon_map}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdungeon_map_a361e24a68b31f0f8d5cc325c43a43e90}{dungeon\+Map}} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classdungeon_map_a1a4879d5559acbe3ef59a5cba433aa5f}{\texorpdfstring{$\sim$}{\string~}dungeon\+Map}} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classdungeon_map_a0450d4b358f8b72db34fe1d381ecc995}{dungeon\+Map}} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classdungeon_map}{dungeon\+Map} with specified dimensions. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classdungeon_map_aed7fd4ed7ae89ab3f623821670ad8821}{is\+Valid}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the dungeon map is valid by ensuring there\textquotesingle{}s a path from start to end. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classdungeon_map_a6cc5aebe4a6554dffad1ce8f0c329860}{print\+Map}} ()
+\begin{DoxyCompactList}\small\item\em Prints the current state of the dungeon map. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classdungeon_map_a9c254a1956a8e91b29bdc0e6e985e802}{set\+Start}} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Sets the starting point of the dungeon. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classdungeon_map_ab551620665275076f6303cc3515dac0c}{set\+End}} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Sets the ending point of the dungeon. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classdungeon_map_a51f74f974a199ff36436880d2785388a}{set\+Wall}} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Adds a wall to the specified location in the dungeon. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classdungeon_map_a1ba9b0a8651b589453113f0fbf77ec2e}{remove\+Wall}} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Removes a wall from the specified location in the dungeon. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classdungeon_map_aba0dec6a2ee7eb6f4e4bdfd9b607713d}{remove\+Cell\+Content}} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Removes content from the specified cell. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classdungeon_map_aeca6af6bcd268e1ed8131da8f679f2aa}{set\+Player}} (\mbox{\hyperlink{class_character}{Character}} \texorpdfstring{$\ast$}{*}player, int x, int y)
+\begin{DoxyCompactList}\small\item\em Places a player in the specified location in the dungeon. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classdungeon_map_af9da7f8b3bb86842bb041c2fded5e820}{get\+StartX}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the row index of the dungeon\textquotesingle{}s start point. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classdungeon_map_a1bf5004a04d80c4b2bd1962ee951df57}{get\+StartY}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the column index of the dungeon\textquotesingle{}s start point. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classdungeon_map_acd1fc0846f83ce56c038f3c84196c0de}{set\+PlayerX}} (int x)
+\item 
+void \mbox{\hyperlink{classdungeon_map_afab2b28128c5e86b60b46370707d9b60}{set\+PlayerY}} (int y)
+\item 
+int \mbox{\hyperlink{classdungeon_map_a3296e7ff8855fc1ca6e26ac3902e6eab}{get\+PlayerX}} () const
+\item 
+int \mbox{\hyperlink{classdungeon_map_a9ade791b7a0ca4c31d05a057ad068111}{get\+PlayerY}} () const
+\item 
+int \mbox{\hyperlink{classdungeon_map_a3536aaaac270ded633a530cce4ec9960}{get\+Row\+Size}} () const
+\begin{DoxyCompactList}\small\item\em Gets the total number of rows in the dungeon. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classdungeon_map_ada468fbf89bf1ed69ac0e8e9a46d1791}{get\+Col\+Size}} () const
+\begin{DoxyCompactList}\small\item\em Gets the total number of columns in the dungeon. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classdungeon_map_a87d047ae9453a8ac360ccbce6a99e694}{user\+Input\+Walls}} ()
+\begin{DoxyCompactList}\small\item\em Interactively allows the user to modify walls within the dungeon. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classdungeon_map_aaa80f16f18601d94888c2c92227a1a17}{set\+Chest}} (\mbox{\hyperlink{classcontainer}{container}} \texorpdfstring{$\ast$}{*}chest, int x, int y)
+\begin{DoxyCompactList}\small\item\em Places a chest at the specified location within the dungeon. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classdungeon_map_ad874a7da8c443475c30978d5c1f4d09a}{clear\+Cell\+Visit}} ()
+\begin{DoxyCompactList}\small\item\em Clears the \textquotesingle{}visited\textquotesingle{} state of all cells, typically used after pathfinding operations. \end{DoxyCompactList}\item 
+vector$<$ int $>$ \mbox{\hyperlink{classdungeon_map_adfe11ac9b5fc0663a8edb02aff9b5c56}{get\+Walls}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the cell at the specified row and column. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classcell}{cell}} \mbox{\hyperlink{classdungeon_map_a55fe6f43aa82d5b3c5717349e1120120}{get\+Cell}} (int row, int col) const
+\begin{DoxyCompactList}\small\item\em Retrieves a cell from the dungeon. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classdungeon_map_adf482125733ac1c816825650de9bce7e}{get\+EndX}} ()
+\item 
+int \mbox{\hyperlink{classdungeon_map_a181acbe1a6c283ccd205525206190670}{get\+EndY}} ()
+\item 
+void \mbox{\hyperlink{classdungeon_map_a3b48f4bf24dacfb31a212aa8832d4d64}{move\+Player}} (\mbox{\hyperlink{class_character}{Character}} \texorpdfstring{$\ast$}{*}player, int direction)
+\item 
+void \mbox{\hyperlink{classdungeon_map_a7148b87f024d2b3967a21355b5d4d27a}{set\+User\+Player}} (\mbox{\hyperlink{class_character}{Character}} \texorpdfstring{$\ast$}{*}player)
+\item 
+\mbox{\hyperlink{class_character}{Character}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classdungeon_map_aad84980ebf2c10466f81934a08300a48}{get\+User\+Player}} ()
+\item 
+bool \mbox{\hyperlink{classdungeon_map_a77cc886d55219b7e99cec16a7252f1ad}{dfs}} (int row, int col, int target\+Row, int target\+Col, std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \&path)
+\begin{DoxyCompactList}\small\item\em Performs depth-\/first search for path validation. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classdungeon_map_a24805c073139509462a3cf6de6c541b7}{dfs}} (int row, int col, int target\+Row, int target\+Col)
+\begin{DoxyCompactList}\small\item\em Performs depth-\/first search for path validation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_observable}{Observable}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_observable_a6efa28f8d9b8e5ab249533f684363a4f}{attach}} (\mbox{\hyperlink{class_observer}{Observer}} \texorpdfstring{$\ast$}{*}observer)
+\begin{DoxyCompactList}\small\item\em Attaches an observer to the observable object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_observable_a242e67bc26e3934370e863af3c08d1cb}{detach}} (\mbox{\hyperlink{class_observer}{Observer}} \texorpdfstring{$\ast$}{*}observer)
+\begin{DoxyCompactList}\small\item\em Detaches an observer from the observable object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_observable_a099bf851e05bb8c1a25e83f2a1389e58}{notify}} ()
+\begin{DoxyCompactList}\small\item\em Notifies all attached observers of a change. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ \mbox{\hyperlink{class_character}{Character}} \texorpdfstring{$\ast$}{*}, std\+::pair$<$ int, int $>$ $>$ \mbox{\hyperlink{classdungeon_map_ac6f44dfc19fa10613cc55c5c302896ff}{player\+Positions}}
+\item 
+vector$<$ vector$<$ \mbox{\hyperlink{classcell}{cell}} $>$ $>$ \mbox{\hyperlink{classdungeon_map_a52bea5246299d72743a44ff919b020c0}{dungeon}}
+\begin{DoxyCompactList}\small\item\em 2D vector of cells representing the dungeon layout. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classdungeon_map_a13171bf8aa8757a0598b2d11a755439d}{wall\+Detect}} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Checks if the specified cell in the dungeon map is a wall. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classdungeon_map_ae4ad978378ed81de601c2594bcb13909}{chest\+Detect}} (int x, int y)
+\item 
+bool \mbox{\hyperlink{classdungeon_map_aaefb850f2f7ebb2d370b739035de6307}{player\+Detect}} (int x, int y)
+\item 
+bool \mbox{\hyperlink{classdungeon_map_a32fea6a05559b9ae7ebb120afb835bab}{is\+Start}} (\mbox{\hyperlink{classcell}{cell}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classcell}{cell}}) const
+\begin{DoxyCompactList}\small\item\em Checks if a cell is the start point. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classdungeon_map_a2592c056ced4eafac693b66afb48a356}{is\+End}} (\mbox{\hyperlink{classcell}{cell}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classcell}{cell}}) const
+\begin{DoxyCompactList}\small\item\em Checks if a cell is the end point. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classdungeon_map_a8864523f758dfd18b69e73effd913de4}{add\+Wall\+Interaction}} ()
+\begin{DoxyCompactList}\small\item\em Helper function for wall addition interaction. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classdungeon_map_ab582df4fec05220f7e987ec7575dd1fb}{remove\+Wall\+Interaction}} ()
+\begin{DoxyCompactList}\small\item\em Helper function for wall removal interaction. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classdungeon_map_a7f3011ce042bfcd9d2ff74b77504b45b}{get\+Wall\+Coordinates}} (int \&x, int \&y)
+\begin{DoxyCompactList}\small\item\em Prompts user for wall coordinates. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classdungeon_map_a8e70de27b2b9d3a844bdd60d977a751c}{is\+Valid\+Row}} (int row) const
+\begin{DoxyCompactList}\small\item\em Valiådates row index. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classdungeon_map_a70ff5156a07df6fb41aabb9d48e18a23}{is\+Valid\+Col}} (int col) const
+\begin{DoxyCompactList}\small\item\em Validates column index. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classdungeon_map_a150f227079dd340c78ea18f5a23af255}{is\+Valid\+Location}} (int row, int col)
+\begin{DoxyCompactList}\small\item\em Validates if a location can be modified. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classdungeon_map_aa0c8b749510b96b4e8210b00e9b267a5}{add\+Wall\+Choice}} (int \texorpdfstring{$\ast$}{*}x, int \texorpdfstring{$\ast$}{*}y)
+\begin{DoxyCompactList}\small\item\em Interactively allows adding a wall. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classdungeon_map_a1550fbd2accaad98acd7c69ea5a7a74b}{remove\+Wall\+Choice}} (int \texorpdfstring{$\ast$}{*}x, int \texorpdfstring{$\ast$}{*}y)
+\begin{DoxyCompactList}\small\item\em Interactively allows removing a wall. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classdungeon_map_a079e136075428ed97a041f9b7a929d87}{interact\+With\+Chest}} (\mbox{\hyperlink{class_character}{Character}} \texorpdfstring{$\ast$}{*}player, \mbox{\hyperlink{classcontainer}{container}} \texorpdfstring{$\ast$}{*}chest)
+\begin{DoxyCompactList}\small\item\em Moves the player in the specified direction within the dungeon map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classdungeon_map_a8e0a4ff4a178a843565a1e04bf2b0ef0}{rows}}
+\begin{DoxyCompactList}\small\item\em Number of rows in the dungeon. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classdungeon_map_ab73761a9be5be656c94069d09e455785}{cols}}
+\begin{DoxyCompactList}\small\item\em Number of columns in the dungeon. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classcell}{cell}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classdungeon_map_a913bdc2bec70b53305d56018887c19d8}{start}} \{\}
+\begin{DoxyCompactList}\small\item\em Pointer to the starting cell. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classcell}{cell}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classdungeon_map_a10ada3e5e257d9070cd2b7bfdefd65b4}{end}} \{\}
+\begin{DoxyCompactList}\small\item\em Pointer to the ending cell. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classdungeon_map_abc4ece7530782d492470a5efd6aa7df2}{startX}} \{\}
+\item 
+int \mbox{\hyperlink{classdungeon_map_af6dca69e1f0af226383b2ab99164286e}{startY}} \{\}
+\begin{DoxyCompactList}\small\item\em Coordinates of the starting point. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classdungeon_map_afc9b5d7fc69a73d9c5aaccafed9c0727}{endX}} \{\}
+\item 
+int \mbox{\hyperlink{classdungeon_map_a89c6e436c2eb556abe2b25f91e8dd2ca}{endY}} \{\}
+\begin{DoxyCompactList}\small\item\em Coordinates of the ending point. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_character}{Character}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classdungeon_map_a698840d13bbd2f27cf496023814961bd}{user\+Player}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classdungeon_map_aae88f49f4ddcc1e24b2e6c1841c35018}{cell}}
+\begin{DoxyCompactList}\small\item\em Allows cell class to access private members of \doxylink{classdungeon_map}{dungeon\+Map}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classdungeon_map_a2a2c210c464055e421f8f619899d05a9}{Map\+Test}}
+\begin{DoxyCompactList}\small\item\em Allows \doxylink{class_map_test}{Map\+Test} full access to \doxylink{classdungeon_map}{dungeon\+Map}\textquotesingle{}s private members. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classdungeon_map_a361e24a68b31f0f8d5cc325c43a43e90}\label{classdungeon_map_a361e24a68b31f0f8d5cc325c43a43e90} 
+\index{dungeonMap@{dungeonMap}!dungeonMap@{dungeonMap}}
+\index{dungeonMap@{dungeonMap}!dungeonMap@{dungeonMap}}
+\doxysubsubsection{\texorpdfstring{dungeonMap()}{dungeonMap()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily dungeon\+Map\+::dungeon\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default constructor. 
+
+\Hypertarget{classdungeon_map_a1a4879d5559acbe3ef59a5cba433aa5f}\label{classdungeon_map_a1a4879d5559acbe3ef59a5cba433aa5f} 
+\index{dungeonMap@{dungeonMap}!````~dungeonMap@{\texorpdfstring{$\sim$}{\string~}dungeonMap}}
+\index{````~dungeonMap@{\texorpdfstring{$\sim$}{\string~}dungeonMap}!dungeonMap@{dungeonMap}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}dungeonMap()}{\string~dungeonMap()}}
+{\footnotesize\ttfamily dungeon\+Map\+::\texorpdfstring{$\sim$}{\string~}dungeon\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default destructor. 
+
+\Hypertarget{classdungeon_map_a0450d4b358f8b72db34fe1d381ecc995}\label{classdungeon_map_a0450d4b358f8b72db34fe1d381ecc995} 
+\index{dungeonMap@{dungeonMap}!dungeonMap@{dungeonMap}}
+\index{dungeonMap@{dungeonMap}!dungeonMap@{dungeonMap}}
+\doxysubsubsection{\texorpdfstring{dungeonMap()}{dungeonMap()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily dungeon\+Map\+::dungeon\+Map (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{classdungeon_map}{dungeon\+Map} with specified dimensions. 
+
+Constructor initializing the dungeon map with given dimensions.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The number of rows in the dungeon. \\
+\hline
+{\em y} & The number of columns in the dungeon.\\
+\hline
+{\em x} & Number of rows in the dungeon. \\
+\hline
+{\em y} & Number of columns in the dungeon. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classdungeon_map_aa0c8b749510b96b4e8210b00e9b267a5}\label{classdungeon_map_aa0c8b749510b96b4e8210b00e9b267a5} 
+\index{dungeonMap@{dungeonMap}!addWallChoice@{addWallChoice}}
+\index{addWallChoice@{addWallChoice}!dungeonMap@{dungeonMap}}
+\doxysubsubsection{\texorpdfstring{addWallChoice()}{addWallChoice()}}
+{\footnotesize\ttfamily void dungeon\+Map\+::add\+Wall\+Choice (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\ast$}{*}}]{x,  }\item[{int \texorpdfstring{$\ast$}{*}}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Interactively allows adding a wall. 
+
+Helper function to interactively add a wall to the dungeon.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Pointer to store the row coordinate chosen by the user. \\
+\hline
+{\em y} & Pointer to store the column coordinate chosen by the user. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classdungeon_map_a8864523f758dfd18b69e73effd913de4}\label{classdungeon_map_a8864523f758dfd18b69e73effd913de4} 
+\index{dungeonMap@{dungeonMap}!addWallInteraction@{addWallInteraction}}
+\index{addWallInteraction@{addWallInteraction}!dungeonMap@{dungeonMap}}
+\doxysubsubsection{\texorpdfstring{addWallInteraction()}{addWallInteraction()}}
+{\footnotesize\ttfamily void dungeon\+Map\+::add\+Wall\+Interaction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Helper function for wall addition interaction. 
+
+\Hypertarget{classdungeon_map_ae4ad978378ed81de601c2594bcb13909}\label{classdungeon_map_ae4ad978378ed81de601c2594bcb13909} 
+\index{dungeonMap@{dungeonMap}!chestDetect@{chestDetect}}
+\index{chestDetect@{chestDetect}!dungeonMap@{dungeonMap}}
+\doxysubsubsection{\texorpdfstring{chestDetect()}{chestDetect()}}
+{\footnotesize\ttfamily bool dungeon\+Map\+::chest\+Detect (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classdungeon_map_ad874a7da8c443475c30978d5c1f4d09a}\label{classdungeon_map_ad874a7da8c443475c30978d5c1f4d09a} 
+\index{dungeonMap@{dungeonMap}!clearCellVisit@{clearCellVisit}}
+\index{clearCellVisit@{clearCellVisit}!dungeonMap@{dungeonMap}}
+\doxysubsubsection{\texorpdfstring{clearCellVisit()}{clearCellVisit()}}
+{\footnotesize\ttfamily void dungeon\+Map\+::clear\+Cell\+Visit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Clears the \textquotesingle{}visited\textquotesingle{} state of all cells, typically used after pathfinding operations. 
+
+Clears the \textquotesingle{}visited\textquotesingle{} state of all cells in the dungeon. \Hypertarget{classdungeon_map_a24805c073139509462a3cf6de6c541b7}\label{classdungeon_map_a24805c073139509462a3cf6de6c541b7} 
+\index{dungeonMap@{dungeonMap}!dfs@{dfs}}
+\index{dfs@{dfs}!dungeonMap@{dungeonMap}}
+\doxysubsubsection{\texorpdfstring{dfs()}{dfs()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool dungeon\+Map\+::dfs (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{col,  }\item[{int}]{target\+Row,  }\item[{int}]{target\+Col }\end{DoxyParamCaption})}
+
+
+
+Performs depth-\/first search for path validation. 
+
+\Hypertarget{classdungeon_map_a77cc886d55219b7e99cec16a7252f1ad}\label{classdungeon_map_a77cc886d55219b7e99cec16a7252f1ad} 
+\index{dungeonMap@{dungeonMap}!dfs@{dfs}}
+\index{dfs@{dfs}!dungeonMap@{dungeonMap}}
+\doxysubsubsection{\texorpdfstring{dfs()}{dfs()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool dungeon\+Map\+::dfs (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{col,  }\item[{int}]{target\+Row,  }\item[{int}]{target\+Col,  }\item[{std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \&}]{path }\end{DoxyParamCaption})}
+
+
+
+Performs depth-\/first search for path validation. 
+
+\Hypertarget{classdungeon_map_a55fe6f43aa82d5b3c5717349e1120120}\label{classdungeon_map_a55fe6f43aa82d5b3c5717349e1120120} 
+\index{dungeonMap@{dungeonMap}!getCell@{getCell}}
+\index{getCell@{getCell}!dungeonMap@{dungeonMap}}
+\doxysubsubsection{\texorpdfstring{getCell()}{getCell()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classcell}{cell}} dungeon\+Map\+::get\+Cell (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{col }\end{DoxyParamCaption}) const}
+
+
+
+Retrieves a cell from the dungeon. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row} & Row index of the cell. \\
+\hline
+{\em col} & Column index of the cell. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The cell at the specified location. 
+\end{DoxyReturn}
+\Hypertarget{classdungeon_map_ada468fbf89bf1ed69ac0e8e9a46d1791}\label{classdungeon_map_ada468fbf89bf1ed69ac0e8e9a46d1791} 
+\index{dungeonMap@{dungeonMap}!getColSize@{getColSize}}
+\index{getColSize@{getColSize}!dungeonMap@{dungeonMap}}
+\doxysubsubsection{\texorpdfstring{getColSize()}{getColSize()}}
+{\footnotesize\ttfamily int dungeon\+Map\+::get\+Col\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the total number of columns in the dungeon. 
+
+Retrieves the number of columns in the dungeon.
+
+\begin{DoxyReturn}{Returns}
+The number of columns.
+
+Number of columns. 
+\end{DoxyReturn}
+\Hypertarget{classdungeon_map_adf482125733ac1c816825650de9bce7e}\label{classdungeon_map_adf482125733ac1c816825650de9bce7e} 
+\index{dungeonMap@{dungeonMap}!getEndX@{getEndX}}
+\index{getEndX@{getEndX}!dungeonMap@{dungeonMap}}
+\doxysubsubsection{\texorpdfstring{getEndX()}{getEndX()}}
+{\footnotesize\ttfamily int dungeon\+Map\+::get\+EndX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classdungeon_map_a181acbe1a6c283ccd205525206190670}\label{classdungeon_map_a181acbe1a6c283ccd205525206190670} 
+\index{dungeonMap@{dungeonMap}!getEndY@{getEndY}}
+\index{getEndY@{getEndY}!dungeonMap@{dungeonMap}}
+\doxysubsubsection{\texorpdfstring{getEndY()}{getEndY()}}
+{\footnotesize\ttfamily int dungeon\+Map\+::get\+EndY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classdungeon_map_a3296e7ff8855fc1ca6e26ac3902e6eab}\label{classdungeon_map_a3296e7ff8855fc1ca6e26ac3902e6eab} 
+\index{dungeonMap@{dungeonMap}!getPlayerX@{getPlayerX}}
+\index{getPlayerX@{getPlayerX}!dungeonMap@{dungeonMap}}
+\doxysubsubsection{\texorpdfstring{getPlayerX()}{getPlayerX()}}
+{\footnotesize\ttfamily int dungeon\+Map\+::get\+PlayerX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{classdungeon_map_a9ade791b7a0ca4c31d05a057ad068111}\label{classdungeon_map_a9ade791b7a0ca4c31d05a057ad068111} 
+\index{dungeonMap@{dungeonMap}!getPlayerY@{getPlayerY}}
+\index{getPlayerY@{getPlayerY}!dungeonMap@{dungeonMap}}
+\doxysubsubsection{\texorpdfstring{getPlayerY()}{getPlayerY()}}
+{\footnotesize\ttfamily int dungeon\+Map\+::get\+PlayerY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{classdungeon_map_a3536aaaac270ded633a530cce4ec9960}\label{classdungeon_map_a3536aaaac270ded633a530cce4ec9960} 
+\index{dungeonMap@{dungeonMap}!getRowSize@{getRowSize}}
+\index{getRowSize@{getRowSize}!dungeonMap@{dungeonMap}}
+\doxysubsubsection{\texorpdfstring{getRowSize()}{getRowSize()}}
+{\footnotesize\ttfamily int dungeon\+Map\+::get\+Row\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the total number of rows in the dungeon. 
+
+Retrieves the number of rows in the dungeon.
+
+\begin{DoxyReturn}{Returns}
+The number of rows.
+
+Number of rows. 
+\end{DoxyReturn}
+\Hypertarget{classdungeon_map_af9da7f8b3bb86842bb041c2fded5e820}\label{classdungeon_map_af9da7f8b3bb86842bb041c2fded5e820} 
+\index{dungeonMap@{dungeonMap}!getStartX@{getStartX}}
+\index{getStartX@{getStartX}!dungeonMap@{dungeonMap}}
+\doxysubsubsection{\texorpdfstring{getStartX()}{getStartX()}}
+{\footnotesize\ttfamily int dungeon\+Map\+::get\+StartX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the row index of the dungeon\textquotesingle{}s start point. 
+
+Returns the row index of the start point.
+
+\begin{DoxyReturn}{Returns}
+The row index of the start point.
+
+Row index of the start point. 
+\end{DoxyReturn}
+\Hypertarget{classdungeon_map_a1bf5004a04d80c4b2bd1962ee951df57}\label{classdungeon_map_a1bf5004a04d80c4b2bd1962ee951df57} 
+\index{dungeonMap@{dungeonMap}!getStartY@{getStartY}}
+\index{getStartY@{getStartY}!dungeonMap@{dungeonMap}}
+\doxysubsubsection{\texorpdfstring{getStartY()}{getStartY()}}
+{\footnotesize\ttfamily int dungeon\+Map\+::get\+StartY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the column index of the dungeon\textquotesingle{}s start point. 
+
+Returns the column index of the start point.
+
+\begin{DoxyReturn}{Returns}
+The column index of the start point.
+
+Column index of the start point. 
+\end{DoxyReturn}
+\Hypertarget{classdungeon_map_aad84980ebf2c10466f81934a08300a48}\label{classdungeon_map_aad84980ebf2c10466f81934a08300a48} 
+\index{dungeonMap@{dungeonMap}!getUserPlayer@{getUserPlayer}}
+\index{getUserPlayer@{getUserPlayer}!dungeonMap@{dungeonMap}}
+\doxysubsubsection{\texorpdfstring{getUserPlayer()}{getUserPlayer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_character}{Character}} \texorpdfstring{$\ast$}{*} dungeon\+Map\+::get\+User\+Player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classdungeon_map_a7f3011ce042bfcd9d2ff74b77504b45b}\label{classdungeon_map_a7f3011ce042bfcd9d2ff74b77504b45b} 
+\index{dungeonMap@{dungeonMap}!getWallCoordinates@{getWallCoordinates}}
+\index{getWallCoordinates@{getWallCoordinates}!dungeonMap@{dungeonMap}}
+\doxysubsubsection{\texorpdfstring{getWallCoordinates()}{getWallCoordinates()}}
+{\footnotesize\ttfamily void dungeon\+Map\+::get\+Wall\+Coordinates (\begin{DoxyParamCaption}\item[{int \&}]{x,  }\item[{int \&}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Prompts user for wall coordinates. 
+
+\Hypertarget{classdungeon_map_adfe11ac9b5fc0663a8edb02aff9b5c56}\label{classdungeon_map_adfe11ac9b5fc0663a8edb02aff9b5c56} 
+\index{dungeonMap@{dungeonMap}!getWalls@{getWalls}}
+\index{getWalls@{getWalls}!dungeonMap@{dungeonMap}}
+\doxysubsubsection{\texorpdfstring{getWalls()}{getWalls()}}
+{\footnotesize\ttfamily vector$<$ int $>$ dungeon\+Map\+::get\+Walls (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retrieves the cell at the specified row and column. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row} & The row index of the cell. \\
+\hline
+{\em col} & The column index of the cell. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The cell at the given row and column. 
+\end{DoxyReturn}
+\Hypertarget{classdungeon_map_a079e136075428ed97a041f9b7a929d87}\label{classdungeon_map_a079e136075428ed97a041f9b7a929d87} 
+\index{dungeonMap@{dungeonMap}!interactWithChest@{interactWithChest}}
+\index{interactWithChest@{interactWithChest}!dungeonMap@{dungeonMap}}
+\doxysubsubsection{\texorpdfstring{interactWithChest()}{interactWithChest()}}
+{\footnotesize\ttfamily void dungeon\+Map\+::interact\+With\+Chest (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_character}{Character}} \texorpdfstring{$\ast$}{*}}]{player,  }\item[{\mbox{\hyperlink{classcontainer}{container}} \texorpdfstring{$\ast$}{*}}]{chest\+Temp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Moves the player in the specified direction within the dungeon map. 
+
+This function attempts to move the player to a new position based on the provided direction. The movement is constrained by the dimensions of the dungeon and any walls that may exist. If the movement is successful, the player\textquotesingle{}s position is updated, and any necessary state changes are made to the dungeon map to reflect the player\textquotesingle{}s new location.
+
+
+\begin{DoxyParams}{Parameters}
+{\em direction} & An integer representing the direction of movement\+: 1 for up, 2 for down, 3 for left, 4 for right.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+If the movement is successful, the player\textquotesingle{}s position in the dungeon is updated. If the movement is blocked by a wall or is outside the dungeon bounds, the player\textquotesingle{}s position remains unchanged.
+\end{DoxyPostcond}
+The function checks if the new position is within the bounds of the dungeon and not blocked by a wall. If either condition is not met, the function returns without moving the player. Otherwise, the player is moved to the new location, and any game state updates are performed. \Hypertarget{classdungeon_map_a2592c056ced4eafac693b66afb48a356}\label{classdungeon_map_a2592c056ced4eafac693b66afb48a356} 
+\index{dungeonMap@{dungeonMap}!isEnd@{isEnd}}
+\index{isEnd@{isEnd}!dungeonMap@{dungeonMap}}
+\doxysubsubsection{\texorpdfstring{isEnd()}{isEnd()}}
+{\footnotesize\ttfamily bool dungeon\+Map\+::is\+End (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcell}{cell}} \texorpdfstring{$\ast$}{*}}]{cell }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Checks if a cell is the end point. 
+
+Checks if a specified cell is the end point.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cell} & Pointer to the cell to be checked. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the cell is the end point, otherwise false. 
+\end{DoxyReturn}
+\Hypertarget{classdungeon_map_a32fea6a05559b9ae7ebb120afb835bab}\label{classdungeon_map_a32fea6a05559b9ae7ebb120afb835bab} 
+\index{dungeonMap@{dungeonMap}!isStart@{isStart}}
+\index{isStart@{isStart}!dungeonMap@{dungeonMap}}
+\doxysubsubsection{\texorpdfstring{isStart()}{isStart()}}
+{\footnotesize\ttfamily bool dungeon\+Map\+::is\+Start (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcell}{cell}} \texorpdfstring{$\ast$}{*}}]{cell }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Checks if a cell is the start point. 
+
+Checks if a specified cell is the start point.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cell} & Pointer to the cell to be checked. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the cell is the start point, otherwise false. 
+\end{DoxyReturn}
+\Hypertarget{classdungeon_map_aed7fd4ed7ae89ab3f623821670ad8821}\label{classdungeon_map_aed7fd4ed7ae89ab3f623821670ad8821} 
+\index{dungeonMap@{dungeonMap}!isValid@{isValid}}
+\index{isValid@{isValid}!dungeonMap@{dungeonMap}}
+\doxysubsubsection{\texorpdfstring{isValid()}{isValid()}}
+{\footnotesize\ttfamily bool dungeon\+Map\+::is\+Valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks if the dungeon map is valid by ensuring there\textquotesingle{}s a path from start to end. 
+
+Validates if there is a path from the start point to the end point in the dungeon.
+
+\begin{DoxyReturn}{Returns}
+True if the map is valid, otherwise false.
+
+True if such a path exists, otherwise false. 
+\end{DoxyReturn}
+\Hypertarget{classdungeon_map_a70ff5156a07df6fb41aabb9d48e18a23}\label{classdungeon_map_a70ff5156a07df6fb41aabb9d48e18a23} 
+\index{dungeonMap@{dungeonMap}!isValidCol@{isValidCol}}
+\index{isValidCol@{isValidCol}!dungeonMap@{dungeonMap}}
+\doxysubsubsection{\texorpdfstring{isValidCol()}{isValidCol()}}
+{\footnotesize\ttfamily bool dungeon\+Map\+::is\+Valid\+Col (\begin{DoxyParamCaption}\item[{int}]{col }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Validates column index. 
+
+Validates if the specified column index is within the bounds of the dungeon.
+
+
+\begin{DoxyParams}{Parameters}
+{\em col} & Column index to be validated. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the column index is within bounds, otherwise false. 
+\end{DoxyReturn}
+\Hypertarget{classdungeon_map_a150f227079dd340c78ea18f5a23af255}\label{classdungeon_map_a150f227079dd340c78ea18f5a23af255} 
+\index{dungeonMap@{dungeonMap}!isValidLocation@{isValidLocation}}
+\index{isValidLocation@{isValidLocation}!dungeonMap@{dungeonMap}}
+\doxysubsubsection{\texorpdfstring{isValidLocation()}{isValidLocation()}}
+{\footnotesize\ttfamily bool dungeon\+Map\+::is\+Valid\+Location (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Validates if a location can be modified. 
+
+Validates if a location is valid for placing or removing objects.
+
+
+\begin{DoxyParams}{Parameters}
+{\em row} & Row index of the location. \\
+\hline
+{\em col} & Column index of the location. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the location is valid, otherwise false. 
+\end{DoxyReturn}
+\Hypertarget{classdungeon_map_a8e70de27b2b9d3a844bdd60d977a751c}\label{classdungeon_map_a8e70de27b2b9d3a844bdd60d977a751c} 
+\index{dungeonMap@{dungeonMap}!isValidRow@{isValidRow}}
+\index{isValidRow@{isValidRow}!dungeonMap@{dungeonMap}}
+\doxysubsubsection{\texorpdfstring{isValidRow()}{isValidRow()}}
+{\footnotesize\ttfamily bool dungeon\+Map\+::is\+Valid\+Row (\begin{DoxyParamCaption}\item[{int}]{row }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Valiådates row index. 
+
+Validates if the specified row index is within the bounds of the dungeon.
+
+
+\begin{DoxyParams}{Parameters}
+{\em row} & Row index to be validated. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the row index is within bounds, otherwise false. 
+\end{DoxyReturn}
+\Hypertarget{classdungeon_map_a3b48f4bf24dacfb31a212aa8832d4d64}\label{classdungeon_map_a3b48f4bf24dacfb31a212aa8832d4d64} 
+\index{dungeonMap@{dungeonMap}!movePlayer@{movePlayer}}
+\index{movePlayer@{movePlayer}!dungeonMap@{dungeonMap}}
+\doxysubsubsection{\texorpdfstring{movePlayer()}{movePlayer()}}
+{\footnotesize\ttfamily void dungeon\+Map\+::move\+Player (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_character}{Character}} \texorpdfstring{$\ast$}{*}}]{player,  }\item[{int}]{direction }\end{DoxyParamCaption})}
+
+\Hypertarget{classdungeon_map_aaefb850f2f7ebb2d370b739035de6307}\label{classdungeon_map_aaefb850f2f7ebb2d370b739035de6307} 
+\index{dungeonMap@{dungeonMap}!playerDetect@{playerDetect}}
+\index{playerDetect@{playerDetect}!dungeonMap@{dungeonMap}}
+\doxysubsubsection{\texorpdfstring{playerDetect()}{playerDetect()}}
+{\footnotesize\ttfamily bool dungeon\+Map\+::player\+Detect (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classdungeon_map_a6cc5aebe4a6554dffad1ce8f0c329860}\label{classdungeon_map_a6cc5aebe4a6554dffad1ce8f0c329860} 
+\index{dungeonMap@{dungeonMap}!printMap@{printMap}}
+\index{printMap@{printMap}!dungeonMap@{dungeonMap}}
+\doxysubsubsection{\texorpdfstring{printMap()}{printMap()}}
+{\footnotesize\ttfamily void dungeon\+Map\+::print\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Prints the current state of the dungeon map. 
+
+\Hypertarget{classdungeon_map_aba0dec6a2ee7eb6f4e4bdfd9b607713d}\label{classdungeon_map_aba0dec6a2ee7eb6f4e4bdfd9b607713d} 
+\index{dungeonMap@{dungeonMap}!removeCellContent@{removeCellContent}}
+\index{removeCellContent@{removeCellContent}!dungeonMap@{dungeonMap}}
+\doxysubsubsection{\texorpdfstring{removeCellContent()}{removeCellContent()}}
+{\footnotesize\ttfamily void dungeon\+Map\+::remove\+Cell\+Content (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Removes content from the specified cell. 
+
+Removes the content of a specified cell.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The row index of the cell. \\
+\hline
+{\em y} & The column index of the cell.\\
+\hline
+{\em x} & Row index of the cell. \\
+\hline
+{\em y} & Column index of the cell. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classdungeon_map_a1ba9b0a8651b589453113f0fbf77ec2e}\label{classdungeon_map_a1ba9b0a8651b589453113f0fbf77ec2e} 
+\index{dungeonMap@{dungeonMap}!removeWall@{removeWall}}
+\index{removeWall@{removeWall}!dungeonMap@{dungeonMap}}
+\doxysubsubsection{\texorpdfstring{removeWall()}{removeWall()}}
+{\footnotesize\ttfamily void dungeon\+Map\+::remove\+Wall (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Removes a wall from the specified location in the dungeon. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The row index to remove a wall. \\
+\hline
+{\em y} & The column index to remove a wall.\\
+\hline
+{\em x} & Row index from which the wall is to be removed. \\
+\hline
+{\em y} & Column index from which the wall is to be removed. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classdungeon_map_a1550fbd2accaad98acd7c69ea5a7a74b}\label{classdungeon_map_a1550fbd2accaad98acd7c69ea5a7a74b} 
+\index{dungeonMap@{dungeonMap}!removeWallChoice@{removeWallChoice}}
+\index{removeWallChoice@{removeWallChoice}!dungeonMap@{dungeonMap}}
+\doxysubsubsection{\texorpdfstring{removeWallChoice()}{removeWallChoice()}}
+{\footnotesize\ttfamily void dungeon\+Map\+::remove\+Wall\+Choice (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\ast$}{*}}]{x,  }\item[{int \texorpdfstring{$\ast$}{*}}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Interactively allows removing a wall. 
+
+Helper function to interactively remove a wall from the dungeon.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Pointer to store the row coordinate chosen by the user. \\
+\hline
+{\em y} & Pointer to store the column coordinate chosen by the user. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classdungeon_map_ab582df4fec05220f7e987ec7575dd1fb}\label{classdungeon_map_ab582df4fec05220f7e987ec7575dd1fb} 
+\index{dungeonMap@{dungeonMap}!removeWallInteraction@{removeWallInteraction}}
+\index{removeWallInteraction@{removeWallInteraction}!dungeonMap@{dungeonMap}}
+\doxysubsubsection{\texorpdfstring{removeWallInteraction()}{removeWallInteraction()}}
+{\footnotesize\ttfamily void dungeon\+Map\+::remove\+Wall\+Interaction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Helper function for wall removal interaction. 
+
+\Hypertarget{classdungeon_map_aaa80f16f18601d94888c2c92227a1a17}\label{classdungeon_map_aaa80f16f18601d94888c2c92227a1a17} 
+\index{dungeonMap@{dungeonMap}!setChest@{setChest}}
+\index{setChest@{setChest}!dungeonMap@{dungeonMap}}
+\doxysubsubsection{\texorpdfstring{setChest()}{setChest()}}
+{\footnotesize\ttfamily void dungeon\+Map\+::set\+Chest (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcontainer}{container}} \texorpdfstring{$\ast$}{*}}]{chest,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Places a chest at the specified location within the dungeon. 
+
+Places a chest in the specified location within the dungeon.
+
+
+\begin{DoxyParams}{Parameters}
+{\em chest} & Pointer to the chest object. \\
+\hline
+{\em x} & The row index to place the chest. \\
+\hline
+{\em y} & The column index to place the chest.\\
+\hline
+{\em chest} & Pointer to the chest object. \\
+\hline
+{\em x} & Row index for placing the chest. \\
+\hline
+{\em y} & Column index for placing the chest. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classdungeon_map_ab551620665275076f6303cc3515dac0c}\label{classdungeon_map_ab551620665275076f6303cc3515dac0c} 
+\index{dungeonMap@{dungeonMap}!setEnd@{setEnd}}
+\index{setEnd@{setEnd}!dungeonMap@{dungeonMap}}
+\doxysubsubsection{\texorpdfstring{setEnd()}{setEnd()}}
+{\footnotesize\ttfamily void dungeon\+Map\+::set\+End (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Sets the ending point of the dungeon. 
+
+Sets the end point of the dungeon.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The row index for the end point. \\
+\hline
+{\em y} & The column index for the end point.\\
+\hline
+{\em x} & Row index of the end point. \\
+\hline
+{\em y} & Column index of the end point. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classdungeon_map_aeca6af6bcd268e1ed8131da8f679f2aa}\label{classdungeon_map_aeca6af6bcd268e1ed8131da8f679f2aa} 
+\index{dungeonMap@{dungeonMap}!setPlayer@{setPlayer}}
+\index{setPlayer@{setPlayer}!dungeonMap@{dungeonMap}}
+\doxysubsubsection{\texorpdfstring{setPlayer()}{setPlayer()}}
+{\footnotesize\ttfamily void dungeon\+Map\+::set\+Player (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_character}{Character}} \texorpdfstring{$\ast$}{*}}]{player,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Places a player in the specified location in the dungeon. 
+
+Sets the player\textquotesingle{}s location in the dungeon.
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & Pointer to the player character. \\
+\hline
+{\em x} & The row index to place the player. \\
+\hline
+{\em y} & The column index to place the player.\\
+\hline
+{\em player} & Pointer to the player character. \\
+\hline
+{\em x} & Row index for the player\textquotesingle{}s location. \\
+\hline
+{\em y} & Column index for the player\textquotesingle{}s location. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classdungeon_map_acd1fc0846f83ce56c038f3c84196c0de}\label{classdungeon_map_acd1fc0846f83ce56c038f3c84196c0de} 
+\index{dungeonMap@{dungeonMap}!setPlayerX@{setPlayerX}}
+\index{setPlayerX@{setPlayerX}!dungeonMap@{dungeonMap}}
+\doxysubsubsection{\texorpdfstring{setPlayerX()}{setPlayerX()}}
+{\footnotesize\ttfamily void dungeon\+Map\+::set\+PlayerX (\begin{DoxyParamCaption}\item[{int}]{x }\end{DoxyParamCaption})}
+
+\Hypertarget{classdungeon_map_afab2b28128c5e86b60b46370707d9b60}\label{classdungeon_map_afab2b28128c5e86b60b46370707d9b60} 
+\index{dungeonMap@{dungeonMap}!setPlayerY@{setPlayerY}}
+\index{setPlayerY@{setPlayerY}!dungeonMap@{dungeonMap}}
+\doxysubsubsection{\texorpdfstring{setPlayerY()}{setPlayerY()}}
+{\footnotesize\ttfamily void dungeon\+Map\+::set\+PlayerY (\begin{DoxyParamCaption}\item[{int}]{y }\end{DoxyParamCaption})}
+
+\Hypertarget{classdungeon_map_a9c254a1956a8e91b29bdc0e6e985e802}\label{classdungeon_map_a9c254a1956a8e91b29bdc0e6e985e802} 
+\index{dungeonMap@{dungeonMap}!setStart@{setStart}}
+\index{setStart@{setStart}!dungeonMap@{dungeonMap}}
+\doxysubsubsection{\texorpdfstring{setStart()}{setStart()}}
+{\footnotesize\ttfamily void dungeon\+Map\+::set\+Start (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Sets the starting point of the dungeon. 
+
+Sets the start point of the dungeon.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The row index for the start point. \\
+\hline
+{\em y} & The column index for the start point.\\
+\hline
+{\em x} & Row index of the start point. \\
+\hline
+{\em y} & Column index of the start point. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classdungeon_map_a7148b87f024d2b3967a21355b5d4d27a}\label{classdungeon_map_a7148b87f024d2b3967a21355b5d4d27a} 
+\index{dungeonMap@{dungeonMap}!setUserPlayer@{setUserPlayer}}
+\index{setUserPlayer@{setUserPlayer}!dungeonMap@{dungeonMap}}
+\doxysubsubsection{\texorpdfstring{setUserPlayer()}{setUserPlayer()}}
+{\footnotesize\ttfamily void dungeon\+Map\+::set\+User\+Player (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_character}{Character}} \texorpdfstring{$\ast$}{*}}]{player }\end{DoxyParamCaption})}
+
+\Hypertarget{classdungeon_map_a51f74f974a199ff36436880d2785388a}\label{classdungeon_map_a51f74f974a199ff36436880d2785388a} 
+\index{dungeonMap@{dungeonMap}!setWall@{setWall}}
+\index{setWall@{setWall}!dungeonMap@{dungeonMap}}
+\doxysubsubsection{\texorpdfstring{setWall()}{setWall()}}
+{\footnotesize\ttfamily void dungeon\+Map\+::set\+Wall (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Adds a wall to the specified location in the dungeon. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The row index to add a wall. \\
+\hline
+{\em y} & The column index to add a wall.\\
+\hline
+{\em x} & Row index where the wall is to be added. \\
+\hline
+{\em y} & Column index where the wall is to be added. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classdungeon_map_a87d047ae9453a8ac360ccbce6a99e694}\label{classdungeon_map_a87d047ae9453a8ac360ccbce6a99e694} 
+\index{dungeonMap@{dungeonMap}!userInputWalls@{userInputWalls}}
+\index{userInputWalls@{userInputWalls}!dungeonMap@{dungeonMap}}
+\doxysubsubsection{\texorpdfstring{userInputWalls()}{userInputWalls()}}
+{\footnotesize\ttfamily void dungeon\+Map\+::user\+Input\+Walls (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Interactively allows the user to modify walls within the dungeon. 
+
+Interactive mode for the user to add or remove walls within the dungeon. \Hypertarget{classdungeon_map_a13171bf8aa8757a0598b2d11a755439d}\label{classdungeon_map_a13171bf8aa8757a0598b2d11a755439d} 
+\index{dungeonMap@{dungeonMap}!wallDetect@{wallDetect}}
+\index{wallDetect@{wallDetect}!dungeonMap@{dungeonMap}}
+\doxysubsubsection{\texorpdfstring{wallDetect()}{wallDetect()}}
+{\footnotesize\ttfamily bool dungeon\+Map\+::wall\+Detect (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Checks if the specified cell in the dungeon map is a wall. 
+
+This function examines the cell at the provided coordinates (x, y) and determines whether it is a wall. The determination is based on the cell type, comparing it against the predefined Wall type.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x-\/coordinate (row) of the cell to check within the dungeon map. \\
+\hline
+{\em y} & The y-\/coordinate (column) of the cell to check within the dungeon map.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True if the cell at the specified coordinates is a wall; otherwise, false.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+The coordinates (x, y) must be within the bounds of the dungeon map. 
+\end{DoxyPrecond}
+\begin{DoxyNote}{Note}
+This function does not perform bounds checking. Calling it with coordinates outside of the dungeon map may lead to undefined behavior. It is the caller\textquotesingle{}s responsibility to ensure that the coordinates are valid before invoking this function. 
+\end{DoxyNote}
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{classdungeon_map_aae88f49f4ddcc1e24b2e6c1841c35018}\label{classdungeon_map_aae88f49f4ddcc1e24b2e6c1841c35018} 
+\index{dungeonMap@{dungeonMap}!cell@{cell}}
+\index{cell@{cell}!dungeonMap@{dungeonMap}}
+\doxysubsubsection{\texorpdfstring{cell}{cell}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{classcell}{cell}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Allows cell class to access private members of \doxylink{classdungeon_map}{dungeon\+Map}. 
+
+\Hypertarget{classdungeon_map_a2a2c210c464055e421f8f619899d05a9}\label{classdungeon_map_a2a2c210c464055e421f8f619899d05a9} 
+\index{dungeonMap@{dungeonMap}!MapTest@{MapTest}}
+\index{MapTest@{MapTest}!dungeonMap@{dungeonMap}}
+\doxysubsubsection{\texorpdfstring{MapTest}{MapTest}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{class_map_test}{Map\+Test}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Allows \doxylink{class_map_test}{Map\+Test} full access to \doxylink{classdungeon_map}{dungeon\+Map}\textquotesingle{}s private members. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classdungeon_map_ab73761a9be5be656c94069d09e455785}\label{classdungeon_map_ab73761a9be5be656c94069d09e455785} 
+\index{dungeonMap@{dungeonMap}!cols@{cols}}
+\index{cols@{cols}!dungeonMap@{dungeonMap}}
+\doxysubsubsection{\texorpdfstring{cols}{cols}}
+{\footnotesize\ttfamily int dungeon\+Map\+::cols\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Number of columns in the dungeon. 
+
+\Hypertarget{classdungeon_map_a52bea5246299d72743a44ff919b020c0}\label{classdungeon_map_a52bea5246299d72743a44ff919b020c0} 
+\index{dungeonMap@{dungeonMap}!dungeon@{dungeon}}
+\index{dungeon@{dungeon}!dungeonMap@{dungeonMap}}
+\doxysubsubsection{\texorpdfstring{dungeon}{dungeon}}
+{\footnotesize\ttfamily vector$<$vector$<$\mbox{\hyperlink{classcell}{cell}}$>$ $>$ dungeon\+Map\+::dungeon}
+
+
+
+2D vector of cells representing the dungeon layout. 
+
+\Hypertarget{classdungeon_map_a10ada3e5e257d9070cd2b7bfdefd65b4}\label{classdungeon_map_a10ada3e5e257d9070cd2b7bfdefd65b4} 
+\index{dungeonMap@{dungeonMap}!end@{end}}
+\index{end@{end}!dungeonMap@{dungeonMap}}
+\doxysubsubsection{\texorpdfstring{end}{end}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classcell}{cell}}\texorpdfstring{$\ast$}{*} dungeon\+Map\+::end \{\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Pointer to the ending cell. 
+
+\Hypertarget{classdungeon_map_afc9b5d7fc69a73d9c5aaccafed9c0727}\label{classdungeon_map_afc9b5d7fc69a73d9c5aaccafed9c0727} 
+\index{dungeonMap@{dungeonMap}!endX@{endX}}
+\index{endX@{endX}!dungeonMap@{dungeonMap}}
+\doxysubsubsection{\texorpdfstring{endX}{endX}}
+{\footnotesize\ttfamily int dungeon\+Map\+::endX \{\}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classdungeon_map_a89c6e436c2eb556abe2b25f91e8dd2ca}\label{classdungeon_map_a89c6e436c2eb556abe2b25f91e8dd2ca} 
+\index{dungeonMap@{dungeonMap}!endY@{endY}}
+\index{endY@{endY}!dungeonMap@{dungeonMap}}
+\doxysubsubsection{\texorpdfstring{endY}{endY}}
+{\footnotesize\ttfamily int dungeon\+Map\+::endY \{\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Coordinates of the ending point. 
+
+\Hypertarget{classdungeon_map_ac6f44dfc19fa10613cc55c5c302896ff}\label{classdungeon_map_ac6f44dfc19fa10613cc55c5c302896ff} 
+\index{dungeonMap@{dungeonMap}!playerPositions@{playerPositions}}
+\index{playerPositions@{playerPositions}!dungeonMap@{dungeonMap}}
+\doxysubsubsection{\texorpdfstring{playerPositions}{playerPositions}}
+{\footnotesize\ttfamily std\+::map$<$\mbox{\hyperlink{class_character}{Character}}\texorpdfstring{$\ast$}{*}, std\+::pair$<$int, int$>$ $>$ dungeon\+Map\+::player\+Positions}
+
+\Hypertarget{classdungeon_map_a8e0a4ff4a178a843565a1e04bf2b0ef0}\label{classdungeon_map_a8e0a4ff4a178a843565a1e04bf2b0ef0} 
+\index{dungeonMap@{dungeonMap}!rows@{rows}}
+\index{rows@{rows}!dungeonMap@{dungeonMap}}
+\doxysubsubsection{\texorpdfstring{rows}{rows}}
+{\footnotesize\ttfamily int dungeon\+Map\+::rows\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Number of rows in the dungeon. 
+
+\Hypertarget{classdungeon_map_a913bdc2bec70b53305d56018887c19d8}\label{classdungeon_map_a913bdc2bec70b53305d56018887c19d8} 
+\index{dungeonMap@{dungeonMap}!start@{start}}
+\index{start@{start}!dungeonMap@{dungeonMap}}
+\doxysubsubsection{\texorpdfstring{start}{start}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classcell}{cell}}\texorpdfstring{$\ast$}{*} dungeon\+Map\+::start \{\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Pointer to the starting cell. 
+
+\Hypertarget{classdungeon_map_abc4ece7530782d492470a5efd6aa7df2}\label{classdungeon_map_abc4ece7530782d492470a5efd6aa7df2} 
+\index{dungeonMap@{dungeonMap}!startX@{startX}}
+\index{startX@{startX}!dungeonMap@{dungeonMap}}
+\doxysubsubsection{\texorpdfstring{startX}{startX}}
+{\footnotesize\ttfamily int dungeon\+Map\+::startX \{\}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classdungeon_map_af6dca69e1f0af226383b2ab99164286e}\label{classdungeon_map_af6dca69e1f0af226383b2ab99164286e} 
+\index{dungeonMap@{dungeonMap}!startY@{startY}}
+\index{startY@{startY}!dungeonMap@{dungeonMap}}
+\doxysubsubsection{\texorpdfstring{startY}{startY}}
+{\footnotesize\ttfamily int dungeon\+Map\+::startY \{\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Coordinates of the starting point. 
+
+\Hypertarget{classdungeon_map_a698840d13bbd2f27cf496023814961bd}\label{classdungeon_map_a698840d13bbd2f27cf496023814961bd} 
+\index{dungeonMap@{dungeonMap}!userPlayer@{userPlayer}}
+\index{userPlayer@{userPlayer}!dungeonMap@{dungeonMap}}
+\doxysubsubsection{\texorpdfstring{userPlayer}{userPlayer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_character}{Character}}\texorpdfstring{$\ast$}{*} dungeon\+Map\+::user\+Player\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Map/\mbox{\hyperlink{map_8h}{map.\+h}}\item 
+Map/\mbox{\hyperlink{map_8cpp}{map.\+cpp}}\end{DoxyCompactItemize}

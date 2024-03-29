@@ -1,0 +1,58 @@
+\doxysection{Character\+Strategy Class Reference}
+\hypertarget{class_character_strategy}{}\label{class_character_strategy}\index{CharacterStrategy@{CharacterStrategy}}
+
+
+{\ttfamily \#include $<$Character\+Strategy.\+h$>$}
+
+Inheritance diagram for Character\+Strategy\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_character_strategy}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_character_strategy_a7a6d18d316791da49cfd597b9bb0d6b7}{move}} (\mbox{\hyperlink{class_character}{Character}} \texorpdfstring{$\ast$}{*}player, \mbox{\hyperlink{classdungeon_map}{dungeon\+Map}} \&map)=0
+\item 
+virtual void \mbox{\hyperlink{class_character_strategy_a04c5e4d69971c761fe0863fc74b1d661}{attack}} (\mbox{\hyperlink{class_character}{Character}} \texorpdfstring{$\ast$}{*}source, \mbox{\hyperlink{class_character}{Character}} \texorpdfstring{$\ast$}{*}target)=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{class_character_strategy_acd218965ffb643dfa8cbda8b90f12948}{is\+Adjacent}} (int sourceX, int sourceY, int targetX, int targetY)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_character_strategy_a04c5e4d69971c761fe0863fc74b1d661}\label{class_character_strategy_a04c5e4d69971c761fe0863fc74b1d661} 
+\index{CharacterStrategy@{CharacterStrategy}!attack@{attack}}
+\index{attack@{attack}!CharacterStrategy@{CharacterStrategy}}
+\doxysubsubsection{\texorpdfstring{attack()}{attack()}}
+{\footnotesize\ttfamily virtual void Character\+Strategy\+::attack (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_character}{Character}} \texorpdfstring{$\ast$}{*}}]{source,  }\item[{\mbox{\hyperlink{class_character}{Character}} \texorpdfstring{$\ast$}{*}}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_aggressor_strategy_a8df0613e372993d6a499d13d6726004f}{Aggressor\+Strategy}}, \mbox{\hyperlink{class_friendly_strategy_af59ef0dac2fb8471e46e1601a10f5c0b}{Friendly\+Strategy}}, and \mbox{\hyperlink{class_human_player_strategy_ae67d87f608c77a220f29ae7b5fc63d73}{Human\+Player\+Strategy}}.
+
+\Hypertarget{class_character_strategy_acd218965ffb643dfa8cbda8b90f12948}\label{class_character_strategy_acd218965ffb643dfa8cbda8b90f12948} 
+\index{CharacterStrategy@{CharacterStrategy}!isAdjacent@{isAdjacent}}
+\index{isAdjacent@{isAdjacent}!CharacterStrategy@{CharacterStrategy}}
+\doxysubsubsection{\texorpdfstring{isAdjacent()}{isAdjacent()}}
+{\footnotesize\ttfamily static bool Character\+Strategy\+::is\+Adjacent (\begin{DoxyParamCaption}\item[{int}]{sourceX,  }\item[{int}]{sourceY,  }\item[{int}]{targetX,  }\item[{int}]{targetY }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\Hypertarget{class_character_strategy_a7a6d18d316791da49cfd597b9bb0d6b7}\label{class_character_strategy_a7a6d18d316791da49cfd597b9bb0d6b7} 
+\index{CharacterStrategy@{CharacterStrategy}!move@{move}}
+\index{move@{move}!CharacterStrategy@{CharacterStrategy}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily virtual void Character\+Strategy\+::move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_character}{Character}} \texorpdfstring{$\ast$}{*}}]{player,  }\item[{\mbox{\hyperlink{classdungeon_map}{dungeon\+Map}} \&}]{map }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_aggressor_strategy_ada7081ba6bdb7ea0bd6cd81c133e0e7d}{Aggressor\+Strategy}}, \mbox{\hyperlink{class_friendly_strategy_a07b90864cbdcaf6c39655d62a976eb67}{Friendly\+Strategy}}, and \mbox{\hyperlink{class_human_player_strategy_a2083a59c193c693530b23e1cfde2ea53}{Human\+Player\+Strategy}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Strategy/\+Character\+Strategy/\mbox{\hyperlink{_character_strategy_8h}{Character\+Strategy.\+h}}\end{DoxyCompactItemize}
