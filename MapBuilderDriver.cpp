@@ -9,7 +9,7 @@
 
 int main() {
     MapDirector director {};
-    MapBuilder* testMapBuilder = new DefaultMapBuilder("testsave.csv");
+    MapBuilder* testMapBuilder = new DefaultMapBuilder("testsave.csvvvv");
 
     director.setMapBuilder(testMapBuilder);
     director.constructMap();
