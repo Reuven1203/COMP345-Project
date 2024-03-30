@@ -25,6 +25,7 @@ file(GLOB_RECURSE BUILDER_SOURCES "Builder/*.cpp" "Builder/*.h")
 file(GLOB_RECURSE DIRECTOR_SOURCES "Director/*.cpp" "Director/*.h")
 file(GLOB_RECURSE STRATEGY_SOURCES "Strategy/*.cpp" "Strategy/*.h")
 file(GLOB_RECURSE EVENTS_SOURCES  "Events/*.h Events/*.cpp")
+file(GLOB_RECURSE CharacterCreator_SOURCES "CharacterCreator/*.h" "CharacterCreator/*.cpp")
 
 # Combine all sources
 set(COMMON_SOURCES
@@ -38,6 +39,7 @@ set(COMMON_SOURCES
         ${DIRECTOR_SOURCES}
         ${STRATEGY_SOURCES}
 		${EVENTS_SOURCES}
+		${CharacterCreator_SOURCES}
 
 )
 
@@ -124,6 +126,11 @@ add_executable(A3-ItemDecorator
         Item/Boots.h
         Item/UnequipItem.cpp
         Item/UnequipItem.h
+)
+
+add_executable(CharacterCreator
+		${COMMON_SOURCES}
+		CharacterCreatorDriver.cpp
 )
 
 # Enable testing
