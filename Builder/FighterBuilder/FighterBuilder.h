@@ -12,11 +12,14 @@ class FighterBuilder{
     friend class FighterDirector;
 protected:
     Fighter *fighter{};
-    virtual ~FighterBuilder() = default;
+
     virtual void buildAbilityScores() = 0;
     virtual void buildAbilityModifiers();
     virtual void buildStats();
     virtual void buildName(string name);
     Fighter* getFighter();
+
+public:
+    virtual ~FighterBuilder() = default;
 };
 #endif //COMP345_A1_FIGHTERBUILDER_H
