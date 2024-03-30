@@ -73,6 +73,8 @@ public:
      */
     void deleteItemInChest(int index);
 
+    int getSize() const;
+
 private:
     std::vector<Item> storedItems; ///< Vector of items stored in the container.
     std::string name; ///< Name of the container.

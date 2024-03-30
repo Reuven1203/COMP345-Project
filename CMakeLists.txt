@@ -47,7 +47,7 @@ set(COMMON_SOURCES
 add_executable(A1-map
         ${COMMON_SOURCES}
         map-test.cpp
-        ItemDecoratorDriver.cpp
+#        ItemDecoratorDriver.cpp
 )
 
 add_executable(FighterBuilder

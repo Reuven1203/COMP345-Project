@@ -583,15 +583,28 @@ void dungeonMap::removeCellContent(int x, int y) {
  */
  void dungeonMap::interactWithChest(Character* player, container *chestTemp){
     chestTemp->getItems();
+    int size = chestTemp->getSize();
     cout << "-------------Item details--------------" << "\n\n";
     chestTemp->getItemStats();
-
     int choice;
+    do{
     cout << "Select which item(number) to obtain: ";
     cin >> choice;
+    if (choice == -1){
+        return;
+    }
+    else if(choice < 0 || choice > size){
+        cout << "Invalid choice, please try again." << endl;
+    }
+    }while(choice < 0 || choice > size);
+    int newSize = chestTemp->getSize();
+    if(newSize == 0){
+        return;
+    }
     player->equip(chestTemp->removeItemFromChest(choice));
     player->showWornItems();
     cout << "Press any key to continue...." << endl;
+    keyPress();
     keyPress();
  }
 void dungeonMap::movePlayer(Character* player, int direction) {
@@ -643,7 +656,12 @@ void dungeonMap::movePlayer(Character* player, int direction) {
     if (chestDetect(newX, newY)) {
         if(dynamic_cast<HumanPlayerStrategy*>(player->getStrategy()) != nullptr){
             cout << "*************Chest found!**************" << endl;
-            interactWithChest(player, dungeon[newX][newY].getChest());
+            container* chest = dungeon[newX][newY].getChest();
+            interactWithChest(player, chest);
+            if (chest->getSize() == 0){
+                delete chest;
+                dungeon[newX][newY].removeContent();
+            }
         }
     }else if(playerDetect(newX, newY)){
         cout << "*************Player found!**************" << endl;

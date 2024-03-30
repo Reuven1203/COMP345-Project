@@ -1,21 +1,21 @@
-                         Dice 3d6 rolled. Result: 9
-                         Dice 3d6 rolled. Result: 10
-                         Dice 3d6 rolled. Result: 6
-                         Dice 3d6 rolled. Result: 12
-                         Dice 3d6 rolled. Result: 6
-                         Dice 3d6 rolled. Result: 15
+                         Dice 3d6 rolled. Result: 14
                          Dice 3d6 rolled. Result: 11
-                         Dice 3d6 rolled. Result: 7
-                         Dice 3d6 rolled. Result: 9
-                         Dice 3d6 rolled. Result: 7
-                         Dice 3d6 rolled. Result: 6
-                         Dice 3d6 rolled. Result: 13
-                         Dice 3d6 rolled. Result: 15
-                         Dice 3d6 rolled. Result: 7
                          Dice 3d6 rolled. Result: 16
-                         Dice 3d6 rolled. Result: 10
-                         Dice 3d6 rolled. Result: 12
+                         Dice 3d6 rolled. Result: 14
                          Dice 3d6 rolled. Result: 13
+                         Dice 3d6 rolled. Result: 12
+                         Dice 3d6 rolled. Result: 7
+                         Dice 3d6 rolled. Result: 15
+                         Dice 3d6 rolled. Result: 14
+                         Dice 3d6 rolled. Result: 9
+                         Dice 3d6 rolled. Result: 8
+                         Dice 3d6 rolled. Result: 14
+                         Dice 3d6 rolled. Result: 7
+                         Dice 3d6 rolled. Result: 12
+                         Dice 3d6 rolled. Result: 4
+                         Dice 3d6 rolled. Result: 9
+                         Dice 3d6 rolled. Result: 11
+                         Dice 3d6 rolled. Result: 10
                        Bully 2placed at X:4 Y : 1
                        Bully 3placed at X:5 Y : 5
          Start Point placed atX:2 Y:1
@@ -28,117 +28,16 @@
                 Wall placed atX:2 Y:4
                Wall Removed atX:3 Y:9
                          Bully Moved Right to X:3 Y:1
-                         Bully Moved Right to X:4 Y:1
-                         Bully Moved Left to X:2 Y:1
-                         Bully Moved Left to X:1 Y:1
-                         Bully Moved Down to X:1 Y:2
-                         Bully Moved Down to X:1 Y:3
-                         Bully Moved Down to X:1 Y:4
-                         Bully Moved Down to X:1 Y:5
-                         Bully Moved Down to X:1 Y:6
-                         Bully Moved Down to X:1 Y:7
-                         Bully Moved Down to X:1 Y:8
-                         Bully Moved Right to X:2 Y:8
-                         Bully Moved Right to X:3 Y:8
-                         Bully Moved Right to X:4 Y:8
-                         Bully Moved Right to X:5 Y:8
-                         Bully Moved Right to X:6 Y:8
-                         Bully Moved Right to X:7 Y:8
-                         Bully Moved Up to X:7 Y : 7
-                         Bully Moved Up to X:7 Y : 6
-                         Bully Moved Up to X:7 Y : 5
-                         Bully Moved Up to X:7 Y : 4
-                         Bully Moved Right to X:8 Y:4
-                         Bully Moved Down to X:8 Y:5
-                         Bully Moved Down to X:8 Y:6
-                         Bully Moved Down to X:8 Y:7
-                         Bully Moved Right to X:9 Y:7
-                         Bully Moved Up to X:9 Y : 6
-                         Bully Moved Up to X:9 Y : 5
-                         Bully Moved Up to X:9 Y : 4
-                         Bully Moved Up to X:9 Y : 3
-                         Bully Moved Left to X:8 Y:3
-                         Bully Moved Down to X:8 Y:4
-                         Bully Moved Up to X:8 Y : 3
-                         Bully Moved Left to X:7 Y:3
-                         Bully Moved Up to X:7 Y : 2
-                         Bully Moved Up to X:7 Y : 1
-                         Bully Moved Left to X:6 Y:1
-                         Bully Moved Down to X:6 Y:2
-                         Bully Moved Down to X:6 Y:3
-                         Bully Moved Down to X:6 Y:4
-                         Bully Moved Down to X:6 Y:5
-                         Bully Moved Down to X:6 Y:6
-                         Bully Moved Left to X:5 Y:6
-                         Bully Moved Left to X:4 Y:6
-                         Bully Moved Up to X:4 Y : 5
-                         Bully Moved Up to X:4 Y : 4
-                         Bully Moved Down to X:4 Y:5
-                         Bully Moved Down to X:4 Y:6
-                         Bully Moved Left to X:3 Y:6
-                         Bully Moved Up to X:3 Y : 5
-                         Bully Moved Up to X:3 Y : 4
-                         Bully Moved Right to X:4 Y:4
-                         Bully Moved Right to X:5 Y:4
-                         Bully Moved Left to X:4 Y:4
-                         Bully Moved Left to X:3 Y:4
-                         Bully Moved Left to X:2 Y:4
-                         Bully Moved Right to X:4 Y:4
-                         Bully Moved Right to X:5 Y:4
-                         Bully Moved Right to X:6 Y:4
-                         Bully Moved Left to X:5 Y:4
-                         Bully Moved Left to X:4 Y:4
-                         Bully Moved Left to X:3 Y:4
-                         Bully Moved Left to X:2 Y:4
-                         Bully Moved Left to X:2 Y:4
-                         Bully Moved Left to X:2 Y:4
-                         Bully Moved Down to X:3 Y:5
-                         Bully Moved Down to X:3 Y:6
-                         Bully Moved Down to X:3 Y:7
-                         Bully Moved Left to X:2 Y:7
-                         Bully Moved Left to X:1 Y:7
-                         Bully Moved Left to X:0 Y:7
-                         Bully Moved Up to X:0 Y : 6
-                         Bully Moved Up to X:0 Y : 5
-                         Bully Moved Up to X:0 Y : 4
-                         Bully Moved Up to X:0 Y : 3
-                         Bully Moved Up to X:0 Y : 2
-                         Bully Moved Up to X:0 Y : 1
-                         Bully Moved Down to X:0 Y:2
-                         Bully Moved Down to X:0 Y:3
-                         Bully Moved Down to X:0 Y:4
-                         Bully Moved Down to X:0 Y:5
-                         Bully Moved Down to X:0 Y:6
-                         Bully Moved Down to X:0 Y:7
-                         Bully Moved Down to X:0 Y:8
-                         Bully Moved Right to X:1 Y:8
-                         Bully Moved Right to X:2 Y:8
-                         Bully Moved Up to X:2 Y : 7
-                         Bully Moved Up to X:2 Y : 6
-                         Bully Moved Left to X:1 Y:6
-                         Bully Moved Up to X:1 Y : 5
-                         Bully Moved Up to X:1 Y : 4
-                         Bully Moved Up to X:1 Y : 3
-                         Bully Moved Up to X:1 Y : 2
-                         Bully Moved Down to X:1 Y:3
-                         Bully Moved Down to X:1 Y:4
-                         Bully Moved Down to X:1 Y:5
-                         Bully Moved Down to X:1 Y:6
-                         Bully Moved Down to X:1 Y:7
-                         Bully Moved Down to X:1 Y:8
-                         Bully Moved Down to X:1 Y:9
-                         Bully Moved Right to X:2 Y:9
-                         Bully Moved Right to X:3 Y:9
-                         Bully Moved Right to X:4 Y:9
-                         Bully Moved Right to X:5 Y:9
-                         Bully Moved Right to X:6 Y:9
-                         Bully Moved Right to X:7 Y:9
-                         Bully Moved Right to X:8 Y:9
-                         Bully Moved Right to X:9 Y:9
-                         Bully Moved Up to X:9 Y : 8
-                         Bully Moved Up to X:9 Y : 7
-                         Bully Moved Up to X:9 Y : 6
-                         Bully Moved Up to X:9 Y : 5
-                         Bully Moved Up to X:9 Y : 4
-                         Bully Moved Up to X:9 Y : 3
-                         Bully Moved Left to X:8 Y:3
+                         Bully Moved Down to X:3 Y:2
+                         Bully Moved Down to X:3 Y:3
+                         Bully Moved Right to X:4 Y:2
+                         Bully Moved Right to X:5 Y:2
+                         Bully Moved Up to X:5 Y : 1
+                         Bully Moved Left to X:4 Y:1
+                         Bully Moved Left to X:4 Y:1
+                         Bully Moved Up to X:5 Y : 0
+                         Bully Moved Left to X:4 Y:0
+                         Bully Moved Left to X:3 Y:0
+                         Bully Moved Left to X:2 Y:0
+                         Bully Moved Left to X:1 Y:0
+                         Bully Moved Left to X:0 Y:0

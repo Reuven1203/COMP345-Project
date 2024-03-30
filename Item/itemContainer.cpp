@@ -91,3 +91,7 @@ void container::deleteItemInChest(int index)
 {
     storedItems.erase(storedItems.begin() + index);
 }
+
+int container::getSize() const {
+    return this->storedItems.size();
+}

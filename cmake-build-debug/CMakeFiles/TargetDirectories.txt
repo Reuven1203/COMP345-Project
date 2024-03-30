@@ -7,6 +7,7 @@
 /Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-Project/cmake-build-debug/CMakeFiles/A2-MapEditor.dir
 /Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-Project/cmake-build-debug/CMakeFiles/A2-Campaign.dir
 /Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-Project/cmake-build-debug/CMakeFiles/A3-ItemDecorator.dir
+/Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-Project/cmake-build-debug/CMakeFiles/CharacterCreator.dir
 /Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-Project/cmake-build-debug/CMakeFiles/COMP345_A1_Tests.dir
 /Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-Project/cmake-build-debug/CMakeFiles/CharacterObserver.dir
 /Users/reuvenostrofsky/Library/Mobile Documents/com~apple~CloudDocs/Concordia/Winter 2024/Comp345/Assignments/COMP345-Project/cmake-build-debug/CMakeFiles/test.dir
