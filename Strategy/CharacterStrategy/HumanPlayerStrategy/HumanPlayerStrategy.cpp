@@ -27,8 +27,6 @@ void HumanPlayerStrategy::move(Character *player, dungeonMap &map) {
             case KEY_RIGHT: // RIGHT arrow key
                 map.movePlayer(player, 4);
                 break;
-            case ENTER: // ESC key pressed
-                break;
             default: // Any other key pressed
                 // Handle other keys or do nothing
                 break;

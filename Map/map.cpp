@@ -16,6 +16,8 @@
 #include "cell.h"
 #include "../Utils/utils.h"
 #include "../Strategy/CharacterStrategy/HumanPlayerStrategy/HumanPlayerStrategy.h"
+#include "../Strategy/CharacterStrategy/AggressorStrategy/AggressorStrategy.h"
+#include "../Strategy/CharacterStrategy/FriendlyStrategy/FriendlyStrategy.h"
 
 
 using namespace std;
@@ -335,13 +337,29 @@ void dungeonMap::printMap()
     for (int row = 0; row < rows; row++)
     {
         cout << setw(maxColDigits) << row;
-
+        char playerChar;
         for (int col = 0; col < cols; col++)
         {
+            if(dungeon[row][col].getCellType() == Player){
+                Character* player = dungeon[row][col].getPlayer();
+                if(dynamic_cast<HumanPlayerStrategy*>(player->getStrategy()) != nullptr)
+                {
+                    playerChar = 'P';
+                }
+                else if(dynamic_cast<AggressorStrategy*>(player->getStrategy()) != nullptr)
+                {
+                    playerChar = 'A';
+                }
+                else if(dynamic_cast<FriendlyStrategy*>(player->getStrategy()) != nullptr)
+                {
+                    playerChar = 'F';
+                }
+
+            }
             if (row==startX && col==startY && dungeon[row][col].getCellType()==Player)
             {
                 cout << "|  "
-                     << "S/P";
+                     << "S/" << playerChar ;
                 continue;
             }
             else if(isStart(&dungeon[row][col])||(row == startX && col == startY)){
@@ -366,7 +384,7 @@ void dungeonMap::printMap()
             case Player:
             {
                 cout << "|  "
-                     << "P  ";
+                     << playerChar << "  ";
                 break;
             }
             case Wall:
