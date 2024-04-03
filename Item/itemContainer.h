@@ -16,20 +16,27 @@
 #include <iostream>
 #include <vector>
 #include "Item.h"
+#include "../Dice/Dice.h"
 
- /**
-  * @class container
-  * @brief Manages a collection of items.
-  *
-  * This class is responsible for storing items in a vector, providing functionalities
-  * to add and remove items, and to print information about the items contained.
-  */
+/**
+ * @class container
+ * @brief Manages a collection of items.
+ *
+ * This class is responsible for storing items in a vector, providing functionalities
+ * to add and remove items, and to print information about the items contained.
+ */
 class container {
 public:
     /**
      * @brief Default constructor for the container class.
      */
     container();
+
+    /**
+     * @brief Constructor to add specified number of items to new container.
+     * @param numItems Number of random items to initialize container with.
+     */
+     container(int numItems);
 
     /**
      * @brief Destructor for the container class.
@@ -78,6 +85,12 @@ public:
 private:
     std::vector<Item> storedItems; ///< Vector of items stored in the container.
     std::string name; ///< Name of the container.
+    Dice dice; ///< Dice to roll random values.
+
+    /**
+     * @brief Internal function to add a random item to the container.
+     */
+    void addRandomItem();
 };
 
 #endif // ITEMCONTAINER_H

@@ -10,7 +10,7 @@ int keyPress() {
   return  _getch();
 }
 
-#elif defined(__APPLE__) && defined(__MACH__)
+#elif defined(__APPLE__) && defined(__MACH__) || defined(__linux__)
 #include <termios.h>
 #include <unistd.h>
 

@@ -22,6 +22,15 @@ using namespace std;
 container::container() : name("") {}
 
 /**
+ * @brief Constructor to add specified number of items to new container.
+ * @param numItems Number of random items to initialize container with.
+ */
+container::container(int numItems) {
+    for(int i {0}; i < numItems; i++)
+        addRandomItem();
+}
+
+/**
  * @brief Destructor for the container class.
  */
 container::~container() {}
@@ -94,4 +103,40 @@ void container::deleteItemInChest(int index)
 
 int container::getSize() const {
     return this->storedItems.size();
+}
+
+void container::addRandomItem() {
+    Item::ItemType itemType {};
+    int random { 8 };
+    while (random > 7)
+        random = dice.roll("1d8");
+    switch(random) {
+        case 1:
+            itemType = Item::ItemType::HELMET;
+            break;
+        case 2:
+            itemType = Item::ItemType::ARMOR;
+            break;
+        case 3:
+            itemType = Item::ItemType::SHIELD;
+            break;
+        case 4:
+            itemType = Item::ItemType::RING;
+            break;
+        case 5:
+            itemType = Item::ItemType::BELT;
+            break;
+        case 6:
+            itemType = Item::ItemType::BOOTS;
+            break;
+        case 7:
+            itemType = Item::ItemType::WEAPON;
+            break;
+        default:
+            std::cerr << "container::addRandomItem() generation error.\n";
+            std::exit(1);
+    }
+
+    Item item = Item(itemType);
+    storeItem(item);
 }
