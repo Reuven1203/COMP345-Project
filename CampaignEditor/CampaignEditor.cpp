@@ -129,7 +129,7 @@ void CampaignEditor::run() {
     }
 }
 
-void CampaignEditor::printCampaignDetails()
+void CampaignEditor::printCampaignDetails() {
     std::cout << "\nCurrent Campaign:\n";
     if(mapFiles.empty())
         std::cout << " no maps, please add a mappp";

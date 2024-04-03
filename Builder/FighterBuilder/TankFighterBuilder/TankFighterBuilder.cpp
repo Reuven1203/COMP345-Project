@@ -2,6 +2,7 @@
 // Created by Reuven Ostrofsky on 2024-03-19.
 //
 
+#include <algorithm>
 #include "TankFighterBuilder.h"
 TankFighterBuilder::TankFighterBuilder() {
     fighter = new Fighter("Tank Fighter", 1, Fighter::TANK);

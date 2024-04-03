@@ -2,6 +2,7 @@
 // Created by Reuven Ostrofsky on 2024-03-19.
 //
 
+#include <algorithm>
 #include "NimbleFighterBuilder.h"
 
 NimbleFighterBuilder::NimbleFighterBuilder() {
