@@ -8,14 +8,7 @@
 
 void clearScreen()
 {
-#ifdef _WIN32
     system("cls");
-#else
-    int result = system("clear");
-    if (result != 0) {
-        std::cerr << "Failed to clear screen. Error code: " << result << std::endl;
-    }
-#endif
 };
 
 int keyPress() {
@@ -84,6 +77,13 @@ int keyPress() {
 
 void clearConsole() {
     system("clear");
+}
+
+void clearScreen() {
+    int result = system("clear");
+    if (result != 0) {
+        std::cerr << "Failed to clear screen. Error code: " << result << std::endl;
+    }
 }
 
 
