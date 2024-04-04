@@ -39,6 +39,7 @@ int main() {
                 break;
             case 2:
                 std::cout << "Loading a campaign..." << std::endl;
+
                 break;
             case 3:
                 std::cout << "___________.__       .__     __                 __________      .__.__       .___              \n"

@@ -12,7 +12,7 @@
 
 class CharacterCreatorUI {
 public:
-    void chooseFighterType();
+    int chooseFighterType();
     void createFighter();
     void run();
     FighterObserver getFighterObserver();
