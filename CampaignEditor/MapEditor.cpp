@@ -29,8 +29,8 @@ void MapEditor::setStart() {
     int startY {};
     std::cin >> startY;
 
-    map.setStart(startX, startY);
-    map.notify();
+    map->setStart(startX, startY);
+    map->notify();
     std::cout << "Set Start Position (" << startX << ", " << startY << ")\n";
 }
 
@@ -43,13 +43,13 @@ void MapEditor::setEnd() {
     int endY {};
     std::cin >> endY;
 
-    map.setEnd(endX, endY);
-    map.notify();
+    map->setEnd(endX, endY);
     std::cout << "Set End Position (" << endX << ", " << endY << ")\n";
+    map->notify();
 }
 
 void MapEditor::setWalls() {
-    map.userInputWalls();
+    map->userInputWalls();
 }
 
 void MapEditor::loadMap() {
@@ -63,7 +63,9 @@ void MapEditor::loadMap() {
     director.setMapBuilder(mapBuilder);
     director.constructMap();
 
-    map = *director.getMap();
+    map = director.getMap();
+    observer = new MapObserver(map);
+    map->notify();
 }
 
 void MapEditor::saveMap() {
@@ -84,16 +86,16 @@ void MapEditor::save(std::string filename) {
     }
 
     std::string sizeLine {
-        "size," + std::to_string(map.getRowSize()) + "," + std::to_string(map.getColSize())
+        "size," + std::to_string(map->getRowSize()) + "," + std::to_string(map->getColSize())
     };
     std::string startLine {
-        "start," + std::to_string(map.getStartX()) + "," + std::to_string(map.getStartY())
+        "start," + std::to_string(map->getStartX()) + "," + std::to_string(map->getStartY())
     };
     std::string endLine {
-        "end," + std::to_string(map.getEndX()) + "," + std::to_string(map.getEndY())
+        "end," + std::to_string(map->getEndX()) + "," + std::to_string(map->getEndY())
     };
     std::string wallLine {"wall,"};
-    for (int i : map.getWalls())
+    for (int i : map->getWalls())
         wallLine += std::to_string(i) + ',';
 
 
@@ -138,6 +140,7 @@ void MapEditor::edit() {
 void MapEditor::run() {
     createNewMap();
     edit();
+
 }
 
 void MapEditor::createNewMap() {
@@ -150,10 +153,10 @@ void MapEditor::createNewMap() {
     std::cout << "Size Y: ";
     int y {};
     std::cin >> y;
-    map = dungeonMap(x, y);
-    observer = MapObserver(&map);
-    map.attach(&observer);
-    map.notify();
+    map = new dungeonMap(x, y);
+    observer = new MapObserver(map);
+    //map->attach(observer);
+    map->notify();
 }
 
 std::string MapEditor::getFileName() {
@@ -161,9 +164,9 @@ std::string MapEditor::getFileName() {
 }
 
 dungeonMap* MapEditor::getMap() {
-    return &map;
+    return map;
 }
 
-void MapEditor::setMap(dungeonMap m) {
+void MapEditor::setMap(dungeonMap* m) {
     map = m;
 }
