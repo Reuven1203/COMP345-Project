@@ -101,7 +101,8 @@ void CampaignEditor::loadCampaign() {
 }
 
 void CampaignEditor::run() {
-    while(true) {
+    bool editing = true;
+    while(editing) {
         printCampaignDetails();
         int input {getUserInput()};
         switch(input) {
@@ -116,6 +117,7 @@ void CampaignEditor::run() {
                 break;
             case 4:
                 saveCampaign();
+                editing = false;
                 break;
             case 5:
                 loadCampaign();
@@ -132,7 +134,7 @@ void CampaignEditor::run() {
 void CampaignEditor::printCampaignDetails() {
     std::cout << "\nCurrent Campaign:\n";
     if(mapFiles.empty())
-        std::cout << " no maps, please add a mappp";
+        std::cout << " no maps, please add a map";
     else {
         for(int i {0}; i < mapFiles.size(); i++) {
             std::cout << " Map " << i << " - " << mapFiles[i] << '\n';
