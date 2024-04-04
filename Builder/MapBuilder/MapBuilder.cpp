@@ -29,6 +29,8 @@ MapInfo MapBuilder::getMapInfo(std::string filename) {
                     datatype = "end";
                 else if (data == "wall")
                     datatype = "wall";
+                else if (data == "chest")
+                    datatype = "chest";
                 else if (data == "player") {
                     datatype = "playerstats";
                     std::getline(ss, data, ',');
@@ -146,6 +148,7 @@ MapInfo MapBuilder::getMapInfo(std::string filename) {
         info["start"],
         info["end"],
         info["wall"],
+        info["chest"],
         p,
         info["playerloc"]
     };

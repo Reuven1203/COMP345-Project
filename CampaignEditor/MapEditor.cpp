@@ -11,8 +11,9 @@ int MapEditor::getUserInput() {
     std::cout << " 1 - Set Start Position" << '\n';
     std::cout << " 2 - Set End Position" << '\n';
     std::cout << " 3 - Set Wall" << '\n';
-    std::cout << " 4 - Save and Exit" << '\n';
-    std::cout << " 5 - Load Map" << '\n';
+    std::cout << " 4 - Add Chest" << '\n';
+    std::cout << " 5 - Save and Exit" << '\n';
+    std::cout << " 6 - Load Map" << '\n';
 
     std::cout << "Enter command number: ";
     int op {};
@@ -29,7 +30,7 @@ void MapEditor::setStart() {
     int startY {};
     std::cin >> startY;
 
-    map->setStart(startX, startY);
+    map->setStart(startY, startX);
     map->notify();
     std::cout << "Set Start Position (" << startX << ", " << startY << ")\n";
 }
@@ -43,13 +44,31 @@ void MapEditor::setEnd() {
     int endY {};
     std::cin >> endY;
 
-    map->setEnd(endX, endY);
+    map->setEnd(endY, endX);
     std::cout << "Set End Position (" << endX << ", " << endY << ")\n";
     map->notify();
 }
 
 void MapEditor::setWalls() {
     map->userInputWalls();
+}
+
+void MapEditor::setChest() {
+    std::cout << "Chest Position X: ";
+    int chestX {};
+    std::cin >> chestX;
+
+    std::cout << "Chest Position Y: ";
+    int chestY {};
+    std::cin >> chestY;
+
+    std::cout << "Number of Items in Chest (recommended 1-3): ";
+    int numItems {};
+    std::cin >> numItems;
+
+    container* chest { new container(numItems) };
+    map->setChest(chest, chestY, chestX);
+    map->notify();
 }
 
 void MapEditor::loadMap() {
@@ -78,7 +97,7 @@ void MapEditor::saveMap() {
     std::cout << "Map saved as " << file << '\n';
 }
 
-void MapEditor::save(std::string filename) {
+void MapEditor::save(const std::string& filename) {
     std::ofstream output{"../MapSaves/" + filename};
     if(!output) {
         std::cerr << "Can not save " << filename << ".\n";
@@ -97,12 +116,16 @@ void MapEditor::save(std::string filename) {
     std::string wallLine {"wall,"};
     for (int i : map->getWalls())
         wallLine += std::to_string(i) + ',';
+    std::string chestLine {"chest,"};
+    for(int i : map->getChests())
+        chestLine += std::to_string(i) + ',';
 
 
     output << sizeLine << '\n';
     output << startLine << '\n';
     output << endLine << '\n';
     output << wallLine << '\n';
+    output << chestLine << '\n';
 }
 
 void MapEditor::edit() {
@@ -120,16 +143,19 @@ void MapEditor::edit() {
                 setWalls();
                 break;
             case 4:
-                saveMap();
+                setChest();
                 break;
             case 5:
+                saveMap();
+                break;
+            case 6:
                 loadMap();
                 break;
             default:
                 std::cout << "Invalid command, try again.\n";
                 break;
         }
-        if (input == 4)
+        if (input == 5)
             break;
     }
 }
@@ -153,7 +179,7 @@ void MapEditor::createNewMap() {
     std::cout << "Size Y: ";
     int y {};
     std::cin >> y;
-    map = new dungeonMap(x, y);
+    map = new dungeonMap(y, x);
     observer = new MapObserver(map);
     //map->attach(observer);
     map->notify();

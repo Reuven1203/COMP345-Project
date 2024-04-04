@@ -153,6 +153,12 @@ public:
      */
 
     vector<int>getWalls();
+
+    /**
+     * @brief Retrieves vector of chest coordinates in map.
+     * @return Vector list of chest coordinates in map.
+     */
+    vector<int> getChests();
  
     cell getCell(int row, int col) const;
     int getEndX();
