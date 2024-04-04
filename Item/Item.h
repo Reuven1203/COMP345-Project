@@ -40,7 +40,20 @@ public:
         WEAPON,  ///< Represents a weapon item.
         NONE,
     };
+    enum ArmorType {
+        LIGHT,
+        MEDIUM,
+        HEAVY,
+        NOTARMOR,
+    };
+    enum WeaponType {
+        BOW,
+        MELEE,
+        NOTWEAPON
+    };
     ItemType equipType;
+    ArmorType armorType;
+    WeaponType weaponType;
     /**
      * @brief Default constructor.
      */// helm,armor,shield,ring,belt,boots,weapon
@@ -76,9 +89,15 @@ public:
     void setDMGBonus(int dmg);
     void setAsEquipped();
     void setAsUnequipped();
+    void setArmorType(ArmorType type);
+    void setWeaponType(WeaponType type);
     // Getters
     string getEquipType() const;
+    string getArmorTypeString()const;
+    string getWeaponTypeString()const;
     ItemType getType() const;
+    ArmorType getArmorType() const;
+    WeaponType getWeaponType()const;
     int getSTR();
     int getCON();
     int getINT();
@@ -88,12 +107,14 @@ public:
     int getAC();
     int getATKBONUS();
     int getDMGBonus();
+    int getRange();
     bool getIfNull();
     bool isEquipped()const;
 /**
      * @brief Method to print the stats of the item.
      */
     void printStats() const;
+ 
 /**
      * @brief Map to store overall item statistics.
      */
@@ -112,6 +133,7 @@ private:
     int armorClass = 0;     ///< Armor class modifier.
     int atkBonus = 0;       ///< Attack bonus modifier.
     int dmgBonus = 0;       ///< Damage bonus modifier.
+    int range = 0;
     bool equipped = false;
 };
 

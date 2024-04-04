@@ -171,6 +171,7 @@ void GameObserver::update(const EventData& event)
 		break;
 
 	}
+	
 	}
 }
 
