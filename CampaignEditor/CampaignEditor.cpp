@@ -15,7 +15,7 @@ int CampaignEditor::getUserInput() {
     std::cout << " 3 - Edit Map" << '\n';
     std::cout << " 4 - Save and Exit" << '\n';
     std::cout << " 5 - Load Campaign" << '\n';
-
+    std::cout << "-1 - Exit Without Saving\n";
     std::cout << "Enter command number: ";
     int op {};
     std::cin >> op;
@@ -64,7 +64,7 @@ void CampaignEditor::saveCampaign() {
     std::cout << "Campaign saved as " << file << '\n';
 }
 
-void CampaignEditor::save(std::string filename) {
+void CampaignEditor::save(const std::string& filename) {
     std::ofstream output{"../CampaignSaves/"+filename};
     if(!output) {
         std::cerr << "Can not save " << filename << ".\n";
@@ -122,6 +122,8 @@ void CampaignEditor::run() {
             case 5:
                 loadCampaign();
                 break;
+            case -1:
+                return;
             default:
                 std::cout << "Invalid command, try again.\n";
                 break;

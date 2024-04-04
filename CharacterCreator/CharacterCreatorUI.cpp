@@ -55,6 +55,9 @@ void CharacterCreatorUI::createFighter() {
 void CharacterCreatorUI::run() {
     chooseFighterType();
     createFighter();
+    std::cout << "Fighter created! Press any key to continue." << std::endl;
+    std::cin.ignore();
+    std::cin.get();
 }
 
 Fighter CharacterCreatorUI::getFighter() {

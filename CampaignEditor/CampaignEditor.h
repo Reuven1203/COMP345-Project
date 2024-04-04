@@ -29,7 +29,7 @@ private:
     void removeMap();
     void editMap();
     void saveCampaign();
-    void save(std::string filename);
+    void save(const std::string& filename);
     void loadCampaign();
 };
 

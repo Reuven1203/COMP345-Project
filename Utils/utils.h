@@ -22,6 +22,7 @@
 #endif
 
 int keyPress();
+void clearConsole();
 
 enum class SubjectType
 {

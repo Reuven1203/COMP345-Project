@@ -102,8 +102,9 @@ void MapEditor::save(std::string filename) {
 }
 
 void MapEditor::edit() {
+    MapObserver mo = MapObserver(&map);
+//    map.attach(&mo);
     while(true) {
-        map.printMap();
         int input {getUserInput()};
         switch(input) {
             case 1:
@@ -148,7 +149,6 @@ void MapEditor::createNewMap() {
     std::cout << "Size Y: ";
     int y {};
     std::cin >> y;
-
     map = dungeonMap(x, y);
 }
 

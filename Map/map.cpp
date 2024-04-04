@@ -189,7 +189,6 @@ void dungeonMap::userInputWalls()
         {
         case (1):
         {
-            notify();
             cout << "Choose where to insert wall(-1 to exit): " << endl;
             addWallChoice(&wallCoordinateX, &wallCoordinateY);
             if(isValidLocation(wallCoordinateX, wallCoordinateY))

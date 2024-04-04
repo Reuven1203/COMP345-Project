@@ -10,6 +10,11 @@ int keyPress() {
   return  _getch();
 }
 
+int clearConsole() {
+  system("cls");
+  return 0;
+}
+
 #elif defined(__APPLE__) && defined(__MACH__) || defined(__linux__)
 #include <termios.h>
 #include <unistd.h>
@@ -64,5 +69,10 @@ int keyPress() {
 //    std::cout << ch << std::endl;
     return ch;
 }
+
+void clearConsole() {
+    system("clear");
+}
+
 
 #endif

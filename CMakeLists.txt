@@ -26,6 +26,8 @@ file(GLOB_RECURSE DIRECTOR_SOURCES "Director/*.cpp" "Director/*.h")
 file(GLOB_RECURSE STRATEGY_SOURCES "Strategy/*.cpp" "Strategy/*.h")
 file(GLOB_RECURSE EVENTS_SOURCES  "Events/*.h Events/*.cpp")
 file(GLOB_RECURSE CharacterCreator_SOURCES "CharacterCreator/*.h" "CharacterCreator/*.cpp")
+file(GLOB_RECURSE Campaign_SOURCES "Campaign/*.h" "Campaign/*.cpp")
+file(GLOB_RECURSE CampaignEditor_SOURCES "CampaignEditor/*.h" "CampaignEditor/*.cpp")
 
 # Combine all sources
 set(COMMON_SOURCES
@@ -40,6 +42,8 @@ set(COMMON_SOURCES
         ${STRATEGY_SOURCES}
 		${EVENTS_SOURCES}
 		${CharacterCreator_SOURCES}
+		${Campaign_SOURCES}
+		${CampaignEditor_SOURCES}
 
 )
 
@@ -158,6 +162,11 @@ add_executable(
 add_executable(CharacterObserver
         ${COMMON_SOURCES}
         CharacterObserverDriver.cpp
+)
+
+add_executable(main
+		${COMMON_SOURCES}
+		mainDriver.cpp
 )
 # Link the CppUnit library
 target_link_libraries(COMP345_A1_Tests ${CPPUNIT_LIBRARIES})
