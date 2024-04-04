@@ -19,6 +19,7 @@
 #include "../Item/Item.h" // Item class for managing items
 #include "../Observer/Observable.h"
 #include "../Strategy/CharacterStrategy/CharacterStrategy.h"
+#include "../Item/itemContainer.h"
 /**
  * @class Character
  * @brief The Character class represents an entity in the game with various attributes and behaviors.
@@ -279,6 +280,12 @@ public:
      */
     virtual bool hasBoots() const;
 
+    container& getInventory();
+    void storeItem(Item);
+    void printInventory();
+    void setInventory(container&);
+
+    bool isItemEquipped(const Item& item);
 protected:
 
     int currentHP{}; ///< Current hit points of the character.
@@ -316,7 +323,6 @@ protected:
     std::map<Stats, int> stats;
 
     std::array<int, 6> abilityScore{};
-
 private:
     explicit Character(std::string name, int level, const int abilityScores[6], int maxHp,int currentHp, std::map<Item::ItemType, Item> wornItems);
     std::string name; ///< Character's name.
@@ -347,7 +353,7 @@ private:
 
 
 
-
+    container inventory;
 
     /**
      * @brief Checks if a given string corresponds to a valid ability.
@@ -375,7 +381,16 @@ private:
     static Stats stringToEnumStats(const std::string& str);
 
     ///< Map of character stats.
-    std::map<Item::ItemType, Item> wornItems; ///< Currently equipped items.
+    std::map<Item::ItemType, Item> wornItems; /*= {
+      {Item::ItemType::ARMOR, Item()},
+      {Item::ItemType::BELT, Item()},
+      {Item::ItemType::BOOTS, Item()},
+      {Item::ItemType::HELMET, Item()},
+      {Item::ItemType::RING, Item()},
+      {Item::ItemType::SHIELD, Item()},
+      {Item::ItemType::WEAPON, Item()}
+    };*/
+    ///< Currently equipped items.
 
     /**
      * @brief Checks if an item is currently equipped.
@@ -384,7 +399,7 @@ private:
      *
      * Determines if the specified item is equipped by checking the wornItems map.
      */
-    bool isItemEquipped(const Item &item);
+  
 
 };
 

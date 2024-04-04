@@ -43,10 +43,14 @@ container::~container() {}
 void container::getItems()
 {
     int counter = 0;
-    cout << "List of items in container:" << endl;
-    for (auto& i : storedItems)
+    cout << "List of items inside:" << endl;
+    for (auto& i : this->storedItems)
     {
-        cout << counter << ". " << i.getEquipType() << " | ";
+        if (counter % 3 == 0)
+        {
+            cout << endl;
+        }
+        cout << counter << ". " << i.getEquipType() <<(i.isEquipped()?"(E)":"")<< " | ";
         counter++;
     }
     cout << "\n\n";
@@ -65,16 +69,24 @@ void container::getItemStats()
     }
 }
 
+Item& container::retrieveItem(int index)
+{
+    
+    return storedItems[index];
+}
+
 /**
  * @brief Stores an item into the container.
  *
  * Adds the provided item to the vector of stored items.
  * @param itemObtained The item to be stored in the container.
  */
-void container::storeItem(Item& itemObtained)
+void container::storeItem(const Item& itemObtained)
 {
     storedItems.push_back(itemObtained);
 }
+
+
 
 /**
  * @brief Removes an item from the container based on its index and returns it.
@@ -85,7 +97,9 @@ void container::storeItem(Item& itemObtained)
  */
 Item container::removeItemFromChest(int index)
 {
+
     Item hold = storedItems[index];
+  
     deleteItemInChest(index);
     return hold;
 }

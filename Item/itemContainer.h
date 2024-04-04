@@ -49,6 +49,8 @@ public:
      * Iterates through the stored items and prints their types to standard output.
      */
     void getItems();
+    
+    Item& retrieveItem(int index);
 
     /**
      * @brief Prints the stats of all items stored in the container.
@@ -63,7 +65,7 @@ public:
      * Adds the specified item to the vector of stored items.
      * @param itemObtained Reference to the item to be stored.
      */
-    void storeItem(Item& itemObtained);
+    void storeItem(const Item& itemObtained);
 
     /**
      * @brief Removes an item from the container at a specified index and returns it.
@@ -73,6 +75,7 @@ public:
      */
     Item removeItemFromChest(int index);
 
+ 
     /**
      * @brief Deletes an item from the container at a specified index.
      *

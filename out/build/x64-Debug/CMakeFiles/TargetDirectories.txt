@@ -1,0 +1,15 @@
+C:/Users/RJ/Desktop/COMP345-DnD/Intermediate project/COMP345-Project/out/build/x64-Debug/CMakeFiles/A1-map.dir
+C:/Users/RJ/Desktop/COMP345-DnD/Intermediate project/COMP345-Project/out/build/x64-Debug/CMakeFiles/FighterBuilder.dir
+C:/Users/RJ/Desktop/COMP345-DnD/Intermediate project/COMP345-Project/out/build/x64-Debug/CMakeFiles/GameObserverDriver.dir
+C:/Users/RJ/Desktop/COMP345-DnD/Intermediate project/COMP345-Project/out/build/x64-Debug/CMakeFiles/CharacterStrategyDriver.dir
+C:/Users/RJ/Desktop/COMP345-DnD/Intermediate project/COMP345-Project/out/build/x64-Debug/CMakeFiles/dice_run.dir
+C:/Users/RJ/Desktop/COMP345-DnD/Intermediate project/COMP345-Project/out/build/x64-Debug/CMakeFiles/MapBuilderTest.dir
+C:/Users/RJ/Desktop/COMP345-DnD/Intermediate project/COMP345-Project/out/build/x64-Debug/CMakeFiles/A2-MapEditor.dir
+C:/Users/RJ/Desktop/COMP345-DnD/Intermediate project/COMP345-Project/out/build/x64-Debug/CMakeFiles/A2-Campaign.dir
+C:/Users/RJ/Desktop/COMP345-DnD/Intermediate project/COMP345-Project/out/build/x64-Debug/CMakeFiles/A3-ItemDecorator.dir
+C:/Users/RJ/Desktop/COMP345-DnD/Intermediate project/COMP345-Project/out/build/x64-Debug/CMakeFiles/CharacterCreator.dir
+C:/Users/RJ/Desktop/COMP345-DnD/Intermediate project/COMP345-Project/out/build/x64-Debug/CMakeFiles/COMP345_A1_Tests.dir
+C:/Users/RJ/Desktop/COMP345-DnD/Intermediate project/COMP345-Project/out/build/x64-Debug/CMakeFiles/CharacterObserver.dir
+C:/Users/RJ/Desktop/COMP345-DnD/Intermediate project/COMP345-Project/out/build/x64-Debug/CMakeFiles/test.dir
+C:/Users/RJ/Desktop/COMP345-DnD/Intermediate project/COMP345-Project/out/build/x64-Debug/CMakeFiles/edit_cache.dir
+C:/Users/RJ/Desktop/COMP345-DnD/Intermediate project/COMP345-Project/out/build/x64-Debug/CMakeFiles/rebuild_cache.dir
