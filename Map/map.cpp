@@ -38,6 +38,10 @@ dungeonMap::dungeonMap(int x, int y) : rows(x), cols(y)
             dungeon[i][j].setColPos(j);
         }
     }
+//    set start at first cell
+    setStart(0, 0);
+//    set end at last cell
+    setEnd(rows - 1, cols - 1);
     EventData event(EventData::EventType::MapCreated, x, y);
     notifyGameObserver(event);
 }
