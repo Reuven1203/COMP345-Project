@@ -3,6 +3,7 @@
 //
 
 #include "AggressorStrategy.h"
+#include "../FriendlyStrategy/FriendlyStrategy.h"
 
 
 
@@ -107,6 +108,9 @@ void AggressorStrategy::attack(Character *source, Character *target) {
         notifyGameObserver(event);
 
         std::cout << "Attack missed!" << std::endl;
+    }
+    if(dynamic_cast<FriendlyStrategy*>(target->getStrategy()) != nullptr) {
+        target->setStrategy(new AggressorStrategy());
     }
 }
 
