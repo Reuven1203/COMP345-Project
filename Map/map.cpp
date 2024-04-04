@@ -682,6 +682,12 @@ void dungeonMap::movePlayer(Character* player, int direction) {
         }
     }else if(playerDetect(newX, newY)){
         cout << "*************Player found!**************" << endl;
+//        check if player is aggressor
+        if(dynamic_cast<AggressorStrategy*>(player->getStrategy()) != nullptr){
+            cout << "Player is an aggressor, attacking player." << endl;
+            Character* target = dungeon[newX][newY].getPlayer();
+            player->attack(target);
+        }
         cout << "Press any key to continue...." << endl;
         keyPress();
     }else{
