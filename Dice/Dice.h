@@ -68,7 +68,7 @@ public:
      * Constructs a Dice object.
      */
      // Prevent copy construction and assignment
-    Dice(const Dice&) = delete;
+ /*   Dice(const Dice&) = delete;*/
 
 
     /**
@@ -81,7 +81,7 @@ public:
       static Dice _dice;
       return _dice; 
    }
-   void operator=(Dice const&) = delete;
+   //void operator=(Dice const&) = delete;
     /**
      * @brief Roll dice based on the given roll string.
      *

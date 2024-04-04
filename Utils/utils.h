@@ -13,17 +13,19 @@
 #define KEY_LEFT 75
 #define KEY_RIGHT 77
 #define ENTER 13
+#define ONE_KEY 49
 #else
 #define KEY_UP 65
 #define KEY_DOWN 66
 #define KEY_LEFT 68
 #define KEY_RIGHT 67
 #define ENTER 10
+#define ONE_KEY 49
 #endif
 
 int keyPress();
 void clearConsole();
-
+void clearScreen();
 enum class SubjectType
 {
     map,

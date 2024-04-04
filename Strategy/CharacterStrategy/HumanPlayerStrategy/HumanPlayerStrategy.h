@@ -12,6 +12,7 @@ class HumanPlayerStrategy: public CharacterStrategy{
 public:
     void move(Character *player, dungeonMap& map) override;
     void attack(Character *source, Character *target) override;
+    void openInventory(Character *player);
 };
 
 

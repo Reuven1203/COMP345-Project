@@ -46,6 +46,10 @@ dungeonMap::dungeonMap(int x, int y) : rows(x), cols(y)
     notifyGameObserver(event);
 }
 
+void dungeonMap::notifyMapCreated() {
+	EventData event(EventData::EventType::MapCreated, rows, cols);
+	notifyGameObserver(event);
+}
 /**
  * @brief Places a chest in the specified location within the dungeon.
  * @param chest Pointer to the chest object.
@@ -54,19 +58,24 @@ dungeonMap::dungeonMap(int x, int y) : rows(x), cols(y)
  */
 void dungeonMap::setChest(container* chest, int x, int y)
 {
-    if (dungeon[x][y].getCellType() == Nothing)
-    {
-        dungeon[x][y].setCellType(Chest);
-        dungeon[x][y].setChest(chest);
-        notify();
-        EventData event(EventData(EventData::EventType::ChestPlaced, x, y));
-        notifyGameObserver(event);
-    }
-    else
-    {
-        cout << "Invalid location for chest." << endl;
-    }
+	if (dungeon[x][y].getCellType() == Nothing)
+	{
+		dungeon[x][y].setCellType(Chest);
+		dungeon[x][y].setChest(chest);
+		notify();
+		EventData event(EventData(EventData::EventType::ChestPlaced, x, y));
+		notifyGameObserver(event);
+	}
+	else
+	{
+		cout << "Invalid location for chest." << endl;
+	}
 }
+
+
+
+
+
 
 /**
  * @brief Adds a wall to the specified location in the dungeon.
@@ -75,16 +84,16 @@ void dungeonMap::setChest(container* chest, int x, int y)
  */
 void dungeonMap::setWall(int x, int y)
 {
-    if (dungeon[x][y].getCellType() == Nothing)
-    {
-        dungeon[x][y].setCellType(Wall);
-        EventData event(EventData::EventType::WallPlaced, x, y);
-        notifyGameObserver(event);
-    }
-    else
-    {
-        cout << "Invalid location for wall due to existing object." << endl;
-    }
+	if (dungeon[x][y].getCellType() == Nothing)
+	{
+		dungeon[x][y].setCellType(Wall);
+		EventData event(EventData::EventType::WallPlaced, x, y);
+		notifyGameObserver(event);
+	}
+	else
+	{
+		cout << "Invalid location for wall due to existing object." << endl;
+	}
 }
 
 /**
@@ -94,16 +103,16 @@ void dungeonMap::setWall(int x, int y)
  */
 void dungeonMap::removeWall(int x, int y)
 {
-    if (dungeon[x][y].getCellType() == Wall)
-    {
-        dungeon[x][y].setCellType(Nothing);
-        EventData event(EventData::EventType::WallRemoved, x, y);
-        notifyGameObserver(event);
-    }
-    else
-    {
-        cout << "No wall exists here." << endl;
-    }
+	if (dungeon[x][y].getCellType() == Wall)
+	{
+		dungeon[x][y].setCellType(Nothing);
+		EventData event(EventData::EventType::WallRemoved, x, y);
+		notifyGameObserver(event);
+	}
+	else
+	{
+		cout << "No wall exists here." << endl;
+	}
 }
 
 /**
@@ -114,26 +123,26 @@ void dungeonMap::removeWall(int x, int y)
  */
 void dungeonMap::setPlayer(Character* player, int x, int y)
 {
-    //check if player exists in the dungeon, if so then move the player to that location
-    if (playerPositions.find(player) != playerPositions.end())
-    {
-        int oldX = playerPositions[player].first;
-        int oldY = playerPositions[player].second;
-        dungeon[oldX][oldY].removeContent();
-    }
-    if (isValidRow(x) && isValidCol(y) && !wallDetect(x, y)) {
-        dungeon[x][y].setCellType(Player);
-        dungeon[x][y].setPlayer(player);
-        playerPositions[player] = std::make_pair(x, y);
-        notify();
-        EventData event(EventData(EventData::EventType::PlayerPlaced, player->getName(), x, y));
-        notifyGameObserver(event);
+	//check if player exists in the dungeon, if so then move the player to that location
+	if (playerPositions.find(player) != playerPositions.end())
+	{
+		int oldX = playerPositions[player].first;
+		int oldY = playerPositions[player].second;
+		dungeon[oldX][oldY].removeContent();
+	}
+	if (isValidRow(x) && isValidCol(y) && !wallDetect(x, y)) {
+		dungeon[x][y].setCellType(Player);
+		dungeon[x][y].setPlayer(player);
+		playerPositions[player] = std::make_pair(x, y);
+		notify();
+		EventData event(EventData(EventData::EventType::PlayerPlaced, player->getName(), x, y));
+		notifyGameObserver(event);
 
-    }
-    else
-    {
-        cout << "Invalid location for player." << endl;
-    }
+	}
+	else
+	{
+		cout << "Invalid location for player." << endl;
+	}
 }
 
 /**
@@ -143,7 +152,7 @@ void dungeonMap::setPlayer(Character* player, int x, int y)
  */
 bool dungeonMap::isValidRow(int row) const
 {
-    return row >= 0 && row < rows;
+	return row >= 0 && row < rows;
 }
 
 /**
@@ -153,7 +162,7 @@ bool dungeonMap::isValidRow(int row) const
  */
 bool dungeonMap::isValidCol(int col) const
 {
-    return col >= 0 && col < cols;
+	return col >= 0 && col < cols;
 }
 
 /**
@@ -164,14 +173,14 @@ bool dungeonMap::isValidCol(int col) const
  */
 bool dungeonMap::isValidLocation(int row, int col)
 {
-    if ((row == startX && col == startY) || (row == endX && col == endY))
-    {
-        cout << "Invalid location due to " << (isStart(&dungeon[row][col]) ? "Start" : "End") << " point." << endl;
-        cout << "Press any key to continue....";
-        keyPress();
-        return false;
-    }
-    return true;
+	if ((row == startX && col == startY) || (row == endX && col == endY))
+	{
+		cout << "Invalid location due to " << (isStart(&dungeon[row][col]) ? "Start" : "End") << " point." << endl;
+		cout << "Press any key to continue....";
+		keyPress();
+		return false;
+	}
+	return true;
 }
 
 /**
@@ -211,16 +220,16 @@ void dungeonMap::userInputWalls()
             cout << "Input coordinates to remove wall (-1) to exit" << endl;
             removeWallChoice(&wallCoordinateX, &wallCoordinateY);
 
-            
-            break;
-        }
-        case (3):
-        {
-            done = true;
-            break;
-        }
-        }
-    }
+
+			break;
+		}
+		case (3):
+		{
+			done = true;
+			break;
+		}
+		}
+	}
 }
 /**
  * @brief Sets the start point of the dungeon.
@@ -229,17 +238,17 @@ void dungeonMap::userInputWalls()
  */
 void dungeonMap::setStart(int x, int y)
 {
-    if (x >= rows || y >= cols || x < 0 || y < 0)
-    {
-        cout << "Start point is out of bounds.";
-        exit(1);
-    }
-    this->startY = y;
-    this->startX = x;
-    EventData event(EventData(EventData::EventType::StartPointPlaced, x, y));
-    notifyGameObserver(event);
- 
-    //this->start = &dungeon[startX][startY];
+	if (x >= rows || y >= cols || x < 0 || y < 0)
+	{
+		cout << "Start point is out of bounds.";
+		exit(1);
+	}
+	this->startY = y;
+	this->startX = x;
+	EventData event(EventData(EventData::EventType::StartPointPlaced, x, y));
+	notifyGameObserver(event);
+
+	//this->start = &dungeon[startX][startY];
 }
 /**
  * @brief Sets the end point of the dungeon.
@@ -248,17 +257,17 @@ void dungeonMap::setStart(int x, int y)
  */
 void dungeonMap::setEnd(int x, int y)
 {
-    if (x >= rows || y >= cols || x < 0 || y < 0)
-    {
-        cout << "End point is out of bounds.";
-        exit(1);
-    }
-    this->endX = x;
-    this->endY = y;
-    this->end = &dungeon[endX][endY];
-    EventData event(EventData(EventData::EventType::EndPointPlaced, x, y));
-    notifyGameObserver(event);
-   
+	if (x >= rows || y >= cols || x < 0 || y < 0)
+	{
+		cout << "End point is out of bounds.";
+		exit(1);
+	}
+	this->endX = x;
+	this->endY = y;
+	this->end = &dungeon[endX][endY];
+	EventData event(EventData(EventData::EventType::EndPointPlaced, x, y));
+	notifyGameObserver(event);
+
 }
 /**
  * @brief Retrieves the number of rows in the dungeon.
@@ -266,7 +275,7 @@ void dungeonMap::setEnd(int x, int y)
  */
 int dungeonMap::getRowSize() const
 {
-    return rows;
+	return rows;
 }
 /**
  * @brief Retrieves the number of columns in the dungeon.
@@ -274,7 +283,7 @@ int dungeonMap::getRowSize() const
  */
 int dungeonMap::getColSize() const
 {
-    return cols;
+	return cols;
 }
 /**
  * @brief Retrieves a cell from the dungeon.
@@ -283,21 +292,21 @@ int dungeonMap::getColSize() const
  * @return The cell at the specified location.
  */
 cell dungeonMap::getCell(int row, int col) const {
-    return dungeon[row][col];
+	return dungeon[row][col];
 }
 /**
  * @brief Returns the row index of the start point.
  * @return Row index of the start point.
  */
 int dungeonMap::getStartX() const {
-    return startX;
+	return startX;
 }
 /**
  * @brief Returns the column index of the start point.
  * @return Column index of the start point.
  */
 int dungeonMap::getStartY() const {
-    return startY;
+	return startY;
 }
 //void dungeonMap::setPlayerX(int x)
 //{
@@ -320,11 +329,11 @@ int dungeonMap::getStartY() const {
 */
 int dungeonMap::getEndX()
 {
-    return endX;
+	return endX;
 }
 int dungeonMap::getEndY()
 {
-    return endY;
+	return endY;
 }
 
 
@@ -334,84 +343,84 @@ int dungeonMap::getEndY()
  */
 void dungeonMap::printMap()
 {
-    int maxRowDigits = to_string(rows).length();
-    int maxColDigits = to_string(cols).length();
+	int maxRowDigits = to_string(rows).length();
+	int maxColDigits = to_string(cols).length();
 
-    for (int row = 0; row < rows; row++)
-    {
-        cout << setw(maxColDigits) << row;
-        char playerChar;
-        for (int col = 0; col < cols; col++)
-        {
-            if(dungeon[row][col].getCellType() == Player){
-                Character* player = dungeon[row][col].getPlayer();
-                if(dynamic_cast<HumanPlayerStrategy*>(player->getStrategy()) != nullptr)
-                {
-                    playerChar = 'P';
-                }
-                else if(dynamic_cast<AggressorStrategy*>(player->getStrategy()) != nullptr)
-                {
-                    playerChar = 'A';
-                }
-                else if(dynamic_cast<FriendlyStrategy*>(player->getStrategy()) != nullptr)
-                {
-                    playerChar = 'F';
-                }
+	for (int row = 0; row < rows; row++)
+	{
+		cout << setw(maxColDigits) << row;
+		char playerChar;
+		for (int col = 0; col < cols; col++)
+		{
+			if (dungeon[row][col].getCellType() == Player) {
+				Character* player = dungeon[row][col].getPlayer();
+				if (dynamic_cast<HumanPlayerStrategy*>(player->getStrategy()) != nullptr)
+				{
+					playerChar = 'P';
+				}
+				else if (dynamic_cast<AggressorStrategy*>(player->getStrategy()) != nullptr)
+				{
+					playerChar = 'A';
+				}
+				else if (dynamic_cast<FriendlyStrategy*>(player->getStrategy()) != nullptr)
+				{
+					playerChar = 'F';
+				}
 
-            }
-            if (row==startX && col==startY && dungeon[row][col].getCellType()==Player)
-            {
-                cout << "|  "
-                     << "S/" << playerChar ;
-                continue;
-            }
-            else if(isStart(&dungeon[row][col])||(row == startX && col == startY)){
-                cout << "|  "
-                    << "S  ";
-                    continue;
-            }
-            else if(isEnd(&dungeon[row][col]))
-            {
-                cout << "|  "
-                     << "E  ";
-                continue;
-            }
-            switch (dungeon[row][col].getCellType())
-            {
-            case Nothing:
-            {
-                cout << "|  "
-                     << "   ";
-                break;
-            }
-            case Player:
-            {
-                cout << "|  "
-                     << playerChar << "  ";
-                break;
-            }
-            case Wall:
-            {
-                cout << "|  "
-                     << "W  ";
-                break;
-            }
-            case Chest:
-            {
-                cout << "|  "
-                    << "C  ";
-            }
-            }
-        }
-        cout << "|" << endl;
-    }
+			}
+			if (row == startX && col == startY && dungeon[row][col].getCellType() == Player)
+			{
+				cout << "|  "
+					<< "S/" << playerChar;
+				continue;
+			}
+			else if (isStart(&dungeon[row][col]) || (row == startX && col == startY)) {
+				cout << "|  "
+					<< "S  ";
+				continue;
+			}
+			else if (isEnd(&dungeon[row][col]))
+			{
+				cout << "|  "
+					<< "E  ";
+				continue;
+			}
+			switch (dungeon[row][col].getCellType())
+			{
+			case Nothing:
+			{
+				cout << "|  "
+					<< "   ";
+				break;
+			}
+			case Player:
+			{
+				cout << "|  "
+					<< playerChar << "  ";
+				break;
+			}
+			case Wall:
+			{
+				cout << "|  "
+					<< "W  ";
+				break;
+			}
+			case Chest:
+			{
+				cout << "|  "
+					<< "C  ";
+			}
+			}
+		}
+		cout << "|" << endl;
+	}
 
-    for (int row = 0; row < cols; row++)
-    {
-        cout << setw(6) << row; // Matching the spacing for columns, adjust if necessary
-    }
-    cout << endl;
-    // cout << "Legend:| S-Start | |E-End| | C-Character | |Ch-Chest| |O-Opponent| |D-Door| |W - Wall|";
+	for (int row = 0; row < cols; row++)
+	{
+		cout << setw(6) << row; // Matching the spacing for columns, adjust if necessary
+	}
+	cout << endl;
+	// cout << "Legend:| S-Start | |E-End| | C-Character | |Ch-Chest| |O-Opponent| |D-Door| |W - Wall|";
 }
 
 /*
@@ -420,31 +429,31 @@ void dungeonMap::printMap()
 */
 
 bool dungeonMap::dfs(int startX, int startY, int endX, int endY) {
-    //dummy path
-    std::vector<std::pair<int, int>> path;
-   return dfs(startX, startY, endX, endY, path);
+	//dummy path
+	std::vector<std::pair<int, int>> path;
+	return dfs(startX, startY, endX, endY, path);
 }
 
 bool dungeonMap::dfs(int row, int col, int targetRow, int targetCol, std::vector<std::pair<int, int>>& path)
 {
-    if (row < 0 || col < 0 || row >= rows || col >= cols || dungeon[row][col].checkVisit() || dungeon[row][col].getCellType() == Wall )
-    {
-        return false;
-    }
-    if (row == targetRow && col == targetCol) {
-        path.emplace_back(row, col);
-        return true;
-    }
-    dungeon[row][col].setVisit();
-    if (dfs(row + 1, col,targetRow, targetCol, path) ||
-        dfs(row - 1, col, targetRow, targetCol, path) ||
-        dfs(row, col + 1, targetRow, targetCol, path) ||
-        dfs(row, col - 1, targetRow, targetCol, path))
-    {
-        path.emplace_back(row, col);
-        return true;
-    }
-    return false;
+	if (row < 0 || col < 0 || row >= rows || col >= cols || dungeon[row][col].checkVisit() || dungeon[row][col].getCellType() == Wall)
+	{
+		return false;
+	}
+	if (row == targetRow && col == targetCol) {
+		path.emplace_back(row, col);
+		return true;
+	}
+	dungeon[row][col].setVisit();
+	if (dfs(row + 1, col, targetRow, targetCol, path) ||
+		dfs(row - 1, col, targetRow, targetCol, path) ||
+		dfs(row, col + 1, targetRow, targetCol, path) ||
+		dfs(row, col - 1, targetRow, targetCol, path))
+	{
+		path.emplace_back(row, col);
+		return true;
+	}
+	return false;
 }
 /**
  * @brief Validates if there is a path from the start point to the end point in the dungeon.
@@ -452,9 +461,9 @@ bool dungeonMap::dfs(int row, int col, int targetRow, int targetCol, std::vector
  */
 bool dungeonMap::isValid()
 {
-    bool valid = dfs(startX, startY, endX, endY);
-    clearCellVisit();
-    return valid;
+	bool valid = dfs(startX, startY, endX, endY);
+	clearCellVisit();
+	return valid;
 }
 
 /**
@@ -462,29 +471,29 @@ bool dungeonMap::isValid()
  */
 void dungeonMap::clearCellVisit()
 {
-    for (int i = 0; i < rows; i++)
-    {
-        for (int j = 0; j < cols; j++)
-        {
-            dungeon[i][j].clearVisit();
-        }
-    }
+	for (int i = 0; i < rows; i++)
+	{
+		for (int j = 0; j < cols; j++)
+		{
+			dungeon[i][j].clearVisit();
+		}
+	}
 }
 /**
  * @brief Checks if a specified cell is the start point.
  * @param cell Pointer to the cell to be checked.
  * @return True if the cell is the start point, otherwise false.
  */
-bool dungeonMap::isStart(cell *cell) const {
-    return cell->getColPos() == startY && cell->getRowPos() == startX;
+bool dungeonMap::isStart(cell* cell) const {
+	return cell->getColPos() == startY && cell->getRowPos() == startX;
 }
 /**
  * @brief Checks if a specified cell is the end point.
  * @param cell Pointer to the cell to be checked.
  * @return True if the cell is the end point, otherwise false.
  */
-bool dungeonMap::isEnd(cell *cell) const {
-    return cell->getColPos() == endY && cell->getRowPos() == endX;
+bool dungeonMap::isEnd(cell* cell) const {
+	return cell->getColPos() == endY && cell->getRowPos() == endX;
 }
 
 /**
@@ -492,22 +501,22 @@ bool dungeonMap::isEnd(cell *cell) const {
  * @param x Pointer to store the row coordinate chosen by the user.
  * @param y Pointer to store the column coordinate chosen by the user.
  */
-void dungeonMap::addWallChoice(int *x, int *y)
+void dungeonMap::addWallChoice(int* x, int* y)
 {
-    cout << "Y coordinate: ";
-    cin >> *x;
-    if (!isValidRow(*x))
-    {
-        cout << "Invalid Y coordinate." << endl;
-        return;
-    }
-    cout << "X coordinate: ";
-    cin >> *y;
-    if (!isValidCol(*y))
-    {
-        cout << "Invalid X coordinate." << endl;
-        return;
-    }
+	cout << "Y coordinate: ";
+	cin >> *x;
+	if (!isValidRow(*x))
+	{
+		cout << "Invalid Y coordinate." << endl;
+		return;
+	}
+	cout << "X coordinate: ";
+	cin >> *y;
+	if (!isValidCol(*y))
+	{
+		cout << "Invalid X coordinate." << endl;
+		return;
+	}
 }
 
 /**
@@ -528,23 +537,23 @@ void dungeonMap::addWallChoice(int *x, int *y)
  */
 bool dungeonMap::wallDetect(int x, int y)
 {
-    if (dungeon[x][y].getCellType() == Wall)
-        return true;
+	if (dungeon[x][y].getCellType() == Wall)
+		return true;
 
-    else return false;
+	else return false;
 }
 
 bool dungeonMap::chestDetect(int x, int y)
 {
-    if (dungeon[x][y].getCellType() == Chest)
-        return true;
-    else return false;
+	if (dungeon[x][y].getCellType() == Chest)
+		return true;
+	else return false;
 }
 
 bool dungeonMap::playerDetect(int x, int y) {
-    if (dungeon[x][y].getCellType() == Player)
-        return true;
-    else return false;
+	if (dungeon[x][y].getCellType() == Player)
+		return true;
+	else return false;
 
 }
 
@@ -553,26 +562,26 @@ bool dungeonMap::playerDetect(int x, int y) {
  * @param x Pointer to store the row coordinate chosen by the user.
  * @param y Pointer to store the column coordinate chosen by the user.
  */
-void dungeonMap::removeWallChoice(int *x, int *y) {
-    cout << "Y coordinate: ";
-    cin >> *x;
-    if (!isValidRow(*x))
-    {
-        cout << "Invalid Y coordinate." << endl;
-        cout << "Press any key to continue....";
-        keyPress();
-        return;
-    }
-    cout << "X coordinate: ";
-    cin >> *y;
-    if (!isValidCol(*y))
-    {
-        cout << "Invalid X coordinate." << endl;
-        cout << "Press any key to continue....";
-        keyPress();
-        return;
-    }
-    removeWall(*x, *y);
+void dungeonMap::removeWallChoice(int* x, int* y) {
+	cout << "Y coordinate: ";
+	cin >> *x;
+	if (!isValidRow(*x))
+	{
+		cout << "Invalid Y coordinate." << endl;
+		cout << "Press any key to continue....";
+		keyPress();
+		return;
+	}
+	cout << "X coordinate: ";
+	cin >> *y;
+	if (!isValidCol(*y))
+	{
+		cout << "Invalid X coordinate." << endl;
+		cout << "Press any key to continue....";
+		keyPress();
+		return;
+	}
+	removeWall(*x, *y);
 }
 /**
  * @brief Removes the content of a specified cell.
@@ -580,8 +589,8 @@ void dungeonMap::removeWallChoice(int *x, int *y) {
  * @param y Column index of the cell.
  */
 void dungeonMap::removeCellContent(int x, int y) {
-    dungeon[x][y].removeContent();
-    notify();
+	dungeon[x][y].removeContent();
+	notify();
 }
 
 /**
@@ -602,76 +611,95 @@ void dungeonMap::removeCellContent(int x, int y) {
  * If either condition is not met, the function returns without moving the player.
  * Otherwise, the player is moved to the new location, and any game state updates are performed.
  */
- void dungeonMap::interactWithChest(Character* player, container *chestTemp){
-    chestTemp->getItems();
-    int size = chestTemp->getSize();
-    cout << "-------------Item details--------------" << "\n\n";
-    chestTemp->getItemStats();
-    int choice;
-    do{
-    cout << "Select which item(number) to obtain: ";
-    cin >> choice;
-    if (choice == -1){
-        return;
-    }
-    else if(choice < 0 || choice > size){
-        cout << "Invalid choice, please try again." << endl;
-    }
-    }while(choice < 0 || choice > size);
-    int newSize = chestTemp->getSize();
-    if(newSize == 0){
-        return;
-    }
-    player->equip(chestTemp->removeItemFromChest(choice));
-    player->showWornItems();
-    cout << "Press any key to continue...." << endl;
-    keyPress();
-    keyPress();
- }
-void dungeonMap::movePlayer(Character* player, int direction) {
-    int playerX = playerPositions[player].first;
-    int playerY = playerPositions[player].second;
-    int newX = playerX, newY = playerY;
+void dungeonMap::interactWithChest(Character* player, container* chestTemp) {
+	bool keepChecking = true;
+	
+	while (keepChecking) {
+		
+		notify();
+		chestTemp->getItems(); 
+		int size = chestTemp->getSize();
+		if (size == 0) {
+			cout << "The chest is empty." << endl;
+			break; // Exit the loop if the chest is empty
+		}
+		cout << "-------------Item details--------------" << "\n\n";
+		chestTemp->getItemStats();
+		cout << "Select which item (number) to obtain (-1 to back out): ";
+		int choice;
+		cin >> choice;
 
-    // Determine new position based on the direction
-    switch (direction) {
-        case 1: // Up
-        {
-            newX--;
-            EventData event(EventData::EventType::PlayerMovedUp,player->getName(), newX, newY);
-            notifyGameObserver(event);
-            break;
-        }
-        case 2: // Down
-        {
-            newX++;
-            EventData event(EventData::EventType::PlayerMovedDown, player->getName(), newX, newY);
-            notifyGameObserver(event);
-            break;
-        }
-        case 3: // Left
-        {
-            newY--;
-            EventData event(EventData::EventType::PlayerMovedLeft, player->getName(), newX, newY);
-            notifyGameObserver(event);
-            break;
-        }
-        case 4: // Right
-        {
-            newY++;
-            EventData event(EventData::EventType::PlayerMovedRight, player->getName(), newX, newY);
-            notifyGameObserver(event);
-            break;
-        }
-        default:
-            return; // Invalid direction
-    }
+		// Handle the user's input
+		if (choice == -1) {
+			keepChecking = false; // User chose to back out
+		}
+		else if (choice < 0 || choice >= size) {
+			cout << "Invalid choice, please try again." << endl;
 
-    // Check for valid move
-    if (!isValidRow(newX) || !isValidCol(newY) || wallDetect(newX, newY)) {
-        notify();
-        return; // Invalid move
-    }
+		}
+		else {
+			// Valid choice, process the item
+			Item hold = chestTemp->removeItemFromChest(choice);
+			player->storeItem(hold); // Adjusted to pass by value or consider changing the method signature
+			
+			cout << hold.getEquipType() <<" obtained and placed inside Inventory. Press any key to continue...." << endl;
+			keyPress();
+		}
+	}
+
+}
+
+
+
+
+
+
+
+
+void dungeonMap::movePlayer(Character * player, int direction) {
+	int playerX = playerPositions[player].first;
+	int playerY = playerPositions[player].second;
+	int newX = playerX, newY = playerY;
+
+	// Determine new position based on the direction
+	switch (direction) {
+	case 1: // Up
+	{
+		newX--;
+		EventData event(EventData::EventType::PlayerMovedUp, player->getName(), newX, newY);
+		notifyGameObserver(event);
+		break;
+	}
+	case 2: // Down
+	{
+		newX++;
+		EventData event(EventData::EventType::PlayerMovedDown, player->getName(), newX, newY);
+		notifyGameObserver(event);
+		break;
+	}
+	case 3: // Left
+	{
+		newY--;
+		EventData event(EventData::EventType::PlayerMovedLeft, player->getName(), newX, newY);
+		notifyGameObserver(event);
+		break;
+	}
+	case 4: // Right
+	{
+		newY++;
+		EventData event(EventData::EventType::PlayerMovedRight, player->getName(), newX, newY);
+		notifyGameObserver(event);
+		break;
+	}
+	default:
+		return; // Invalid direction
+	}
+
+	// Check for valid move
+	if (!isValidRow(newX) || !isValidCol(newY) || wallDetect(newX, newY)) {
+		notify();
+		return; // Invalid move
+	}
 
     // Check for a chest at the new position
     if (chestDetect(newX, newY)) {
@@ -701,32 +729,31 @@ void dungeonMap::movePlayer(Character* player, int direction) {
         playerPositions[player] = std::make_pair(newX, newY);
     }
 
-    notify();
+	notify();
 }
 
 vector<int> dungeonMap::getWalls() {
-    vector<int>wallCoordinates;
-    for (int row = 0;row < rows;row++)
-    {
-        for (int col = 0;col < cols;col++)
-        {
-            if (dungeon[row][col].getCellType() == Wall) 
-            {
-                wallCoordinates.push_back(dungeon[row][col].rowPos);
-                wallCoordinates.push_back(dungeon[row][col].colPos);
-            }
-        }
-    }
-    return wallCoordinates;
+	vector<int>wallCoordinates;
+	for (int row = 0;row < rows;row++)
+	{
+		for (int col = 0;col < cols;col++)
+		{
+			if (dungeon[row][col].getCellType() == Wall)
+			{
+				wallCoordinates.push_back(dungeon[row][col].rowPos);
+				wallCoordinates.push_back(dungeon[row][col].colPos);
+			}
+		}
+	}
+	return wallCoordinates;
 }
 
-void dungeonMap::setUserPlayer(Character *player) {
-    userPlayer = player;
+void dungeonMap::setUserPlayer(Character * player) {
+	userPlayer = player;
 }
 
 Character* dungeonMap::getUserPlayer() {
-    return this->userPlayer;
+	return this->userPlayer;
 
 }
-
 

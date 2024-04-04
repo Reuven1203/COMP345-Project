@@ -34,6 +34,8 @@ public:
      */
     ~dungeonMap() = default;
 
+    void notifyMapCreated();
+
     /**
      * @brief Constructs a dungeonMap with specified dimensions.
      * @param x The number of rows in the dungeon.
@@ -51,7 +53,7 @@ public:
      * @brief Prints the current state of the dungeon map.
      */
     void printMap();
-
+    void clearScreen();
     /**
      * @brief Sets the starting point of the dungeon.
      * @param x The row index for the start point.
@@ -177,7 +179,7 @@ private:
     Character *userPlayer;
     bool chestDetect(int x, int y);
     bool playerDetect(int x, int y);
-    static void interactWithChest(Character *player, container *chest);
+    void interactWithChest(Character *player, container *chest);
     bool isStart(cell* cell) const; ///< Checks if a cell is the start point.
     bool isEnd(cell* cell) const; ///< Checks if a cell is the end point.
     void addWallInteraction(); ///< Helper function for wall addition interaction.

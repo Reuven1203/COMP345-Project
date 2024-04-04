@@ -23,6 +23,7 @@ using namespace std;
  */
 Item::Item() {
     this->nullItem = true;
+    this->equipType = NONE;
 }
 
 /**
@@ -95,6 +96,12 @@ string Item::getEquipType() const
                                     break;
    }
 }
+
+Item::ItemType Item::getType() const
+{
+    return this->equipType;
+}
+
 /**
  * @brief Getter for the Strength attribute modifier.
  * @return The strength modifier of the item.
@@ -321,4 +328,19 @@ void Item::setATKBONUS(int atk) {
 void Item::setDMGBonus(int dmg) {
     dmgBonus = dmg;
     itemOverall["DamageBonus"] = dmgBonus;
+}
+
+void Item::setAsEquipped()
+{
+    this->equipped = true;
+}
+
+void Item::setAsUnequipped()
+{
+    this->equipped = false;
+}
+
+bool Item::isEquipped()const
+{
+    return equipped;
 }

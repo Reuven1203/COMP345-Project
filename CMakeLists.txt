@@ -54,6 +54,10 @@ add_executable(A1-map
 #        ItemDecoratorDriver.cpp
 )
 
+add_executable(InventoryDriver
+ 	  ${COMMON_SOURCES}
+	InventoryDriver.cpp
+)
 add_executable(FighterBuilder
         ${COMMON_SOURCES}
         FighterBuilderDriver.cpp

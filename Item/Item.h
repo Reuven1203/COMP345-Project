@@ -37,7 +37,8 @@ public:
         RING,   ///< Represents a ring item.
         BELT,   ///< Represents a belt item.
         BOOTS,  ///< Represents a boots item.
-        WEAPON  ///< Represents a weapon item.
+        WEAPON,  ///< Represents a weapon item.
+        NONE,
     };
     ItemType equipType;
     /**
@@ -73,9 +74,11 @@ public:
     void setAC(int ac);
     void setATKBONUS(int atk);
     void setDMGBonus(int dmg);
-
+    void setAsEquipped();
+    void setAsUnequipped();
     // Getters
     string getEquipType() const;
+    ItemType getType() const;
     int getSTR();
     int getCON();
     int getINT();
@@ -86,7 +89,7 @@ public:
     int getATKBONUS();
     int getDMGBonus();
     bool getIfNull();
-
+    bool isEquipped()const;
 /**
      * @brief Method to print the stats of the item.
      */
@@ -109,7 +112,7 @@ private:
     int armorClass = 0;     ///< Armor class modifier.
     int atkBonus = 0;       ///< Attack bonus modifier.
     int dmgBonus = 0;       ///< Damage bonus modifier.
-
+    bool equipped = false;
 };
 
 #endif // ITEM_H

@@ -6,13 +6,25 @@
 #ifdef _WIN32
 #include <conio.h>
 
+void clearScreen()
+{
+#ifdef _WIN32
+    system("cls");
+#else
+    int result = system("clear");
+    if (result != 0) {
+        std::cerr << "Failed to clear screen. Error code: " << result << std::endl;
+    }
+#endif
+};
+
 int keyPress() {
   return  _getch();
 }
 
-int clearConsole() {
+void clearConsole() {
   system("cls");
-  return 0;
+  
 }
 
 #elif defined(__APPLE__) && defined(__MACH__) || defined(__linux__)

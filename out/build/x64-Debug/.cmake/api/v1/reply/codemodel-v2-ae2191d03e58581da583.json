@@ -1,0 +1,159 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.27"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "COMP345-A1",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "A1-map::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-A1-map-Debug-6d4f46b2b9c8fe3fc3d4.json",
+					"name" : "A1-map",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "A2-Campaign::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-A2-Campaign-Debug-638acecd553649234227.json",
+					"name" : "A2-Campaign",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "A2-MapEditor::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-A2-MapEditor-Debug-bd63dde7defa465dcb80.json",
+					"name" : "A2-MapEditor",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "A3-ItemDecorator::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-A3-ItemDecorator-Debug-148adcbfbf1237cb5891.json",
+					"name" : "A3-ItemDecorator",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "COMP345_A1_Tests::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-COMP345_A1_Tests-Debug-8217289b3734bb0663fc.json",
+					"name" : "COMP345_A1_Tests",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "CharacterCreator::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-CharacterCreator-Debug-4b3170ee33e757fb4917.json",
+					"name" : "CharacterCreator",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "CharacterObserver::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-CharacterObserver-Debug-e8f3db4d01e5c61f0260.json",
+					"name" : "CharacterObserver",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "CharacterStrategyDriver::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-CharacterStrategyDriver-Debug-d894a8d4038e944740a1.json",
+					"name" : "CharacterStrategyDriver",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "FighterBuilder::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-FighterBuilder-Debug-fae5398e26dadb3c8c75.json",
+					"name" : "FighterBuilder",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "GameObserverDriver::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-GameObserverDriver-Debug-6c8c5289d2ae6f8da3f1.json",
+					"name" : "GameObserverDriver",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "MapBuilderTest::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-MapBuilderTest-Debug-df8b602154b1b771bfe0.json",
+					"name" : "MapBuilderTest",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "dice_run::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-dice_run-Debug-124f909324bb28ee4a22.json",
+					"name" : "dice_run",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/RJ/Desktop/COMP345-DnD/Intermediate project/COMP345-Project/out/build/x64-Debug",
+		"source" : "C:/Users/RJ/Desktop/COMP345-DnD/Intermediate project/COMP345-Project"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

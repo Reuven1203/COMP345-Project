@@ -27,7 +27,7 @@ int main() {
 
     Item* helmet = new Item(Item::ItemType::HELMET);
     Character* fighter3 = new Helmet(helmet, fighter2);
-
+ 
     Item* armor = new Item(Item::ItemType::ARMOR);
     Character* fighter4 = new Armor(armor, fighter3);
 
@@ -51,6 +51,7 @@ int main() {
     Character* unequipped6 = new UnequipItem(belt, unequipped5);
     Character* unequipped7 = new UnequipItem(boots, unequipped6);
 
+    fighter8->showCharacterStats();
     std::cout << "Atk Before: " << bullyFighter->getATK() << std::endl;
     std::cout << "Weapon Atk: " << weapon->getATKBONUS() << std::endl;
     std::cout << "Atk After Weapon: " << fighter2->getATK() << std::endl;
