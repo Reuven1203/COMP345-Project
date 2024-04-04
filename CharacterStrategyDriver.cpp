@@ -34,7 +34,9 @@ int main() {
     m->setPlayer(fighter,m->getStartX(), m->getStartY());
     m->setPlayer(fighter2, 4, 4);
     m->setPlayer(fighter3, 5, 5);
-    m->setWall(0, 8);
+    m->setWall(4, 3);
+    m->setWall(5, 3);
+    m->setWall(5, 4);
     auto* chest1 = new container();
     auto* chest2 = new container();
     Item* ring = new Item(Item::ItemType::RING);
@@ -44,9 +46,13 @@ int main() {
     m->setChest(chest1,3,3);
     m->setChest(chest2, 8, 8);
     m->notify();
-    fighter->move(*m);
-    fighter2->move(*m);
-    fighter3->move(*m);
+    while(true){
+        fighter->move(*m);
+        fighter2->move(*m);
+//        fighter3->move(*m);
+    }
+
+
 
 
 

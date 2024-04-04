@@ -18,6 +18,12 @@ public:
         return (sourceX == targetX && sourceY == targetY + 1) || (sourceX == targetX && sourceY == targetY - 1) ||
                (sourceX == targetX + 1 && sourceY == targetY) || (sourceX == targetX - 1 && sourceY == targetY);
     }
+    static inline bool isNearby(int sourceX, int sourceY, int targetX, int targetY) {
+return (sourceX == targetX && sourceY == targetY + 2) || (sourceX == targetX && sourceY == targetY - 2) ||
+               (sourceX == targetX + 2 && sourceY == targetY) || (sourceX == targetX - 2 && sourceY == targetY) ||
+               (sourceX == targetX + 2 && sourceY == targetY + 2) || (sourceX == targetX + 2 && sourceY == targetY - 2) ||
+               (sourceX == targetX - 2 && sourceY == targetY + 2) || (sourceX == targetX - 2 && sourceY == targetY - 2);
+    }
 
     virtual void attack(Character *source, Character *target) = 0;
 

@@ -161,6 +161,12 @@ public:
     bool dfs(int row, int col, int targetRow, int targetCol, std::vector<std::pair<int, int>>& path); ///< Performs depth-first search for path validation.
     bool dfs(int row, int col, int targetRow, int targetCol); ///< Performs depth-first search for path validation.
     vector<vector<cell>> dungeon; ///< 2D vector of cells representing the dungeon layout.
+    bool isValidRow(int row) const;
+
+///< Valiådates row index.
+bool isValidCol(int col) const;
+    bool wallDetect(int x, int y);
+
 private:
     int rows; ///< Number of rows in the dungeon.
     int cols; ///< Number of columns in the dungeon.
@@ -169,7 +175,6 @@ private:
     int startX{}, startY{}; ///< Coordinates of the starting point.
     int endX{}, endY{}; ///< Coordinates of the ending point.
     Character *userPlayer;
-    bool wallDetect(int x, int y);
     bool chestDetect(int x, int y);
     bool playerDetect(int x, int y);
     static void interactWithChest(Character *player, container *chest);
@@ -178,8 +183,7 @@ private:
     void addWallInteraction(); ///< Helper function for wall addition interaction.
     void removeWallInteraction(); ///< Helper function for wall removal interaction.
     void getWallCoordinates(int& x, int& y); ///< Prompts user for wall coordinates.
-    bool isValidRow(int row) const; ///< Valiådates row index.
-    bool isValidCol(int col) const; ///< Validates column index.
+    ///< Validates column index.
     bool isValidLocation(int row, int col); ///< Validates if a location can be modified.
     void addWallChoice(int* x, int* y); ///< Interactively allows adding a wall.
     void removeWallChoice(int* x, int* y); ///< Interactively allows removing a wall.
