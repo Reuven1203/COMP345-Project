@@ -51,7 +51,7 @@ void CampaignEditor::editMap() {
     director.setMapBuilder(mapBuilder);
     director.constructMap();
 
-    mapEdit.setMap(*director.getMap());
+    mapEdit.setMap(director.getMap());
     mapEdit.edit();
 }
 
