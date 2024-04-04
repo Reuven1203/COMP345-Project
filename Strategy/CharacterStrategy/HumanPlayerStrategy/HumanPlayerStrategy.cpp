@@ -71,7 +71,7 @@ void HumanPlayerStrategy::openInventory(Character* player)
 
 
 		cout << "-------------------------" << endl;
-		cout << "Menu: 1.Equip Item | 2.Unequip Item | 3.Check Current Stats | -1.Exit " << endl;
+		cout << "Menu: 1.Equip Item | 2.Unequip Item | 3.Check Current Stats | 4.Check Item Stats | -1.Exit " << endl;
 		cin >> choice;
 		switch (choice)
 		{
@@ -203,6 +203,42 @@ void HumanPlayerStrategy::openInventory(Character* player)
 			player->showCharacterStats();
 			cout << "Press any key to continue..." << endl;
 			keyPress();
+			break;
+		}
+		case 4:
+		{
+			int itemChoice = -2;
+			bool doneChecking = false;
+			while (!doneChecking)
+			{
+
+				clearScreen();
+				cout << "--------INVENTORY--------" << endl;
+
+				player->printInventory();
+
+
+				cout << "--CHOOSE ITEM TO INSPECT--" << endl;
+			
+				cout << "Choice (-1 to exit):  ";
+
+				cin >> itemChoice;
+				if (itemChoice == -1)
+				{
+					doneChecking = true;
+				}
+				else if (itemChoice < 0 || itemChoice >= player->getInventory().getSize())
+				{
+					cout << "Invalid choice." << endl;
+					cout << "Press any key to continue..." << endl;
+					keyPress();
+				}
+				else {
+					player->getInventory().retrieveItem(itemChoice).printStats();
+					cout << "Press any key to continue..." << endl;
+					keyPress();
+				}
+			}
 			break;
 		}
 		default:

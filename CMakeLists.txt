@@ -28,6 +28,8 @@ file(GLOB_RECURSE EVENTS_SOURCES  "Events/*.h Events/*.cpp")
 file(GLOB_RECURSE CharacterCreator_SOURCES "CharacterCreator/*.h" "CharacterCreator/*.cpp")
 file(GLOB_RECURSE Campaign_SOURCES "Campaign/*.h" "Campaign/*.cpp")
 file(GLOB_RECURSE CampaignEditor_SOURCES "CampaignEditor/*.h" "CampaignEditor/*.cpp")
+file(GLOB_RECURSE TurnManager_SOURCES "TurnManager/*.h" "TurnManager/*.cpp")
+
 
 # Combine all sources
 set(COMMON_SOURCES
@@ -44,6 +46,7 @@ set(COMMON_SOURCES
 		${CharacterCreator_SOURCES}
 		${Campaign_SOURCES}
 		${CampaignEditor_SOURCES}
+        ${TurnManager_SOURCES}
 
 )
 

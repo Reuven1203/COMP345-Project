@@ -26,8 +26,8 @@ container::container() : name("") {}
  * @param numItems Number of random items to initialize container with.
  */
 container::container(int numItems) {
-    for(int i {0}; i < numItems; i++)
-        addRandomItem();
+	for (int i{ 0 }; i < numItems; i++)
+		addRandomItem();
 }
 
 /**
@@ -42,18 +42,18 @@ container::~container() {}
  */
 void container::getItems()
 {
-    int counter = 0;
-    cout << "List of items inside:" << endl;
-    for (auto& i : this->storedItems)
-    {
-        if (counter % 3 == 0)
-        {
-            cout << endl;
-        }
-        cout << counter << ". " << i.getEquipType() <<(i.isEquipped()?"(E)":"")<< " | ";
-        counter++;
-    }
-    cout << "\n\n";
+	int counter = 0;
+	cout << "List of items inside:" << endl;
+	for (auto& i : this->storedItems)
+	{
+		if (counter % 3 == 0)
+		{
+			cout << endl;
+		}
+		cout << counter << ". " << (!(i.armorType == Item::ArmorType::NOTARMOR) ? "("+i.getArmorTypeString()+") " : "")<< (!(i.weaponType == Item::WeaponType::NOTWEAPON) ? "(" + i.getWeaponTypeString() + ") " : "") << i.getEquipType() << (i.isEquipped() ? "(E)" : "") << " | ";
+		counter++;
+	}
+	cout << "\n\n";
 }
 
 /**
@@ -63,16 +63,19 @@ void container::getItems()
  */
 void container::getItemStats()
 {
-    for (auto& i : storedItems)
-    {
-        i.printStats();
-    }
+	int counter = 0;
+	for (auto& i : storedItems)
+	{
+		cout << counter << ": ";
+		i.printStats();
+		counter++;
+	}
 }
 
 Item& container::retrieveItem(int index)
 {
-    
-    return storedItems[index];
+
+	return storedItems[index];
 }
 
 /**
@@ -83,7 +86,7 @@ Item& container::retrieveItem(int index)
  */
 void container::storeItem(const Item& itemObtained)
 {
-    storedItems.push_back(itemObtained);
+	storedItems.push_back(itemObtained);
 }
 
 
@@ -98,10 +101,10 @@ void container::storeItem(const Item& itemObtained)
 Item container::removeItemFromChest(int index)
 {
 
-    Item hold = storedItems[index];
-  
-    deleteItemInChest(index);
-    return hold;
+	Item hold = storedItems[index];
+
+	deleteItemInChest(index);
+	return hold;
 }
 
 /**
@@ -112,45 +115,45 @@ Item container::removeItemFromChest(int index)
  */
 void container::deleteItemInChest(int index)
 {
-    storedItems.erase(storedItems.begin() + index);
+	storedItems.erase(storedItems.begin() + index);
 }
 
 int container::getSize() const {
-    return this->storedItems.size();
+	return this->storedItems.size();
 }
 
 void container::addRandomItem() {
-    Item::ItemType itemType {};
-    int random { 8 };
-    while (random > 7)
-        random = dice.roll("1d8");
-    switch(random) {
-        case 1:
-            itemType = Item::ItemType::HELMET;
-            break;
-        case 2:
-            itemType = Item::ItemType::ARMOR;
-            break;
-        case 3:
-            itemType = Item::ItemType::SHIELD;
-            break;
-        case 4:
-            itemType = Item::ItemType::RING;
-            break;
-        case 5:
-            itemType = Item::ItemType::BELT;
-            break;
-        case 6:
-            itemType = Item::ItemType::BOOTS;
-            break;
-        case 7:
-            itemType = Item::ItemType::WEAPON;
-            break;
-        default:
-            std::cerr << "container::addRandomItem() generation error.\n";
-            std::exit(1);
-    }
+	Item::ItemType itemType{};
+	int random{ 8 };
+	while (random > 7)
+		random = dice.roll("1d8");
+	switch (random) {
+	case 1:
+		itemType = Item::ItemType::HELMET;
+		break;
+	case 2:
+		itemType = Item::ItemType::ARMOR;
+		break;
+	case 3:
+		itemType = Item::ItemType::SHIELD;
+		break;
+	case 4:
+		itemType = Item::ItemType::RING;
+		break;
+	case 5:
+		itemType = Item::ItemType::BELT;
+		break;
+	case 6:
+		itemType = Item::ItemType::BOOTS;
+		break;
+	case 7:
+		itemType = Item::ItemType::WEAPON;
+		break;
+	default:
+		std::cerr << "container::addRandomItem() generation error.\n";
+		std::exit(1);
+	}
 
-    Item item = Item(itemType);
-    storeItem(item);
+	Item item = Item(itemType);
+	storeItem(item);
 }
