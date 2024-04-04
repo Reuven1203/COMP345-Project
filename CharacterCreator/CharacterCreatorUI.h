@@ -17,11 +17,15 @@ public:
     void run();
     FighterObserver getFighterObserver();
     Fighter getFighter();
+    static void save(Fighter* character, std::string filename);
 private:
     FighterDirector* fighterDirector;
     FighterBuilder* fighterBuilder;
     FighterObserver* fighterObserver;
     Fighter* fighter;
+    std::string fileName {};
+
+    void saveCharacter();
 };
 
 

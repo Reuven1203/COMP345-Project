@@ -52,12 +52,48 @@ void CharacterCreatorUI::createFighter() {
     delete fighterBuilder;
 }
 
+void CharacterCreatorUI::saveCharacter() {
+    std::cout << "Enter Character File Name (ex: steve): ";
+    std::string file {};
+    std::cin >> file;
+    file += ".csv";
+    save(fighter, file);
+    fileName = file;
+    std::cout << "Character saved as " << file << '\n';
+}
+
+/**
+ * @brief Saves character basic information to file
+ * @param character Character to be saved
+ * @param filename File name to be saved to
+ *
+ * Format of .csv created:
+ * name,{characterName}
+ * classinfo,{fighterType}
+ * stats,{HP},{AC},{atkBonus},{dmgBonus}
+ * abilities,{str},{dex},{con},{int},{wis},{cha}
+ */
+void CharacterCreatorUI::save(Fighter* character, std::string filename) {
+    std::ofstream output("../CharacterSaves/" + filename);
+    if(!output) {
+        std::cerr << "Can not save " << filename << ".\n";
+        std::exit(1);
+    }
+
+    output << "name," << character->getName() << '\n';
+    output << "classinfo," << Fighter::FighterTypeEnumToString(character->getFighterType()) << ","
+           << character->getLevel() << '\n';
+    output << "stats," << character->getStat(Character::HP) << "," << character->getAC() << ','
+           << character->getATK() << "," << character->getDMG() << '\n';
+    output << "abilities," << character->getSTR() << ',' << character->getDEX() << ',' << character->getCON() << ','
+           << character->getINT() << ',' << character->getWIS() << ','<< character->getCHA() << '\n';
+}
+
 void CharacterCreatorUI::run() {
     chooseFighterType();
     createFighter();
-    std::cout << "Fighter created! Press any key to continue." << std::endl;
-    std::cin.ignore();
-    std::cin.get();
+    std::cout << "Fighter created!\n";
+    saveCharacter();
 }
 
 Fighter CharacterCreatorUI::getFighter() {
