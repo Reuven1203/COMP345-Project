@@ -18,13 +18,13 @@ public:
     MapEditor();
     void run();
     void createNewMap();
-    void setMap(dungeonMap m);
+    void setMap(dungeonMap* m);
     std::string getFileName();
     void edit();
     dungeonMap* getMap();
-    MapObserver observer;
+    MapObserver* observer;
 private:
-    dungeonMap map {};
+    dungeonMap* map {};
     std::string fileName {};
     int getUserInput();
     void setStart();
