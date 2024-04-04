@@ -44,6 +44,7 @@ void MapEditor::setEnd() {
     std::cin >> endY;
 
     map.setEnd(endX, endY);
+    map.notify();
     std::cout << "Set End Position (" << endX << ", " << endY << ")\n";
 }
 

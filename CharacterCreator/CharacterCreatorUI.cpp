@@ -7,7 +7,7 @@
 #include "../Builder/FighterBuilder/NimbleFighterBuilder/NimbleFighterBuilder.h"
 #include "../Builder/FighterBuilder/TankFighterBuilder/TankFighterBuilder.h"
 
-void CharacterCreatorUI::chooseFighterType() {
+int CharacterCreatorUI::chooseFighterType() {
     cout << "Welcome to the Character Creator!" << endl;
     cout << "Let's start off by choosing a fighter type:" << endl;
     cout << "1. Bully: Uses brute strength to destroy his enemies" << endl;
@@ -20,13 +20,18 @@ void CharacterCreatorUI::chooseFighterType() {
         switch (choice) {
             case 1:
                 fighterBuilder = new BullyFighterBuilder();
+                return 1;
                 break;
             case 2:
                 fighterBuilder = new NimbleFighterBuilder();
+                return 2;
                 break;
             case 3:
                 fighterBuilder = new TankFighterBuilder();
+                return 3;
                 break;
+                case -1:
+                    return -1;
             default:
                 cout << "Invalid choice" << endl;
                 break;
@@ -90,7 +95,10 @@ void CharacterCreatorUI::save(Fighter* character, std::string filename) {
 }
 
 void CharacterCreatorUI::run() {
-    chooseFighterType();
+    int choice = chooseFighterType();
+    if(choice == -1) {
+        return;
+    }
     createFighter();
     std::cout << "Fighter created!\n";
     saveCharacter();
