@@ -64,8 +64,12 @@ CharacterStrategy::StrategyType HumanPlayerStrategy::getStrategyType() {
 void HumanPlayerStrategy::attack(Character* source, Character* target) {
 
 	int attackRoll = Dice::GetGlobal().roll("1d20") + source->getStat(Character::Stats::AB);
+
+	cout << source->getName() << " attempted to attack " << target->getName() << "." << endl;
+	cout << source->getName() << " Attack Roll = " << attackRoll << endl;
 	if (attackRoll >= target->getStat(Character::Stats::AC)) {
 		int damage = Dice::GetGlobal().roll("1d6") + source->getStat(Character::Stats::DB);
+		cout << attackRoll << ">" << target->getStat(Character::Stats::AC) << endl;
 		cout << "Attack Hit!" << endl;
 		target->setCurrentHP(target->getCurrentHP() - damage);
 		cout << damage << " damage to " << target->getName() << "." << endl;
@@ -77,6 +81,7 @@ void HumanPlayerStrategy::attack(Character* source, Character* target) {
 	else {
 		EventData event(EventData::EventType::AttackedResult, "Attack Missed!", source->getName(), target->getName(), 2, target->getCurrentHP(), 0);
 		notifyGameObserver(event);
+		cout << attackRoll << "<" << target->getStat(Character::Stats::AC) << endl;
 		std::cout << "Attack missed!" << std::endl;
 	}
 	if (dynamic_cast<FriendlyStrategy*>(target->getStrategy()) == nullptr) {

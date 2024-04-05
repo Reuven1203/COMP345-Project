@@ -219,7 +219,7 @@ void Character::showCharacterStats() const {
 	std::cout << "Intelligence: " << getINT() << " Modifier: " << abilityModifiers[Intelligence] << std::endl;
 	std::cout << "Wisdom: " << getWIS() << " Modifier: " << abilityModifiers[Wisdom] << std::endl;
 	std::cout << "Charisma: " << getCHA() << " Modifier: " << abilityModifiers[Charisma] << std::endl;
-	std::cout << "Hit Points: " << getStat(HP) << std::endl;
+	std::cout << "Hit Points: " << getCurrentHP() << std::endl;
 	std::cout << "Proficiency Bonus: " << getStat(PB) << std::endl;
 	std::cout << "Armor Class: " << getStat(AC) << std::endl;
 	std::cout << "Attack Bonus: " << getStat(AB) << std::endl;

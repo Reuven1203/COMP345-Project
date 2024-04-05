@@ -17,32 +17,35 @@ void TurnManager::addNPC(Character* enemy)
 	NPCS.push_back(enemy);
 }
 
-void TurnManager::setAllNPCS() ///<Goes through enemyNPC vector and places all enemies in valid locations
-{
-	bool validPlacement = false;
-	if (!NPCS.empty())
-	{
-		for (auto* enemy : NPCS)
-		{
-			validPlacement = false;
-			while (!validPlacement) {
-				int enemyX = Random::random(0, currentMap->getRowSize() - 1);
-				int enemyY = Random::random(0, currentMap->getColSize() - 1);
-				if (currentMap->isValidRow(enemyX) && (currentMap->isValidCol(enemyY) && (!currentMap->chestDetect(enemyX, enemyY) && (!currentMap->wallDetect(enemyX, enemyY) && (!currentMap->playerDetect(enemyX, enemyY) && (!currentMap->isStart(&currentMap->getCell(enemyX, enemyY)) && (!currentMap->isEnd(&currentMap->getCell(enemyX, enemyY)))))))))
-					///<Checks if the coordinates are within bounds/no chest/no wall/no player/is not start/is not end
-				{
-					currentMap->setPlayer(enemy, enemyX, enemyY);
-					validPlacement = true;
-				}
-
-			}
-		}
-	}
-	else
-	{
-		cout << "No Cell available to place NPC." << endl;
+void TurnManager::setAllNPCS() {
+	if (NPCS.empty()) {
+		cout << "No NPCs available to place." << endl;
 		cout << "Press any key to continue..." << endl;
 		keyPress();
+		return; // Exit early if there are no NPCs
+	}
+
+	for (auto* enemy : NPCS) {
+		bool validPlacement = false;
+		while (!validPlacement) {
+			int enemyX = Random::random(0, currentMap->getRowSize() - 1);
+			int enemyY = Random::random(0, currentMap->getColSize() - 1);
+
+			// conditions to place an npc
+			bool isValidRow = currentMap->isValidRow(enemyX);
+			bool isValidCol = currentMap->isValidCol(enemyY);
+			bool isCellOccupied = currentMap->chestDetect(enemyX, enemyY) ||
+				currentMap->wallDetect(enemyX, enemyY) ||
+				currentMap->playerDetect(enemyX, enemyY);
+			bool isCellSpecial = currentMap->isStart(&currentMap->getCell(enemyX, enemyY)) ||
+				currentMap->isEnd(&currentMap->getCell(enemyX, enemyY));
+
+		
+			if (isValidRow && isValidCol && !isCellOccupied && !isCellSpecial) {
+				currentMap->setPlayer(enemy, enemyX, enemyY); 
+				validPlacement = true;
+			}
+		}
 	}
 }
 
@@ -172,7 +175,7 @@ void TurnManager::play()
 				{
 					currentMap->notify();
 					currentPlayer->move(*currentMap);
-					cout << "---------------TURN OVER--------------" << endl;
+					cout << "----------PLAYER TURN OVER--------------" << endl;
 					cout << "Continue..." << endl;
 					turnOver = true;
 					keyPress();
@@ -194,14 +197,33 @@ void TurnManager::play()
 							cout <<counter<<". "<< enemy->getName() << " | ";
 						}
 
-						cout << "\nChoose who to Attack: " ;
-						cin >> choice;
-						currentPlayer->attack(enemiesFound[choice - 1]);
-						enemiesFound.clear();
-						turnOver = true;
-						cout << "---------------TURN OVER--------------" << endl;
-						cout << "Continue..." << endl;
-						keyPress();
+						
+						bool attackOver = false;
+						while (!attackOver)
+						{
+							cout << "\nChoose who to Attack (-1 to cancel): ";
+							cin >> choice;
+					
+							if (choice == -1)
+							{
+								attackOver = true;
+								enemiesFound.clear();
+
+							}
+							else if (choice < 0 || choice > enemiesFound.size())
+							{
+								cout << "Invalid choice." << endl;
+							}
+							else{
+								currentPlayer->attack(enemiesFound[choice - 1]);
+								enemiesFound.clear();
+								attackOver = true;
+								turnOver = true;
+								cout << "----------PLAYER TURN OVER--------------" << endl;
+								cout << "Continue..." << endl;
+								keyPress();
+							}
+						}
 						break;
 					}
 					else
@@ -214,7 +236,7 @@ void TurnManager::play()
 				}
 				case FOUR_KEY:///<  Player's Turn end
 				{
-					cout << "---------------TURN OVER--------------" << endl;
+					cout << "----------PLAYER TURN OVER--------------" << endl;
 					cout << "Continue..." << endl;
 					turnOver = true;
 					keyPress();
