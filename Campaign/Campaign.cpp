@@ -3,6 +3,8 @@
  */
 
 #include "Campaign.h"
+#include "../Observer/MapObserver/MapObserver.h"
+#include "../Strategy/CharacterStrategy/HumanPlayerStrategy/HumanPlayerStrategy.h"
 
 #include <utility>
 
@@ -72,4 +74,17 @@ void Campaign::clear() {
 
 Character* Campaign::getPlayer() {
     return player;
+}
+
+void Campaign::run(){
+    dungeonMap* currentMap = this->currentMap();
+    auto* observer = new MapObserver(currentMap);
+    currentMap->attach(observer);
+    auto* pStrategy = new HumanPlayerStrategy();
+    Character* pCharacter = this->getPlayer();
+    pCharacter->setStrategy(pStrategy);
+    currentMap->setPlayer(pCharacter, currentMap->getStartX(), currentMap->getStartY());
+    while(true) {
+        pCharacter->move(*currentMap);
+    }
 }

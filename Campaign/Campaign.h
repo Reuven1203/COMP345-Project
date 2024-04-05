@@ -22,6 +22,7 @@ public:
     void setPlayerPosition(int mapNum, int xPos, int yPos);
     void startCampaign();
     void clear();
+    void run();
     Character* getPlayer();
     dungeonMap* currentMap();
     dungeonMap* nextMap();

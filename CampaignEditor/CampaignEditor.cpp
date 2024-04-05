@@ -95,9 +95,9 @@ void CampaignEditor::loadCampaign() {
 
         director.setMapBuilder(mapBuilder);
         director.constructMap();
-
         campaign.addMap(*director.getMap());
     }
+    runCampaign();
 }
 
 void CampaignEditor::run() {
@@ -147,4 +147,9 @@ void CampaignEditor::printCampaignDetails() {
 
 Campaign CampaignEditor::getCampaign() {
     return campaign;
+}
+
+void CampaignEditor::runCampaign() {
+    campaign.startCampaign();
+    campaign.run();
 }
