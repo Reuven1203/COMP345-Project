@@ -26,7 +26,13 @@ return (sourceX == targetX && sourceY == targetY + 2) || (sourceX == targetX && 
     }
 
     virtual void attack(Character *source, Character *target) = 0;
-
+    enum StrategyType {
+        PLAYER,
+        ENEMY,
+        FRIENDLY,
+    };
+    virtual void openInventory(Character* player) = 0;
+    virtual StrategyType getStrategyType() = 0;
 };
 
 

@@ -174,7 +174,10 @@ public:
 ///< Valiådates row index.
 bool isValidCol(int col) const;
     bool wallDetect(int x, int y);
-
+    bool chestDetect(int x, int y);
+    bool playerDetect(int x, int y);
+    bool isStart(cell* cell) const; ///< Checks if a cell is the start point.
+    bool isEnd(cell* cell) const; ///< Checks if a cell is the end point.
 private:
     int rows; ///< Number of rows in the dungeon.
     int cols; ///< Number of columns in the dungeon.
@@ -183,11 +186,9 @@ private:
     int startX{}, startY{}; ///< Coordinates of the starting point.
     int endX{}, endY{}; ///< Coordinates of the ending point.
     Character *userPlayer;
-    bool chestDetect(int x, int y);
-    bool playerDetect(int x, int y);
+  
     void interactWithChest(Character *player, container *chest);
-    bool isStart(cell* cell) const; ///< Checks if a cell is the start point.
-    bool isEnd(cell* cell) const; ///< Checks if a cell is the end point.
+    
     void addWallInteraction(); ///< Helper function for wall addition interaction.
     void removeWallInteraction(); ///< Helper function for wall removal interaction.
     void getWallCoordinates(int& x, int& y); ///< Prompts user for wall coordinates.

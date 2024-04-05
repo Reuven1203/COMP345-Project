@@ -40,6 +40,11 @@ bool AggressorStrategy::tryMove(Character* aggressor, dungeonMap& map, int delta
     return false;
 }
 
+CharacterStrategy::StrategyType AggressorStrategy::getStrategyType()
+{
+    return StrategyType::ENEMY;
+}
+
 void AggressorStrategy::move(Character* aggressor, dungeonMap& map) {
     srand(time(nullptr));
     Character* target = map.getUserPlayer();
@@ -98,7 +103,8 @@ void AggressorStrategy::attack(Character *source, Character *target) {
         std::cout << "Attack hit!" << std::endl;
         int damage = Dice::GetGlobal().roll("1d6") + source->getStat(Character::Stats::DB);
         target->setCurrentHP(target->getCurrentHP() - damage);
-
+        cout << damage << " damage to " << target->getName() << "." << endl;
+        cout << target->getName() << " currently has " << target->getCurrentHP() << "HP" << endl;
 
 
         EventData event(EventData::EventType::AttackedResult, "Attack Hit!", source->getName(),target->getName(), 2,target->getCurrentHP(),damage);

@@ -14,6 +14,7 @@
 #include "./Observer/GameObserver/GameObserver.h"
 #include "CharacterCreator/CharacterCreatorUI.h"
 #include "./Utils/utils.h"
+#include "../TurnManager/TurnManager.h"
 using namespace std;
 
 int main()
@@ -34,10 +35,15 @@ int main()
 
     Fighter* fighter = director.constructFighter("Bully");
     Fighter* fighter2 = director.constructFighter("Bully 2");
+    Fighter* fighter3 = director.constructFighter("Bully 3");
+    Fighter* fighter4 = director.constructFighter("Friendly");
     fighter->setStrategy(new HumanPlayerStrategy());
     fighter2->setStrategy(new AggressorStrategy());
+    fighter3->setStrategy(new AggressorStrategy());
+    fighter4->setStrategy(new FriendlyStrategy());
+
     m->setUserPlayer(fighter);
-    m->setPlayer(fighter2, 4, 4);
+   /* m->setPlayer(fighter2, 4, 4);*/
     auto* chest1 = new container();
     auto* chest2 = new container();
     auto* chest3 = new container();
@@ -70,7 +76,12 @@ int main()
     m->setWall(5, 2);
     m->setWall(9, 3);
     m->setWall(4, 2);
-    fighter->move(*m);
-
+    //fighter->move(*m);
+    TurnManager* map = new TurnManager(m, fighter);
+    map->addNPC(fighter2);
+    //map->addNPC(fighter3);
+    //map->addNPC(fighter4);
+    map->setAllNPCS();
+    map->play();
 	return 0;
 }

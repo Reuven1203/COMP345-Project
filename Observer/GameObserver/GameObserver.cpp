@@ -171,7 +171,11 @@ void GameObserver::update(const EventData& event)
 		break;
 
 	}
+	case EventData::EventType::TurnOrder:
+	{
 	
+		break;
+	}
 	}
 }
 
