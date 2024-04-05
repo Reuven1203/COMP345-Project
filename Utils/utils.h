@@ -17,6 +17,7 @@
 #define TWO_KEY 50
 #define THREE_KEY 51
 #define FOUR_KEY 52
+#define FIVE_KEY 53
 #else
 #define KEY_UP 65
 #define KEY_DOWN 66
@@ -27,6 +28,7 @@
 #define TWO_KEY 50
 #define THREE_KEY 51
 #define FOUR_KEY 52
+#define FIVE_KEY 53
 #endif
 
 int keyPress();

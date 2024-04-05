@@ -212,6 +212,7 @@ void Character::showCharacterStats() const {
 	std::cout << "Name: " << name << std::endl;
 	std::cout << "Class: " << getClassName() << std::endl;
 	std::cout << "Level: " << level << std::endl;
+	std::cout << "EXP: " << EXP << std::endl;
 	std::cout << "Strength: " << getSTR() << " Modifier: " << abilityModifiers[Strength] << std::endl;
 	std::cout << "Dexterity: " << getDEX() << " Modifier: " << abilityModifiers[Dexterity] << std::endl;
 	std::cout << "Constitution: " << getCON() << " Modifier: " << abilityModifiers[Constitution] << std::endl;
@@ -446,3 +447,14 @@ int Character::getInitiative()
 {
 	return this->initativeRoll;
 }
+
+void Character::gainEXP(int xp)
+{
+	this->EXP += xp;
+}
+
+int Character::getEXP()
+{
+	return this->EXP;
+}
+	

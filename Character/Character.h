@@ -290,6 +290,9 @@ public:
 
     void setInitiative(int);
     int getInitiative();
+
+    void gainEXP(int exp);
+    int getEXP();
    /* CharacterStrategy::StrategyType getStrategy();*/
 protected:
 
@@ -337,7 +340,8 @@ private:
     std::array<int, 6> abilityModifiers{}; ///< Modifiers derived from the ability scores.
     CharacterStrategy* strategy = nullptr;
     int initativeRoll = 0;
-
+    int EXP = 0;
+    int expToLVL = 0;
     /**
      * @brief Generates random ability scores for the character.
      *

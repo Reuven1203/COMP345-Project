@@ -36,9 +36,11 @@ int main()
     Fighter* fighter = director.constructFighter("Bully");
     Fighter* fighter2 = director.constructFighter("Bully 2");
     Fighter* fighter3 = director.constructFighter("Bully 3");
+    Fighter* fighter4 = director.constructFighter("Friendly");
     fighter->setStrategy(new HumanPlayerStrategy());
     fighter2->setStrategy(new AggressorStrategy());
     fighter3->setStrategy(new AggressorStrategy());
+    fighter4->setStrategy(new FriendlyStrategy());
     m->setUserPlayer(fighter);
    /* m->setPlayer(fighter2, 4, 4);*/
     auto* chest1 = new container();
@@ -75,8 +77,10 @@ int main()
     m->setWall(4, 2);
     //fighter->move(*m);
     TurnManager* map = new TurnManager(m, fighter);
-    map->addEnemy(fighter2);
-    map->addEnemy(fighter3);
+    map->addNPC(fighter2);
+    //map->addNPC(fighter3);
+    //map->addNPC(fighter4);
+    map->setAllNPCS();
     map->play();
 	return 0;
 }

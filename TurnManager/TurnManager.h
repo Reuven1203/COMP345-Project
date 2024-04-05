@@ -25,15 +25,18 @@ public:
 	~TurnManager() {};
 	TurnManager(dungeonMap*, Character*);
 
+	void EnemyinRange(Character*,int range);
+	void storeEnemyInRange(int x,int y);
 
-
-	void addEnemy(Character*);
+	void addNPC(Character*);
 	bool initiativeCompare(Character*, Character*);
 	void play();
-	void setAllEnemys();
+	void setAllNPCS();
+	void getTurnOrder(int numPlayers);
 private:
 	dungeonMap* currentMap;
-	vector<Character*>enemyNPCs;
+	vector<Character*>NPCS;
+	vector<Character*>enemiesFound;
 	priority_queue<Character*,vector<Character*>,InitiativeComparator>intiativeOrder;
 	queue<Character*>turnOrder;
 	vector<int>intiativeRolls;
