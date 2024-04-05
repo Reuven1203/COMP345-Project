@@ -40,6 +40,11 @@ bool AggressorStrategy::tryMove(Character* aggressor, dungeonMap& map, int delta
     return false;
 }
 
+CharacterStrategy::StrategyType AggressorStrategy::getStrategyType()
+{
+    return StrategyType::ENEMY;
+}
+
 void AggressorStrategy::move(Character* aggressor, dungeonMap& map) {
     srand(time(nullptr));
     Character* target = map.getUserPlayer();
@@ -50,7 +55,7 @@ void AggressorStrategy::move(Character* aggressor, dungeonMap& map) {
 //    }
 
 
-    for (int steps = 0; steps < 2; ++steps) {
+    for (int steps = 0; steps < 1; ++steps) {
         std::pair<int, int> aggressorPos = map.playerPositions[aggressor];
         std::pair<int, int> targetPos = map.playerPositions[target];
 
@@ -93,12 +98,17 @@ void AggressorStrategy::move(Character* aggressor, dungeonMap& map) {
 void AggressorStrategy::attack(Character *source, Character *target) {
 
     int attackRoll = Dice::GetGlobal().roll("1d20") + source->getStat(Character::Stats::AB);
-    std::cout << source->getName() << " attacks " << target->getName() << " with a roll of " << attackRoll << std::endl;
+    
+   /* std::cout << source->getName() << " attacks " << target->getName() << " with a roll of " << attackRoll << std::endl;*/
+    cout << source->getName() << " attempted to attack " << target->getName() << "." << endl;
+    cout << source->getName() << " Attack Roll = " << attackRoll << endl;
     if (attackRoll >= target->getStat(Character::Stats::AC)) {
+        cout << attackRoll << ">" << target->getStat(Character::Stats::AC);
         std::cout << "Attack hit!" << std::endl;
         int damage = Dice::GetGlobal().roll("1d6") + source->getStat(Character::Stats::DB);
         target->setCurrentHP(target->getCurrentHP() - damage);
-
+        cout << damage << " damage to " << target->getName() << "." << endl;
+        cout << target->getName() << " currently has " << target->getCurrentHP() << "HP" << endl;
 
 
         EventData event(EventData::EventType::AttackedResult, "Attack Hit!", source->getName(),target->getName(), 2,target->getCurrentHP(),damage);
@@ -106,7 +116,7 @@ void AggressorStrategy::attack(Character *source, Character *target) {
     } else {
         EventData event(EventData::EventType::AttackedResult, "Attack Missed!", source->getName(),target->getName(), 2,target->getCurrentHP(),0);
         notifyGameObserver(event);
-
+        cout << attackRoll << "<" << target->getStat(Character::Stats::AC) << endl;
         std::cout << "Attack missed!" << std::endl;
     }
     if(dynamic_cast<FriendlyStrategy*>(target->getStrategy()) != nullptr) {

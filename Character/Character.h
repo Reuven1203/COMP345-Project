@@ -40,7 +40,8 @@ public:
         PB, ///< Proficiency Bonus
         AC, ///< Armor Class
         AB, ///< Attack Bonus
-        DB  ///< Damage Bonus
+        DB,
+        RA///< Damage Bonus
     };
 
     /**
@@ -298,6 +299,13 @@ public:
 
     container getWornItems() const;
 
+
+    void setInitiative(int);
+    int getInitiative();
+
+    void gainEXP(int exp);
+    int getEXP();
+   /* CharacterStrategy::StrategyType getStrategy();*/
 protected:
 
     int currentHP{}; ///< Current hit points of the character.
@@ -343,6 +351,9 @@ private:
     ///< Scores for the character's abilities.
     std::array<int, 6> abilityModifiers{}; ///< Modifiers derived from the ability scores.
     CharacterStrategy* strategy = nullptr;
+    int initativeRoll = 0;
+    int EXP = 0;
+    int expToLVL = 0;
     /**
      * @brief Generates random ability scores for the character.
      *

@@ -81,10 +81,10 @@ void container::getItemStats()
 	}
 }
 
-Item& container::retrieveItem(int index)
+Item* container::retrieveItem(int index)
 {
 
-	return storedItems[index];
+	return &storedItems[index];
 }
 
 /**

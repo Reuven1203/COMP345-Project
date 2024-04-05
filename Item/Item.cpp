@@ -356,14 +356,14 @@ void Item::setEquipStats()
 		{
 			setWeaponType(MELEE);
 			this->range = 1;
-			itemOverall["Range"] = this->range;
+			
 			break;
 		}
 		case 2:
 		{
 			setWeaponType(BOW);
 			this->range = randomRange;
-			itemOverall["Range"] = this->range;
+			
 			break;
 		}
 		}
@@ -371,6 +371,7 @@ void Item::setEquipStats()
 		dmgBonus = rollStatMod();
 		itemOverall["DamageBonus"] = this->dmgBonus;
 		itemOverall["AttackBonus"] = this->atkBonus;
+		itemOverall["Range"] = this->range;
 		
 	}
 }

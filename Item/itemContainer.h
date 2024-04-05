@@ -56,7 +56,7 @@ public:
     container(const container& other);
     void getItems();
     
-    Item& retrieveItem(int index);
+    Item* retrieveItem(int index);
 
     /**
      * @brief Prints the stats of all items stored in the container.
