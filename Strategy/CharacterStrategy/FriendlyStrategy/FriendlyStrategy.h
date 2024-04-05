@@ -12,7 +12,8 @@ class FriendlyStrategy: public CharacterStrategy{
 public:
     void move(Character *friendly, dungeonMap& map) override;
     void attack(Character* source, Character *target) override;
-
+    void openInventory(Character* player)override {};
+    StrategyType getStrategyType() override;
 };
 
 

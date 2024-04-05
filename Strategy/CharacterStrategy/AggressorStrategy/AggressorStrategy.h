@@ -16,6 +16,8 @@ public:
     static int determineMovePriority(int directionX, int directionY);
 
     bool tryMove(Character* aggressor, dungeonMap& map, int deltaX, int deltaY, std::pair<int, int> previousPos);
+    void openInventory(Character* player)override {};
+    StrategyType getStrategyType() override;
 };
 
 

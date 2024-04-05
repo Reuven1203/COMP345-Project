@@ -40,7 +40,8 @@ public:
         PB, ///< Proficiency Bonus
         AC, ///< Armor Class
         AB, ///< Attack Bonus
-        DB  ///< Damage Bonus
+        DB,
+        RA///< Damage Bonus
     };
 
     /**
@@ -286,6 +287,10 @@ public:
     void setInventory(container&);
 
     bool isItemEquipped(const Item& item);
+
+    void setInitiative(int);
+    int getInitiative();
+   /* CharacterStrategy::StrategyType getStrategy();*/
 protected:
 
     int currentHP{}; ///< Current hit points of the character.
@@ -323,12 +328,16 @@ protected:
     std::map<Stats, int> stats;
 
     std::array<int, 6> abilityScore{};
+
+
 private:
     explicit Character(std::string name, int level, const int abilityScores[6], int maxHp,int currentHp, std::map<Item::ItemType, Item> wornItems);
     std::string name; ///< Character's name.
     ///< Scores for the character's abilities.
     std::array<int, 6> abilityModifiers{}; ///< Modifiers derived from the ability scores.
     CharacterStrategy* strategy = nullptr;
+    int initativeRoll = 0;
+
     /**
      * @brief Generates random ability scores for the character.
      *

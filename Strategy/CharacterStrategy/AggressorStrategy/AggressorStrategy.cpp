@@ -40,6 +40,11 @@ bool AggressorStrategy::tryMove(Character* aggressor, dungeonMap& map, int delta
     return false;
 }
 
+CharacterStrategy::StrategyType AggressorStrategy::getStrategyType()
+{
+    return StrategyType::ENEMY;
+}
+
 void AggressorStrategy::move(Character* aggressor, dungeonMap& map) {
     srand(time(nullptr));
     Character* target = map.getUserPlayer();

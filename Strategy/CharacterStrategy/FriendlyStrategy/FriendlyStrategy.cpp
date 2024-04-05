@@ -30,3 +30,8 @@ void FriendlyStrategy::attack(Character *source, Character *target) {
 std::cout << "Friendly characters do not attack" << std::endl;
 
 }
+
+
+CharacterStrategy::StrategyType FriendlyStrategy::getStrategyType()  {
+    return StrategyType::FRIENDLY;
+}
