@@ -2,3 +2,5 @@
 /cmake-build-debug-coverage/
 /Documentation/
 
+/.vs
+/build
