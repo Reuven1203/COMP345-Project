@@ -50,7 +50,7 @@ void AggressorStrategy::move(Character* aggressor, dungeonMap& map) {
 //    }
 
 
-    for (int steps = 0; steps < 2; ++steps) {
+    for (int steps = 0; steps < 1; ++steps) {
         std::pair<int, int> aggressorPos = map.playerPositions[aggressor];
         std::pair<int, int> targetPos = map.playerPositions[target];
 
