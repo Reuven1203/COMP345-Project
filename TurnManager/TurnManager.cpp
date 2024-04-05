@@ -243,7 +243,7 @@ void TurnManager::play()
 		cout << "---------------ENEMY "<<currentPlayersTurn->getName() <<" TURN----------------" << endl;
 		cout << "TURN ORDER: "; getTurnOrder(numofPlayers);cout << endl;
 		cout << "ENEMY TURN OVER (Continue)..";
-		if (currentPlayer->getCurrentHP() == 0)
+		if (currentPlayer->getCurrentHP() <= 0)
 		{
 			currentMap->notify();
 			cout << "YOU DIED! GAME ENDING" << endl;

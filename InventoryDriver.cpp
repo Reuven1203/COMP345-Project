@@ -41,6 +41,7 @@ int main()
     fighter2->setStrategy(new AggressorStrategy());
     fighter3->setStrategy(new AggressorStrategy());
     fighter4->setStrategy(new FriendlyStrategy());
+
     m->setUserPlayer(fighter);
    /* m->setPlayer(fighter2, 4, 4);*/
     auto* chest1 = new container();

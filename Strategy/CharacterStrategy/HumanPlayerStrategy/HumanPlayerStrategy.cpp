@@ -8,6 +8,7 @@
 #include "../AggressorStrategy/AggressorStrategy.h"
 #include "../Utils/utils.h"
 
+
 void HumanPlayerStrategy::move(Character* player, dungeonMap& map) {
 	int ch = 0;
 	int counter = 0;
