@@ -748,6 +748,20 @@ vector<int> dungeonMap::getWalls() {
 	return wallCoordinates;
 }
 
+vector<int> dungeonMap::getChests() {
+    vector<int>chestCoordinates;
+    for(int row {0}; row < rows; row++) {
+        for(int col {0}; col < cols; col++) {
+            if(dungeon[row][col].getCellType() == Chest) {
+                chestCoordinates.push_back(dungeon[row][col].rowPos);
+                chestCoordinates.push_back(dungeon[row][col].colPos);
+                chestCoordinates.push_back(dungeon[row][col].getChest()->getSize());
+            }
+        }
+    }
+    return chestCoordinates;
+}
+
 void dungeonMap::setUserPlayer(Character * player) {
 	userPlayer = player;
 }

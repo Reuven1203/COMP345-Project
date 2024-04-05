@@ -30,9 +30,10 @@ private:
     void setStart();
     void setEnd();
     void setWalls();
+    void setChest();
     void loadMap();
     void saveMap();
-    void save(std::string filename);
+    void save(const std::string& filename);
 };
 
 

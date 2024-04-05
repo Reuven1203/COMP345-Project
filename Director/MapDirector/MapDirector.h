@@ -17,6 +17,7 @@ public:
         mapBuilder -> buildMapSize();
         mapBuilder -> buildStartEnd();
         mapBuilder -> buildWalls();
+        mapBuilder -> buildChests();
         mapBuilder -> buildPlayer();
     }
 private:
