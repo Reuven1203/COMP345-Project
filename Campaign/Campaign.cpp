@@ -8,7 +8,7 @@
 
 Campaign::Campaign() = default;
 
-Campaign::Campaign(Character player, std::vector<dungeonMap> maps) : player(std::move(player)) {
+Campaign::Campaign(Character* player, std::vector<dungeonMap> maps) : player(player) {
     campaign = std::move(maps);
 }
 
@@ -33,12 +33,12 @@ void Campaign::addMap(dungeonMap map) {
     campaign.push_back(map);
 }
 
-void Campaign::setPlayer(Character character) {
-    player = std::move(character);
+void Campaign::setPlayer(Character* character) {
+    player = character;
 }
 
 void Campaign::setPlayerPosition(int mapNum, int xPos, int yPos) {
-    campaign[mapNum].setPlayer(&player, xPos, yPos);
+    campaign[mapNum].setPlayer(player, xPos, yPos);
     playerPos[0] = mapNum;
     playerPos[1] = xPos;
     playerPos[2] = yPos;
@@ -53,7 +53,9 @@ void Campaign::startCampaign() {
 }
 
 dungeonMap* Campaign::nextMap() {
-    return &campaign[++currentMapIndex];
+    currentMapIndex++;
+    setPlayerPosition(currentMapIndex, campaign[currentMapIndex].getStartX(), campaign[currentMapIndex].getStartY());
+    return &campaign[currentMapIndex];
 }
 
 dungeonMap *Campaign::currentMap() {
@@ -66,4 +68,8 @@ void Campaign::removeMap(int index) {
 
 void Campaign::clear() {
     campaign.clear();
+}
+
+Character* Campaign::getPlayer() {
+    return player;
 }
