@@ -36,6 +36,15 @@ container::container(int numItems) {
 container::~container() {}
 
 /**
+ * @brief Copy constructor for the container class.
+ */
+container::container(const container& other) {
+    this->name = other.name;
+    this->storedItems = other.storedItems;
+
+}
+
+/**
  * @brief Prints the types of items currently stored in the container.
  *
  * Iterates through all stored items and prints their equipment type.
@@ -157,3 +166,12 @@ void container::addRandomItem() {
 	Item item = Item(itemType);
 	storeItem(item);
 }
+
+container container::operator+(const container &other) const {
+    container newContainer;
+    newContainer.storedItems = this->storedItems;
+    newContainer.storedItems.insert(newContainer.storedItems.end(), other.storedItems.begin(), other.storedItems.end());
+    return newContainer;
+}
+
+

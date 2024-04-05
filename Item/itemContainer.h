@@ -48,6 +48,12 @@ public:
      *
      * Iterates through the stored items and prints their types to standard output.
      */
+
+    /**
+     * @brief Copy constructor for the container class.
+     */
+
+    container(const container& other);
     void getItems();
     
     Item* retrieveItem(int index);
@@ -84,6 +90,8 @@ public:
     void deleteItemInChest(int index);
 
     int getSize() const;
+
+    container operator+(const container& other) const;
 
 private:
     std::vector<Item> storedItems; ///< Vector of items stored in the container.

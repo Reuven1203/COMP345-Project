@@ -13,6 +13,7 @@ struct MapInfo {
     std::vector<int> startPos; // location (x, y) of start
     std::vector<int> endPos; // location (x, y) of end
     std::vector<int> wallPos; // location [x1, y1, x2, y2, ..., xn, yn] of walls
+    std::vector<int> chestInfo; // chest info in format [chest1_x, chest1_y, chest1_size, chest2_x, chest2_y, ...]
     Character* player;
     std::vector<int> playerPos;
 };
@@ -27,6 +28,7 @@ public:
     virtual void buildMapSize() = 0;
     virtual void buildStartEnd() = 0;
     virtual void buildWalls() = 0;
+    virtual void buildChests() = 0;
     virtual void buildPlayer() = 0;
 protected:
     dungeonMap* map;

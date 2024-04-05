@@ -719,6 +719,14 @@ void dungeonMap::movePlayer(Character * player, int direction) {
             cout << "Player is an aggressor, attacking player." << endl;
             Character* target = dungeon[newX][newY].getPlayer();
             player->attack(target);
+            if(target->isDead()) {
+                cout << "Player has been defeated." << endl;
+                dungeon[newX][newY].removeContent();
+                auto *chest = new container(target->getInventory() + target->getWornItems());
+//                store worn items in chest
+                dungeon[newX][newY].setCellType(Chest);
+                dungeon[newX][newY].setChest(chest);
+            }
         }
         cout << "Press any key to continue...." << endl;
         keyPress();
@@ -746,6 +754,20 @@ vector<int> dungeonMap::getWalls() {
 		}
 	}
 	return wallCoordinates;
+}
+
+vector<int> dungeonMap::getChests() {
+    vector<int>chestCoordinates;
+    for(int row {0}; row < rows; row++) {
+        for(int col {0}; col < cols; col++) {
+            if(dungeon[row][col].getCellType() == Chest) {
+                chestCoordinates.push_back(dungeon[row][col].rowPos);
+                chestCoordinates.push_back(dungeon[row][col].colPos);
+                chestCoordinates.push_back(dungeon[row][col].getChest()->getSize());
+            }
+        }
+    }
+    return chestCoordinates;
 }
 
 void dungeonMap::setUserPlayer(Character * player) {

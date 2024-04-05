@@ -27,9 +27,11 @@ int main() {
     m->setUserPlayer(fighter);
     Fighter* fighter2 = director.constructFighter("Bully 2");
     Fighter* fighter3 = director.constructFighter("Bully 3");
+    Item sword =  Item(Item::ItemType::RING);
     fighter->setStrategy(new HumanPlayerStrategy());
     fighter2->setStrategy(new AggressorStrategy());
     fighter3->setStrategy(new FriendlyStrategy());
+    fighter3->storeItem(sword);
     m->setStart(1, 2);
     m->setPlayer(fighter,m->getStartX(), m->getStartY());
     m->setPlayer(fighter2, 4, 4);

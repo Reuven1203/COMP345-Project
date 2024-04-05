@@ -288,6 +288,11 @@ public:
 
     bool isItemEquipped(const Item& item);
 
+    bool isDead();
+
+    container getWornItems() const;
+
+
     void setInitiative(int);
     int getInitiative();
 

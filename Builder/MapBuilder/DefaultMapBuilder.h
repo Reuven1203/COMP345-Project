@@ -23,6 +23,12 @@ public:
             map->setWall(mapInfo.wallPos[i], mapInfo.wallPos[i+1]);
         }
     }
+    void buildChests() override {
+        for(int i {0}; i < mapInfo.chestInfo.size(); i+=3) {
+            auto* chest = new container(mapInfo.chestInfo[i+2]);
+            map->setChest(chest, mapInfo.chestInfo[i], mapInfo.chestInfo[i+1]);
+        }
+    }
     void buildPlayer() override {
         if(mapInfo.playerPos[0] != -1) {
             player = mapInfo.player;
