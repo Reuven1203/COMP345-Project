@@ -68,6 +68,12 @@ Character::Character(std::string name, int level, const int abilityScores[6], in
 
 }
 
+//Copy constructor
+
+Character::Character(const Character& character) : name(character.name), level(character.level), abilityScore(character.abilityScore),
+currentHP(character.currentHP), abilityModifiers(character.abilityModifiers), stats(character.stats), wornItems(character.wornItems),inventory(character.inventory) {
+}
+
 Character::Character(std::string name, int level, const int* abilityScores, int maxHp, int currentHp,
 	std::map<Item::ItemType, Item> wornItems) :inventory() {
 

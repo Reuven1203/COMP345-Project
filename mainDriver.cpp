@@ -8,7 +8,10 @@
 #include "../Utils/utils.h"
 
 int main() {
-
+    CampaignEditor ce;
+    CharacterCreatorUI cc{};
+    bool charCreated = false;
+    Fighter *fighter;
     while (true) {
         clearConsole();
         std::cout << "          _______  _        _______  _______  _______  _______   _________ _______    ______   _______  _______ \n"
@@ -28,13 +31,22 @@ int main() {
 
         int choice;
         std::cin >> choice;
-        CampaignEditor ce;
-        CharacterCreatorUI cc{};
+
+        if (fighter == nullptr) {
+            charCreated = false;
+        } else {
+            charCreated = true;
+        }
+
         clearConsole();
         switch (choice) {
             case 1:
+                if(!charCreated){
+                    std::cout << "You must create a fighter before creating/loading a campaign." << std::endl;
+                    break;
+                }
                 std::cout << "Creating a new campaign..." << std::endl;
-                ce.run();
+                ce.run(fighter);
                 break;
             case 2:
                 std::cout << "___________.__       .__     __                 __________      .__.__       .___              \n"
@@ -44,6 +56,8 @@ int main() {
                              " \\___  /   |__\\___  /|___|  /__|  \\___  >__|     |______  /____/|__|____/\\____ |\\___  >__|     \n"
                              "     \\/      /_____/      \\/          \\/                \\/                    \\/    \\/         " << std::endl;
                 cc.run();
+                fighter = new Fighter (cc.getFighter());
+                charCreated = true;
                 break;
             default:
                 std::cout << "Invalid choice. Please try again." << std::endl;

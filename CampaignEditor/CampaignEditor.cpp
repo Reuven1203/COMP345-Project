@@ -5,6 +5,7 @@
 #include "CampaignEditor.h"
 #include "MapEditor.h"
 #include <sstream>
+#include "../Character/Character.h"
 
 CampaignEditor::CampaignEditor() = default;
 
@@ -75,7 +76,7 @@ void CampaignEditor::save(const std::string& filename) {
         output << f << '\n';
 }
 
-void CampaignEditor::loadCampaign() {
+void CampaignEditor::loadCampaign(Character *player) {
     std::cout << "Enter Campaign filename.txt to load: ";
     std::string file {};
     std::cin >> file;
@@ -97,10 +98,11 @@ void CampaignEditor::loadCampaign() {
         director.constructMap();
         campaign.addMap(*director.getMap());
     }
+    campaign.setPlayer(player);
     runCampaign();
 }
 
-void CampaignEditor::run() {
+void CampaignEditor::run(Character *player) {
     bool editing = true;
     while(editing) {
         printCampaignDetails();
@@ -120,7 +122,7 @@ void CampaignEditor::run() {
                 editing = false;
                 break;
             case 5:
-                loadCampaign();
+                loadCampaign(player);
                 break;
             case -1:
                 return;
