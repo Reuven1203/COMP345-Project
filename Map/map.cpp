@@ -291,7 +291,7 @@ int dungeonMap::getColSize() const
  * @param col Column index of the cell.
  * @return The cell at the specified location.
  */
-cell dungeonMap::getCell(int row, int col) const {
+cell& dungeonMap::getCell(int row, int col)  {
 	return dungeon[row][col];
 }
 /**

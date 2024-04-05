@@ -160,7 +160,7 @@ public:
      */
     vector<int> getChests();
  
-    cell getCell(int row, int col) const;
+    cell& getCell(int row, int col) ;
     int getEndX();
     int getEndY();
     void movePlayer(Character *player,int direction); //1=up 2=down 3=left 4=right
