@@ -84,7 +84,7 @@ void Campaign::run(){
     Character* pCharacter = this->getPlayer();
     pCharacter->setStrategy(pStrategy);
     currentMap->setPlayer(pCharacter, currentMap->getStartX(), currentMap->getStartY());
-    while(true) {
+    while(true){
         pCharacter->move(*currentMap);
     }
 }

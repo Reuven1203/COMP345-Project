@@ -69,6 +69,13 @@ public:
      * @enum Ability
      * @brief Enumerates the different abilities a character can have.
      */
+
+    /**
+     * @brief copy constructor
+     */
+
+    Character(const Character& character);
+
     enum Ability {
         Strength,
         Dexterity,

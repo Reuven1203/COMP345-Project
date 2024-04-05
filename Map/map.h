@@ -17,7 +17,6 @@
 #include "cell.h"
 #include "../Observer/Observable.h"
 #include "../Character/Character.h"
-class Character;  // Forward declaration
 class dungeonMap:public Observable
 {
     friend class cell; ///< Allows cell class to access private members of dungeonMap.

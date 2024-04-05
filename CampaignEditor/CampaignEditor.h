@@ -17,7 +17,7 @@
 class CampaignEditor {
 public:
     CampaignEditor();
-    void run();
+    void run(Character *player);
     Campaign getCampaign();
 private:
     Campaign campaign {};
@@ -30,7 +30,7 @@ private:
     void editMap();
     void saveCampaign();
     void save(const std::string& filename);
-    void loadCampaign();
+    void loadCampaign(Character *player);
     void runCampaign();
 };
 
