@@ -31,6 +31,7 @@ private:
     void saveCampaign();
     void save(const std::string& filename);
     void loadCampaign();
+    void runCampaign();
 };
 
 

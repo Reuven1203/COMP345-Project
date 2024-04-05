@@ -22,9 +22,8 @@ int main() {
                      "                                                                                                                " << std::endl;
         std::cout << "Welcome to the D&D Campaign Manager!" << std::endl;
         std::cout << "Please select an option:" << std::endl;
-        std::cout << "1. Create a new campaign" << std::endl;
-        std::cout << "2. Load a campaign" << std::endl;
-        std::cout << "3. Create a mew fighter" << std::endl;
+        std::cout << "1. Create/load a campaign" << std::endl;
+        std::cout << "2. Create a mew fighter" << std::endl;
         std::cout << "-1. Exit" << std::endl;
 
         int choice;
@@ -38,10 +37,6 @@ int main() {
                 ce.run();
                 break;
             case 2:
-                std::cout << "Loading a campaign..." << std::endl;
-
-                break;
-            case 3:
                 std::cout << "___________.__       .__     __                 __________      .__.__       .___              \n"
                              "\\_   _____/|__| ____ |  |___/  |_  ___________  \\______   \\__ __|__|  |    __| _/___________   \n"
                              " |    __)  |  |/ ___\\|  |  \\   __\\/ __ \\_  __ \\  |    |  _/  |  \\  |  |   / __ |/ __ \\_  __ \\  \n"
