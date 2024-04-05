@@ -719,6 +719,14 @@ void dungeonMap::movePlayer(Character * player, int direction) {
             cout << "Player is an aggressor, attacking player." << endl;
             Character* target = dungeon[newX][newY].getPlayer();
             player->attack(target);
+            if(target->isDead()) {
+                cout << "Player has been defeated." << endl;
+                dungeon[newX][newY].removeContent();
+                auto *chest = new container(target->getInventory() + target->getWornItems());
+//                store worn items in chest
+                dungeon[newX][newY].setCellType(Chest);
+                dungeon[newX][newY].setChest(chest);
+            }
         }
         cout << "Press any key to continue...." << endl;
         keyPress();

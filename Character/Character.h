@@ -286,6 +286,11 @@ public:
     void setInventory(container&);
 
     bool isItemEquipped(const Item& item);
+
+    bool isDead();
+
+    container getWornItems() const;
+
 protected:
 
     int currentHP{}; ///< Current hit points of the character.
@@ -323,6 +328,8 @@ protected:
     std::map<Stats, int> stats;
 
     std::array<int, 6> abilityScore{};
+
+
 private:
     explicit Character(std::string name, int level, const int abilityScores[6], int maxHp,int currentHp, std::map<Item::ItemType, Item> wornItems);
     std::string name; ///< Character's name.

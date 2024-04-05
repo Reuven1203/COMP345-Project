@@ -108,9 +108,6 @@ void HumanPlayerStrategy::openInventory(Character* player)
 				}
 				else {
 					Item& itemToEquip = player->getInventory().retrieveItem(itemChoice);
-
-
-
 					if (!(player->isItemEquipped(itemToEquip))) //If an item doesn't exists in that slot, equip itemToEquip
 					{
 						itemToEquip.setAsEquipped();
@@ -134,6 +131,7 @@ void HumanPlayerStrategy::openInventory(Character* player)
 						keyPress();
 					}
 				}
+
 			}
 			break;
 		}
@@ -164,6 +162,7 @@ void HumanPlayerStrategy::openInventory(Character* player)
 					cout << "Invalid choice." << endl;
 					cout << "Press any key to continue..." << endl;
 					keyPress();
+                    keyPress();
 				}
 				else if (player->getInventory().retrieveItem(itemChoice).isEquipped()) {  ///<If The item we want to get is equipped proceed to unequip
 					Item& itemToEquip = player->getInventory().retrieveItem(itemChoice);
@@ -203,6 +202,7 @@ void HumanPlayerStrategy::openInventory(Character* player)
 			player->showCharacterStats();
 			cout << "Press any key to continue..." << endl;
 			keyPress();
+            keyPress();
 			break;
 		}
 		case 4:
@@ -232,11 +232,13 @@ void HumanPlayerStrategy::openInventory(Character* player)
 					cout << "Invalid choice." << endl;
 					cout << "Press any key to continue..." << endl;
 					keyPress();
+                    keyPress();
 				}
 				else {
 					player->getInventory().retrieveItem(itemChoice).printStats();
 					cout << "Press any key to continue..." << endl;
 					keyPress();
+                    keyPress();
 				}
 			}
 			break;

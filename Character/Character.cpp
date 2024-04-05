@@ -318,7 +318,7 @@ CharacterStrategy* Character::getStrategy() const {
 }
 
 void Character::setCurrentHP(int hp) {
-	currentHP = hp;
+	this -> currentHP = hp;
 	notify();
 }
 
@@ -328,6 +328,7 @@ int Character::getCurrentHP() const {
 
 void Character::attack(Character* target) {
 	strategy->attack(this, target);
+
 }
 
 int Character::getSTR() const {
@@ -409,5 +410,21 @@ void Character::printInventory()
 container& Character::getInventory()
 {
 	return inventory;
+}
+
+bool Character::isDead() {
+    if (currentHP <= 0) {
+        return true;
+    }else{
+        return false;
+    }
+}
+
+container Character::getWornItems() const {
+    container wi;
+    for (const auto& item : wornItems) {
+        wi.storeItem(item.second);
+    }
+    return wi;
 }
 
