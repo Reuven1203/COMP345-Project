@@ -14,6 +14,8 @@ void FighterBuilder::buildStats() {
     fighter->stats[Character::AB] = fighter->getAbilityModifier(Character::Strength) + fighter->stats[Character::PB];
     fighter->stats[Character::DB] = fighter->getAbilityModifier(Character::Strength) + 1;
     fighter->setCurrentHP(fighter->stats[Character::HP]);
+    fighter->stats[Character::RA] = 1;
+
 }
 
 Fighter *FighterBuilder::getFighter() {

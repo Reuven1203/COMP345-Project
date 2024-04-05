@@ -45,6 +45,7 @@ struct EventData {
         DiceRolled,
         // Player related event
         AttackedResult,
+        TurnOrder,
     } type; ///< The type of event that occurred.
 
     // Variables to store event-specific data

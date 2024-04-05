@@ -20,7 +20,7 @@
 
 
 
-Character::Character(std::string name, int level) : name(std::move(name)),inventory(){
+Character::Character(std::string name, int level) : name(std::move(name)), inventory() {
 	if (level < 1) {
 		this->level = 1;
 	}
@@ -43,7 +43,7 @@ Character::Character(std::string name, int level) : name(std::move(name)),invent
 
 }
 
-Character::Character(std::string name, int level, const int abilityScores[6], int maxHp, int currentHp):inventory() {
+Character::Character(std::string name, int level, const int abilityScores[6], int maxHp, int currentHp) :inventory() {
 	this->name = std::move(name);
 	if (level < 1) {
 		this->level = 1;
@@ -64,11 +64,12 @@ Character::Character(std::string name, int level, const int abilityScores[6], in
 	stats[AC] = 10 + getAbilityModifier(Dexterity);
 	stats[AB] = getAbilityModifier(Strength) + stats[PB];
 	stats[DB] = getAbilityModifier(Strength) + 1;
+	stats[RA] = 1;
 
 }
 
 Character::Character(std::string name, int level, const int* abilityScores, int maxHp, int currentHp,
-	std::map<Item::ItemType, Item> wornItems):inventory() {
+	std::map<Item::ItemType, Item> wornItems) :inventory() {
 
 	this->name = std::move(name);
 	if (level < 1) {
@@ -90,6 +91,7 @@ Character::Character(std::string name, int level, const int* abilityScores, int 
 	stats[AC] = 10 + getAbilityModifier(Dexterity);
 	stats[AB] = getAbilityModifier(Strength) + stats[PB];
 	stats[DB] = getAbilityModifier(Strength) + 1;
+	stats[RA] = 1;
 	this->wornItems = std::move(wornItems);
 }
 
@@ -127,13 +129,13 @@ void Character::setName(const std::string& name) {
 }
 
 
-	void Character::equip(const Item & item) {
-	
-		wornItems[item.equipType] = item;
-		
-		calculateAbilityScores(item);
-		notify();
-	}
+void Character::equip(const Item& item) {
+
+	wornItems[item.equipType] = item;
+
+	calculateAbilityScores(item);
+	notify();
+}
 
 void Character::unequip(const Item& item) {
 	wornItems.erase(item.equipType);
@@ -157,13 +159,20 @@ void Character::showWornItems() const {
 
 void Character::calculateAbilityScores(const Item& item) {
 	for (const auto& stat : item.itemOverall) {
+	
 		if (isAbility(stat.first) && stat.second != 0) {
 			abilityScore[stringToEnum(stat.first)] += stat.second;
 		}
 		else {
-			stats[stringToEnumStats(stat.first)] += stat.second;
+			
+			if (stat.first == "Range") {
+				stats[stringToEnumStats(stat.first)] = stat.second;
+			}
+			else {
+				
+				stats[stringToEnumStats(stat.first)] += stat.second;
+			}
 		}
-
 	}
 }
 
@@ -173,7 +182,14 @@ void Character::reduceAbilityAfterUnequip(const Item& item) {
 			abilityScore[stringToEnum(stat.first)] -= stat.second;
 		}
 		else {
-			stats[stringToEnumStats(stat.first)] -= stat.second;
+
+			if (stat.first == "Range")
+			{
+				stats[stringToEnumStats(stat.first)] = 1;
+			}
+			else {
+				stats[stringToEnumStats(stat.first)] -= stat.second;
+			}
 		}
 	}
 }
@@ -196,6 +212,7 @@ void Character::showCharacterStats() const {
 	std::cout << "Name: " << name << std::endl;
 	std::cout << "Class: " << getClassName() << std::endl;
 	std::cout << "Level: " << level << std::endl;
+	std::cout << "EXP: " << EXP << std::endl;
 	std::cout << "Strength: " << getSTR() << " Modifier: " << abilityModifiers[Strength] << std::endl;
 	std::cout << "Dexterity: " << getDEX() << " Modifier: " << abilityModifiers[Dexterity] << std::endl;
 	std::cout << "Constitution: " << getCON() << " Modifier: " << abilityModifiers[Constitution] << std::endl;
@@ -207,6 +224,7 @@ void Character::showCharacterStats() const {
 	std::cout << "Armor Class: " << getStat(AC) << std::endl;
 	std::cout << "Attack Bonus: " << getStat(AB) << std::endl;
 	std::cout << "Damage Bonus: " << getStat(DB) << std::endl;
+	std::cout << "Range:  " << getStat(RA) << std::endl;
 	std::cout << "____________________________________________________" << std::endl;
 
 }
@@ -240,8 +258,8 @@ int Character::initializeProficiencyBonus() const {
 
 
 bool Character::isItemEquipped(const Item& item) {
-	
-	
+
+
 	return wornItems.find(item.equipType) != wornItems.end();
 
 }
@@ -293,6 +311,10 @@ Character::Stats Character::stringToEnumStats(const string& str) {
 	else if (str == "DamageBonus") {
 		return DB;
 	}
+	else if (str == "Range")
+	{
+		return RA;
+	}
 	else {
 		throw std::invalid_argument("Invalid stat");
 	}
@@ -316,6 +338,10 @@ void Character::setStrategy(CharacterStrategy* str) {
 CharacterStrategy* Character::getStrategy() const {
 	return strategy;
 }
+//CharacterStrategy::StrategyType Character::getStrategyENUM()
+//{
+//	return this->strategy->getStrategyType();
+//}
 
 void Character::setCurrentHP(int hp) {
 	this -> currentHP = hp;
@@ -397,7 +423,7 @@ bool Character::hasBoots() const {
 
 
 
-void Character::storeItem( Item item)
+void Character::storeItem(Item item)
 {
 	inventory.storeItem(item);
 }
@@ -412,6 +438,27 @@ container& Character::getInventory()
 	return inventory;
 }
 
+
+void Character::setInitiative(int roll)
+{
+	this->initativeRoll = roll;
+}
+
+int Character::getInitiative()
+{
+	return this->initativeRoll;
+}
+
+void Character::gainEXP(int xp)
+{
+	this->EXP += xp;
+}
+
+int Character::getEXP()
+{
+	return this->EXP;
+}
+	
 bool Character::isDead() {
     if (currentHP <= 0) {
         return true;
