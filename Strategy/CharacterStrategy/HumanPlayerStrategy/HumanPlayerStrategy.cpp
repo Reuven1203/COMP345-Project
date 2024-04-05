@@ -65,9 +65,17 @@ void HumanPlayerStrategy::attack(Character* source, Character* target) {
 	int attackRoll = Dice::GetGlobal().roll("1d20") + source->getStat(Character::Stats::AB);
 	if (attackRoll >= target->getStat(Character::Stats::AC)) {
 		int damage = Dice::GetGlobal().roll("1d6") + source->getStat(Character::Stats::DB);
+		cout << "Attack Hit!" << endl;
 		target->setCurrentHP(target->getCurrentHP() - damage);
+		cout << damage << " damage to " << target->getName() << "." << endl;
+		cout << target->getName() << " currently has " << target->getCurrentHP() << "HP" << endl;
+
+		EventData event(EventData::EventType::AttackedResult, "Attack Hit!", source->getName(), target->getName(), 2, target->getCurrentHP(), damage);
+		notifyGameObserver(event);
 	}
 	else {
+		EventData event(EventData::EventType::AttackedResult, "Attack Missed!", source->getName(), target->getName(), 2, target->getCurrentHP(), 0);
+		notifyGameObserver(event);
 		std::cout << "Attack missed!" << std::endl;
 	}
 	if (dynamic_cast<FriendlyStrategy*>(target->getStrategy()) == nullptr) {
@@ -128,8 +136,8 @@ void HumanPlayerStrategy::openInventory(Character* player)
 					keyPress();
 				}
 				else {
-					Item& itemToEquip = player->getInventory().retrieveItem(itemChoice);
-					if (!(player->isItemEquipped(itemToEquip))) //If an item doesn't exists in that slot, equip itemToEquip
+					Item* itemToEquip = player->getInventory().retrieveItem(itemChoice);
+					if (!(player->isItemEquipped(*itemToEquip))) //If an item doesn't exists in that slot, equip itemToEquip
 					{
 						itemToEquip->setAsEquipped();
 						cout << "-------------BEFORE---------------" << endl;

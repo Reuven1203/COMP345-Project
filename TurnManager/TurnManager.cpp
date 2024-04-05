@@ -135,7 +135,15 @@ void TurnManager::play()
 	cout <<"\n"<< "Press any key to continue..." << endl;
 	keyPress();
 	while (!mapCleared)
-	{
+	{    
+		if (currentPlayer->getCurrentHP() == 0)
+		{
+			cout << "YOU DIED! GAME ENDING" << endl;
+			cout << "Press any key to continue..." << endl;
+			mapCleared = true;
+			keyPress();
+			exit(0);
+		}
 		Character* currentPlayersTurn = turnOrder.front();
 		CharacterStrategy::StrategyType type = currentPlayersTurn->getStrategy()->getStrategyType(); ///<Get PLAYER,ENEMY OR FRIENDLY
 		
@@ -164,7 +172,10 @@ void TurnManager::play()
 				{
 					currentMap->notify();
 					currentPlayer->move(*currentMap);
+					cout << "---------------TURN OVER--------------" << endl;
+					cout << "Continue..." << endl;
 					turnOver = true;
+					keyPress();
 
 					break;
 				}
@@ -182,10 +193,14 @@ void TurnManager::play()
 							counter++;
 							cout <<counter<<". "<< enemy->getName() << " | ";
 						}
-						cout << "\nChoose who to Attack:" ;
+
+						cout << "\nChoose who to Attack: " ;
 						cin >> choice;
 						currentPlayer->attack(enemiesFound[choice - 1]);
+						enemiesFound.clear();
 						turnOver = true;
+						cout << "---------------TURN OVER--------------" << endl;
+						cout << "Continue..." << endl;
 						keyPress();
 						break;
 					}
@@ -199,7 +214,10 @@ void TurnManager::play()
 				}
 				case FOUR_KEY:///<  Player's Turn end
 				{
+					cout << "---------------TURN OVER--------------" << endl;
+					cout << "Continue..." << endl;
 					turnOver = true;
+					keyPress();
 					break; 
 				}
 				case FIVE_KEY:
@@ -219,11 +237,21 @@ void TurnManager::play()
 			break;
 		}
 		case CharacterStrategy::StrategyType::ENEMY: {
-		currentPlayersTurn->move(*currentMap);
+		
 		currentMap->notify();
+		currentPlayersTurn->move(*currentMap);
 		cout << "---------------ENEMY "<<currentPlayersTurn->getName() <<" TURN----------------" << endl;
 		cout << "TURN ORDER: "; getTurnOrder(numofPlayers);cout << endl;
-		cout << "ENEMY TURN OVER (Continue)";
+		cout << "ENEMY TURN OVER (Continue)..";
+		if (currentPlayer->getCurrentHP() == 0)
+		{
+			currentMap->notify();
+			cout << "YOU DIED! GAME ENDING" << endl;
+			cout << "Press any key to continue..." << endl;
+			mapCleared = true;
+			keyPress();
+			exit(0);
+		}
 		keyPress();
 			break;
 		}
