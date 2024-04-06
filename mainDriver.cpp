@@ -43,6 +43,9 @@ int main() {
             case 1:
                 if(!charCreated){
                     std::cout << "You must create a fighter before creating/loading a campaign." << std::endl;
+                    std::cout << "Press any key to continue..." << std::endl;
+                    keyPress();
+                    keyPress();
                     break;
                 }
                 std::cout << "Creating a new campaign..." << std::endl;

@@ -724,10 +724,37 @@ void dungeonMap::movePlayer(Character * player, int direction) {
                 dungeon[newX][newY].removeContent();
                 auto *chest = new container(target->getInventory() + target->getWornItems());
 //                store worn items in chest
-                dungeon[newX][newY].setCellType(Chest);
-                dungeon[newX][newY].setChest(chest);
+                if(chest->getSize() > 0){
+                    dungeon[newX][newY].setCellType(Chest);
+                    dungeon[newX][newY].setChest(chest);
+                }else {
+                delete chest;
+
+            }
+
+            }
+        }else if(dynamic_cast<HumanPlayerStrategy*>(player->getStrategy()) != nullptr){
+            std:cout << "Do you wish to attack?" << endl;
+            std::cout << "1. Yes" << endl;
+            std::cout << "2. No" << endl;
+            int choice;
+            std::cin >> choice;
+            if(choice == 1){
+                player->attack(dungeon[newX][newY].getPlayer());
+                if(dungeon[newX][newY].getPlayer()->isDead()){
+                    cout << "Player has been defeated." << endl;
+                    dungeon[newX][newY].removeContent();
+                    auto *chest = new container(dungeon[newX][newY].getPlayer()->getInventory() + dungeon[newX][newY].getPlayer()->getWornItems());
+                    if(chest->getSize() > 0){
+                        dungeon[newX][newY].setCellType(Chest);
+                        dungeon[newX][newY].setChest(chest);
+                    }else {
+                    delete chest;
+                    }
+                }
             }
         }
+
         cout << "Press any key to continue...." << endl;
         keyPress();
     }else{
