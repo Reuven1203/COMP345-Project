@@ -175,5 +175,10 @@ add_executable(main
 		${COMMON_SOURCES}
 		mainDriver.cpp
 )
+
+add_executable(altDriver
+		${COMMON_SOURCES}
+		altDriver.cpp
+)
 # Link the CppUnit library
 target_link_libraries(COMP345_A1_Tests ${CPPUNIT_LIBRARIES})

@@ -177,7 +177,8 @@ void TurnManager::play()
 					currentPlayer->move(*currentMap);
 					cout << "----------PLAYER TURN OVER--------------" << endl;
 					cout << "Continue..." << endl;
-					checkIfPlayerAtEnd();
+					if(checkIfPlayerAtEnd())
+                        return;
 					turnOver = true;
 					keyPress();
 
