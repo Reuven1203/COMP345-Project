@@ -34,6 +34,8 @@ public:
 	void setAllNPCS();
 	void getTurnOrder(int numPlayers);
 	bool checkIfPlayerAtEnd();
+	void isDefeated(Character *);
+	void removeEnemy(int target);
 private:
 	Campaign* currentCampaign;
 	dungeonMap* currentMap;

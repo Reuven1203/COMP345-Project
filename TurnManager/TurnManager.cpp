@@ -102,13 +102,41 @@ void TurnManager::getTurnOrder(int numPlayers)
 }
 
 
+void TurnManager::isDefeated(Character* target)
+{
+	if (target->isDead())
+	{
+		cout << "Enemy " << target->getName() << " has been defeated." << endl;
+	int targetX = currentMap->playerPositions[target].first;
+	int targetY = currentMap->playerPositions[target].second;
+
+	currentMap->getCell(targetX, targetY).removeContent();
+	auto* chest = new container(target->getInventory() + target->getWornItems());
+	currentMap->getCell(targetX, targetY).setCellType(Chest);
+	currentMap->getCell(targetX, targetY).setChest(chest);
+	}
+
+}
+
+void TurnManager::removeEnemy(int target)
+{
+	if (target >= 0 && target < enemiesFound.size()) {
+		enemiesFound.erase(enemiesFound.begin() + target);
+	}
+	else {
+		// Handle the error: target is out of range
+		std::cerr << "Error: Target index out of range." << std::endl;
+	}
+}
+
 void TurnManager::play()
 {
+	bool enemydead = false;
 	bool mapCleared = false;
 	int turnPrio = 0;
 	int numofPlayers = 0;
 	/*while (!mapCleared)*/
-
+	int choice = 0;
 	int playerInitiative = Dice::GetGlobal().roll("1d20") + currentPlayer->getAbilityModifier(Character::Dexterity); //Get player's initiative roll
 	currentPlayer->setInitiative(playerInitiative);
 	intiativeOrder.push(currentPlayer);
@@ -188,7 +216,7 @@ void TurnManager::play()
 					EnemyinRange(currentPlayer, currentPlayer->getStat(Character::Stats::RA));
 					if (!enemiesFound.empty())
 					{
-						int choice = 0;
+						
 						cout << "--------------ATTACKING------------" << endl;
 						cout << "ENEMIES IN RANGE: ";
 						int counter = 0;
@@ -220,6 +248,7 @@ void TurnManager::play()
 								enemiesFound.clear();
 								attackOver = true;
 								turnOver = true;
+								isDefeated(enemiesFound[choice - 1]);
 								cout << "----------PLAYER TURN OVER--------------" << endl;
 								cout << "Continue..." << endl;
 								keyPress();
@@ -290,7 +319,12 @@ void TurnManager::play()
 		}
 
 		turnOrder.pop();				   ///<Remove currentplayer from front of queue
+		if(!enemydead)
 		turnOrder.push(currentPlayersTurn);///<Push when player's turn is over
+		else
+		{
+
+		}
 	}
 
 
