@@ -76,6 +76,32 @@ void CampaignEditor::save(const std::string& filename) {
         output << f << '\n';
 }
 
+void CampaignEditor::loadCampaign(/*Character *player*/) {
+    std::cout << "Enter Campaign filename.txt to load: ";
+    std::string file {};
+    std::cin >> file;
+
+    std::ifstream input("../CampaignSaves/"+file);
+    std::string line, data;
+
+    mapFiles.clear();
+    campaign.clear();
+    while(std::getline(input, line)) {
+        mapFiles.push_back(line);
+    }
+
+    MapDirector director {};
+    for (std::string f : mapFiles) {
+        MapBuilder* mapBuilder = new DefaultMapBuilder(f);
+
+        director.setMapBuilder(mapBuilder);
+        director.constructMap();
+        campaign.addMap(*director.getMap());
+    }
+    //campaign.setPlayer(player);
+    //runCampaign();
+}
+
 void CampaignEditor::loadCampaign(Character *player) {
     std::cout << "Enter Campaign filename.txt to load: ";
     std::string file {};
@@ -100,6 +126,39 @@ void CampaignEditor::loadCampaign(Character *player) {
     }
     campaign.setPlayer(player);
     runCampaign();
+}
+
+void CampaignEditor::run(/*Character *player*/) {
+    bool editing = true;
+    while(editing) {
+        printCampaignDetails();
+        int input {getUserInput()};
+        switch(input) {
+            case 1:
+                addMap();
+                break;
+            case 2:
+                removeMap();
+                break;
+            case 3:
+                editMap();
+                break;
+            case 4:
+                saveCampaign();
+                editing = false;
+                break;
+            case 5:
+                loadCampaign(/*player*/);
+                break;
+            case -1:
+                return;
+            default:
+                std::cout << "Invalid command, try again.\n";
+                break;
+        }
+        if (input == 4)
+            break;
+    }
 }
 
 void CampaignEditor::run(Character *player) {
