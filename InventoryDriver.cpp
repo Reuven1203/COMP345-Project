@@ -15,6 +15,7 @@
 #include "CharacterCreator/CharacterCreatorUI.h"
 #include "./Utils/utils.h"
 #include "../TurnManager/TurnManager.h"
+#include "../Campaign/Campaign.h"
 using namespace std;
 
 int main()
@@ -22,6 +23,7 @@ int main()
    /* CharacterCreatorUI characterCreatorUI{
     };
     characterCreatorUI.run();*/
+    Campaign* c= new Campaign();
     auto* logger = new GameObserver();
     auto* m = new dungeonMap(10, 10);
     logger->attachObservable(m);
@@ -77,9 +79,10 @@ int main()
     m->setWall(9, 3);
     m->setWall(4, 2);
     //fighter->move(*m);
-    TurnManager* map = new TurnManager(m, fighter);
+    TurnManager* map = new TurnManager(m, fighter,c);
     map->addNPC(fighter2);
-    //map->addNPC(fighter3);
+    fighter->setCurrentHP(100);
+    map->addNPC(fighter3);
     //map->addNPC(fighter4);
     map->setAllNPCS();
     map->play();

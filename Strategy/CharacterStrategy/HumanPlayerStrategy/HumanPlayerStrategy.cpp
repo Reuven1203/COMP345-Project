@@ -75,6 +75,9 @@ void HumanPlayerStrategy::attack(Character* source, Character* target) {
 		cout << damage << " damage to " << target->getName() << "." << endl;
 		cout << target->getName() << " currently has " << target->getCurrentHP() << "HP" << endl;
 
+		
+
+
 		EventData event(EventData::EventType::AttackedResult, "Attack Hit!", source->getName(), target->getName(), 2, target->getCurrentHP(), damage);
 		notifyGameObserver(event);
 	}

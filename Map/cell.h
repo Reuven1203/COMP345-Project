@@ -131,6 +131,7 @@ public:
      */
     void removeContent();
     void removePlayer();
+    void setCellType(cellType types);
 private:
     cellType type; ///< The type of content the cell currently holds.
     container* chest{}; ///< Optional pointer to a container object if the cell holds a chest.
@@ -141,7 +142,6 @@ private:
      * @brief Sets the cell's content type.
      * @param types The cellType to set as the cell's content.
      */
-    void setCellType(cellType types);
 
     int rowPos{}; ///< Row index of the cell in the dungeon map.
     int colPos{}; ///< Column index of the cell in the dungeon map.
