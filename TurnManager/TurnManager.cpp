@@ -5,7 +5,7 @@
 #include "../Dice/Random.h"
 using namespace std;
 
-TurnManager::TurnManager(dungeonMap* map, Character* _currentPlayer,Campaign* _currentCampaign)
+TurnManager::TurnManager(dungeonMap* map, Character* _currentPlayer, Campaign* _currentCampaign)
 {
 	this->currentMap = map;
 	this->currentPlayer = _currentPlayer;
@@ -88,12 +88,13 @@ void TurnManager::storeEnemyInRange(int x, int y)
 {
 	enemiesFound.push_back(currentMap->getCell(x, y).getPlayer());
 }
-void TurnManager::getTurnOrder(int numPlayers)
+
+void TurnManager::getTurnOrder()
 {
-	for (int i = 1;i <= numPlayers;i++)
+	for (int i = 0;i < turnOrder.size();i++)
 	{
 		Character* currentTurn = turnOrder.front();
-		cout << i << ". " << currentTurn->getName() << " | ";
+		cout << i+1 << ". " << currentTurn->getName() << " | ";
 		turnOrder.pop();
 		turnOrder.push(currentTurn);
 	}
@@ -101,32 +102,60 @@ void TurnManager::getTurnOrder(int numPlayers)
 
 }
 
+void TurnManager::removeDeceasedCharacters() {
+	std::queue<Character*> tempQueue;
 
-void TurnManager::isDefeated(Character* target)
-{
-	if (target->isDead())
-	{
-		cout << "Enemy " << target->getName() << " has been defeated." << endl;
-	int targetX = currentMap->playerPositions[target].first;
-	int targetY = currentMap->playerPositions[target].second;
+	while (!turnOrder.empty()) {
+		Character* currentCharacter = turnOrder.front();
+		turnOrder.pop();
 
-	currentMap->getCell(targetX, targetY).removeContent();
-	auto* chest = new container(target->getInventory() + target->getWornItems());
-	currentMap->getCell(targetX, targetY).setCellType(Chest);
-	currentMap->getCell(targetX, targetY).setChest(chest);
+		if (!currentCharacter->isDead()) {
+			tempQueue.push(currentCharacter);
+		}
+		else
+		{
+			isDefeated(currentCharacter);
+			
+		}
+
 	}
 
+	turnOrder = tempQueue;
 }
 
-void TurnManager::removeEnemy(int target)
-{
-	if (target >= 0 && target < enemiesFound.size()) {
-		enemiesFound.erase(enemiesFound.begin() + target);
+bool TurnManager::isDefeated(Character* target) {
+	if (target->isDead()) {
+		cout << "Enemy " << target->getName() << " has been defeated." << endl;
+		int targetX = currentMap->playerPositions[target].first;
+		int targetY = currentMap->playerPositions[target].second;
+
+		// Drop the chest
+		currentMap->getCell(targetX, targetY).removeContent();
+		auto* chest = new container(target->getInventory() + target->getWornItems());
+		currentMap->getCell(targetX, targetY).setCellType(Chest);
+		currentMap->getCell(targetX, targetY).setChest(chest);
+
+		// Return true indicating the target was defeated
+		return true;
 	}
-	else {
-		// Handle the error: target is out of range
-		std::cerr << "Error: Target index out of range." << std::endl;
+	return false;
+}
+
+
+void TurnManager::removeFromTurnOrder(Character* enemy) {
+	std::queue<Character*> tempQueue;
+
+	// Transfer all characters except the one to remove to the temporary queue
+	while (!turnOrder.empty()) {
+		Character* current = turnOrder.front();
+		turnOrder.pop();
+		if (current != enemy) {
+			tempQueue.push(current);
+		}
 	}
+
+	// Swap queues: Now tempQueue has all characters in the correct order, minus the removed one
+	turnOrder.swap(tempQueue);
 }
 
 void TurnManager::play()
@@ -187,7 +216,7 @@ void TurnManager::play()
 			{
 				currentMap->notify();
 				cout << "---------------PLAYERS TURN----------------" << endl;
-				cout << "TURN ORDER: "; getTurnOrder(numofPlayers);cout << endl;
+				cout << "TURN ORDER: "; getTurnOrder();cout << endl;
 
 				cout << "MENU: 1. OpenInv | 2. Move | 3.Attack | 4.END TURN | 5. Quit & Save" << endl;
 				int ch = keyPress();
@@ -205,8 +234,8 @@ void TurnManager::play()
 					currentPlayer->move(*currentMap);
 					cout << "----------PLAYER TURN OVER--------------" << endl;
 					cout << "Continue..." << endl;
-					if(checkIfPlayerAtEnd())
-                        return;
+					if (checkIfPlayerAtEnd())
+						return;
 					turnOver = true;
 					keyPress();
 
@@ -217,7 +246,7 @@ void TurnManager::play()
 					EnemyinRange(currentPlayer, currentPlayer->getStat(Character::Stats::RA));
 					if (!enemiesFound.empty())
 					{
-						
+
 						cout << "--------------ATTACKING------------" << endl;
 						cout << "ENEMIES IN RANGE: ";
 						int counter = 0;
@@ -246,10 +275,11 @@ void TurnManager::play()
 							}
 							else {
 								currentPlayer->attack(enemiesFound[choice - 1]);
+						
 								enemiesFound.clear();
 								attackOver = true;
 								turnOver = true;
-								isDefeated(enemiesFound[choice - 1]);
+
 								cout << "----------PLAYER TURN OVER--------------" << endl;
 								cout << "Continue..." << endl;
 								keyPress();
@@ -293,8 +323,9 @@ void TurnManager::play()
 
 			currentMap->notify();
 			currentPlayersTurn->move(*currentMap);
+
 			cout << "---------------ENEMY " << currentPlayersTurn->getName() << " TURN----------------" << endl;
-			cout << "TURN ORDER: "; getTurnOrder(numofPlayers);cout << endl;
+			cout << "TURN ORDER: "; getTurnOrder();cout << endl;
 			cout << "ENEMY TURN OVER (Continue)..";
 			if (currentPlayer->getCurrentHP() <= 0)
 			{
@@ -305,6 +336,7 @@ void TurnManager::play()
 				keyPress();
 				exit(0);
 			}
+
 			keyPress();
 			break;
 		}
@@ -312,20 +344,18 @@ void TurnManager::play()
 			currentPlayersTurn->move(*currentMap);
 			currentMap->notify();
 			cout << "---------------FRIENDLY " << currentPlayersTurn->getName() << " TURN----------------" << endl;
-			cout << "TURN ORDER: "; getTurnOrder(numofPlayers);cout << endl;
+			cout << "TURN ORDER: "; getTurnOrder();cout << endl;
 			cout << "FRIENDLY TURN OVER (Continue)..";
 			keyPress();
 			break;
 		}
 		}
-
+		turnOrder.push(currentPlayersTurn);///<Push when player's turn is over and not dead
 		turnOrder.pop();				   ///<Remove currentplayer from front of queue
-		if(!enemydead)
-		turnOrder.push(currentPlayersTurn);///<Push when player's turn is over
-		else
-		{
+		removeDeceasedCharacters();
 
-		}
+
+
 	}
 
 

@@ -82,7 +82,7 @@ int main()
     TurnManager* map = new TurnManager(m, fighter,c);
     map->addNPC(fighter2);
     fighter->setCurrentHP(100);
-    //map->addNPC(fighter3);
+    map->addNPC(fighter3);
     //map->addNPC(fighter4);
     map->setAllNPCS();
     map->play();

@@ -32,11 +32,13 @@ public:
 	bool initiativeCompare(Character*, Character*);
 	void play();
 	void setAllNPCS();
-	void getTurnOrder(int numPlayers);
+	void getTurnOrder();
 	bool checkIfPlayerAtEnd();
-	void isDefeated(Character *);
-	void removeEnemy(int target);
+	bool isDefeated(Character *);
+	void removeFromTurnOrder(Character*);
+	void removeDeceasedCharacters();
 private:
+	
 	Campaign* currentCampaign;
 	dungeonMap* currentMap;
 	vector<Character*>NPCS;

@@ -1,30 +1,30 @@
 ----------MAP CREATED-----------------
 Map size:                     10x10
 --------------------------------------
-Dice                          3d6 rolled. Result: 11
+Dice                          3d6 rolled. Result: 5
+Dice                          3d6 rolled. Result: 7
 Dice                          3d6 rolled. Result: 12
-Dice                          3d6 rolled. Result: 13
-Dice                          3d6 rolled. Result: 11
-Dice                          3d6 rolled. Result: 15
-Dice                          3d6 rolled. Result: 9
-Dice                          3d6 rolled. Result: 11
-Dice                          3d6 rolled. Result: 8
-Dice                          3d6 rolled. Result: 8
-Dice                          3d6 rolled. Result: 9
-Dice                          3d6 rolled. Result: 11
-Dice                          3d6 rolled. Result: 13
-Dice                          3d6 rolled. Result: 8
-Dice                          3d6 rolled. Result: 6
-Dice                          3d6 rolled. Result: 10
-Dice                          3d6 rolled. Result: 9
-Dice                          3d6 rolled. Result: 13
+Dice                          3d6 rolled. Result: 7
 Dice                          3d6 rolled. Result: 14
 Dice                          3d6 rolled. Result: 12
-Dice                          3d6 rolled. Result: 13
-Dice                          3d6 rolled. Result: 16
-Dice                          3d6 rolled. Result: 9
-Dice                          3d6 rolled. Result: 11
+Dice                          3d6 rolled. Result: 8
+Dice                          3d6 rolled. Result: 8
+Dice                          3d6 rolled. Result: 15
+Dice                          3d6 rolled. Result: 8
+Dice                          3d6 rolled. Result: 7
+Dice                          3d6 rolled. Result: 8
+Dice                          3d6 rolled. Result: 10
 Dice                          3d6 rolled. Result: 6
+Dice                          3d6 rolled. Result: 13
+Dice                          3d6 rolled. Result: 11
+Dice                          3d6 rolled. Result: 13
+Dice                          3d6 rolled. Result: 11
+Dice                          3d6 rolled. Result: 13
+Dice                          3d6 rolled. Result: 15
+Dice                          3d6 rolled. Result: 13
+Dice                          3d6 rolled. Result: 9
+Dice                          3d6 rolled. Result: 5
+Dice                          3d6 rolled. Result: 12
 Start Point placed at         X:2 Y:1
 Bully                         placed at X:2 Y : 1
 End Point placed at           X:4 Y:4
@@ -34,18 +34,10 @@ Chest placed at               X:1 Y:0
 Wall placed at                X:2 Y:5
 Wall placed at                X:3 Y:9
 Wall placed at                X:2 Y:4
-Bully 2                       placed at X:3 Y : 1
-Dice                          1d20 rolled. Result: 1
+Bully 2                       placed at X:4 Y : 5
+Bully 3                       placed at X:4 Y : 1
 Dice                          1d20 rolled. Result: 7
-Bully 2                        Moved Left to X:2 Y:1
-Dice                          1d20 rolled. Result: 4
-Bully                          Moved Left to X:1 Y:1
-Bully 2                        Moved Left to X:2 Y:1
-Dice                          1d20 rolled. Result: 10
-Dice                          1d6 rolled. Result: 5
---------------------------------------
-Enemy Character:              Bully attempted to attack Bully 2
-Result:                       Attack Hit!
-Damage Dealt:                 8 to Bully 2
-Bully 2                       current HP:5
---------------------------------------
+Dice                          1d20 rolled. Result: 9
+Dice                          1d20 rolled. Result: 5
+Bully                          Moved Right to X:3 Y:1
+Bully 2                        Moved Up to X:4 Y : 4
