@@ -176,7 +176,7 @@ add_executable(main
 		mainDriver.cpp
 )
 
-add_executable(zepDriver
+add_executable(altDriver
 		${COMMON_SOURCES}
 		altDriver.cpp
 )
