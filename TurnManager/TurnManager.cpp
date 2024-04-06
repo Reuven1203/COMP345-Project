@@ -5,11 +5,11 @@
 #include "../Dice/Random.h"
 using namespace std;
 
-TurnManager::TurnManager(dungeonMap* map, Character* _currentPlayer)
+TurnManager::TurnManager(dungeonMap* map, Character* _currentPlayer,Campaign* _currentCampaign)
 {
 	this->currentMap = map;
 	this->currentPlayer = _currentPlayer;
-
+	this->currentCampaign = _currentCampaign;
 }
 
 void TurnManager::addNPC(Character* enemy)
@@ -40,20 +40,20 @@ void TurnManager::setAllNPCS() {
 			bool isCellSpecial = currentMap->isStart(&currentMap->getCell(enemyX, enemyY)) ||
 				currentMap->isEnd(&currentMap->getCell(enemyX, enemyY));
 
-		
+
 			if (isValidRow && isValidCol && !isCellOccupied && !isCellSpecial) {
-				currentMap->setPlayer(enemy, enemyX, enemyY); 
+				currentMap->setPlayer(enemy, enemyX, enemyY);
 				validPlacement = true;
 			}
 		}
 	}
 }
 
-void TurnManager::EnemyinRange(Character* player,int range)
+void TurnManager::EnemyinRange(Character* player, int range)
 {
 	int playerX = currentMap->playerPositions[player].first;
 	int playerY = currentMap->playerPositions[player].second;
-	
+
 	if (range == 0)
 	{
 		return;
@@ -64,24 +64,24 @@ void TurnManager::EnemyinRange(Character* player,int range)
 		{
 			storeEnemyInRange(playerX + range, playerY);
 		}
-			
+
 	}
-	if (currentMap->isValidRow(playerX-range))
+	if (currentMap->isValidRow(playerX - range))
 	{
 		if (currentMap->playerDetect(playerX - range, playerY))
 			storeEnemyInRange(playerX - range, playerY);
 	}
 	if (currentMap->isValidCol(playerY + range))
 	{
-		if (currentMap->playerDetect(playerX, playerY+range))
-			storeEnemyInRange(playerX, playerY+range);
+		if (currentMap->playerDetect(playerX, playerY + range))
+			storeEnemyInRange(playerX, playerY + range);
 	}
 	if (currentMap->isValidCol(playerY - range))
 	{
 		if (currentMap->playerDetect(playerX, playerY - range))
 			storeEnemyInRange(playerX, playerY - range);
 	}
-	 return EnemyinRange(player,range-1);
+	return EnemyinRange(player, range - 1);
 }
 
 void TurnManager::storeEnemyInRange(int x, int y)
@@ -92,12 +92,12 @@ void TurnManager::getTurnOrder(int numPlayers)
 {
 	for (int i = 1;i <= numPlayers;i++)
 	{
-	Character* currentTurn = turnOrder.front();
-	cout << i << ". " << currentTurn->getName() << " | ";
-	turnOrder.pop();
-	turnOrder.push(currentTurn);
+		Character* currentTurn = turnOrder.front();
+		cout << i << ". " << currentTurn->getName() << " | ";
+		turnOrder.pop();
+		turnOrder.push(currentTurn);
 	}
-	
+
 
 }
 
@@ -119,11 +119,11 @@ void TurnManager::play()
 		enemy->setInitiative(enemyInitiative);
 		intiativeOrder.push(enemy);
 		numofPlayers++;
-		
+
 	}
 	currentMap->notify();
 	cout << "TURN ORDER: ";
-	
+
 	while (!intiativeOrder.empty())
 	{
 
@@ -135,10 +135,10 @@ void TurnManager::play()
 
 	}
 
-	cout <<"\n"<< "Press any key to continue..." << endl;
+	cout << "\n" << "Press any key to continue..." << endl;
 	keyPress();
 	while (!mapCleared)
-	{    
+	{
 		if (currentPlayer->getCurrentHP() == 0)
 		{
 			cout << "YOU DIED! GAME ENDING" << endl;
@@ -149,26 +149,26 @@ void TurnManager::play()
 		}
 		Character* currentPlayersTurn = turnOrder.front();
 		CharacterStrategy::StrategyType type = currentPlayersTurn->getStrategy()->getStrategyType(); ///<Get PLAYER,ENEMY OR FRIENDLY
-		
+
 		switch (type)
 		{
-		case CharacterStrategy::StrategyType::PLAYER: 
+		case CharacterStrategy::StrategyType::PLAYER:
 		{
 			bool turnOver = false;
-			while (!turnOver) 
+			while (!turnOver)
 			{
-			currentMap->notify();
-			cout << "---------------PLAYERS TURN----------------" << endl;
-			cout << "TURN ORDER: "; getTurnOrder(numofPlayers);cout << endl;
+				currentMap->notify();
+				cout << "---------------PLAYERS TURN----------------" << endl;
+				cout << "TURN ORDER: "; getTurnOrder(numofPlayers);cout << endl;
 
-			cout << "MENU: 1. OpenInv | 2. Move | 3.Attack | 4.END TURN | 5. Quit & Save" << endl;
+				cout << "MENU: 1. OpenInv | 2. Move | 3.Attack | 4.END TURN | 5. Quit & Save" << endl;
 				int ch = keyPress();
 				switch (ch)
 				{
 				case ONE_KEY: ///<Opens inventory
 				{
 					currentPlayer->getStrategy()->openInventory(currentPlayer);
-					
+
 					continue;
 				}
 				case TWO_KEY: ///<Move one cell
@@ -177,6 +177,7 @@ void TurnManager::play()
 					currentPlayer->move(*currentMap);
 					cout << "----------PLAYER TURN OVER--------------" << endl;
 					cout << "Continue..." << endl;
+					checkIfPlayerAtEnd();
 					turnOver = true;
 					keyPress();
 
@@ -194,16 +195,16 @@ void TurnManager::play()
 						for (auto& enemy : enemiesFound)
 						{
 							counter++;
-							cout <<counter<<". "<< enemy->getName() << " | ";
+							cout << counter << ". " << enemy->getName() << " | ";
 						}
 
-						
+
 						bool attackOver = false;
 						while (!attackOver)
 						{
 							cout << "\nChoose who to Attack (-1 to cancel): ";
 							cin >> choice;
-					
+
 							if (choice == -1)
 							{
 								attackOver = true;
@@ -214,7 +215,7 @@ void TurnManager::play()
 							{
 								cout << "Invalid choice." << endl;
 							}
-							else{
+							else {
 								currentPlayer->attack(enemiesFound[choice - 1]);
 								enemiesFound.clear();
 								attackOver = true;
@@ -232,7 +233,7 @@ void TurnManager::play()
 						keyPress();
 						continue;
 					}
-					
+
 				}
 				case FOUR_KEY:///<  Player's Turn end
 				{
@@ -240,7 +241,7 @@ void TurnManager::play()
 					cout << "Continue..." << endl;
 					turnOver = true;
 					keyPress();
-					break; 
+					break;
 				}
 				case FIVE_KEY:
 				{
@@ -248,7 +249,7 @@ void TurnManager::play()
 
 
 					exit(0); ///<add quit&save function
-					
+
 				}
 				default:
 				{
@@ -259,22 +260,22 @@ void TurnManager::play()
 			break;
 		}
 		case CharacterStrategy::StrategyType::ENEMY: {
-		
-		currentMap->notify();
-		currentPlayersTurn->move(*currentMap);
-		cout << "---------------ENEMY "<<currentPlayersTurn->getName() <<" TURN----------------" << endl;
-		cout << "TURN ORDER: "; getTurnOrder(numofPlayers);cout << endl;
-		cout << "ENEMY TURN OVER (Continue)..";
-		if (currentPlayer->getCurrentHP() <= 0)
-		{
+
 			currentMap->notify();
-			cout << "YOU DIED! GAME ENDING" << endl;
-			cout << "Press any key to continue..." << endl;
-			mapCleared = true;
+			currentPlayersTurn->move(*currentMap);
+			cout << "---------------ENEMY " << currentPlayersTurn->getName() << " TURN----------------" << endl;
+			cout << "TURN ORDER: "; getTurnOrder(numofPlayers);cout << endl;
+			cout << "ENEMY TURN OVER (Continue)..";
+			if (currentPlayer->getCurrentHP() <= 0)
+			{
+				currentMap->notify();
+				cout << "YOU DIED! GAME ENDING" << endl;
+				cout << "Press any key to continue..." << endl;
+				mapCleared = true;
+				keyPress();
+				exit(0);
+			}
 			keyPress();
-			exit(0);
-		}
-		keyPress();
 			break;
 		}
 		case CharacterStrategy::StrategyType::FRIENDLY: {
@@ -293,5 +294,20 @@ void TurnManager::play()
 	}
 
 
+
+}
+
+bool TurnManager::checkIfPlayerAtEnd()
+{
+
+	if (currentMap->getEndX() == currentMap->playerPositions[currentPlayer].first && currentMap->getEndY() == currentMap->playerPositions[currentPlayer].second)
+	{
+		cout << "You've reached the end!" << endl;
+		cout << "Dungeon cleared! Press any key continue.....";
+		keyPress();
+		return true;
+
+	}
+	return false;
 
 }

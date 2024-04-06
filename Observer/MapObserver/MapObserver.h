@@ -15,7 +15,9 @@ public:
 	void update() override;
 	void update(EventData&) override { };
 	bool mapFinishedCheck();
+
 private:
 	dungeonMap* _subject{};
+	Character* player;
 };
 #endif // OBSERVER_H

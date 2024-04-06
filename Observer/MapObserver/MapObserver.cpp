@@ -13,6 +13,7 @@ using namespace std;
 MapObserver::MapObserver(dungeonMap* m) {
     _subject = m;
     _subject->attach(this);
+   
 }
 MapObserver::~MapObserver()
 {
@@ -100,9 +101,11 @@ void MapObserver::displayMap()
     _subject->printMap();
 }
 
+
+
 //bool MapObserver::mapFinishedCheck()
 //{
-//    if (_subject->getEndX()==_subject->getPlayerX() && _subject->getEndY()==_subject->getPlayerY())
+//    if (_subject->getEndX()==_subject->playerPositions[player].first && _subject->getEndY() == _subject->playerPositions[player].second)
 //    {
 //        cout << "You've reached the end!" << endl;
 //        cout << "Dungeon cleared! Press any key to end game.....";

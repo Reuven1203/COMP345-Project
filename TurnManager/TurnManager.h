@@ -8,7 +8,7 @@
 #include "../Strategy/CharacterStrategy/HumanPlayerStrategy/HumanPlayerStrategy.h"
 #include "../Strategy/CharacterStrategy/AggressorStrategy/AggressorStrategy.h"
 #include "../Strategy/CharacterStrategy/FriendlyStrategy/FriendlyStrategy.h"
-
+#include "../Campaign/Campaign.h"
 #include "../Utils/utils.h"
 
 struct InitiativeComparator {
@@ -23,7 +23,7 @@ class TurnManager {
 public:
 	TurnManager() = default;
 	~TurnManager() {};
-	TurnManager(dungeonMap*, Character*);
+	TurnManager(dungeonMap*, Character*,Campaign*);
 
 	void EnemyinRange(Character*,int range);
 	void storeEnemyInRange(int x,int y);
@@ -33,7 +33,9 @@ public:
 	void play();
 	void setAllNPCS();
 	void getTurnOrder(int numPlayers);
+	bool checkIfPlayerAtEnd();
 private:
+	Campaign* currentCampaign;
 	dungeonMap* currentMap;
 	vector<Character*>NPCS;
 	vector<Character*>enemiesFound;
