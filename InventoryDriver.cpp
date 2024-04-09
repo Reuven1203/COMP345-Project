@@ -38,6 +38,9 @@ int main()
     Fighter* fighter = director.constructFighter("Bully");
     Fighter* fighter2 = director.constructFighter("Bully 2");
     Fighter* fighter3 = director.constructFighter("Bully 3");
+    fighter2->setEXP(300);
+    fighter3->setEXP(300);
+
     Fighter* fighter4 = director.constructFighter("Friendly");
     fighter->setStrategy(new HumanPlayerStrategy());
     fighter2->setStrategy(new AggressorStrategy());
@@ -83,7 +86,7 @@ int main()
     map->addNPC(fighter2);
     fighter->setCurrentHP(100);
     map->addNPC(fighter3);
-    //map->addNPC(fighter4);
+    map->addNPC(fighter4);
     map->setAllNPCS();
     map->play();
 	return 0;

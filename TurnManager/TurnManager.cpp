@@ -124,11 +124,14 @@ void TurnManager::removeDeceasedCharacters() {
 }
 
 bool TurnManager::isDefeated(Character* target) {
-	if (target->isDead()) {
+	if (target->isDead() && (target->getStrategy()->getStrategyType()!=CharacterStrategy::PLAYER)) {
 		cout << "Enemy " << target->getName() << " has been defeated." << endl;
+		cout << "EXP gained: " << target->getEXP() << endl;
+		keyPress();
+
 		int targetX = currentMap->playerPositions[target].first;
 		int targetY = currentMap->playerPositions[target].second;
-
+		target->expAwarded(currentPlayer);
 		// Drop the chest
 		currentMap->getCell(targetX, targetY).removeContent();
 		auto* chest = new container(target->getInventory() + target->getWornItems());
