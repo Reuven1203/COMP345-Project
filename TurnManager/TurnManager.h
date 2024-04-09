@@ -32,7 +32,7 @@ public:
 	bool initiativeCompare(Character*, Character*);
 	void play();
 	void setAllNPCS();
-	void getTurnOrder();
+	void getTurnOrder(	);
 	bool checkIfPlayerAtEnd();
 	bool isDefeated(Character *);
 	void removeFromTurnOrder(Character*);

@@ -303,8 +303,10 @@ public:
     void setInitiative(int);
     int getInitiative();
 
+    void expAwarded(Character* player);
     void gainEXP(int exp);
     int getEXP();
+    void setEXP(int exp);
    /* CharacterStrategy::StrategyType getStrategy();*/
 protected:
 
@@ -353,7 +355,7 @@ private:
     CharacterStrategy* strategy = nullptr;
     int initativeRoll = 0;
     int EXP = 0;
-    int expToLVL = 0;
+    float expToLVL = 300;
     /**
      * @brief Generates random ability scores for the character.
      *

@@ -219,6 +219,7 @@ void Character::showCharacterStats() const {
 	std::cout << "Class: " << getClassName() << std::endl;
 	std::cout << "Level: " << level << std::endl;
 	std::cout << "EXP: " << EXP << std::endl;
+	std::cout << "EXP to next LVL: " << expToLVL << std::endl;
 	std::cout << "Strength: " << getSTR() << " Modifier: " << abilityModifiers[Strength] << std::endl;
 	std::cout << "Dexterity: " << getDEX() << " Modifier: " << abilityModifiers[Dexterity] << std::endl;
 	std::cout << "Constitution: " << getCON() << " Modifier: " << abilityModifiers[Constitution] << std::endl;
@@ -327,10 +328,16 @@ Character::Stats Character::stringToEnumStats(const string& str) {
 }
 
 void Character::levelUp() {
-	Dice dice = Dice();
+	
+
+	cout << "\n\n" << "-------------AFTER-----------------" << endl;
+
 	level++;
-	stats[HP] += dice.roll("1d10") + getAbilityModifier(Constitution);
+	stats[HP] += Dice::GetGlobal().roll("1d10") + getAbilityModifier(Constitution);
 	stats[AB]++;
+	this->expToLVL *= 1.2;
+	showCharacterStats();
+	cout << "Press any key to continue..." << endl;
 	notify();
 }
 
@@ -455,16 +462,38 @@ int Character::getInitiative()
 	return this->initativeRoll;
 }
 
+
+
 void Character::gainEXP(int xp)
 {
+
 	this->EXP += xp;
+	if (this->EXP >= expToLVL)
+	{
+		clearScreen();
+		cout << "------------LEVEL UP-------------" << endl;
+		cout << "-------------BEFORE---------------" << endl;
+		showCharacterStats();
+		levelUp();
+		keyPress();
+	}
 }
 
 int Character::getEXP()
 {
 	return this->EXP;
 }
-	
+
+void Character::setEXP(int xp)
+{
+	this->EXP = xp;
+}
+
+void Character::expAwarded(Character* player)
+{
+	player->gainEXP(this->getEXP());
+}
+
 bool Character::isDead() {
     if (currentHP <= 0) {
         return true;
@@ -480,4 +509,5 @@ container Character::getWornItems() const {
     }
     return wi;
 }
+
 
