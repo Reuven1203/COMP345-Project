@@ -59,6 +59,11 @@ public:
      */// helm,armor,shield,ring,belt,boots,weapon
     Item();
     /**
+     * @brief Constructor to build item from file
+     * @param fileName Name of file to load item from.
+     */
+     explicit Item(std::string fileName);
+    /**
     * @brief Destructor.
     */
     ~Item();
@@ -135,6 +140,8 @@ private:
     int dmgBonus = 0;       ///< Damage bonus modifier.
     int range = 0;
     bool equipped = false;
+
+    void load(std::string fileName);
 };
 
 #endif // ITEM_H
