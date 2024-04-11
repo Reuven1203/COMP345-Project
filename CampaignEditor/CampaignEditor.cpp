@@ -26,7 +26,7 @@ int CampaignEditor::getUserInput() {
 void CampaignEditor::addMap() {
     MapEditor mapEdit = MapEditor();
     mapEdit.run();
-    campaign.addMap(*mapEdit.getMap());
+    campaign.addMap(mapEdit.getMap());
     mapFiles.push_back(mapEdit.getFileName());
 }
 
@@ -46,13 +46,8 @@ void CampaignEditor::editMap() {
 
     MapEditor mapEdit = MapEditor();
 
-    MapDirector director {};
-    MapBuilder* mapBuilder = new DefaultMapBuilder(mapFiles[mapNum]);
-
-    director.setMapBuilder(mapBuilder);
-    director.constructMap();
-
-    mapEdit.setMap(director.getMap());
+    mapEdit.setMap(campaign.getMap(mapNum));
+    campaign.getMap(mapNum)->notify();
     mapEdit.edit();
 }
 
@@ -96,7 +91,10 @@ void CampaignEditor::loadCampaign(/*Character *player*/) {
 
         director.setMapBuilder(mapBuilder);
         director.constructMap();
-        campaign.addMap(*director.getMap());
+
+        MapObserver* observer { new MapObserver(director.getMap()) };
+
+        campaign.addMap(director.getMap());
     }
     //campaign.setPlayer(player);
     //runCampaign();
@@ -122,7 +120,7 @@ void CampaignEditor::loadCampaign(Character *player) {
 
         director.setMapBuilder(mapBuilder);
         director.constructMap();
-        campaign.addMap(*director.getMap());
+        campaign.addMap(director.getMap());
     }
     campaign.setPlayer(player);
     runCampaign();
