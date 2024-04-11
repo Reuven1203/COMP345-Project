@@ -26,8 +26,8 @@ int main() {
     campaign.startCampaign();
 
     auto* map { campaign.currentMap() };
-    auto* control = new MapObserver(map);
-    map->attach(control);
+//    auto* control = new MapObserver(map);
+//    map->attach(control);
     map->setUserPlayer(campaign.getPlayer());
     vector<Character*>enemyNPC;
     FighterDirector director{};
@@ -52,8 +52,8 @@ int main() {
         turnManager->play();
         enemyNPC.clear();
         map = campaign.nextMap();
-        control = new MapObserver(map);
-        map->attach(control);
+//        control = new MapObserver(map);
+//        map->attach(control);
         map->setUserPlayer(campaign.getPlayer());
         map->notify();
 
