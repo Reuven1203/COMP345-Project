@@ -217,6 +217,7 @@ void Game::chooseYourCharacter() {
 }
 
 void Game::runCampaign() {
+    campaignFinished = false;
     player.setStrategy(new HumanPlayerStrategy);
     campaign.setPlayer(&player);
     campaign.startCampaign();
@@ -229,9 +230,9 @@ void Game::runCampaign() {
     director.setBuilder(&builder);
     container* enemyLootPool = new container(15);
     turnManager = new TurnManager(map, &player, &campaign);
-    player.setCurrentHP(10);
+    player.setCurrentHP(100);
 
-    while(!campaignFinished) {
+    while(true) {
         for(int enemy { 0 }; enemy < 2; enemy++)
             enemyNPC.push_back(director.constructFighter("Enemy " + std::to_string(enemy+1)));
 
@@ -246,8 +247,9 @@ void Game::runCampaign() {
         turnManager->setAllNPCS();
         turnManager->play();
         if (player.isDead()) {
-            campaignFinished = true;
-            break;
+            campaignFinished = false;
+            return;
+           
         }
         if(campaign.currentMap() != campaign.lastMap()) {
             enemyNPC.clear();
@@ -256,21 +258,33 @@ void Game::runCampaign() {
             map->notify();
             turnManager = new TurnManager(map, &player, &campaign);
         } else {
+            campaignFinished = true;
             break;
         }
     }
     clearConsole();
-    if (campaignFinished&&!player.isDead()) {
+   /* if (campaignFinished&&!player.isDead()) {
         std::cout << "CONGRATULATIONS! YOU'VE COMPLETED THE GAME!\n";
         std::cout << "Press any key to return to the main menu.\n";
     keyPress();
-    }
+    }*/
 }
 
 void Game::run() {
-    while(!campaignFinished) {
+    while(true) {
         mainMenu();
         chooseYourCharacter();
         runCampaign();
+        if (!campaignFinished)
+        {
+            continue;
+        }
+        else
+        {
+            clearConsole();
+            std::cout << "CONGRATULATIONS! YOU'VE COMPLETED THE GAME!\n";
+            std::cout << "Press any key to return to the main menu.\n";
+            keyPress();
+        }
     }
 }
