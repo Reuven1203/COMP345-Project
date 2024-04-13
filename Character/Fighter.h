@@ -42,6 +42,12 @@ public:
     Fighter() = default;
 
     /**
+     * @brief Constructor to load character from file.
+     * @param fileName The name of the file to load a character from.
+     */
+    Fighter(std::string fileName);
+
+    /**
      * @brief Constructs a Fighter object.
      * @param name The name of the fighter.
      * @param level The level of the fighter.
@@ -92,7 +98,7 @@ private:
 
     void setAbilityScore(Ability ability, int score);
 
-   
+   void load(std::string fileName);
 
 };
 

@@ -26,6 +26,7 @@ int Game::mainMenuInput() {
     std::cout << " 4 - Character Creator" << std::endl;
     std::cout << " 5 - Item Creator" << std::endl;
     std::cout << " -1 - Exit" << std::endl;
+    std::cout << "Enter command: ";
 
     int op;
     std::cin >> op;
@@ -38,6 +39,7 @@ int Game::campaignMenuInput() {
     std::cout << " 1 - Default Campaign\n";
     std::cout << " 2 - Custom Campaign\n";
     std::cout << " -1 - Return to Main Menu\n";
+    std::cout << "Enter command: ";
 
     int op;
     std::cin >> op;
@@ -51,6 +53,7 @@ void Game::defaultCampaigns() {
         std::cout << "\n\nCurrent Default Campaigns:\n";
         std::cout << " 1 - Castle\n";
         std::cout << " 2 - Dungeon\n";
+        std::cout << "Enter command: ";
         std::cin >> choice;
     }
 
@@ -125,10 +128,13 @@ int Game::characterMenuInput() {
     std::cout << "\n\nWould you like to create a custom character or use a default one?\n";
     std::cout << " 1 - Default Character\n";
     std::cout << " 2 - Custom Character\n";
+    std::cout << " 3 - Load Saved Character\n";
+    std::cout << "Enter command: ";
 
     int op;
     std::cin >> op;
-    return (op >= 1 && op <= 2) ? op : 0;
+
+    return (op >= 1 && op <= 3) ? op : 0;
 }
 
 void Game::defaultCharacters() {
@@ -141,6 +147,7 @@ void Game::defaultCharacters() {
         std::cout << " 1 - " + names[0] + " (Nimble Fighter)\n";
         std::cout << " 2 - " + names[1] + " (Tank Fighter)\n";
         std::cout << " 3 - " + names[2] + " (Bully Fighter)\n";
+        std::cout << "Enter command: ";
         std::cin >> choice;
     }
 
@@ -165,6 +172,25 @@ void Game::defaultCharacters() {
     delete fighterBuilder;
 }
 
+bool Game::loadCharacter() {
+    clearConsole();
+    std::cout << "List of characters saved: \n";
+
+    const std::filesystem::path path { "../CharacterSaves/" };
+    for(auto const& char_file : std::filesystem::directory_iterator { path })
+        std::cout << "- " << char_file.path().filename().string() << '\n';
+
+    std::cout << "\nPlease enter full filename of character to load (-1 to return): ";
+    std::string fileName {};
+    std::cin >> fileName;
+
+    if(fileName == "-1")
+        return false;
+
+    player = Fighter(fileName);
+    return true;
+}
+
 void Game::chooseYourCharacter() {
     while(true) {
         int input{characterMenuInput()};
@@ -177,6 +203,10 @@ void Game::chooseYourCharacter() {
                 characterCreator->run();
                 player = characterCreator->getFighter();
                 input = -1;
+                break;
+            case 3:
+                if(loadCharacter())
+                    input = -1;
                 break;
             default:
                 break;
