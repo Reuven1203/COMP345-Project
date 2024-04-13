@@ -26,6 +26,8 @@ public:
     Character* getPlayer();
     dungeonMap* currentMap();
     dungeonMap* nextMap();
+    dungeonMap* lastMap();
+    int getSize() const;
 private:
     std::vector<dungeonMap*> campaign {};
     Character* player { new Fighter() };
