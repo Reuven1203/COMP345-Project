@@ -32,6 +32,7 @@ private:
     static int characterMenuInput();
     void defaultCharacters();
     void runCampaign();
+    void loadCharacter();
 };
 
 

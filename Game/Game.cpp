@@ -125,10 +125,13 @@ int Game::characterMenuInput() {
     std::cout << "\n\nWould you like to create a custom character or use a default one?\n";
     std::cout << " 1 - Default Character\n";
     std::cout << " 2 - Custom Character\n";
+    std::cout << " 3 - Load Saved Character\n";
+    std::cout << "Enter command: ";
 
     int op;
     std::cin >> op;
-    return (op >= 1 && op <= 2) ? op : 0;
+
+    return (op >= 1 && op <= 3) ? op : 0;
 }
 
 void Game::defaultCharacters() {
@@ -165,6 +168,21 @@ void Game::defaultCharacters() {
     delete fighterBuilder;
 }
 
+void Game::loadCharacter() {
+    clearConsole();
+    std::cout << "List of characters saved: \n";
+
+    const std::filesystem::path path { "../CharacterSaves/" };
+    for(auto const& char_file : std::filesystem::directory_iterator { path })
+        std::cout << "- " << char_file.path().filename().string() << '\n';
+
+    std::cout << "\nPlease enter full filename of character to load: ";
+    std::string fileName {};
+    std::cin >> fileName;
+
+    player = Fighter(fileName);
+}
+
 void Game::chooseYourCharacter() {
     while(true) {
         int input{characterMenuInput()};
@@ -176,6 +194,10 @@ void Game::chooseYourCharacter() {
             case 2:
                 characterCreator->run();
                 player = characterCreator->getFighter();
+                input = -1;
+                break;
+            case 3:
+                loadCharacter();
                 input = -1;
                 break;
             default:

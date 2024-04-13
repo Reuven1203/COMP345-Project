@@ -101,7 +101,7 @@ void CharacterCreatorUI::run() {
     }
     createFighter();
     std::cout << "Fighter created!\n";
-//    saveCharacter();
+    saveCharacter();
 }
 
 Fighter CharacterCreatorUI::getFighter() {
