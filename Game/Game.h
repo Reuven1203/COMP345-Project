@@ -22,7 +22,7 @@ private:
     Campaign campaign {};
     Fighter player {};
     TurnManager* turnManager {};
-
+    bool campaignFinished = false;
     void mainMenu();
     static int mainMenuInput();
     bool startNewCampaign();

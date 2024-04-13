@@ -199,9 +199,9 @@ void Game::runCampaign() {
     director.setBuilder(&builder);
     container* enemyLootPool = new container(15);
     turnManager = new TurnManager(map, &player, &campaign);
-    player.setCurrentHP(100);
+    player.setCurrentHP(10);
 
-    while(true) {
+    while(!campaignFinished) {
         for(int enemy { 0 }; enemy < 2; enemy++)
             enemyNPC.push_back(director.constructFighter("Enemy " + std::to_string(enemy+1)));
 
@@ -215,7 +215,10 @@ void Game::runCampaign() {
         }
         turnManager->setAllNPCS();
         turnManager->play();
-
+        if (player.isDead()) {
+            campaignFinished = true;
+            break;
+        }
         if(campaign.currentMap() != campaign.lastMap()) {
             enemyNPC.clear();
             map = campaign.nextMap();
@@ -227,13 +230,15 @@ void Game::runCampaign() {
         }
     }
     clearConsole();
-    std::cout << "CONGRATULATIONS! YOU'VE COMPLETED THE GAME!\n";
-    std::cout << "Press any key to return to the main menu.\n";
+    if (campaignFinished&&!player.isDead()) {
+        std::cout << "CONGRATULATIONS! YOU'VE COMPLETED THE GAME!\n";
+        std::cout << "Press any key to return to the main menu.\n";
     keyPress();
+    }
 }
 
 void Game::run() {
-    while(true) {
+    while(!campaignFinished) {
         mainMenu();
         chooseYourCharacter();
         runCampaign();
