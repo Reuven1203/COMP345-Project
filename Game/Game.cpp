@@ -217,6 +217,13 @@ void Game::chooseYourCharacter() {
 }
 
 void Game::runCampaign() {
+    if(player.getSTR() == 0) {
+        FighterDirector director{};
+        BullyFighterBuilder builder {};
+        director.setBuilder(&builder);
+        player = *director.constructFighter("Default");
+    }
+
     player.setStrategy(new HumanPlayerStrategy);
     campaign.setPlayer(&player);
     campaign.startCampaign();
