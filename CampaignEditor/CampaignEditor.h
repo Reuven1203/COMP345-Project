@@ -20,6 +20,7 @@ public:
     void run(/*Character *player*/);
     void run(Character *player);
     Campaign getCampaign();
+    static Campaign loadCampaignFromFile(std::string fileName);
 private:
     Campaign campaign {};
     std::vector<std::string> mapFiles;

@@ -64,6 +64,10 @@ dungeonMap *Campaign::currentMap() {
     return campaign[currentMapIndex];
 }
 
+dungeonMap *Campaign::lastMap() {
+    return campaign.back();
+}
+
 void Campaign::removeMap(int index) {
     campaign.erase(campaign.begin()+index);
 }
@@ -87,4 +91,8 @@ void Campaign::run(){
     while(true) {
         pCharacter->move(*currentMap);
     }
+}
+
+int Campaign::getSize() const {
+    return static_cast<int>(campaign.size());
 }
