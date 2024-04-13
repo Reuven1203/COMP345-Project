@@ -26,7 +26,7 @@ int CampaignEditor::getUserInput() {
 void CampaignEditor::addMap() {
     MapEditor mapEdit = MapEditor();
     mapEdit.run();
-    campaign.addMap(*mapEdit.getMap());
+    campaign.addMap(mapEdit.getMap());
     mapFiles.push_back(mapEdit.getFileName());
 }
 
@@ -46,13 +46,8 @@ void CampaignEditor::editMap() {
 
     MapEditor mapEdit = MapEditor();
 
-    MapDirector director {};
-    MapBuilder* mapBuilder = new DefaultMapBuilder(mapFiles[mapNum]);
-
-    director.setMapBuilder(mapBuilder);
-    director.constructMap();
-
-    mapEdit.setMap(director.getMap());
+    mapEdit.setMap(campaign.getMap(mapNum));
+    campaign.getMap(mapNum)->notify();
     mapEdit.edit();
 }
 
@@ -76,6 +71,31 @@ void CampaignEditor::save(const std::string& filename) {
         output << f << '\n';
 }
 
+Campaign CampaignEditor::loadCampaignFromFile(std::string file) {
+    std::ifstream input("../CampaignSaves/"+file);
+    std::string line, data;
+
+    std::vector<std::string> loadedMapFiles;
+    Campaign loadedCampaign;
+    while(std::getline(input, line)) {
+        loadedMapFiles.push_back(line);
+    }
+
+    MapDirector director {};
+    for (std::string f : loadedMapFiles) {
+        MapBuilder* mapBuilder = new DefaultMapBuilder(f);
+
+        director.setMapBuilder(mapBuilder);
+        director.constructMap();
+
+        MapObserver* observer { new MapObserver(director.getMap()) };
+
+        loadedCampaign.addMap(director.getMap());
+    }
+
+    return loadedCampaign;
+}
+
 void CampaignEditor::loadCampaign(/*Character *player*/) {
     std::cout << "Enter Campaign filename.txt to load: ";
     std::string file {};
@@ -96,7 +116,10 @@ void CampaignEditor::loadCampaign(/*Character *player*/) {
 
         director.setMapBuilder(mapBuilder);
         director.constructMap();
-        campaign.addMap(*director.getMap());
+
+        MapObserver* observer { new MapObserver(director.getMap()) };
+
+        campaign.addMap(director.getMap());
     }
     //campaign.setPlayer(player);
     //runCampaign();
@@ -122,7 +145,7 @@ void CampaignEditor::loadCampaign(Character *player) {
 
         director.setMapBuilder(mapBuilder);
         director.constructMap();
-        campaign.addMap(*director.getMap());
+        campaign.addMap(director.getMap());
     }
     campaign.setPlayer(player);
     runCampaign();
@@ -131,6 +154,7 @@ void CampaignEditor::loadCampaign(Character *player) {
 void CampaignEditor::run(/*Character *player*/) {
     bool editing = true;
     while(editing) {
+        clearConsole();
         printCampaignDetails();
         int input {getUserInput()};
         switch(input) {

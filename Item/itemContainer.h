@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <vector>
+#include <filesystem>
 #include "Item.h"
 #include "../Dice/Dice.h"
 
@@ -102,6 +103,7 @@ private:
      * @brief Internal function to add a random item to the container.
      */
     void addRandomItem();
+    void addUserItem();
 };
 
 #endif // ITEMCONTAINER_H

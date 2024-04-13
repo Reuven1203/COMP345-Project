@@ -27,6 +27,10 @@ Item::Item() {
 	this->equipType = NONE;
 }
 
+Item::Item(std::string fileName) {
+    load(fileName);
+}
+
 /**
  * @brief Destructor for the Item class.
  */
@@ -434,4 +438,110 @@ void Item::setAsUnequipped()
 bool Item::isEquipped()const
 {
 	return equipped;
+}
+
+void Item::load(std::string fileName) {
+    std::ifstream file("../ItemSaves/" + fileName);
+
+    std::string line, data;
+
+    while(std::getline(file, line)) {
+        std::stringstream ss(line);
+
+        std::string datatype {};
+
+        while(std::getline(ss, data, ',')) {
+            if(datatype.empty()) {
+                if (data == "Helmet") {
+                    equipType = HELMET;
+                    armorType = NOTARMOR;
+                    weaponType = NOTWEAPON;
+                }
+                else if (data == "Armor") {
+                    equipType = ARMOR;
+                    weaponType = NOTWEAPON;
+                }
+                else if (data == "Shield") {
+                    equipType = SHIELD;
+                    armorType = NOTARMOR;
+                    weaponType = NOTWEAPON;
+                }
+                else if (data == "Ring") {
+                    equipType = RING;
+                    armorType = NOTARMOR;
+                    weaponType = NOTWEAPON;
+                }
+                else if (data == "Belt") {
+                    equipType = BELT;
+                    armorType = NOTARMOR;
+                    weaponType = NOTWEAPON;
+                }
+                else if (data == "Boots") {
+                    equipType = BOOTS;
+                    armorType = NOTARMOR;
+                    weaponType = NOTWEAPON;
+                }
+                else if (data == "Weapon") {
+                    equipType = WEAPON;
+                    armorType = NOTARMOR;
+                    weaponType = MELEE;
+                }
+                else if (data == "Intelligence") {
+                    std::getline(ss, data, ',');
+                    intelligence = stoi(data);
+                    itemOverall["Intelligence"] = intelligence;
+                }
+                else if (data == "Wisdom") {
+                    std::getline(ss, data, ',');
+                    wisdom = stoi(data);
+                    itemOverall["Wisdom"] = wisdom;
+                }
+                else if (data == "ArmorClass") {
+                    std::getline(ss, data, ',');
+                    armorClass = stoi(data);
+                    itemOverall["ArmorClass"] = armorClass;
+                    if(equipType == ARMOR) {
+                        if(armorClass <= 1)
+                            armorType = LIGHT;
+                        else if(armorClass <= 3)
+                            armorType = MEDIUM;
+                        else if(armorClass <= 5)
+                            armorType = HEAVY;
+                    }
+                }
+                else if (data == "Strength") {
+                    std::getline(ss, data, ',');
+                    strength = stoi(data);
+                    itemOverall["Strength"] = strength;
+                }
+                else if (data == "Constitution") {
+                    std::getline(ss, data, ',');
+                    constitution = stoi(data);
+                    itemOverall["Constitution"] = constitution;
+                }
+                else if (data == "Charisma") {
+                    std::getline(ss, data, ',');
+                    charisma = stoi(data);
+                    itemOverall["Charisma"] = charisma;
+                }
+                else if (data == "Dexterity") {
+                    std::getline(ss, data, ',');
+                    dexterity = stoi(data);
+                    itemOverall["Dexterity"] = dexterity;
+                }
+                else if (data == "AttackBonus") {
+                    std::getline(ss, data, ',');
+                    atkBonus = stoi(data);
+                    itemOverall["AttackBonus"] = atkBonus;
+                }
+                else if (data == "DamageBonus") {
+                    std::getline(ss, data, ',');
+                    dmgBonus = stoi(data);
+                    itemOverall["DamageBonus"] = dmgBonus;
+                }
+            }
+        }
+    }
+
+    file.close();
 }

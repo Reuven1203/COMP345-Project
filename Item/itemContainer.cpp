@@ -26,8 +26,11 @@ container::container() : name("") {}
  * @param numItems Number of random items to initialize container with.
  */
 container::container(int numItems) {
+    numItems = max(numItems, 0);
 	for (int i{ 0 }; i < numItems; i++)
 		addRandomItem();
+    if(dice.roll("1d8") == 8)
+        addUserItem();
 }
 
 /**
@@ -174,4 +177,17 @@ container container::operator+(const container &other) const {
     return newContainer;
 }
 
+void container::addUserItem() {
+    vector<Item*> userItems {};
 
+    const std::filesystem::path path { "../ItemSaves/" };
+    for(auto const& item_file : std::filesystem::directory_iterator{ path })
+        userItems.push_back(new Item(item_file.path().filename()));
+
+    if(userItems.empty())
+        return;
+
+    using namespace Random;
+    int randIndex { random(0, userItems.size()-1) };
+    storeItem(*userItems[randIndex]);
+}
