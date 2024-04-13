@@ -207,6 +207,7 @@ void Game::runCampaign() {
         for(auto& enemy : enemyNPC) {
             enemy->setStrategy(new AggressorStrategy());
             enemy->setEXP(150);
+            
             turnManager->addNPC(enemy);
         }
         turnManager->setAllNPCS();

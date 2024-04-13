@@ -1,4 +1,5 @@
-size,10,10
-start,0,0
-end,0,0
-wall,4,4,
+size,10,2
+start,1,0
+end,9,1
+wall,
+chest,

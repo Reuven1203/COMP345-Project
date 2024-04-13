@@ -182,7 +182,7 @@ void container::addUserItem() {
 
     const std::filesystem::path path { "../ItemSaves/" };
     for(auto const& item_file : std::filesystem::directory_iterator{ path })
-        userItems.push_back(new Item(item_file.path().filename()));
+        userItems.push_back(new Item(item_file.path().filename().string()));
 
     if(userItems.empty())
         return;

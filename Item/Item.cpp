@@ -12,6 +12,7 @@
 #include <iostream>
 #include <iomanip>
 #include <map>
+#include <sstream>
 #include "Item.h"
 #include "../Dice/Dice.h"
 #include "../Character/Character.h"
@@ -446,7 +447,7 @@ void Item::load(std::string fileName) {
     std::string line, data;
 
     while(std::getline(file, line)) {
-        std::stringstream ss(line);
+		std::stringstream ss(line);
 
         std::string datatype {};
 
