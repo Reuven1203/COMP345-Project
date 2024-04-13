@@ -337,7 +337,7 @@ void TurnManager::play()
 				cout << "Press any key to continue..." << endl;
 				mapCleared = true;
 				keyPress();
-				exit(0);
+				
 			}
 
 			keyPress();

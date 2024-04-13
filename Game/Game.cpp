@@ -217,13 +217,15 @@ void Game::chooseYourCharacter() {
 }
 
 void Game::runCampaign() {
+    campaignFinished = false;
+  
     if(player.getSTR() == 0) {
         FighterDirector director{};
         BullyFighterBuilder builder {};
         director.setBuilder(&builder);
         player = *director.constructFighter("Default");
     }
-
+  
     player.setStrategy(new HumanPlayerStrategy);
     campaign.setPlayer(&player);
     campaign.startCampaign();
@@ -252,7 +254,11 @@ void Game::runCampaign() {
         }
         turnManager->setAllNPCS();
         turnManager->play();
-
+        if (player.isDead()) {
+            campaignFinished = false;
+            return;
+           
+        }
         if(campaign.currentMap() != campaign.lastMap()) {
             enemyNPC.clear();
             map = campaign.nextMap();
@@ -260,13 +266,16 @@ void Game::runCampaign() {
             map->notify();
             turnManager = new TurnManager(map, &player, &campaign);
         } else {
+            campaignFinished = true;
             break;
         }
     }
     clearConsole();
-    std::cout << "CONGRATULATIONS! YOU'VE COMPLETED THE GAME!\n";
-    std::cout << "Press any key to return to the main menu.\n";
+   /* if (campaignFinished&&!player.isDead()) {
+        std::cout << "CONGRATULATIONS! YOU'VE COMPLETED THE GAME!\n";
+        std::cout << "Press any key to return to the main menu.\n";
     keyPress();
+    }*/
 }
 
 void Game::run() {
@@ -274,5 +283,16 @@ void Game::run() {
         mainMenu();
         chooseYourCharacter();
         runCampaign();
+        if (!campaignFinished)
+        {
+            continue;
+        }
+        else
+        {
+            clearConsole();
+            std::cout << "CONGRATULATIONS! YOU'VE COMPLETED THE GAME!\n";
+            std::cout << "Press any key to return to the main menu.\n";
+            keyPress();
+        }
     }
 }
