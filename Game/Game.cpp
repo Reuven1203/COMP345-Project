@@ -197,6 +197,7 @@ void Game::runCampaign() {
     FighterDirector director {};
     BullyFighterBuilder builder;
     director.setBuilder(&builder);
+    container* enemyLootPool = new container(15);
     turnManager = new TurnManager(map, &player, &campaign);
     player.setCurrentHP(100);
 
@@ -207,7 +208,9 @@ void Game::runCampaign() {
         for(auto& enemy : enemyNPC) {
             enemy->setStrategy(new AggressorStrategy());
             enemy->setEXP(150);
-            
+         
+            enemy->equip(*enemyLootPool->retrieveItem(Random::random(1,10)));
+
             turnManager->addNPC(enemy);
         }
         turnManager->setAllNPCS();
